@@ -1,0 +1,19 @@
+{
+    "name": "innstudio/prober",
+    "description": "Inn Studio X Prober",
+    "type": "project",
+    "license": "GPL-V2",
+    "authors": [
+        {
+            "name": "Km.Van",
+            "email": "kmvan.com@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "InnStudio\\Prober\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "https://github.com/kmvan/x-prober": {
+        "zh-CN": "http://github.com/kmvan/x-prober"
+    },
+    "INN STUDIO": {
+        "zh-CN": "INN STUDIO"
+    },
+    "https://inn-studio.com/prober": {
+        "zh-CN": "https://inn-studio.com/prober"
+    },
+    "X Prober": {
+        "zh-CN": "X 探针"
+    },
+    "Found update! {APP_NAME} has new version v{APP_NEW_VERSION}": {
+        "zh-CN": "发现更新！{APP_NAME} 有新版本：v{APP_NEW_VERSION}"
+    },
+    // server status
+    "Server status": {
+        "zh-CN": "服务器状态"
+    },
+    "System load": {
+        "zh-CN": "系统负载"
+    },
+    "CPU usage": {
+        "zh-CN": "CPU 使用率"
+    },
+    "Real memory usage": {
+        "zh-CN": "真实内存使用"
+    },
+    "Real swap usage": {
+        "zh-CN": "SWAP 使用"
+    },
+    // Network stats
+    "Network stats": {
+        "zh-CN": "流量统计"
+    },
+    // Server info
+    "Server information": {
+        "zh-CN": "服务器信息"
+    },
+    "Server time": {
+        "zh-CN": "服务器时间"
+    },
+    "Server uptime": {
+        "zh-CN": "持续运行时间"
+    },
+    "Server IP": {
+        "zh-CN": "服务器 IP"
+    },
+    "Server name": {
+        "zh-CN": "服务器名"
+    },
+    "Server software": {
+        "zh-CN": "服务器软件"
+    },
+    "CPU model": {
+        "zh-CN": "CPU 型号"
+    },
+    "Server OS": {
+        "zh-CN": "服务器系统"
+    },
+    "Script path": {
+        "zh-CN": "脚本路径"
+    },
+    "Disk usage": {
+        "zh-CN": "磁盘使用"
+    },
+    // PHP info
+    "PHP version": {
+        "zh-CN": "PHP 版本"
+    },
+    "PHP information": {
+        "zh-CN": "PHP 信息"
+    },
+    "PHP info detail": {
+        "zh-CN": "PHP 详细信息"
+    },
+    "Click to check": {
+        "zh-CN": "点击查看"
+    },
+    "Version": {
+        "zh-CN": "版本"
+    },
+    "SAPI interface": {
+        "zh-CN": "SAPI 接口"
+    },
+    "Error reporting": {
+        "zh-CN": "错误报告"
+    },
+    "Max memory limit": {
+        "zh-CN": "运行内存限制"
+    },
+    "Max POST size": {
+        "zh-CN": "POST 提交限制"
+    },
+    "Max upload size": {
+        "zh-CN": "上传文件限制"
+    },
+    "Max input variables": {
+        "zh-CN": "提交表单限制"
+    },
+    "Max execution time": {
+        "zh-CN": "运行超时秒数"
+    },
+    "Timeout for socket": {
+        "zh-CN": "Socket 超时秒数"
+    },
+    "Display errors": {
+        "zh-CN": "显示错误"
+    },
+    "Treatment URLs file": {
+        "zh-CN": "文件远端打开"
+    },
+    "SMTP support": {
+        "zh-CN": "SMTP 支持"
+    },
+    "Disabled functions": {
+        "zh-CN": "禁用的函数"
+    },
+    // PHP Extensions
+    "PHP extensions": {
+        "zh-CN": "PHP 扩展"
+    },
+    "%s extension": {
+        "zh-CN": "%s 扩展"
+    },
+    "%s enabled": {
+        "zh-CN": "%s 启用"
+    },
+    // Database
+    "Database": {
+        "zh-CN": "数据库"
+    },
+    // My information
+    "My information": {
+        "zh-CN": "我的信息"
+    },
+    "My IP": {
+        "zh-CN": "我的 IP"
+    },
+    "My UA": {
+        "zh-CN": "我的 UA"
+    },
+    // footer
+    "Generator %s": {
+        "zh-CN": "该页面由 %s 生成"
+    },
+    "Author %s": {
+        "zh-CN": "作者为 %s"
+    }
+}
