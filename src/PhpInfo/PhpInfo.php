@@ -104,7 +104,7 @@ class PhpInfo
                 'col'     => '1-1',
                 'label'   => $this->_('Disabled functions'),
                 'title'   => 'disable_functions',
-                'content' => Helper::getIni('disable_functions') ?: '-',
+                'content' => \implode(', ', \explode(',', Helper::getIni('disable_functions'))) ?: '-',
             ),
         );
 
