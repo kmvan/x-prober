@@ -65,7 +65,8 @@ var nav = document.createElement('div');
 nav.className = 'nav';
 
 
-for(var fieldset of fieldsets) {
+for(var i = 0; i < fieldsets.length; i++) {
+    var fieldset = fieldsets[i];
     var a = document.createElement('a');
     a.href = '#' + encodeURIComponent(fieldset.id);
     a.innerHTML = fieldset.querySelector('legend').innerHTML;
@@ -82,7 +83,7 @@ document.body.appendChild(nav);
     <?php echo $this->getContent(); ?>
 </div>
         <?php
- } private function getContent() { $items = array( array( 'label' => $this->_('PHP info detail'), 'content' => Helper::getBtn($this->_('Click to check'), '?action=phpInfo'), ), array( 'label' => $this->_('Version'), 'content' => PHP_VERSION, ), array( 'label' => $this->_('SAPI interface'), 'content' => PHP_SAPI, ), array( 'label' => $this->_('Error reporting'), 'title' => 'error_reporting', 'content' => Helper::getErrNameByCode(\ini_get('error_reporting')), ), array( 'label' => $this->_('Max memory limit'), 'title' => 'memory_limit', 'content' => \ini_get('memory_limit'), ), array( 'label' => $this->_('Max POST size'), 'title' => 'post_max_size', 'content' => \ini_get('post_max_size'), ), array( 'label' => $this->_('Max upload size'), 'title' => 'upload_max_filesize', 'content' => \ini_get('upload_max_filesize'), ), array( 'label' => $this->_('Max input variables'), 'title' => 'max_input_vars', 'content' => \ini_get('max_input_vars'), ), array( 'label' => $this->_('Max execution time'), 'title' => 'max_execution_time', 'content' => \ini_get('max_execution_time'), ), array( 'label' => $this->_('Timeout for socket'), 'title' => 'default_socket_timeout', 'content' => \ini_get('default_socket_timeout'), ), array( 'label' => $this->_('Display errors'), 'title' => 'display_errors', 'content' => Helper::getIni('display_errors'), ), array( 'label' => $this->_('Treatment URLs file'), 'title' => 'allow_url_fopen', 'content' => Helper::getIni('allow_url_fopen'), ), array( 'label' => $this->_('SMTP support'), 'title' => 'SMTP', 'content' => Helper::getIni('SMTP') ?: Helper::getIni(0, false), ), array( 'col' => '1-1', 'label' => $this->_('Disabled functions'), 'title' => 'disable_functions', 'content' => Helper::getIni('disable_functions') ?: '-', ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<EOT
+ } private function getContent() { $items = array( array( 'label' => $this->_('PHP info detail'), 'content' => Helper::getBtn($this->_('Click to check'), '?action=phpInfo'), ), array( 'label' => $this->_('Version'), 'content' => PHP_VERSION, ), array( 'label' => $this->_('SAPI interface'), 'content' => PHP_SAPI, ), array( 'label' => $this->_('Error reporting'), 'title' => 'error_reporting', 'content' => Helper::getErrNameByCode(\ini_get('error_reporting')), ), array( 'label' => $this->_('Max memory limit'), 'title' => 'memory_limit', 'content' => \ini_get('memory_limit'), ), array( 'label' => $this->_('Max POST size'), 'title' => 'post_max_size', 'content' => \ini_get('post_max_size'), ), array( 'label' => $this->_('Max upload size'), 'title' => 'upload_max_filesize', 'content' => \ini_get('upload_max_filesize'), ), array( 'label' => $this->_('Max input variables'), 'title' => 'max_input_vars', 'content' => \ini_get('max_input_vars'), ), array( 'label' => $this->_('Max execution time'), 'title' => 'max_execution_time', 'content' => \ini_get('max_execution_time'), ), array( 'label' => $this->_('Timeout for socket'), 'title' => 'default_socket_timeout', 'content' => \ini_get('default_socket_timeout'), ), array( 'label' => $this->_('Display errors'), 'title' => 'display_errors', 'content' => Helper::getIni('display_errors'), ), array( 'label' => $this->_('Treatment URLs file'), 'title' => 'allow_url_fopen', 'content' => Helper::getIni('allow_url_fopen'), ), array( 'label' => $this->_('SMTP support'), 'title' => 'SMTP', 'content' => Helper::getIni('SMTP') ?: Helper::getIni(0, false), ), array( 'col' => '1-1', 'label' => $this->_('Disabled functions'), 'title' => 'disable_functions', 'content' => \implode(', ', \explode(',', Helper::getIni('disable_functions'))) ?: '-', ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<EOT
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
@@ -92,7 +93,7 @@ document.body.appendChild(nav);
 EOT;
 } return $content; } private function _($str) { return I18n::_($str); } } 
  namespace InnStudio\Prober\Events; class Api { private static $filters = array(); private static $actions = array(); private static $PRIORITY_ID = 'priority'; private static $CALLBACK_ID = 'callback'; public static function on($name, $callback, $priority = 10) { if ( ! isset(self::$actions[$name])) { self::$actions[$name] = array(); } self::$actions[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function emit() { $args = \func_get_args(); $name = $args[0]; unset($args[0]); $actions = isset(self::$actions[$name]) ? self::$actions[$name] : false; if ( ! $actions) { return; } $sortArr = array(); foreach ($actions as $k => $action) { $sortArr[$k] = $action[self::$PRIORITY_ID]; } \array_multisort($sortArr, $actions); foreach ($actions as $action) { \call_user_func_array($action[self::$CALLBACK_ID], $args); } } public static function patch($name, $callback, $priority = 10) { if ( ! isset(self::$filters[$name])) { self::$filters[$name] = array(); } self::$filters[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function apply() { $args = \func_get_args(); $name = $args[0]; $return = $args[1]; unset($args[0],$args[1]); $filters = isset(self::$filters[$name]) ? self::$filters[$name] : false; if ( ! $filters) { return $return; } $sortArr = array(); foreach ($filters as $k => $filter) { $sortArr[$k] = $filter[self::$PRIORITY_ID]; } \array_multisort($sortArr, $filters); foreach ($filters as $filter) { $return = \call_user_func_array($filter[self::$CALLBACK_ID], array($return, $args)); } return $return; } } 
- namespace InnStudio\Prober\Config; class Api { public static $APP_VERSION = '1.0.0'; public static $APP_NAME = 'X Prober'; public static $APP_URL = 'https://github.com/kmvan/x-prober'; public static $AUTHOR_URL = 'https://inn-studio.com/prober'; public static $AUTHOR_NAME = 'INN STUDIO'; public static $CHANGELOG_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG'; } 
+ namespace InnStudio\Prober\Config; class Api { public static $APP_VERSION = '1.0.0'; public static $APP_NAME = 'X Prober'; public static $APP_URL = 'https://github.com/kmvan/x-prober'; public static $AUTHOR_URL = 'https://inn-studio.com/prober'; public static $AUTHOR_NAME = 'INN STUDIO'; public static $CHANGELOG_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md'; } 
  namespace InnStudio\Prober\PhpInfoDetail; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; class PhpInfoDetail { public function __construct() { Events::on('init', array($this, 'filter')); } public function filter() { if (Helper::isAction('phpInfo')) { \phpinfo(); die; } } } 
  namespace InnStudio\Prober\ServerInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class ServerInfo { private $ID = 'serverInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 200); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server information'), 'tinyTitle' => I18n::_('Info'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>    
 <div class="row">
@@ -270,9 +271,11 @@ var versionCompare = function(left, right) {
 }
 var version = "<?php echo Config::$APP_VERSION; ?>";
 var xhr = new XMLHttpRequest();
-xhr.open('get', '<?php echo Config::$CHANGELOG_URL; ?>');
-xhr.send();
-xhr.onload = load;
+try {
+    xhr.open('get', '<?php echo Config::$CHANGELOG_URL; ?>');
+    xhr.send();
+    xhr.onload = load;
+} catch (err) {}
 function load(){
     if (xhr.readyState !== 4) {
         return;
@@ -596,6 +599,22 @@ EOT;
     xhr.onload = load;
     var cache = {};
 
+    function addClassName(el,className){
+        if (el.classList){
+            el.classList.add(className);
+        } else {
+            el.className += ' ' + className;
+        }
+    }
+
+    function removeClassName(el, className){
+        if (el.classList){
+            el.classList.remove(className);
+        } else {
+            el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+    }
+
     function formatBytes(bytes, decimals) {
         if (bytes == 0) {
             return '0';
@@ -619,21 +638,21 @@ EOT;
 
     function setColor(progress, percent) {
         if (percent >= 80) {
-            progress.classList.add('high');
-            progress.classList.remove('medium');
-            progress.classList.remove('medium-low');
+            addClassName(progress,'high');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'medium-low');
         } else if (percent >= 50) {
-            progress.classList.add('medium');
-            progress.classList.remove('high');
-            progress.classList.remove('medium-low');
+            addClassName(progress,'medium');
+            removeClassName(progress,'high');
+            removeClassName(progress,'medium-low');
         } else if (percent >= 30) {
-            progress.classList.add('medium-low');
-            progress.classList.remove('medium');
-            progress.classList.remove('high');
+            addClassName(progress,'medium-low');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'high');
         } else {
-            progress.classList.remove('high');
-            progress.classList.remove('medium');
-            progress.classList.remove('medium-low');
+            removeClassName(progress,'high');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'medium-low');
         }
     }
 
