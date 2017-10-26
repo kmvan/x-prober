@@ -22,6 +22,22 @@ class Script
     xhr.onload = load;
     var cache = {};
 
+    function addClassName(el,className){
+        if (el.classList){
+            el.classList.add(className);
+        } else {
+            el.className += ' ' + className;
+        }
+    }
+
+    function removeClassName(el, className){
+        if (el.classList){
+            el.classList.remove(className);
+        } else {
+            el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+    }
+
     function formatBytes(bytes, decimals) {
         if (bytes == 0) {
             return '0';
@@ -45,21 +61,21 @@ class Script
 
     function setColor(progress, percent) {
         if (percent >= 80) {
-            progress.classList.add('high');
-            progress.classList.remove('medium');
-            progress.classList.remove('medium-low');
+            addClassName(progress,'high');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'medium-low');
         } else if (percent >= 50) {
-            progress.classList.add('medium');
-            progress.classList.remove('high');
-            progress.classList.remove('medium-low');
+            addClassName(progress,'medium');
+            removeClassName(progress,'high');
+            removeClassName(progress,'medium-low');
         } else if (percent >= 30) {
-            progress.classList.add('medium-low');
-            progress.classList.remove('medium');
-            progress.classList.remove('high');
+            addClassName(progress,'medium-low');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'high');
         } else {
-            progress.classList.remove('high');
-            progress.classList.remove('medium');
-            progress.classList.remove('medium-low');
+            removeClassName(progress,'high');
+            removeClassName(progress,'medium');
+            removeClassName(progress,'medium-low');
         }
     }
 

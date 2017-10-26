@@ -40,9 +40,11 @@ var versionCompare = function(left, right) {
 }
 var version = "<?php echo Config::$APP_VERSION; ?>";
 var xhr = new XMLHttpRequest();
-xhr.open('get', '<?php echo Config::$CHANGELOG_URL; ?>');
-xhr.send();
-xhr.onload = load;
+try {
+    xhr.open('get', '<?php echo Config::$CHANGELOG_URL; ?>');
+    xhr.send();
+    xhr.onload = load;
+} catch (err) {}
 function load(){
     if (xhr.readyState !== 4) {
         return;

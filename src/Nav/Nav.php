@@ -80,7 +80,8 @@ var nav = document.createElement('div');
 nav.className = 'nav';
 
 
-for(var fieldset of fieldsets) {
+for(var i = 0; i < fieldsets.length; i++) {
+    var fieldset = fieldsets[i];
     var a = document.createElement('a');
     a.href = '#' + encodeURIComponent(fieldset.id);
     a.innerHTML = fieldset.querySelector('legend').innerHTML;
