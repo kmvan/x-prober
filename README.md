@@ -13,9 +13,17 @@ PHP X-Prober
 > This is a prober programe for PHP environment. It can show your server information and readable easily.
 
 ## Compile and Usage
+- Check and config ./src/Config/Config.php
 - php ./Build.php
 - Access ./dist/prober.php
 - Enjoy
 
+## Participate in contribution
+- Code compatible with IE9+ and PHP 5.3+
+
+## Contributors
+- Km.Van https://inn-studio.com
+- More...
+- 
 ## Note
 - Only tested in Linux environment.
