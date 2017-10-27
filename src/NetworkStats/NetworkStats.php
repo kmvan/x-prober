@@ -64,7 +64,7 @@ class NetworkStats
                         <div><span class=\"icon\">▼</span><span id=\"network-{$ethName}-rx-rate\">0</span><span class=\"second\">/s</span></div>
                     </div>
                     <div class=\"tx\">
-                        <div><span id=\"network-{$ethName}-tx-total\">{$rxHuman}</span></div>
+                        <div><span id=\"network-{$ethName}-tx-total\">{$txHuman}</span></div>
                         <div><span class=\"icon\">▲</span><span id=\"network-{$ethName}-tx-rate\">0</span><span class=\"second\">/s</span></div>
                     </div>
                 </div>",
