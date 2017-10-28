@@ -332,6 +332,10 @@ class Api
 
     public static function getSysLoadAvg()
     {
+        if (self::isWin()) {
+            return I18n::_('Not support on Windows');
+        }
+
         $avg = \sys_getloadavg();
 
         $avg[0] = '<span class="small-group"><span class="item-name">' . I18n::_('1 min:') . "</span> {$avg[0]}</span>";
@@ -339,11 +343,6 @@ class Api
         $avg[2] = '<span class="small-group"><span class="item-name">' . I18n::_('15 min:') . "</span> {$avg[2]}</span>";
 
         return \implode('', $avg);
-    }
-
-    public static function getHumanSysLoadAvg()
-    {
-        $avg = \sys_getloadavg();
     }
 
     public static function getMemoryUsage($key)
