@@ -10,7 +10,7 @@ PHP X-Prober
 - Browser support: IE9/Chrome/FireFox/Edge
 
 ## Description
-> This is a prober programe for PHP environment. It can show your server information and readable easily.
+> This is a prober programe for PHP environment. It can show your server information and readable easily. And most important is IT'S LIKE iPhone X!
 
 ## Compile and Usage
 - Check and config ./src/Config/Config.php
