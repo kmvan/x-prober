@@ -21,6 +21,9 @@
     "System load": {
         "zh-CN": "系统负载"
     },
+    "Not support on Windows": {
+        "zh-CN": "Windows 系统尚未支持该功能"
+    },
     "CPU usage": {
         "zh-CN": "CPU 使用率"
     },
