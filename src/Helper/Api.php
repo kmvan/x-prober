@@ -176,7 +176,7 @@ class Api
             $ini = \ini_get($id);
         }
 
-        if ( ! \is_numeric($ini)) {
+        if ( ! \is_numeric($ini) && '' !== (string) $ini) {
             return $ini;
         }
 
