@@ -6,26 +6,19 @@ include __DIR__ . '/vendor/autoload.php';
 
 class Build
 {
-    const BASE_DIR       = __DIR__ . '/src/';
-    const DIST_FILE_PATH = __DIR__ . '/dist/prober.php';
-    const DEBUG          = false;
+    const BASE_DIR          = __DIR__ . '/src/';
+    const COMPILE_FILE_PATH = __DIR__ . '/dist/prober.php';
 
     public function __construct()
     {
         $code = '';
 
-        foreach ($this->yieldFiles(self::BASE_DIR) as $file) {
-            if (\is_dir($file) || false === \strpos($file, '.php')) {
+        foreach ($this->yieldFiles(self::BASE_DIR) as $filePath) {
+            if (\is_dir($filePath) || false === \strpos($filePath, '.php')) {
                 continue;
             }
 
-            if (self::DEBUG === true) {
-                $content = \file_get_contents($file);
-            } else {
-                $content = \php_strip_whitespace($file);
-            }
-
-            $content = \substr($content, 5);
+            $content = $this->getCodeViaFilePath($filePath);
             $code .= $content;
         }
 
@@ -36,12 +29,56 @@ class Build
         ));
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
+        $code = \preg_replace("/(\r|\n)+/", "\n", $code);
+        $code = \str_replace(array(
+            "<?php\n",
+            "?>\n",
+            "\n<?php",
+        ), array(
+            '<?php ',
+            '?> ',
+            '<?php',
+        ), $code);
 
         if (true === $this->writeFile($code)) {
             echo 'Done!';
         } else {
             echo 'Failed.';
         }
+    }
+
+    private function getCodeViaFilePath(string $filePath): string
+    {
+        $code = '';
+
+        if (true === $this->isDev()) {
+            $code = \file_get_contents($filePath);
+        } else {
+            $code     = \php_strip_whitespace($filePath);
+            $lines    = \explode("\n", $code);
+            $lineCode = array();
+
+            foreach ($lines as $line) {
+                $lineStr = \trim($line);
+
+                if ($lineStr) {
+                    $lineCode[] = $lineStr;
+                }
+            }
+
+            $code = \implode("\n", $lineCode);
+        }
+
+        $code = \trim($code, "\n");
+
+        return $code ? \substr($code, 5) : $code;
+    }
+
+    private function isDev(): bool
+    {
+        global $argv;
+
+        return \in_array('dev', $argv);
     }
 
     private function preDefine(array $code): string
@@ -63,7 +100,7 @@ EOT;
 
     private function getDebugCode(): string
     {
-        $debug = self::DEBUG ? 'true' : 'false';
+        $debug = $this->isDev() ? 'true' : 'false';
 
         return <<<EOT
 \define('DEBUG', {$debug});
@@ -143,14 +180,14 @@ EOT;
                     continue;
                 }
 
-                $filepath = "{$dir}/{$file}";
+                $filePath = "{$dir}/{$file}";
 
-                if (\is_dir($filepath)) {
-                    foreach (self::yieldFiles($filepath) as $yieldFilepath) {
+                if (\is_dir($filePath)) {
+                    foreach (self::yieldFiles($filePath) as $yieldFilepath) {
                         yield $yieldFilepath;
                     }
                 } else {
-                    yield $filepath;
+                    yield $filePath;
                 }
             }
 
@@ -162,13 +199,13 @@ EOT;
 
     private function writeFile(string $data): bool
     {
-        $dir = \dirname(self::DIST_FILE_PATH);
+        $dir = \dirname(self::COMPILE_FILE_PATH);
 
         if ( ! \is_dir($dir)) {
             \mkdir($dir, 0755);
         }
 
-        return (bool) \file_put_contents(self::DIST_FILE_PATH, $data);
+        return (bool) \file_put_contents(self::COMPILE_FILE_PATH, $data);
     }
 }
 
