@@ -1,6 +1,10 @@
-﻿﻿﻿﻿﻿﻿﻿# Changelog
+﻿﻿﻿﻿﻿﻿# Changelog
 
 All Notable changes to `x-prober` will be documented in this file
+
+## 1.1.1 - 2017-11-10
+### Fixed
+- Fixed errors in PHP5.3
 
 ## 1.1.0 - 2017-11-09
 ### Added

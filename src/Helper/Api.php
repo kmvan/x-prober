@@ -101,11 +101,13 @@ class Api
         }
 
         $content = \file_get_contents($filePath);
-        $cores   = \mb_substr_count($content, 'cache size');
+        $cores   = \substr_count($content, 'cache size');
 
         $lines     = \explode("\n", $content);
-        $modelName = \trim(\explode(':', $lines[4])[1]);
-        $cacheSize = \trim(\explode(':', $lines[8])[1]);
+        $modelName = \explode(':', $lines[4]);
+        $modelName = \trim($modelName[1]);
+        $cacheSize = \explode(':', $lines[8]);
+        $cacheSize = \trim($cacheSize[1]);
 
         return "{$cores} x {$modelName} / " . \sprintf(I18n::_('%s cache'), $cacheSize);
     }
@@ -386,11 +388,15 @@ class Api
 
         switch ($key) {
             case 'MemRealUsage':
-                if ( ! isset($memInfo['MemAvailable']) || ! isset($memInfo['MemTotal'])) {
-                    return 0;
+                $memAvailable = 0;
+
+                if (isset($memInfo['MemAvailable'])) {
+                    $memAvailable = $memInfo['MemAvailable'];
+                } elseif (isset($memInfo['MemFree'])) {
+                    $memAvailable = $memInfo['MemFree'];
                 }
 
-                return $memInfo['MemTotal'] - $memInfo['MemAvailable'];
+                return $memInfo['MemTotal'] - $memAvailable;
             case 'SwapRealUsage':
                 if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) {
                     return 0;
