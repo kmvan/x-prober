@@ -40,7 +40,7 @@ class PhpInfo
         $items = array(
             array(
                 'label'   => $this->_('PHP info detail'),
-                'content' => Helper::getBtn($this->_('Click to check'), '?action=phpInfo'),
+                'content' => '👆 ' . Helper::getBtn($this->_('Click to check'), '?action=phpInfo'),
             ),
             array(
                 'label'   => $this->_('Version'),
