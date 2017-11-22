@@ -134,6 +134,40 @@
     "Database": {
         "zh-CN": "数据库"
     },
+    // Server Benchmark
+    "Server Benchmark": {
+        "zh-CN": "服务器性能跑分"
+    },
+    "Benchmark": {
+        "zh-CN": "跑分"
+    },
+    "Hight is better.": {
+        "zh-CN": "越高越好"
+    },
+    "Error, click to retry.": {
+        "zh-CN": "错误，点击重试"
+    },
+    "Loading...": {
+        "zh-CN": "加载中……"
+    },
+    "My server": {
+        "zh-CN": "我的服务器"
+    },
+    "Click to test": {
+        "zh-CN": "点击测试"
+    },
+    "Aliyun/ECS/PHP7": {
+        "zh-CN": "阿里云/ECS/PHP7"
+    },
+    "Vultr/PHP7": {
+        "zh-CN": "Vultr/PHP7"
+    },
+    "AnyNode/HDD/PHP7": {
+        "zh-CN": "AnyNode/HDD/PHP7"
+    },
+    "Aliyun/Int/PHP5": {
+        "zh-CN": "阿里云/国际版/PHP5"
+    },
     // My information
     "My information": {
         "zh-CN": "我的信息"

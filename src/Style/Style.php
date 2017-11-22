@@ -179,6 +179,7 @@ h1{
 }
 
 fieldset{
+    position: relative;
     border: 5px solid #eee;
     border-radius: .5rem;
     padding: 0;
@@ -193,6 +194,14 @@ fieldset{
         border-radius: 5rem;
         color: #fff;
         margin: 0 auto;
+    }
+    p{
+        margin: 0 0 1rem;
+    }
+    .description{
+        margin: 0;
+        padding-left: 1rem;
+        font-style: italic;
     }
 </style>
         <?php
