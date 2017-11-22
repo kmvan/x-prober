@@ -4,7 +4,7 @@ namespace InnStudio\Prober;
 
 include __DIR__ . '/vendor/autoload.php';
 
-class Build
+class Compiler
 {
     const BASE_DIR          = __DIR__ . '/src/';
     const COMPILE_FILE_PATH = __DIR__ . '/dist/prober.php';
@@ -202,11 +202,11 @@ EOT;
         $dir = \dirname(self::COMPILE_FILE_PATH);
 
         if ( ! \is_dir($dir)) {
-            \mkdir($dir, 0755);
+            \mkdir($dir, 0755, true);
         }
 
         return (bool) \file_put_contents(self::COMPILE_FILE_PATH, $data);
     }
 }
 
-new Build();
+new Compiler();
