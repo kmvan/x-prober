@@ -111,8 +111,16 @@ class ServerBenchmark
                 'content' => 3091,
             ),
             array(
+                'label'   => I18n::_('Tencent/PHP7'),
+                'content' => 3055,
+            ),
+            array(
                 'label'   => '<a href="https://billing.anynode.net/aff.php?aff=511"  target="_blank">' . I18n::_('AnyNode/HDD/PHP7') . '</a>',
                 'content' => 2641,
+            ),
+            array(
+                'label'   => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>',
+                'content' => 2420,
             ),
             array(
                 'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/Int/PHP5') . '</a>',

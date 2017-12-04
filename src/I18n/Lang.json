@@ -168,6 +168,9 @@
     "Aliyun/Int/PHP5": {
         "zh-CN": "阿里云/国际版/PHP5"
     },
+    "Tencent/PHP7": {
+        "zh-CN": "腾讯云/PHP7"
+    },
     // My information
     "My information": {
         "zh-CN": "我的信息"
