@@ -141,8 +141,8 @@
     "Benchmark": {
         "zh-CN": "跑分"
     },
-    "Hight is better.": {
-        "zh-CN": "越高越好"
+    "💡 Hight is better.": {
+        "zh-CN": "💡 分数越高越好。"
     },
     "Error, click to retry.": {
         "zh-CN": "错误，点击重试"

@@ -29,7 +29,7 @@ class ServerBenchmark
     public function display()
     {
         ?>
-<p class="description"><?= I18n::_('Hight is better.'); ?></p>
+<p class="description"><?= I18n::_('💡 Hight is better.'); ?></p>
 <div class="row">
     <?php echo $this->getContent(); ?>
 </div>
