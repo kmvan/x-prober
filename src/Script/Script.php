@@ -155,6 +155,10 @@ class Script
     var lastNetworkStats = {};
 
     function fillNetworkStats(data) {
+        if (typeof data.networkStats !== 'object') {
+            return;
+        }
+
         var keys = Object.keys(data.networkStats);
 
         if (keys.length === 0) {

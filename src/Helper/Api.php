@@ -18,6 +18,38 @@ class Api
         return \filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) === $action;
     }
 
+    public static function getWinCpuUsage()
+    {
+        $cpus = array();
+
+        // com
+        if (\class_exists('\COM')) {
+            $wmi    = new \COM('Winmgmts://');
+            $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
+
+            $cpus = array();
+
+            foreach ($server as $cpu) {
+                $total += (int) $cpu->loadpercentage;
+            }
+
+            $total        = (int) $total / \count($server);
+            $cpus['idle'] = 100 - $total;
+            $cpus['user'] = $total;
+            // exec
+        } else {
+            \exec('wmic cpu get LoadPercentage', $p);
+
+            if (isset($p[1])) {
+                $percent      = (int) $p[1];
+                $cpus['idle'] = 100 - $percent;
+                $cpus['user'] = $percent;
+            }
+        }
+
+        return $cpus;
+    }
+
     public static function getNetworkStats()
     {
         $filePath = '/proc/net/dev';
@@ -280,6 +312,12 @@ class Api
             return $cpu;
         }
 
+        if (self::isWin()) {
+            $cpu = self::getWinCpuUsage();
+
+            return $cpu;
+        }
+
         $filePath = ('/proc/stat');
 
         if ( ! \is_readable($filePath)) {
@@ -352,7 +390,7 @@ class Api
         $key = \ucfirst($key);
 
         if (self::isWin()) {
-            return array();
+            return 0;
         }
 
         static $memInfo = null;
@@ -361,9 +399,9 @@ class Api
             $memInfoFile = '/proc/meminfo';
 
             if ( ! \is_readable($memInfoFile)) {
-                $memInfo = array();
+                $memInfo = 0;
 
-                return array();
+                return 0;
             }
 
             $memInfo = \file_get_contents($memInfoFile);

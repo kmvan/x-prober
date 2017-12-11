@@ -12,8 +12,8 @@ class NetworkStats
 
     public function __construct()
     {
-        Events::on('style', array($this, 'filterStyle'));
-        Events::patch('mods', array($this, 'filter'), 100);
+        Helper::isWin() || Events::on('style', array($this, 'filterStyle'));
+        Helper::isWin() || Events::patch('mods', array($this, 'filter'), 100);
     }
 
     public function filter($mods)
@@ -52,6 +52,11 @@ class NetworkStats
     private function getContent()
     {
         $items = array();
+        $stats = Helper::getNetworkStats();
+
+        if ( ! \is_array($stats)) {
+            return '<div>' . Helper::getNetworkStats() . '</div>';
+        }
 
         foreach (Helper::getNetworkStats() as $ethName => $item) {
             $rxHuman = Helper::formatBytes($item['rx']);
