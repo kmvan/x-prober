@@ -11,6 +11,8 @@ class Compiler
 
     public function __construct()
     {
+        echo "Compile starting...\n";
+
         $code = '';
 
         foreach ($this->yieldFiles(self::BASE_DIR) as $filePath) {
@@ -30,18 +32,9 @@ class Compiler
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
         $code = \preg_replace("/(\r|\n)+/", "\n", $code);
-        $code = \str_replace(array(
-            "<?php\n",
-            "?>\n",
-            "\n<?php",
-        ), array(
-            '<?php ',
-            '?> ',
-            '<?php',
-        ), $code);
 
         if (true === $this->writeFile($code)) {
-            echo 'Done!';
+            echo 'Compiled!';
         } else {
             echo 'Failed.';
         }
@@ -50,6 +43,8 @@ class Compiler
     private function getCodeViaFilePath(string $filePath): string
     {
         $code = '';
+
+        echo "Packing `{$filePath}...";
 
         if (true === $this->isDev()) {
             $code = \file_get_contents($filePath);
@@ -70,6 +65,8 @@ class Compiler
         }
 
         $code = \trim($code, "\n");
+
+        echo "OK\n";
 
         return $code ? \substr($code, 5) : $code;
     }
