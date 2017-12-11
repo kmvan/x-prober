@@ -1,6 +1,15 @@
-﻿﻿﻿﻿﻿# Changelog
+﻿﻿﻿﻿# Changelog
 
 All Notable changes to `x-prober` will be documented in this file
+
+
+## 1.3.0 - 2017-12-11
+### Added
+- Add CPU usage on Windows OS
+- Add Tencent and Vultr server benchmark results
+- Add Emoji tip for server benchmark
+- Optimize nav style
+- Fix error on Windows OS
 
 ## 1.2.0 - 2017-11-22
 ### Added
