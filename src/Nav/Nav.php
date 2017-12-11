@@ -42,6 +42,7 @@ class Nav
     .nav a:active{
         background: #f8f8f8;
         color: #333;
+        text-decoration: none;
     }
 
 .nav .long-title{
