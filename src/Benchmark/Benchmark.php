@@ -23,8 +23,6 @@ class Benchmark
 
     private function getPointsByTime($time)
     {
-        \error_log($time);
-
         return \pow(10, 3) - (int) ($time * \pow(10, 3));
     }
 
