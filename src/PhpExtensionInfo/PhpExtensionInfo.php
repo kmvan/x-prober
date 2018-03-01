@@ -28,11 +28,11 @@ class PhpExtensionInfo
 
     public function display()
     {
-        ?>
+        echo <<<HTML
 <div class="row">
-    <?php echo $this->getContent(); ?>
+    {$this->getContent()}
 </div>
-        <?php
+HTML;
     }
 
     private function getContent()
@@ -70,14 +70,14 @@ class PhpExtensionInfo
             $title = isset($item['title']) ? "title=\"{$item['title']}\"" : '';
             $col   = isset($item['col']) ? $item['col'] : '1-3';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
-            $content .= <<<EOT
+            $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$title} {$id}>{$item['content']}</div>
     </div> 
 </div>
-EOT;
+HTML;
         }
 
         return $content;

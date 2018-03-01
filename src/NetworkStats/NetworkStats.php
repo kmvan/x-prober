@@ -63,16 +63,18 @@ class NetworkStats
             $txHuman = Helper::formatBytes($item['tx']);
             $items[] = array(
                 'label'   => $ethName,
-                'content' => "<div class=\"network-stats-container\">
-                    <div class=\"rx\">
-                        <div><span id=\"network-{$ethName}-rx-total\">{$rxHuman}</span></div>
-                        <div><span class=\"icon\">▼</span><span id=\"network-{$ethName}-rx-rate\">0</span><span class=\"second\">/s</span></div>
-                    </div>
-                    <div class=\"tx\">
-                        <div><span id=\"network-{$ethName}-tx-total\">{$txHuman}</span></div>
-                        <div><span class=\"icon\">▲</span><span id=\"network-{$ethName}-tx-rate\">0</span><span class=\"second\">/s</span></div>
-                    </div>
-                </div>",
+                'content' => <<<HTML
+<div class="network-stats-container">
+    <div class="rx">
+        <div><span id="network-{$ethName}-rx-total">{$rxHuman}</span></div>
+        <div><span class="icon">▼</span><span id="network-{$ethName}-rx-rate">0</span><span class="second">/s</span></div>
+    </div>
+    <div class="tx">
+        <div><span id="network-{$ethName}-tx-total">{$txHuman}</span></div>
+        <div><span class="icon">▲</span><span id="network-{$ethName}-tx-rate">0</span><span class="second">/s</span></div>
+    </div>
+</div>
+HTML
             );
         }
 
@@ -82,14 +84,14 @@ class NetworkStats
             $title = isset($item['title']) ? "title=\"{$item['title']}\"" : '';
             $col   = isset($item['col']) ? $item['col'] : '1-1';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
-            $content .= <<<EOT
+            $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$title} {$id}>{$item['content']}</div>
     </div> 
 </div>
-EOT;
+HTML;
         }
 
         return $content;

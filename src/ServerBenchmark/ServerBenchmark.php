@@ -28,12 +28,13 @@ class ServerBenchmark
 
     public function display()
     {
-        ?>
-<p class="description"><?= I18n::_('💡 Hight is better.'); ?></p>
+        $lang = I18n::_('💡 Hight is better.');
+        echo <<<HTML
+<p class="description">{$lang}</p>
 <div class="row">
-    <?php echo $this->getContent(); ?>
+    {$this->getContent()}
 </div>
-        <?php
+HTML;
     }
 
     public function filterJs()
@@ -135,14 +136,16 @@ class ServerBenchmark
             $col   = isset($item['col']) ? $item['col'] : '1-3';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
 
-            echo <<<EOT
+            $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$id} {$title}>{$item['content']}</div>
     </div> 
 </div>
-EOT;
+HTML;
         }
+
+        return $content;
     }
 }

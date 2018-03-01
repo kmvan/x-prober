@@ -36,7 +36,7 @@ class Api
             $total        = (int) $total / \count($server);
             $cpus['idle'] = 100 - $total;
             $cpus['user'] = $total;
-            // exec
+        // exec
         } else {
             \exec('wmic cpu get LoadPercentage', $p);
 
@@ -83,7 +83,9 @@ class Api
 
     public static function getBtn($tx, $url)
     {
-        return '<a href="' . $url . '" target="_blank" class="btn">' . $tx . '</a>';
+        return <<<HTML
+<a href="{$url}" target="_blank" class="btn">{$tx}</a>
+HTML;
     }
 
     public static function getDiskTotalSpace($human = false)
@@ -110,7 +112,11 @@ class Api
         static $space = null;
 
         if (null === $space) {
-            $space = \disk_free_space('/');
+            try {
+                $space = \disk_free_space('/');
+            } catch (\Exception $e) {
+                $space = 0;
+            }
         }
 
         if ( ! $space) {
@@ -215,9 +221,13 @@ class Api
         }
 
         if (1 === (int) $ini) {
-            return '<span class="ini-ok">&check;</span>';
+            return <<<HTML
+<span class="ini-ok">&check;</span>
+HTML;
         } elseif (0 === (int) $ini) {
-            return '<span class="ini-error">&times;</span>';
+            return <<<HTML
+<span class="ini-error">&times;</span>
+HTML;
         }
 
         return $ini;
@@ -357,7 +367,10 @@ class Api
         $html = '';
 
         foreach ($cpu as $k => $v) {
-            $html .= '<span class="small-group"><span class="item-name">' . $k . '</span> <span class="item-value">' . $v . '</span></span>';
+            $html .= <<<HTML
+<span class="small-group"><span class="item-name">{$k}</span> 
+<span class="item-value">{$v}</span></span>
+HTML;
         }
 
         return $html;
@@ -376,11 +389,29 @@ class Api
             return I18n::_('Not support on Windows');
         }
 
-        $avg = \sys_getloadavg();
+        $avg     = \sys_getloadavg();
+        $langMin = function ($n) {
+            return \sprintf(I18n::_('%d min:'), $n);
+        };
 
-        $avg[0] = '<span class="small-group"><span class="item-name">' . I18n::_('1 min:') . "</span> {$avg[0]}</span>";
-        $avg[1] = '<span class="small-group"><span class="item-name">' . I18n::_('5 min:') . "</span> {$avg[1]}</span>";
-        $avg[2] = '<span class="small-group"><span class="item-name">' . I18n::_('15 min:') . "</span> {$avg[2]}</span>";
+        $avg[0] = <<<HTML
+<span class="small-group">
+    <span class="item-name">{$langMin(1)}</span>
+    {$avg[0]}
+</span>
+HTML;
+        $avg[1] = <<<HTML
+<span class="small-group">
+    <span class="item-name">{$langMin(5)}</span>
+    {$avg[1]}
+</span>
+HTML;
+        $avg[2] = <<<HTML
+<span class="small-group">
+    <span class="item-name">{$langMin(15)}</span>
+    {$avg[2]}
+</span>
+HTML;
 
         return \implode('', $avg);
     }

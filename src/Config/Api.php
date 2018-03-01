@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Config;
 
 class Api
 {
-    public static $APP_VERSION   = '1.3.0';
+    public static $APP_VERSION   = '1.3.1';
     public static $APP_NAME      = 'X Prober';
     public static $APP_URL       = 'https://github.com/kmvan/x-prober';
     public static $AUTHOR_URL    = 'https://inn-studio.com/prober';
