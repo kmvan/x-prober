@@ -14,6 +14,9 @@
     "Found update! {APP_NAME} has new version v{APP_NEW_VERSION}": {
         "zh-CN": "发现更新！{APP_NAME} 有新版本：v{APP_NEW_VERSION}"
     },
+    "Unavailable": {
+        "zh-CN": "不可用"
+    },
     // server status
     "Server status": {
         "zh-CN": "服务器状态"
