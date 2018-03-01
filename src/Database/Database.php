@@ -97,14 +97,14 @@ class Database
             $col   = isset($item['col']) ? $item['col'] : '1-3';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
 
-            echo <<<EOT
+            echo <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$id} {$title}>{$item['content']}</div>
     </div> 
 </div>
-EOT;
+HTML;
         }
     }
 }

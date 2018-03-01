@@ -1,7 +1,11 @@
-﻿﻿﻿﻿# Changelog
+﻿﻿# Changelog
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.3.1 - 2018-03-01
+### Fixed
+- Fixed disk display error in some OS
+- Fixed translation
 
 ## 1.3.0 - 2017-12-11
 ### Added

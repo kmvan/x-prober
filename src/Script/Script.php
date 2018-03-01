@@ -15,7 +15,7 @@ class Script
 
     public function filter()
     {
-        ?>
+        echo <<<HTML
 <script>
 (function () {
     var xhr = new XMLHttpRequest();
@@ -186,6 +186,6 @@ class Script
     request();
 })();
 </script>
-        <?php
+HTML;
     }
 }

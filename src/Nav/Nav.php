@@ -16,7 +16,7 @@ class Nav
 
     public function filterStyle()
     {
-        ?>
+        echo <<<HTML
 <style>
 .nav {
     position: fixed;
@@ -63,12 +63,12 @@ class Nav
     }
 }
 </style>
-        <?php
+HTML;
     }
 
     public function filterScript()
     {
-        ?>
+        echo <<<HTML
 <script>
 (function(){
 var fieldsets = document.querySelectorAll('fieldset');
@@ -92,6 +92,6 @@ for(var i = 0; i < fieldsets.length; i++) {
 document.body.appendChild(nav);
 })()
 </script>
-        <?php
+HTML;
     }
 }

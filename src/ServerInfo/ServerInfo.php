@@ -45,21 +45,19 @@ class ServerInfo
         $hunamUsed  = Helper::formatBytes(Helper::getDiskTotalSpace() - Helper::getDiskFreeSpace());
         $hunamTotal = Helper::getDiskTotalSpace(true);
 
-        return <<<EOT
+        return <<<HTML
 <div class="progress-container">
     <div class="percent" id="diskUsagePercent">{$percent}%</div>
     <div class="number">
         <span id="diskUsage">
-            {$hunamUsed}
-            /
-            {$hunamTotal}
+            {$hunamUsed} / {$hunamTotal}
         </span>
     </div>
     <div class="progress" id="diskUsageProgress">
         <div id="diskUsageProgressValue" class="progress-value" style="width: {$percent}%"></div>
     </div>
 </div>
-EOT;
+HTML;
     }
 
     private function getContent()
@@ -121,14 +119,14 @@ EOT;
             $col   = isset($item['col']) ? $item['col'] : '1-3';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
 
-            echo <<<EOT
+            echo <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$id} {$title}>{$item['content']}</div>
     </div> 
 </div>
-EOT;
+HTML;
         }
     }
 

@@ -1,4 +1,4 @@
-﻿﻿[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)
+﻿[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)
 
 # 😎 x-prober
 > This is a prober program for PHP environment. It can show your server information and readable easily. And most important is IT'S LIKE iPhone X!
@@ -21,7 +21,8 @@
 ## Compile and Usage
 - Star and clone.
 - Check the config ./src/Config/Api.php
-- Compile: php ./compile.php dev
+- Compile development: php ./compile.php dev
+- Compile production: php ./compile.php
 - Access ./dist/prober.php
 - Enjoy
 

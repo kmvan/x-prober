@@ -35,7 +35,7 @@ class MyInfo
     {
         $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
 
-        return <<<EOT
+        return <<<HTML
 <div class="form-group">
     <div class="group-label">{$this->_('My IP')}</div>
     <div class="group-content">{$this->getClientIp()}</div>
@@ -44,7 +44,7 @@ class MyInfo
     <div class="group-label">{$this->_('My UA')}</div>
     <div class="group-content">{$ua}</div>
 </div> 
-EOT;
+HTML;
     }
 
     private function getClientIp()
