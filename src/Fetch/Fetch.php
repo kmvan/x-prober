@@ -2,6 +2,7 @@
 
 namespace InnStudio\Prober\Fetch;
 
+use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
 
 class Fetch
@@ -9,6 +10,7 @@ class Fetch
     public function __construct()
     {
         if (Helper::isAction('fetch')) {
+            Events::emit('fetch');
             $this->outputItems();
         }
     }
