@@ -53,7 +53,7 @@ class Database
             array(
                 'title'   => 'mysqli_get_client_version',
                 'label'   => I18n::_('MySQLi client'),
-                'content' => Helper::getIni(0, true) . ' ' . \mysqli_get_client_version(),
+                'content' => \function_exists('\mysqli_get_client_version') ? Helper::getIni(0, true) . ' ' . \mysqli_get_client_version() : Helper::getIni(0, false),
             ),
             array(
                 'label'   => I18n::_('Mongo'),
