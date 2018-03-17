@@ -22,6 +22,7 @@ class ComposerStaticInit471ef08757a219bf0761f9aef0df94e9
 
     public static $classMap = array (
         'InnStudio\\Prober\\Awesome\\Awesome' => __DIR__ . '/../..' . '/src/Awesome/Awesome.php',
+        'InnStudio\\Prober\\Benchmark\\Benchmark' => __DIR__ . '/../..' . '/src/Benchmark/Benchmark.php',
         'InnStudio\\Prober\\Config\\Api' => __DIR__ . '/../..' . '/src/Config/Api.php',
         'InnStudio\\Prober\\Database\\Database' => __DIR__ . '/../..' . '/src/Database/Database.php',
         'InnStudio\\Prober\\Entry\\Entry' => __DIR__ . '/../..' . '/src/Entry/Entry.php',
@@ -37,9 +38,11 @@ class ComposerStaticInit471ef08757a219bf0761f9aef0df94e9
         'InnStudio\\Prober\\PhpInfoDetail\\PhpInfoDetail' => __DIR__ . '/../..' . '/src/PhpInfoDetail/PhpInfoDetail.php',
         'InnStudio\\Prober\\PhpInfo\\PhpInfo' => __DIR__ . '/../..' . '/src/PhpInfo/PhpInfo.php',
         'InnStudio\\Prober\\Script\\Script' => __DIR__ . '/../..' . '/src/Script/Script.php',
+        'InnStudio\\Prober\\ServerBenchmark\\ServerBenchmark' => __DIR__ . '/../..' . '/src/ServerBenchmark/ServerBenchmark.php',
         'InnStudio\\Prober\\ServerInfo\\ServerInfo' => __DIR__ . '/../..' . '/src/ServerInfo/ServerInfo.php',
         'InnStudio\\Prober\\ServerStatus\\ServerStatus' => __DIR__ . '/../..' . '/src/ServerStatus/ServerStatus.php',
         'InnStudio\\Prober\\Style\\Style' => __DIR__ . '/../..' . '/src/Style/Style.php',
+        'InnStudio\\Prober\\Timezone\\Timezone' => __DIR__ . '/../..' . '/src/Timezone/Timezone.php',
         'InnStudio\\Prober\\Updater\\Updater' => __DIR__ . '/../..' . '/src/Updater/Updater.php',
     );
 

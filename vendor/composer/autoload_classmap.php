@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'InnStudio\\Prober\\Awesome\\Awesome' => $baseDir . '/src/Awesome/Awesome.php',
+    'InnStudio\\Prober\\Benchmark\\Benchmark' => $baseDir . '/src/Benchmark/Benchmark.php',
     'InnStudio\\Prober\\Config\\Api' => $baseDir . '/src/Config/Api.php',
     'InnStudio\\Prober\\Database\\Database' => $baseDir . '/src/Database/Database.php',
     'InnStudio\\Prober\\Entry\\Entry' => $baseDir . '/src/Entry/Entry.php',
@@ -22,8 +23,10 @@ return array(
     'InnStudio\\Prober\\PhpInfoDetail\\PhpInfoDetail' => $baseDir . '/src/PhpInfoDetail/PhpInfoDetail.php',
     'InnStudio\\Prober\\PhpInfo\\PhpInfo' => $baseDir . '/src/PhpInfo/PhpInfo.php',
     'InnStudio\\Prober\\Script\\Script' => $baseDir . '/src/Script/Script.php',
+    'InnStudio\\Prober\\ServerBenchmark\\ServerBenchmark' => $baseDir . '/src/ServerBenchmark/ServerBenchmark.php',
     'InnStudio\\Prober\\ServerInfo\\ServerInfo' => $baseDir . '/src/ServerInfo/ServerInfo.php',
     'InnStudio\\Prober\\ServerStatus\\ServerStatus' => $baseDir . '/src/ServerStatus/ServerStatus.php',
     'InnStudio\\Prober\\Style\\Style' => $baseDir . '/src/Style/Style.php',
+    'InnStudio\\Prober\\Timezone\\Timezone' => $baseDir . '/src/Timezone/Timezone.php',
     'InnStudio\\Prober\\Updater\\Updater' => $baseDir . '/src/Updater/Updater.php',
 );
