@@ -150,6 +150,9 @@
     "Error, click to retry.": {
         "zh-CN": "错误，点击重试"
     },
+    "Please wait %d seconds": {
+        "zh-CN": "请等待 %d 秒"
+    },
     "Loading...": {
         "zh-CN": "加载中……"
     },

@@ -4,9 +4,12 @@ namespace InnStudio\Prober\Benchmark;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\I18n\Api as I18n;
 
 class Benchmark
 {
+    private $EXPIRED = 300;
+
     public function __construct()
     {
         Events::on('init', array($this, 'filter'));
@@ -19,6 +22,47 @@ class Benchmark
         }
 
         $this->display();
+    }
+
+    private function getTmpRecorderPath()
+    {
+        return \sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
+    }
+
+    private function saveTmpRecorder()
+    {
+        return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(array(
+            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
+        )));
+    }
+
+    private function getRemainingSeconds()
+    {
+        $path = $this->getTmpRecorderPath();
+
+        if ( ! \is_readable($path)) {
+            return 0;
+        }
+
+        $data = (string) \file_get_contents($this->getTmpRecorderPath());
+
+        if ( ! $data) {
+            return 0;
+        }
+
+        $data = \json_decode($data, true);
+
+        if ( ! $data) {
+            return 0;
+        }
+
+        $expired = isset($data['expired']) ? (int) $data['expired'] : 0;
+
+        if ( ! $expired) {
+            return 0;
+        }
+
+        return $expired > (int) $_SERVER['REQUEST_TIME'] ? $expired - (int) $_SERVER['REQUEST_TIME'] : 0;
     }
 
     private function getPointsByTime($time)
@@ -80,7 +124,7 @@ class Benchmark
         $start = \microtime(true);
 
         for ($i = 0; $i < $count; ++$i) {
-            $filePath = "{$tmpDir}/innStudioIoBenchmark-{$i}";
+            $filePath = "{$tmpDir}/innStudioIoBenchmark:{$i}";
             \file_put_contents($filePath, $filePath);
             \unlink($filePath);
         }
@@ -100,6 +144,17 @@ class Benchmark
 
     private function display()
     {
+        $remainingSeconds = $this->getRemainingSeconds();
+
+        if ($remainingSeconds) {
+            Helper::dieJson(array(
+                'code' => -1,
+                'msg'  => \sprintf(I18n::_('Please wait %d seconds'), $remainingSeconds),
+            ));
+        }
+
+        $this->saveTmpRecorder();
+
         \set_time_limit(0);
 
         Helper::dieJson(array(

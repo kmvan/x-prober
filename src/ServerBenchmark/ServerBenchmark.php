@@ -73,8 +73,10 @@ HTML;
                 }
 
                 el.innerHTML = '✔️ ' + points.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            } else if (res && res.code) {
+                el.innerHTML = '⏳ ' + res.msg;
             } else {
-                el.innerHTML = errTx;
+                el.innerHTML = res;
             }
         } else {
             el.innerHTML = errTx;
