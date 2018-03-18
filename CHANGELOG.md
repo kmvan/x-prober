@@ -1,12 +1,15 @@
-﻿# Changelog
+# Changelog
 
 All Notable changes to `x-prober` will be documented in this file
+
+## 1.3.3 - 2018-03-18
+### Fixed
+- Fix benchmark unlimited bug
 
 ## 1.3.2 - 2018-03-17
 ### Fixed
 - Fixed Apache2.2 timezone error
 - Fixed database error in PHP5.3
-
 
 ## 1.3.1 - 2018-03-01
 ### Fixed
