@@ -2,6 +2,15 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.4.0 - 2018-06-13
+### Add
+- Add auto-update
+- Add RamNode VPS benchmark points
+### Fixed
+- Fix disk space checker override error
+### Optimization
+- Optimize header title style
+
 ## 1.3.3 - 2018-03-18
 ### Fixed
 - Fix benchmark unlimited bug
