@@ -109,6 +109,10 @@ HTML;
                 'content' => 3182,
             ),
             array(
+                'label'   => '<a href="https://clientarea.ramnode.com/aff.php?aff=4143" target="_blank">' . I18n::_('RamNode/PHP7') . '</a>',
+                'content' => 3131,
+            ),
+            array(
                 'label'   => '<a href="https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1" target="_blank">' . I18n::_('Linode/PHP7') . '</a>',
                 'content' => 3091,
             ),
