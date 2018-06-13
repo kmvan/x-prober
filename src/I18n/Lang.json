@@ -11,11 +11,27 @@
     "X Prober": {
         "zh-CN": "X 探针"
     },
-    "Found update! {APP_NAME} has new version v{APP_NEW_VERSION}": {
-        "zh-CN": "发现更新！{APP_NAME} 有新版本：v{APP_NEW_VERSION}"
+    "{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}": {
+        "zh-CN": "{APP_NAME}发现更新！版本 {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}"
     },
     "Unavailable": {
         "zh-CN": "不可用"
+    },
+    // update
+    "File can not update.": {
+        "zh-CN": "文件无法被更新。"
+    },
+    "Update file not found.": {
+        "zh-CN": "未发现更新文件。"
+    },
+    "Update success...": {
+        "zh-CN": "更新成功..."
+    },
+    "Update error.": {
+        "zh-CN": "更新出错。"
+    },
+    "Updating...": {
+        "zh-CN": "更新中..."
     },
     // server status
     "Server status": {
