@@ -43,7 +43,6 @@ HTML;
 <script>
 (function(){
     var el = document.getElementById('benchmark-btn');
-    console.log(el)
     var errTx = '❌ <?php echo I18n::_('Error, click to retry'); ?>';
 
     if (!el) {
