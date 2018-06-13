@@ -142,12 +142,12 @@ h1{
     line-height: 1.5rem;
     margin: 0 auto 1rem;
 }
-    h1 a{
+    h1 *{
         display: block;
         color: #fff;
         padding: 0 0 10px;
     }
-    h1 a:hover{
+    h1 *:hover{
         color: #fff;
     }
 .form-group{
