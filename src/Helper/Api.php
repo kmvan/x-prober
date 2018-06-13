@@ -93,7 +93,15 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            $space = \disk_total_space('/');
+            $dir = self::isWin() ? 'C:' : '/';
+            
+            if (!is_readable($dir)) {
+                $space = 0;
+
+                return 0;
+            }
+
+            $space = \disk_total_space($dir);
         }
 
         if ( ! $space) {
