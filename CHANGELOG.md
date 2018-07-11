@@ -2,6 +2,17 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.5.0 - 2018-07-11
+### Add
+- Add swap memory dynamic display
+- Add bandwagon HOST benchmark
+- Add more extension checker
+### Fixed
+- Fix update version error
+### Optimization
+- Optimize progress high value style
+- Optimize link style
+
 ## 1.4.0 - 2018-06-13
 ### Add
 - Add auto-update
