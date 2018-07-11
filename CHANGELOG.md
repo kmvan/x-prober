@@ -2,6 +2,10 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.5.1 - 2018-07-11
+### Fixed
+- Fix title JS error
+
 ## 1.5.0 - 2018-07-11
 ### Add
 - Add swap memory dynamic display
