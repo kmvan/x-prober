@@ -23,7 +23,7 @@ class Api
         $cpus = array();
 
         // com
-        if (\class_exists('\COM')) {
+        if (\class_exists('\\COM')) {
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
 
