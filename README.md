@@ -21,8 +21,8 @@
 ## Compile and Usage
 - Star and clone.
 - Check the config ./src/Config/Api.php
-- Compile development: php ./compile.php dev
-- Compile production: php ./compile.php
+- Compile development: `$ php ./compile.php dev`
+- Compile production: `$ php ./compile.php`
 - Access ./dist/prober.php
 - Enjoy
 
