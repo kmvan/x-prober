@@ -823,6 +823,7 @@ msg = '❌ ' + res.msg;
 } else {
 msg = '❌ ' + res;
 }
+var title = document.querySelector('h1');
 title.innerHTML = '<div>' + msg + '</div>';
 } else {
 title.innerHTML = '❌ {$this->_('Update error')}';
