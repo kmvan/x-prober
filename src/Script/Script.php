@@ -97,6 +97,7 @@ class Script
                 fillCpuUsage(data);
                 fillSysLoadAvg(data);
                 fillMemRealUsage(data);
+                fillSwapRealUsage(data);
                 fillServerInfo(data);
                 fillNetworkStats(data);
             }
@@ -135,16 +136,18 @@ class Script
         value.style.width = percent + '%';
         setColor(progress, percent);
         I('memRealUsagePercent').innerHTML = percent + '%';
+        I('memRealUsage').innerHTML = data.memRealUsage.number;
     }
 
     function fillSwapRealUsage(data) {
         var progress = I('swapRealUsageProgress');
-        var value = I('swapUsageProgressValue');
+        var value = I('swapRealUsageProgressValue');
         var percent = data.swapRealUsage.percent;
 
         value.style.width = percent + '%';
         setColor(progress, percent);
         I('swapRealUsagePercent').innerHTML = percent + '%';
+        I('swapRealUsage').innerHTML = data.swapRealUsage.number
     }
 
     function fillServerInfo(data) {
