@@ -86,7 +86,7 @@ class Style
     background: #f07746;
   }
   .progress.high .progress-value{
-    background: #a80000;
+    background: #ef2d2d;
   }
 </style>
         <?php
