@@ -28,11 +28,11 @@ class ServerInfo
 
     public function display()
     {
-        ?>    
+        echo <<<HTML
 <div class="row">
-    <?php echo $this->getContent(); ?>
+    {$this->getContent()}
 </div>
-        <?php
+HTML;
     }
 
     private function getDiskInfo()
@@ -119,7 +119,7 @@ HTML;
             $col   = isset($item['col']) ? $item['col'] : '1-3';
             $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
 
-            echo <<<HTML
+            $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
@@ -128,6 +128,8 @@ HTML;
 </div>
 HTML;
         }
+
+        return $content;
     }
 
     private function _($str)
