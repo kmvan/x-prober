@@ -145,7 +145,7 @@ function onLoadCheckUpdate() {
                 return;
             }
             
-            if (versionCompare(version, versionInfo[0]) === -1) {
+            if (versionCompare('{$version}', versionInfo[0]) === -1) {
                 var lang = '✨ {$this->_('{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}')}';
                 lang = lang.replace('{APP_NAME}', '{$this->_(Config::$APP_NAME)}');
                 lang = lang.replace('{APP_OLD_VERSION}', '{$version}');
@@ -154,7 +154,6 @@ function onLoadCheckUpdate() {
                 var updateLink = document.createElement('a');
                 updateLink.addEventListener('click', update);
                 updateLink.innerHTML = lang;
-                updateLink.href = 'javascript:;';
 
                 var title = document.querySelector('h1');
                 title.innerHTML = '';
