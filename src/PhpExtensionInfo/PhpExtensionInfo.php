@@ -40,29 +40,66 @@ HTML;
         $items = array(
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Memcache'),
-                'content' => Helper::getIni(0, \extension_loaded('memcache') && \class_exists('\Memcache')),
+                'content' => Helper::getIni(0, \extension_loaded('memcache') && \class_exists('\\Memcache')),
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Memcached'),
-                'content' => Helper::getIni(0, \extension_loaded('memcached') && \class_exists('\Memcached')),
+                'content' => Helper::getIni(0, \extension_loaded('memcached') && \class_exists('\\Memcached')),
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Redis'),
-                'content' => Helper::getIni(0, \extension_loaded('redis') && \class_exists('\Redis')),
+                'content' => Helper::getIni(0, \extension_loaded('redis') && \class_exists('\\Redis')),
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Opcache'),
-                'content' => Helper::getIni(0, \function_exists('\opcache_get_configuration')),
+                'content' => Helper::getIni(0, \function_exists('\\opcache_get_configuration')),
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s enabled'), 'Opcache'),
                 'content' => Helper::getIni(0, $this->isOpcEnabled()),
             ),
             array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Swoole'),
+                'content' => Helper::getIni(0, \extension_loaded('Swoole') && \class_exists('\\Swoole')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Imagick'),
+                'content' => Helper::getIni(0, \extension_loaded('Imagick') && \class_exists('\\Imagick')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Exif'),
+                'content' => Helper::getIni(0, \extension_loaded('Exif') && \function_exists('\\exif_imagetype')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Sockets'),
+                'content' => Helper::getIni(0, \extension_loaded('Sockets') && \function_exists('\\socket_accept')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'MySQLi'),
+                'content' => Helper::getIni(0, \extension_loaded('MySQLi') && \class_exists('\\mysqli')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Zip'),
+                'content' => Helper::getIni(0, \extension_loaded('Zip') && \class_exists('\\ZipArchive')),
+            ),
+            array(
+                'label'   => \sprintf(I18n::_('%s extension'), 'Multibyte String'),
+                'content' => Helper::getIni(0, \extension_loaded('mbstring') && \function_exists('\\mb_substr')),
+            ),
+            array(
                 'label'   => I18n::_('Zend Optimizer'),
                 'content' => Helper::getIni(0, \function_exists('zend_optimizer_version')),
             ),
         );
+
+        // order
+        $itemsOrder = array();
+
+        foreach ($items as $item) {
+            $itemsOrder[] = $item['label'];
+        }
+
+        \array_multisort($items, $itemsOrder);
 
         $content = '';
 
@@ -85,11 +122,11 @@ HTML;
 
     private function isOpcEnabled()
     {
-        $isOpcEnabled = \function_exists('\opcache_get_configuration');
+        $isOpcEnabled = \function_exists('\\opcache_get_configuration');
 
         if ($isOpcEnabled) {
             $isOpcEnabled = \opcache_get_configuration();
-            $isOpcEnabled = isset($isOpcEnabled['directives']['opcache.enable']) && $isOpcEnabled['directives']['opcache.enable'] === true;
+            $isOpcEnabled = isset($isOpcEnabled['directives']['opcache.enable']) && true === $isOpcEnabled['directives']['opcache.enable'];
         }
 
         return $isOpcEnabled;
