@@ -125,6 +125,10 @@ HTML;
                 'content' => 2641,
             ),
             array(
+                'label'   => '<a href="https://bandwagonhost.com/aff.php?aff=34116"  target="_blank">' . I18n::_('BandwagonHOST/SSD/PHP7') . '</a>',
+                'content' => 2531,
+            ),
+            array(
                 'label'   => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>',
                 'content' => 2420,
             ),
