@@ -117,6 +117,7 @@ body{
     line-height: 2rem;
 }
 a{
+    cursor: pointer;
     color: #333;
     text-decoration: none;
 }
@@ -170,9 +171,12 @@ h1{
     text-align: left;
     font-weight: normal;
 }
+.group-label a{
+    display: block;
+}
 .group-content a{
     line-height: 1;
-    display: inline-block;
+    display: block;
 }
     
 @media (min-width:768px){
