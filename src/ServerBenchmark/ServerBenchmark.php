@@ -97,10 +97,6 @@ HTML;
     {
         $items = array(
             array(
-                'label'   => I18n::_('My server'),
-                'content' => '<a id="benchmark-btn" href="javascript:;">👆 ' . I18n::_('Click to test') . '</a>',
-            ),
-            array(
                 'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/ECS/PHP7') . '</a>',
                 'content' => 3302,
             ),
@@ -136,6 +132,29 @@ HTML;
                 'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/Int/PHP5') . '</a>',
                 'content' => -7686,
             ),
+        );
+
+        // order
+        $itemsOrder = array();
+
+        foreach ($items as $item) {
+            $itemsOrder[] = (int) $item['content'];
+        }
+
+        \array_multisort(
+            $items,
+            \SORT_DESC,
+            \SORT_NUMERIC,
+            $itemsOrder,
+            \SORT_DESC,
+            \SORT_NUMERIC
+        );
+        \array_unshift(
+            $items,
+            array(
+                'label'   => I18n::_('My server'),
+                'content' => '<a id="benchmark-btn">👆 ' . I18n::_('Click to test') . '</a>',
+            )
         );
 
         $content = '';
