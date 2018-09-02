@@ -37,6 +37,7 @@
 
 ## Contributors
 - Km.Van https://inn-studio.com
+- Jack Cherng https://github.com/jfcherng
 - More...
 - 
 ## Note
