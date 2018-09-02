@@ -149,6 +149,9 @@
     "%s enabled": {
         "zh-CN": "%s 启用"
     },
+    "Loaded extensions": {
+        "zh-CN": "加载的 PHP 扩展"
+    },
     // Database
     "Database": {
         "zh-CN": "数据库"

@@ -90,6 +90,12 @@ HTML;
                 'label'   => I18n::_('Zend Optimizer'),
                 'content' => Helper::getIni(0, \function_exists('zend_optimizer_version')),
             ),
+            array(
+                'col'     => '1-1',
+                'label'   => I18n::_('Loaded extensions'),
+                'title'   => 'loaded_extensions',
+                'content' => \implode(', ', $this->getLoadedExtensions(true)) ?: '-',
+            ),
         );
 
         // order
@@ -112,12 +118,23 @@ HTML;
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$title} {$id}>{$item['content']}</div>
-    </div> 
+    </div>
 </div>
 HTML;
         }
 
         return $content;
+    }
+
+    private function getLoadedExtensions($sorted = false)
+    {
+        $exts = \get_loaded_extensions();
+
+        if ($sorted) {
+            \sort($exts);
+        }
+
+        return $exts;
     }
 
     private function isOpcEnabled()
