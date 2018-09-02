@@ -2,6 +2,13 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.6.0 - 2018-09-03
+### Add
+- Add new row of PHP loaded extensions (contribute by @jfcherng)
+- Add zh-TW language (contribute by @jfcherng)
+### Fix
+- Fix Swoole extension checker condition error (contribute by @jfcherng)
+
 ## 1.5.2 - 2018-09-02
 ### Add
 - Add VPSSERVER server benchmark
