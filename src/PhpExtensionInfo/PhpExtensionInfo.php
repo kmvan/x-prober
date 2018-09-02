@@ -60,7 +60,7 @@ HTML;
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Swoole'),
-                'content' => Helper::getIni(0, \extension_loaded('Swoole') && \class_exists('\\Swoole')),
+                'content' => Helper::getIni(0, \extension_loaded('Swoole') && \function_exists('\\swoole_version')),
             ),
             array(
                 'label'   => \sprintf(I18n::_('%s extension'), 'Imagick'),
