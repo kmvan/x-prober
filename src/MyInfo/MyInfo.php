@@ -39,11 +39,11 @@ class MyInfo
 <div class="form-group">
     <div class="group-label">{$this->_('My IP')}</div>
     <div class="group-content">{$this->getClientIp()}</div>
-</div> 
+</div>
 <div class="form-group">
     <div class="group-label">{$this->_('My UA')}</div>
     <div class="group-content">{$ua}</div>
-</div> 
+</div>
 HTML;
     }
 

@@ -28,7 +28,7 @@ class ServerBenchmark
 
     public function display()
     {
-        $lang = I18n::_('💡 Hight is better.');
+        $lang = I18n::_('💡 Higher is better.');
         echo <<<HTML
 <p class="description">{$lang}</p>
 <div class="row">
@@ -65,7 +65,7 @@ HTML;
         if (this.status >= 200 && this.status < 400) {
             var res = JSON.parse(this.responseText);
             var points = 0;
-            
+
             if (res && res.code === 0) {
                 for (var k in res.data.points) {
                     points += res.data.points[k];
@@ -177,7 +177,7 @@ HTML;
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$id} {$title}>{$item['content']}</div>
-    </div> 
+    </div>
 </div>
 HTML;
         }

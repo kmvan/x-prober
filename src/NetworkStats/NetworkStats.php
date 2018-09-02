@@ -89,7 +89,7 @@ HTML
     <div class="form-group">
         <div class="group-label" {$title}>{$item['label']}</div>
         <div class="group-content" {$title} {$id}>{$item['content']}</div>
-    </div> 
+    </div>
 </div>
 HTML;
         }

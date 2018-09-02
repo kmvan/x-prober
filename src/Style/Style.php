@@ -60,7 +60,7 @@ class Style
 }
 .progress {
     position: relative;
-    display: block; 
+    display: block;
     width: 100%;
     height: 2rem;
     background: #444;
@@ -178,7 +178,7 @@ h1{
     line-height: 1;
     display: block;
 }
-    
+
 @media (min-width:768px){
     .group-label{
         width: 15rem;
