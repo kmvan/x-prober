@@ -2,6 +2,11 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.5.2 - 2018-09-02
+### Add
+- Add VPSSERVER server benchmark
+- Add Amazon server benchmark
+
 ## 1.5.1 - 2018-07-11
 ### Fixed
 - Fix title JS error

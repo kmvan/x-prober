@@ -97,6 +97,14 @@ HTML;
     {
         $items = array(
             array(
+                'label'   => I18n::_('Amazon/EC2/PHP7'),
+                'content' => 3150,
+            ),
+            array(
+                'label'   => '<a href="https://www.vpsserver.com/?affcode=32d56f2dd1b6">' . I18n::_('VPSSERVER/KVM/PHP7') . '</a>',
+                'content' => 3374,
+            ),
+            array(
                 'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/ECS/PHP7') . '</a>',
                 'content' => 3302,
             ),
@@ -122,7 +130,7 @@ HTML;
             ),
             array(
                 'label'   => '<a href="https://bandwagonhost.com/aff.php?aff=34116"  target="_blank">' . I18n::_('BandwagonHOST/SSD/PHP7') . '</a>',
-                'content' => 2531,
+                'content' => 2181,
             ),
             array(
                 'label'   => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>',

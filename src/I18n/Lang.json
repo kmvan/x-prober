@@ -193,6 +193,9 @@
     "Tencent/PHP7": {
         "zh-CN": "腾讯云/PHP7"
     },
+    "Amazon/EC2/PHP7": {
+        "zh-CN": "亚马逊/EC2/PHP7"
+    },
     // My information
     "My information": {
         "zh-CN": "我的信息"

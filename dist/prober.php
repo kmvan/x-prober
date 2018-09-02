@@ -2,141 +2,7 @@
 namespace InnStudio\Prober\PreDefine;
 \define('TIMER', \microtime(true));
 \define('DEBUG', false);
-\define('LANG', 'eyJodHRwczpcL1wvZ2l0aHViLmNvbVwva212YW5cL3gtcHJvYmVyIjp7InpoLUNOIjoiaHR0cDpcL1wvZ2l0aHViLmNvbVwva212YW5cL3gtcHJvYmVyIn0sIklOTiBTVFVESU8iOnsiemgtQ04iOiJJTk4gU1RVRElPIn0sImh0dHBzOlwvXC9pbm4tc3R1ZGlvLmNvbVwvcHJvYmVyIjp7InpoLUNOIjoiaHR0cHM6XC9cL2lubi1zdHVkaW8uY29tXC9wcm9iZXIifSwiWCBQcm9iZXIiOnsiemgtQ04iOiJYIFx1NjNhMlx1OTQ4OCJ9LCJ7QVBQX05BTUV9IGZvdW5kIHVwZGF0ZSEgVmVyc2lvbiB7QVBQX09MRF9WRVJTSU9OfSAmcmFycjsge0FQUF9ORVdfVkVSU0lPTn0iOnsiemgtQ04iOiJ7QVBQX05BTUV9XHU1M2QxXHU3M2IwXHU2NmY0XHU2NWIwXHVmZjAxXHU3MjQ4XHU2NzJjIHtBUFBfT0xEX1ZFUlNJT059ICZyYXJyOyB7QVBQX05FV19WRVJTSU9OfSJ9LCJVbmF2YWlsYWJsZSI6eyJ6aC1DTiI6Ilx1NGUwZFx1NTNlZlx1NzUyOCJ9LCJGaWxlIGNhbiBub3QgdXBkYXRlLiI6eyJ6aC1DTiI6Ilx1NjU4N1x1NGVmNlx1NjVlMFx1NmNkNVx1ODhhYlx1NjZmNFx1NjViMFx1MzAwMiJ9LCJVcGRhdGUgZmlsZSBub3QgZm91bmQuIjp7InpoLUNOIjoiXHU2NzJhXHU1M2QxXHU3M2IwXHU2NmY0XHU2NWIwXHU2NTg3XHU0ZWY2XHUzMDAyIn0sIlVwZGF0ZSBzdWNjZXNzLi4uIjp7InpoLUNOIjoiXHU2NmY0XHU2NWIwXHU2MjEwXHU1MjlmLi4uIn0sIlVwZGF0ZSBlcnJvci4iOnsiemgtQ04iOiJcdTY2ZjRcdTY1YjBcdTUxZmFcdTk1MTlcdTMwMDIifSwiVXBkYXRpbmcuLi4iOnsiemgtQ04iOiJcdTY2ZjRcdTY1YjBcdTRlMmQuLi4ifSwiU2VydmVyIHN0YXR1cyI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NzJiNlx1NjAwMSJ9LCJTeXN0ZW0gbG9hZCI6eyJ6aC1DTiI6Ilx1N2NmYlx1N2VkZlx1OGQxZlx1OGY3ZCJ9LCJOb3Qgc3VwcG9ydCBvbiBXaW5kb3dzIjp7InpoLUNOIjoiV2luZG93cyBcdTdjZmJcdTdlZGZcdTVjMWFcdTY3MmFcdTY1MmZcdTYzMDFcdThiZTVcdTUyOWZcdTgwZmQifSwiQ1BVIHVzYWdlIjp7InpoLUNOIjoiQ1BVIFx1NGY3Zlx1NzUyOFx1NzM4NyJ9LCJSZWFsIG1lbW9yeSB1c2FnZSI6eyJ6aC1DTiI6Ilx1NzcxZlx1NWI5ZVx1NTE4NVx1NWI1OFx1NGY3Zlx1NzUyOCJ9LCJSZWFsIHN3YXAgdXNhZ2UiOnsiemgtQ04iOiJTV0FQIFx1NGY3Zlx1NzUyOCJ9LCJOZXR3b3JrIHN0YXRzIjp7InpoLUNOIjoiXHU2ZDQxXHU5MWNmXHU3ZWRmXHU4YmExIn0sIlNlcnZlciBpbmZvcm1hdGlvbiI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NGZlMVx1NjA2ZiJ9LCJTZXJ2ZXIgdGltZSI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NjVmNlx1OTVmNCJ9LCJTZXJ2ZXIgdXB0aW1lIjp7InpoLUNOIjoiXHU2MzAxXHU3ZWVkXHU4ZmQwXHU4ODRjXHU2NWY2XHU5NWY0In0sIlNlcnZlciBJUCI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OCBJUCJ9LCJTZXJ2ZXIgbmFtZSI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NTQwZCJ9LCJTZXJ2ZXIgc29mdHdhcmUiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdThmNmZcdTRlZjYifSwiQ1BVIG1vZGVsIjp7InpoLUNOIjoiQ1BVIFx1NTc4Ylx1NTNmNyJ9LCJTZXJ2ZXIgT1MiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdTdjZmJcdTdlZGYifSwiU2NyaXB0IHBhdGgiOnsiemgtQ04iOiJcdTgxMWFcdTY3MmNcdThkZWZcdTVmODQifSwiRGlzayB1c2FnZSI6eyJ6aC1DTiI6Ilx1NzhjMVx1NzZkOFx1NGY3Zlx1NzUyOCJ9LCJQSFAgdmVyc2lvbiI6eyJ6aC1DTiI6IlBIUCBcdTcyNDhcdTY3MmMifSwiUEhQIGluZm9ybWF0aW9uIjp7InpoLUNOIjoiUEhQIFx1NGZlMVx1NjA2ZiJ9LCJQSFAgaW5mbyBkZXRhaWwiOnsiemgtQ04iOiJQSFAgXHU4YmU2XHU3ZWM2XHU0ZmUxXHU2MDZmIn0sIkNsaWNrIHRvIGNoZWNrIjp7InpoLUNOIjoiXHU3MGI5XHU1MWZiXHU2N2U1XHU3NzBiIn0sIlZlcnNpb24iOnsiemgtQ04iOiJcdTcyNDhcdTY3MmMifSwiU0FQSSBpbnRlcmZhY2UiOnsiemgtQ04iOiJTQVBJIFx1NjNhNVx1NTNlMyJ9LCJFcnJvciByZXBvcnRpbmciOnsiemgtQ04iOiJcdTk1MTlcdThiZWZcdTYyYTVcdTU0NGEifSwiTWF4IG1lbW9yeSBsaW1pdCI6eyJ6aC1DTiI6Ilx1OGZkMFx1ODg0Y1x1NTE4NVx1NWI1OFx1OTY1MFx1NTIzNiJ9LCJNYXggUE9TVCBzaXplIjp7InpoLUNOIjoiUE9TVCBcdTYzZDBcdTRlYTRcdTk2NTBcdTUyMzYifSwiTWF4IHVwbG9hZCBzaXplIjp7InpoLUNOIjoiXHU0ZTBhXHU0ZjIwXHU2NTg3XHU0ZWY2XHU5NjUwXHU1MjM2In0sIk1heCBpbnB1dCB2YXJpYWJsZXMiOnsiemgtQ04iOiJcdTYzZDBcdTRlYTRcdTg4NjhcdTUzNTVcdTk2NTBcdTUyMzYifSwiTWF4IGV4ZWN1dGlvbiB0aW1lIjp7InpoLUNOIjoiXHU4ZmQwXHU4ODRjXHU4ZDg1XHU2NWY2XHU3OWQyXHU2NTcwIn0sIlRpbWVvdXQgZm9yIHNvY2tldCI6eyJ6aC1DTiI6IlNvY2tldCBcdThkODVcdTY1ZjZcdTc5ZDJcdTY1NzAifSwiRGlzcGxheSBlcnJvcnMiOnsiemgtQ04iOiJcdTY2M2VcdTc5M2FcdTk1MTlcdThiZWYifSwiVHJlYXRtZW50IFVSTHMgZmlsZSI6eyJ6aC1DTiI6Ilx1NjU4N1x1NGVmNlx1OGZkY1x1N2FlZlx1NjI1M1x1NWYwMCJ9LCJTTVRQIHN1cHBvcnQiOnsiemgtQ04iOiJTTVRQIFx1NjUyZlx1NjMwMSJ9LCJEaXNhYmxlZCBmdW5jdGlvbnMiOnsiemgtQ04iOiJcdTc5ODFcdTc1MjhcdTc2ODRcdTUxZmRcdTY1NzAifSwiUEhQIGV4dGVuc2lvbnMiOnsiemgtQ04iOiJQSFAgXHU2MjY5XHU1YzU1In0sIiVzIGV4dGVuc2lvbiI6eyJ6aC1DTiI6IiVzIFx1NjI2OVx1NWM1NSJ9LCIlcyBlbmFibGVkIjp7InpoLUNOIjoiJXMgXHU1NDJmXHU3NTI4In0sIkRhdGFiYXNlIjp7InpoLUNOIjoiXHU2NTcwXHU2MzZlXHU1ZTkzIn0sIlNlcnZlciBCZW5jaG1hcmsiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdTYwMjdcdTgwZmRcdThkZDFcdTUyMDYifSwiQmVuY2htYXJrIjp7InpoLUNOIjoiXHU4ZGQxXHU1MjA2In0sIlx1ZDgzZFx1ZGNhMSBIaWdodCBpcyBiZXR0ZXIuIjp7InpoLUNOIjoiXHVkODNkXHVkY2ExIFx1NTIwNlx1NjU3MFx1OGQ4YVx1OWFkOFx1OGQ4YVx1NTk3ZFx1MzAwMiJ9LCJFcnJvciwgY2xpY2sgdG8gcmV0cnkuIjp7InpoLUNOIjoiXHU5NTE5XHU4YmVmXHVmZjBjXHU3MGI5XHU1MWZiXHU5MWNkXHU4YmQ1In0sIlBsZWFzZSB3YWl0ICVkIHNlY29uZHMiOnsiemgtQ04iOiJcdThiZjdcdTdiNDlcdTVmODUgJWQgXHU3OWQyIn0sIkxvYWRpbmcuLi4iOnsiemgtQ04iOiJcdTUyYTBcdThmN2RcdTRlMmRcdTIwMjZcdTIwMjYifSwiTXkgc2VydmVyIjp7InpoLUNOIjoiXHU2MjExXHU3Njg0XHU2NzBkXHU1MmExXHU1NjY4In0sIkNsaWNrIHRvIHRlc3QiOnsiemgtQ04iOiJcdTcwYjlcdTUxZmJcdTZkNGJcdThiZDUifSwiQWxpeXVuXC9FQ1NcL1BIUDciOnsiemgtQ04iOiJcdTk2M2ZcdTkxY2NcdTRlOTFcL0VDU1wvUEhQNyJ9LCJWdWx0clwvUEhQNyI6eyJ6aC1DTiI6IlZ1bHRyXC9QSFA3In0sIkFueU5vZGVcL0hERFwvUEhQNyI6eyJ6aC1DTiI6IkFueU5vZGVcL0hERFwvUEhQNyJ9LCJBbGl5dW5cL0ludFwvUEhQNSI6eyJ6aC1DTiI6Ilx1OTYzZlx1OTFjY1x1NGU5MVwvXHU1NmZkXHU5NjQ1XHU3MjQ4XC9QSFA1In0sIlRlbmNlbnRcL1BIUDciOnsiemgtQ04iOiJcdTgxN2VcdThiYWZcdTRlOTFcL1BIUDcifSwiTXkgaW5mb3JtYXRpb24iOnsiemgtQ04iOiJcdTYyMTFcdTc2ODRcdTRmZTFcdTYwNmYifSwiTXkgSVAiOnsiemgtQ04iOiJcdTYyMTFcdTc2ODQgSVAifSwiTXkgVUEiOnsiemgtQ04iOiJcdTYyMTFcdTc2ODQgVUEifSwiR2VuZXJhdG9yICVzIjp7InpoLUNOIjoiXHU4YmU1XHU5ODc1XHU5NzYyXHU3NTMxICVzIFx1NzUxZlx1NjIxMCJ9LCJBdXRob3IgJXMiOnsiemgtQ04iOiJcdTRmNWNcdTgwMDVcdTRlM2EgJXMifX0=');
-namespace InnStudio\Prober\Awesome; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\I18n\Api as I18n; class Awesome { private $ID = 'awesome'; private $ZH_CN_URL = 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'; private $DEFAULT_URL = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; public function __construct() { } public function filter() { ?>
-<link rel="stylesheet" href="<?php echo $this->getUrl(); ?>">
-<?php
-} private function getUrl() { switch (I18n::getClientLang()) { case 'zh-CN': return $this->ZH_CN_URL; } return $this->DEFAULT_URL; } }
-namespace InnStudio\Prober\Benchmark; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Benchmark { private $EXPIRED = 300; public function __construct() { Events::on('init', array($this, 'filter')); } public function filter() { if ( ! Helper::isAction('benchmark')) { return; } $this->display(); } private function getTmpRecorderPath() { return \sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer'; } private function saveTmpRecorder() { return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(array( 'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED, ))); } private function getRemainingSeconds() { $path = $this->getTmpRecorderPath(); if ( ! \is_readable($path)) { return 0; } $data = (string) \file_get_contents($this->getTmpRecorderPath()); if ( ! $data) { return 0; } $data = \json_decode($data, true); if ( ! $data) { return 0; } $expired = isset($data['expired']) ? (int) $data['expired'] : 0; if ( ! $expired) { return 0; } return $expired > (int) $_SERVER['REQUEST_TIME'] ? $expired - (int) $_SERVER['REQUEST_TIME'] : 0; } private function getPointsByTime($time) { return \pow(10, 3) - (int) ($time * \pow(10, 3)); } private function getHashPoints() { $data = 'inn-studio.com'; $hash = array('md5', 'sha512', 'sha256', 'crc32'); $count = \pow(10, 5); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { foreach ($hash as $v) { \hash($v, $data); } } return $this->getPointsByTime(\microtime(true) - $start); } private function getIntLoopPoints() { $j = 0; $count = \pow(10, 7); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { ++$j; } return $this->getPointsByTime(\microtime(true) - $start); } private function getFloatLoopPoints() { $j = 1 / 3; $count = \pow(10, 7); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { ++$j; } return $this->getPointsByTime(\microtime(true) - $start); } private function getIoLoopPoints() { $tmpDir = \sys_get_temp_dir(); if ( ! \is_writable($tmpDir)) { return 0; } $count = \pow(10, 4); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { $filePath = "{$tmpDir}/innStudioIoBenchmark:{$i}"; \file_put_contents($filePath, $filePath); \unlink($filePath); } return $this->getPointsByTime(\microtime(true) - $start); } private function getPoints() { return array( 'hash' => $this->getHashPoints(), 'intLoop' => $this->getIntLoopPoints(), 'floatLoop' => $this->getFloatLoopPoints(), 'ioLoop' => $this->getIoLoopPoints(), ); } private function display() { $remainingSeconds = $this->getRemainingSeconds(); if ($remainingSeconds) { Helper::dieJson(array( 'code' => -1, 'msg' => \sprintf(I18n::_('Please wait %d seconds'), $remainingSeconds), )); } $this->saveTmpRecorder(); \set_time_limit(0); Helper::dieJson(array( 'code' => 0, 'data' => array( 'points' => $this->getPoints(), ), )); } }
-namespace InnStudio\Prober\Config; class Api { public static $APP_VERSION = '1.5.1'; public static $APP_NAME = 'X Prober'; public static $APP_URL = 'https://github.com/kmvan/x-prober'; public static $AUTHOR_URL = 'https://inn-studio.com/prober'; public static $UPDATE_PHP_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php'; public static $AUTHOR_NAME = 'INN STUDIO'; public static $CHANGELOG_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md'; }
-namespace InnStudio\Prober\Database; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Database { private $ID = 'database'; public function __construct() { Events::patch('mods', array($this, 'filter'), 500); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Database'), 'tinyTitle' => I18n::_('DB'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
-<div class="row">
-<?php echo $this->getContent(); ?>
-</div>
-<?php
-} private function getContent() { $sqlite3Version = \class_exists('\\SQLite3') ? \SQLite3::version() : false; $sqlite3Version = $sqlite3Version ? Helper::getIni(0, true) . ' ' . $sqlite3Version['versionString'] : Helper::getIni(0, false); $items = array( array( 'label' => I18n::_('SQLite3'), 'content' => $sqlite3Version, ), array( 'title' => 'sqlite_libversion', 'label' => I18n::_('SQLite'), 'content' => \function_exists('\\sqlite_libversion') ? Helper::getIni(0, true) . ' ' . \sqlite_libversion() : Helper::getIni(0, false), ), array( 'title' => 'mysqli_get_client_version', 'label' => I18n::_('MySQLi client'), 'content' => \function_exists('\\mysqli_get_client_version') ? Helper::getIni(0, true) . ' ' . \mysqli_get_client_version() : Helper::getIni(0, false), ), array( 'label' => I18n::_('Mongo'), 'content' => \class_exists('\\Mongo') ? \MongoClient::VERSION : Helper::getIni(0, false), ), array( 'label' => I18n::_('MongoDB'), 'content' => \class_exists('\\MongoDB') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('PostgreSQL'), 'content' => \function_exists('\\pg_connect') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('Paradox'), 'content' => \function_exists('\\px_new') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'title' => I18n::_('Microsoft SQL Server Driver for PHP'), 'label' => I18n::_('MS SQL'), 'content' => \function_exists('\\sqlsrv_server_info') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('File Pro'), 'content' => \function_exists('\\filepro') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('MaxDB client'), 'content' => \function_exists('\\maxdb_get_client_version') ? \maxdb_get_client_version() : Helper::getIni(0, false), ), array( 'label' => I18n::_('MaxDB server'), 'content' => \function_exists('\\maxdb_get_server_version') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; echo <<<HTML
-<div class="poi-g-lg-{$col}">
-<div class="form-group">
-<div class="group-label" {$title}>{$item['label']}</div>
-<div class="group-content" {$id} {$title}>{$item['content']}</div>
-</div>
-</div>
-HTML;
-} } }
-namespace InnStudio\Prober\Entry; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Entry { public function __construct() { Events::emit('init'); if (DEBUG === true) { $this->display(); } else { \ob_start(); $this->display(); $content = \ob_get_contents(); \ob_end_clean(); echo Helper::htmlMinify($content); } } private function displayContent() { $mods = Events::apply('mods', array()); if ( ! $mods) { return; } foreach ($mods as $id => $mod) { ?>
-<fieldset id="<?php echo $id; ?>">
-<legend >
-<span class="long-title"><?php echo $mod['title']; ?></span>
-<span class="tiny-title"><?php echo $mod['tinyTitle']; ?></span>
-</legend>
-<?php \call_user_func($mod['display']); ?>
-</fieldset>
-<?php
-} } private function display() { ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></title>
-<?php Events::emit('style'); ?>
-</head>
-<body>
-<div class="poi-container">
-<h1><a href="<?php echo I18n::_(Config::$APP_URL); ?>" target="_blank"><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></a></h1>
-<?php $this->displayContent(); ?>
-</div>
-<?php Events::emit('footer'); ?>
-<?php Events::emit('script'); ?>
-</body>
-</html>
-<?php
-} }
-namespace InnStudio\Prober\Events; class Api { private static $filters = array(); private static $actions = array(); private static $PRIORITY_ID = 'priority'; private static $CALLBACK_ID = 'callback'; public static function on($name, $callback, $priority = 10) { if ( ! isset(self::$actions[$name])) { self::$actions[$name] = array(); } self::$actions[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function emit() { $args = \func_get_args(); $name = $args[0]; unset($args[0]); $actions = isset(self::$actions[$name]) ? self::$actions[$name] : false; if ( ! $actions) { return; } $sortArr = array(); foreach ($actions as $k => $action) { $sortArr[$k] = $action[self::$PRIORITY_ID]; } \array_multisort($sortArr, $actions); foreach ($actions as $action) { \call_user_func_array($action[self::$CALLBACK_ID], $args); } } public static function patch($name, $callback, $priority = 10) { if ( ! isset(self::$filters[$name])) { self::$filters[$name] = array(); } self::$filters[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function apply() { $args = \func_get_args(); $name = $args[0]; $return = $args[1]; unset($args[0],$args[1]); $filters = isset(self::$filters[$name]) ? self::$filters[$name] : false; if ( ! $filters) { return $return; } $sortArr = array(); foreach ($filters as $k => $filter) { $sortArr[$k] = $filter[self::$PRIORITY_ID]; } \array_multisort($sortArr, $filters); foreach ($filters as $filter) { $return = \call_user_func_array($filter[self::$CALLBACK_ID], array($return, $args)); } return $return; } }
-namespace InnStudio\Prober\Fetch; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; class Fetch { public function __construct() { if (Helper::isAction('fetch')) { Events::emit('fetch'); $this->outputItems(); } } private function getServerUtcTime() { return \gmdate('Y/m/d H:i:s'); } private function getServerLocalTime() { return \date('Y/m/d H:i:s'); } private function getItems() { return array( 'utcTime' => $this->getServerUtcTime(), 'serverInfo' => array( 'time' => Helper::getServerTime(), 'upTime' => Helper::getServerUpTime(), ), 'cpuUsage' => Helper::getHumanCpuUsage(), 'sysLoadAvg' => Helper::getSysLoadAvg(), 'memTotal' => Helper::getMemoryUsage('MemTotal'), 'memRealUsage' => array( 'percent' => Helper::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('MemRealUsage') / Helper::getMemoryUsage('MemTotal') * 100) : 0, 'number' => Helper::getHumamMemUsage('MemRealUsage') . ' / ' . Helper::getHumamMemUsage('MemTotal'), 'current' => Helper::getMemoryUsage('MemRealUsage'), ), 'swapRealUsage' => array( 'percent' => Helper::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('SwapRealUsage') / Helper::getMemoryUsage('SwapTotal') * 100) : 0, 'number' => Helper::getHumamMemUsage('SwapRealUsage') . ' / ' . Helper::getHumamMemUsage('SwapTotal'), 'current' => Helper::getMemoryUsage('SwapRealUsage'), ), 'networkStats' => Helper::getNetworkStats(), ); } private function outputItems() { Helper::dieJson(array( 'code' => 0, 'data' => $this->getItems(), )); } }
-namespace InnStudio\Prober\Footer; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Footer { private $ID = 'footer'; public function __construct() { Events::on('footer', array($this, 'filter')); Events::on('style', array($this, 'filterStyle')); } public function filter() { $timer = (\microtime(true) - TIMER) * 1000; ?>
-<a href="<?php echo I18n::_(Config::$APP_URL); ?>" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-<div class="poi-container">
-<div class="footer">
-<?php echo \sprintf(I18n::_('Generator %s'), '<a href="' . I18n::_(Config::$APP_URL) . '" target="_blank">' . I18n::_(Config::$APP_NAME) . '</a>'); ?>
-/
-<?php echo \sprintf(I18n::_('Author %s'), '<a href="' . I18n::_(Config::$AUTHOR_URL) . '" target="_blank">' . I18n::_(Config::$AUTHOR_NAME) . '</a>'); ?>
-/
-<?php echo Helper::formatBytes(\memory_get_usage()); ?>
-/
-<?php echo \sprintf('%01.2f', $timer); ?>ms
-</div>
-</div>
-<?php
-} public function filterStyle() { ?>
-<style>
-.footer{
-text-align: center;
-margin: 2rem auto 5rem;
-padding: .5rem 1rem;
-}
-@media (min-width: 768px) {
-.footer{
-background: #333;
-color: #ccc;
-width: 60%;
-border-radius: 10rem;
-}
-.footer a{
-color: #fff;
-}
-}
-.footer a:hover{
-text-decoration: underline;
-}
-</style>
-<?php
-} }
-namespace InnStudio\Prober\Helper; use InnStudio\Prober\I18n\Api as I18n; class Api { public static function dieJson($data) { \header('Content-Type: application/json'); die(\json_encode($data)); } public static function isAction($action) { return \filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) === $action; } public static function getWinCpuUsage() { $cpus = array(); if (\class_exists('\\COM')) { $wmi = new \COM('Winmgmts://'); $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor'); $cpus = array(); foreach ($server as $cpu) { $total += (int) $cpu->loadpercentage; } $total = (int) $total / \count($server); $cpus['idle'] = 100 - $total; $cpus['user'] = $total; } else { \exec('wmic cpu get LoadPercentage', $p); if (isset($p[1])) { $percent = (int) $p[1]; $cpus['idle'] = 100 - $percent; $cpus['user'] = $percent; } } return $cpus; } public static function getNetworkStats() { $filePath = '/proc/net/dev'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } static $eths = null; if (null !== $eths) { return $eths; } $lines = \file($filePath); unset($lines[0], $lines[1]); $eths = array(); foreach ($lines as $line) { $line = \preg_replace('/\s+/', ' ', \trim($line)); $lineArr = \explode(':', $line); $numberArr = \explode(' ', \trim($lineArr[1])); $eths[$lineArr[0]] = array( 'rx' => (int) $numberArr[0], 'tx' => (int) $numberArr[8], ); } return $eths; } public static function getBtn($tx, $url) { return <<<HTML
-<a href="{$url}" target="_blank" class="btn">{$tx}</a>
-HTML;
-} public static function getDiskTotalSpace($human = false) { static $space = null; if (null === $space) { $dir = self::isWin() ? 'C:' : '/'; if (!is_readable($dir)) { $space = 0; return 0; } $space = \disk_total_space($dir); } if ( ! $space) { return 0; } if (true === $human) { return self::formatBytes($space); } return $space; } public static function getDiskFreeSpace($human = false) { static $space = null; if (null === $space) { try { $space = \disk_free_space('/'); } catch (\Exception $e) { $space = 0; } } if ( ! $space) { return 0; } if (true === $human) { return self::formatBytes($space); } return $space; } public static function getCpuModel() { $filePath = '/proc/cpuinfo'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } $content = \file_get_contents($filePath); $cores = \substr_count($content, 'cache size'); $lines = \explode("\n", $content); $modelName = \explode(':', $lines[4]); $modelName = \trim($modelName[1]); $cacheSize = \explode(':', $lines[8]); $cacheSize = \trim($cacheSize[1]); return "{$cores} x {$modelName} / " . \sprintf(I18n::_('%s cache'), $cacheSize); } public static function getServerTime() { return \date('Y-m-d H:i:s'); } public static function getServerUpTime() { $filePath = '/proc/uptime'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } $str = \file_get_contents($filePath); $num = (float) $str; $secs = \fmod($num, 60); $num = (int) ($num / 60); $mins = $num % 60; $num = (int) ($num / 60); $hours = $num % 24; $num = (int) ($num / 24); $days = $num; return \sprintf( I18n::_('%1$dd %2$dh %3$dm %4$ds'), $days, $hours, $mins, $secs ); } public static function getErrNameByCode($code) { switch ($code) { case E_ERROR: return 'E_ERROR'; case E_WARNING: return 'E_WARNING'; case E_PARSE: return 'E_PARSE'; case E_NOTICE: return 'E_NOTICE'; case E_CORE_ERROR: return 'E_CORE_ERROR'; case E_CORE_WARNING: return 'E_CORE_WARNING'; case E_COMPILE_ERROR: return 'E_COMPILE_ERROR'; case E_COMPILE_WARNING: return 'E_COMPILE_WARNING'; case E_USER_ERROR: return 'E_USER_ERROR'; case E_USER_WARNING: return 'E_USER_WARNING'; case E_USER_NOTICE: return 'E_USER_NOTICE'; case E_STRICT: return 'E_STRICT'; case E_RECOVERABLE_ERROR: return 'E_RECOVERABLE_ERROR'; case E_DEPRECATED: return 'E_DEPRECATED'; case E_USER_DEPRECATED: return 'E_USER_DEPRECATED'; case E_ALL: return 'E_ALL'; } return $code; } public static function getIni($id, $forceSet = null) { if (true === $forceSet) { $ini = 1; } elseif (false === $forceSet) { $ini = 0; } else { $ini = \ini_get($id); } if ( ! \is_numeric($ini) && '' !== (string) $ini) { return $ini; } if (1 === (int) $ini) { return <<<HTML
-<span class="ini-ok">&check;</span>
-HTML;
-} elseif (0 === (int) $ini) { return <<<HTML
-<span class="ini-error">&times;</span>
-HTML;
-} return $ini; } public static function isWin() { return PHP_OS === 'WINNT'; } public static function htmlMinify($buffer) { \preg_match_all('#\<textarea.*\>.*\<\/textarea\>#Uis', $buffer, $foundTxt); \preg_match_all('#\<pre.*\>.*\<\/pre\>#Uis', $buffer, $foundPre); $textareas = array(); foreach (\array_keys($foundTxt[0]) as $item) { $textareas[] = '<textarea>' . $item . '</textarea>'; } $pres = array(); foreach (\array_keys($foundPre[0]) as $item) { $pres[] = '<pre>' . $item . '</pre>'; } $buffer = \str_replace($foundTxt[0], $textareas, $buffer); $buffer = \str_replace($foundPre[0], $pres, $buffer); $search = array( '/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s', ); $replace = array( '>', '<', '\\1', ); $buffer = \preg_replace($search, $replace, $buffer); $textareas = array(); foreach (\array_keys($foundTxt[0]) as $item) { $textareas[] = '<textarea>' . $item . '</textarea>'; } $pres = array(); foreach (\array_keys($foundPre[0]) as $item) { $pres[] = '<pre>' . $item . '</pre>'; } $buffer = \str_replace($textareas, $foundTxt[0], $buffer); $buffer = \str_replace($pres, $foundPre[0], $buffer); return $buffer; } public static function getClientIp() { $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'); foreach ($keys as $key) { if ( ! isset($_SERVER[$key])) { continue; } $ip = \array_filter(\explode(',', $_SERVER[$key])); $ip = \filter_var(\end($ip), FILTER_VALIDATE_IP); if ($ip) { return $ip; } } return ''; } public static function getCpuUsage() { static $cpu = null; if (null !== $cpu) { return $cpu; } if (self::isWin()) { $cpu = self::getWinCpuUsage(); return $cpu; } $filePath = ('/proc/stat'); if ( ! \is_readable($filePath)) { $cpu = array(); return $cpu; } $stat1 = \file($filePath); \sleep(1); $stat2 = \file($filePath); $info1 = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0])); $info2 = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0])); $dif = array(); $dif['user'] = $info2[0] - $info1[0]; $dif['nice'] = $info2[1] - $info1[1]; $dif['sys'] = $info2[2] - $info1[2]; $dif['idle'] = $info2[3] - $info1[3]; $total = \array_sum($dif); $cpu = array(); foreach ($dif as $x => $y) { $cpu[$x] = \round($y / $total * 100, 1); } return $cpu; } public static function getHumanCpuUsageDetail() { $cpu = self::getCpuUsage(); if ( ! $cpu) { return ''; } $html = ''; foreach ($cpu as $k => $v) { $html .= <<<HTML
-<span class="small-group"><span class="item-name">{$k}</span>
-<span class="item-value">{$v}</span></span>
-HTML;
-} return $html; } public static function getHumanCpuUsage() { $cpu = self::getCpuUsage(); return $cpu ?: array(); } public static function getSysLoadAvg() { if (self::isWin()) { return I18n::_('Not support on Windows'); } $avg = \sys_getloadavg(); $langMin = function ($n) { return \sprintf(I18n::_('%d min:'), $n); }; $avg[0] = <<<HTML
-<span class="small-group">
-<span class="item-name">{$langMin(1)}</span>
-{$avg[0]}
-</span>
-HTML;
-$avg[1] = <<<HTML
-<span class="small-group">
-<span class="item-name">{$langMin(5)}</span>
-{$avg[1]}
-</span>
-HTML;
-$avg[2] = <<<HTML
-<span class="small-group">
-<span class="item-name">{$langMin(15)}</span>
-{$avg[2]}
-</span>
-HTML;
-return \implode('', $avg); } public static function getMemoryUsage($key) { $key = \ucfirst($key); if (self::isWin()) { return 0; } static $memInfo = null; if (null === $memInfo) { $memInfoFile = '/proc/meminfo'; if ( ! \is_readable($memInfoFile)) { $memInfo = 0; return 0; } $memInfo = \file_get_contents($memInfoFile); $memInfo = \str_replace(array( ' kB', '  ', ), '', $memInfo); $lines = array(); foreach (\explode("\n", $memInfo) as $line) { if ( ! $line) { continue; } $line = \explode(':', $line); $lines[$line[0]] = (int) $line[1]; } $memInfo = $lines; } switch ($key) { case 'MemRealUsage': $memAvailable = 0; if (isset($memInfo['MemAvailable'])) { $memAvailable = $memInfo['MemAvailable']; } elseif (isset($memInfo['MemFree'])) { $memAvailable = $memInfo['MemFree']; } return $memInfo['MemTotal'] - $memAvailable; case 'SwapRealUsage': if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) { return 0; } return $memInfo['SwapTotal'] - $memInfo['SwapFree'] - $memInfo['SwapCached']; } return isset($memInfo[$key]) ? (int) $memInfo[$key] : 0; } public static function formatBytes($bytes, $precision = 2) { if ( ! $bytes) { return 0; } $base = \log($bytes, 1024); $suffixes = array('', ' K', ' M', ' G', ' T'); return \round(\pow(1024, $base - \floor($base)), $precision) . $suffixes[\floor($base)]; } public static function getHumamMemUsage($key) { return self::formatBytes(self::getMemoryUsage($key) * 1024); } }
-namespace InnStudio\Prober\I18n; class Api { public static function _($str) { static $preDefineLang = null; if (null === $preDefineLang) { $preDefineLang = \json_decode(\base64_decode(LANG), true); } if ( ! isset($preDefineLang[$str])) { return $str; } $lang = $preDefineLang[$str]; $clientLang = self::getClientLang(); return isset($lang[$clientLang]) ? $lang[$clientLang] : $str; } public static function getClientLang() { static $cache = null; if (null !== $cache) { return $cache; } if ( ! isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) { $cache = ''; return $cache; } $client = \explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']); if (isset($client[0])) { $cache = $client[0]; } else { $cache = ''; } return $cache; } }
-namespace InnStudio\Prober\MyInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class MyInfo { private $ID = 'myInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 900); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('My information'), 'tinyTitle' => I18n::_('Mine'), 'display' => array($this, 'display'), ); return $mods; } public function display() { echo $this->getContent(); } public function getContent() { $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : ''; return <<<HTML
-<div class="form-group">
-<div class="group-label">{$this->_('My IP')}</div>
-<div class="group-content">{$this->getClientIp()}</div>
-</div>
-<div class="form-group">
-<div class="group-label">{$this->_('My UA')}</div>
-<div class="group-content">{$ua}</div>
-</div>
-HTML;
-} private function getClientIp() { return Helper::getClientIp(); } private function _($str) { return I18n::_($str); } }
+\define('LANG', 'eyJodHRwczpcL1wvZ2l0aHViLmNvbVwva212YW5cL3gtcHJvYmVyIjp7InpoLUNOIjoiaHR0cDpcL1wvZ2l0aHViLmNvbVwva212YW5cL3gtcHJvYmVyIn0sIklOTiBTVFVESU8iOnsiemgtQ04iOiJJTk4gU1RVRElPIn0sImh0dHBzOlwvXC9pbm4tc3R1ZGlvLmNvbVwvcHJvYmVyIjp7InpoLUNOIjoiaHR0cHM6XC9cL2lubi1zdHVkaW8uY29tXC9wcm9iZXIifSwiWCBQcm9iZXIiOnsiemgtQ04iOiJYIFx1NjNhMlx1OTQ4OCJ9LCJ7QVBQX05BTUV9IGZvdW5kIHVwZGF0ZSEgVmVyc2lvbiB7QVBQX09MRF9WRVJTSU9OfSAmcmFycjsge0FQUF9ORVdfVkVSU0lPTn0iOnsiemgtQ04iOiJ7QVBQX05BTUV9XHU1M2QxXHU3M2IwXHU2NmY0XHU2NWIwXHVmZjAxXHU3MjQ4XHU2NzJjIHtBUFBfT0xEX1ZFUlNJT059ICZyYXJyOyB7QVBQX05FV19WRVJTSU9OfSJ9LCJVbmF2YWlsYWJsZSI6eyJ6aC1DTiI6Ilx1NGUwZFx1NTNlZlx1NzUyOCJ9LCJGaWxlIGNhbiBub3QgdXBkYXRlLiI6eyJ6aC1DTiI6Ilx1NjU4N1x1NGVmNlx1NjVlMFx1NmNkNVx1ODhhYlx1NjZmNFx1NjViMFx1MzAwMiJ9LCJVcGRhdGUgZmlsZSBub3QgZm91bmQuIjp7InpoLUNOIjoiXHU2NzJhXHU1M2QxXHU3M2IwXHU2NmY0XHU2NWIwXHU2NTg3XHU0ZWY2XHUzMDAyIn0sIlVwZGF0ZSBzdWNjZXNzLi4uIjp7InpoLUNOIjoiXHU2NmY0XHU2NWIwXHU2MjEwXHU1MjlmLi4uIn0sIlVwZGF0ZSBlcnJvci4iOnsiemgtQ04iOiJcdTY2ZjRcdTY1YjBcdTUxZmFcdTk1MTlcdTMwMDIifSwiVXBkYXRpbmcuLi4iOnsiemgtQ04iOiJcdTY2ZjRcdTY1YjBcdTRlMmQuLi4ifSwiU2VydmVyIHN0YXR1cyI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NzJiNlx1NjAwMSJ9LCJTeXN0ZW0gbG9hZCI6eyJ6aC1DTiI6Ilx1N2NmYlx1N2VkZlx1OGQxZlx1OGY3ZCJ9LCJOb3Qgc3VwcG9ydCBvbiBXaW5kb3dzIjp7InpoLUNOIjoiV2luZG93cyBcdTdjZmJcdTdlZGZcdTVjMWFcdTY3MmFcdTY1MmZcdTYzMDFcdThiZTVcdTUyOWZcdTgwZmQifSwiQ1BVIHVzYWdlIjp7InpoLUNOIjoiQ1BVIFx1NGY3Zlx1NzUyOFx1NzM4NyJ9LCJSZWFsIG1lbW9yeSB1c2FnZSI6eyJ6aC1DTiI6Ilx1NzcxZlx1NWI5ZVx1NTE4NVx1NWI1OFx1NGY3Zlx1NzUyOCJ9LCJSZWFsIHN3YXAgdXNhZ2UiOnsiemgtQ04iOiJTV0FQIFx1NGY3Zlx1NzUyOCJ9LCJOZXR3b3JrIHN0YXRzIjp7InpoLUNOIjoiXHU2ZDQxXHU5MWNmXHU3ZWRmXHU4YmExIn0sIlNlcnZlciBpbmZvcm1hdGlvbiI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NGZlMVx1NjA2ZiJ9LCJTZXJ2ZXIgdGltZSI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NjVmNlx1OTVmNCJ9LCJTZXJ2ZXIgdXB0aW1lIjp7InpoLUNOIjoiXHU2MzAxXHU3ZWVkXHU4ZmQwXHU4ODRjXHU2NWY2XHU5NWY0In0sIlNlcnZlciBJUCI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OCBJUCJ9LCJTZXJ2ZXIgbmFtZSI6eyJ6aC1DTiI6Ilx1NjcwZFx1NTJhMVx1NTY2OFx1NTQwZCJ9LCJTZXJ2ZXIgc29mdHdhcmUiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdThmNmZcdTRlZjYifSwiQ1BVIG1vZGVsIjp7InpoLUNOIjoiQ1BVIFx1NTc4Ylx1NTNmNyJ9LCJTZXJ2ZXIgT1MiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdTdjZmJcdTdlZGYifSwiU2NyaXB0IHBhdGgiOnsiemgtQ04iOiJcdTgxMWFcdTY3MmNcdThkZWZcdTVmODQifSwiRGlzayB1c2FnZSI6eyJ6aC1DTiI6Ilx1NzhjMVx1NzZkOFx1NGY3Zlx1NzUyOCJ9LCJQSFAgdmVyc2lvbiI6eyJ6aC1DTiI6IlBIUCBcdTcyNDhcdTY3MmMifSwiUEhQIGluZm9ybWF0aW9uIjp7InpoLUNOIjoiUEhQIFx1NGZlMVx1NjA2ZiJ9LCJQSFAgaW5mbyBkZXRhaWwiOnsiemgtQ04iOiJQSFAgXHU4YmU2XHU3ZWM2XHU0ZmUxXHU2MDZmIn0sIkNsaWNrIHRvIGNoZWNrIjp7InpoLUNOIjoiXHU3MGI5XHU1MWZiXHU2N2U1XHU3NzBiIn0sIlZlcnNpb24iOnsiemgtQ04iOiJcdTcyNDhcdTY3MmMifSwiU0FQSSBpbnRlcmZhY2UiOnsiemgtQ04iOiJTQVBJIFx1NjNhNVx1NTNlMyJ9LCJFcnJvciByZXBvcnRpbmciOnsiemgtQ04iOiJcdTk1MTlcdThiZWZcdTYyYTVcdTU0NGEifSwiTWF4IG1lbW9yeSBsaW1pdCI6eyJ6aC1DTiI6Ilx1OGZkMFx1ODg0Y1x1NTE4NVx1NWI1OFx1OTY1MFx1NTIzNiJ9LCJNYXggUE9TVCBzaXplIjp7InpoLUNOIjoiUE9TVCBcdTYzZDBcdTRlYTRcdTk2NTBcdTUyMzYifSwiTWF4IHVwbG9hZCBzaXplIjp7InpoLUNOIjoiXHU0ZTBhXHU0ZjIwXHU2NTg3XHU0ZWY2XHU5NjUwXHU1MjM2In0sIk1heCBpbnB1dCB2YXJpYWJsZXMiOnsiemgtQ04iOiJcdTYzZDBcdTRlYTRcdTg4NjhcdTUzNTVcdTk2NTBcdTUyMzYifSwiTWF4IGV4ZWN1dGlvbiB0aW1lIjp7InpoLUNOIjoiXHU4ZmQwXHU4ODRjXHU4ZDg1XHU2NWY2XHU3OWQyXHU2NTcwIn0sIlRpbWVvdXQgZm9yIHNvY2tldCI6eyJ6aC1DTiI6IlNvY2tldCBcdThkODVcdTY1ZjZcdTc5ZDJcdTY1NzAifSwiRGlzcGxheSBlcnJvcnMiOnsiemgtQ04iOiJcdTY2M2VcdTc5M2FcdTk1MTlcdThiZWYifSwiVHJlYXRtZW50IFVSTHMgZmlsZSI6eyJ6aC1DTiI6Ilx1NjU4N1x1NGVmNlx1OGZkY1x1N2FlZlx1NjI1M1x1NWYwMCJ9LCJTTVRQIHN1cHBvcnQiOnsiemgtQ04iOiJTTVRQIFx1NjUyZlx1NjMwMSJ9LCJEaXNhYmxlZCBmdW5jdGlvbnMiOnsiemgtQ04iOiJcdTc5ODFcdTc1MjhcdTc2ODRcdTUxZmRcdTY1NzAifSwiUEhQIGV4dGVuc2lvbnMiOnsiemgtQ04iOiJQSFAgXHU2MjY5XHU1YzU1In0sIiVzIGV4dGVuc2lvbiI6eyJ6aC1DTiI6IiVzIFx1NjI2OVx1NWM1NSJ9LCIlcyBlbmFibGVkIjp7InpoLUNOIjoiJXMgXHU1NDJmXHU3NTI4In0sIkRhdGFiYXNlIjp7InpoLUNOIjoiXHU2NTcwXHU2MzZlXHU1ZTkzIn0sIlNlcnZlciBCZW5jaG1hcmsiOnsiemgtQ04iOiJcdTY3MGRcdTUyYTFcdTU2NjhcdTYwMjdcdTgwZmRcdThkZDFcdTUyMDYifSwiQmVuY2htYXJrIjp7InpoLUNOIjoiXHU4ZGQxXHU1MjA2In0sIlx1ZDgzZFx1ZGNhMSBIaWdodCBpcyBiZXR0ZXIuIjp7InpoLUNOIjoiXHVkODNkXHVkY2ExIFx1NTIwNlx1NjU3MFx1OGQ4YVx1OWFkOFx1OGQ4YVx1NTk3ZFx1MzAwMiJ9LCJFcnJvciwgY2xpY2sgdG8gcmV0cnkuIjp7InpoLUNOIjoiXHU5NTE5XHU4YmVmXHVmZjBjXHU3MGI5XHU1MWZiXHU5MWNkXHU4YmQ1In0sIlBsZWFzZSB3YWl0ICVkIHNlY29uZHMiOnsiemgtQ04iOiJcdThiZjdcdTdiNDlcdTVmODUgJWQgXHU3OWQyIn0sIkxvYWRpbmcuLi4iOnsiemgtQ04iOiJcdTUyYTBcdThmN2RcdTRlMmRcdTIwMjZcdTIwMjYifSwiTXkgc2VydmVyIjp7InpoLUNOIjoiXHU2MjExXHU3Njg0XHU2NzBkXHU1MmExXHU1NjY4In0sIkNsaWNrIHRvIHRlc3QiOnsiemgtQ04iOiJcdTcwYjlcdTUxZmJcdTZkNGJcdThiZDUifSwiQWxpeXVuXC9FQ1NcL1BIUDciOnsiemgtQ04iOiJcdTk2M2ZcdTkxY2NcdTRlOTFcL0VDU1wvUEhQNyJ9LCJWdWx0clwvUEhQNyI6eyJ6aC1DTiI6IlZ1bHRyXC9QSFA3In0sIkFueU5vZGVcL0hERFwvUEhQNyI6eyJ6aC1DTiI6IkFueU5vZGVcL0hERFwvUEhQNyJ9LCJBbGl5dW5cL0ludFwvUEhQNSI6eyJ6aC1DTiI6Ilx1OTYzZlx1OTFjY1x1NGU5MVwvXHU1NmZkXHU5NjQ1XHU3MjQ4XC9QSFA1In0sIlRlbmNlbnRcL1BIUDciOnsiemgtQ04iOiJcdTgxN2VcdThiYWZcdTRlOTFcL1BIUDcifSwiQW1hem9uXC9FQzJcL1BIUDciOnsiemgtQ04iOiJcdTRlOWFcdTlhNmNcdTkwMGFcL0VDMlwvUEhQNyJ9LCJNeSBpbmZvcm1hdGlvbiI6eyJ6aC1DTiI6Ilx1NjIxMVx1NzY4NFx1NGZlMVx1NjA2ZiJ9LCJNeSBJUCI6eyJ6aC1DTiI6Ilx1NjIxMVx1NzY4NCBJUCJ9LCJNeSBVQSI6eyJ6aC1DTiI6Ilx1NjIxMVx1NzY4NCBVQSJ9LCJHZW5lcmF0b3IgJXMiOnsiemgtQ04iOiJcdThiZTVcdTk4NzVcdTk3NjJcdTc1MzEgJXMgXHU3NTFmXHU2MjEwIn0sIkF1dGhvciAlcyI6eyJ6aC1DTiI6Ilx1NGY1Y1x1ODAwNVx1NGUzYSAlcyJ9fQ==');
 namespace InnStudio\Prober\Nav; use InnStudio\Prober\Events\Api as Events; class Nav { private $ID = 'nav'; public function __construct() { Events::on('script', array($this, 'filterScript')); Events::on('style', array($this, 'filterStyle')); } public function filterStyle() { echo <<<HTML
 <style>
 .nav {
@@ -205,41 +71,6 @@ document.body.appendChild(nav);
 </script>
 HTML;
 } }
-namespace InnStudio\Prober\NetworkStats; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class NetworkStats { private $ID = 'networkStats'; public function __construct() { Helper::isWin() || Events::on('style', array($this, 'filterStyle')); Helper::isWin() || Events::patch('mods', array($this, 'filter'), 100); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Network stats'), 'tinyTitle' => I18n::_('Net'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
-<div class="row">
-<?php echo $this->getContent(); ?>
-</div>
-<?php
-} public function filterStyle() { ?>
-<style>
-.network-stats-container > *{
-float: left;
-width: 50%;
-text-align: center;
-}
-</style>
-<?php
-} private function getContent() { $items = array(); $stats = Helper::getNetworkStats(); if ( ! \is_array($stats)) { return '<div>' . Helper::getNetworkStats() . '</div>'; } foreach (Helper::getNetworkStats() as $ethName => $item) { $rxHuman = Helper::formatBytes($item['rx']); $txHuman = Helper::formatBytes($item['tx']); $items[] = array( 'label' => $ethName, 'content' => <<<HTML
-<div class="network-stats-container">
-<div class="rx">
-<div><span id="network-{$ethName}-rx-total">{$rxHuman}</span></div>
-<div><span class="icon">▼</span><span id="network-{$ethName}-rx-rate">0</span><span class="second">/s</span></div>
-</div>
-<div class="tx">
-<div><span id="network-{$ethName}-tx-total">{$txHuman}</span></div>
-<div><span class="icon">▲</span><span id="network-{$ethName}-tx-rate">0</span><span class="second">/s</span></div>
-</div>
-</div>
-HTML
-); } $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-1'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
-<div class="poi-g-lg-{$col}">
-<div class="form-group">
-<div class="group-label" {$title}>{$item['label']}</div>
-<div class="group-content" {$title} {$id}>{$item['content']}</div>
-</div>
-</div>
-HTML;
-} return $content; } }
 namespace InnStudio\Prober\PhpExtensionInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class PhpExtensionInfo { private $ID = 'phpExtensionInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 400); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('PHP extensions'), 'tinyTitle' => I18n::_('Ext'), 'display' => array($this, 'display'), ); return $mods; } public function display() { echo <<<HTML
 <div class="row">
 {$this->getContent()}
@@ -254,6 +85,84 @@ HTML;
 </div>
 HTML;
 } return $content; } private function isOpcEnabled() { $isOpcEnabled = \function_exists('\\opcache_get_configuration'); if ($isOpcEnabled) { $isOpcEnabled = \opcache_get_configuration(); $isOpcEnabled = isset($isOpcEnabled['directives']['opcache.enable']) && true === $isOpcEnabled['directives']['opcache.enable']; } return $isOpcEnabled; } }
+namespace InnStudio\Prober\Helper; use InnStudio\Prober\I18n\Api as I18n; class Api { public static function dieJson($data) { \header('Content-Type: application/json'); die(\json_encode($data)); } public static function isAction($action) { return \filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) === $action; } public static function getWinCpuUsage() { $cpus = array(); if (\class_exists('\\COM')) { $wmi = new \COM('Winmgmts://'); $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor'); $cpus = array(); foreach ($server as $cpu) { $total += (int) $cpu->loadpercentage; } $total = (int) $total / \count($server); $cpus['idle'] = 100 - $total; $cpus['user'] = $total; } else { \exec('wmic cpu get LoadPercentage', $p); if (isset($p[1])) { $percent = (int) $p[1]; $cpus['idle'] = 100 - $percent; $cpus['user'] = $percent; } } return $cpus; } public static function getNetworkStats() { $filePath = '/proc/net/dev'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } static $eths = null; if (null !== $eths) { return $eths; } $lines = \file($filePath); unset($lines[0], $lines[1]); $eths = array(); foreach ($lines as $line) { $line = \preg_replace('/\s+/', ' ', \trim($line)); $lineArr = \explode(':', $line); $numberArr = \explode(' ', \trim($lineArr[1])); $eths[$lineArr[0]] = array( 'rx' => (int) $numberArr[0], 'tx' => (int) $numberArr[8], ); } return $eths; } public static function getBtn($tx, $url) { return <<<HTML
+<a href="{$url}" target="_blank" class="btn">{$tx}</a>
+HTML;
+} public static function getDiskTotalSpace($human = false) { static $space = null; if (null === $space) { $dir = self::isWin() ? 'C:' : '/'; if (!is_readable($dir)) { $space = 0; return 0; } $space = \disk_total_space($dir); } if ( ! $space) { return 0; } if (true === $human) { return self::formatBytes($space); } return $space; } public static function getDiskFreeSpace($human = false) { static $space = null; if (null === $space) { try { $space = \disk_free_space('/'); } catch (\Exception $e) { $space = 0; } } if ( ! $space) { return 0; } if (true === $human) { return self::formatBytes($space); } return $space; } public static function getCpuModel() { $filePath = '/proc/cpuinfo'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } $content = \file_get_contents($filePath); $cores = \substr_count($content, 'cache size'); $lines = \explode("\n", $content); $modelName = \explode(':', $lines[4]); $modelName = \trim($modelName[1]); $cacheSize = \explode(':', $lines[8]); $cacheSize = \trim($cacheSize[1]); return "{$cores} x {$modelName} / " . \sprintf(I18n::_('%s cache'), $cacheSize); } public static function getServerTime() { return \date('Y-m-d H:i:s'); } public static function getServerUpTime() { $filePath = '/proc/uptime'; if ( ! \is_readable($filePath)) { return I18n::_('Unavailable'); } $str = \file_get_contents($filePath); $num = (float) $str; $secs = \fmod($num, 60); $num = (int) ($num / 60); $mins = $num % 60; $num = (int) ($num / 60); $hours = $num % 24; $num = (int) ($num / 24); $days = $num; return \sprintf( I18n::_('%1$dd %2$dh %3$dm %4$ds'), $days, $hours, $mins, $secs ); } public static function getErrNameByCode($code) { switch ($code) { case E_ERROR: return 'E_ERROR'; case E_WARNING: return 'E_WARNING'; case E_PARSE: return 'E_PARSE'; case E_NOTICE: return 'E_NOTICE'; case E_CORE_ERROR: return 'E_CORE_ERROR'; case E_CORE_WARNING: return 'E_CORE_WARNING'; case E_COMPILE_ERROR: return 'E_COMPILE_ERROR'; case E_COMPILE_WARNING: return 'E_COMPILE_WARNING'; case E_USER_ERROR: return 'E_USER_ERROR'; case E_USER_WARNING: return 'E_USER_WARNING'; case E_USER_NOTICE: return 'E_USER_NOTICE'; case E_STRICT: return 'E_STRICT'; case E_RECOVERABLE_ERROR: return 'E_RECOVERABLE_ERROR'; case E_DEPRECATED: return 'E_DEPRECATED'; case E_USER_DEPRECATED: return 'E_USER_DEPRECATED'; case E_ALL: return 'E_ALL'; } return $code; } public static function getIni($id, $forceSet = null) { if (true === $forceSet) { $ini = 1; } elseif (false === $forceSet) { $ini = 0; } else { $ini = \ini_get($id); } if ( ! \is_numeric($ini) && '' !== (string) $ini) { return $ini; } if (1 === (int) $ini) { return <<<HTML
+<span class="ini-ok">&check;</span>
+HTML;
+} elseif (0 === (int) $ini) { return <<<HTML
+<span class="ini-error">&times;</span>
+HTML;
+} return $ini; } public static function isWin() { return PHP_OS === 'WINNT'; } public static function htmlMinify($buffer) { \preg_match_all('#\<textarea.*\>.*\<\/textarea\>#Uis', $buffer, $foundTxt); \preg_match_all('#\<pre.*\>.*\<\/pre\>#Uis', $buffer, $foundPre); $textareas = array(); foreach (\array_keys($foundTxt[0]) as $item) { $textareas[] = '<textarea>' . $item . '</textarea>'; } $pres = array(); foreach (\array_keys($foundPre[0]) as $item) { $pres[] = '<pre>' . $item . '</pre>'; } $buffer = \str_replace($foundTxt[0], $textareas, $buffer); $buffer = \str_replace($foundPre[0], $pres, $buffer); $search = array( '/\>[^\S ]+/s', '/[^\S ]+\</s', '/(\s)+/s', ); $replace = array( '>', '<', '\\1', ); $buffer = \preg_replace($search, $replace, $buffer); $textareas = array(); foreach (\array_keys($foundTxt[0]) as $item) { $textareas[] = '<textarea>' . $item . '</textarea>'; } $pres = array(); foreach (\array_keys($foundPre[0]) as $item) { $pres[] = '<pre>' . $item . '</pre>'; } $buffer = \str_replace($textareas, $foundTxt[0], $buffer); $buffer = \str_replace($pres, $foundPre[0], $buffer); return $buffer; } public static function getClientIp() { $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'); foreach ($keys as $key) { if ( ! isset($_SERVER[$key])) { continue; } $ip = \array_filter(\explode(',', $_SERVER[$key])); $ip = \filter_var(\end($ip), FILTER_VALIDATE_IP); if ($ip) { return $ip; } } return ''; } public static function getCpuUsage() { static $cpu = null; if (null !== $cpu) { return $cpu; } if (self::isWin()) { $cpu = self::getWinCpuUsage(); return $cpu; } $filePath = ('/proc/stat'); if ( ! \is_readable($filePath)) { $cpu = array(); return $cpu; } $stat1 = \file($filePath); \sleep(1); $stat2 = \file($filePath); $info1 = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0])); $info2 = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0])); $dif = array(); $dif['user'] = $info2[0] - $info1[0]; $dif['nice'] = $info2[1] - $info1[1]; $dif['sys'] = $info2[2] - $info1[2]; $dif['idle'] = $info2[3] - $info1[3]; $total = \array_sum($dif); $cpu = array(); foreach ($dif as $x => $y) { $cpu[$x] = \round($y / $total * 100, 1); } return $cpu; } public static function getHumanCpuUsageDetail() { $cpu = self::getCpuUsage(); if ( ! $cpu) { return ''; } $html = ''; foreach ($cpu as $k => $v) { $html .= <<<HTML
+<span class="small-group"><span class="item-name">{$k}</span>
+<span class="item-value">{$v}</span></span>
+HTML;
+} return $html; } public static function getHumanCpuUsage() { $cpu = self::getCpuUsage(); return $cpu ?: array(); } public static function getSysLoadAvg() { if (self::isWin()) { return I18n::_('Not support on Windows'); } $avg = \sys_getloadavg(); $langMin = function ($n) { return \sprintf(I18n::_('%d min:'), $n); }; $avg[0] = <<<HTML
+<span class="small-group">
+<span class="item-name">{$langMin(1)}</span>
+{$avg[0]}
+</span>
+HTML;
+$avg[1] = <<<HTML
+<span class="small-group">
+<span class="item-name">{$langMin(5)}</span>
+{$avg[1]}
+</span>
+HTML;
+$avg[2] = <<<HTML
+<span class="small-group">
+<span class="item-name">{$langMin(15)}</span>
+{$avg[2]}
+</span>
+HTML;
+return \implode('', $avg); } public static function getMemoryUsage($key) { $key = \ucfirst($key); if (self::isWin()) { return 0; } static $memInfo = null; if (null === $memInfo) { $memInfoFile = '/proc/meminfo'; if ( ! \is_readable($memInfoFile)) { $memInfo = 0; return 0; } $memInfo = \file_get_contents($memInfoFile); $memInfo = \str_replace(array( ' kB', '  ', ), '', $memInfo); $lines = array(); foreach (\explode("\n", $memInfo) as $line) { if ( ! $line) { continue; } $line = \explode(':', $line); $lines[$line[0]] = (int) $line[1]; } $memInfo = $lines; } switch ($key) { case 'MemRealUsage': $memAvailable = 0; if (isset($memInfo['MemAvailable'])) { $memAvailable = $memInfo['MemAvailable']; } elseif (isset($memInfo['MemFree'])) { $memAvailable = $memInfo['MemFree']; } return $memInfo['MemTotal'] - $memAvailable; case 'SwapRealUsage': if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) { return 0; } return $memInfo['SwapTotal'] - $memInfo['SwapFree'] - $memInfo['SwapCached']; } return isset($memInfo[$key]) ? (int) $memInfo[$key] : 0; } public static function formatBytes($bytes, $precision = 2) { if ( ! $bytes) { return 0; } $base = \log($bytes, 1024); $suffixes = array('', ' K', ' M', ' G', ' T'); return \round(\pow(1024, $base - \floor($base)), $precision) . $suffixes[\floor($base)]; } public static function getHumamMemUsage($key) { return self::formatBytes(self::getMemoryUsage($key) * 1024); } }
+namespace InnStudio\Prober\Benchmark; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Benchmark { private $EXPIRED = 300; public function __construct() { Events::on('init', array($this, 'filter')); } public function filter() { if ( ! Helper::isAction('benchmark')) { return; } $this->display(); } private function getTmpRecorderPath() { return \sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer'; } private function saveTmpRecorder() { return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(array( 'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED, ))); } private function getRemainingSeconds() { $path = $this->getTmpRecorderPath(); if ( ! \is_readable($path)) { return 0; } $data = (string) \file_get_contents($this->getTmpRecorderPath()); if ( ! $data) { return 0; } $data = \json_decode($data, true); if ( ! $data) { return 0; } $expired = isset($data['expired']) ? (int) $data['expired'] : 0; if ( ! $expired) { return 0; } return $expired > (int) $_SERVER['REQUEST_TIME'] ? $expired - (int) $_SERVER['REQUEST_TIME'] : 0; } private function getPointsByTime($time) { return \pow(10, 3) - (int) ($time * \pow(10, 3)); } private function getHashPoints() { $data = 'inn-studio.com'; $hash = array('md5', 'sha512', 'sha256', 'crc32'); $count = \pow(10, 5); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { foreach ($hash as $v) { \hash($v, $data); } } return $this->getPointsByTime(\microtime(true) - $start); } private function getIntLoopPoints() { $j = 0; $count = \pow(10, 7); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { ++$j; } return $this->getPointsByTime(\microtime(true) - $start); } private function getFloatLoopPoints() { $j = 1 / 3; $count = \pow(10, 7); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { ++$j; } return $this->getPointsByTime(\microtime(true) - $start); } private function getIoLoopPoints() { $tmpDir = \sys_get_temp_dir(); if ( ! \is_writable($tmpDir)) { return 0; } $count = \pow(10, 4); $start = \microtime(true); for ($i = 0; $i < $count; ++$i) { $filePath = "{$tmpDir}/innStudioIoBenchmark:{$i}"; \file_put_contents($filePath, $filePath); \unlink($filePath); } return $this->getPointsByTime(\microtime(true) - $start); } private function getPoints() { return array( 'hash' => $this->getHashPoints(), 'intLoop' => $this->getIntLoopPoints(), 'floatLoop' => $this->getFloatLoopPoints(), 'ioLoop' => $this->getIoLoopPoints(), ); } private function display() { $remainingSeconds = $this->getRemainingSeconds(); if ($remainingSeconds) { Helper::dieJson(array( 'code' => -1, 'msg' => \sprintf(I18n::_('Please wait %d seconds'), $remainingSeconds), )); } $this->saveTmpRecorder(); \set_time_limit(0); Helper::dieJson(array( 'code' => 0, 'data' => array( 'points' => $this->getPoints(), ), )); } }
+namespace InnStudio\Prober\PhpInfoDetail; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; class PhpInfoDetail { public function __construct() { Events::on('init', array($this, 'filter')); } public function filter() { if (Helper::isAction('phpInfo')) { \phpinfo(); die; } } }
+namespace InnStudio\Prober\Entry; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Entry { public function __construct() { Events::emit('init'); if (DEBUG === true) { $this->display(); } else { \ob_start(); $this->display(); $content = \ob_get_contents(); \ob_end_clean(); echo Helper::htmlMinify($content); } } private function displayContent() { $mods = Events::apply('mods', array()); if ( ! $mods) { return; } foreach ($mods as $id => $mod) { ?>
+<fieldset id="<?php echo $id; ?>">
+<legend >
+<span class="long-title"><?php echo $mod['title']; ?></span>
+<span class="tiny-title"><?php echo $mod['tinyTitle']; ?></span>
+</legend>
+<?php \call_user_func($mod['display']); ?>
+</fieldset>
+<?php
+} } private function display() { ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></title>
+<?php Events::emit('style'); ?>
+</head>
+<body>
+<div class="poi-container">
+<h1><a href="<?php echo I18n::_(Config::$APP_URL); ?>" target="_blank"><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></a></h1>
+<?php $this->displayContent(); ?>
+</div>
+<?php Events::emit('footer'); ?>
+<?php Events::emit('script'); ?>
+</body>
+</html>
+<?php
+} }
+namespace InnStudio\Prober\Database; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Database { private $ID = 'database'; public function __construct() { Events::patch('mods', array($this, 'filter'), 500); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Database'), 'tinyTitle' => I18n::_('DB'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
+<div class="row">
+<?php echo $this->getContent(); ?>
+</div>
+<?php
+} private function getContent() { $sqlite3Version = \class_exists('\\SQLite3') ? \SQLite3::version() : false; $sqlite3Version = $sqlite3Version ? Helper::getIni(0, true) . ' ' . $sqlite3Version['versionString'] : Helper::getIni(0, false); $items = array( array( 'label' => I18n::_('SQLite3'), 'content' => $sqlite3Version, ), array( 'title' => 'sqlite_libversion', 'label' => I18n::_('SQLite'), 'content' => \function_exists('\\sqlite_libversion') ? Helper::getIni(0, true) . ' ' . \sqlite_libversion() : Helper::getIni(0, false), ), array( 'title' => 'mysqli_get_client_version', 'label' => I18n::_('MySQLi client'), 'content' => \function_exists('\\mysqli_get_client_version') ? Helper::getIni(0, true) . ' ' . \mysqli_get_client_version() : Helper::getIni(0, false), ), array( 'label' => I18n::_('Mongo'), 'content' => \class_exists('\\Mongo') ? \MongoClient::VERSION : Helper::getIni(0, false), ), array( 'label' => I18n::_('MongoDB'), 'content' => \class_exists('\\MongoDB') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('PostgreSQL'), 'content' => \function_exists('\\pg_connect') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('Paradox'), 'content' => \function_exists('\\px_new') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'title' => I18n::_('Microsoft SQL Server Driver for PHP'), 'label' => I18n::_('MS SQL'), 'content' => \function_exists('\\sqlsrv_server_info') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('File Pro'), 'content' => \function_exists('\\filepro') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), array( 'label' => I18n::_('MaxDB client'), 'content' => \function_exists('\\maxdb_get_client_version') ? \maxdb_get_client_version() : Helper::getIni(0, false), ), array( 'label' => I18n::_('MaxDB server'), 'content' => \function_exists('\\maxdb_get_server_version') ? Helper::getIni(0, true) : Helper::getIni(0, false), ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; echo <<<HTML
+<div class="poi-g-lg-{$col}">
+<div class="form-group">
+<div class="group-label" {$title}>{$item['label']}</div>
+<div class="group-content" {$id} {$title}>{$item['content']}</div>
+</div>
+</div>
+HTML;
+} } }
 namespace InnStudio\Prober\PhpInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class PhpInfo { private $ID = 'phpInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 300); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('PHP information'), 'tinyTitle' => I18n::_('PHP'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
 <div class="row">
 <?php echo $this->getContent(); ?>
@@ -268,7 +177,6 @@ namespace InnStudio\Prober\PhpInfo; use InnStudio\Prober\Events\Api as Events; u
 </div>
 HTML;
 } return $content; } private function _($str) { return I18n::_($str); } }
-namespace InnStudio\Prober\PhpInfoDetail; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; class PhpInfoDetail { public function __construct() { Events::on('init', array($this, 'filter')); } public function filter() { if (Helper::isAction('phpInfo')) { \phpinfo(); die; } } }
 namespace InnStudio\Prober\Script; use InnStudio\Prober\Events\Api as Events; class Script { private $ID = 'script'; public function __construct() { Events::on('script', array($this, 'filter')); } public function filter() { echo <<<HTML
 <script>
 (function () {
@@ -415,88 +323,23 @@ request();
 </script>
 HTML;
 } }
-namespace InnStudio\Prober\ServerBenchmark; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\I18n\Api as I18n; class ServerBenchmark { private $ID = 'serverBenchmark'; public function __construct() { Events::patch('mods', array($this, 'filter'), 600); Events::on('script', array($this, 'filterJs')); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server Benchmark'), 'tinyTitle' => I18n::_('Benchmark'), 'display' => array($this, 'display'), ); return $mods; } public function display() { $lang = I18n::_('💡 Hight is better.'); echo <<<HTML
-<p class="description">{$lang}</p>
-<div class="row">
-{$this->getContent()}
+namespace InnStudio\Prober\Events; class Api { private static $filters = array(); private static $actions = array(); private static $PRIORITY_ID = 'priority'; private static $CALLBACK_ID = 'callback'; public static function on($name, $callback, $priority = 10) { if ( ! isset(self::$actions[$name])) { self::$actions[$name] = array(); } self::$actions[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function emit() { $args = \func_get_args(); $name = $args[0]; unset($args[0]); $actions = isset(self::$actions[$name]) ? self::$actions[$name] : false; if ( ! $actions) { return; } $sortArr = array(); foreach ($actions as $k => $action) { $sortArr[$k] = $action[self::$PRIORITY_ID]; } \array_multisort($sortArr, $actions); foreach ($actions as $action) { \call_user_func_array($action[self::$CALLBACK_ID], $args); } } public static function patch($name, $callback, $priority = 10) { if ( ! isset(self::$filters[$name])) { self::$filters[$name] = array(); } self::$filters[$name][] = array( self::$PRIORITY_ID => $priority, self::$CALLBACK_ID => $callback, ); } public static function apply() { $args = \func_get_args(); $name = $args[0]; $return = $args[1]; unset($args[0],$args[1]); $filters = isset(self::$filters[$name]) ? self::$filters[$name] : false; if ( ! $filters) { return $return; } $sortArr = array(); foreach ($filters as $k => $filter) { $sortArr[$k] = $filter[self::$PRIORITY_ID]; } \array_multisort($sortArr, $filters); foreach ($filters as $filter) { $return = \call_user_func_array($filter[self::$CALLBACK_ID], array($return, $args)); } return $return; } }
+namespace InnStudio\Prober\MyInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class MyInfo { private $ID = 'myInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 900); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('My information'), 'tinyTitle' => I18n::_('Mine'), 'display' => array($this, 'display'), ); return $mods; } public function display() { echo $this->getContent(); } public function getContent() { $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : ''; return <<<HTML
+<div class="form-group">
+<div class="group-label">{$this->_('My IP')}</div>
+<div class="group-content">{$this->getClientIp()}</div>
+</div>
+<div class="form-group">
+<div class="group-label">{$this->_('My UA')}</div>
+<div class="group-content">{$ua}</div>
 </div>
 HTML;
-} public function filterJs() { ?>
-<script>
-(function(){
-var el = document.getElementById('benchmark-btn');
-var errTx = '❌ <?php echo I18n::_('Error, click to retry'); ?>';
-if (!el) {
-return;
-}
-function getPoints() {
-el.innerHTML = '⏳ <?php echo I18n::_('Loading...'); ?>';
-var xhr = new XMLHttpRequest();
-xhr.onload = load;
-xhr.open('get', '?action=benchmark');
-xhr.send();
-}
-function load() {
-if (this.readyState !== 4) {
-return;
-}
-if (this.status >= 200 && this.status < 400) {
-var res = JSON.parse(this.responseText);
-var points = 0;
-if (res && res.code === 0) {
-for (var k in res.data.points) {
-points += res.data.points[k];
-}
-el.innerHTML = '✔️ ' + points.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-} else if (res && res.code) {
-el.innerHTML = '⏳ ' + res.msg;
-} else {
-el.innerHTML = res;
-}
-} else {
-el.innerHTML = errTx;
-}
-}
-el.addEventListener('click', getPoints);
-})()
-</script>
+} private function getClientIp() { return Helper::getClientIp(); } private function _($str) { return I18n::_($str); } }
+namespace InnStudio\Prober\Awesome; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\I18n\Api as I18n; class Awesome { private $ID = 'awesome'; private $ZH_CN_URL = 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'; private $DEFAULT_URL = 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; public function __construct() { } public function filter() { ?>
+<link rel="stylesheet" href="<?php echo $this->getUrl(); ?>">
 <?php
-} private function I18n($str) { return I18n::_($str); } private function getContent() { $items = array( array( 'label' => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/ECS/PHP7') . '</a>', 'content' => 3302, ), array( 'label' => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP7') . '</a>', 'content' => 3182, ), array( 'label' => '<a href="https://clientarea.ramnode.com/aff.php?aff=4143" target="_blank">' . I18n::_('RamNode/PHP7') . '</a>', 'content' => 3131, ), array( 'label' => '<a href="https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1" target="_blank">' . I18n::_('Linode/PHP7') . '</a>', 'content' => 3091, ), array( 'label' => I18n::_('Tencent/PHP7'), 'content' => 3055, ), array( 'label' => '<a href="https://billing.anynode.net/aff.php?aff=511"  target="_blank">' . I18n::_('AnyNode/HDD/PHP7') . '</a>', 'content' => 2641, ), array( 'label' => '<a href="https://bandwagonhost.com/aff.php?aff=34116"  target="_blank">' . I18n::_('BandwagonHOST/SSD/PHP7') . '</a>', 'content' => 2531, ), array( 'label' => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>', 'content' => 2420, ), array( 'label' => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/Int/PHP5') . '</a>', 'content' => -7686, ), ); $itemsOrder = array(); foreach ($items as $item) { $itemsOrder[] = (int) $item['content']; } \array_multisort( $items, \SORT_DESC, \SORT_NUMERIC, $itemsOrder, \SORT_DESC, \SORT_NUMERIC ); \array_unshift( $items, array( 'label' => I18n::_('My server'), 'content' => '<a id="benchmark-btn">👆 ' . I18n::_('Click to test') . '</a>', ) ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
-<div class="poi-g-lg-{$col}">
-<div class="form-group">
-<div class="group-label" {$title}>{$item['label']}</div>
-<div class="group-content" {$id} {$title}>{$item['content']}</div>
-</div>
-</div>
-HTML;
-} return $content; } }
-namespace InnStudio\Prober\ServerInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class ServerInfo { private $ID = 'serverInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 200); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server information'), 'tinyTitle' => I18n::_('Info'), 'display' => array($this, 'display'), ); return $mods; } public function display() { echo <<<HTML
-<div class="row">
-{$this->getContent()}
-</div>
-HTML;
-} private function getDiskInfo() { if ( ! Helper::getDiskTotalSpace()) { return I18n::_('Unavailable'); } $percent = \sprintf('%01.2f', (1 - (Helper::getDiskFreeSpace() / Helper::getDiskTotalSpace())) * 100); $hunamUsed = Helper::formatBytes(Helper::getDiskTotalSpace() - Helper::getDiskFreeSpace()); $hunamTotal = Helper::getDiskTotalSpace(true); return <<<HTML
-<div class="progress-container">
-<div class="percent" id="diskUsagePercent">{$percent}%</div>
-<div class="number">
-<span id="diskUsage">
-{$hunamUsed} / {$hunamTotal}
-</span>
-</div>
-<div class="progress" id="diskUsageProgress">
-<div id="diskUsageProgressValue" class="progress-value" style="width: {$percent}%"></div>
-</div>
-</div>
-HTML;
-} private function getContent() { $items = array( array( 'label' => $this->_('Server name'), 'content' => $this->getServerInfo('SERVER_NAME'), ), array( 'id' => 'serverInfoTime', 'label' => $this->_('Server time'), 'content' => Helper::getServerTime(), ), array( 'id' => 'serverUpTime', 'label' => $this->_('Server uptime'), 'content' => Helper::getServerUpTime(), ), array( 'label' => $this->_('Server IP'), 'content' => $this->getServerInfo('SERVER_ADDR'), ), array( 'label' => $this->_('Server software'), 'content' => $this->getServerInfo('SERVER_SOFTWARE'), ), array( 'label' => $this->_('PHP version'), 'content' => PHP_VERSION, ), array( 'col' => '1-1', 'label' => $this->_('CPU model'), 'content' => Helper::getCpuModel(), ), array( 'col' => '1-1', 'label' => $this->_('Server OS'), 'content' => \php_uname(), ), array( 'id' => 'scriptPath', 'col' => '1-1', 'label' => $this->_('Script path'), 'content' => __FILE__, ), array( 'col' => '1-1', 'label' => $this->_('Disk usage'), 'content' => $this->getDiskInfo(), ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
-<div class="poi-g-lg-{$col}">
-<div class="form-group">
-<div class="group-label" {$title}>{$item['label']}</div>
-<div class="group-content" {$id} {$title}>{$item['content']}</div>
-</div>
-</div>
-HTML;
-} return $content; } private function _($str) { return I18n::_($str); } private function getServerInfo($key) { return isset($_SERVER[$key]) ? $_SERVER[$key] : ''; } }
+} private function getUrl() { switch (I18n::getClientLang()) { case 'zh-CN': return $this->ZH_CN_URL; } return $this->DEFAULT_URL; } }
+namespace InnStudio\Prober\Timezone; use InnStudio\Prober\Events\Api as Events; class Timezone { public function __construct() { Events::on('init', array($this, 'filter')); Events::on('fetch', array($this, 'filter')); } public function filter() { if ( ! \ini_get('date.timezone')) { \date_default_timezone_set('GMT'); } } }
 namespace InnStudio\Prober\ServerStatus; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class ServerStatus { private $ID = 'serverStatus'; public function __construct() { Events::patch('mods', array($this, 'filter')); Events::on('style', array($this, 'filterStyle')); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server status'), 'tinyTitle' => I18n::_('Status'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
 <div class="form-group">
 <div class="group-label"><?php echo I18n::_('System load'); ?></div>
@@ -571,6 +414,138 @@ word-break: break-all;
 </style>
 <?php
 } private function getMemUsage($key, $precent = false, $totalKey = 'MemTotal') { if (false === $precent) { return Helper::getMemoryUsage($key); } return Helper::getMemoryUsage($key) ? \sprintf('%01.2f', Helper::getMemoryUsage($key) / Helper::getMemoryUsage($totalKey) * 100) : 0; } }
+namespace InnStudio\Prober\I18n; class Api { public static function _($str) { static $preDefineLang = null; if (null === $preDefineLang) { $preDefineLang = \json_decode(\base64_decode(LANG), true); } if ( ! isset($preDefineLang[$str])) { return $str; } $lang = $preDefineLang[$str]; $clientLang = self::getClientLang(); return isset($lang[$clientLang]) ? $lang[$clientLang] : $str; } public static function getClientLang() { static $cache = null; if (null !== $cache) { return $cache; } if ( ! isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) { $cache = ''; return $cache; } $client = \explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']); if (isset($client[0])) { $cache = $client[0]; } else { $cache = ''; } return $cache; } }
+namespace InnStudio\Prober\Updater; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Updater { private $ID = 'updater'; public function __construct() { Events::on('script', array($this, 'filter')); Events::on('init', array($this, 'filterInit')); } public function filterInit() { if ( ! Helper::isAction('update')) { return; } if ( ! \is_writable(__FILE__)) { Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('File can not update.'), )); } $content = \file_get_contents(Config::$UPDATE_PHP_URL); if ( ! $content) { Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('Update file not found.'), )); } if ((bool) \file_put_contents(__FILE__, $content)) { Helper::dieJson(array( 'code' => 0, 'msg' => I18n::_('Update success...'), )); } Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('Update error.'), )); } public function filter() { $version = Config::$APP_VERSION; $changeLogUrl = Config::$CHANGELOG_URL; $authorUrl = Config::$AUTHOR_URL; echo <<<HTML
+<script>
+(function(){
+var versionCompare = function(left, right) {
+if (typeof left + typeof right != 'stringstring')
+return false;
+var a = left.split('.')
+,   b = right.split('.')
+,   i = 0, len = Math.max(a.length, b.length);
+for (; i < len; i++) {
+if ((a[i] && !b[i] && parseInt(a[i]) > 0) || (parseInt(a[i]) > parseInt(b[i]))) {
+return 1;
+} else if ((b[i] && !a[i] && parseInt(b[i]) > 0) || (parseInt(a[i]) < parseInt(b[i]))) {
+return -1;
+}
+}
+return 0;
+}
+checkUpdate();
+function update(){
+var title = document.querySelector('h1');
+title.innerHTML = '<div>⏳ {$this->_('Updating...')}</div>';
+var xhr = new XMLHttpRequest();
+try {
+xhr.open('get', '?action=update');
+xhr.send();
+xhr.onload = onLoadUpload;
+} catch (err) {}
+}
+function onLoadUpload(){
+var xhr = this;
+var msg = '';
+if (xhr.readyState === 4) {
+if (xhr.status >= 200 && xhr.status < 400) {
+var res = xhr.responseText;
+try {
+res = JSON.parse(res)
+} catch (err){ }
+if (res && res.code === 0) {
+msg = '✔️ ' + res.msg;
+location.reload();
+} else if (res && res.code) {
+msg = '❌ ' + res.msg;
+} else {
+msg = '❌ ' + res;
+}
+var title = document.querySelector('h1');
+title.innerHTML = '<div>' + msg + '</div>';
+} else {
+title.innerHTML = '❌ {$this->_('Update error')}';
+}
+}
+}
+function checkUpdate() {
+var version = "{$version}";
+var xhr = new XMLHttpRequest();
+xhr.open('get', '{$changeLogUrl}');
+xhr.send();
+xhr.onload = onLoadCheckUpdate;
+}
+function onLoadCheckUpdate() {
+let xhr = this;
+if (xhr.readyState === 4 ) {
+if (xhr.status >= 200 && xhr.status < 400) {
+var data = xhr.responseText;
+if (! data) {
+return;
+}
+var versionInfo = getVersionInfo(data);
+if (!versionInfo.length) {
+return;
+}
+if (versionCompare('{$version}', versionInfo[0]) === -1) {
+var lang = '✨ {$this->_('{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}')}';
+lang = lang.replace('{APP_NAME}', '{$this->_(Config::$APP_NAME)}');
+lang = lang.replace('{APP_OLD_VERSION}', '{$version}');
+lang = lang.replace('{APP_NEW_VERSION}', versionInfo[0]);
+var updateLink = document.createElement('a');
+updateLink.addEventListener('click', update);
+updateLink.innerHTML = lang;
+var title = document.querySelector('h1');
+title.innerHTML = '';
+title.appendChild(updateLink);
+}
+}
+}
+}
+function getVersionInfo(data){
+var reg = /^#{2}\s+(\d+\.\d+\.\d+)\s+\-\s+(\d{4}\-\d+\-\d+)/mg;
+return reg.test(data) ? [RegExp.$1,RegExp.$2]: [];
+}
+})()
+</script>
+HTML;
+} private function _($str) { return I18n::_($str); } }
+namespace InnStudio\Prober\NetworkStats; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class NetworkStats { private $ID = 'networkStats'; public function __construct() { Helper::isWin() || Events::on('style', array($this, 'filterStyle')); Helper::isWin() || Events::patch('mods', array($this, 'filter'), 100); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Network stats'), 'tinyTitle' => I18n::_('Net'), 'display' => array($this, 'display'), ); return $mods; } public function display() { ?>
+<div class="row">
+<?php echo $this->getContent(); ?>
+</div>
+<?php
+} public function filterStyle() { ?>
+<style>
+.network-stats-container > *{
+float: left;
+width: 50%;
+text-align: center;
+}
+</style>
+<?php
+} private function getContent() { $items = array(); $stats = Helper::getNetworkStats(); if ( ! \is_array($stats)) { return '<div>' . Helper::getNetworkStats() . '</div>'; } foreach (Helper::getNetworkStats() as $ethName => $item) { $rxHuman = Helper::formatBytes($item['rx']); $txHuman = Helper::formatBytes($item['tx']); $items[] = array( 'label' => $ethName, 'content' => <<<HTML
+<div class="network-stats-container">
+<div class="rx">
+<div><span id="network-{$ethName}-rx-total">{$rxHuman}</span></div>
+<div><span class="icon">▼</span><span id="network-{$ethName}-rx-rate">0</span><span class="second">/s</span></div>
+</div>
+<div class="tx">
+<div><span id="network-{$ethName}-tx-total">{$txHuman}</span></div>
+<div><span class="icon">▲</span><span id="network-{$ethName}-tx-rate">0</span><span class="second">/s</span></div>
+</div>
+</div>
+HTML
+); } $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-1'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
+<div class="poi-g-lg-{$col}">
+<div class="form-group">
+<div class="group-label" {$title}>{$item['label']}</div>
+<div class="group-content" {$title} {$id}>{$item['content']}</div>
+</div>
+</div>
+HTML;
+} return $content; } }
+namespace InnStudio\Prober\Config; class Api { public static $APP_VERSION = '1.5.2'; public static $APP_NAME = 'X Prober'; public static $APP_URL = 'https://github.com/kmvan/x-prober'; public static $AUTHOR_URL = 'https://inn-studio.com/prober'; public static $UPDATE_PHP_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php'; public static $AUTHOR_NAME = 'INN STUDIO'; public static $CHANGELOG_URL = 'https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md'; }
 namespace InnStudio\Prober\Style; use InnStudio\Prober\Events\Api as Events; class Style { private $ID = 'style'; public function __construct() { Events::on('style', array($this, 'filter')); } public function filter() { $this->styleProgress(); $this->styleGlobal(); $this->stylePoiContainer(); $this->stylePoiGrid(); $this->styleTitle(); } private function styleTitle() { ?>
 <style>
 .long-title{
@@ -776,102 +751,127 @@ clear: both;
 </style>
 <?php
 } }
-namespace InnStudio\Prober\Timezone; use InnStudio\Prober\Events\Api as Events; class Timezone { public function __construct() { Events::on('init', array($this, 'filter')); Events::on('fetch', array($this, 'filter')); } public function filter() { if ( ! \ini_get('date.timezone')) { \date_default_timezone_set('GMT'); } } }
-namespace InnStudio\Prober\Updater; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Updater { private $ID = 'updater'; public function __construct() { Events::on('script', array($this, 'filter')); Events::on('init', array($this, 'filterInit')); } public function filterInit() { if ( ! Helper::isAction('update')) { return; } if ( ! \is_writable(__FILE__)) { Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('File can not update.'), )); } $content = \file_get_contents(Config::$UPDATE_PHP_URL); if ( ! $content) { Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('Update file not found.'), )); } if ((bool) \file_put_contents(__FILE__, $content)) { Helper::dieJson(array( 'code' => 0, 'msg' => I18n::_('Update success...'), )); } Helper::dieJson(array( 'code' => -1, 'msg' => I18n::_('Update error.'), )); } public function filter() { $version = Config::$APP_VERSION; $changeLogUrl = Config::$CHANGELOG_URL; $authorUrl = Config::$AUTHOR_URL; echo <<<HTML
+namespace InnStudio\Prober\Fetch; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; class Fetch { public function __construct() { if (Helper::isAction('fetch')) { Events::emit('fetch'); $this->outputItems(); } } private function getServerUtcTime() { return \gmdate('Y/m/d H:i:s'); } private function getServerLocalTime() { return \date('Y/m/d H:i:s'); } private function getItems() { return array( 'utcTime' => $this->getServerUtcTime(), 'serverInfo' => array( 'time' => Helper::getServerTime(), 'upTime' => Helper::getServerUpTime(), ), 'cpuUsage' => Helper::getHumanCpuUsage(), 'sysLoadAvg' => Helper::getSysLoadAvg(), 'memTotal' => Helper::getMemoryUsage('MemTotal'), 'memRealUsage' => array( 'percent' => Helper::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('MemRealUsage') / Helper::getMemoryUsage('MemTotal') * 100) : 0, 'number' => Helper::getHumamMemUsage('MemRealUsage') . ' / ' . Helper::getHumamMemUsage('MemTotal'), 'current' => Helper::getMemoryUsage('MemRealUsage'), ), 'swapRealUsage' => array( 'percent' => Helper::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('SwapRealUsage') / Helper::getMemoryUsage('SwapTotal') * 100) : 0, 'number' => Helper::getHumamMemUsage('SwapRealUsage') . ' / ' . Helper::getHumamMemUsage('SwapTotal'), 'current' => Helper::getMemoryUsage('SwapRealUsage'), ), 'networkStats' => Helper::getNetworkStats(), ); } private function outputItems() { Helper::dieJson(array( 'code' => 0, 'data' => $this->getItems(), )); } }
+namespace InnStudio\Prober\ServerInfo; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class ServerInfo { private $ID = 'serverInfo'; public function __construct() { Events::patch('mods', array($this, 'filter'), 200); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server information'), 'tinyTitle' => I18n::_('Info'), 'display' => array($this, 'display'), ); return $mods; } public function display() { echo <<<HTML
+<div class="row">
+{$this->getContent()}
+</div>
+HTML;
+} private function getDiskInfo() { if ( ! Helper::getDiskTotalSpace()) { return I18n::_('Unavailable'); } $percent = \sprintf('%01.2f', (1 - (Helper::getDiskFreeSpace() / Helper::getDiskTotalSpace())) * 100); $hunamUsed = Helper::formatBytes(Helper::getDiskTotalSpace() - Helper::getDiskFreeSpace()); $hunamTotal = Helper::getDiskTotalSpace(true); return <<<HTML
+<div class="progress-container">
+<div class="percent" id="diskUsagePercent">{$percent}%</div>
+<div class="number">
+<span id="diskUsage">
+{$hunamUsed} / {$hunamTotal}
+</span>
+</div>
+<div class="progress" id="diskUsageProgress">
+<div id="diskUsageProgressValue" class="progress-value" style="width: {$percent}%"></div>
+</div>
+</div>
+HTML;
+} private function getContent() { $items = array( array( 'label' => $this->_('Server name'), 'content' => $this->getServerInfo('SERVER_NAME'), ), array( 'id' => 'serverInfoTime', 'label' => $this->_('Server time'), 'content' => Helper::getServerTime(), ), array( 'id' => 'serverUpTime', 'label' => $this->_('Server uptime'), 'content' => Helper::getServerUpTime(), ), array( 'label' => $this->_('Server IP'), 'content' => $this->getServerInfo('SERVER_ADDR'), ), array( 'label' => $this->_('Server software'), 'content' => $this->getServerInfo('SERVER_SOFTWARE'), ), array( 'label' => $this->_('PHP version'), 'content' => PHP_VERSION, ), array( 'col' => '1-1', 'label' => $this->_('CPU model'), 'content' => Helper::getCpuModel(), ), array( 'col' => '1-1', 'label' => $this->_('Server OS'), 'content' => \php_uname(), ), array( 'id' => 'scriptPath', 'col' => '1-1', 'label' => $this->_('Script path'), 'content' => __FILE__, ), array( 'col' => '1-1', 'label' => $this->_('Disk usage'), 'content' => $this->getDiskInfo(), ), ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
+<div class="poi-g-lg-{$col}">
+<div class="form-group">
+<div class="group-label" {$title}>{$item['label']}</div>
+<div class="group-content" {$id} {$title}>{$item['content']}</div>
+</div>
+</div>
+HTML;
+} return $content; } private function _($str) { return I18n::_($str); } private function getServerInfo($key) { return isset($_SERVER[$key]) ? $_SERVER[$key] : ''; } }
+namespace InnStudio\Prober\ServerBenchmark; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\I18n\Api as I18n; class ServerBenchmark { private $ID = 'serverBenchmark'; public function __construct() { Events::patch('mods', array($this, 'filter'), 600); Events::on('script', array($this, 'filterJs')); } public function filter($mods) { $mods[$this->ID] = array( 'title' => I18n::_('Server Benchmark'), 'tinyTitle' => I18n::_('Benchmark'), 'display' => array($this, 'display'), ); return $mods; } public function display() { $lang = I18n::_('💡 Hight is better.'); echo <<<HTML
+<p class="description">{$lang}</p>
+<div class="row">
+{$this->getContent()}
+</div>
+HTML;
+} public function filterJs() { ?>
 <script>
 (function(){
-var versionCompare = function(left, right) {
-if (typeof left + typeof right != 'stringstring')
-return false;
-var a = left.split('.')
-,   b = right.split('.')
-,   i = 0, len = Math.max(a.length, b.length);
-for (; i < len; i++) {
-if ((a[i] && !b[i] && parseInt(a[i]) > 0) || (parseInt(a[i]) > parseInt(b[i]))) {
-return 1;
-} else if ((b[i] && !a[i] && parseInt(b[i]) > 0) || (parseInt(a[i]) < parseInt(b[i]))) {
-return -1;
+var el = document.getElementById('benchmark-btn');
+var errTx = '❌ <?php echo I18n::_('Error, click to retry'); ?>';
+if (!el) {
+return;
 }
-}
-return 0;
-}
-checkUpdate();
-function update(){
-var title = document.querySelector('h1');
-title.innerHTML = '<div>⏳ {$this->_('Updating...')}</div>';
+function getPoints() {
+el.innerHTML = '⏳ <?php echo I18n::_('Loading...'); ?>';
 var xhr = new XMLHttpRequest();
-try {
-xhr.open('get', '?action=update');
+xhr.onload = load;
+xhr.open('get', '?action=benchmark');
 xhr.send();
-xhr.onload = onLoadUpload;
-} catch (err) {}
 }
-function onLoadUpload(){
-var xhr = this;
-var msg = '';
-if (xhr.readyState === 4) {
-if (xhr.status >= 200 && xhr.status < 400) {
-var res = xhr.responseText;
-try {
-res = JSON.parse(res)
-} catch (err){ }
+function load() {
+if (this.readyState !== 4) {
+return;
+}
+if (this.status >= 200 && this.status < 400) {
+var res = JSON.parse(this.responseText);
+var points = 0;
 if (res && res.code === 0) {
-msg = '✔️ ' + res.msg;
-location.reload();
+for (var k in res.data.points) {
+points += res.data.points[k];
+}
+el.innerHTML = '✔️ ' + points.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 } else if (res && res.code) {
-msg = '❌ ' + res.msg;
+el.innerHTML = '⏳ ' + res.msg;
 } else {
-msg = '❌ ' + res;
+el.innerHTML = res;
 }
-var title = document.querySelector('h1');
-title.innerHTML = '<div>' + msg + '</div>';
 } else {
-title.innerHTML = '❌ {$this->_('Update error')}';
+el.innerHTML = errTx;
 }
 }
-}
-function checkUpdate() {
-var version = "{$version}";
-var xhr = new XMLHttpRequest();
-xhr.open('get', '{$changeLogUrl}');
-xhr.send();
-xhr.onload = onLoadCheckUpdate;
-}
-function onLoadCheckUpdate() {
-let xhr = this;
-if (xhr.readyState === 4 ) {
-if (xhr.status >= 200 && xhr.status < 400) {
-var data = xhr.responseText;
-if (! data) {
-return;
-}
-var versionInfo = getVersionInfo(data);
-if (!versionInfo.length) {
-return;
-}
-if (versionCompare('{$version}', versionInfo[0]) === -1) {
-var lang = '✨ {$this->_('{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}')}';
-lang = lang.replace('{APP_NAME}', '{$this->_(Config::$APP_NAME)}');
-lang = lang.replace('{APP_OLD_VERSION}', '{$version}');
-lang = lang.replace('{APP_NEW_VERSION}', versionInfo[0]);
-var updateLink = document.createElement('a');
-updateLink.addEventListener('click', update);
-updateLink.innerHTML = lang;
-var title = document.querySelector('h1');
-title.innerHTML = '';
-title.appendChild(updateLink);
-}
-}
-}
-}
-function getVersionInfo(data){
-var reg = /^#{2}\s+(\d+\.\d+\.\d+)\s+\-\s+(\d{4}\-\d+\-\d+)/mg;
-return reg.test(data) ? [RegExp.$1,RegExp.$2]: [];
-}
+el.addEventListener('click', getPoints);
 })()
 </script>
+<?php
+} private function I18n($str) { return I18n::_($str); } private function getContent() { $items = array( array( 'label' => I18n::_('Amazon/EC2/PHP7'), 'content' => 3150, ), array( 'label' => '<a href="https://www.vpsserver.com/?affcode=32d56f2dd1b6">' . I18n::_('VPSSERVER/KVM/PHP7') . '</a>', 'content' => 3374, ), array( 'label' => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/ECS/PHP7') . '</a>', 'content' => 3302, ), array( 'label' => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP7') . '</a>', 'content' => 3182, ), array( 'label' => '<a href="https://clientarea.ramnode.com/aff.php?aff=4143" target="_blank">' . I18n::_('RamNode/PHP7') . '</a>', 'content' => 3131, ), array( 'label' => '<a href="https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1" target="_blank">' . I18n::_('Linode/PHP7') . '</a>', 'content' => 3091, ), array( 'label' => I18n::_('Tencent/PHP7'), 'content' => 3055, ), array( 'label' => '<a href="https://billing.anynode.net/aff.php?aff=511"  target="_blank">' . I18n::_('AnyNode/HDD/PHP7') . '</a>', 'content' => 2641, ), array( 'label' => '<a href="https://bandwagonhost.com/aff.php?aff=34116"  target="_blank">' . I18n::_('BandwagonHOST/SSD/PHP7') . '</a>', 'content' => 2181, ), array( 'label' => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>', 'content' => 2420, ), array( 'label' => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/Int/PHP5') . '</a>', 'content' => -7686, ), ); $itemsOrder = array(); foreach ($items as $item) { $itemsOrder[] = (int) $item['content']; } \array_multisort( $items, \SORT_DESC, \SORT_NUMERIC, $itemsOrder, \SORT_DESC, \SORT_NUMERIC ); \array_unshift( $items, array( 'label' => I18n::_('My server'), 'content' => '<a id="benchmark-btn">👆 ' . I18n::_('Click to test') . '</a>', ) ); $content = ''; foreach ($items as $item) { $title = isset($item['title']) ? "title=\"{$item['title']}\"" : ''; $col = isset($item['col']) ? $item['col'] : '1-3'; $id = isset($item['id']) ? "id=\"{$item['id']}\"" : ''; $content .= <<<HTML
+<div class="poi-g-lg-{$col}">
+<div class="form-group">
+<div class="group-label" {$title}>{$item['label']}</div>
+<div class="group-content" {$id} {$title}>{$item['content']}</div>
+</div>
+</div>
 HTML;
-} private function _($str) { return I18n::_($str); } }new \InnStudio\Prober\Awesome\Awesome();
+} return $content; } }
+namespace InnStudio\Prober\Footer; use InnStudio\Prober\Config\Api as Config; use InnStudio\Prober\Events\Api as Events; use InnStudio\Prober\Helper\Api as Helper; use InnStudio\Prober\I18n\Api as I18n; class Footer { private $ID = 'footer'; public function __construct() { Events::on('footer', array($this, 'filter')); Events::on('style', array($this, 'filterStyle')); } public function filter() { $timer = (\microtime(true) - TIMER) * 1000; ?>
+<a href="<?php echo I18n::_(Config::$APP_URL); ?>" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+<div class="poi-container">
+<div class="footer">
+<?php echo \sprintf(I18n::_('Generator %s'), '<a href="' . I18n::_(Config::$APP_URL) . '" target="_blank">' . I18n::_(Config::$APP_NAME) . '</a>'); ?>
+/
+<?php echo \sprintf(I18n::_('Author %s'), '<a href="' . I18n::_(Config::$AUTHOR_URL) . '" target="_blank">' . I18n::_(Config::$AUTHOR_NAME) . '</a>'); ?>
+/
+<?php echo Helper::formatBytes(\memory_get_usage()); ?>
+/
+<?php echo \sprintf('%01.2f', $timer); ?>ms
+</div>
+</div>
+<?php
+} public function filterStyle() { ?>
+<style>
+.footer{
+text-align: center;
+margin: 2rem auto 5rem;
+padding: .5rem 1rem;
+}
+@media (min-width: 768px) {
+.footer{
+background: #333;
+color: #ccc;
+width: 60%;
+border-radius: 10rem;
+}
+.footer a{
+color: #fff;
+}
+}
+.footer a:hover{
+text-decoration: underline;
+}
+</style>
+<?php
+} }new \InnStudio\Prober\Awesome\Awesome();
 new \InnStudio\Prober\Benchmark\Benchmark();
 new \InnStudio\Prober\Database\Database();
 new \InnStudio\Prober\Fetch\Fetch();
