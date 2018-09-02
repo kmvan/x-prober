@@ -68,7 +68,7 @@ var versionCompare = function(left, right) {
     var a = left.split('.')
     ,   b = right.split('.')
     ,   i = 0, len = Math.max(a.length, b.length);
-        
+
     for (; i < len; i++) {
         if ((a[i] && !b[i] && parseInt(a[i]) > 0) || (parseInt(a[i]) > parseInt(b[i]))) {
             return 1;
@@ -84,7 +84,7 @@ checkUpdate();
 
 function update(){
     var title = document.querySelector('h1');
-    title.innerHTML = '<div>⏳ {$this->_('Updating...')}</div>'; 
+    title.innerHTML = '<div>⏳ {$this->_('Updating...')}</div>';
     var xhr = new XMLHttpRequest();
     try {
         xhr.open('get', '?action=update');
@@ -101,7 +101,7 @@ function onLoadUpload(){
             var res = xhr.responseText;
 
             try {
-                res = JSON.parse(res) 
+                res = JSON.parse(res)
             } catch (err){ }
 
             if (res && res.code === 0) {
@@ -112,7 +112,7 @@ function onLoadUpload(){
             } else {
                 msg = '❌ ' + res;
             }
-            
+
             var title = document.querySelector('h1');
             title.innerHTML = '<div>' + msg + '</div>';
         } else {
@@ -145,13 +145,13 @@ function onLoadCheckUpdate() {
             if (!versionInfo.length) {
                 return;
             }
-            
+
             if (versionCompare('{$version}', versionInfo[0]) === -1) {
                 var lang = '✨ {$this->_('{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}')}';
                 lang = lang.replace('{APP_NAME}', '{$this->_(Config::$APP_NAME)}');
                 lang = lang.replace('{APP_OLD_VERSION}', '{$version}');
                 lang = lang.replace('{APP_NEW_VERSION}', versionInfo[0]);
-                
+
                 var updateLink = document.createElement('a');
                 updateLink.addEventListener('click', update);
                 updateLink.innerHTML = lang;

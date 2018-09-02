@@ -33,7 +33,7 @@ class ServerStatus
 <div class="form-group">
     <div class="group-label"><?php echo I18n::_('System load'); ?></div>
     <div class="group-content small-group-container" id="systemLoadAvg"><?php echo Helper::getSysLoadAvg(); ?></div>
-</div> 
+</div>
 <div class="form-group">
     <div class="group-label"><?php echo I18n::_('CPU usage'); ?></div>
     <div class="group-content small-group-container" id="cpuUsage">

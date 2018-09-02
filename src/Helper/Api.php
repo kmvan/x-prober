@@ -94,7 +94,7 @@ HTML;
 
         if (null === $space) {
             $dir = self::isWin() ? 'C:' : '/';
-            
+
             if (!is_readable($dir)) {
                 $space = 0;
 
@@ -376,7 +376,7 @@ HTML;
 
         foreach ($cpu as $k => $v) {
             $html .= <<<HTML
-<span class="small-group"><span class="item-name">{$k}</span> 
+<span class="small-group"><span class="item-name">{$k}</span>
 <span class="item-value">{$v}</span></span>
 HTML;
         }
