@@ -2,6 +2,11 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+
+## 1.6.1 - 2018-09-03
+### Fix
+- Fix a typo and remove unnecessary trailing spaces (contribute by @jfcherng)
+
 ## 1.6.0 - 2018-09-03
 ### Add
 - Add new row of PHP loaded extensions (contribute by @jfcherng)
