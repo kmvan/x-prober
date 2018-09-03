@@ -1,7 +1,7 @@
 ﻿[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)
 
-# 😎 x-prober
-> This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iPhone X!
+# 😎 X Prober
+> This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like ***iPhone X***!
 
 ## License
 * GPL-v2
