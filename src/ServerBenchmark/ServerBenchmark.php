@@ -184,7 +184,7 @@ HTML;
             $label = ! isset($item['url']) ? $item['label'] : <<<HTML
 <a href="{$item['url']}" target="_blank">{$item['label']}</a>
 HTML;
-            $marks = \number_format((float) $item['content']);
+            $marks = \is_numeric($item['content']) ? \number_format((float) $item['content']) : $item['content'];
             $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
