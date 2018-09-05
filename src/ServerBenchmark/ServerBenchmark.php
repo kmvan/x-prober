@@ -88,11 +88,6 @@ HTML;
         <?php
     }
 
-    private function I18n($str)
-    {
-        return I18n::_($str);
-    }
-
     private function getContent()
     {
         $items = array(
