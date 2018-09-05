@@ -28,7 +28,7 @@ class ServerBenchmark
 
     public function display()
     {
-        $lang = I18n::_('💡 Higher is better.');
+        $lang = I18n::_('💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
         echo <<<HTML
 <p class="description">{$lang}</p>
 <div class="row">
@@ -97,48 +97,54 @@ HTML;
     {
         $items = array(
             array(
-                'label'   => I18n::_('Amazon/EC2/PHP7'),
+                'label'   => I18n::_('Amazon/EC2'),
+                'url'     => 'https://aws.amazon.com/',
                 'content' => 3150,
             ),
             array(
-                'label'   => '<a href="https://www.vpsserver.com/?affcode=32d56f2dd1b6">' . I18n::_('VPSSERVER/KVM/PHP7') . '</a>',
-                'content' => 3374,
+                'label'   => I18n::_('VPSSERVER/KVM'),
+                'url'     => 'https://www.vpsserver.com/?affcode=32d56f2dd1b6',
+                'content' => 3125,
             ),
             array(
-                'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/ECS/PHP7') . '</a>',
+                'label'   => I18n::_('SpartanHost/KVM'),
+                'url'     => 'https://billing.spartanhost.net/aff.php?aff=801',
+                'content' => 3174,
+            ),
+            array(
+                'label'   => I18n::_('Aliyun/ECS'),
+                'url'     => 'https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii',
                 'content' => 3302,
             ),
             array(
-                'label'   => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP7') . '</a>',
+                'label'   => I18n::_('Vultr'),
+                'url'     => 'https://www.vultr.com/?ref=7256513',
                 'content' => 3182,
             ),
             array(
-                'label'   => '<a href="https://clientarea.ramnode.com/aff.php?aff=4143" target="_blank">' . I18n::_('RamNode/PHP7') . '</a>',
+                'label'   => I18n::_('RamNode'),
+                'url'     => 'https://clientarea.ramnode.com/aff.php?aff=4143',
                 'content' => 3131,
             ),
             array(
-                'label'   => '<a href="https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1" target="_blank">' . I18n::_('Linode/PHP7') . '</a>',
+                'label'   => I18n::_('Linode'),
+                'url'     => 'https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1',
                 'content' => 3091,
             ),
             array(
-                'label'   => I18n::_('Tencent/PHP7'),
+                'label'   => I18n::_('Tencent'),
+                'url'     => 'https://cloud.tencent.com/',
                 'content' => 3055,
             ),
             array(
-                'label'   => '<a href="https://billing.anynode.net/aff.php?aff=511"  target="_blank">' . I18n::_('AnyNode/HDD/PHP7') . '</a>',
+                'label'   => I18n::_('AnyNode/HDD'),
+                'url'     => 'https://billing.anynode.net/aff.php?aff=511',
                 'content' => 2641,
             ),
             array(
-                'label'   => '<a href="https://bandwagonhost.com/aff.php?aff=34116"  target="_blank">' . I18n::_('BandwagonHOST/SSD/PHP7') . '</a>',
+                'label'   => I18n::_('BandwagonHOST/SSD'),
+                'url'     => 'https://bandwagonhost.com/aff.php?aff=34116',
                 'content' => 2181,
-            ),
-            array(
-                'label'   => '<a href="https://www.vultr.com/?ref=7256513" target="_blank">' . I18n::_('Vultr/PHP5') . '</a>',
-                'content' => 2420,
-            ),
-            array(
-                'label'   => '<a href="https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii">' . I18n::_('Aliyun/Int/PHP5') . '</a>',
-                'content' => -7686,
             ),
         );
 
@@ -168,15 +174,22 @@ HTML;
         $content = '';
 
         foreach ($items as $item) {
-            $title = isset($item['title']) ? "title=\"{$item['title']}\"" : '';
-            $col   = isset($item['col']) ? $item['col'] : '1-3';
-            $id    = isset($item['id']) ? "id=\"{$item['id']}\"" : '';
-
+            $title = ! isset($item['title']) ? '' : <<<HTML
+title="{$item['title']}"
+HTML;
+            $col = isset($item['col']) ? $item['col'] : '1-3';
+            $id  = ! isset($item['id']) ? '' : <<<HTML
+id="{$item['id']}"
+HTML;
+            $label = ! isset($item['url']) ? $item['label'] : <<<HTML
+<a href="{$item['url']}" target="_blank">{$item['label']}</a>
+HTML;
+            $marks = \number_format((float) $item['content']);
             $content .= <<<HTML
 <div class="poi-g-lg-{$col}">
     <div class="form-group">
-        <div class="group-label" {$title}>{$item['label']}</div>
-        <div class="group-content" {$id} {$title}>{$item['content']}</div>
+        <div class="group-label" {$title}>{$label}</div>
+        <div class="group-content" {$id} {$title}>{$marks}</div>
     </div>
 </div>
 HTML;
