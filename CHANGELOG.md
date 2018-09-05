@@ -2,6 +2,14 @@
 
 All Notable changes to `x-prober` will be documented in this file
 
+## 1.7.0 - 2018-09-05
+### Add
+- Add zh-HK language
+- Add browser language information
+- Add SpartanHost benchmark
+### Optimize
+- Optimize benchmark description text
+
 
 ## 1.6.1 - 2018-09-03
 ### Fix
