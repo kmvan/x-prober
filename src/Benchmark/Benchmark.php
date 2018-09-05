@@ -8,7 +8,7 @@ use InnStudio\Prober\I18n\Api as I18n;
 
 class Benchmark
 {
-    private $EXPIRED = 300;
+    private $EXPIRED = 60;
 
     public function __construct()
     {
@@ -26,7 +26,7 @@ class Benchmark
 
     private function getTmpRecorderPath()
     {
-        return \sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
+        return \sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
     }
 
     private function saveTmpRecorder()
