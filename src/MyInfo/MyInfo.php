@@ -33,7 +33,8 @@ class MyInfo
 
     public function getContent()
     {
-        $ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+        $ua   = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+        $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '';
 
         return <<<HTML
 <div class="form-group">
@@ -41,8 +42,12 @@ class MyInfo
     <div class="group-content">{$this->getClientIp()}</div>
 </div>
 <div class="form-group">
-    <div class="group-label">{$this->_('My UA')}</div>
+    <div class="group-label">{$this->_('My browser UA')}</div>
     <div class="group-content">{$ua}</div>
+</div>
+<div class="form-group">
+    <div class="group-label">{$this->_('My browser language')}</div>
+    <div class="group-content">{$lang}</div>
 </div>
 HTML;
     }

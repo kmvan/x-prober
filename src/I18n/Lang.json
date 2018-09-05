@@ -272,9 +272,13 @@
         "zh-CN": "我的 IP",
         "zh-TW": "我的 IP"
     },
-    "My UA": {
-        "zh-CN": "我的 UA",
-        "zh-TW": "我的 UA"
+    "My browser UA": {
+        "zh-CN": "我的浏览器 UA",
+        "zh-TW": "我的瀏覽器 UA"
+    },
+    "My browser language": {
+        "zh-CN": "我的浏览器语言",
+        "zh-TW": "我的瀏覽器語言"
     },
     // footer
     "Generator %s": {
