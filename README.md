@@ -40,6 +40,11 @@
 - Jack Cherng https://github.com/jfcherng
 - More...
 
+## TODO
+- Temperature sensor
+- More languages with Poedit
+- Detail benchmark result
+
 ## Note
 - Only tested in Linux environment.
 
