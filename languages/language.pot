@@ -1,0 +1,386 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"POT-Creation-Date: 2018-09-18 21:29+0800\n"
+"PO-Revision-Date: 2018-09-18 21:29+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language-Team: Yourname <your mail or URL>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Benchmark/Benchmark.php:152
+#, php-format
+msgid "Please wait %d seconds"
+msgstr ""
+
+#: Database/Database.php:21
+msgid "Database"
+msgstr ""
+
+#: Database/Database.php:22
+msgid "DB"
+msgstr ""
+
+#: Database/Database.php:45
+msgid "SQLite3"
+msgstr ""
+
+#: Database/Database.php:50
+msgid "SQLite"
+msgstr ""
+
+#: Database/Database.php:55
+msgid "MySQLi client"
+msgstr ""
+
+#: Database/Database.php:59
+msgid "Mongo"
+msgstr ""
+
+#: Database/Database.php:63
+msgid "MongoDB"
+msgstr ""
+
+#: Database/Database.php:67
+msgid "PostgreSQL"
+msgstr ""
+
+#: Database/Database.php:71
+msgid "Paradox"
+msgstr ""
+
+#: Database/Database.php:75
+msgid "Microsoft SQL Server Driver for PHP"
+msgstr ""
+
+#: Database/Database.php:76
+msgid "MS SQL"
+msgstr ""
+
+#: Database/Database.php:80
+msgid "File Pro"
+msgstr ""
+
+#: Database/Database.php:84
+msgid "MaxDB client"
+msgstr ""
+
+#: Database/Database.php:88
+msgid "MaxDB server"
+msgstr ""
+
+#: Footer/Footer.php:26
+#, php-format
+msgid "Generator %s"
+msgstr ""
+
+#: Footer/Footer.php:28
+#, php-format
+msgid "Author %s"
+msgstr ""
+
+#: Helper/Api.php:58 Helper/Api.php:146 Helper/Api.php:171
+#: ServerInfo/ServerInfo.php:41
+msgid "Unavailable"
+msgstr ""
+
+#: Helper/Api.php:158
+#, php-format
+msgid "%s cache"
+msgstr ""
+
+#: Helper/Api.php:185
+#, php-format
+msgid "%1$dd %2$dh %3$dm %4$ds"
+msgstr ""
+
+#: Helper/Api.php:397
+msgid "Not support on Windows"
+msgstr ""
+
+#: Helper/Api.php:402
+#, php-format
+msgid "%d min:"
+msgstr ""
+
+#: MyInfo/MyInfo.php:21
+msgid "My information"
+msgstr ""
+
+#: MyInfo/MyInfo.php:22
+msgid "Mine"
+msgstr ""
+
+#: NetworkStats/NetworkStats.php:22
+msgid "Network stats"
+msgstr ""
+
+#: NetworkStats/NetworkStats.php:23
+msgid "Net"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:21
+msgid "PHP extensions"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:22
+msgid "Ext"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:42
+#: PhpExtensionInfo/PhpExtensionInfo.php:46
+#: PhpExtensionInfo/PhpExtensionInfo.php:50
+#: PhpExtensionInfo/PhpExtensionInfo.php:54
+#: PhpExtensionInfo/PhpExtensionInfo.php:62
+#: PhpExtensionInfo/PhpExtensionInfo.php:66
+#: PhpExtensionInfo/PhpExtensionInfo.php:70
+#: PhpExtensionInfo/PhpExtensionInfo.php:74
+#: PhpExtensionInfo/PhpExtensionInfo.php:78
+#: PhpExtensionInfo/PhpExtensionInfo.php:82
+#: PhpExtensionInfo/PhpExtensionInfo.php:86
+#, php-format
+msgid "%s extension"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:58
+#, php-format
+msgid "%s enabled"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:90
+msgid "Zend Optimizer"
+msgstr ""
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:95
+msgid "Loaded extensions"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:21
+msgid "PHP information"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:22
+msgid "PHP"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:42
+msgid "PHP info detail"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:46
+msgid "Version"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:50
+msgid "SAPI interface"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:54
+msgid "Error reporting"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:59
+msgid "Max memory limit"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:64
+msgid "Max POST size"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:69
+msgid "Max upload size"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:74
+msgid "Max input variables"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:79
+msgid "Max execution time"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:84
+msgid "Timeout for socket"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:89
+msgid "Display errors"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:94
+msgid "Treatment URLs file"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:99
+msgid "SMTP support"
+msgstr ""
+
+#: PhpInfo/PhpInfo.php:105
+msgid "Disabled functions"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:21
+msgid "Server Benchmark"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:22
+msgid "Benchmark"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:31
+msgid ""
+"💡 Higher is better. Note: the benchmark marks are not the only criterion for "
+"evaluating the quality of a host/server."
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:46
+msgid "Error, click to retry"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:53
+msgid "Loading..."
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:95
+msgid "Amazon/EC2"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:100
+msgid "VPSSERVER/KVM"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:105
+msgid "SpartanHost/KVM"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:110
+msgid "Aliyun/ECS"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:115
+msgid "Vultr"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:120
+msgid "RamNode"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:125
+msgid "Linode"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:130
+msgid "Tencent"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:135
+msgid "AnyNode/HDD"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:140
+msgid "BandwagonHOST/SSD"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:164
+msgid "My server"
+msgstr ""
+
+#: ServerBenchmark/ServerBenchmark.php:165
+msgid "Click to test"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:21
+msgid "Server information"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:22
+msgid "Info"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:67
+msgid "Server name"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:72
+msgid "Server time"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:77
+msgid "Server uptime"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:81
+msgid "Server IP"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:85
+msgid "Server software"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:89
+msgid "PHP version"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:94
+msgid "CPU model"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:99
+msgid "Server OS"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:105
+msgid "Script path"
+msgstr ""
+
+#: ServerInfo/ServerInfo.php:110
+msgid "Disk usage"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:22
+msgid "Server status"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:23
+msgid "Status"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:34
+msgid "System load"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:38
+msgid "CPU usage"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:53
+msgid "Real memory usage"
+msgstr ""
+
+#: ServerStatus/ServerStatus.php:71
+msgid "Real swap usage"
+msgstr ""
+
+#: Updater/Updater.php:30
+msgid "File can not update."
+msgstr ""
+
+#: Updater/Updater.php:39
+msgid "Update file not found."
+msgstr ""
+
+#: Updater/Updater.php:46
+msgid "Update success..."
+msgstr ""
+
+#: Updater/Updater.php:52
+msgid "Update error."
+msgstr ""
