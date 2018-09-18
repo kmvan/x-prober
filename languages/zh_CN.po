@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-09-18 15:18+0800\n"
-"PO-Revision-Date: 2018-09-18 16:05+0800\n"
+"PO-Revision-Date: 2018-09-18 22:25+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -104,7 +104,7 @@ msgstr "%s 缓存"
 #: Helper/Api.php:185
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
-msgstr "%1$d天 %2$d时 %3$d分 %4$d秒"
+msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
 
 #: Helper/Api.php:397
 msgid "Not support on Windows"
