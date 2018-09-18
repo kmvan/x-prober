@@ -25,10 +25,13 @@ And the most important thing is that it's like 📱 **iPhone X** and **📱 iPho
 
 ## For development
 - Star⭐ and **Fork**.
+- Generate composer vendor: `$ composer dumpautoload -o`.
+- Code you mind.
 - Compile **development**: `$ php ./make.php dev`.
 - Compile **production**: `$ php ./make.php`.
 - Access `./dist/prober.php` from http browser.
 - Enjoy it. 😄
+- Pull Request.
 
 ## Help and translate more languages
 - **Fork** project.
