@@ -37,6 +37,8 @@ class PhpInfo
 
     private function getContent()
     {
+        $errLevels = Helper::getErrNameByCode(\ini_get('error_reporting'));
+
         $items = array(
             array(
                 'label'   => $this->_('PHP info detail'),
@@ -52,8 +54,8 @@ class PhpInfo
             ),
             array(
                 'label'   => $this->_('Error reporting'),
-                'title'   => 'error_reporting',
-                'content' => Helper::getErrNameByCode(\ini_get('error_reporting')),
+                'title'   => "error_reporting: {$errLevels}",
+                'content' => Helper::strcut($errLevels),
             ),
             array(
                 'label'   => $this->_('Max memory limit'),
