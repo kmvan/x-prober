@@ -36,9 +36,9 @@ class I18nApi
         $client = \explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
         if (isset($client[0])) {
-            $cache = $client[0];
+            $cache = \str_replace('-', '_', $client[0]);
         } else {
-            $cache = '';
+            $cache = 'en';
         }
 
         return $cache;

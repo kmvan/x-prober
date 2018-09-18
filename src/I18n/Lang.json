@@ -1,6 +1,6 @@
 // Do not edit the json file
 {
-    "zh-CN": {
+    "zh_CN": {
         "Please wait %d seconds": "请等待 %d 秒",
         "Database": "数据库",
         "DB": "数据库",
@@ -20,7 +20,7 @@
         "Author %s": "作者为 %s",
         "Unavailable": "不可用",
         "%s cache": "%s 缓存",
-        "%1$dd %2$dh %3$dm %4$ds": "%1$d天 %2$d时 %3$d分 %4$d秒",
+        "%1$dd %2$dh %3$dm %4$ds": "%1$d 天 %2$d 时 %3$d 分 %4$d 秒",
         "Not support on Windows": "Windows 系统尚未支持该功能",
         "%d min:": "%d 分：",
         "My information": "我的信息",
@@ -89,7 +89,7 @@
         "Update success...": "更新成功……",
         "Update error.": "更新出错。"
     },
-    "zh-TW": {
+    "zh_TW": {
         "Please wait %d seconds": "請等待 %d 秒",
         "Database": "資料庫",
         "DB": "資料庫",
