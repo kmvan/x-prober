@@ -1,0 +1,390 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-18 15:18+0800\n"
+"PO-Revision-Date: 2018-09-18 16:05+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language-Team: kmvan <kmvan.com@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Flags-xgettext: --add-comments\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../.git\n"
+"X-Poedit-SearchPathExcluded-1: ../dist\n"
+
+#: Benchmark/Benchmark.php:152
+#, php-format
+msgid "Please wait %d seconds"
+msgstr "请等待 %d 秒"
+
+#: Database/Database.php:21
+msgid "Database"
+msgstr "数据库"
+
+#: Database/Database.php:22
+msgid "DB"
+msgstr "数据库"
+
+#: Database/Database.php:45
+msgid "SQLite3"
+msgstr ""
+
+#: Database/Database.php:50
+msgid "SQLite"
+msgstr ""
+
+#: Database/Database.php:55
+msgid "MySQLi client"
+msgstr ""
+
+#: Database/Database.php:59
+msgid "Mongo"
+msgstr ""
+
+#: Database/Database.php:63
+msgid "MongoDB"
+msgstr ""
+
+#: Database/Database.php:67
+msgid "PostgreSQL"
+msgstr ""
+
+#: Database/Database.php:71
+msgid "Paradox"
+msgstr "Par"
+
+#: Database/Database.php:75
+msgid "Microsoft SQL Server Driver for PHP"
+msgstr ""
+
+#: Database/Database.php:76
+msgid "MS SQL"
+msgstr ""
+
+#: Database/Database.php:80
+msgid "File Pro"
+msgstr ""
+
+#: Database/Database.php:84
+msgid "MaxDB client"
+msgstr ""
+
+#: Database/Database.php:88
+msgid "MaxDB server"
+msgstr ""
+
+#: Footer/Footer.php:26
+#, php-format
+msgid "Generator %s"
+msgstr "该页面由 %s 生成"
+
+#: Footer/Footer.php:28
+#, php-format
+msgid "Author %s"
+msgstr "作者为 %s"
+
+#: Helper/Api.php:58 Helper/Api.php:146 Helper/Api.php:171
+#: ServerInfo/ServerInfo.php:41
+msgid "Unavailable"
+msgstr "不可用"
+
+#: Helper/Api.php:158
+#, php-format
+msgid "%s cache"
+msgstr "%s 缓存"
+
+#: Helper/Api.php:185
+#, php-format
+msgid "%1$dd %2$dh %3$dm %4$ds"
+msgstr "%1$d天 %2$d时 %3$d分 %4$d秒"
+
+#: Helper/Api.php:397
+msgid "Not support on Windows"
+msgstr "Windows 系统尚未支持该功能"
+
+#: Helper/Api.php:402
+#, php-format
+msgid "%d min:"
+msgstr "%d 分："
+
+#: MyInfo/MyInfo.php:21
+msgid "My information"
+msgstr "我的信息"
+
+#: MyInfo/MyInfo.php:22
+msgid "Mine"
+msgstr "我的"
+
+#: NetworkStats/NetworkStats.php:22
+msgid "Network stats"
+msgstr "流量统计"
+
+#: NetworkStats/NetworkStats.php:23
+msgid "Net"
+msgstr "网络"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:21
+msgid "PHP extensions"
+msgstr "PHP 扩展"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:22
+msgid "Ext"
+msgstr "扩展"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:42
+#: PhpExtensionInfo/PhpExtensionInfo.php:46
+#: PhpExtensionInfo/PhpExtensionInfo.php:50
+#: PhpExtensionInfo/PhpExtensionInfo.php:54
+#: PhpExtensionInfo/PhpExtensionInfo.php:62
+#: PhpExtensionInfo/PhpExtensionInfo.php:66
+#: PhpExtensionInfo/PhpExtensionInfo.php:70
+#: PhpExtensionInfo/PhpExtensionInfo.php:74
+#: PhpExtensionInfo/PhpExtensionInfo.php:78
+#: PhpExtensionInfo/PhpExtensionInfo.php:82
+#: PhpExtensionInfo/PhpExtensionInfo.php:86
+#, php-format
+msgid "%s extension"
+msgstr "%s 扩展"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:58
+#, php-format
+msgid "%s enabled"
+msgstr "%s 已启用"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:90
+msgid "Zend Optimizer"
+msgstr "Zend 优化器"
+
+#: PhpExtensionInfo/PhpExtensionInfo.php:95
+msgid "Loaded extensions"
+msgstr "已加载的扩展"
+
+#: PhpInfo/PhpInfo.php:21
+msgid "PHP information"
+msgstr "PHP 信息"
+
+#: PhpInfo/PhpInfo.php:22
+msgid "PHP"
+msgstr "PHP"
+
+#: PhpInfo/PhpInfo.php:42
+msgid "PHP info detail"
+msgstr "PHP 详细信息"
+
+#: PhpInfo/PhpInfo.php:46
+msgid "Version"
+msgstr "版本"
+
+#: PhpInfo/PhpInfo.php:50
+msgid "SAPI interface"
+msgstr "SAPI 接口"
+
+#: PhpInfo/PhpInfo.php:54
+msgid "Error reporting"
+msgstr "错误报告"
+
+#: PhpInfo/PhpInfo.php:59
+msgid "Max memory limit"
+msgstr "运行内存限制"
+
+#: PhpInfo/PhpInfo.php:64
+msgid "Max POST size"
+msgstr "POST 提交限制"
+
+#: PhpInfo/PhpInfo.php:69
+msgid "Max upload size"
+msgstr "上传文件限制"
+
+#: PhpInfo/PhpInfo.php:74
+msgid "Max input variables"
+msgstr "提交表单限制"
+
+#: PhpInfo/PhpInfo.php:79
+msgid "Max execution time"
+msgstr "运行超时秒数"
+
+#: PhpInfo/PhpInfo.php:84
+msgid "Timeout for socket"
+msgstr "Socket 超时秒数"
+
+#: PhpInfo/PhpInfo.php:89
+msgid "Display errors"
+msgstr "显示错误"
+
+#: PhpInfo/PhpInfo.php:94
+msgid "Treatment URLs file"
+msgstr "文件远端打开"
+
+#: PhpInfo/PhpInfo.php:99
+msgid "SMTP support"
+msgstr "SMTP 支持"
+
+#: PhpInfo/PhpInfo.php:105
+msgid "Disabled functions"
+msgstr "已禁用的函数"
+
+#: ServerBenchmark/ServerBenchmark.php:21
+msgid "Server Benchmark"
+msgstr "服务器跑分"
+
+#: ServerBenchmark/ServerBenchmark.php:22
+msgid "Benchmark"
+msgstr "跑分"
+
+#: ServerBenchmark/ServerBenchmark.php:31
+msgid ""
+"💡 Higher is better. Note: the benchmark marks are not the only criterion for "
+"evaluating the quality of a host/server."
+msgstr "💡 分数越高越好。注意：跑分结果不是评价服务器优劣的唯一标准。"
+
+#: ServerBenchmark/ServerBenchmark.php:46
+msgid "Error, click to retry"
+msgstr "错误，点击重试"
+
+#: ServerBenchmark/ServerBenchmark.php:53
+msgid "Loading..."
+msgstr "加载中……"
+
+#: ServerBenchmark/ServerBenchmark.php:95
+msgid "Amazon/EC2"
+msgstr "亚马逊/EC2"
+
+#: ServerBenchmark/ServerBenchmark.php:100
+msgid "VPSSERVER/KVM"
+msgstr "VPSSERVER/KVM"
+
+#: ServerBenchmark/ServerBenchmark.php:105
+msgid "SpartanHost/KVM"
+msgstr "斯巴达/KVM"
+
+#: ServerBenchmark/ServerBenchmark.php:110
+msgid "Aliyun/ECS"
+msgstr "阿里云/ECS"
+
+#: ServerBenchmark/ServerBenchmark.php:115
+msgid "Vultr"
+msgstr "Vultr"
+
+#: ServerBenchmark/ServerBenchmark.php:120
+msgid "RamNode"
+msgstr "RamNode"
+
+#: ServerBenchmark/ServerBenchmark.php:125
+msgid "Linode"
+msgstr "Linode"
+
+#: ServerBenchmark/ServerBenchmark.php:130
+msgid "Tencent"
+msgstr "腾讯云"
+
+#: ServerBenchmark/ServerBenchmark.php:135
+msgid "AnyNode/HDD"
+msgstr "AnyNode/HDD"
+
+#: ServerBenchmark/ServerBenchmark.php:140
+msgid "BandwagonHOST/SSD"
+msgstr "搬瓦工/SSD"
+
+#: ServerBenchmark/ServerBenchmark.php:164
+msgid "My server"
+msgstr "我的服务器"
+
+#: ServerBenchmark/ServerBenchmark.php:165
+msgid "Click to test"
+msgstr "点击测试"
+
+#: ServerInfo/ServerInfo.php:21
+msgid "Server information"
+msgstr "服务器信息"
+
+#: ServerInfo/ServerInfo.php:22
+msgid "Info"
+msgstr "信息"
+
+#: ServerInfo/ServerInfo.php:67
+msgid "Server name"
+msgstr "服务器名"
+
+#: ServerInfo/ServerInfo.php:72
+msgid "Server time"
+msgstr "服务器时间"
+
+#: ServerInfo/ServerInfo.php:77
+msgid "Server uptime"
+msgstr "持续运作时间"
+
+#: ServerInfo/ServerInfo.php:81
+msgid "Server IP"
+msgstr "服务器 IP"
+
+#: ServerInfo/ServerInfo.php:85
+msgid "Server software"
+msgstr "服务器软件"
+
+#: ServerInfo/ServerInfo.php:89
+msgid "PHP version"
+msgstr "PHP 版本"
+
+#: ServerInfo/ServerInfo.php:94
+msgid "CPU model"
+msgstr "CPU 型号"
+
+#: ServerInfo/ServerInfo.php:99
+msgid "Server OS"
+msgstr "服务器系统"
+
+#: ServerInfo/ServerInfo.php:105
+msgid "Script path"
+msgstr "脚本路径"
+
+#: ServerInfo/ServerInfo.php:110
+msgid "Disk usage"
+msgstr "磁盘使用量"
+
+#: ServerStatus/ServerStatus.php:22
+msgid "Server status"
+msgstr "服务器状态"
+
+#: ServerStatus/ServerStatus.php:23
+msgid "Status"
+msgstr "状态"
+
+#: ServerStatus/ServerStatus.php:34
+msgid "System load"
+msgstr "系统负载"
+
+#: ServerStatus/ServerStatus.php:38
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+#: ServerStatus/ServerStatus.php:53
+msgid "Real memory usage"
+msgstr "真实内存使用"
+
+#: ServerStatus/ServerStatus.php:71
+msgid "Real swap usage"
+msgstr "SWAP 使用"
+
+#: Updater/Updater.php:30
+msgid "File can not update."
+msgstr "无法更新文件。"
+
+#: Updater/Updater.php:39
+msgid "Update file not found."
+msgstr "未找到更新文件。"
+
+#: Updater/Updater.php:46
+msgid "Update success..."
+msgstr "更新成功……"
+
+#: Updater/Updater.php:52
+msgid "Update error."
+msgstr "更新出错。"

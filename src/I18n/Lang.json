@@ -1,361 +1,181 @@
+// Do not edit the json file
 {
-    "https://github.com/kmvan/x-prober": {
-        "zh-CN": "http://github.com/kmvan/x-prober",
-        "zh-TW": "http://github.com/kmvan/x-prober",
-        "zh-HK": "http://github.com/kmvan/x-prober"
-    },
-    "INN STUDIO": {
-        "zh-CN": "INN STUDIO",
-        "zh-TW": "INN STUDIO",
-        "zh-HK": "INN STUDIO"
-    },
-    "https://inn-studio.com/prober": {
-        "zh-CN": "https://inn-studio.com/prober",
-        "zh-TW": "https://inn-studio.com/prober",
-        "zh-HK": "https://inn-studio.com/prober"
-    },
-    "X Prober": {
-        "zh-CN": "X 探针",
-        "zh-TW": "X 探針",
-        "zh-HK": "X 探針"
-    },
-    "{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}": {
-        "zh-CN": "{APP_NAME}发现更新！版本 {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}",
-        "zh-TW": "{APP_NAME}發現更新！版本 {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}",
-        "zh-HK": "{APP_NAME}發現更新！版本 {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}"
-    },
-    "Unavailable": {
-        "zh-CN": "不可用",
-        "zh-TW": "不可用",
-        "zh-HK": "不可用"
-    },
-    // update
-    "File can not update.": {
-        "zh-CN": "文件无法被更新。",
-        "zh-TW": "檔案無法被更新。",
-        "zh-HK": "檔案無法被更新。"
-    },
-    "Update file not found.": {
-        "zh-CN": "未发现更新文件。",
-        "zh-TW": "未發現更新檔案。",
-        "zh-HK": "未發現更新檔案。"
-    },
-    "Update success...": {
-        "zh-CN": "更新成功...",
-        "zh-TW": "更新成功...",
-        "zh-HK": "更新成功..."
-    },
-    "Update error.": {
-        "zh-CN": "更新出错。",
-        "zh-TW": "更新出錯。",
-        "zh-HK": "更新出錯。"
-    },
-    "Updating...": {
-        "zh-CN": "更新中...",
-        "zh-TW": "更新中...",
-        "zh-HK": "更新中..."
-    },
-    // server status
-    "Server status": {
-        "zh-CN": "服务器状态",
-        "zh-TW": "伺服器狀態",
-        "zh-HK": "伺服器狀態"
-    },
-    "System load": {
-        "zh-CN": "系统负载",
-        "zh-TW": "系統負載",
-        "zh-HK": "系統負載"
-    },
-    "Not support on Windows": {
-        "zh-CN": "Windows 系统尚未支持该功能",
-        "zh-TW": "Windows 系統尚未支援該功能",
-        "zh-HK": "Windows 系統尚未支援該功能"
-    },
-    "CPU usage": {
-        "zh-CN": "CPU 使用率",
-        "zh-TW": "CPU 使用率",
-        "zh-HK": "CPU 使用率"
-    },
-    "Real memory usage": {
-        "zh-CN": "真实内存使用",
-        "zh-TW": "真實記憶體使用",
-        "zh-HK": "真實記憶體使用"
-    },
-    "Real swap usage": {
-        "zh-CN": "SWAP 使用",
-        "zh-TW": "SWAP 使用",
-        "zh-HK": "SWAP 使用"
-    },
-    // Network stats
-    "Network stats": {
-        "zh-CN": "流量统计",
-        "zh-TW": "流量統計",
-        "zh-HK": "流量統計"
-    },
-    // Server info
-    "Server information": {
-        "zh-CN": "服务器信息",
-        "zh-TW": "伺服器訊息",
-        "zh-HK": "伺服器訊息"
-    },
-    "Server time": {
-        "zh-CN": "服务器时间",
-        "zh-TW": "伺服器時間",
-        "zh-HK": "伺服器時間"
-    },
-    "Server uptime": {
-        "zh-CN": "持续运行时间",
-        "zh-TW": "持續上線時間",
-        "zh-HK": "持續上線時間"
-    },
-    "Server IP": {
-        "zh-CN": "服务器 IP",
-        "zh-TW": "伺服器 IP",
-        "zh-HK": "伺服器 IP"
-    },
-    "Server name": {
-        "zh-CN": "服务器名",
-        "zh-TW": "伺服器名",
-        "zh-HK": "伺服器名"
-    },
-    "Server software": {
-        "zh-CN": "服务器软件",
-        "zh-TW": "伺服器軟體",
-        "zh-HK": "伺服器軟體"
-    },
-    "CPU model": {
-        "zh-CN": "CPU 型号",
-        "zh-TW": "CPU 型號",
-        "zh-HK": "CPU 型號"
-    },
-    "Server OS": {
-        "zh-CN": "服务器系统",
-        "zh-TW": "伺服器系統",
-        "zh-HK": "伺服器系統"
-    },
-    "Script path": {
-        "zh-CN": "脚本路径",
-        "zh-TW": "腳本路徑",
-        "zh-HK": "腳本路徑"
-    },
-    "Disk usage": {
-        "zh-CN": "磁盘使用",
-        "zh-TW": "磁碟使用",
-        "zh-HK": "磁碟使用"
-    },
-    // PHP info
-    "PHP version": {
-        "zh-CN": "PHP 版本",
-        "zh-TW": "PHP 版本",
-        "zh-HK": "PHP 版本"
-    },
-    "PHP information": {
-        "zh-CN": "PHP 信息",
-        "zh-TW": "PHP 訊息",
-        "zh-HK": "PHP 訊息"
-    },
-    "PHP info detail": {
-        "zh-CN": "PHP 详细信息",
-        "zh-TW": "PHP 詳細訊息",
-        "zh-": "PHP 詳細訊息"
-    },
-    "Click to check": {
-        "zh-CN": "点击查看",
-        "zh-TW": "點擊查看",
-        "zh-HK": "點擊查看"
-    },
-    "Version": {
-        "zh-CN": "版本",
-        "zh-TW": "版本",
-        "zh-HK": "版本"
-    },
-    "SAPI interface": {
-        "zh-CN": "SAPI 接口",
-        "zh-TW": "SAPI 介面",
-        "zh-HK": "SAPI 介面"
-    },
-    "Error reporting": {
-        "zh-CN": "错误报告",
-        "zh-TW": "錯誤報告",
-        "zh-HK": "錯誤報告"
-    },
-    "Max memory limit": {
-        "zh-CN": "运行内存限制",
-        "zh-TW": "執行記憶體限制",
-        "zh-HK": "執行記憶體限制"
-    },
-    "Max POST size": {
-        "zh-CN": "POST 提交限制",
-        "zh-TW": "POST 提交限制",
-        "zh-HK": "POST 提交限制"
-    },
-    "Max upload size": {
-        "zh-CN": "上传文件限制",
-        "zh-TW": "上傳檔案限制",
-        "zh-HK": "上傳檔案限制"
-    },
-    "Max input variables": {
-        "zh-CN": "提交表单限制",
-        "zh-TW": "提交表單限制",
-        "zh-HK": "提交表單限制"
-    },
-    "Max execution time": {
-        "zh-CN": "运行超时秒数",
-        "zh-TW": "執行超時秒數",
-        "zh-HK": "執行超時秒數"
-    },
-    "Timeout for socket": {
-        "zh-CN": "Socket 超时秒数",
-        "zh-TW": "Socket 超時秒數",
-        "zh-HK": "Socket 超時秒數"
-    },
-    "Display errors": {
-        "zh-CN": "显示错误",
-        "zh-TW": "顯示錯誤",
-        "zh-HK": "顯示錯誤"
-    },
-    "Treatment URLs file": {
-        "zh-CN": "文件远端打开",
-        "zh-TW": "檔案遠端打開",
-        "zh-HK": "檔案遠端打開"
-    },
-    "SMTP support": {
-        "zh-CN": "SMTP 支持",
-        "zh-TW": "SMTP 支援",
-        "zh-HK": "SMTP 支援"
-    },
-    "Disabled functions": {
-        "zh-CN": "禁用的函数",
-        "zh-TW": "禁用的函數",
-        "zh-HK": "禁用的函數"
-    },
-    // PHP Extensions
-    "PHP extensions": {
-        "zh-CN": "PHP 扩展",
-        "zh-TW": "PHP 擴展",
-        "zh-HK": "PHP 擴展"
-    },
-    "%s extension": {
-        "zh-CN": "%s 扩展",
-        "zh-TW": "%s 擴展",
-        "zh-HK": "%s 擴展"
-    },
-    "%s enabled": {
-        "zh-CN": "%s 启用",
-        "zh-TW": "%s 啟用",
-        "zh-HK": "%s 啟用"
-    },
-    "Loaded extensions": {
-        "zh-CN": "加载的 PHP 扩展",
-        "zh-TW": "載入的 PHP 擴展",
-        "zh-HK": "載入的 PHP 擴展"
-    },
-    // Database
-    "Database": {
-        "zh-CN": "数据库",
-        "zh-TW": "資料庫",
-        "zh-HK": "資料庫"
-    },
-    // Server Benchmark
-    "Server Benchmark": {
-        "zh-CN": "服务器性能跑分",
-        "zh-TW": "伺服器性能跑分",
-        "zh-HK": "伺服器性能跑分"
-    },
-    "Benchmark": {
-        "zh-CN": "跑分",
-        "zh-TW": "跑分",
-        "zh-HK": "跑分"
-    },
-    "💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.": {
-        "zh-CN": "💡 分数越高越好。注：跑分数值并不是评价一台主机或服务器的唯一标准。",
-        "zh-TW": "💡 分數越高越好。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
-        "zh-HK": "💡 分數越高越好。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。"
-    },
-    "Error, click to retry.": {
-        "zh-CN": "错误，点击重试",
-        "zh-TW": "錯誤，點擊重試",
-        "zh-HK": "錯誤，點擊重試"
-    },
-    "Please wait %d seconds": {
-        "zh-CN": "请等待 %d 秒",
-        "zh-TW": "請等待 %d 秒",
-        "zh-HK": "請等待 %d 秒"
-    },
-    "Loading...": {
-        "zh-CN": "加载中……",
-        "zh-TW": "載入中……",
-        "zh-HK": "載入中……"
-    },
-    "My server": {
-        "zh-CN": "我的服务器",
-        "zh-TW": "我的伺服器"
-    },
-    "Click to test": {
-        "zh-CN": "点击测试",
-        "zh-TW": "點擊測試",
-        "zh-HK": "點擊測試"
-    },
-    "Aliyun/ECS": {
-        "zh-CN": "阿里云/ECS",
-        "zh-TW": "阿里雲/ECS",
-        "zh-HK": "阿里雲/ECS"
-    },
-    "SpartanHost/KVM": {
-        "zh-CN": "斯巴达/KVM",
-        "zh-TW": "斯巴達/KVM",
-        "zh-HK": "斯巴達/KVM"
-    },
-    "Vultr": {
-        "zh-CN": "Vultr",
-        "zh-TW": "Vultr",
-        "zh-HK": "Vultr"
-    },
-    "AnyNode/HDD": {
-        "zh-CN": "AnyNode/HDD",
-        "zh-TW": "AnyNode/HDD",
-        "zh-HK": "AnyNode/HDD"
-    },
-    "Tencent": {
-        "zh-CN": "腾讯云",
-        "zh-TW": "騰訊雲",
-        "zh-HK": "騰訊雲"
-    },
-    "Amazon/EC2": {
-        "zh-CN": "亚马逊/EC2",
-        "zh-TW": "亞馬遜/EC2",
-        "zh-HK": "亞馬遜/EC2"
-    },
-    // My information
-    "My information": {
-        "zh-CN": "我的信息",
-        "zh-TW": "我的訊息",
-        "zh-HK": "我的訊息"
-    },
-    "My IP": {
-        "zh-CN": "我的 IP",
-        "zh-TW": "我的 IP",
-        "zh-HK": "我的 IP"
-    },
-    "My browser UA": {
-        "zh-CN": "我的浏览器 UA",
-        "zh-TW": "我的瀏覽器 UA",
-        "zh-HK": "我的瀏覽器 UA"
-    },
-    "My browser language": {
-        "zh-CN": "我的浏览器语言",
-        "zh-TW": "我的瀏覽器語言",
-        "zh-HK": "我的瀏覽器語言"
-    },
-    // footer
-    "Generator %s": {
-        "zh-CN": "该页面由 %s 生成",
-        "zh-TW": "該頁面由 %s 生成",
-        "zh-HK": "該頁面由 %s 生成"
-    },
-    "Author %s": {
-        "zh-CN": "作者为 %s",
-        "zh-TW": "作者為 %s",
-        "zh-HK": "作者為 %s"
+    "zh-CN": {
+        "Please wait %d seconds": "请等待 %d 秒",
+        "Database": "数据库",
+        "DB": "数据库",
+        "SQLite3": "",
+        "SQLite": "",
+        "MySQLi client": "",
+        "Mongo": "",
+        "MongoDB": "",
+        "PostgreSQL": "",
+        "Paradox": "Par",
+        "Microsoft SQL Server Driver for PHP": "",
+        "MS SQL": "",
+        "File Pro": "",
+        "MaxDB client": "",
+        "MaxDB server": "",
+        "Generator %s": "该页面由 %s 生成",
+        "Author %s": "作者为 %s",
+        "Unavailable": "不可用",
+        "%s cache": "%s 缓存",
+        "%1$dd %2$dh %3$dm %4$ds": "%1$d天 %2$d时 %3$d分 %4$d秒",
+        "Not support on Windows": "Windows 系统尚未支持该功能",
+        "%d min:": "%d 分：",
+        "My information": "我的信息",
+        "Mine": "我的",
+        "Network stats": "流量统计",
+        "Net": "网络",
+        "PHP extensions": "PHP 扩展",
+        "Ext": "扩展",
+        "%s extension": "%s 扩展",
+        "%s enabled": "%s 已启用",
+        "Zend Optimizer": "Zend 优化器",
+        "Loaded extensions": "已加载的扩展",
+        "PHP information": "PHP 信息",
+        "PHP": "PHP",
+        "PHP info detail": "PHP 详细信息",
+        "Version": "版本",
+        "SAPI interface": "SAPI 接口",
+        "Error reporting": "错误报告",
+        "Max memory limit": "运行内存限制",
+        "Max POST size": "POST 提交限制",
+        "Max upload size": "上传文件限制",
+        "Max input variables": "提交表单限制",
+        "Max execution time": "运行超时秒数",
+        "Timeout for socket": "Socket 超时秒数",
+        "Display errors": "显示错误",
+        "Treatment URLs file": "文件远端打开",
+        "SMTP support": "SMTP 支持",
+        "Disabled functions": "已禁用的函数",
+        "Server Benchmark": "服务器跑分",
+        "Benchmark": "跑分",
+        "💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡 分数越高越好。注意：跑分结果不是评价服务器优劣的唯一标准。",
+        "Error, click to retry": "错误，点击重试",
+        "Loading...": "加载中……",
+        "Amazon\/EC2": "亚马逊\/EC2",
+        "VPSSERVER\/KVM": "VPSSERVER\/KVM",
+        "SpartanHost\/KVM": "斯巴达\/KVM",
+        "Aliyun\/ECS": "阿里云\/ECS",
+        "Vultr": "Vultr",
+        "RamNode": "RamNode",
+        "Linode": "Linode",
+        "Tencent": "腾讯云",
+        "AnyNode\/HDD": "AnyNode\/HDD",
+        "BandwagonHOST\/SSD": "搬瓦工\/SSD",
+        "My server": "我的服务器",
+        "Click to test": "点击测试",
+        "Server information": "服务器信息",
+        "Info": "信息",
+        "Server name": "服务器名",
+        "Server time": "服务器时间",
+        "Server uptime": "持续运作时间",
+        "Server IP": "服务器 IP",
+        "Server software": "服务器软件",
+        "PHP version": "PHP 版本",
+        "CPU model": "CPU 型号",
+        "Server OS": "服务器系统",
+        "Script path": "脚本路径",
+        "Disk usage": "磁盘使用量",
+        "Server status": "服务器状态",
+        "Status": "状态",
+        "System load": "系统负载",
+        "CPU usage": "CPU 使用率",
+        "Real memory usage": "真实内存使用",
+        "Real swap usage": "SWAP 使用",
+        "File can not update.": "无法更新文件。",
+        "Update file not found.": "未找到更新文件。",
+        "Update success...": "更新成功……",
+        "Update error.": "更新出错。"
+    },
+    "zh-TW": {
+        "Please wait %d seconds": "請等待 %d 秒",
+        "Database": "資料庫",
+        "DB": "資料庫",
+        "SQLite3": "",
+        "SQLite": "",
+        "MySQLi client": "",
+        "Mongo": "",
+        "MongoDB": "",
+        "PostgreSQL": "",
+        "Paradox": "",
+        "Microsoft SQL Server Driver for PHP": "",
+        "MS SQL": "",
+        "File Pro": "",
+        "MaxDB client": "",
+        "MaxDB server": "",
+        "Generator %s": "該頁面由 %s 生成",
+        "Author %s": "作者為 %s",
+        "Unavailable": "不可用",
+        "%s cache": "",
+        "%1$dd %2$dh %3$dm %4$ds": "",
+        "Not support on Windows": "Windows 系統尚未支援該功能\t",
+        "%d min:": "",
+        "My information": "我的訊息",
+        "Mine": "我的",
+        "Network stats": "流量統計",
+        "Net": "流量",
+        "PHP extensions": "PHP 擴展",
+        "Ext": "擴展",
+        "%s extension": "%s 擴展",
+        "%s enabled": "%s 啟用",
+        "Zend Optimizer": "",
+        "Loaded extensions": "載入的 PHP 擴展",
+        "PHP information": "PHP 訊息",
+        "PHP": "PHP",
+        "PHP info detail": "PHP 詳細訊息",
+        "Version": "版本",
+        "SAPI interface": "SAPI 介面",
+        "Error reporting": "錯誤報告",
+        "Max memory limit": "執行記憶體限制",
+        "Max POST size": "POST 提交限制",
+        "Max upload size": "上傳檔案限制",
+        "Max input variables": "提交表單限制",
+        "Max execution time": "執行超時秒數",
+        "Timeout for socket": "Socket 超時秒數",
+        "Display errors": "顯示錯誤",
+        "Treatment URLs file": "檔案遠端打開",
+        "SMTP support": "SMTP 支援",
+        "Disabled functions": "禁用的函數",
+        "Server Benchmark": "伺服器性能跑分",
+        "Benchmark": "跑分",
+        "💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡 分數越高越好。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
+        "Error, click to retry": "錯誤，點擊重試",
+        "Loading...": "載入中……",
+        "Amazon\/EC2": "亞馬遜\/EC2",
+        "VPSSERVER\/KVM": "VPSSERVER\/KVM",
+        "SpartanHost\/KVM": "斯巴達\/KVM",
+        "Aliyun\/ECS": "阿里雲\/ECS",
+        "Vultr": "Vultr",
+        "RamNode": "RamNode",
+        "Linode": "Linode",
+        "Tencent": "騰訊雲",
+        "AnyNode\/HDD": "AnyNode\/HDD",
+        "BandwagonHOST\/SSD": "",
+        "My server": "我的伺服器",
+        "Click to test": "點擊測試",
+        "Server information": "伺服器訊息",
+        "Info": "訊息",
+        "Server name": "伺服器名",
+        "Server time": "持續上線時間",
+        "Server uptime": "持續上線時間",
+        "Server IP": "伺服器 IP",
+        "Server software": "伺服器軟體",
+        "PHP version": "PHP 版本",
+        "CPU model": "CPU 型號",
+        "Server OS": "伺服器系統",
+        "Script path": "腳本路徑",
+        "Disk usage": "磁碟使用",
+        "Server status": "伺服器狀態",
+        "Status": "狀態",
+        "System load": "系統負載",
+        "CPU usage": "CPU 使用率",
+        "Real memory usage": "真實記憶體使用",
+        "Real swap usage": "SWAP 使用",
+        "File can not update.": "檔案無法被更新。",
+        "Update file not found.": "未發現更新檔案。",
+        "Update success...": "更新成功……",
+        "Update error.": "更新出錯。"
     }
 }

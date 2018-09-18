@@ -1,6 +1,6 @@
 {
-    "name": "innstudio/prober",
-    "description": "Inn Studio X Prober",
+    "name": "kmvan/prober",
+    "description": "This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iPhone X!",
     "type": "project",
     "license": "GPL-V2",
     "authors": [
@@ -10,10 +10,13 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "gettext/gettext": "dev-master"
+    },
     "autoload": {
         "psr-4": {
-            "InnStudio\\Prober\\": "src/"
+            "InnStudio\\Prober\\": "src/",
+            "InnStudio\\Compiler\\": "compiler/"
         }
     }
 }

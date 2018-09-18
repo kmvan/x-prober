@@ -6,20 +6,17 @@ class Api
 {
     public static function _($str)
     {
-        static $preDefineLang = null;
+        static $translation = null;
 
-        if (null === $preDefineLang) {
-            $preDefineLang = \json_decode(\base64_decode(LANG), true);
+        if (null === $translation) {
+            $translation = \json_decode(\base64_decode(\LANG), true);
         }
 
-        if ( ! isset($preDefineLang[$str])) {
-            return $str;
-        }
-
-        $lang       = $preDefineLang[$str];
         $clientLang = self::getClientLang();
 
-        return isset($lang[$clientLang]) ? $lang[$clientLang] : $str;
+        $output = isset($translation[$clientLang][$str]) ? $translation[$clientLang][$str] : $str;
+
+        return $output ?: $str;
     }
 
     public static function getClientLang()

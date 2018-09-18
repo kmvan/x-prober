@@ -1,21 +1,25 @@
 <?php
 
-namespace InnStudio\Prober;
-
-include __DIR__ . '/vendor/autoload.php';
+namespace InnStudio\Compiler;
 
 class Compiler
 {
-    const BASE_DIR          = __DIR__ . '/src/';
-    const COMPILE_FILE_PATH = __DIR__ . '/dist/prober.php';
+    private $baseDir         = '';
+    private $compileFilePath = '';
 
-    public function __construct()
+    public function __construct(string $dir)
     {
+        $this->baseDir         = "{$dir}/src";
+        $this->compileFilePath = "{$dir}/dist/prober.php";
+
+        // lang
+        $this->languageGeneration($dir);
+
         echo "Compile starting...\n";
 
         $code = '';
 
-        foreach ($this->yieldFiles(self::BASE_DIR) as $filePath) {
+        foreach ($this->yieldFiles($this->baseDir) as $filePath) {
             if (\is_dir($filePath) || false === \strpos($filePath, '.php')) {
                 continue;
             }
@@ -38,6 +42,20 @@ class Compiler
         } else {
             echo 'Failed.';
         }
+    }
+
+    private function languageGeneration(string $dir): void
+    {
+        echo "Generating I18n language pack...\n";
+
+        $langGen = new LanguageGeneration("{$dir}/languages");
+        $status  = $langGen->writeJsonFile("{$dir}/src/I18n/Lang.json");
+
+        if ( ! $status) {
+            die("Error: can not generate languages.\n");
+        }
+
+        echo "Generated I18n...\n";
     }
 
     private function getCodeViaFilePath(string $filePath): string
@@ -106,7 +124,7 @@ EOT;
 
     private function getLangLoaderCode(): string
     {
-        $filePath = self::BASE_DIR . '/I18n/Lang.json';
+        $filePath = $this->baseDir . '/I18n/Lang.json';
 
         if ( ! \is_readable($filePath)) {
             die('Language is missing.');
@@ -135,7 +153,7 @@ EOT;
 
     private function loader(): string
     {
-        $dirs = \glob(self::BASE_DIR . '/*');
+        $dirs = \glob($this->baseDir . '/*');
 
         if ( ! $dirs) {
             return '';
@@ -196,14 +214,12 @@ EOT;
 
     private function writeFile(string $data): bool
     {
-        $dir = \dirname(self::COMPILE_FILE_PATH);
+        $dir = \dirname($this->compileFilePath);
 
         if ( ! \is_dir($dir)) {
             \mkdir($dir, 0755, true);
         }
 
-        return (bool) \file_put_contents(self::COMPILE_FILE_PATH, $data);
+        return (bool) \file_put_contents($this->compileFilePath, $data);
     }
 }
-
-new Compiler();
