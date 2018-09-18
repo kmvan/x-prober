@@ -4,7 +4,7 @@ namespace InnStudio\Prober\ServerStatus;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class ServerStatus
 {
@@ -19,8 +19,8 @@ class ServerStatus
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('Server status'),
-            'tinyTitle' => I18n::_('Status'),
+            'title'     => I18nApi::_('Server status'),
+            'tinyTitle' => I18nApi::_('Status'),
             'display'   => array($this, 'display'),
         );
 
@@ -31,11 +31,11 @@ class ServerStatus
     {
         ?>
 <div class="form-group">
-    <div class="group-label"><?php echo I18n::_('System load'); ?></div>
+    <div class="group-label"><?php echo I18nApi::_('System load'); ?></div>
     <div class="group-content small-group-container" id="systemLoadAvg"><?php echo Helper::getSysLoadAvg(); ?></div>
 </div>
 <div class="form-group">
-    <div class="group-label"><?php echo I18n::_('CPU usage'); ?></div>
+    <div class="group-label"><?php echo I18nApi::_('CPU usage'); ?></div>
     <div class="group-content small-group-container" id="cpuUsage">
         <div class="progress-container">
             <div class="number">
@@ -50,7 +50,7 @@ class ServerStatus
     </div>
 </div>
 <div class="form-group memory-usage">
-    <div class="group-label"><?php echo I18n::_('Real memory usage'); ?></div>
+    <div class="group-label"><?php echo I18nApi::_('Real memory usage'); ?></div>
     <div class="group-content">
         <div class="progress-container">
             <div class="percent" id="memRealUsagePercent"><?php echo $this->getMemUsage('MemRealUsage', true); ?>%</div>
@@ -68,7 +68,7 @@ class ServerStatus
     </div>
 </div>
 <div class="form-group swap-usage">
-    <div class="group-label"><?php echo I18n::_('Real swap usage'); ?></div>
+    <div class="group-label"><?php echo I18nApi::_('Real swap usage'); ?></div>
     <div class="group-content">
         <div class="progress-container">
             <div class="percent" id="swapRealUsagePercent"><?php echo $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'); ?>%</div>

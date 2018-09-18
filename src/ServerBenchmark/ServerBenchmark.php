@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\ServerBenchmark;
 
 use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class ServerBenchmark
 {
@@ -18,8 +18,8 @@ class ServerBenchmark
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('Server Benchmark'),
-            'tinyTitle' => I18n::_('Benchmark'),
+            'title'     => I18nApi::_('Server Benchmark'),
+            'tinyTitle' => I18nApi::_('Benchmark'),
             'display'   => array($this, 'display'),
         );
 
@@ -28,7 +28,7 @@ class ServerBenchmark
 
     public function display()
     {
-        $lang = I18n::_('💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
+        $lang = I18nApi::_('💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
         echo <<<HTML
 <p class="description">{$lang}</p>
 <div class="row">
@@ -43,14 +43,14 @@ HTML;
 <script>
 (function(){
     var el = document.getElementById('benchmark-btn');
-    var errTx = '❌ <?php echo I18n::_('Error, click to retry'); ?>';
+    var errTx = '❌ <?php echo I18nApi::_('Error, click to retry'); ?>';
 
     if (!el) {
         return;
     }
 
     function getPoints() {
-        el.innerHTML = '⏳ <?php echo I18n::_('Loading...'); ?>';
+        el.innerHTML = '⏳ <?php echo I18nApi::_('Loading...'); ?>';
         var xhr = new XMLHttpRequest();
         xhr.onload = load;
         xhr.open('get', '?action=benchmark');
@@ -92,52 +92,52 @@ HTML;
     {
         $items = array(
             array(
-                'label'   => I18n::_('Amazon/EC2'),
+                'label'   => I18nApi::_('Amazon/EC2'),
                 'url'     => 'https://aws.amazon.com/',
                 'content' => 3150,
             ),
             array(
-                'label'   => I18n::_('VPSSERVER/KVM'),
+                'label'   => I18nApi::_('VPSSERVER/KVM'),
                 'url'     => 'https://www.vpsserver.com/?affcode=32d56f2dd1b6',
                 'content' => 3125,
             ),
             array(
-                'label'   => I18n::_('SpartanHost/KVM'),
+                'label'   => I18nApi::_('SpartanHost/KVM'),
                 'url'     => 'https://billing.spartanhost.net/aff.php?aff=801',
                 'content' => 3174,
             ),
             array(
-                'label'   => I18n::_('Aliyun/ECS'),
+                'label'   => I18nApi::_('Aliyun/ECS'),
                 'url'     => 'https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii',
                 'content' => 3302,
             ),
             array(
-                'label'   => I18n::_('Vultr'),
+                'label'   => I18nApi::_('Vultr'),
                 'url'     => 'https://www.vultr.com/?ref=7256513',
                 'content' => 3182,
             ),
             array(
-                'label'   => I18n::_('RamNode'),
+                'label'   => I18nApi::_('RamNode'),
                 'url'     => 'https://clientarea.ramnode.com/aff.php?aff=4143',
                 'content' => 3131,
             ),
             array(
-                'label'   => I18n::_('Linode'),
+                'label'   => I18nApi::_('Linode'),
                 'url'     => 'https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1',
                 'content' => 3091,
             ),
             array(
-                'label'   => I18n::_('Tencent'),
+                'label'   => I18nApi::_('Tencent'),
                 'url'     => 'https://cloud.tencent.com/',
                 'content' => 3055,
             ),
             array(
-                'label'   => I18n::_('AnyNode/HDD'),
+                'label'   => I18nApi::_('AnyNode/HDD'),
                 'url'     => 'https://billing.anynode.net/aff.php?aff=511',
                 'content' => 2641,
             ),
             array(
-                'label'   => I18n::_('BandwagonHOST/SSD'),
+                'label'   => I18nApi::_('BandwagonHOST/SSD'),
                 'url'     => 'https://bandwagonhost.com/aff.php?aff=34116',
                 'content' => 2181,
             ),
@@ -161,8 +161,8 @@ HTML;
         \array_unshift(
             $items,
             array(
-                'label'   => I18n::_('My server'),
-                'content' => '<a id="benchmark-btn">👆 ' . I18n::_('Click to test') . '</a>',
+                'label'   => I18nApi::_('My server'),
+                'content' => '<a id="benchmark-btn">👆 ' . I18nApi::_('Click to test') . '</a>',
             )
         );
 

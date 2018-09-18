@@ -7,4 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'InnStudio\\Prober\\' => array($baseDir . '/src'),
+    'InnStudio\\Compiler\\' => array($baseDir . '/compiler'),
+    'Gettext\\Languages\\' => array($vendorDir . '/gettext/languages/src'),
+    'Gettext\\' => array($vendorDir . '/gettext/gettext/src'),
 );

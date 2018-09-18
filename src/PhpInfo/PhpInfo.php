@@ -4,7 +4,7 @@ namespace InnStudio\Prober\PhpInfo;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class PhpInfo
 {
@@ -18,8 +18,8 @@ class PhpInfo
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('PHP information'),
-            'tinyTitle' => I18n::_('PHP'),
+            'title'     => I18nApi::_('PHP information'),
+            'tinyTitle' => I18nApi::_('PHP'),
             'display'   => array($this, 'display'),
         );
 
@@ -129,6 +129,6 @@ HTML;
 
     private function _($str)
     {
-        return I18n::_($str);
+        return I18nApi::_($str);
     }
 }

@@ -5,7 +5,7 @@ namespace InnStudio\Prober\Entry;
 use InnStudio\Prober\Config\Api as Config;
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Entry
 {
@@ -55,12 +55,12 @@ class Entry
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></title>
+    <title><?php echo I18nApi::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></title>
     <?php Events::emit('style'); ?>
 </head>
 <body>
 <div class="poi-container">
-    <h1><a href="<?php echo I18n::_(Config::$APP_URL); ?>" target="_blank"><?php echo I18n::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></a></h1>
+    <h1><a href="<?php echo I18nApi::_(Config::$APP_URL); ?>" target="_blank"><?php echo I18nApi::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></a></h1>
     <?php $this->displayContent(); ?>
 </div>
 <?php Events::emit('footer'); ?>

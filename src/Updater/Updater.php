@@ -5,7 +5,7 @@ namespace InnStudio\Prober\Updater;
 use InnStudio\Prober\Config\Api as Config;
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Updater
 {
@@ -27,7 +27,7 @@ class Updater
         if ( ! \is_writable(__FILE__)) {
             Helper::dieJson(array(
                 'code' => -1,
-                'msg'  => I18n::_('File can not update.'),
+                'msg'  => I18nApi::_('File can not update.'),
             ));
         }
 
@@ -36,20 +36,20 @@ class Updater
         if ( ! $content) {
             Helper::dieJson(array(
                 'code' => -1,
-                'msg'  => I18n::_('Update file not found.'),
+                'msg'  => I18nApi::_('Update file not found.'),
             ));
         }
 
         if ((bool) \file_put_contents(__FILE__, $content)) {
             Helper::dieJson(array(
                 'code' => 0,
-                'msg'  => I18n::_('Update success...'),
+                'msg'  => I18nApi::_('Update success...'),
             ));
         }
 
         Helper::dieJson(array(
             'code' => -1,
-            'msg'  => I18n::_('Update error.'),
+            'msg'  => I18nApi::_('Update error.'),
         ));
     }
 
@@ -174,6 +174,6 @@ HTML;
 
     private function _($str)
     {
-        return I18n::_($str);
+        return I18nApi::_($str);
     }
 }

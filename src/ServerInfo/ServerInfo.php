@@ -4,7 +4,7 @@ namespace InnStudio\Prober\ServerInfo;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class ServerInfo
 {
@@ -18,8 +18,8 @@ class ServerInfo
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('Server information'),
-            'tinyTitle' => I18n::_('Info'),
+            'title'     => I18nApi::_('Server information'),
+            'tinyTitle' => I18nApi::_('Info'),
             'display'   => array($this, 'display'),
         );
 
@@ -38,7 +38,7 @@ HTML;
     private function getDiskInfo()
     {
         if ( ! Helper::getDiskTotalSpace()) {
-            return I18n::_('Unavailable');
+            return I18nApi::_('Unavailable');
         }
 
         $percent    = \sprintf('%01.2f', (1 - (Helper::getDiskFreeSpace() / Helper::getDiskTotalSpace())) * 100);
@@ -134,7 +134,7 @@ HTML;
 
     private function _($str)
     {
-        return I18n::_($str);
+        return I18nApi::_($str);
     }
 
     private function getServerInfo($key)

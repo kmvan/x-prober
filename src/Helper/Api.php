@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Helper;
 
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Api
 {
@@ -55,7 +55,7 @@ class Api
         $filePath = '/proc/net/dev';
 
         if ( ! \is_readable($filePath)) {
-            return I18n::_('Unavailable');
+            return I18nApi::_('Unavailable');
         }
 
         static $eths = null;
@@ -143,7 +143,7 @@ HTML;
         $filePath = '/proc/cpuinfo';
 
         if ( ! \is_readable($filePath)) {
-            return I18n::_('Unavailable');
+            return I18nApi::_('Unavailable');
         }
 
         $content = \file_get_contents($filePath);
@@ -155,7 +155,7 @@ HTML;
         $cacheSize = \explode(':', $lines[8]);
         $cacheSize = \trim($cacheSize[1]);
 
-        return "{$cores} x {$modelName} / " . \sprintf(I18n::_('%s cache'), $cacheSize);
+        return "{$cores} x {$modelName} / " . \sprintf(I18nApi::_('%s cache'), $cacheSize);
     }
 
     public static function getServerTime()
@@ -168,7 +168,7 @@ HTML;
         $filePath = '/proc/uptime';
 
         if ( ! \is_readable($filePath)) {
-            return I18n::_('Unavailable');
+            return I18nApi::_('Unavailable');
         }
 
         $str   = \file_get_contents($filePath);
@@ -182,7 +182,7 @@ HTML;
         $days  = $num;
 
         return \sprintf(
-            I18n::_('%1$dd %2$dh %3$dm %4$ds'),
+            I18nApi::_('%1$dd %2$dh %3$dm %4$ds'),
             $days,
             $hours,
             $mins,
@@ -394,12 +394,12 @@ HTML;
     public static function getSysLoadAvg()
     {
         if (self::isWin()) {
-            return I18n::_('Not support on Windows');
+            return I18nApi::_('Not support on Windows');
         }
 
         $avg     = \sys_getloadavg();
         $langMin = function ($n) {
-            return \sprintf(I18n::_('%d min:'), $n);
+            return \sprintf(I18nApi::_('%d min:'), $n);
         };
 
         $avg[0] = <<<HTML

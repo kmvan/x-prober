@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Database;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Database
 {
@@ -18,8 +18,8 @@ class Database
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('Database'),
-            'tinyTitle' => I18n::_('DB'),
+            'title'     => I18nApi::_('Database'),
+            'tinyTitle' => I18nApi::_('DB'),
             'display'   => array($this, 'display'),
         );
 
@@ -42,50 +42,50 @@ class Database
 
         $items = array(
             array(
-                'label'   => I18n::_('SQLite3'),
+                'label'   => I18nApi::_('SQLite3'),
                 'content' => $sqlite3Version,
             ),
             array(
                 'title'   => 'sqlite_libversion',
-                'label'   => I18n::_('SQLite'),
+                'label'   => I18nApi::_('SQLite'),
                 'content' => \function_exists('\\sqlite_libversion') ? Helper::getIni(0, true) . ' ' . \sqlite_libversion() : Helper::getIni(0, false),
             ),
             array(
                 'title'   => 'mysqli_get_client_version',
-                'label'   => I18n::_('MySQLi client'),
+                'label'   => I18nApi::_('MySQLi client'),
                 'content' => \function_exists('\\mysqli_get_client_version') ? Helper::getIni(0, true) . ' ' . \mysqli_get_client_version() : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('Mongo'),
+                'label'   => I18nApi::_('Mongo'),
                 'content' => \class_exists('\\Mongo') ? \MongoClient::VERSION : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('MongoDB'),
+                'label'   => I18nApi::_('MongoDB'),
                 'content' => \class_exists('\\MongoDB') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('PostgreSQL'),
+                'label'   => I18nApi::_('PostgreSQL'),
                 'content' => \function_exists('\\pg_connect') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('Paradox'),
+                'label'   => I18nApi::_('Paradox'),
                 'content' => \function_exists('\\px_new') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
             array(
-                'title'   => I18n::_('Microsoft SQL Server Driver for PHP'),
-                'label'   => I18n::_('MS SQL'),
+                'title'   => I18nApi::_('Microsoft SQL Server Driver for PHP'),
+                'label'   => I18nApi::_('MS SQL'),
                 'content' => \function_exists('\\sqlsrv_server_info') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('File Pro'),
+                'label'   => I18nApi::_('File Pro'),
                 'content' => \function_exists('\\filepro') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('MaxDB client'),
+                'label'   => I18nApi::_('MaxDB client'),
                 'content' => \function_exists('\\maxdb_get_client_version') ? \maxdb_get_client_version() : Helper::getIni(0, false),
             ),
             array(
-                'label'   => I18n::_('MaxDB server'),
+                'label'   => I18nApi::_('MaxDB server'),
                 'content' => \function_exists('\\maxdb_get_server_version') ? Helper::getIni(0, true) : Helper::getIni(0, false),
             ),
         );

@@ -4,7 +4,7 @@ namespace InnStudio\Prober\NetworkStats;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class NetworkStats
 {
@@ -19,8 +19,8 @@ class NetworkStats
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-            'title'     => I18n::_('Network stats'),
-            'tinyTitle' => I18n::_('Net'),
+            'title'     => I18nApi::_('Network stats'),
+            'tinyTitle' => I18nApi::_('Net'),
             'display'   => array($this, 'display'),
         );
 

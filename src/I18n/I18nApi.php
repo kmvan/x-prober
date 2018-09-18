@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\I18n;
 
-class Api
+class I18nApi
 {
     public static function _($str)
     {

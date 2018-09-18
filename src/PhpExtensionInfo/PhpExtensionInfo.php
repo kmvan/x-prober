@@ -4,7 +4,7 @@ namespace InnStudio\Prober\PhpExtensionInfo;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class PhpExtensionInfo
 {
@@ -18,8 +18,8 @@ class PhpExtensionInfo
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-        'title'     => I18n::_('PHP extensions'),
-        'tinyTitle' => I18n::_('Ext'),
+        'title'     => I18nApi::_('PHP extensions'),
+        'tinyTitle' => I18nApi::_('Ext'),
         'display'   => array($this, 'display'),
         );
 
@@ -39,60 +39,60 @@ HTML;
     {
         $items = array(
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Memcache'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Memcache'),
                 'content' => Helper::getIni(0, \extension_loaded('memcache') && \class_exists('\\Memcache')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Memcached'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Memcached'),
                 'content' => Helper::getIni(0, \extension_loaded('memcached') && \class_exists('\\Memcached')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Redis'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Redis'),
                 'content' => Helper::getIni(0, \extension_loaded('redis') && \class_exists('\\Redis')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Opcache'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Opcache'),
                 'content' => Helper::getIni(0, \function_exists('\\opcache_get_configuration')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s enabled'), 'Opcache'),
+                'label'   => \sprintf(I18nApi::_('%s enabled'), 'Opcache'),
                 'content' => Helper::getIni(0, $this->isOpcEnabled()),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Swoole'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Swoole'),
                 'content' => Helper::getIni(0, \extension_loaded('Swoole') && \function_exists('\\swoole_version')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Imagick'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Imagick'),
                 'content' => Helper::getIni(0, \extension_loaded('Imagick') && \class_exists('\\Imagick')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Exif'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Exif'),
                 'content' => Helper::getIni(0, \extension_loaded('Exif') && \function_exists('\\exif_imagetype')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Sockets'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Sockets'),
                 'content' => Helper::getIni(0, \extension_loaded('Sockets') && \function_exists('\\socket_accept')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'MySQLi'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'MySQLi'),
                 'content' => Helper::getIni(0, \extension_loaded('MySQLi') && \class_exists('\\mysqli')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Zip'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Zip'),
                 'content' => Helper::getIni(0, \extension_loaded('Zip') && \class_exists('\\ZipArchive')),
             ),
             array(
-                'label'   => \sprintf(I18n::_('%s extension'), 'Multibyte String'),
+                'label'   => \sprintf(I18nApi::_('%s extension'), 'Multibyte String'),
                 'content' => Helper::getIni(0, \extension_loaded('mbstring') && \function_exists('\\mb_substr')),
             ),
             array(
-                'label'   => I18n::_('Zend Optimizer'),
+                'label'   => I18nApi::_('Zend Optimizer'),
                 'content' => Helper::getIni(0, \function_exists('zend_optimizer_version')),
             ),
             array(
                 'col'     => '1-1',
-                'label'   => I18n::_('Loaded extensions'),
+                'label'   => I18nApi::_('Loaded extensions'),
                 'title'   => 'loaded_extensions',
                 'content' => \implode(', ', $this->getLoadedExtensions(true)) ?: '-',
             ),

@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Benchmark;
 
 use InnStudio\Prober\Events\Api as Events;
 use InnStudio\Prober\Helper\Api as Helper;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Benchmark
 {
@@ -149,7 +149,7 @@ class Benchmark
         if ($remainingSeconds) {
             Helper::dieJson(array(
                 'code' => -1,
-                'msg'  => \sprintf(I18n::_('Please wait %d seconds'), $remainingSeconds),
+                'msg'  => \sprintf(I18nApi::_('Please wait %d seconds'), $remainingSeconds),
             ));
         }
 

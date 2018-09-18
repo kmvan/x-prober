@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Awesome;
 
 use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\I18n\Api as I18n;
+use InnStudio\Prober\I18n\I18nApi;
 
 class Awesome
 {
@@ -25,7 +25,7 @@ class Awesome
 
     private function getUrl()
     {
-        switch (I18n::getClientLang()) {
+        switch (I18nApi::getClientLang()) {
             case 'zh-CN':
                 return $this->ZH_CN_URL;
         }
