@@ -95,7 +95,7 @@ HTML;
         if (null === $space) {
             $dir = self::isWin() ? 'C:' : '/';
 
-            if (!is_readable($dir)) {
+            if ( ! \is_readable($dir)) {
                 $space = 0;
 
                 return 0;
@@ -399,27 +399,18 @@ HTML;
 
         $avg     = \sys_getloadavg();
         $langMin = function ($n) {
-            return \sprintf(I18nApi::_('%d min:'), $n);
+            return \sprintf(I18nApi::_('%d minute(s)'), $n);
         };
 
-        $avg[0] = <<<HTML
+        $avg = \array_map(function ($load) {
+            $load = \sprintf('%.2f', $load);
+
+            return <<<HTML
 <span class="small-group">
-    <span class="item-name">{$langMin(1)}</span>
-    {$avg[0]}
+    {$load}
 </span>
 HTML;
-        $avg[1] = <<<HTML
-<span class="small-group">
-    <span class="item-name">{$langMin(5)}</span>
-    {$avg[1]}
-</span>
-HTML;
-        $avg[2] = <<<HTML
-<span class="small-group">
-    <span class="item-name">{$langMin(15)}</span>
-    {$avg[2]}
-</span>
-HTML;
+        }, $avg);
 
         return \implode('', $avg);
     }

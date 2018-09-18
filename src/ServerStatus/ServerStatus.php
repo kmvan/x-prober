@@ -97,9 +97,7 @@ class ServerStatus
     background: #eee;
     border-radius: 1rem;
     margin: 0 .2rem;
-    padding: 0 .5rem;
-    width: 7rem;
-    text-align: center;
+    padding: 0 1rem;
 }
 #scriptPath.group-content{
     word-break: break-all;
