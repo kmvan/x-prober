@@ -1,6 +1,13 @@
 # Changelog
 
-All Notable changes to `x-prober` will be documented in this file
+All Notable changes to `X-Prober` will be documented in this file
+
+## 1.7.1 - 2018-09-18
+### Optimize
+- Re-design I18n module
+- Use Poedit to translate
+- Optimize PHP error reporting display
+- Optimize CPU load text format
 
 ## 1.7.0 - 2018-09-05
 ### Add
