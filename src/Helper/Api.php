@@ -120,11 +120,15 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            try {
-                $space = \disk_free_space('/');
-            } catch (\Exception $e) {
+            $dir = self::isWin() ? 'C:' : '/';
+
+            if ( ! \is_readable($dir)) {
                 $space = 0;
+
+                return 0;
             }
+
+            $space = \disk_free_space($dir);
         }
 
         if ( ! $space) {
