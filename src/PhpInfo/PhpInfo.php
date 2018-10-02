@@ -46,11 +46,11 @@ class PhpInfo
             ),
             array(
                 'label'   => $this->_('Version'),
-                'content' => PHP_VERSION,
+                'content' => \PHP_VERSION,
             ),
             array(
                 'label'   => $this->_('SAPI interface'),
-                'content' => PHP_SAPI,
+                'content' => \PHP_SAPI,
             ),
             array(
                 'label'   => $this->_('Error reporting'),

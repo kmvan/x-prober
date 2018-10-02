@@ -18,9 +18,9 @@ class PhpExtensionInfo
     public function filter($mods)
     {
         $mods[$this->ID] = array(
-        'title'     => I18nApi::_('PHP extensions'),
-        'tinyTitle' => I18nApi::_('Ext'),
-        'display'   => array($this, 'display'),
+            'title'     => I18nApi::_('PHP extensions'),
+            'tinyTitle' => I18nApi::_('Ext'),
+            'display'   => array($this, 'display'),
         );
 
         return $mods;
