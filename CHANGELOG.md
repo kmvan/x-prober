@@ -2,6 +2,15 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 1.7.2 - 2018-10-02
+### Optimize
+- Optimize free disk space getting method on Windows (contribute by @jfcherng)
+- Add php-cs-fixer 5.3/7.2 (contribute by @jfcherng)
+- Add missing type hint for compiler (contribute by @jfcherng)
+
+### Fixed
+- Fix code abnormal indentation (contribute by @jfcherng)
+
 ## 1.7.1 - 2018-09-18
 ### Optimize
 - Re-design I18n module
