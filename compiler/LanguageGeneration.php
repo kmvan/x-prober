@@ -25,9 +25,9 @@ class LanguageGeneration
 
         $code = \array_merge(
             [],
-             ...\array_map(function (string $moFile): array {
-                 return $this->getCode($moFile);
-             }, $this->moFiles)
+            ...\array_map(function (string $moFile): array {
+                return $this->getCode($moFile);
+            }, $this->moFiles)
         );
 
         $code = \json_encode($code, \JSON_UNESCAPED_UNICODE | \JSON_PRETTY_PRINT);
