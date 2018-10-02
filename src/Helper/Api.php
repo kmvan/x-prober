@@ -15,7 +15,7 @@ class Api
 
     public static function isAction($action)
     {
-        return \filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) === $action;
+        return \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING) === $action;
     }
 
     public static function getWinCpuUsage()
@@ -240,7 +240,8 @@ HTML;
             return <<<HTML
 <span class="ini-ok">&check;</span>
 HTML;
-        } elseif (0 === (int) $ini) {
+        }
+        if (0 === (int) $ini) {
             return <<<HTML
 <span class="ini-error">&times;</span>
 HTML;
@@ -251,7 +252,7 @@ HTML;
 
     public static function isWin()
     {
-        return PHP_OS === 'WINNT';
+        return \PHP_OS === 'WINNT';
     }
 
     public static function htmlMinify($buffer)
@@ -320,7 +321,7 @@ HTML;
             }
 
             $ip = \array_filter(\explode(',', $_SERVER[$key]));
-            $ip = \filter_var(\end($ip), FILTER_VALIDATE_IP);
+            $ip = \filter_var(\end($ip), \FILTER_VALIDATE_IP);
 
             if ($ip) {
                 return $ip;

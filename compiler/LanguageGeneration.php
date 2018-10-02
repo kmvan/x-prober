@@ -8,8 +8,8 @@ class LanguageGeneration
 {
     public $langDir = '';
 
-    private $moFiles = array();
-    private $code    = array();
+    private $moFiles = [];
+    private $code    = [];
 
     public function __construct(string $langDir)
     {
@@ -24,13 +24,13 @@ class LanguageGeneration
         }
 
         $code = \array_merge(
-            array(),
+            [],
              ...\array_map(function (string $moFile): array {
                  return $this->getCode($moFile);
              }, $this->moFiles)
         );
 
-        $code = \json_encode($code, \JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        $code = \json_encode($code, \JSON_UNESCAPED_UNICODE | \JSON_PRETTY_PRINT);
         $code = <<<JSON
 // Do not edit the json file
 {$code}
@@ -50,9 +50,9 @@ JSON;
         $entries      = $translations->toJsonDictionaryString();
         $entries      = \json_decode($entries, true);
 
-        return array(
+        return [
             $this->getLangId($moFile) => $entries,
-        );
+        ];
     }
 
     private function getLangId(string $moFile): string

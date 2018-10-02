@@ -28,11 +28,11 @@ class Compiler
             $code .= $content;
         }
 
-        $preDefineCode = $this->preDefine(array(
+        $preDefineCode = $this->preDefine([
             $this->getTimerCode(),
             $this->getDebugCode(),
             $this->getLangLoaderCode(),
-        ));
+        ]);
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
         $code = \preg_replace("/(\r|\n)+/", "\n", $code);
@@ -69,7 +69,7 @@ class Compiler
         } else {
             $code     = \php_strip_whitespace($filePath);
             $lines    = \explode("\n", $code);
-            $lineCode = array();
+            $lineCode = [];
 
             foreach ($lines as $line) {
                 $lineStr = \trim($line);
@@ -159,7 +159,7 @@ EOT;
             return '';
         }
 
-        $files = array();
+        $files = [];
 
         foreach ($dirs as $dir) {
             $basename = \basename($dir);

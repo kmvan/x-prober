@@ -87,7 +87,7 @@ HTML;
             ),
             array(
                 'label'   => $this->_('PHP version'),
-                'content' => PHP_VERSION,
+                'content' => \PHP_VERSION,
             ),
             array(
                 'col'     => '1-1',
