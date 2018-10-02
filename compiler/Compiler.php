@@ -132,7 +132,7 @@ EOT;
 
         $lines = \file($filePath);
 
-        $lines = \array_map(function ($line) {
+        $lines = \array_map(function (string $line): string {
             return 0 === \strpos(\trim($line), '// ') ? '' : $line;
         }, $lines);
 
