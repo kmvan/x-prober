@@ -10,7 +10,9 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
+        "friendsofphp/php-cs-fixer": "^2.13",
         "gettext/gettext": "dev-master"
     },
     "autoload": {
@@ -18,5 +20,11 @@
             "InnStudio\\Prober\\": "src/",
             "InnStudio\\Compiler\\": "compiler/"
         }
+    },
+    "scripts": {
+        "fix": [
+            "php-cs-fixer fix --config .php_cs53 --verbose",
+            "php-cs-fixer fix --config .php_cs72 --verbose"
+        ]
     }
 }
