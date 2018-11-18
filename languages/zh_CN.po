@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 15:18+0800\n"
-"PO-Revision-Date: 2018-09-18 22:25+0800\n"
+"POT-Creation-Date: 2018-11-18 11:50+0800\n"
+"PO-Revision-Date: 2018-11-18 11:52+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: Database/Database.php:71
 msgid "Paradox"
-msgstr "Par"
+msgstr ""
 
 #: Database/Database.php:75
 msgid "Microsoft SQL Server Driver for PHP"
@@ -91,29 +91,29 @@ msgstr "该页面由 %s 生成"
 msgid "Author %s"
 msgstr "作者为 %s"
 
-#: Helper/Api.php:58 Helper/Api.php:146 Helper/Api.php:171
+#: Helper/HelperApi.php:58 Helper/HelperApi.php:150 Helper/HelperApi.php:175
 #: ServerInfo/ServerInfo.php:41
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Helper/Api.php:158
+#: Helper/HelperApi.php:162
 #, php-format
 msgid "%s cache"
 msgstr "%s 缓存"
 
-#: Helper/Api.php:185
+#: Helper/HelperApi.php:189
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
 
-#: Helper/Api.php:397
+#: Helper/HelperApi.php:411
 msgid "Not support on Windows"
 msgstr "Windows 系统尚未支持该功能"
 
-#: Helper/Api.php:402
+#: Helper/HelperApi.php:416
 #, php-format
-msgid "%d min:"
-msgstr "%d 分："
+msgid "%d minute(s)"
+msgstr "%d 分钟"
 
 #: MyInfo/MyInfo.php:21
 msgid "My information"
@@ -122,6 +122,18 @@ msgstr "我的信息"
 #: MyInfo/MyInfo.php:22
 msgid "Mine"
 msgstr "我的"
+
+#: MyInfo/MyInfo.php:39
+msgid "My IP"
+msgstr "我的 IP"
+
+#: MyInfo/MyInfo.php:40
+msgid "My browser UA"
+msgstr "我的浏览器 UA"
+
+#: MyInfo/MyInfo.php:41
+msgid "My browser language"
+msgstr "我的浏览器语言"
 
 #: NetworkStats/NetworkStats.php:22
 msgid "Network stats"
@@ -167,69 +179,86 @@ msgstr "Zend 优化器"
 msgid "Loaded extensions"
 msgstr "已加载的扩展"
 
-#: PhpInfo/PhpInfo.php:21
+#: PhpInfo/PhpInfo.php:22
 msgid "PHP information"
 msgstr "PHP 信息"
 
-#: PhpInfo/PhpInfo.php:22
+#: PhpInfo/PhpInfo.php:23
 msgid "PHP"
 msgstr "PHP"
 
-#: PhpInfo/PhpInfo.php:42
+#: PhpInfo/PhpInfo.php:45
 msgid "PHP info detail"
 msgstr "PHP 详细信息"
 
-#: PhpInfo/PhpInfo.php:46
+#: PhpInfo/PhpInfo.php:49
 msgid "Version"
 msgstr "版本"
 
 #: PhpInfo/PhpInfo.php:50
+#, php-format
+msgid "X Prober buildin latest PHP stable version: %s"
+msgstr "X 探针内置最新 PHP 正式版版本：%s"
+
+#: PhpInfo/PhpInfo.php:51
+msgid "(Old)"
+msgstr "（旧版）"
+
+#: PhpInfo/PhpInfo.php:51
+msgid "(Up to date)"
+msgstr "（最新）"
+
+#: PhpInfo/PhpInfo.php:54
 msgid "SAPI interface"
 msgstr "SAPI 接口"
 
-#: PhpInfo/PhpInfo.php:54
+#: PhpInfo/PhpInfo.php:58
 msgid "Error reporting"
 msgstr "错误报告"
 
-#: PhpInfo/PhpInfo.php:59
+#: PhpInfo/PhpInfo.php:63
 msgid "Max memory limit"
 msgstr "运行内存限制"
 
-#: PhpInfo/PhpInfo.php:64
+#: PhpInfo/PhpInfo.php:68
 msgid "Max POST size"
 msgstr "POST 提交限制"
 
-#: PhpInfo/PhpInfo.php:69
+#: PhpInfo/PhpInfo.php:73
 msgid "Max upload size"
 msgstr "上传文件限制"
 
-#: PhpInfo/PhpInfo.php:74
+#: PhpInfo/PhpInfo.php:78
 msgid "Max input variables"
 msgstr "提交表单限制"
 
-#: PhpInfo/PhpInfo.php:79
+#: PhpInfo/PhpInfo.php:83
 msgid "Max execution time"
 msgstr "运行超时秒数"
 
-#: PhpInfo/PhpInfo.php:84
+#: PhpInfo/PhpInfo.php:88
 msgid "Timeout for socket"
 msgstr "Socket 超时秒数"
 
-#: PhpInfo/PhpInfo.php:89
+#: PhpInfo/PhpInfo.php:93
 msgid "Display errors"
 msgstr "显示错误"
 
-#: PhpInfo/PhpInfo.php:94
+#: PhpInfo/PhpInfo.php:98
 msgid "Treatment URLs file"
 msgstr "文件远端打开"
 
-#: PhpInfo/PhpInfo.php:99
+#: PhpInfo/PhpInfo.php:103
 msgid "SMTP support"
 msgstr "SMTP 支持"
 
-#: PhpInfo/PhpInfo.php:105
+#: PhpInfo/PhpInfo.php:109
 msgid "Disabled functions"
 msgstr "已禁用的函数"
+
+#: PhpInfo/PhpInfo.php:115
+msgid "Disabled classes"
+msgstr "已禁用的类"
 
 #: ServerBenchmark/ServerBenchmark.php:21
 msgid "Server Benchmark"
@@ -245,59 +274,59 @@ msgid ""
 "evaluating the quality of a host/server."
 msgstr "💡 分数越高越好。注意：跑分结果不是评价服务器优劣的唯一标准。"
 
-#: ServerBenchmark/ServerBenchmark.php:46
+#: ServerBenchmark/ServerBenchmark.php:47
 msgid "Error, click to retry"
 msgstr "错误，点击重试"
 
-#: ServerBenchmark/ServerBenchmark.php:53
+#: ServerBenchmark/ServerBenchmark.php:54
 msgid "Loading..."
 msgstr "加载中……"
 
-#: ServerBenchmark/ServerBenchmark.php:95
+#: ServerBenchmark/ServerBenchmark.php:96
 msgid "Amazon/EC2"
 msgstr "亚马逊/EC2"
 
-#: ServerBenchmark/ServerBenchmark.php:100
+#: ServerBenchmark/ServerBenchmark.php:101
 msgid "VPSSERVER/KVM"
 msgstr "VPSSERVER/KVM"
 
-#: ServerBenchmark/ServerBenchmark.php:105
+#: ServerBenchmark/ServerBenchmark.php:106
 msgid "SpartanHost/KVM"
 msgstr "斯巴达/KVM"
 
-#: ServerBenchmark/ServerBenchmark.php:110
+#: ServerBenchmark/ServerBenchmark.php:111
 msgid "Aliyun/ECS"
 msgstr "阿里云/ECS"
 
-#: ServerBenchmark/ServerBenchmark.php:115
+#: ServerBenchmark/ServerBenchmark.php:116
 msgid "Vultr"
 msgstr "Vultr"
 
-#: ServerBenchmark/ServerBenchmark.php:120
+#: ServerBenchmark/ServerBenchmark.php:121
 msgid "RamNode"
 msgstr "RamNode"
 
-#: ServerBenchmark/ServerBenchmark.php:125
+#: ServerBenchmark/ServerBenchmark.php:126
 msgid "Linode"
 msgstr "Linode"
 
-#: ServerBenchmark/ServerBenchmark.php:130
+#: ServerBenchmark/ServerBenchmark.php:131
 msgid "Tencent"
 msgstr "腾讯云"
 
-#: ServerBenchmark/ServerBenchmark.php:135
+#: ServerBenchmark/ServerBenchmark.php:136
 msgid "AnyNode/HDD"
 msgstr "AnyNode/HDD"
 
-#: ServerBenchmark/ServerBenchmark.php:140
+#: ServerBenchmark/ServerBenchmark.php:141
 msgid "BandwagonHOST/SSD"
 msgstr "搬瓦工/SSD"
 
-#: ServerBenchmark/ServerBenchmark.php:164
+#: ServerBenchmark/ServerBenchmark.php:165
 msgid "My server"
 msgstr "我的服务器"
 
-#: ServerBenchmark/ServerBenchmark.php:165
+#: ServerBenchmark/ServerBenchmark.php:166
 msgid "Click to test"
 msgstr "点击测试"
 
@@ -357,21 +386,21 @@ msgstr "服务器状态"
 msgid "Status"
 msgstr "状态"
 
-#: ServerStatus/ServerStatus.php:34
+#: ServerStatus/ServerStatus.php:33
 msgid "System load"
 msgstr "系统负载"
 
-#: ServerStatus/ServerStatus.php:38
+#: ServerStatus/ServerStatus.php:34
 msgid "CPU usage"
-msgstr "CPU 使用率"
+msgstr "CPU 占用"
 
-#: ServerStatus/ServerStatus.php:53
-msgid "Real memory usage"
-msgstr "真实内存使用"
+#: ServerStatus/ServerStatus.php:35
+msgid "Memory usage"
+msgstr "内存占用"
 
-#: ServerStatus/ServerStatus.php:71
-msgid "Real swap usage"
-msgstr "SWAP 使用"
+#: ServerStatus/ServerStatus.php:36
+msgid "SWAP usage"
+msgstr "SWAP 占用"
 
 #: Updater/Updater.php:30
 msgid "File can not update."
@@ -388,3 +417,6 @@ msgstr "更新成功……"
 #: Updater/Updater.php:52
 msgid "Update error."
 msgstr "更新出错。"
+
+#~ msgid "Real swap usage"
+#~ msgstr "真实 SWAP 使用"
