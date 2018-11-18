@@ -3,7 +3,7 @@
 # 😎 X Prober
 > This is a prober program for **PHP environment**. It can show your server information and readable easily. 
 
-And the most important thing is that it's like 📱 **iPhone X** and **📱 iPhone XS Max**!
+And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 
 ## License
 * GPL-v2
