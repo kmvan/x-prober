@@ -34,15 +34,17 @@ class Entry
         }
 
         foreach ($mods as $id => $mod) {
-            ?>
-<fieldset id="<?php echo $id; ?>">
+            $content = \call_user_func($mod['display']);
+
+            echo <<<HTML
+<fieldset id="{$id}">
     <legend >
-        <span class="long-title"><?php echo $mod['title']; ?></span>
-        <span class="tiny-title"><?php echo $mod['tinyTitle']; ?></span>
+        <span class="long-title">{$mod['title']}</span>
+        <span class="tiny-title">{$mod['tinyTitle']}</span>
     </legend>
-    <?php \call_user_func($mod['display']); ?>
+    {$content}
 </fieldset>
-            <?php
+HTML;
         }
     }
 

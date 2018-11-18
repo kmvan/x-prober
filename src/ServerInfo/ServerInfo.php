@@ -28,7 +28,7 @@ class ServerInfo
 
     public function display()
     {
-        echo <<<HTML
+        return <<<HTML
 <div class="row">
     {$this->getContent()}
 </div>

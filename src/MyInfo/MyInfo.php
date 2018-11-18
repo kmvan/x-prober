@@ -28,37 +28,17 @@ class MyInfo
 
     public function display()
     {
-        echo $this->getContent();
-    }
-
-    public function getContent()
-    {
-        $ua   = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-        $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '';
-
-        return <<<HTML
+        return \implode('', \array_map(function (array $item) {
+            return <<<HTML
 <div class="form-group">
-    <div class="group-label">{$this->_('My IP')}</div>
-    <div class="group-content">{$this->getClientIp()}</div>
-</div>
-<div class="form-group">
-    <div class="group-label">{$this->_('My browser UA')}</div>
-    <div class="group-content">{$ua}</div>
-</div>
-<div class="form-group">
-    <div class="group-label">{$this->_('My browser language')}</div>
-    <div class="group-content">{$lang}</div>
+    <div class="group-label">{$item[0]}</div>
+    <div class="group-content">{$item[1]}</div>
 </div>
 HTML;
-    }
-
-    private function getClientIp()
-    {
-        return HelperApi::getClientIp();
-    }
-
-    private function _($str)
-    {
-        return I18nApi::_($str);
+        }, array(
+            array(I18nApi::_('My IP'), HelperApi::getClientIp()),
+            array(I18nApi::_('My browser UA'), isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : ''),
+            array(I18nApi::_('My browser language'), isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : ''),
+        )));
     }
 }

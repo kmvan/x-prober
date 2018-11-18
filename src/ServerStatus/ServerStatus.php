@@ -29,13 +29,15 @@ class ServerStatus
 
     public function display()
     {
-        ?>
+        $sysLoadAvg = HelperApi::getSysLoadAvg();
+
+        return <<<HTML
 <div class="form-group">
-    <div class="group-label"><?php echo I18nApi::_('System load'); ?></div>
-    <div class="group-content small-group-container" id="systemLoadAvg"><?php echo HelperApi::getSysLoadAvg(); ?></div>
+    <div class="group-label">{$this->_('System load')}</div>
+    <div class="group-content small-group-container" id="systemLoadAvg">{$sysLoadAvg}</div>
 </div>
 <div class="form-group">
-    <div class="group-label"><?php echo I18nApi::_('CPU usage'); ?></div>
+    <div class="group-label">{$this->_('CPU usage')}</div>
     <div class="group-content small-group-container" id="cpuUsage">
         <div class="progress-container">
             <div class="number">
@@ -50,42 +52,42 @@ class ServerStatus
     </div>
 </div>
 <div class="form-group memory-usage">
-    <div class="group-label"><?php echo I18nApi::_('Real memory usage'); ?></div>
+    <div class="group-label">{$this->_('Real memory usage')}</div>
     <div class="group-content">
         <div class="progress-container">
-            <div class="percent" id="memRealUsagePercent"><?php echo $this->getMemUsage('MemRealUsage', true); ?>%</div>
+            <div class="percent" id="memRealUsagePercent">{$this->getMemUsage('MemRealUsage', true)}%</div>
             <div class="number">
                 <span id="memRealUsage">
-                    <?php echo HelperApi::getHumamMemUsage('MemRealUsage'); ?>
+                    {$this->getHumamMemUsage('MemRealUsage')}
                     /
-                    <?php echo HelperApi::getHumamMemUsage('MemTotal'); ?>
+                    {$this->getHumamMemUsage('MemTotal')}
                 </span>
             </div>
             <div class="progress" id="memRealUsageProgress">
-                <div id="memRealUsageProgressValue" class="progress-value" style="width: <?php echo $this->getMemUsage('MemRealUsage', true); ?>%"></div>
+                <div id="memRealUsageProgressValue" class="progress-value" style="width: {$this->getMemUsage('MemRealUsage', true)}%"></div>
             </div>
         </div>
     </div>
 </div>
 <div class="form-group swap-usage">
-    <div class="group-label"><?php echo I18nApi::_('Real swap usage'); ?></div>
+    <div class="group-label">{$this->_('Real swap usage')}</div>
     <div class="group-content">
         <div class="progress-container">
-            <div class="percent" id="swapRealUsagePercent"><?php echo $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'); ?>%</div>
+            <div class="percent" id="swapRealUsagePercent">{$this->getMemUsage('SwapRealUsage', true, 'SwapTotal')}%</div>
             <div class="number">
                 <span id="swapRealUsage">
-                    <?php echo HelperApi::getHumamMemUsage('SwapRealUsage'); ?>
+                    {$this->getHumamMemUsage('SwapRealUsage')}
                     /
-                    <?php echo HelperApi::getHumamMemUsage('SwapTotal'); ?>
+                    {$this->getHumamMemUsage('SwapTotal')}
                 </span>
             </div>
             <div class="progress" id="swapRealUsageProgress">
-                <div id="swapRealUsageProgressValue" class="progress-value" style="width: <?php echo $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'); ?>%"></div>
+                <div id="swapRealUsageProgressValue" class="progress-value" style="width: {$this->getMemUsage('SwapRealUsage', true, 'SwapTotal')}%"></div>
             </div>
         </div>
     </div>
 </div>
-        <?php
+HTML;
     }
 
     public function filterStyle()
@@ -104,6 +106,16 @@ class ServerStatus
 }
 </style>
         <?php
+    }
+
+    private function getHumamMemUsage($type)
+    {
+        return HelperApi::getHumamMemUsage($type);
+    }
+
+    private function _($str)
+    {
+        return I18nApi::_($str);
     }
 
     private function getMemUsage($key, $precent = false, $totalKey = 'MemTotal')

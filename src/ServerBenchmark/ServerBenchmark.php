@@ -29,7 +29,8 @@ class ServerBenchmark
     public function display()
     {
         $lang = I18nApi::_('💡 Higher is better. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
-        echo <<<HTML
+
+        return <<<HTML
 <p class="description">{$lang}</p>
 <div class="row">
     {$this->getContent()}

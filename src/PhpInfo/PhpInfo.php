@@ -28,11 +28,11 @@ class PhpInfo
 
     public function display()
     {
-        ?>
+        return <<<HTML
 <div class="row">
-    <?php echo $this->getContent(); ?>
+    {$this->getContent()}
 </div>
-        <?php
+HTML;
     }
 
     private function getContent()
