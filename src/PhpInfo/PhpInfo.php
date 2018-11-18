@@ -2,6 +2,7 @@
 
 namespace InnStudio\Prober\PhpInfo;
 
+use InnStudio\Prober\Config\ConfigApi;
 use InnStudio\Prober\Events\EventsApi;
 use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
@@ -46,7 +47,8 @@ HTML;
             ),
             array(
                 'label'   => $this->_('Version'),
-                'content' => \PHP_VERSION,
+                'title'   => \sprintf($this->_('X Prober buildin latest PHP stable version: %s'), '7.2.12'),
+                'content' => \PHP_VERSION . ' ' . (\version_compare(\PHP_VERSION, ConfigApi::$LATEST_PHP_STABLE_VERSION, '<') ? $this->_('(Old)') : $this->_('(Up to date)')),
             ),
             array(
                 'label'   => $this->_('SAPI interface'),
