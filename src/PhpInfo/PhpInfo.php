@@ -108,6 +108,12 @@ HTML;
                 'title'   => 'disable_functions',
                 'content' => \implode(', ', \explode(',', HelperApi::getIni('disable_functions'))) ?: '-',
             ),
+            array(
+                'col'     => '1-1',
+                'label'   => $this->_('Disabled classes'),
+                'title'   => 'disable_classes',
+                'content' => \implode(', ', \explode(',', HelperApi::getIni('disable_classes'))) ?: '-',
+            ),
         );
 
         $content = '';
