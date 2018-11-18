@@ -27,15 +27,15 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 - Star⭐ and **Fork**.
 - Generate composer vendor: `$ composer dumpautoload -o`.
 - Code you mind.
-- Compile **development**: `$ php ./make.php dev`.
-- Compile **production**: `$ php ./make.php`.
-- Access `./dist/prober.php` from http browser.
+- Compile **development**: `$ php ./Make.php dev`.
+- Compile **production**: `$ php ./Make.php`.
+- Access `./dist/prober.php` from HTTP browser.
 - Enjoy it. 😄
 - Pull Request.
 
 ## Help and translate more languages
 - **Fork** project.
-- Use [Poedit](https://poedit.net/) to create your language from `./lanuages/language.pot` language template file and trsanslate it.
+- Use [Poedit](https://poedit.net/) to create your language from `./languages/language.pot` language template file and translates it.
 - Save your language file *(like: `en_US.po`)* into `./languages`.
 - Add your name and URL to contributors list. 
 - Pull Request and thank you. 😘
