@@ -2,6 +2,21 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 1.7.3 - 2018-11-18
+### Optimize
+- Optimize language text
+- Optimize moudles output method
+- Optimize API interface name
+- Optimize events system
+- Rename compiler file name
+
+### Add
+- Add PHP disable_classes item
+- Add prober builtin latest PHP version notification
+
+### Remove
+- Remove awesome icon
+
 ## 1.7.2 - 2018-10-02
 ### Optimize
 - Optimize free disk space getting method on Windows (contribute by @jfcherng)
