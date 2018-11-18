@@ -29,15 +29,19 @@ class ServerStatus
 
     public function display()
     {
-        $sysLoadAvg = HelperApi::getSysLoadAvg();
+        $sysLoadAvg    = HelperApi::getSysLoadAvg();
+        $langSysLoad   = $this->_('System load');
+        $cpuUsage      = $this->_('CPU usage');
+        $realMemUsage  = $this->_('Memory usage');
+        $realSwapUsage = $this->_('SWAP usage');
 
         return <<<HTML
 <div class="form-group">
-    <div class="group-label">{$this->_('System load')}</div>
+    <div class="group-label">{$langSysLoad}</div>
     <div class="group-content small-group-container" id="systemLoadAvg">{$sysLoadAvg}</div>
 </div>
 <div class="form-group">
-    <div class="group-label">{$this->_('CPU usage')}</div>
+    <div class="group-label">{$cpuUsage}</div>
     <div class="group-content small-group-container" id="cpuUsage">
         <div class="progress-container">
             <div class="number">
@@ -52,7 +56,7 @@ class ServerStatus
     </div>
 </div>
 <div class="form-group memory-usage">
-    <div class="group-label">{$this->_('Real memory usage')}</div>
+    <div class="group-label">{$realMemUsage}</div>
     <div class="group-content">
         <div class="progress-container">
             <div class="percent" id="memRealUsagePercent">{$this->getMemUsage('MemRealUsage', true)}%</div>
@@ -70,7 +74,7 @@ class ServerStatus
     </div>
 </div>
 <div class="form-group swap-usage">
-    <div class="group-label">{$this->_('Real swap usage')}</div>
+    <div class="group-label">{$realSwapUsage}</div>
     <div class="group-content">
         <div class="progress-container">
             <div class="percent" id="swapRealUsagePercent">{$this->getMemUsage('SwapRealUsage', true, 'SwapTotal')}%</div>
