@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-18 11:50+0800\n"
-"PO-Revision-Date: 2018-11-18 11:52+0800\n"
+"POT-Creation-Date: 2018-11-18 12:03+0800\n"
+"PO-Revision-Date: 2018-11-18 12:03+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -197,7 +197,7 @@ msgstr "版本"
 
 #: PhpInfo/PhpInfo.php:50
 #, php-format
-msgid "X Prober buildin latest PHP stable version: %s"
+msgid "X Prober builtin latest PHP stable version: %s"
 msgstr "X 探针内置最新 PHP 正式版版本：%s"
 
 #: PhpInfo/PhpInfo.php:51

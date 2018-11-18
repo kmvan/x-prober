@@ -40,7 +40,7 @@
         "PHP": "PHP",
         "PHP info detail": "PHP 详细信息",
         "Version": "版本",
-        "X Prober buildin latest PHP stable version: %s": "X 探针内置最新 PHP 正式版版本：%s",
+        "X Prober builtin latest PHP stable version: %s": "X 探针内置最新 PHP 正式版版本：%s",
         "(Old)": "（旧版）",
         "(Up to date)": "（最新）",
         "SAPI interface": "SAPI 接口",
