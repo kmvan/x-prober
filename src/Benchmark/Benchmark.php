@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\Benchmark;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class Benchmark
@@ -12,12 +12,12 @@ class Benchmark
 
     public function __construct()
     {
-        Events::on('init', array($this, 'filter'));
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter()
     {
-        if ( ! Helper::isAction('benchmark')) {
+        if ( ! HelperApi::isAction('benchmark')) {
             return;
         }
 
@@ -147,7 +147,7 @@ class Benchmark
         $remainingSeconds = $this->getRemainingSeconds();
 
         if ($remainingSeconds) {
-            Helper::dieJson(array(
+            HelperApi::dieJson(array(
                 'code' => -1,
                 'msg'  => \sprintf(I18nApi::_('Please wait %d seconds'), $remainingSeconds),
             ));
@@ -157,7 +157,7 @@ class Benchmark
 
         \set_time_limit(0);
 
-        Helper::dieJson(array(
+        HelperApi::dieJson(array(
             'code' => 0,
             'data' => array(
                 'points' => $this->getPoints(),

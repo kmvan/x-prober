@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Helper;
 
 use InnStudio\Prober\I18n\I18nApi;
 
-class Api
+class HelperApi
 {
     public static function dieJson($data)
     {
@@ -245,6 +245,7 @@ HTML;
 <span class="ini-ok">&check;</span>
 HTML;
         }
+
         if (0 === (int) $ini) {
             return <<<HTML
 <span class="ini-error">&times;</span>

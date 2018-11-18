@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Script;
 
-use InnStudio\Prober\Events\Api as Events;
+use InnStudio\Prober\Events\EventsApi;
 
 class Script
 {
@@ -10,7 +10,7 @@ class Script
 
     public function __construct()
     {
-        Events::on('script', array($this, 'filter'));
+        EventsApi::on('script', array($this, 'filter'));
     }
 
     public function filter()

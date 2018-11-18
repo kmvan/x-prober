@@ -2,16 +2,16 @@
 
 namespace InnStudio\Prober\Entry;
 
-use InnStudio\Prober\Config\Api as Config;
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Config\ConfigApi;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class Entry
 {
     public function __construct()
     {
-        Events::emit('init');
+        EventsApi::emit('init');
 
         if (DEBUG === true) {
             $this->display();
@@ -21,13 +21,13 @@ class Entry
             $content = \ob_get_contents();
             \ob_end_clean();
 
-            echo Helper::htmlMinify($content);
+            echo HelperApi::htmlMinify($content);
         }
     }
 
     private function displayContent()
     {
-        $mods = Events::apply('mods', array());
+        $mods = EventsApi::emit('mods', array());
 
         if ( ! $mods) {
             return;
@@ -55,16 +55,16 @@ class Entry
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo I18nApi::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></title>
-    <?php Events::emit('style'); ?>
+    <title><?php echo I18nApi::_(ConfigApi::$APP_NAME); ?> v<?php echo ConfigApi::$APP_VERSION; ?></title>
+    <?php EventsApi::emit('style'); ?>
 </head>
 <body>
 <div class="poi-container">
-    <h1><a href="<?php echo I18nApi::_(Config::$APP_URL); ?>" target="_blank"><?php echo I18nApi::_(Config::$APP_NAME); ?> v<?php echo Config::$APP_VERSION; ?></a></h1>
+    <h1><a href="<?php echo I18nApi::_(ConfigApi::$APP_URL); ?>" target="_blank"><?php echo I18nApi::_(ConfigApi::$APP_NAME); ?> v<?php echo ConfigApi::$APP_VERSION; ?></a></h1>
     <?php $this->displayContent(); ?>
 </div>
-<?php Events::emit('footer'); ?>
-<?php Events::emit('script'); ?>
+<?php EventsApi::emit('footer'); ?>
+<?php EventsApi::emit('script'); ?>
 </body>
 </html>
         <?php

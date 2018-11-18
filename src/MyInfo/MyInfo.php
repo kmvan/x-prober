@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\MyInfo;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class MyInfo
@@ -12,7 +12,7 @@ class MyInfo
 
     public function __construct()
     {
-        Events::patch('mods', array($this, 'filter'), 900);
+        EventsApi::on('mods', array($this, 'filter'), 900);
     }
 
     public function filter($mods)
@@ -54,7 +54,7 @@ HTML;
 
     private function getClientIp()
     {
-        return Helper::getClientIp();
+        return HelperApi::getClientIp();
     }
 
     private function _($str)

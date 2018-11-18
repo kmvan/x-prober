@@ -2,9 +2,9 @@
 
 namespace InnStudio\Prober\Updater;
 
-use InnStudio\Prober\Config\Api as Config;
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Config\ConfigApi;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class Updater
@@ -13,41 +13,41 @@ class Updater
 
     public function __construct()
     {
-        Events::on('script', array($this, 'filter'));
-        Events::on('init', array($this, 'filterInit'));
+        EventsApi::on('script', array($this, 'filter'));
+        EventsApi::on('init', array($this, 'filterInit'));
     }
 
     public function filterInit()
     {
-        if ( ! Helper::isAction('update')) {
+        if ( ! HelperApi::isAction('update')) {
             return;
         }
 
         // check file writable
         if ( ! \is_writable(__FILE__)) {
-            Helper::dieJson(array(
+            HelperApi::dieJson(array(
                 'code' => -1,
                 'msg'  => I18nApi::_('File can not update.'),
             ));
         }
 
-        $content = \file_get_contents(Config::$UPDATE_PHP_URL);
+        $content = \file_get_contents(ConfigApi::$UPDATE_PHP_URL);
 
         if ( ! $content) {
-            Helper::dieJson(array(
+            HelperApi::dieJson(array(
                 'code' => -1,
                 'msg'  => I18nApi::_('Update file not found.'),
             ));
         }
 
         if ((bool) \file_put_contents(__FILE__, $content)) {
-            Helper::dieJson(array(
+            HelperApi::dieJson(array(
                 'code' => 0,
                 'msg'  => I18nApi::_('Update success...'),
             ));
         }
 
-        Helper::dieJson(array(
+        HelperApi::dieJson(array(
             'code' => -1,
             'msg'  => I18nApi::_('Update error.'),
         ));
@@ -55,9 +55,9 @@ class Updater
 
     public function filter()
     {
-        $version      = Config::$APP_VERSION;
-        $changeLogUrl = Config::$CHANGELOG_URL;
-        $authorUrl    = Config::$AUTHOR_URL;
+        $version      = ConfigApi::$APP_VERSION;
+        $changeLogUrl = ConfigApi::$CHANGELOG_URL;
+        $authorUrl    = ConfigApi::$AUTHOR_URL;
         echo <<<HTML
 <script>
 (function(){
@@ -148,7 +148,7 @@ function onLoadCheckUpdate() {
 
             if (versionCompare('{$version}', versionInfo[0]) === -1) {
                 var lang = '✨ {$this->_('{APP_NAME} found update! Version {APP_OLD_VERSION} &rarr; {APP_NEW_VERSION}')}';
-                lang = lang.replace('{APP_NAME}', '{$this->_(Config::$APP_NAME)}');
+                lang = lang.replace('{APP_NAME}', '{$this->_(ConfigApi::$APP_NAME)}');
                 lang = lang.replace('{APP_OLD_VERSION}', '{$version}');
                 lang = lang.replace('{APP_NEW_VERSION}', versionInfo[0]);
 

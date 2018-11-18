@@ -2,15 +2,15 @@
 
 namespace InnStudio\Prober\Fetch;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 
 class Fetch
 {
     public function __construct()
     {
-        if (Helper::isAction('fetch')) {
-            Events::emit('fetch');
+        if (HelperApi::isAction('fetch')) {
+            EventsApi::emit('fetch');
             $this->outputItems();
         }
     }
@@ -30,29 +30,29 @@ class Fetch
         return array(
             'utcTime'    => $this->getServerUtcTime(),
             'serverInfo' => array(
-                'time'   => Helper::getServerTime(),
-                'upTime' => Helper::getServerUpTime(),
+                'time'   => HelperApi::getServerTime(),
+                'upTime' => HelperApi::getServerUpTime(),
             ),
-            'cpuUsage'     => Helper::getHumanCpuUsage(),
-            'sysLoadAvg'   => Helper::getSysLoadAvg(),
-            'memTotal'     => Helper::getMemoryUsage('MemTotal'),
+            'cpuUsage'     => HelperApi::getHumanCpuUsage(),
+            'sysLoadAvg'   => HelperApi::getSysLoadAvg(),
+            'memTotal'     => HelperApi::getMemoryUsage('MemTotal'),
             'memRealUsage' => array(
-                'percent' => Helper::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('MemRealUsage') / Helper::getMemoryUsage('MemTotal') * 100) : 0,
-                'number'  => Helper::getHumamMemUsage('MemRealUsage') . ' / ' . Helper::getHumamMemUsage('MemTotal'),
-                'current' => Helper::getMemoryUsage('MemRealUsage'),
+                'percent' => HelperApi::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('MemRealUsage') / HelperApi::getMemoryUsage('MemTotal') * 100) : 0,
+                'number'  => HelperApi::getHumamMemUsage('MemRealUsage') . ' / ' . HelperApi::getHumamMemUsage('MemTotal'),
+                'current' => HelperApi::getMemoryUsage('MemRealUsage'),
             ),
             'swapRealUsage' => array(
-                'percent' => Helper::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', Helper::getMemoryUsage('SwapRealUsage') / Helper::getMemoryUsage('SwapTotal') * 100) : 0,
-                'number'  => Helper::getHumamMemUsage('SwapRealUsage') . ' / ' . Helper::getHumamMemUsage('SwapTotal'),
-                'current' => Helper::getMemoryUsage('SwapRealUsage'),
+                'percent' => HelperApi::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('SwapRealUsage') / HelperApi::getMemoryUsage('SwapTotal') * 100) : 0,
+                'number'  => HelperApi::getHumamMemUsage('SwapRealUsage') . ' / ' . HelperApi::getHumamMemUsage('SwapTotal'),
+                'current' => HelperApi::getMemoryUsage('SwapRealUsage'),
             ),
-            'networkStats' => Helper::getNetworkStats(),
+            'networkStats' => HelperApi::getNetworkStats(),
         );
     }
 
     private function outputItems()
     {
-        Helper::dieJson(array(
+        HelperApi::dieJson(array(
             'code' => 0,
             'data' => $this->getItems(),
         ));

@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\NetworkStats;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class NetworkStats
@@ -12,11 +12,11 @@ class NetworkStats
 
     public function __construct()
     {
-        Helper::isWin() || Events::on('style', array($this, 'filterStyle'));
-        Helper::isWin() || Events::patch('mods', array($this, 'filter'), 100);
+        HelperApi::isWin() || EventsApi::on('style', array($this, 'filterStyle'));
+        HelperApi::isWin() || EventsApi::on('mods', array($this, 'filter'), 100);
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('Network stats'),
@@ -52,15 +52,15 @@ class NetworkStats
     private function getContent()
     {
         $items = array();
-        $stats = Helper::getNetworkStats();
+        $stats = HelperApi::getNetworkStats();
 
         if ( ! \is_array($stats)) {
-            return '<div>' . Helper::getNetworkStats() . '</div>';
+            return '<div>' . HelperApi::getNetworkStats() . '</div>';
         }
 
-        foreach (Helper::getNetworkStats() as $ethName => $item) {
-            $rxHuman = Helper::formatBytes($item['rx']);
-            $txHuman = Helper::formatBytes($item['tx']);
+        foreach (HelperApi::getNetworkStats() as $ethName => $item) {
+            $rxHuman = HelperApi::formatBytes($item['rx']);
+            $txHuman = HelperApi::formatBytes($item['tx']);
             $items[] = array(
                 'label'   => $ethName,
                 'content' => <<<HTML

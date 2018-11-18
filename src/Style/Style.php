@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Style;
 
-use InnStudio\Prober\Events\Api as Events;
+use InnStudio\Prober\Events\EventsApi;
 
 class Style
 {
@@ -10,7 +10,7 @@ class Style
 
     public function __construct()
     {
-        Events::on('style', array($this, 'filter'));
+        EventsApi::on('style', array($this, 'filter'));
     }
 
     public function filter()

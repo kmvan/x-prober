@@ -2,14 +2,14 @@
 
 namespace InnStudio\Prober\Timezone;
 
-use InnStudio\Prober\Events\Api as Events;
+use InnStudio\Prober\Events\EventsApi;
 
 class Timezone
 {
     public function __construct()
     {
-        Events::on('init', array($this, 'filter'));
-        Events::on('fetch', array($this, 'filter'));
+        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('fetch', array($this, 'filter'));
     }
 
     public function filter()

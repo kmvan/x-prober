@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Nav;
 
-use InnStudio\Prober\Events\Api as Events;
+use InnStudio\Prober\Events\EventsApi;
 
 class Nav
 {
@@ -10,8 +10,8 @@ class Nav
 
     public function __construct()
     {
-        Events::on('script', array($this, 'filterScript'));
-        Events::on('style', array($this, 'filterStyle'));
+        EventsApi::on('script', array($this, 'filterScript'));
+        EventsApi::on('style', array($this, 'filterStyle'));
     }
 
     public function filterStyle()

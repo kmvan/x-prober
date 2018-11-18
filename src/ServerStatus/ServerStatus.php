@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\ServerStatus;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class ServerStatus
@@ -12,11 +12,11 @@ class ServerStatus
 
     public function __construct()
     {
-        Events::patch('mods', array($this, 'filter'));
-        Events::on('style', array($this, 'filterStyle'));
+        EventsApi::on('mods', array($this, 'filter'));
+        EventsApi::on('style', array($this, 'filterStyle'));
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('Server status'),
@@ -32,7 +32,7 @@ class ServerStatus
         ?>
 <div class="form-group">
     <div class="group-label"><?php echo I18nApi::_('System load'); ?></div>
-    <div class="group-content small-group-container" id="systemLoadAvg"><?php echo Helper::getSysLoadAvg(); ?></div>
+    <div class="group-content small-group-container" id="systemLoadAvg"><?php echo HelperApi::getSysLoadAvg(); ?></div>
 </div>
 <div class="form-group">
     <div class="group-label"><?php echo I18nApi::_('CPU usage'); ?></div>
@@ -56,9 +56,9 @@ class ServerStatus
             <div class="percent" id="memRealUsagePercent"><?php echo $this->getMemUsage('MemRealUsage', true); ?>%</div>
             <div class="number">
                 <span id="memRealUsage">
-                    <?php echo Helper::getHumamMemUsage('MemRealUsage'); ?>
+                    <?php echo HelperApi::getHumamMemUsage('MemRealUsage'); ?>
                     /
-                    <?php echo Helper::getHumamMemUsage('MemTotal'); ?>
+                    <?php echo HelperApi::getHumamMemUsage('MemTotal'); ?>
                 </span>
             </div>
             <div class="progress" id="memRealUsageProgress">
@@ -74,9 +74,9 @@ class ServerStatus
             <div class="percent" id="swapRealUsagePercent"><?php echo $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'); ?>%</div>
             <div class="number">
                 <span id="swapRealUsage">
-                    <?php echo Helper::getHumamMemUsage('SwapRealUsage'); ?>
+                    <?php echo HelperApi::getHumamMemUsage('SwapRealUsage'); ?>
                     /
-                    <?php echo Helper::getHumamMemUsage('SwapTotal'); ?>
+                    <?php echo HelperApi::getHumamMemUsage('SwapTotal'); ?>
                 </span>
             </div>
             <div class="progress" id="swapRealUsageProgress">
@@ -109,9 +109,9 @@ class ServerStatus
     private function getMemUsage($key, $precent = false, $totalKey = 'MemTotal')
     {
         if (false === $precent) {
-            return Helper::getMemoryUsage($key);
+            return HelperApi::getMemoryUsage($key);
         }
 
-        return Helper::getMemoryUsage($key) ? \sprintf('%01.2f', Helper::getMemoryUsage($key) / Helper::getMemoryUsage($totalKey) * 100) : 0;
+        return HelperApi::getMemoryUsage($key) ? \sprintf('%01.2f', HelperApi::getMemoryUsage($key) / HelperApi::getMemoryUsage($totalKey) * 100) : 0;
     }
 }

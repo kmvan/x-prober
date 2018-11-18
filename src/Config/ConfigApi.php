@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Config;
 
-class Api
+class ConfigApi
 {
     public static $APP_VERSION    = '1.7.2';
     public static $APP_NAME       = 'X Prober';

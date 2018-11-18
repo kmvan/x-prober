@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\ServerInfo;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class ServerInfo
@@ -12,10 +12,10 @@ class ServerInfo
 
     public function __construct()
     {
-        Events::patch('mods', array($this, 'filter'), 200);
+        EventsApi::on('mods', array($this, 'filter'), 200);
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('Server information'),
@@ -37,13 +37,13 @@ HTML;
 
     private function getDiskInfo()
     {
-        if ( ! Helper::getDiskTotalSpace()) {
+        if ( ! HelperApi::getDiskTotalSpace()) {
             return I18nApi::_('Unavailable');
         }
 
-        $percent    = \sprintf('%01.2f', (1 - (Helper::getDiskFreeSpace() / Helper::getDiskTotalSpace())) * 100);
-        $hunamUsed  = Helper::formatBytes(Helper::getDiskTotalSpace() - Helper::getDiskFreeSpace());
-        $hunamTotal = Helper::getDiskTotalSpace(true);
+        $percent    = \sprintf('%01.2f', (1 - (HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace())) * 100);
+        $hunamUsed  = HelperApi::formatBytes(HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace());
+        $hunamTotal = HelperApi::getDiskTotalSpace(true);
 
         return <<<HTML
 <div class="progress-container">
@@ -70,12 +70,12 @@ HTML;
             array(
                 'id'      => 'serverInfoTime',
                 'label'   => $this->_('Server time'),
-                'content' => Helper::getServerTime(),
+                'content' => HelperApi::getServerTime(),
             ),
             array(
                 'id'      => 'serverUpTime',
                 'label'   => $this->_('Server uptime'),
-                'content' => Helper::getServerUpTime(),
+                'content' => HelperApi::getServerUpTime(),
             ),
             array(
                 'label'   => $this->_('Server IP'),
@@ -92,7 +92,7 @@ HTML;
             array(
                 'col'     => '1-1',
                 'label'   => $this->_('CPU model'),
-                'content' => Helper::getCpuModel(),
+                'content' => HelperApi::getCpuModel(),
             ),
             array(
                 'col'     => '1-1',

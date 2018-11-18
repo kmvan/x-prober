@@ -2,8 +2,8 @@
 
 namespace InnStudio\Prober\PhpInfo;
 
-use InnStudio\Prober\Events\Api as Events;
-use InnStudio\Prober\Helper\Api as Helper;
+use InnStudio\Prober\Events\EventsApi;
+use InnStudio\Prober\Helper\HelperApi;
 use InnStudio\Prober\I18n\I18nApi;
 
 class PhpInfo
@@ -12,10 +12,10 @@ class PhpInfo
 
     public function __construct()
     {
-        Events::patch('mods', array($this, 'filter'), 300);
+        EventsApi::on('mods', array($this, 'filter'), 300);
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('PHP information'),
@@ -37,12 +37,12 @@ class PhpInfo
 
     private function getContent()
     {
-        $errLevels = Helper::getErrNameByCode(\ini_get('error_reporting'));
+        $errLevels = HelperApi::getErrNameByCode(\ini_get('error_reporting'));
 
         $items = array(
             array(
                 'label'   => $this->_('PHP info detail'),
-                'content' => Helper::getBtn("👆 {$this->_('Click to check')}", '?action=phpInfo'),
+                'content' => HelperApi::getBtn("👆 {$this->_('Click to check')}", '?action=phpInfo'),
             ),
             array(
                 'label'   => $this->_('Version'),
@@ -55,7 +55,7 @@ class PhpInfo
             array(
                 'label'   => $this->_('Error reporting'),
                 'title'   => "error_reporting: {$errLevels}",
-                'content' => Helper::strcut($errLevels),
+                'content' => HelperApi::strcut($errLevels),
             ),
             array(
                 'label'   => $this->_('Max memory limit'),
@@ -90,23 +90,23 @@ class PhpInfo
             array(
                 'label'   => $this->_('Display errors'),
                 'title'   => 'display_errors',
-                'content' => Helper::getIni('display_errors'),
+                'content' => HelperApi::getIni('display_errors'),
             ),
             array(
                 'label'   => $this->_('Treatment URLs file'),
                 'title'   => 'allow_url_fopen',
-                'content' => Helper::getIni('allow_url_fopen'),
+                'content' => HelperApi::getIni('allow_url_fopen'),
             ),
             array(
                 'label'   => $this->_('SMTP support'),
                 'title'   => 'SMTP',
-                'content' => Helper::getIni('SMTP') ?: Helper::getIni(0, false),
+                'content' => HelperApi::getIni('SMTP') ?: HelperApi::getIni(0, false),
             ),
             array(
                 'col'     => '1-1',
                 'label'   => $this->_('Disabled functions'),
                 'title'   => 'disable_functions',
-                'content' => \implode(', ', \explode(',', Helper::getIni('disable_functions'))) ?: '-',
+                'content' => \implode(', ', \explode(',', HelperApi::getIni('disable_functions'))) ?: '-',
             ),
         );
 
