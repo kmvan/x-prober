@@ -15,7 +15,7 @@ class MyInfo
         EventsApi::on('mods', array($this, 'filter'), 900);
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('My information'),
