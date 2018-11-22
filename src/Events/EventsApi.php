@@ -4,9 +4,9 @@ namespace InnStudio\Prober\Events;
 
 class EventsApi
 {
+    private static $events      = array();
     private static $PRIORITY_ID = 'priority';
     private static $CALLBACK_ID = 'callback';
-    private static $events      = array();
 
     public static function on($name, $callback, $priority = 10)
     {
@@ -20,32 +20,33 @@ class EventsApi
         );
     }
 
-    public static function emit($name, $returns = null)
+    public static function emit()
     {
+        $args = \func_get_args();
+
+        $name   = $args[0];
+        $return = isset($args[1]) ? $args[1] : null;
+
+        unset($args[0],$args[1]);
+
         $events = isset(self::$events[$name]) ? self::$events[$name] : false;
 
         if ( ! $events) {
-            return $returns;
+            return $return;
         }
 
-        // sort filters by priority
-        $sortArr = \array_map(function ($filter) {
-            return $filter[self::$PRIORITY_ID];
-        }, $events);
+        $sortArr = array();
 
-        \array_multisort(
-            $sortArr,
-            \SORT_ASC,
-            \SORT_NUMERIC,
-            $events
-        );
+        foreach ($events as $k => $filter) {
+            $sortArr[$k] = $filter[self::$PRIORITY_ID];
+        }
+
+        \array_multisort($sortArr, $events);
 
         foreach ($events as $filter) {
-            $args = \func_get_args();
-            unset($args[0]);
-            $returns = \call_user_func_array($filter[self::$CALLBACK_ID], $args);
+            $return = \call_user_func_array($filter[self::$CALLBACK_ID], array($return, $args));
         }
 
-        return $returns;
+        return $return;
     }
 }
