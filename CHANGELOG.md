@@ -2,6 +2,10 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 1.7.4 - 2018-11-22
+### Fix
+- Fix errors on PHP5.3~5.6
+
 ## 1.7.3 - 2018-11-18
 ### Optimize
 - Optimize language text
