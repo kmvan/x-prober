@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 1.7.5 - 2018-12-20
+### Add
+- Add PHP latest version 7.3.0
+- Add clear OPCACHE cache operation after self-update
+
+
 ## 1.7.4 - 2018-11-22
 ### Fix
 - Fix errors on PHP5.3~5.6
