@@ -41,6 +41,10 @@ class Updater
         }
 
         if ((bool) \file_put_contents(__FILE__, $content)) {
+            if (\function_exists('\\opcache_reset')) {
+                \opcache_reset();
+            }
+
             HelperApi::dieJson(array(
                 'code' => 0,
                 'msg'  => I18nApi::_('Update success...'),
