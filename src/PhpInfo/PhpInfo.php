@@ -47,7 +47,7 @@ HTML;
             ),
             array(
                 'label'   => $this->_('Version'),
-                'title'   => \sprintf($this->_('X Prober builtin latest PHP stable version: %s'), '7.2.12'),
+                'title'   => \sprintf($this->_('X Prober builtin latest PHP stable version: %s'), ConfigApi::$LATEST_PHP_STABLE_VERSION),
                 'content' => \PHP_VERSION . ' ' . (\version_compare(\PHP_VERSION, ConfigApi::$LATEST_PHP_STABLE_VERSION, '<') ? $this->_('(Old)') : $this->_('(Up to date)')),
             ),
             array(
