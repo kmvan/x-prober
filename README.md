@@ -1,9 +1,12 @@
-﻿[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)
+[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1fkvkxkwyhzj21gu0d2my8.jpg)
 
 # 😎 X Prober
 > This is a prober program for **PHP environment**. It can show your server information and readable easily. 
 
 And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
+[![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
+ [![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors) 
+
 
 ## License
 * GPL-v2
@@ -47,6 +50,35 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 - Km.Van https://inn-studio.com
 - Jack Cherng https://github.com/jfcherng
 - More...
+
+
+This project exists thanks to all the people who contribute. 
+<a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/x-prober#backer)]
+
+<a href="https://opencollective.com/x-prober#backers" target="_blank"><img src="https://opencollective.com/x-prober/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
+
+<a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/2/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/3/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/4/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/5/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/6/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/7/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/8/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/x-prober/sponsor/9/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/9/avatar.svg"></a>
+
+
 
 ## TODO
 - [] Temperature sensor.
