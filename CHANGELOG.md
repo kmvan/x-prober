@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.2 - 2019-01-14
+
+### Fix
+
+- Fix #10 error reporting warning
+
+### Optimize
+
+- Optimize notch style
+
 ## 2.0.1 - 2019-01-13
 
 ### Optimize
