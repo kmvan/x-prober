@@ -12,8 +12,14 @@
     border-radius: 0 0 10rem 10rem;
     background: #333;
     font-size: 1rem;
-    padding: 0 ($gridGutter * 2) ($gridGutter * 0.5) ($gridGutter * 2);
+    padding: 0 0 ($gridGutter * 0.5);
     color: #fff;
+    min-width: 60%;
+
+    @include mq(lg) {
+      min-width: 80%;
+    }
+
 
     &:hover {
       color: #fff;
