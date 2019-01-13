@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "es6",
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "compiler"
+    },
+    {
+      "path": "src"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {}
+}
