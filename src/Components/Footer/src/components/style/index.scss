@@ -3,20 +3,24 @@
 @import "./forkme";
 
 .inn-footer {
-  background: $colorDark;
-  color: $colorTextLight;
-  width: 60%;
-  border-radius: 10rem;
+  text-align: center;
+  padding: ($gridGutter * 0.5) $gridGutter;
+  margin: ($gridGutter * 2) auto ($gridGutter * 5);
+  font-style: italic;
 
   @include mq(lg) {
-    text-align: center;
-    margin: ($gridGutter * 2) auto ($gridGutter * 5);
-    padding: ($gridGutter * 0.5) $gridGutter;
+    background: $colorDark;
+    color: $colorTextLight;
+    width: 60%;
+    border-radius: 10rem;
   }
 
 
   a {
-    color: $colorTextLightLink;
+    @include mq(lg) {
+      color: $colorTextLightLink;
+    }
+
 
     &:hover {
       text-decoration: underline;
