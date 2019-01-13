@@ -1,6 +1,6 @@
 <?php
 
-namespace InnStudio\Compiler;
+namespace InnStudio\Prober\Compiler;
 
 use Gettext\Translations;
 
