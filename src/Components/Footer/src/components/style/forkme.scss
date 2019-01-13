@@ -1,8 +1,20 @@
+@import "~components/Style/src/components/style/config";
+@import "~components/Style/src/components/style/media-query";
+
 .inn-forkme {
   &__link {
     position: absolute;
     top: 0;
     right: 0;
     border: 0;
+  }
+
+  &__img {
+    width: 100px;
+    height: auto;
+
+    @include mq(lg) {
+      width: auto;
+    }
   }
 }
