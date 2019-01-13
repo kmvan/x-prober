@@ -241,6 +241,10 @@ HTML;
 
     public static function getErrNameByCode($code)
     {
+        if (0 === (int) $code) {
+            return '';
+        }
+
         $levels = array(
             \E_ALL               => 'E_ALL',
             \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
