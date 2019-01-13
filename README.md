@@ -83,9 +83,11 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 
 ## TODO
-- [] Temperature sensor.
-- [x] More languages with Poedit.
-- [] Detail benchmark result.
+[] Temperature sensor.
+
+[x] More languages with Poedit.
+
+[] Detail benchmark result.
 
 ## Keywords
 X-Prober/PHP 探针/X 探针/刘海探针
