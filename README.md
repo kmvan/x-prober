@@ -21,17 +21,19 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 - Access `x.php` via http browser.
 
 ## Required environment
-- Compile environment: PHP 7.2+
+- Compile environment: PHP 7.3+
 - Production environment: PHP 5.3+
-- Browser support: IE9/Chrome/Firefox/Edge
+- Browser support: <del>IE9</del>/Chrome/Firefox/Edge
 - OS support: Linux / Windows(basic)
 
 ## For development
-- Star⭐ and **Fork**.
+- Star and Fork.
+- Fetch your project.
+- Install node modules: `$ npm install`.
+- Watch scripts: `$ npm run dev`.
 - Generate composer vendor: `$ composer dumpautoload -o`.
-- Code you mind.
 - Compile **development**: `$ php ./Make.php dev`.
-- Compile **production**: `$ php ./Make.php`.
+- Compile **production**: `$ npm run build && php ./Make.php`.
 - Access `./dist/prober.php` from HTTP browser.
 - Enjoy it. 😄
 - Pull Request.
@@ -44,7 +46,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 - Pull Request and thank you. 😘
 
 ## Note for participate in contribution
-- Code compatible with IE9+ and PHP 5.3+
+- Code compatible with PHP 5.3+
 
 ## Contributors
 - Km.Van https://inn-studio.com
