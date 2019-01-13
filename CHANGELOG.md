@@ -2,6 +2,24 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.0 - 2019-01-13
+### Add
+- Add PHP latest version 7.3.1
+- Add PHP ionCube extension checker
+- Add PHP SourceGuardian extension checker
+- Add PHP Phalcon extension checker
+- Add PHP FileInfo extension checker
+- Add PHP Graphics Magick extension checker
+- Add React + Mobx for developer environment
+- Update new developer doc
+
+### Optimize
+- Re-code all HTML code
+- Re-design UI
+
+### Remove
+- Remove IE browser support
+
 ## 1.7.5 - 2018-12-20
 ### Add
 - Add PHP latest version 7.3.0
