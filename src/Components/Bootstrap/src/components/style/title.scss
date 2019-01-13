@@ -1,24 +1,19 @@
 @import "~components/Style/src/components/style/config";
+@import "~components/Style/src/components/style/media-query";
 
 .inn-title {
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   margin: 0 0 $gridGutter;
-  line-height: 1.5rem;
 
-  &__link {
+  &__link,
+  a {
     border-radius: 0 0 10rem 10rem;
     background: #333;
     font-size: 1rem;
-    width: 60%;
-  }
-
-  a {
-    display: block;
+    padding: 0 ($gridGutter * 2) ($gridGutter * 0.5) ($gridGutter * 2);
     color: #fff;
-    padding: 0 0 10px;
 
     &:hover {
       color: #fff;
