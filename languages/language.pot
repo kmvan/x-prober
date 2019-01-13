@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2018-09-18 21:29+0800\n"
+"POT-Creation-Date: 2019-01-13 21:05+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -9,378 +10,418 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Benchmark/Benchmark.php:152
+#: Components/Benchmark/Benchmark.php:152
 #, php-format
 msgid "Please wait %d seconds"
 msgstr ""
 
-#: Database/Database.php:21
+#: Components/Database/Database.php:21
 msgid "Database"
 msgstr ""
 
-#: Database/Database.php:22
+#: Components/Database/Database.php:22
 msgid "DB"
 msgstr ""
 
-#: Database/Database.php:45
+#: Components/Database/Database.php:45
 msgid "SQLite3"
 msgstr ""
 
-#: Database/Database.php:50
+#: Components/Database/Database.php:50
 msgid "SQLite"
 msgstr ""
 
-#: Database/Database.php:55
+#: Components/Database/Database.php:55
 msgid "MySQLi client"
 msgstr ""
 
-#: Database/Database.php:59
+#: Components/Database/Database.php:59
 msgid "Mongo"
 msgstr ""
 
-#: Database/Database.php:63
+#: Components/Database/Database.php:63
 msgid "MongoDB"
 msgstr ""
 
-#: Database/Database.php:67
+#: Components/Database/Database.php:67
 msgid "PostgreSQL"
 msgstr ""
 
-#: Database/Database.php:71
+#: Components/Database/Database.php:71
 msgid "Paradox"
 msgstr ""
 
-#: Database/Database.php:75
+#: Components/Database/Database.php:75
 msgid "Microsoft SQL Server Driver for PHP"
 msgstr ""
 
-#: Database/Database.php:76
+#: Components/Database/Database.php:76
 msgid "MS SQL"
 msgstr ""
 
-#: Database/Database.php:80
+#: Components/Database/Database.php:80
 msgid "File Pro"
 msgstr ""
 
-#: Database/Database.php:84
+#: Components/Database/Database.php:84
 msgid "MaxDB client"
 msgstr ""
 
-#: Database/Database.php:88
+#: Components/Database/Database.php:88
 msgid "MaxDB server"
 msgstr ""
 
-#: Footer/Footer.php:26
+#: Components/Footer/Footer.php:28
 #, php-format
 msgid "Generator %s"
 msgstr ""
 
-#: Footer/Footer.php:28
+#: Components/Footer/Footer.php:34
 #, php-format
 msgid "Author %s"
 msgstr ""
 
-#: Helper/Api.php:58 Helper/Api.php:146 Helper/Api.php:171
-#: ServerInfo/ServerInfo.php:41
+#: Components/Helper/HelperApi.php:103 Components/Helper/HelperApi.php:195
+#: Components/Helper/HelperApi.php:220 Components/ServerInfo/ServerInfo.php:41
 msgid "Unavailable"
 msgstr ""
 
-#: Helper/Api.php:158
+#: Components/Helper/HelperApi.php:207
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Helper/Api.php:185
+#: Components/Helper/HelperApi.php:234
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
 
-#: Helper/Api.php:397
-msgid "Not support on Windows"
-msgstr ""
-
-#: Helper/Api.php:402
-#, php-format
-msgid "%d min:"
-msgstr ""
-
-#: MyInfo/MyInfo.php:21
+#: Components/MyInfo/MyInfo.php:21
 msgid "My information"
 msgstr ""
 
-#: MyInfo/MyInfo.php:22
+#: Components/MyInfo/MyInfo.php:22
 msgid "Mine"
 msgstr ""
 
-#: NetworkStats/NetworkStats.php:22
+#: Components/MyInfo/MyInfo.php:33
+msgid "My IP"
+msgstr ""
+
+#: Components/MyInfo/MyInfo.php:38
+msgid "My browser UA"
+msgstr ""
+
+#: Components/MyInfo/MyInfo.php:43
+msgid "My browser language"
+msgstr ""
+
+#: Components/NetworkStats/NetworkStats.php:21
 msgid "Network stats"
 msgstr ""
 
-#: NetworkStats/NetworkStats.php:23
+#: Components/NetworkStats/NetworkStats.php:22
 msgid "Net"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:21
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
 msgid "PHP extensions"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:22
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
 msgid "Ext"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:42
-#: PhpExtensionInfo/PhpExtensionInfo.php:46
-#: PhpExtensionInfo/PhpExtensionInfo.php:50
-#: PhpExtensionInfo/PhpExtensionInfo.php:54
-#: PhpExtensionInfo/PhpExtensionInfo.php:62
-#: PhpExtensionInfo/PhpExtensionInfo.php:66
-#: PhpExtensionInfo/PhpExtensionInfo.php:70
-#: PhpExtensionInfo/PhpExtensionInfo.php:74
-#: PhpExtensionInfo/PhpExtensionInfo.php:78
-#: PhpExtensionInfo/PhpExtensionInfo.php:82
-#: PhpExtensionInfo/PhpExtensionInfo.php:86
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:42
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:46
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:50
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:54
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:66
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:70
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:74
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:78
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:82
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:86
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:90
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:94
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:98
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:102
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:110
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
 #, php-format
 msgid "%s extension"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:58
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
 #, php-format
 msgid "%s enabled"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:90
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:106
 msgid "Zend Optimizer"
 msgstr ""
 
-#: PhpExtensionInfo/PhpExtensionInfo.php:95
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:119
 msgid "Loaded extensions"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:21
+#: Components/PhpInfo/PhpInfo.php:22
 msgid "PHP information"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:22
+#: Components/PhpInfo/PhpInfo.php:23
 msgid "PHP"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:42
+#: Components/PhpInfo/PhpInfo.php:42
+msgid "Click for detail"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:46
 msgid "PHP info detail"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:46
+#: Components/PhpInfo/PhpInfo.php:50
 msgid "Version"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:50
+#: Components/PhpInfo/PhpInfo.php:51
+#, php-format
+msgid "X Prober builtin latest PHP stable version: %s"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:52
+msgid "(Old)"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:52
+msgid "(Up to date)"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:55
 msgid "SAPI interface"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:54
+#: Components/PhpInfo/PhpInfo.php:59
 msgid "Error reporting"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:59
+#: Components/PhpInfo/PhpInfo.php:64
 msgid "Max memory limit"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:64
+#: Components/PhpInfo/PhpInfo.php:69
 msgid "Max POST size"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:69
+#: Components/PhpInfo/PhpInfo.php:74
 msgid "Max upload size"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:74
+#: Components/PhpInfo/PhpInfo.php:79
 msgid "Max input variables"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:79
+#: Components/PhpInfo/PhpInfo.php:84
 msgid "Max execution time"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:84
+#: Components/PhpInfo/PhpInfo.php:89
 msgid "Timeout for socket"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:89
+#: Components/PhpInfo/PhpInfo.php:94
 msgid "Display errors"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:94
+#: Components/PhpInfo/PhpInfo.php:99
 msgid "Treatment URLs file"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:99
+#: Components/PhpInfo/PhpInfo.php:104
 msgid "SMTP support"
 msgstr ""
 
-#: PhpInfo/PhpInfo.php:105
+#: Components/PhpInfo/PhpInfo.php:110
 msgid "Disabled functions"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:21
+#: Components/PhpInfo/PhpInfo.php:116
+msgid "Disabled classes"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:23
+msgid "⏳ Loading..."
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:24
+msgid "❌ Error, click to retry"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:25
+msgid "👆 Click to test"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:35
 msgid "Server Benchmark"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:22
+#: Components/ServerBenchmark/ServerBenchmark.php:36
 msgid "Benchmark"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:31
+#: Components/ServerBenchmark/ServerBenchmark.php:45
 msgid ""
-"💡 Higher is better. Note: the benchmark marks are not the only criterion for "
-"evaluating the quality of a host/server."
+"💡 Higher is better. This result is only used as reference data for author "
+"testing. Note: the benchmark marks are not the only criterion for evaluating "
+"the quality of a host/server."
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:46
-msgid "Error, click to retry"
-msgstr ""
-
-#: ServerBenchmark/ServerBenchmark.php:53
-msgid "Loading..."
-msgstr ""
-
-#: ServerBenchmark/ServerBenchmark.php:95
+#: Components/ServerBenchmark/ServerBenchmark.php:59
 msgid "Amazon/EC2"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:100
+#: Components/ServerBenchmark/ServerBenchmark.php:64
 msgid "VPSSERVER/KVM"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:105
+#: Components/ServerBenchmark/ServerBenchmark.php:69
 msgid "SpartanHost/KVM"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:110
+#: Components/ServerBenchmark/ServerBenchmark.php:74
 msgid "Aliyun/ECS"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:115
+#: Components/ServerBenchmark/ServerBenchmark.php:79
 msgid "Vultr"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:120
+#: Components/ServerBenchmark/ServerBenchmark.php:84
 msgid "RamNode"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:125
+#: Components/ServerBenchmark/ServerBenchmark.php:89
 msgid "Linode"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:130
+#: Components/ServerBenchmark/ServerBenchmark.php:94
 msgid "Tencent"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:135
-msgid "AnyNode/HDD"
-msgstr ""
-
-#: ServerBenchmark/ServerBenchmark.php:140
+#: Components/ServerBenchmark/ServerBenchmark.php:99
 msgid "BandwagonHOST/SSD"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:164
+#: Components/ServerBenchmark/ServerBenchmark.php:123
 msgid "My server"
 msgstr ""
 
-#: ServerBenchmark/ServerBenchmark.php:165
-msgid "Click to test"
-msgstr ""
-
-#: ServerInfo/ServerInfo.php:21
+#: Components/ServerInfo/ServerInfo.php:21
 msgid "Server information"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:22
+#: Components/ServerInfo/ServerInfo.php:22
 msgid "Info"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:67
+#: Components/ServerInfo/ServerInfo.php:67
 msgid "Server name"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:72
+#: Components/ServerInfo/ServerInfo.php:72
 msgid "Server time"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:77
+#: Components/ServerInfo/ServerInfo.php:77
 msgid "Server uptime"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:81
+#: Components/ServerInfo/ServerInfo.php:81
 msgid "Server IP"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:85
+#: Components/ServerInfo/ServerInfo.php:85
 msgid "Server software"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:89
+#: Components/ServerInfo/ServerInfo.php:89
 msgid "PHP version"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:94
+#: Components/ServerInfo/ServerInfo.php:94
 msgid "CPU model"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:99
+#: Components/ServerInfo/ServerInfo.php:99
 msgid "Server OS"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:105
+#: Components/ServerInfo/ServerInfo.php:105
 msgid "Script path"
 msgstr ""
 
-#: ServerInfo/ServerInfo.php:110
+#: Components/ServerInfo/ServerInfo.php:110
 msgid "Disk usage"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:22
+#: Components/ServerStatus/ServerStatus.php:21
 msgid "Server status"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:23
+#: Components/ServerStatus/ServerStatus.php:22
 msgid "Status"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:34
+#: Components/ServerStatus/ServerStatus.php:32
 msgid "System load"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:38
+#: Components/ServerStatus/ServerStatus.php:33
 msgid "CPU usage"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:53
-msgid "Real memory usage"
+#: Components/ServerStatus/ServerStatus.php:34
+msgid "Memory usage"
 msgstr ""
 
-#: ServerStatus/ServerStatus.php:71
-msgid "Real swap usage"
+#: Components/ServerStatus/ServerStatus.php:35
+msgid "SWAP usage"
 msgstr ""
 
-#: Updater/Updater.php:30
+#: Components/Updater/Updater.php:22
+#, php-format
+msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+msgstr ""
+
+#: Components/Updater/Updater.php:23
+msgid "Updating..."
+msgstr ""
+
+#: Components/Updater/Updater.php:24
+msgid "Update error"
+msgstr ""
+
+#: Components/Updater/Updater.php:53
 msgid "File can not update."
 msgstr ""
 
-#: Updater/Updater.php:39
+#: Components/Updater/Updater.php:62
 msgid "Update file not found."
 msgstr ""
 
-#: Updater/Updater.php:46
+#: Components/Updater/Updater.php:73
 msgid "Update success..."
 msgstr ""
 
-#: Updater/Updater.php:52
+#: Components/Updater/Updater.php:79
 msgid "Update error."
 msgstr ""
