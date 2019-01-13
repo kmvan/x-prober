@@ -1,0 +1,34 @@
+.inn-ini {
+  display: inline-block;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-family: 'Arial Black';
+  width: 2em;
+  text-align: center;
+  color: #fff;
+  margin-right: .2rem;
+  box-shadow: inset 0 5px 10px rgba(#000, 0.3);
+  text-shadow: 0 1px 1px #333;
+  vertical-align: initial;
+  cursor: pointer;
+
+  &:active {
+    transform: scale3d(0.9, 0.9, 1);
+  }
+
+  &.is-ok {
+    background: #00e800;
+
+    &:active {
+      background: #0bbfc3;
+    }
+  }
+
+  &.is-error {
+    background: #c1c1c1;
+
+    &:active {
+      background: #ff4747;
+    }
+  }
+}
