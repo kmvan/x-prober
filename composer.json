@@ -1,30 +1,31 @@
 {
-    "name": "kmvan/prober",
-    "description": "This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iPhone X!",
-    "type": "project",
-    "license": "GPL-V2",
-    "authors": [
-        {
-            "name": "Km.Van",
-            "email": "kmvan.com@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "friendsofphp/php-cs-fixer": "^2.13",
-        "gettext/gettext": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "InnStudio\\Prober\\": "src/",
-            "InnStudio\\Compiler\\": "compiler/"
-        }
-    },
-    "scripts": {
-        "fix": [
-            "php-cs-fixer fix --config .php_cs53 --verbose",
-            "php-cs-fixer fix --config .php_cs72 --verbose"
-        ]
+  "name": "kmvan/prober",
+  "description": "This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iPhone X!",
+  "type": "project",
+  "license": "GPL-V2",
+  "authors": [
+    {
+      "name": "Km.Van",
+      "email": "kmvan.com@gmail.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "friendsofphp/php-cs-fixer": "^2.13",
+    "gettext/gettext": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "InnStudio\\Prober\\": "src/",
+      "InnStudio\\Prober\\Components\\": "src/Components/",
+      "InnStudio\\Prober\\Compiler\\": "compiler/"
+    }
+  },
+  "scripts": {
+    "fix": [
+      "php-cs-fixer fix --config .php_cs53 --verbose",
+      "php-cs-fixer fix --config .php_cs72 --verbose"
+    ]
+  }
 }

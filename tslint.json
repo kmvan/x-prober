@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["dist", "webpack*.js"]
+  },
+  "rules": {
+    "align": true,
+    // "await-promise": [true, "Thenable"],
+    // "array-type": true,
+    // "promise-function-async": true,
+    "arrow-return-shorthand": true,
+    "ban-comma-operator": true,
+    "curly": true,
+    "no-var-keyword": true,
+    "object-literal-shorthand": true,
+    "no-duplicate-variable": true,
+    "triple-equals": true,
+    "no-implicit-dependencies": false,
+    "ordered-imports": false,
+    "no-submodule-imports": false,
+    "jsx-no-lambda": false,
+    "object-literal-sort-keys": false,
+    "no-bitwise": false,
+    "no-var-requires": false,
+    "member-access": true,
+    "member-ordering": false,
+    "no-empty": false,
+    "no-unused-expression": [true, "allow-fast-null-checks", "allow-new"],
+    "no-shadowed-variable": false
+  }
+}
