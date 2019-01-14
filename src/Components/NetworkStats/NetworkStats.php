@@ -70,6 +70,8 @@ HTML
             );
         }
 
-        return \implode('', \array_map(array(HelperApi::class, 'getGroup'), $items));
+        return \implode('', \array_map(function (array $item) {
+            return HelperApi::getGroup($item);
+        }, $items));
     }
 }

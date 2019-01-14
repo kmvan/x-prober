@@ -15,7 +15,7 @@ class PhpExtensionInfo
         EventsApi::on('mods', array($this, 'filter'), 400);
     }
 
-    public function filter($mods)
+    public function filter(array $mods)
     {
         $mods[$this->ID] = array(
             'title'     => I18nApi::_('PHP extensions'),
@@ -131,7 +131,9 @@ HTML;
 
         \array_multisort($items, $itemsOrder);
 
-        return \implode('', \array_map(array(HelperApi::class, 'getGroup'), $items));
+        return \implode('', \array_map(function (array $item) {
+            return HelperApi::getGroup($item);
+        }, $items));
     }
 
     private function getLoadedExtensions($sorted = false)

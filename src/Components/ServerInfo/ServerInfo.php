@@ -112,11 +112,13 @@ HTML;
             ),
         );
 
-        return \implode('', \array_map(array(HelperApi::class, 'getGroup'), $items));
+        return \implode('', \array_map(function (array $item) {
+            return HelperApi::getGroup($item);
+        }, $items));
     }
 
     private function getServerInfo($key)
     {
-        return $_SERVER[$key] ?? '';
+        return isset($_SERVER[$key]) ? $_SERVER[$key] : '';
     }
 }

@@ -37,15 +37,17 @@ class MyInfo
             array(
                 'label'   => I18nApi::_('My browser UA'),
                 'col'     => null,
-                'content' => $_SERVER['HTTP_USER_AGENT'] ?? '',
+                'content' => isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '',
             ),
             array(
                 'label'   => I18nApi::_('My browser language'),
                 'col'     => null,
-                'content' => $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '',
+                'content' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '',
             ),
         );
 
-        return \implode('', \array_map(array(HelperApi::class, 'getGroup'), $items));
+        return \implode('', \array_map(function (array $item) {
+            return HelperApi::getGroup($item);
+        }, $items));
     }
 }

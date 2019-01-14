@@ -535,7 +535,7 @@ HTML;
         $base     = \log($bytes, 1024);
         $suffixes = array('', ' K', ' M', ' G', ' T');
 
-        return \round(1024 ** ($base - \floor($base)), $precision) . $suffixes[\floor($base)];
+        return \round(\pow(1024, ($base - \floor($base))), $precision) . $suffixes[\floor($base)];
     }
 
     public static function getHumamMemUsage($key)

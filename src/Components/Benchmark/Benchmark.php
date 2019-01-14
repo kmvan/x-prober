@@ -67,14 +67,14 @@ class Benchmark
 
     private function getPointsByTime($time)
     {
-        return 10 ** 3 - (int) ($time * 10 ** 3);
+        return \pow(10, 3) - (int) ($time * \pow(10, 3));
     }
 
     private function getHashPoints()
     {
         $data  = 'inn-studio.com';
         $hash  = array('md5', 'sha512', 'sha256', 'crc32');
-        $count = 10 ** 5;
+        $count = \pow(10, 5);
         $start = \microtime(true);
 
         for ($i = 0; $i < $count; ++$i) {
@@ -89,7 +89,7 @@ class Benchmark
     private function getIntLoopPoints()
     {
         $j     = 0;
-        $count = 10 ** 7;
+        $count = \pow(10, 7);
         $start = \microtime(true);
 
         for ($i = 0; $i < $count; ++$i) {
@@ -102,7 +102,7 @@ class Benchmark
     private function getFloatLoopPoints()
     {
         $j     = 1 / 3;
-        $count = 10 ** 7;
+        $count = \pow(10, 7);
         $start = \microtime(true);
 
         for ($i = 0; $i < $count; ++$i) {
@@ -120,7 +120,7 @@ class Benchmark
             return 0;
         }
 
-        $count = 10 ** 4;
+        $count = \pow(10, 4);
         $start = \microtime(true);
 
         for ($i = 0; $i < $count; ++$i) {
