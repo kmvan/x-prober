@@ -51,7 +51,11 @@ class Compiler
                 'styleFilePath' => "{$this->ROOT}/tmp/app.css",
                 'distFilePath'  => $this->COMPILE_FILE_PATH,
             ]);
-            $this->isDev() || $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
+
+            if ( $this->isDev() || ! $this->isDebug()) {
+                $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
+            }
+
             echo 'Compiled!';
         } else {
             echo 'Failed.';
@@ -78,7 +82,7 @@ class Compiler
 
         echo "Packing `{$filePath}...";
 
-        if (true === $this->isDev()) {
+        if ($this->isDev() || $this->isDebug()) {
             $code = \file_get_contents($filePath);
         } else {
             $code     = \php_strip_whitespace($filePath);
@@ -136,9 +140,16 @@ PHP;
 PHP;
     }
 
+    private function isDebug(): bool
+    {
+        global $argv;
+
+        return \in_array('debug', $argv);
+    }
+
     private function getDebugCode(): string
     {
-        $debug = $this->isDev() ? 'true' : 'false';
+        $debug = $this->isDev() || $this->isDebug() ? 'true' : 'false';
 
         return <<<PHP
 \\define('DEBUG', {$debug});
