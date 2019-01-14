@@ -2,6 +2,20 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.3 - 2019-01-14
+
+### Add
+
+- Add debug mode
+
+### Fix
+
+- Fix compatibility for PHP5.6-
+
+### Adjust
+
+- Adjust fix-cs config
+
 ## 2.0.2 - 2019-01-14
 
 ### Fix
