@@ -4,7 +4,6 @@ namespace InnStudio\Prober\Components\Bootstrap;
 
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
 use InnStudio\Prober\Components\I18n\I18nApi;
 
 class Bootstrap
@@ -13,11 +12,7 @@ class Bootstrap
     {
         EventsApi::emit('init');
 
-        if (DEBUG === true) {
-            echo $this->getDisplay();
-        } else {
-            echo HelperApi::htmlMinify($this->getDisplay());
-        }
+        echo $this->getDisplay();
     }
 
     private function getFieldsets()

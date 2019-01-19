@@ -309,62 +309,6 @@ HTML;
         return \PHP_OS === 'WINNT';
     }
 
-    public static function htmlMinify($buffer)
-    {
-        // @see https://stackoverflow.com/questions/27878158/php-bufffer-output-minify-not-textarea-pre
-        \preg_match_all('#\<textarea.*\>.*\<\/textarea\>#Uis', $buffer, $foundTxt);
-        \preg_match_all('#\<pre.*\>.*\<\/pre\>#Uis', $buffer, $foundPre);
-
-        // replacing both with <textarea>$index</textarea> / <pre>$index</pre>
-        $textareas = array();
-
-        foreach (\array_keys($foundTxt[0]) as $item) {
-            $textareas[] = '<textarea>' . $item . '</textarea>';
-        }
-
-        $pres = array();
-
-        foreach (\array_keys($foundPre[0]) as $item) {
-            $pres[] = '<pre>' . $item . '</pre>';
-        }
-
-        $buffer = \str_replace($foundTxt[0], $textareas, $buffer);
-        $buffer = \str_replace($foundPre[0], $pres, $buffer);
-
-        // your stuff
-        $search = array(
-            '/\>[^\S ]+/s', // strip whitespaces after tags, except space
-            '/[^\S ]+\</s', // strip whitespaces before tags, except space
-            '/(\s)+/s', // shorten multiple whitespace sequences
-        );
-
-        $replace = array(
-            '>',
-            '<',
-            '\\1',
-        );
-
-        $buffer = \preg_replace($search, $replace, $buffer);
-
-        // Replacing back with content
-        $textareas = array();
-
-        foreach (\array_keys($foundTxt[0]) as $item) {
-            $textareas[] = '<textarea>' . $item . '</textarea>';
-        }
-
-        $pres = array();
-
-        foreach (\array_keys($foundPre[0]) as $item) {
-            $pres[] = '<pre>' . $item . '</pre>';
-        }
-
-        $buffer = \str_replace($textareas, $foundTxt[0], $buffer);
-        $buffer = \str_replace($pres, $foundPre[0], $buffer);
-
-        return $buffer;
-    }
-
     public static function getClientIp()
     {
         $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
