@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.4 - 2019-01-19
+
+### Optimize
+
+- Remove warning for `is_readable()` function
+- Remove HTML minify
+
 ## 2.0.3 - 2019-01-14
 
 ### Add
