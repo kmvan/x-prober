@@ -51,10 +51,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 ## Contributors
 - Km.Van https://inn-studio.com
 - Jack Cherng https://github.com/jfcherng
-- More...
 
-
-This project exists thanks to all the people who contribute. 
 <a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
 
 
@@ -83,11 +80,14 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 
 ## TODO
-[] Temperature sensor.
 
-[x] More languages with Poedit.
-
-[] Detail benchmark result.
+- [ ] Temperature sensor.
+- [x] More languages with Poedit.
+- [ ] Detail benchmark result.
+- [ ] Add Email send testing.
+- [ ] Add network speed testing.
+- [ ] Add more servers benchmark.
+- [ ] Add PING feature.
 
 ## Keywords
 X-Prober/PHP 探针/X 探针/刘海探针
