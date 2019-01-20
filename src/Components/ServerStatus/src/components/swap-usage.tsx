@@ -20,9 +20,17 @@ class SwapUsage extends Component {
   ) as HTMLElement
 
   public render() {
+    if (!this.percentContainer || !this.overviewContainer) {
+      return null
+    }
+
     const {
       swapRealUsage: { percent, overview },
     } = this.FetchStore.data as any
+
+    if (!overview) {
+      return null
+    }
 
     setProgress(this.progress, percent)
 
