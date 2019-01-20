@@ -12,6 +12,7 @@ class ServerStatus
 
     public function __construct()
     {
+        new FilterFetchItems();
         EventsApi::on('mods', array($this, 'filter'));
     }
 
@@ -31,8 +32,6 @@ class ServerStatus
         $sysLoadAvg    = HelperApi::getSysLoadAvg();
         $langSysLoad   = I18nApi::_('System load');
         $cpuUsage      = I18nApi::_('CPU usage');
-        $realMemUsage  = I18nApi::_('Memory usage');
-        $realSwapUsage = I18nApi::_('SWAP usage');
 
         $sysLoadAvg = \implode('', \array_map(function ($avg) {
             return <<<HTML
@@ -45,51 +44,72 @@ HTML;
     <div class="inn-group__label">{$langSysLoad}</div>
     <div class="inn-group__content" id="inn-systemLoadAvg">{$sysLoadAvg}</div>
 </div>
-<div class="inn-group">
-    <div class="inn-group__label">{$cpuUsage}</div>
-    <div class="inn-group__content" id="inn-cpuUsage">
-        <div class="inn-progress__container">
-            <div class="inn-progress__number">
-                <div id="inn-cpuUsagePercent">10%</div>
-            </div>
-            <div class="inn-progress" id="inn-cpuUsageProgress">
-                <div id="inn-cpuUsageProgressValue" class="inn-progress__value" style="width: 10%"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="inn-group inn-memory-usage">
-    <div class="inn-group__label">{$realMemUsage}</div>
-    <div class="inn-group__content">
-        <div class="inn-progress__container">
-            <div class="inn-progress__percent" id="inn-memRealUsagePercent">{$this->getMemUsage('MemRealUsage', true)}%</div>
-            <div class="inn-progress__number">
-                <div id="inn-memRealUsageOverview">
-                    {$this->getHumamMemUsage('MemRealUsage')}
-                    /
-                    {$this->getHumamMemUsage('MemTotal')}
-                </div>
-            </div>
-            <div class="inn-progress" id="inn-memRealUsageProgress">
-                <div id="inn-memRealUsageProgressValue" class="inn-progress__value" style="width: {$this->getMemUsage('MemRealUsage', true)}%"></div>
-            </div>
-        </div>
-    </div>
-</div>
+{$this->getDisplayCpuUsage()}
+{$this->getDisplayMemoryUsage()}
+{$this->getDisplaySwapUsage()}
+HTML;
+    }
+
+    private function getDisplayCpuUsage()
+    {
+        return $this->getProgressTpl(array(
+            'title'   => I18nApi::_('CPU usage'),
+            'id'      => 'cpuUsage',
+            'usage'   => 1,
+            'percent' => 1,
+            'total'   => '100%',
+        ));
+    }
+
+    private function getDisplayMemoryUsage()
+    {
+        return $this->getProgressTpl(array(
+            'title'   => I18nApi::_('Memory usage'),
+            'id'      => 'memRealUsage',
+            'usage'   => $this->getHumamMemUsage('MemRealUsage'),
+            'percent' => $this->getMemUsage('MemRealUsage', true, 'SwapTotal'),
+            'total'   => $this->getHumamMemUsage('MemRealUsage'),
+        ));
+    }
+
+    private function getDisplaySwapUsage()
+    {
+        return $this->getProgressTpl(array(
+            'title'   => I18nApi::_('SWAP usage'),
+            'id'      => 'swapRealUsage',
+            'usage'   => $this->getHumamMemUsage('SwapRealUsage'),
+            'percent' => $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'),
+            'total'   => $this->getHumamMemUsage('SwapTotal'),
+        ));
+    }
+
+    private function getProgressTpl(array $args)
+    {
+        $args = \array_merge(array(
+            'id'      => '',
+            'title'   => '',
+            'percent' => 0,
+            'usage'   => 0,
+            'total'   => 0,
+        ), $args);
+
+        if ( ! $args['total']) {
+            return '';
+        }
+
+        return <<<HTML
 <div class="inn-group inn-swap-usage">
-    <div class="inn-group__label">{$realSwapUsage}</div>
+    <div class="inn-group__label">{$args['title']}</div>
     <div class="inn-group__content">
         <div class="inn-progress__container">
-            <div class="inn-progress__percent" id="inn-swapRealUsagePercent">{$this->getMemUsage('SwapRealUsage', true, 'SwapTotal')}%</div>
+            <div class="inn-progress__percent" id="inn-{$args['id']}Percent">{$args['percent']}%</div>
             <div class="inn-progress__number">
-                <span id="inn-swapRealUsage">
-                    {$this->getHumamMemUsage('SwapRealUsage')}
-                    /
-                    {$this->getHumamMemUsage('SwapTotal')}
+                <span id="inn-{$args['id']}">
+                    {$args['usage']} / {$args['total']}
                 </span>
             </div>
-            <div class="inn-progress" id="inn-swapRealUsageProgress">
-                <div id="inn-swapRealUsageProgressValue" class="inn-progress__value" style="width: {$this->getMemUsage('SwapRealUsage', true, 'SwapTotal')}%"></div>
+            <div class="inn-progress" id="inn-{$args['id']}Progress">
+                <div id="inn-{$args['id']}ProgressValue" class="inn-progress__value" style="width: {$args['percent']}%"></div>
             </div>
         </div>
     </div>
@@ -113,6 +133,12 @@ HTML;
             return HelperApi::getMemoryUsage($key);
         }
 
-        return HelperApi::getMemoryUsage($key) ? \sprintf('%01.2f', HelperApi::getMemoryUsage($key) / HelperApi::getMemoryUsage($totalKey) * 100) : 0;
+        $total = HelperApi::getMemoryUsage($totalKey);
+
+        if ( ! $total) {
+            return 0;
+        }
+
+        return HelperApi::getMemoryUsage($key) ? \sprintf('%01.2f', HelperApi::getMemoryUsage($key) / $total * 100) : 0;
     }
 }

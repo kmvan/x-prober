@@ -12,6 +12,9 @@ class CpuUsage extends Component {
   public container = document.getElementById(
     'inn-cpuUsagePercent'
   ) as HTMLElement
+  public overviewContainer = document.getElementById(
+    'inn-cpuUsage'
+  ) as HTMLElement
   public progress = document.getElementById(
     'inn-cpuUsageProgressValue'
   ) as HTMLElement
@@ -19,12 +22,14 @@ class CpuUsage extends Component {
   public render() {
     const { cpuUsage } = this.FetchStore.data as any
     const usage = 100 - ~~cpuUsage.idle
+    const overview = `${usage}% / 100%`
 
     setProgress(this.progress, usage)
 
     return (
       <>
         <Portal target={this.container}>{usage}%</Portal>
+        <Portal target={this.overviewContainer}>{overview}</Portal>
       </>
     )
   }
