@@ -2,6 +2,19 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.5 - 2019-01-21
+
+### Add
+
+- Add cURL extension detection item
+- Add LDAP extension detection item
+- Hide SWAP progress when no SWAP
+
+### Optimize
+
+- Optimize fetch bootstrap
+- Optimize CPU progress display
+
 ## 2.0.4 - 2019-01-19
 
 ### Optimize
