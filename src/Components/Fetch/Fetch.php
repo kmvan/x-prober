@@ -9,8 +9,12 @@ class Fetch
 {
     public function __construct()
     {
+        EventsApi::on('fetch', array($this, 'filter'));
+    }
+
+    public function filter()
+    {
         if (HelperApi::isAction('fetch')) {
-            EventsApi::emit('fetch');
             $this->outputItems();
         }
     }
@@ -27,7 +31,7 @@ class Fetch
 
     private function getItems()
     {
-        return array(
+        $items = array(
             'utcTime'    => $this->getServerUtcTime(),
             'serverInfo' => array(
                 'time'   => HelperApi::getServerTime(),
@@ -36,23 +40,10 @@ class Fetch
             'cpuUsage'     => HelperApi::getHumanCpuUsage(),
             'sysLoadAvg'   => HelperApi::getSysLoadAvg(),
             'memTotal'     => HelperApi::getMemoryUsage('MemTotal'),
-            'memRealUsage' => array(
-                'percent'  => HelperApi::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('MemRealUsage') / HelperApi::getMemoryUsage('MemTotal') * 100) : 0,
-                'overview' => HelperApi::getHumamMemUsage('MemRealUsage') . ' / ' . HelperApi::getHumamMemUsage('MemTotal'),
-                'current'  => HelperApi::getMemoryUsage('MemRealUsage'),
-            ),
-            'swapRealUsage' => array(
-                'percent'  => HelperApi::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('SwapRealUsage') / HelperApi::getMemoryUsage('SwapTotal') * 100) : 0,
-                'overview' => HelperApi::getHumamMemUsage('SwapRealUsage') . ' / ' . HelperApi::getHumamMemUsage('SwapTotal'),
-                'current'  => HelperApi::getMemoryUsage('SwapRealUsage'),
-            ),
-            'diskUsage' => array(
-                'percent'  => HelperApi::getDiskFreeSpace() ? \sprintf('%01.2f', (1 - (HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace())) * 100) : 0,
-                'overview' => HelperApi::formatBytes(HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace()) . ' / ' . HelperApi::getDiskTotalSpace(true),
-                'current'  => HelperApi::getDiskFreeSpace() ? HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace() : 0,
-            ),
             'networkStats' => HelperApi::getNetworkStats(),
         );
+
+        return EventsApi::emit('fetchItems', $items);
     }
 
     private function outputItems()

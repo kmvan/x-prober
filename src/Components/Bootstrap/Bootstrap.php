@@ -10,6 +10,7 @@ class Bootstrap
 {
     public function __construct()
     {
+        EventsApi::emit('fetch');
         EventsApi::emit('init');
 
         echo $this->getDisplay();
