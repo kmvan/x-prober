@@ -2,27 +2,29 @@
 @import "~components/Style/src/components/style/media-query";
 
 .inn-title {
-  display: flex;
+  background: $colorDark;
   justify-content: center;
   text-align: center;
-  margin: 0 0 $gridGutter;
+  margin: 0 auto $gridGutter;
+  min-width: 60%;
+  border-radius: 0 0 ($borderRadius * 2) ($borderRadius * 2);
+  font-size: 1rem;
+  line-height: 1;
+  width: 50%;
+
+  @include mq(lg) {
+    min-width: 80%;
+  }
+
 
   &__link,
   a {
-    border-radius: 0 0 ($borderRadius * 10) ($borderRadius * 10);
-    background: #333;
-    font-size: 1rem;
-    padding: 0 0 ($gridGutter * 0.5);
-    color: #fff;
-    min-width: 60%;
-
-    @include mq(lg) {
-      min-width: 80%;
-    }
-
+    display: block;
+    padding: 0 $gridGutter $gridGutter;
+    color: $colorTextLightLink;
 
     &:hover {
-      color: #fff;
+      color: $colorTextLightLink;
     }
   }
 }
