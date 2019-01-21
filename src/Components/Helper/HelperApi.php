@@ -29,6 +29,8 @@ title="{$item['title']}"
 HTML
         : '';
 
+        $hasTitleClassName = $title ? 'inn-tooltip is-top' : '';
+
         if (null === $item['col']) {
             $col = '';
         } else {
@@ -44,8 +46,8 @@ HTML
         return <<<HTML
 <div class="inn-group__container {$col} {$idClassNameGroupContainer}">
     <div class="inn-group {$idClassNameGroup}">
-        <div class="inn-group__label {$idClassNameGroupLabel}" {$title}>{$item['label']}</div>
-        <div class="inn-group__content {$idClassNameGroupContent}" {$title}>{$item['content']}</div>
+        <div class="inn-group__label {$idClassNameGroupLabel} {$hasTitleClassName}" {$title}>{$item['label']}</div>
+        <div class="inn-group__content {$idClassNameGroupContent} {$hasTitleClassName}" {$title}>{$item['content']}</div>
     </div>
 </div>
 HTML;
