@@ -41,6 +41,8 @@ HTML;
         $errLevels = HelperApi::getErrNameByCode(\ini_get('error_reporting'));
         $langClick = I18nApi::_('Click for detail');
 
+        $displayError = '';
+
         $items = array(
             array(
                 'label'   => I18nApi::_('PHP info detail'),
@@ -56,9 +58,14 @@ HTML;
                 'content' => \PHP_SAPI,
             ),
             array(
+                'label'   => I18nApi::_('Display errors'),
+                'title'   => 'display_errors',
+                'content' => HelperApi::alert(\ini_get('display_errors')),
+            ),
+            array(
                 'label'   => I18nApi::_('Error reporting'),
                 'title'   => "error_reporting: {$errLevels}",
-                'content' => HelperApi::strcut($errLevels),
+                'content' => '' === $errLevels ? HelperApi::alert(false) : HelperApi::strcut($errLevels),
             ),
             array(
                 'label'   => I18nApi::_('Max memory limit'),
@@ -91,31 +98,28 @@ HTML;
                 'content' => \ini_get('default_socket_timeout'),
             ),
             array(
-                'label'   => I18nApi::_('Display errors'),
-                'title'   => 'display_errors',
-                'content' => HelperApi::getIni('display_errors'),
-            ),
-            array(
                 'label'   => I18nApi::_('Treatment URLs file'),
                 'title'   => 'allow_url_fopen',
-                'content' => HelperApi::getIni('allow_url_fopen'),
+                'content' => HelperApi::alert((bool) \ini_get('allow_url_fopen')),
             ),
             array(
                 'label'   => I18nApi::_('SMTP support'),
                 'title'   => 'SMTP',
-                'content' => HelperApi::getIni('SMTP') ?: HelperApi::getIni(0, false),
+                'content' => HelperApi::alert((bool) \ini_get('SMTP')),
             ),
             array(
                 'col'     => '1-1',
                 'label'   => I18nApi::_('Disabled functions'),
                 'title'   => 'disable_functions',
-                'content' => \implode(', ', \explode(',', HelperApi::getIni('disable_functions'))) ?: '-',
+                'id'      => 'break-normal',
+                'content' => \ini_get('disable_functions') ? \implode(', ', \explode(',', \ini_get('disable_functions'))) : HelperApi::alert(false),
             ),
             array(
                 'col'     => '1-1',
                 'label'   => I18nApi::_('Disabled classes'),
                 'title'   => 'disable_classes',
-                'content' => \implode(', ', \explode(',', HelperApi::getIni('disable_classes'))) ?: '-',
+                'id'      => 'break-normal',
+                'content' => \ini_get('disable_classes') ? \implode(', ', \explode(',', \ini_get('disable_classes'))) : HelperApi::alert(false),
             ),
         );
 
