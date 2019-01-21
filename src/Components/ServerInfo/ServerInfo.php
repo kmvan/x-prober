@@ -92,11 +92,13 @@ HTML;
             array(
                 'col'     => '1-1',
                 'label'   => I18nApi::_('CPU model'),
+                'id'      => 'break-normal',
                 'content' => HelperApi::getCpuModel(),
             ),
             array(
                 'col'     => '1-1',
                 'label'   => I18nApi::_('Server OS'),
+                'id'      => 'break-normal',
                 'content' => \php_uname(),
             ),
             array(
