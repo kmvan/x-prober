@@ -38,55 +38,57 @@ HTML;
     private function getContent()
     {
         $sqlite3Version = \class_exists('\\SQLite3') ? \SQLite3::version() : false;
-        $sqlite3Version = $sqlite3Version ? HelperApi::getIni(0, true) . ' ' . $sqlite3Version['versionString'] : HelperApi::getIni(0, false);
 
         $items = array(
             array(
                 'label'   => I18nApi::_('SQLite3'),
-                'content' => $sqlite3Version,
+                'content' => $sqlite3Version ? HelperApi::alert(
+                    true,
+                    $sqlite3Version['versionString']
+                ) : HelperApi::alert(false),
             ),
             array(
                 'title'   => 'sqlite_libversion',
                 'label'   => I18nApi::_('SQLite'),
-                'content' => \function_exists('\\sqlite_libversion') ? HelperApi::getIni(0, true) . ' ' . \sqlite_libversion() : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\sqlite_libversion'), \function_exists('\\sqlite_libversion') ? \sqlite_libversion() : ''),
             ),
             array(
                 'title'   => 'mysqli_get_client_version',
                 'label'   => I18nApi::_('MySQLi client'),
-                'content' => \function_exists('\\mysqli_get_client_version') ? HelperApi::getIni(0, true) . ' ' . \mysqli_get_client_version() : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\mysqli_get_client_version'), \function_exists('\\mysqli_get_client_version') ? \mysqli_get_client_version() : ''),
             ),
             array(
                 'label'   => I18nApi::_('Mongo'),
-                'content' => \class_exists('\\Mongo') ? \MongoClient::VERSION : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\class_exists('\\Mongo')),
             ),
             array(
                 'label'   => I18nApi::_('MongoDB'),
-                'content' => \class_exists('\\MongoDB') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\class_exists('\\MongoDB')),
             ),
             array(
                 'label'   => I18nApi::_('PostgreSQL'),
-                'content' => \function_exists('\\pg_connect') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\pg_connect')),
             ),
             array(
                 'label'   => I18nApi::_('Paradox'),
-                'content' => \function_exists('\\px_new') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\px_new')),
             ),
             array(
                 'title'   => I18nApi::_('Microsoft SQL Server Driver for PHP'),
                 'label'   => I18nApi::_('MS SQL'),
-                'content' => \function_exists('\\sqlsrv_server_info') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\sqlsrv_server_info')),
             ),
             array(
                 'label'   => I18nApi::_('File Pro'),
-                'content' => \function_exists('\\filepro') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\filepro')),
             ),
             array(
                 'label'   => I18nApi::_('MaxDB client'),
-                'content' => \function_exists('\\maxdb_get_client_version') ? \maxdb_get_client_version() : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\maxdb_get_client_version'), \function_exists('\\maxdb_get_client_version') ? \maxdb_get_client_version() : ''),
             ),
             array(
                 'label'   => I18nApi::_('MaxDB server'),
-                'content' => \function_exists('\\maxdb_get_server_version') ? HelperApi::getIni(0, true) : HelperApi::getIni(0, false),
+                'content' => HelperApi::alert(\function_exists('\\maxdb_get_server_version'), \function_exists('\\maxdb_get_server_version') ? \maxdb_get_server_version() : ''),
             ),
         );
 
