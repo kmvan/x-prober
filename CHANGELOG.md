@@ -6,14 +6,18 @@ All Notable changes to `X-Prober` will be documented in this file
 
 ### Add
 
+- Add tooltip style
+- Add detail benchmark tooltip
 - Add cURL extension detection item
 - Add LDAP extension detection item
 - Hide SWAP progress when no SWAP
 
 ### Optimize
 
+- Optimize notch position
 - Optimize fetch bootstrap
 - Optimize CPU progress display
+- Optimize style
 
 ## 2.0.4 - 2019-01-19
 
