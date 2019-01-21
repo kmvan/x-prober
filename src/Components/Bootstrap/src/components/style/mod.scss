@@ -4,7 +4,7 @@
 .inn-mod {
   position: relative;
   border: 5px solid $colorLight;
-  border-radius: 1.5rem;
+  border-radius: $borderRadius * 1.5;
   background: linear-gradient(#fff, rgba(255, 255, 255, 0.5));
   margin-bottom: $gridGutter;
   padding: ($gridGutter * 0.5) 0 0;
@@ -13,7 +13,7 @@
     background: $colorDark;
     margin-left: $gridGutter;
     padding: ($gridGutter * 0.5) ($gridGutter * 2);
-    border-radius: 5rem;
+    border-radius: $borderRadius * 5;
     color: $colorTextLightLink;
     margin: 0 auto;
     text-shadow: 0 1px 1px $colorDark;

@@ -27,6 +27,17 @@ class ServerBenchmarkStore {
   }
 
   @computed
+  get linkTitle() {
+    return Object.keys(this.marks)
+      .map(key => {
+        const marks = this.marks[key]
+
+        return `${key}: ${marks}`
+      })
+      .join(' / ')
+  }
+
+  @computed
   get totalMarks(): number {
     return Object.values(this.marks).reduce((a: number, b: number) => {
       return a + b

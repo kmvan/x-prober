@@ -6,6 +6,6 @@ body {
   font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
   border: $gridGutter solid $colorDark;
   margin: 0;
-  border-radius: 2rem;
+  border-radius: $borderRadius * 2;
   line-height: 1.5;
 }

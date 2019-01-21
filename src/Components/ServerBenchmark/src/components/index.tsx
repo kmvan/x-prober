@@ -50,7 +50,11 @@ class ServerBenchmark extends Component {
 
     return (
       <Portal target={this.container}>
-        <a onClick={this.onClick} className="inn-benchmark__link">
+        <a
+          onClick={this.onClick}
+          className="inn-benchmark__link inn-tooltip is-top"
+          title={this.store.linkTitle}
+        >
           {linkText}
         </a>
       </Portal>

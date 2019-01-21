@@ -12,7 +12,7 @@
     background: $colorDark;
     color: $colorTextLight;
     width: 60%;
-    border-radius: 10rem;
+    border-radius: $borderRadius * 10;
   }
 
 

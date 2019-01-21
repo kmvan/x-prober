@@ -9,7 +9,7 @@
 
   &__link,
   a {
-    border-radius: 0 0 10rem 10rem;
+    border-radius: 0 0 ($borderRadius * 10) ($borderRadius * 10);
     background: #333;
     font-size: 1rem;
     padding: 0 0 ($gridGutter * 0.5);

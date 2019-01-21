@@ -19,4 +19,7 @@ $gridColumns: 12 !default;
 $gridGutter: 1rem !default;
 $gridGutterXs: $gridGutter / 2 !default;
 
-$inlineShadow: inset 0 5px 10px rgba(0, 0, 0, 0.3) !default;
+$inlineShadow: inset 0 5px 10px rgba(#000, 0.3) !default;
+
+$borderRadius: 1rem !default;
+$boxShadow: 0 1px 3px rgba(#000, 0.3) !default;
