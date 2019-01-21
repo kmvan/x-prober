@@ -277,33 +277,35 @@ HTML;
         return $result;
     }
 
-    public static function getIni($id, $forceSet = null)
+    public static function alert($isOk, $text = '')
     {
-        if (true === $forceSet) {
-            $ini = 1;
-        } elseif (false === $forceSet) {
-            $ini = 0;
-        } else {
-            $ini = \ini_get($id);
+        $isOk = (bool) $isOk;
+
+        switch ($isOk) {
+        case true:
+            $status = 'ok';
+            $icon   = '&check;';
+            break;
+        case false:
+            $status = 'error';
+            $icon   = '&times;';
+            break;
+        default:
+            $icon = '';
         }
 
-        if ( ! \is_numeric($ini) && '' !== (string) $ini) {
-            return $ini;
-        }
-
-        if (1 === (int) $ini) {
-            return <<<HTML
-<span class="inn-ini is-ok">&check;</span>
+        if ($text) {
+            $text = <<<HTML
+<div class="inn-alert__text">{$text}</div>
 HTML;
         }
 
-        if (0 === (int) $ini) {
-            return <<<HTML
-<span class="inn-ini is-error">&times;</span>
+        return <<<HTML
+<div class="inn-alert is-{$status}">
+    <div class="inn-alert__icon">{$icon}</div>
+    {$text}
+</div>
 HTML;
-        }
-
-        return $ini;
     }
 
     public static function isWin()
