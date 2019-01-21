@@ -1,11 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
 
-const Alert = (type: string, msg) => {
+const Alert = (type: string, msg = '') => {
   type = type === 'success' ? 'ok' : type
 
   const className = classNames({
-    'inn-ini': true,
+    'inn-alert': true,
     [`is-${type}`]: true,
   })
 
@@ -20,8 +20,15 @@ const Alert = (type: string, msg) => {
 
   return (
     <>
-      <span className={className} dangerouslySetInnerHTML={{ __html: icon }} />
-      <span className="inn-ini__text">{msg}</span>
+      <div className={className}>
+        <div className="inn-alert__icon">{icon}</div>
+        {msg && (
+          <span
+            className="inn-alert__text"
+            dangerouslySetInnerHTML={{ __html: msg }}
+          />
+        )}
+      </div>
     </>
   )
 }
