@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 20:11+0800\n"
-"PO-Revision-Date: 2019-01-13 20:11+0800\n"
+"POT-Creation-Date: 2019-01-21 14:41+0800\n"
+"PO-Revision-Date: 2019-01-21 14:41+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
 "Language: zh_TW\n"
@@ -33,51 +33,51 @@ msgstr "資料庫"
 msgid "DB"
 msgstr "資料庫"
 
-#: Components/Database/Database.php:45
+#: Components/Database/Database.php:44
 msgid "SQLite3"
 msgstr ""
 
-#: Components/Database/Database.php:50
+#: Components/Database/Database.php:52
 msgid "SQLite"
 msgstr ""
 
-#: Components/Database/Database.php:55
+#: Components/Database/Database.php:57
 msgid "MySQLi client"
 msgstr ""
 
-#: Components/Database/Database.php:59
+#: Components/Database/Database.php:61
 msgid "Mongo"
 msgstr ""
 
-#: Components/Database/Database.php:63
+#: Components/Database/Database.php:65
 msgid "MongoDB"
 msgstr ""
 
-#: Components/Database/Database.php:67
+#: Components/Database/Database.php:69
 msgid "PostgreSQL"
 msgstr ""
 
-#: Components/Database/Database.php:71
+#: Components/Database/Database.php:73
 msgid "Paradox"
 msgstr ""
 
-#: Components/Database/Database.php:75
+#: Components/Database/Database.php:77
 msgid "Microsoft SQL Server Driver for PHP"
 msgstr ""
 
-#: Components/Database/Database.php:76
+#: Components/Database/Database.php:78
 msgid "MS SQL"
 msgstr ""
 
-#: Components/Database/Database.php:80
+#: Components/Database/Database.php:82
 msgid "File Pro"
 msgstr ""
 
-#: Components/Database/Database.php:84
+#: Components/Database/Database.php:86
 msgid "MaxDB client"
 msgstr ""
 
-#: Components/Database/Database.php:88
+#: Components/Database/Database.php:90
 msgid "MaxDB server"
 msgstr ""
 
@@ -91,17 +91,17 @@ msgstr "該頁面由 %s 生成"
 msgid "Author %s"
 msgstr "作者為 %s"
 
-#: Components/Helper/HelperApi.php:103 Components/Helper/HelperApi.php:195
-#: Components/Helper/HelperApi.php:220 Components/ServerInfo/ServerInfo.php:41
+#: Components/Helper/HelperApi.php:105 Components/Helper/HelperApi.php:197
+#: Components/Helper/HelperApi.php:222 Components/ServerInfo/ServerInfo.php:41
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Components/Helper/HelperApi.php:207
+#: Components/Helper/HelperApi.php:209
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:234
+#: Components/Helper/HelperApi.php:236
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
@@ -142,27 +142,6 @@ msgstr "PHP 擴展"
 msgid "Ext"
 msgstr "擴展"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:42
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:46
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:50
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:54
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:66
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:70
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:74
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:78
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:82
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:86
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:90
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:94
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:98
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:102
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:110
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-#, php-format
-msgid "%s extension"
-msgstr "%s 擴展"
-
 #: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
 #, php-format
 msgid "%s enabled"
@@ -172,7 +151,7 @@ msgstr "%s 啟用"
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:119
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
@@ -188,76 +167,76 @@ msgstr "PHP"
 msgid "Click for detail"
 msgstr "PHP 詳細資訊"
 
-#: Components/PhpInfo/PhpInfo.php:46
+#: Components/PhpInfo/PhpInfo.php:48
 msgid "PHP info detail"
 msgstr "PHP 詳細訊息"
 
-#: Components/PhpInfo/PhpInfo.php:50
+#: Components/PhpInfo/PhpInfo.php:52
 msgid "Version"
 msgstr "版本"
 
-#: Components/PhpInfo/PhpInfo.php:51
+#: Components/PhpInfo/PhpInfo.php:53
 #, php-format
 msgid "X Prober builtin latest PHP stable version: %s"
 msgstr "X 探針內建最新的 PHP 正式版：%s"
 
-#: Components/PhpInfo/PhpInfo.php:52
+#: Components/PhpInfo/PhpInfo.php:54
 msgid "(Old)"
 msgstr "(舊)"
 
-#: Components/PhpInfo/PhpInfo.php:52
+#: Components/PhpInfo/PhpInfo.php:54
 msgid "(Up to date)"
 msgstr "(最新)"
 
-#: Components/PhpInfo/PhpInfo.php:55
+#: Components/PhpInfo/PhpInfo.php:57
 msgid "SAPI interface"
 msgstr "SAPI 介面"
 
-#: Components/PhpInfo/PhpInfo.php:59
-msgid "Error reporting"
-msgstr "錯誤報告"
-
-#: Components/PhpInfo/PhpInfo.php:64
-msgid "Max memory limit"
-msgstr "執行記憶體限制"
-
-#: Components/PhpInfo/PhpInfo.php:69
-msgid "Max POST size"
-msgstr "POST 提交限制"
-
-#: Components/PhpInfo/PhpInfo.php:74
-msgid "Max upload size"
-msgstr "上傳檔案限制"
-
-#: Components/PhpInfo/PhpInfo.php:79
-msgid "Max input variables"
-msgstr "提交表單限制"
-
-#: Components/PhpInfo/PhpInfo.php:84
-msgid "Max execution time"
-msgstr "執行超時秒數"
-
-#: Components/PhpInfo/PhpInfo.php:89
-msgid "Timeout for socket"
-msgstr "Socket 超時秒數"
-
-#: Components/PhpInfo/PhpInfo.php:94
+#: Components/PhpInfo/PhpInfo.php:61
 msgid "Display errors"
 msgstr "顯示錯誤"
 
-#: Components/PhpInfo/PhpInfo.php:99
+#: Components/PhpInfo/PhpInfo.php:66
+msgid "Error reporting"
+msgstr "錯誤報告"
+
+#: Components/PhpInfo/PhpInfo.php:71
+msgid "Max memory limit"
+msgstr "執行記憶體限制"
+
+#: Components/PhpInfo/PhpInfo.php:76
+msgid "Max POST size"
+msgstr "POST 提交限制"
+
+#: Components/PhpInfo/PhpInfo.php:81
+msgid "Max upload size"
+msgstr "上傳檔案限制"
+
+#: Components/PhpInfo/PhpInfo.php:86
+msgid "Max input variables"
+msgstr "提交表單限制"
+
+#: Components/PhpInfo/PhpInfo.php:91
+msgid "Max execution time"
+msgstr "執行超時秒數"
+
+#: Components/PhpInfo/PhpInfo.php:96
+msgid "Timeout for socket"
+msgstr "Socket 超時秒數"
+
+#: Components/PhpInfo/PhpInfo.php:101
 msgid "Treatment URLs file"
 msgstr "檔案遠端打開"
 
-#: Components/PhpInfo/PhpInfo.php:104
+#: Components/PhpInfo/PhpInfo.php:106
 msgid "SMTP support"
 msgstr "SMTP 支援"
 
-#: Components/PhpInfo/PhpInfo.php:110
+#: Components/PhpInfo/PhpInfo.php:112
 msgid "Disabled functions"
 msgstr "禁用的函數"
 
-#: Components/PhpInfo/PhpInfo.php:116
+#: Components/PhpInfo/PhpInfo.php:119
 msgid "Disabled classes"
 msgstr "禁用的類"
 
@@ -366,39 +345,40 @@ msgstr "PHP 版本"
 msgid "CPU model"
 msgstr "CPU 型號"
 
-#: Components/ServerInfo/ServerInfo.php:99
+#: Components/ServerInfo/ServerInfo.php:100
 msgid "Server OS"
 msgstr "伺服器系統"
 
-#: Components/ServerInfo/ServerInfo.php:105
+#: Components/ServerInfo/ServerInfo.php:107
 msgid "Script path"
 msgstr "腳本路徑"
 
-#: Components/ServerInfo/ServerInfo.php:110
+#: Components/ServerInfo/ServerInfo.php:112
 msgid "Disk usage"
 msgstr "磁碟使用"
 
-#: Components/ServerStatus/ServerStatus.php:21
+#: Components/ServerStatus/ServerStatus.php:22
 msgid "Server status"
 msgstr "伺服器狀態"
 
-#: Components/ServerStatus/ServerStatus.php:22
+#: Components/ServerStatus/ServerStatus.php:23
 msgid "Status"
 msgstr "狀態"
 
-#: Components/ServerStatus/ServerStatus.php:32
+#: Components/ServerStatus/ServerStatus.php:33
 msgid "System load"
 msgstr "系統負載"
 
-#: Components/ServerStatus/ServerStatus.php:33
+#: Components/ServerStatus/ServerStatus.php:34
+#: Components/ServerStatus/ServerStatus.php:56
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-#: Components/ServerStatus/ServerStatus.php:34
+#: Components/ServerStatus/ServerStatus.php:67
 msgid "Memory usage"
 msgstr "記憶體使用"
 
-#: Components/ServerStatus/ServerStatus.php:35
+#: Components/ServerStatus/ServerStatus.php:78
 msgid "SWAP usage"
 msgstr "SWAP 使用"
 
@@ -430,6 +410,9 @@ msgstr "更新成功……"
 #: Components/Updater/Updater.php:79
 msgid "Update error."
 msgstr "更新出錯。"
+
+#~ msgid "%s extension"
+#~ msgstr "%s 擴展"
 
 #~ msgid "Not support on Windows"
 #~ msgstr "Windows 系統尚未支援該功能\t"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-01-13 21:05+0800\n"
+"POT-Creation-Date: 2019-01-21 14:41+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -30,51 +30,51 @@ msgstr ""
 msgid "DB"
 msgstr ""
 
-#: Components/Database/Database.php:45
+#: Components/Database/Database.php:44
 msgid "SQLite3"
 msgstr ""
 
-#: Components/Database/Database.php:50
+#: Components/Database/Database.php:52
 msgid "SQLite"
 msgstr ""
 
-#: Components/Database/Database.php:55
+#: Components/Database/Database.php:57
 msgid "MySQLi client"
 msgstr ""
 
-#: Components/Database/Database.php:59
+#: Components/Database/Database.php:61
 msgid "Mongo"
 msgstr ""
 
-#: Components/Database/Database.php:63
+#: Components/Database/Database.php:65
 msgid "MongoDB"
 msgstr ""
 
-#: Components/Database/Database.php:67
+#: Components/Database/Database.php:69
 msgid "PostgreSQL"
 msgstr ""
 
-#: Components/Database/Database.php:71
+#: Components/Database/Database.php:73
 msgid "Paradox"
 msgstr ""
 
-#: Components/Database/Database.php:75
+#: Components/Database/Database.php:77
 msgid "Microsoft SQL Server Driver for PHP"
 msgstr ""
 
-#: Components/Database/Database.php:76
+#: Components/Database/Database.php:78
 msgid "MS SQL"
 msgstr ""
 
-#: Components/Database/Database.php:80
+#: Components/Database/Database.php:82
 msgid "File Pro"
 msgstr ""
 
-#: Components/Database/Database.php:84
+#: Components/Database/Database.php:86
 msgid "MaxDB client"
 msgstr ""
 
-#: Components/Database/Database.php:88
+#: Components/Database/Database.php:90
 msgid "MaxDB server"
 msgstr ""
 
@@ -88,17 +88,17 @@ msgstr ""
 msgid "Author %s"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:103 Components/Helper/HelperApi.php:195
-#: Components/Helper/HelperApi.php:220 Components/ServerInfo/ServerInfo.php:41
+#: Components/Helper/HelperApi.php:105 Components/Helper/HelperApi.php:197
+#: Components/Helper/HelperApi.php:222 Components/ServerInfo/ServerInfo.php:41
 msgid "Unavailable"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:207
+#: Components/Helper/HelperApi.php:209
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:234
+#: Components/Helper/HelperApi.php:236
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
@@ -139,27 +139,6 @@ msgstr ""
 msgid "Ext"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:42
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:46
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:50
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:54
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:66
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:70
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:74
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:78
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:82
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:86
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:90
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:94
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:98
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:102
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:110
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-#, php-format
-msgid "%s extension"
-msgstr ""
-
 #: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
 #, php-format
 msgid "%s enabled"
@@ -169,7 +148,7 @@ msgstr ""
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:119
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
 msgid "Loaded extensions"
 msgstr ""
 
@@ -185,76 +164,76 @@ msgstr ""
 msgid "Click for detail"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:46
+#: Components/PhpInfo/PhpInfo.php:48
 msgid "PHP info detail"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:50
+#: Components/PhpInfo/PhpInfo.php:52
 msgid "Version"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:51
+#: Components/PhpInfo/PhpInfo.php:53
 #, php-format
 msgid "X Prober builtin latest PHP stable version: %s"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:52
+#: Components/PhpInfo/PhpInfo.php:54
 msgid "(Old)"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:52
+#: Components/PhpInfo/PhpInfo.php:54
 msgid "(Up to date)"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:55
+#: Components/PhpInfo/PhpInfo.php:57
 msgid "SAPI interface"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:59
-msgid "Error reporting"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:64
-msgid "Max memory limit"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:69
-msgid "Max POST size"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:74
-msgid "Max upload size"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:79
-msgid "Max input variables"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:84
-msgid "Max execution time"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:89
-msgid "Timeout for socket"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:94
+#: Components/PhpInfo/PhpInfo.php:61
 msgid "Display errors"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:99
+#: Components/PhpInfo/PhpInfo.php:66
+msgid "Error reporting"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:71
+msgid "Max memory limit"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:76
+msgid "Max POST size"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:81
+msgid "Max upload size"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:86
+msgid "Max input variables"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:91
+msgid "Max execution time"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:96
+msgid "Timeout for socket"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:101
 msgid "Treatment URLs file"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:104
+#: Components/PhpInfo/PhpInfo.php:106
 msgid "SMTP support"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:110
+#: Components/PhpInfo/PhpInfo.php:112
 msgid "Disabled functions"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:116
+#: Components/PhpInfo/PhpInfo.php:119
 msgid "Disabled classes"
 msgstr ""
 
@@ -361,39 +340,40 @@ msgstr ""
 msgid "CPU model"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:99
+#: Components/ServerInfo/ServerInfo.php:100
 msgid "Server OS"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:105
+#: Components/ServerInfo/ServerInfo.php:107
 msgid "Script path"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:110
+#: Components/ServerInfo/ServerInfo.php:112
 msgid "Disk usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:21
+#: Components/ServerStatus/ServerStatus.php:22
 msgid "Server status"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:22
+#: Components/ServerStatus/ServerStatus.php:23
 msgid "Status"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:32
+#: Components/ServerStatus/ServerStatus.php:33
 msgid "System load"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:33
+#: Components/ServerStatus/ServerStatus.php:34
+#: Components/ServerStatus/ServerStatus.php:56
 msgid "CPU usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:34
+#: Components/ServerStatus/ServerStatus.php:67
 msgid "Memory usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:35
+#: Components/ServerStatus/ServerStatus.php:78
 msgid "SWAP usage"
 msgstr ""
 
