@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  vertical-align: middle;
   word-break: break-all;
 }
 
@@ -11,6 +10,7 @@
 @import "./a";
 @import "./mod";
 @import "./group";
-@import "./ini";
+@import "./alert";
 @import "./progress";
 @import "./tooltip";
+@import "./break-normal";
