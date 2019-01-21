@@ -25,14 +25,14 @@
     background: rgba($colorDark, $opacity);
     color: $colorTextLight;
     content: attr(title);
-    text-align: center;
+    text-align: left;
     border-radius: $borderRadius;
     padding: ($gridGutter * 0.2) $gridGutter;
     font-size: 1rem;
     z-index: 10;
     line-height: 1.5 !important;
     box-shadow: $boxShadow;
-    white-space: nowrap;
+    word-break: normal;
   }
 
   // position
