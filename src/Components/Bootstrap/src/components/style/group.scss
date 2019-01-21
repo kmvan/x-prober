@@ -31,6 +31,7 @@
 
   &__label {
     flex: 0 0 30%;
+    word-break: normal;
 
     @include mq(lg) {
       flex: 0 0 15rem;
