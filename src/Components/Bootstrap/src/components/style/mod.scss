@@ -22,19 +22,10 @@
     &__text {
       &.is-full {
         text-transform: capitalize;
-        display: none;
-
-        @include mq(lg) {
-          display: block;
-        }
       }
 
       &.is-tiny {
-        display: block;
-
-        @include mq(lg) {
-          display: none;
-        }
+        display: none;
       }
     }
   }
