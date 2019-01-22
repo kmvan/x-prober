@@ -18,12 +18,8 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('SwapTotal');
 
-        if ( ! $total) {
-            return $items;
-        }
-
         $items['swapRealUsage'] = array(
-            'usage' => HelperApi::getMemoryUsage('SwapRealUsage'),
+            'usage' => $total ? HelperApi::getMemoryUsage('SwapRealUsage') : 0,
             'total' => $total,
         );
 
@@ -34,12 +30,8 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('MemTotal');
 
-        if ( ! $total) {
-            return $items;
-        }
-
         $items['memRealUsage'] = array(
-            'usage' => HelperApi::getMemoryUsage('MemRealUsage'),
+            'usage' => $total ? HelperApi::getMemoryUsage('MemRealUsage') : 0,
             'total' => $total,
         );
 
@@ -48,13 +40,11 @@ class FilterFetchItems extends ServerStatusApi
 
     public function filterDiskUsage(array $items)
     {
-        if ( ! HelperApi::getDiskTotalSpace()) {
-            return $items;
-        }
+        $total = HelperApi::getDiskTotalSpace();
 
         $items['diskUsage'] = array(
-            'usage' => (int) \bcsub(HelperApi::getDiskTotalSpace(), HelperApi::getDiskFreeSpace()),
-            'total' => HelperApi::getDiskTotalSpace(),
+            'usage' => $total ? (int) \bcsub(HelperApi::getDiskTotalSpace(), HelperApi::getDiskFreeSpace()) : 0,
+            'total' => $total,
         );
 
         return $items;

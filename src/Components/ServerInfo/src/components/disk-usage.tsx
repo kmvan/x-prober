@@ -25,14 +25,6 @@ class ServerInfoDiskUsage extends Component {
       diskUsage: { total, usage },
     } = this.FetchStore.data as any
 
-    console.log(
-      total,
-      usage,
-      this.percentContainer,
-      this.overviewContainer,
-      this.progress
-    )
-
     if (
       !total ||
       !this.percentContainer ||
