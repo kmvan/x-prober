@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.6 - 2019-01-22
+
+### Fix
+
+- Fix incorrect total memory
+
+### Optimize
+
+- Optimize progress logic
+
 ## 2.0.5 - 2019-01-21
 
 ### Add
