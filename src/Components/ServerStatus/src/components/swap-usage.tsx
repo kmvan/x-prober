@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import FetchStore from '~components/Fetch/src/stores'
 import setProgress from '~components/Helper/src/components/set-progress'
 import Portal from '~components/Helper/src/components/portal'
+import formatBytes from '../../../Helper/src/components/format-bytes'
 
 @observer
 class SwapUsage extends Component {
@@ -25,12 +26,15 @@ class SwapUsage extends Component {
     }
 
     const {
-      swapRealUsage: { percent, overview },
+      swapRealUsage: { total, usage },
     } = this.FetchStore.data as any
 
-    if (!overview) {
+    if (!total) {
       return null
     }
+
+    const percent = Math.floor((usage / total) * 1000) / 10
+    const overview = `${formatBytes(usage)} / ${formatBytes(total)}`
 
     setProgress(this.progress, percent)
 

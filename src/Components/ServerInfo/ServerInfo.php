@@ -35,31 +35,6 @@ class ServerInfo
 HTML;
     }
 
-    private function getDiskInfo()
-    {
-        if ( ! HelperApi::getDiskTotalSpace()) {
-            return I18nApi::_('Unavailable');
-        }
-
-        $percent    = \sprintf('%01.2f', (1 - (HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace())) * 100);
-        $hunamUsed  = HelperApi::formatBytes(HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace());
-        $hunamTotal = HelperApi::getDiskTotalSpace(true);
-
-        return <<<HTML
-<div class="inn-progress__container">
-    <div class="inn-progress__percent" id="inn-diskUsagePercent">{$percent}%</div>
-    <div class="inn-progress__number">
-        <span id="inn-diskUsageOverview">
-            {$hunamUsed} / {$hunamTotal}
-        </span>
-    </div>
-    <div class="inn-progress" id="inn-diskUsageProgress">
-        <div id="inn-diskUsageProgressValue" class="inn-progress__value" style="width: {$percent}%"></div>
-    </div>
-</div>
-HTML;
-    }
-
     private function getContent()
     {
         $items = array(
@@ -110,7 +85,11 @@ HTML;
             array(
                 'col'     => '1-1',
                 'label'   => I18nApi::_('Disk usage'),
-                'content' => $this->getDiskInfo(),
+                'content' => HelperApi::getDiskTotalSpace() ? HelperApi::getProgressTpl(array(
+                    'id'      => 'diskUsage',
+                    'usage'   => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
+                    'total'   => HelperApi::getDiskTotalSpace(),
+                )) : I18nApi::_('Unavailable'),
             ),
         );
 

@@ -6,10 +6,8 @@ use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
 use InnStudio\Prober\Components\I18n\I18nApi;
 
-class ServerStatus
+class ServerStatus extends ServerStatusApi
 {
-    private $ID = 'serverStatus';
-
     public function __construct()
     {
         new FilterFetchItems();
@@ -34,6 +32,8 @@ class ServerStatus
         $cpuUsage      = I18nApi::_('CPU usage');
 
         $sysLoadAvg = \implode('', \array_map(function ($avg) {
+            $avg = \sprintf('%.2f', $avg);
+
             return <<<HTML
 <div class="inn-system-load-avg__group">{$avg}</div>
 HTML;
@@ -52,93 +52,41 @@ HTML;
 
     private function getDisplayCpuUsage()
     {
-        return $this->getProgressTpl(array(
-            'title'   => I18nApi::_('CPU usage'),
-            'id'      => 'cpuUsage',
-            'usage'   => 1,
-            'percent' => 1,
-            'total'   => '100%',
+        return HelperApi::getGroup(array(
+            'label'   => I18nApi::_('CPU usage'),
+            'col'     => '1-1',
+            'content' => HelperApi::getProgressTpl(array(
+                'id'       => 'cpuUsage',
+                'usage'    => 10,
+                'total'    => 100,
+                'overview' => '10% / 100%',
+            )),
         ));
     }
 
     private function getDisplayMemoryUsage()
     {
-        return $this->getProgressTpl(array(
-            'title'   => I18nApi::_('Memory usage'),
-            'id'      => 'memRealUsage',
-            'usage'   => $this->getHumamMemUsage('MemRealUsage'),
-            'percent' => $this->getMemUsage('MemRealUsage', true, 'SwapTotal'),
-            'total'   => $this->getHumamMemUsage('MemRealUsage'),
+        return HelperApi::getGroup(array(
+            'label'   => I18nApi::_('Memory usage'),
+            'col'     => '1-1',
+            'content' => HelperApi::getProgressTpl(array(
+                'id'      => 'memRealUsage',
+                'usage'   => HelperApi::getMemoryUsage('MemRealUsage'),
+                'total'   => HelperApi::getMemoryUsage('MemTotal'),
+            )),
         ));
     }
 
     private function getDisplaySwapUsage()
     {
-        return $this->getProgressTpl(array(
-            'title'   => I18nApi::_('SWAP usage'),
-            'id'      => 'swapRealUsage',
-            'usage'   => $this->getHumamMemUsage('SwapRealUsage'),
-            'percent' => $this->getMemUsage('SwapRealUsage', true, 'SwapTotal'),
-            'total'   => $this->getHumamMemUsage('SwapTotal'),
+        return HelperApi::getGroup(array(
+            'label'   => I18nApi::_('SWAP usage'),
+            'col'     => '1-1',
+            'content' => HelperApi::getProgressTpl(array(
+                'id'      => 'swapRealUsage',
+                'usage'   => HelperApi::getMemoryUsage('SwapRealUsage'),
+                'total'   => HelperApi::getMemoryUsage('SwapTotal'),
+            )),
         ));
-    }
-
-    private function getProgressTpl(array $args)
-    {
-        $args = \array_merge(array(
-            'id'      => '',
-            'title'   => '',
-            'percent' => 0,
-            'usage'   => 0,
-            'total'   => 0,
-        ), $args);
-
-        if ( ! $args['total']) {
-            return '';
-        }
-
-        return <<<HTML
-<div class="inn-group inn-swap-usage">
-    <div class="inn-group__label">{$args['title']}</div>
-    <div class="inn-group__content">
-        <div class="inn-progress__container">
-            <div class="inn-progress__percent" id="inn-{$args['id']}Percent">{$args['percent']}%</div>
-            <div class="inn-progress__number">
-                <span id="inn-{$args['id']}">
-                    {$args['usage']} / {$args['total']}
-                </span>
-            </div>
-            <div class="inn-progress" id="inn-{$args['id']}Progress">
-                <div id="inn-{$args['id']}ProgressValue" class="inn-progress__value" style="width: {$args['percent']}%"></div>
-            </div>
-        </div>
-    </div>
-</div>
-HTML;
-    }
-
-    private function getHumamMemUsage($type)
-    {
-        return HelperApi::getHumamMemUsage($type);
-    }
-
-    private function _($str)
-    {
-        return I18nApi::_($str);
-    }
-
-    private function getMemUsage($key, $precent = false, $totalKey = 'MemTotal')
-    {
-        if (false === $precent) {
-            return HelperApi::getMemoryUsage($key);
-        }
-
-        $total = HelperApi::getMemoryUsage($totalKey);
-
-        if ( ! $total) {
-            return 0;
-        }
-
-        return HelperApi::getMemoryUsage($key) ? \sprintf('%01.2f', HelperApi::getMemoryUsage($key) / $total * 100) : 0;
     }
 }

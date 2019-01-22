@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import FetchStore from '~components/Fetch/src/stores'
 import Portal from '~components/Helper/src/components/portal'
 import setProgress from '~components/Helper/src/components/set-progress'
+import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
 class ServerInfoDiskUsage extends Component {
@@ -21,12 +22,28 @@ class ServerInfoDiskUsage extends Component {
 
   public render() {
     const {
-      diskUsage: { percent, overview },
+      diskUsage: { total, usage },
     } = this.FetchStore.data as any
 
-    if (!this.percentContainer || !this.overviewContainer || !this.progress) {
+    console.log(
+      total,
+      usage,
+      this.percentContainer,
+      this.overviewContainer,
+      this.progress
+    )
+
+    if (
+      !total ||
+      !this.percentContainer ||
+      !this.overviewContainer ||
+      !this.progress
+    ) {
       return null
     }
+
+    const percent = Math.floor((usage / total) * 1000) / 10
+    const overview = `${formatBytes(usage)} / ${formatBytes(total)}`
 
     setProgress(this.progress, percent)
 

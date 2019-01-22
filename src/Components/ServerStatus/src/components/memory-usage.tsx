@@ -4,6 +4,7 @@ import { observer } from 'mobx-react'
 import FetchStore from '~components/Fetch/src/stores'
 import setProgress from '~components/Helper/src/components/set-progress'
 import Portal from '~components/Helper/src/components/portal'
+import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
 class MemoryUsage extends Component {
@@ -21,8 +22,15 @@ class MemoryUsage extends Component {
 
   public render() {
     const {
-      memRealUsage: { percent, overview },
+      memRealUsage: { usage, total },
     } = this.FetchStore.data as any
+
+    if (!total) {
+      return null
+    }
+
+    const percent = Math.floor((usage / total) * 1000) / 10
+    const overview = `${formatBytes(usage)} / ${formatBytes(total)}`
 
     setProgress(this.progress, percent)
 

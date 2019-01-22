@@ -6,6 +6,37 @@ use InnStudio\Prober\Components\I18n\I18nApi;
 
 class HelperApi
 {
+    public static function getProgressTpl(array $args)
+    {
+        $args = \array_merge(array(
+            'id'       => '',
+            'usage'    => 0,
+            'total'    => 0,
+            'overview' => '',
+        ), $args);
+
+        if ( ! $args['total']) {
+            return I18nApi::_('Unavailable');
+        }
+
+        $percent    = \round($args['usage'] / $args['total'], 2) * 100;
+        $totalHuman = self::formatBytes($args['total']);
+        $usageHuman = self::formatBytes($args['usage']);
+        $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
+
+        return <<<HTML
+<div class="inn-progress__container">
+    <div class="inn-progress__percent" id="inn-{$args['id']}Percent">{$percent}%</div>
+    <div class="inn-progress__overview" id="inn-{$args['id']}Overview">
+        {$overview}
+    </div>
+    <div class="inn-progress" id="inn-{$args['id']}Progress">
+        <div id="inn-{$args['id']}ProgressValue" class="inn-progress__value" style="width: {$percent}%"></div>
+    </div>
+</div>
+HTML;
+    }
+
     public static function checkNotModified()
     {
         if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && \strlen($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
@@ -193,7 +224,7 @@ HTML;
     {
         $filePath = '/proc/cpuinfo';
 
-        if ( ! \is_readable($filePath)) {
+        if ( ! @\is_readable($filePath)) {
             return I18nApi::_('Unavailable');
         }
 
@@ -218,7 +249,7 @@ HTML;
     {
         $filePath = '/proc/uptime';
 
-        if ( ! \is_readable($filePath)) {
+        if ( ! @($filePath)) {
             return I18nApi::_('Unavailable');
         }
 
@@ -349,7 +380,7 @@ HTML;
 
         $filePath = ('/proc/stat');
 
-        if ( ! \is_readable($filePath)) {
+        if ( ! @\is_readable($filePath)) {
             $cpu = array();
 
             return $cpu;
@@ -426,7 +457,7 @@ HTML;
         if (null === $memInfo) {
             $memInfoFile = '/proc/meminfo';
 
-            if ( ! \is_readable($memInfoFile)) {
+            if ( ! @\is_readable($memInfoFile)) {
                 $memInfo = 0;
 
                 return 0;
@@ -446,29 +477,29 @@ HTML;
                 }
 
                 $line            = \explode(':', $line);
-                $lines[$line[0]] = (int) $line[1];
+                $lines[$line[0]] = (int) $line[1] * 1024;
             }
 
             $memInfo = $lines;
         }
 
         switch ($key) {
-            case 'MemRealUsage':
-                $memAvailable = 0;
+        case 'MemRealUsage':
+            $memAvailable = 0;
 
-                if (isset($memInfo['MemAvailable'])) {
-                    $memAvailable = $memInfo['MemAvailable'];
-                } elseif (isset($memInfo['MemFree'])) {
-                    $memAvailable = $memInfo['MemFree'];
-                }
+            if (isset($memInfo['MemAvailable'])) {
+                $memAvailable = $memInfo['MemAvailable'];
+            } elseif (isset($memInfo['MemFree'])) {
+                $memAvailable = $memInfo['MemFree'];
+            }
 
-                return $memInfo['MemTotal'] - $memAvailable;
-            case 'SwapRealUsage':
-                if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) {
-                    return 0;
-                }
+            return $memInfo['MemTotal'] - $memAvailable;
+        case 'SwapRealUsage':
+            if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) {
+                return 0;
+            }
 
-                return $memInfo['SwapTotal'] - $memInfo['SwapFree'] - $memInfo['SwapCached'];
+            return $memInfo['SwapTotal'] - $memInfo['SwapFree'] - $memInfo['SwapCached'];
         }
 
         return isset($memInfo[$key]) ? (int) $memInfo[$key] : 0;
@@ -488,7 +519,7 @@ HTML;
 
     public static function getHumamMemUsage($key)
     {
-        return self::formatBytes(self::getMemoryUsage($key) * 1024);
+        return self::formatBytes(self::getMemoryUsage($key));
     }
 
     public static function strcut($str, $len = 20)

@@ -13,7 +13,7 @@ class CpuUsage extends Component {
     'inn-cpuUsagePercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-cpuUsage'
+    'inn-cpuUsageOverview'
   ) as HTMLElement
   public progress = document.getElementById(
     'inn-cpuUsageProgressValue'

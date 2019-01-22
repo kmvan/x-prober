@@ -5,7 +5,7 @@ namespace InnStudio\Prober\Components\ServerStatus;
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
 
-class FilterFetchItems
+class FilterFetchItems extends ServerStatusApi
 {
     public function __construct()
     {
@@ -16,16 +16,15 @@ class FilterFetchItems
 
     public function filterSwapUsage(array $items)
     {
-        $swapTotal = HelperApi::getMemoryUsage('SwapTotal');
+        $total = HelperApi::getMemoryUsage('SwapTotal');
 
-        if ( ! $swapTotal) {
+        if ( ! $total) {
             return $items;
         }
 
         $items['swapRealUsage'] = array(
-            'percent'  => HelperApi::getMemoryUsage('SwapRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('SwapRealUsage') / $swapTotal * 100) : 0,
-            'overview' => HelperApi::getHumamMemUsage('SwapRealUsage') . ' / ' . HelperApi::getHumamMemUsage('SwapTotal'),
-            'current'  => HelperApi::getMemoryUsage('SwapRealUsage'),
+            'usage' => HelperApi::getMemoryUsage('SwapRealUsage'),
+            'total' => $total,
         );
 
         return $items;
@@ -33,10 +32,15 @@ class FilterFetchItems
 
     public function filterMemoryUsage(array $items)
     {
+        $total = HelperApi::getMemoryUsage('MemTotal');
+
+        if ( ! $total) {
+            return $items;
+        }
+
         $items['memRealUsage'] = array(
-            'percent'  => HelperApi::getMemoryUsage('MemRealUsage') ? \sprintf('%01.2f', HelperApi::getMemoryUsage('MemRealUsage') / HelperApi::getMemoryUsage('MemTotal') * 100) : 0,
-            'overview' => HelperApi::getHumamMemUsage('MemRealUsage') . ' / ' . HelperApi::getHumamMemUsage('MemTotal'),
-            'current'  => HelperApi::getMemoryUsage('MemRealUsage'),
+            'usage' => HelperApi::getMemoryUsage('MemRealUsage'),
+            'total' => $total,
         );
 
         return $items;
@@ -44,10 +48,13 @@ class FilterFetchItems
 
     public function filterDiskUsage(array $items)
     {
+        if ( ! HelperApi::getDiskTotalSpace()) {
+            return $items;
+        }
+
         $items['diskUsage'] = array(
-            'percent'  => HelperApi::getDiskFreeSpace() ? \sprintf('%01.2f', (1 - (HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace())) * 100) : 0,
-            'overview' => HelperApi::formatBytes(HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace()) . ' / ' . HelperApi::getDiskTotalSpace(true),
-            'current'  => HelperApi::getDiskFreeSpace() ? HelperApi::getDiskFreeSpace() / HelperApi::getDiskTotalSpace() : 0,
+            'usage' => (int) \bcsub(HelperApi::getDiskTotalSpace(), HelperApi::getDiskFreeSpace()),
+            'total' => HelperApi::getDiskTotalSpace(),
         );
 
         return $items;
