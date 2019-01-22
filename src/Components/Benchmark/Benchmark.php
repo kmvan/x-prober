@@ -40,7 +40,7 @@ class Benchmark
     {
         $path = $this->getTmpRecorderPath();
 
-        if ( ! \is_readable($path)) {
+        if ( ! @\is_readable($path)) {
             return 0;
         }
 
