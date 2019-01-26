@@ -31,12 +31,12 @@ HTML;
 
     public static function getProgressTpl(array $args)
     {
-        $args = \array_merge([
+        $args = \array_merge(array(
             'id'       => '',
             'usage'    => 0,
             'total'    => 0,
             'overview' => '',
-        ], $args);
+        ), $args);
 
         if ( ! $args['total']) {
             return I18nApi::_('Unavailable');
@@ -70,13 +70,13 @@ HTML;
 
     public static function getGroup(array $item)
     {
-        $item = \array_merge([
+        $item = \array_merge(array(
             'id'      => '',
             'label'   => '',
             'title'   => '',
             'content' => '',
             'col'     => '',
-        ], $item);
+        ), $item);
 
         $title = $item['title'] ? <<<HTML
 title="{$item['title']}"
@@ -121,14 +121,14 @@ HTML;
 
     public static function getWinCpuUsage()
     {
-        $cpus = [];
+        $cpus = array();
 
         // com
         if (\class_exists('\\COM')) {
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
 
-            $cpus = [];
+            $cpus = array();
 
             foreach ($server as $cpu) {
                 $total += (int) $cpu->loadpercentage;
@@ -167,16 +167,16 @@ HTML;
 
         $lines = \file($filePath);
         unset($lines[0], $lines[1]);
-        $eths = [];
+        $eths = array();
 
         foreach ($lines as $line) {
             $line              = \preg_replace('/\s+/', ' ', \trim($line));
             $lineArr           = \explode(':', $line);
             $numberArr         = \explode(' ', \trim($lineArr[1]));
-            $eths[$lineArr[0]] = [
+            $eths[$lineArr[0]] = array(
                 'rx' => (int) $numberArr[0],
                 'tx' => (int) $numberArr[8],
-            ];
+            );
         }
 
         return $eths;
@@ -301,7 +301,7 @@ HTML;
             return '';
         }
 
-        $levels = [
+        $levels = array(
             \E_ALL               => 'E_ALL',
             \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
             \E_DEPRECATED        => 'E_DEPRECATED',
@@ -318,7 +318,7 @@ HTML;
             \E_PARSE             => 'E_PARSE',
             \E_WARNING           => 'E_WARNING',
             \E_ERROR             => 'E_ERROR',
-        ];
+        );
 
         $result = '';
 
@@ -369,7 +369,7 @@ HTML;
 
     public static function getClientIp()
     {
-        $keys = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
+        $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
 
         foreach ($keys as $key) {
             if ( ! isset($_SERVER[$key])) {
@@ -404,7 +404,7 @@ HTML;
         $filePath = ('/proc/stat');
 
         if ( ! @\is_readable($filePath)) {
-            $cpu = [];
+            $cpu = array();
 
             return $cpu;
         }
@@ -414,13 +414,13 @@ HTML;
         $stat2       = \file($filePath);
         $info1       = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0]));
         $info2       = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0]));
-        $dif         = [];
+        $dif         = array();
         $dif['user'] = $info2[0] - $info1[0];
         $dif['nice'] = $info2[1] - $info1[1];
         $dif['sys']  = $info2[2] - $info1[2];
         $dif['idle'] = $info2[3] - $info1[3];
         $total       = \array_sum($dif);
-        $cpu         = [];
+        $cpu         = array();
 
         foreach ($dif as $x => $y) {
             $cpu[$x] = \round($y / $total * 100, 1);
@@ -453,13 +453,13 @@ HTML;
     {
         $cpu = self::getCpuUsage();
 
-        return $cpu ?: [];
+        return $cpu ?: array();
     }
 
     public static function getSysLoadAvg()
     {
         if (self::isWin()) {
-            return [0, 0, 0];
+            return array(0, 0, 0);
         }
 
         return \array_map(function ($load) {
@@ -487,12 +487,12 @@ HTML;
             }
 
             $memInfo = \file_get_contents($memInfoFile);
-            $memInfo = \str_replace([
+            $memInfo = \str_replace(array(
                 ' kB',
                 '  ',
-            ], '', $memInfo);
+            ), '', $memInfo);
 
-            $lines = [];
+            $lines = array();
 
             foreach (\explode("\n", $memInfo) as $line) {
                 if ( ! $line) {
@@ -508,12 +508,12 @@ HTML;
 
         switch ($key) {
         case 'MemRealUsage':
-            $memAvailable = 0;
-
             if (isset($memInfo['MemAvailable'])) {
                 $memAvailable = $memInfo['MemAvailable'];
             } elseif (isset($memInfo['MemFree'])) {
                 $memAvailable = $memInfo['MemFree'];
+            } else {
+                $memAvailable = 0;
             }
 
             return $memInfo['MemTotal'] - $memAvailable;
@@ -535,7 +535,7 @@ HTML;
         }
 
         $base     = \log($bytes, 1024);
-        $suffixes = ['', ' K', ' M', ' G', ' T'];
+        $suffixes = array('', ' K', ' M', ' G', ' T');
 
         return \round(\pow(1024, ($base - \floor($base))), $precision) . $suffixes[\floor($base)];
     }
