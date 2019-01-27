@@ -3,18 +3,23 @@
 
 .inn-title {
   background: $colorDark;
+  position: fixed;
+  top: $gridGutter;
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
   text-align: center;
-  margin: 0 auto $gridGutter;
-  min-width: 60%;
-  border-radius: 0 0 ($borderRadius * 2) ($borderRadius * 2);
+  margin: 0;
+  min-width: 60vw;
+  width: 50vw;
   font-size: 1rem;
   line-height: 1;
-  width: 50%;
-  box-shadow: inset 0 -7px 20px -7px rgba(0, 0, 0, 0.3), $boxShadowBottomOutline;
+  border-radius: 0 0 ($borderRadius * 2) ($borderRadius * 2);
+  box-shadow: inset 0 -7px 20px -7px rgba(#000, 0.3);
+  z-index: 10;
 
   @include mq(lg) {
-    min-width: 80%;
+    min-width: 60%;
   }
 
 

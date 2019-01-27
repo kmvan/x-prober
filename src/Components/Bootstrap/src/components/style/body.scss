@@ -1,11 +1,10 @@
 @import "~components/Style/src/components/style/config";
 
 body {
-  background: $colorBg;
+  background: $colorDark;
   color: $colorDark;
   font-family: "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
-  border: $gridGutter solid $colorDark;
+  padding: $gridGutter;
   margin: 0;
-  border-radius: $borderRadius * 2;
   line-height: 1.5;
 }

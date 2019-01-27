@@ -6,7 +6,6 @@
   text-align: center;
   padding: ($gridGutter * 0.5) $gridGutter;
   margin: ($gridGutter * 2) auto ($gridGutter * 5);
-  font-style: italic;
 
   @include mq(lg) {
     background: $colorDark;

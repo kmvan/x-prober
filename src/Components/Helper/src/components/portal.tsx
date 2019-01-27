@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { createPortal } from 'react-dom'
 
 interface IProps {
-  target: HTMLElement | null
+  target?: HTMLElement
 }
 
 class Portal extends Component<IProps> {
