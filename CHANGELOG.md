@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.8 - 2019-01-27
+
+### Optimize
+
+- Optimize style, looks nore comfortable
+- Adjust PHP loaded extensions position
+
+### Add
+
+- Add Japanese language
+
 ## 2.0.7 - 2019-01-22
 
 ### Fix
