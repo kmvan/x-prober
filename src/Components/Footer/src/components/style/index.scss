@@ -5,13 +5,13 @@
 .inn-footer {
   text-align: center;
   padding: ($gridGutter * 0.5) $gridGutter;
-  margin: ($gridGutter * 2) auto ($gridGutter * 5);
+  margin: ($gridGutter * 2) auto ($gridGutter * 2);
 
   @include mq(lg) {
     background: $colorDark;
     color: $colorTextLight;
     width: 60%;
-    border-radius: $borderRadius * 10;
+    border-radius: $borderRadius;
   }
 
 
