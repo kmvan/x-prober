@@ -1,0 +1,410 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"POT-Creation-Date: 2019-01-27 12:45+0800\n"
+"PO-Revision-Date: 2019-01-27 14:18+0800\n"
+"Language-Team: Yourname <your mail or URL>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language: ja\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Components/Benchmark/Benchmark.php:152
+#, php-format
+msgid "Please wait %d seconds"
+msgstr "%d 秒お待ちください"
+
+#: Components/Database/Database.php:21
+msgid "Database"
+msgstr "データベース"
+
+#: Components/Database/Database.php:22
+msgid "DB"
+msgstr ""
+
+#: Components/Database/Database.php:44
+msgid "SQLite3"
+msgstr ""
+
+#: Components/Database/Database.php:52
+msgid "SQLite"
+msgstr ""
+
+#: Components/Database/Database.php:57
+msgid "MySQLi client"
+msgstr ""
+
+#: Components/Database/Database.php:61
+msgid "Mongo"
+msgstr ""
+
+#: Components/Database/Database.php:65
+msgid "MongoDB"
+msgstr ""
+
+#: Components/Database/Database.php:69
+msgid "PostgreSQL"
+msgstr ""
+
+#: Components/Database/Database.php:73
+msgid "Paradox"
+msgstr ""
+
+#: Components/Database/Database.php:77
+msgid "Microsoft SQL Server Driver for PHP"
+msgstr ""
+
+#: Components/Database/Database.php:78
+msgid "MS SQL"
+msgstr ""
+
+#: Components/Database/Database.php:82
+msgid "File Pro"
+msgstr ""
+
+#: Components/Database/Database.php:86
+msgid "MaxDB client"
+msgstr ""
+
+#: Components/Database/Database.php:90
+msgid "MaxDB server"
+msgstr ""
+
+#: Components/Footer/Footer.php:29
+#, php-format
+msgid "Generator %s"
+msgstr "ジェネレータ %s"
+
+#: Components/Footer/Footer.php:35
+#, php-format
+msgid "Author %s"
+msgstr "作成者 %s"
+
+#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:159
+#: Components/Helper/HelperApi.php:251 Components/Helper/HelperApi.php:276
+#: Components/ServerInfo/ServerInfo.php:92
+msgid "Unavailable"
+msgstr "利用不可"
+
+#: Components/Helper/HelperApi.php:263
+#, php-format
+msgid "%s cache"
+msgstr "%s キャッシュ"
+
+#: Components/Helper/HelperApi.php:290
+#, php-format
+msgid "%1$dd %2$dh %3$dm %4$ds"
+msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
+
+#: Components/MyInfo/MyInfo.php:21
+msgid "My information"
+msgstr "私の情報"
+
+#: Components/MyInfo/MyInfo.php:22
+msgid "Mine"
+msgstr "私の"
+
+#: Components/MyInfo/MyInfo.php:33
+msgid "My IP"
+msgstr "私のIP"
+
+#: Components/MyInfo/MyInfo.php:38
+msgid "My browser UA"
+msgstr "私のブラウザ UA"
+
+#: Components/MyInfo/MyInfo.php:43
+msgid "My browser language"
+msgstr "私のブラウザの言語"
+
+#: Components/NetworkStats/NetworkStats.php:21
+msgid "Network stats"
+msgstr "ネットワーク統計"
+
+#: Components/NetworkStats/NetworkStats.php:22
+msgid "Net"
+msgstr ""
+
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
+msgid "PHP extensions"
+msgstr "PHPエクステンション"
+
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
+msgid "Ext"
+msgstr ""
+
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
+#, php-format
+msgid "%s enabled"
+msgstr "%s 有効"
+
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:106
+msgid "Zend Optimizer"
+msgstr ""
+
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
+msgid "Loaded extensions"
+msgstr "ロードエクステンション"
+
+#: Components/PhpInfo/PhpInfo.php:22
+msgid "PHP information"
+msgstr "PHP情報"
+
+#: Components/PhpInfo/PhpInfo.php:23
+msgid "PHP"
+msgstr ""
+
+#: Components/PhpInfo/PhpInfo.php:42
+msgid "Click for detail"
+msgstr "詳細はこちら"
+
+#: Components/PhpInfo/PhpInfo.php:48
+msgid "PHP info detail"
+msgstr "PHP情報詳細"
+
+#: Components/PhpInfo/PhpInfo.php:52
+msgid "Version"
+msgstr "バージョン"
+
+#: Components/PhpInfo/PhpInfo.php:53
+#, php-format
+msgid "X Prober builtin latest PHP stable version: %s"
+msgstr "X Prober 組み込みの最新の PHP 安定版：%s"
+
+#: Components/PhpInfo/PhpInfo.php:54
+msgid "(Old)"
+msgstr "(古い)"
+
+#: Components/PhpInfo/PhpInfo.php:54
+msgid "(Up to date)"
+msgstr "(最新)"
+
+#: Components/PhpInfo/PhpInfo.php:57
+msgid "SAPI interface"
+msgstr "SAPI インタフェース"
+
+#: Components/PhpInfo/PhpInfo.php:61
+msgid "Display errors"
+msgstr "エラー表示"
+
+#: Components/PhpInfo/PhpInfo.php:66
+msgid "Error reporting"
+msgstr "エラー報告"
+
+#: Components/PhpInfo/PhpInfo.php:71
+msgid "Max memory limit"
+msgstr "最大メモリ制限"
+
+#: Components/PhpInfo/PhpInfo.php:76
+msgid "Max POST size"
+msgstr "最大 POST サイズ"
+
+#: Components/PhpInfo/PhpInfo.php:81
+msgid "Max upload size"
+msgstr "最大アップロードサイズ"
+
+#: Components/PhpInfo/PhpInfo.php:86
+msgid "Max input variables"
+msgstr "最大入力変数"
+
+#: Components/PhpInfo/PhpInfo.php:91
+msgid "Max execution time"
+msgstr "最大実行時間"
+
+#: Components/PhpInfo/PhpInfo.php:96
+msgid "Timeout for socket"
+msgstr "ソケットのタイムアウト"
+
+#: Components/PhpInfo/PhpInfo.php:101
+msgid "Treatment URLs file"
+msgstr "Treatment URLs ファイル"
+
+#: Components/PhpInfo/PhpInfo.php:106
+msgid "SMTP support"
+msgstr "SMTP サポート"
+
+#: Components/PhpInfo/PhpInfo.php:112
+msgid "Disabled functions"
+msgstr "無効な機能"
+
+#: Components/PhpInfo/PhpInfo.php:119
+msgid "Disabled classes"
+msgstr "無効なクラス"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:23
+msgid "⏳ Loading..."
+msgstr "⏳ロード中..."
+
+#: Components/ServerBenchmark/ServerBenchmark.php:24
+msgid "❌ Error, click to retry"
+msgstr "❌エラー、クリックして再試行してください"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:25
+msgid "👆 Click to test"
+msgstr "👆クリックしてテスト"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:35
+msgid "Server Benchmark"
+msgstr "サーバー基準"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:36
+msgid "Benchmark"
+msgstr "基準"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:45
+msgid ""
+"💡 Higher is better. This result is only used as reference data for author "
+"testing. Note: the benchmark marks are not the only criterion for evaluating "
+"the quality of a host/server."
+msgstr ""
+"💡高いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用さ"
+"れます。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一"
+"の基準ではありません。"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:59
+msgid "Amazon/EC2"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:64
+msgid "VPSSERVER/KVM"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:69
+msgid "SpartanHost/KVM"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:74
+msgid "Aliyun/ECS"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:79
+msgid "Vultr"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:84
+msgid "RamNode"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:89
+msgid "Linode"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:94
+msgid "Tencent"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:99
+msgid "BandwagonHOST/SSD"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:123
+msgid "My server"
+msgstr "私のサーバー"
+
+#: Components/ServerInfo/ServerInfo.php:21
+msgid "Server information"
+msgstr "サーバー情報"
+
+#: Components/ServerInfo/ServerInfo.php:22
+msgid "Info"
+msgstr "情報"
+
+#: Components/ServerInfo/ServerInfo.php:42
+msgid "Server name"
+msgstr "サーバーの名前"
+
+#: Components/ServerInfo/ServerInfo.php:47
+msgid "Server time"
+msgstr "サーバー時間"
+
+#: Components/ServerInfo/ServerInfo.php:52
+msgid "Server uptime"
+msgstr "サーバーの稼働時間"
+
+#: Components/ServerInfo/ServerInfo.php:56
+msgid "Server IP"
+msgstr "サーバー IP"
+
+#: Components/ServerInfo/ServerInfo.php:60
+msgid "Server software"
+msgstr "サーバーソフトウェア"
+
+#: Components/ServerInfo/ServerInfo.php:64
+msgid "PHP version"
+msgstr "PHP バージョン"
+
+#: Components/ServerInfo/ServerInfo.php:69
+msgid "CPU model"
+msgstr "CPUモデル"
+
+#: Components/ServerInfo/ServerInfo.php:75
+msgid "Server OS"
+msgstr "サーバー OS"
+
+#: Components/ServerInfo/ServerInfo.php:82
+msgid "Script path"
+msgstr "スクリプトパス"
+
+#: Components/ServerInfo/ServerInfo.php:87
+msgid "Disk usage"
+msgstr "ディスクの使用状況"
+
+#: Components/ServerStatus/ServerStatus.php:20
+msgid "Server status"
+msgstr "サーバーの状態"
+
+#: Components/ServerStatus/ServerStatus.php:21
+msgid "Status"
+msgstr "状態"
+
+#: Components/ServerStatus/ServerStatus.php:31
+msgid "System load"
+msgstr "システム負荷"
+
+#: Components/ServerStatus/ServerStatus.php:32
+#: Components/ServerStatus/ServerStatus.php:56
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+#: Components/ServerStatus/ServerStatus.php:70
+msgid "Memory usage"
+msgstr "メモリ使用量"
+
+#: Components/ServerStatus/ServerStatus.php:83
+msgid "SWAP usage"
+msgstr "SWAP 使用量"
+
+#: Components/Updater/Updater.php:22
+#, php-format
+msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+msgstr "%1$s 更新を見つけました！ バージョン %2$s → {APP_NEW_VERSION}"
+
+#: Components/Updater/Updater.php:23
+msgid "Updating..."
+msgstr "更新しています..."
+
+#: Components/Updater/Updater.php:24
+msgid "Update error"
+msgstr "更新エラー"
+
+#: Components/Updater/Updater.php:53
+msgid "File can not update."
+msgstr "ファイルを更新できません。"
+
+#: Components/Updater/Updater.php:62
+msgid "Update file not found."
+msgstr "更新ファイルが見つかりません。"
+
+#: Components/Updater/Updater.php:73
+msgid "Update success..."
+msgstr "成功を更新します..."
+
+#: Components/Updater/Updater.php:79
+msgid "Update error."
+msgstr "更新エラーです。"
