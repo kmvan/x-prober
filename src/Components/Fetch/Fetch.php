@@ -40,6 +40,8 @@ class Fetch
             'cpuUsage'     => HelperApi::getHumanCpuUsage(),
             'sysLoadAvg'   => HelperApi::getSysLoadAvg(),
             'memTotal'     => HelperApi::getMemoryUsage('MemTotal'),
+            'memBuffers'   => HelperApi::getMemoryUsage('Buffers'),
+            'memCached'    => HelperApi::getMemoryUsage('Cached'),
             'networkStats' => HelperApi::getNetworkStats(),
         );
 
