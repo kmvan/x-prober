@@ -19,16 +19,11 @@
     white-space: nowrap;
     color: $colorTextLight;
     padding: ($gridGutter * 0.3) ($gridGutter * 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
 
     @include mq(lg) {
       padding: ($gridGutter * 0.5) $gridGutter;
     }
 
-
-    &:first-child {
-      border: none;
-    }
 
     &:hover,
     &:focus,
@@ -41,6 +36,11 @@
 
     &.is-full {
       display: none;
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+
+      &:first-child {
+        border: none;
+      }
 
       @include mq(lg) {
         display: block;
@@ -49,6 +49,11 @@
 
     &.is-tiny {
       display: block;
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+
+      &:first-child {
+        border: none;
+      }
 
       @include mq(lg) {
         display: none;

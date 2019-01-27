@@ -40,13 +40,14 @@ HTML;
 
     private function getDisplay()
     {
-        $appName    = I18nApi::_(ConfigApi::$APP_NAME);
-        $appUrl     = I18nApi::_(ConfigApi::$APP_URL);
-        $version    = ConfigApi::$APP_VERSION;
-        $scriptConf = \json_encode(EventsApi::emit('conf', array()));
-        $footer     = EventsApi::emit('footer', '');
-        $scriptUrl  = \defined('IS_DEV')  && \IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
-        $styleUrl   = \defined('IS_DEV')  && \IS_DEV ? "../tmp/app.css?v={$_SERVER['REQUEST_TIME']}" : "?action=getStyle&amp;v={$version}";
+        $appName       = I18nApi::_(ConfigApi::$APP_NAME);
+        $appUrl        = I18nApi::_(ConfigApi::$APP_URL);
+        $version       = ConfigApi::$APP_VERSION;
+        $scriptConf    = \json_encode(EventsApi::emit('conf', array()));
+        $footer        = EventsApi::emit('footer', '');
+        $footerOutline = EventsApi::emit('footerOutline', '');
+        $scriptUrl     = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
+        $styleUrl      = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.css?v={$_SERVER['REQUEST_TIME']}" : "?action=getStyle&amp;v={$version}";
 
         return <<<HTML
 <!DOCTYPE html>
@@ -62,13 +63,16 @@ HTML;
     <script src="{$scriptUrl}" async></script>
 </head>
 <body>
-<div class="inn-container">
-    <h1 class="inn-title" id="inn-title">
-        <a class="inn-title__link" href="{$appUrl}" target="_blank">{$appName} v{$version}</a>
-    </h1>
-    {$this->getFieldsets()}
+<div class="inn-app">
+    <div class="inn-container">
+        <h1 class="inn-title" id="inn-title">
+            <a class="inn-title__link" href="{$appUrl}" target="_blank">{$appName} v{$version}</a>
+        </h1>
+        {$this->getFieldsets()}
+    </div>
+    {$footer}
 </div>
-{$footer}
+{$footerOutline}
 </body>
 </html>
 HTML;
