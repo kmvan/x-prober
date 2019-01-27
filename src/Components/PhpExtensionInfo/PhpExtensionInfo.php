@@ -122,13 +122,6 @@ HTML;
                 'label'   => 'cURL',
                 'content' => HelperApi::alert(\function_exists('\\curl_init')),
             ),
-            array(
-                'col'     => '1-1',
-                'label'   => I18nApi::_('Loaded extensions'),
-                'title'   => 'loaded_extensions',
-                'id'      => 'break-normal',
-                'content' => HelperApi::getGroupItemLists(\get_loaded_extensions(), true) ?: HelperApi::alert(false),
-            ),
         );
 
         // order
@@ -139,6 +132,14 @@ HTML;
         }
 
         \array_multisort($itemsOrder, $items);
+
+        $items[] = array(
+            'col'     => '1-1',
+            'label'   => I18nApi::_('Loaded extensions'),
+            'title'   => 'loaded_extensions',
+            'id'      => 'break-normal',
+            'content' => HelperApi::getGroupItemLists(\get_loaded_extensions(), true) ?: HelperApi::alert(false),
+        );
 
         return \implode('', \array_map(function (array $item) {
             return HelperApi::getGroup($item);
