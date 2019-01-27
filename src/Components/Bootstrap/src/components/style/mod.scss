@@ -5,9 +5,10 @@
   position: relative;
   border: 5px solid $colorLight;
   border-radius: $borderRadius * 1.5;
-  background: linear-gradient(#fff, rgba(255, 255, 255, 0.5));
+  background: linear-gradient(#fff, rgba(#fff, 0.5));
   margin-bottom: $gridGutter;
   padding: ($gridGutter * 0.5) 0 0;
+  box-shadow: $boxShadowBottomInline, $boxShadowBottomOutline, inset $boxShadowBottomOutline, inset $boxShadowBottomInline;
 
   &__title {
     background: $colorDark;
@@ -17,7 +18,7 @@
     color: $colorTextLightLink;
     margin: 0 auto;
     text-shadow: 0 1px 1px $colorDark;
-    box-shadow: $inlineShadow;
+    box-shadow: $inlineShadow, $boxShadowBottomInline;
 
     &__text {
       &.is-full {

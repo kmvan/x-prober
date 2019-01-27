@@ -8,7 +8,7 @@
   border-bottom: 1px solid #eee;
 
   &:hover {
-    box-shadow: inset 0 0 30px rgba(#000, 0.1);
+    background: linear-gradient(to right, transparent, rgba(#000, 0.05), transparent);
   }
 
   &__item-list {
