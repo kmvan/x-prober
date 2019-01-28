@@ -112,7 +112,7 @@ HTML;
     {
         \header('Content-Type: application/json');
 
-        die(\json_encode($data, \JSON_UNESCAPED_UNICODE));
+        die(\json_encode($data));
     }
 
     public static function isAction($action)

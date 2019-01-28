@@ -43,7 +43,7 @@ HTML;
         $appName       = I18nApi::_(ConfigApi::$APP_NAME);
         $appUrl        = I18nApi::_(ConfigApi::$APP_URL);
         $version       = ConfigApi::$APP_VERSION;
-        $scriptConf    = \json_encode(EventsApi::emit('conf', array()), \JSON_UNESCAPED_UNICODE);
+        $scriptConf    = \json_encode(EventsApi::emit('conf', array()));
         $footer        = EventsApi::emit('footer', '');
         $footerOutline = EventsApi::emit('footerOutline', '');
         $scriptUrl     = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
