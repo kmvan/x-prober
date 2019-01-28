@@ -12,11 +12,43 @@
   }
 
   &__item-list {
+    $marginRight: $gridGutter * 0.2;
+
     background-color: rgba($colorDark, 0.05);
     border-radius: 10rem;
     padding: ($gridGutter * 0.1) ($gridGutter * 0.5);
-    margin: 0 ($gridGutter * 0.2) ($gridGutter * 0.2);
+    margin: 0 $marginRight $marginRight;
+    flex: 0 0 calc(50% - #{$marginRight});
+    text-align: center;
     cursor: pointer;
+
+    &:nth-child(n+1) {
+      margin-right: 0;
+    }
+
+    @include mq(sm) {
+      flex: 0 0 calc(33.333% - #{$marginRight});
+
+      &:nth-child(n+2) {
+        margin-right: 0;
+      }
+    }
+
+
+    @include mq(md) {
+      flex: 0 0 calc(25% - #{$marginRight});
+
+      &:nth-child(n+3) {
+        margin-right: 0;
+      }
+    }
+
+
+    @include mq(lg) {
+      flex: 0 0 auto;
+      margin-right: $marginRight;
+    }
+
 
     &:hover {
       background-color: $colorDark;
@@ -31,11 +63,15 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
+      margin-bottom: -$marginRight;
 
-      &:after {
-        content: '';
-        flex-grow: 1;
+      @include mq(lg) {
+        justify-content: space-between;
+
+        &:after {
+          content: '';
+          flex-grow: 1;
+        }
       }
     }
   }
