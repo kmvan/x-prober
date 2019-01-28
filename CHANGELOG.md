@@ -7,7 +7,6 @@ All Notable changes to `X-Prober` will be documented in this file
 ### Add
 
 - Add assets file cache header
-- Add JSON_UNESCAPED_UNICODE for json string
 
 ### Fix
 
