@@ -20,7 +20,7 @@ class Bootstrap
     {
         $html = '';
 
-        foreach (EventsApi::emit('mods', array()) as $id => $item) {
+        foreach (EventsApi::emit('mods', []) as $id => $item) {
             $content = \call_user_func($item['display']);
             $html .= <<<HTML
 <fieldset class="inn-mod inn-{$id}-mod" id="inn-{$id}-mod">
@@ -43,7 +43,7 @@ HTML;
         $appName       = I18nApi::_(ConfigApi::$APP_NAME);
         $appUrl        = I18nApi::_(ConfigApi::$APP_URL);
         $version       = ConfigApi::$APP_VERSION;
-        $scriptConf    = \json_encode(EventsApi::emit('conf', array()));
+        $scriptConf    = \json_encode(EventsApi::emit('conf', []), \JSON_UNESCAPED_UNICODE);
         $footer        = EventsApi::emit('footer', '');
         $footerOutline = EventsApi::emit('footerOutline', '');
         $scriptUrl     = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
