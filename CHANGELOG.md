@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.0.9 - 2019-01-28
+
+### Fix
+
+- Fix #14 (disk usage)
+
 ## 2.0.8 - 2019-01-27
 
 ### Optimize
