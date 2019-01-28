@@ -194,19 +194,7 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            $dir = self::isWin() ? 'C:' : '/';
-
-            if ( ! @\is_readable($dir)) {
-                $space = 0;
-
-                return 0;
-            }
-
-            $space = \disk_total_space($dir);
-        }
-
-        if ( ! $space) {
-            return 0;
+            $space = \disk_total_space(__DIR__);
         }
 
         if (true === $human) {
@@ -221,19 +209,7 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            $dir = self::isWin() ? 'C:' : '/';
-
-            if ( ! @\is_readable($dir)) {
-                $space = 0;
-
-                return 0;
-            }
-
-            $space = \disk_free_space($dir);
-        }
-
-        if ( ! $space) {
-            return 0;
+            $space = \disk_free_space(__DIR__);
         }
 
         if (true === $human) {
