@@ -24,7 +24,7 @@ class Style
 
     private function displayDefault()
     {
-        HelperApi::checkNotModified();
+        HelperApi::setFileCacheHeader();
 
         \header('Content-type: text/css');
         echo <<<'HTML'

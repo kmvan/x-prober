@@ -24,7 +24,7 @@ class Script
 
     private function displayDefault()
     {
-        HelperApi::checkNotModified();
+        HelperApi::setFileCacheHeader();
 
         \header('Content-type: application/javascript');
         echo <<<'HTML'

@@ -60,12 +60,13 @@ HTML;
 HTML;
     }
 
-    public static function checkNotModified()
+    public static function setFileCacheHeader()
     {
-        if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && \strlen($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
-            \header('HTTP/1.0 304 Not Modified');
-            die;
-        }
+        $seconds = 3600 * 24 * 30 * 12;
+        $ts      = \gmdate('D, d M Y H:i:s', (int) $_SERVER['REQUEST_TIME'] + $seconds) . ' GMT';
+        \header("Expires: $ts");
+        \header('Pragma: cache');
+        \header("Cache-Control: max-age={$seconds}");
     }
 
     public static function getGroup(array $item)
