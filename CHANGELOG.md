@@ -4,6 +4,11 @@ All Notable changes to `X-Prober` will be documented in this file
 
 ## 2.0.9 - 2019-01-28
 
+### Add
+
+- Add assets file cache header
+- Add JSON_UNESCAPED_UNICODE for json string
+
 ### Fix
 
 - Fix #14 (disk usage)
