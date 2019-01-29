@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-21 14:41+0800\n"
-"PO-Revision-Date: 2019-01-21 14:41+0800\n"
+"POT-Creation-Date: 2019-01-29 12:13+0800\n"
+"PO-Revision-Date: 2019-01-29 12:18+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -81,27 +81,28 @@ msgstr ""
 msgid "MaxDB server"
 msgstr ""
 
-#: Components/Footer/Footer.php:28
+#: Components/Footer/Footer.php:29
 #, php-format
 msgid "Generator %s"
 msgstr "该页面由 %s 生成"
 
-#: Components/Footer/Footer.php:34
+#: Components/Footer/Footer.php:35
 #, php-format
 msgid "Author %s"
 msgstr "作者为 %s"
 
-#: Components/Helper/HelperApi.php:105 Components/Helper/HelperApi.php:197
-#: Components/Helper/HelperApi.php:222 Components/ServerInfo/ServerInfo.php:41
+#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
+#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
+#: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Components/Helper/HelperApi.php:209
+#: Components/Helper/HelperApi.php:240
 #, php-format
 msgid "%s cache"
 msgstr "%s 缓存"
 
-#: Components/Helper/HelperApi.php:236
+#: Components/Helper/HelperApi.php:267
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
@@ -151,7 +152,7 @@ msgstr "%s 已启用"
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
 msgid "Loaded extensions"
 msgstr "已加载的扩展"
 
@@ -271,15 +272,15 @@ msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:59
 msgid "Amazon/EC2"
-msgstr "亚马逊/EC2"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:64
 msgid "VPSSERVER/KVM"
-msgstr "VPSSERVER/KVM"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:69
 msgid "SpartanHost/KVM"
-msgstr "斯巴达/KVM"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:74
 msgid "Aliyun/ECS"
@@ -287,15 +288,15 @@ msgstr "阿里云/ECS"
 
 #: Components/ServerBenchmark/ServerBenchmark.php:79
 msgid "Vultr"
-msgstr "Vultr"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:84
 msgid "RamNode"
-msgstr "RamNode"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:89
 msgid "Linode"
-msgstr "Linode"
+msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:94
 msgid "Tencent"
@@ -317,70 +318,81 @@ msgstr "服务器信息"
 msgid "Info"
 msgstr "信息"
 
-#: Components/ServerInfo/ServerInfo.php:67
+#: Components/ServerInfo/ServerInfo.php:42
 msgid "Server name"
 msgstr "服务器名"
 
-#: Components/ServerInfo/ServerInfo.php:72
+#: Components/ServerInfo/ServerInfo.php:47
 msgid "Server time"
 msgstr "服务器时间"
 
-#: Components/ServerInfo/ServerInfo.php:77
+#: Components/ServerInfo/ServerInfo.php:52
 msgid "Server uptime"
 msgstr "持续运作时间"
 
-#: Components/ServerInfo/ServerInfo.php:81
+#: Components/ServerInfo/ServerInfo.php:56
 msgid "Server IP"
 msgstr "服务器 IP"
 
-#: Components/ServerInfo/ServerInfo.php:85
+#: Components/ServerInfo/ServerInfo.php:60
 msgid "Server software"
 msgstr "服务器软件"
 
-#: Components/ServerInfo/ServerInfo.php:89
+#: Components/ServerInfo/ServerInfo.php:64
 msgid "PHP version"
 msgstr "PHP 版本"
 
-#: Components/ServerInfo/ServerInfo.php:94
+#: Components/ServerInfo/ServerInfo.php:69
 msgid "CPU model"
 msgstr "CPU 型号"
 
-#: Components/ServerInfo/ServerInfo.php:100
+#: Components/ServerInfo/ServerInfo.php:75
 msgid "Server OS"
 msgstr "服务器系统"
 
-#: Components/ServerInfo/ServerInfo.php:107
+#: Components/ServerInfo/ServerInfo.php:82
 msgid "Script path"
 msgstr "脚本路径"
 
-#: Components/ServerInfo/ServerInfo.php:112
+#: Components/ServerInfo/ServerInfo.php:87
 msgid "Disk usage"
 msgstr "磁盘使用量"
 
-#: Components/ServerStatus/ServerStatus.php:22
+#: Components/ServerStatus/ServerStatus.php:20
 msgid "Server status"
 msgstr "服务器状态"
 
-#: Components/ServerStatus/ServerStatus.php:23
+#: Components/ServerStatus/ServerStatus.php:21
 msgid "Status"
 msgstr "状态"
 
-#: Components/ServerStatus/ServerStatus.php:33
+#: Components/ServerStatus/ServerStatus.php:46
 msgid "System load"
 msgstr "系统负载"
 
-#: Components/ServerStatus/ServerStatus.php:34
-#: Components/ServerStatus/ServerStatus.php:56
+#: Components/ServerStatus/ServerStatus.php:62
 msgid "CPU usage"
 msgstr "CPU 占用"
 
-#: Components/ServerStatus/ServerStatus.php:67
+#: Components/ServerStatus/ServerStatus.php:76
 msgid "Memory usage"
 msgstr "内存占用"
 
-#: Components/ServerStatus/ServerStatus.php:78
+#: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"
 msgstr "SWAP 占用"
+
+#: Components/ServerStatus/ServerStatus.php:114
+msgid "SWAP cached"
+msgstr "SWAP 缓存"
+
+#: Components/ServerStatus/ServerStatus.php:127
+msgid "Memory cached"
+msgstr "内存缓存"
+
+#: Components/ServerStatus/ServerStatus.php:140
+msgid "Memory buffers"
+msgstr "内存缓冲"
 
 #: Components/Updater/Updater.php:22
 #, php-format

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-01-27 12:45+0800\n"
+"POT-Creation-Date: 2019-01-29 12:21+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -88,18 +88,18 @@ msgstr ""
 msgid "Author %s"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:159
-#: Components/Helper/HelperApi.php:251 Components/Helper/HelperApi.php:276
+#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
+#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:263
+#: Components/Helper/HelperApi.php:240
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:290
+#: Components/Helper/HelperApi.php:267
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
 msgid "Loaded extensions"
 msgstr ""
 
@@ -361,21 +361,32 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:31
+#: Components/ServerStatus/ServerStatus.php:46
 msgid "System load"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:32
-#: Components/ServerStatus/ServerStatus.php:56
+#: Components/ServerStatus/ServerStatus.php:62
 msgid "CPU usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:70
+#: Components/ServerStatus/ServerStatus.php:76
 msgid "Memory usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:83
+#: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"
+msgstr ""
+
+#: Components/ServerStatus/ServerStatus.php:114
+msgid "SWAP cached"
+msgstr ""
+
+#: Components/ServerStatus/ServerStatus.php:127
+msgid "Memory cached"
+msgstr ""
+
+#: Components/ServerStatus/ServerStatus.php:140
+msgid "Memory buffers"
 msgstr ""
 
 #: Components/Updater/Updater.php:22

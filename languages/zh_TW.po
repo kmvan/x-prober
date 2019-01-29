@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-23 11:06+0800\n"
-"PO-Revision-Date: 2019-01-23 11:06+0800\n"
+"POT-Creation-Date: 2019-01-29 12:18+0800\n"
+"PO-Revision-Date: 2019-01-29 12:20+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
 "Language: zh_TW\n"
@@ -81,17 +81,17 @@ msgstr ""
 msgid "MaxDB server"
 msgstr ""
 
-#: Components/Footer/Footer.php:28
+#: Components/Footer/Footer.php:29
 #, php-format
 msgid "Generator %s"
 msgstr "該頁面由 %s 生成"
 
-#: Components/Footer/Footer.php:34
+#: Components/Footer/Footer.php:35
 #, php-format
 msgid "Author %s"
 msgstr "作者為 %s"
 
-#: Components/Helper/HelperApi.php:19 Components/Helper/HelperApi.php:136
+#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
 #: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
@@ -100,7 +100,7 @@ msgstr "不可用"
 #: Components/Helper/HelperApi.php:240
 #, php-format
 msgid "%s cache"
-msgstr ""
+msgstr "%s 快取"
 
 #: Components/Helper/HelperApi.php:267
 #, php-format
@@ -152,7 +152,7 @@ msgstr "%s 啟用"
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
@@ -366,22 +366,33 @@ msgstr "伺服器狀態"
 msgid "Status"
 msgstr "狀態"
 
-#: Components/ServerStatus/ServerStatus.php:31
+#: Components/ServerStatus/ServerStatus.php:46
 msgid "System load"
 msgstr "系統負載"
 
-#: Components/ServerStatus/ServerStatus.php:32
-#: Components/ServerStatus/ServerStatus.php:56
+#: Components/ServerStatus/ServerStatus.php:62
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-#: Components/ServerStatus/ServerStatus.php:70
+#: Components/ServerStatus/ServerStatus.php:76
 msgid "Memory usage"
 msgstr "記憶體使用"
 
-#: Components/ServerStatus/ServerStatus.php:83
+#: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"
 msgstr "SWAP 使用"
+
+#: Components/ServerStatus/ServerStatus.php:114
+msgid "SWAP cached"
+msgstr "SWAP 快取"
+
+#: Components/ServerStatus/ServerStatus.php:127
+msgid "Memory cached"
+msgstr "記憶體快取"
+
+#: Components/ServerStatus/ServerStatus.php:140
+msgid "Memory buffers"
+msgstr "記憶體緩衝"
 
 #: Components/Updater/Updater.php:22
 #, php-format

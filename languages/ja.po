@@ -1,9 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-01-27 12:45+0800\n"
-"PO-Revision-Date: 2019-01-27 14:18+0800\n"
+"POT-Creation-Date: 2019-01-29 12:17+0800\n"
+"PO-Revision-Date: 2019-01-29 12:18+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,8 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _\n"
-"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
-"Language: ja\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: Components/Benchmark/Benchmark.php:152
@@ -87,18 +87,18 @@ msgstr "ジェネレータ %s"
 msgid "Author %s"
 msgstr "作成者 %s"
 
-#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:159
-#: Components/Helper/HelperApi.php:251 Components/Helper/HelperApi.php:276
+#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
+#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "利用不可"
 
-#: Components/Helper/HelperApi.php:263
+#: Components/Helper/HelperApi.php:240
 #, php-format
 msgid "%s cache"
 msgstr "%s キャッシュ"
 
-#: Components/Helper/HelperApi.php:290
+#: Components/Helper/HelperApi.php:267
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
@@ -148,7 +148,7 @@ msgstr "%s 有効"
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:127
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
 msgid "Loaded extensions"
 msgstr "ロードエクステンション"
 
@@ -363,22 +363,33 @@ msgstr "サーバーの状態"
 msgid "Status"
 msgstr "状態"
 
-#: Components/ServerStatus/ServerStatus.php:31
+#: Components/ServerStatus/ServerStatus.php:46
 msgid "System load"
 msgstr "システム負荷"
 
-#: Components/ServerStatus/ServerStatus.php:32
-#: Components/ServerStatus/ServerStatus.php:56
+#: Components/ServerStatus/ServerStatus.php:62
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-#: Components/ServerStatus/ServerStatus.php:70
+#: Components/ServerStatus/ServerStatus.php:76
 msgid "Memory usage"
 msgstr "メモリ使用量"
 
-#: Components/ServerStatus/ServerStatus.php:83
+#: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"
 msgstr "SWAP 使用量"
+
+#: Components/ServerStatus/ServerStatus.php:114
+msgid "SWAP cached"
+msgstr "SWAP キャッシュ"
+
+#: Components/ServerStatus/ServerStatus.php:127
+msgid "Memory cached"
+msgstr "メモリキャッシュ"
+
+#: Components/ServerStatus/ServerStatus.php:140
+msgid "Memory buffers"
+msgstr "メモリバッファ"
 
 #: Components/Updater/Updater.php:22
 #, php-format
