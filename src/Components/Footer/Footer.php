@@ -13,8 +13,8 @@ class Footer
 
     public function __construct()
     {
-        EventsApi::on('footer', [$this, 'filter']);
-        EventsApi::on('footerOutline', [$this, 'filterfooterOutline']);
+        EventsApi::on('footer', array($this, 'filter'));
+        EventsApi::on('footerOutline', array($this, 'filterfooterOutline'));
     }
 
     public function filter($content)
