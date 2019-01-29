@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.0 - 2019-01-29
+
+### Add
+
+- Add Memory cached/buffers info
+- Add Swap cached info
+
 ## 2.0.9 - 2019-01-28
 
 ### Add
