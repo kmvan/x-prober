@@ -484,7 +484,7 @@ HTML;
         }
 
         switch ($key) {
-        case 'MemRealUsage':
+        case 'MemUsage':
             if (isset($memInfo['MemAvailable'])) {
                 $memAvailable = $memInfo['MemAvailable'];
             } elseif (isset($memInfo['MemFree'])) {
@@ -494,12 +494,12 @@ HTML;
             }
 
             return $memInfo['MemTotal'] - $memAvailable;
-        case 'SwapRealUsage':
+        case 'SwapUsage':
             if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) {
                 return 0;
             }
 
-            return $memInfo['SwapTotal'] - $memInfo['SwapFree'] - $memInfo['SwapCached'];
+            return $memInfo['SwapTotal'] - $memInfo['SwapFree'];
         }
 
         return isset($memInfo[$key]) ? (int) $memInfo[$key] : 0;

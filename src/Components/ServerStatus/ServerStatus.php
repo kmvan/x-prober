@@ -11,16 +11,16 @@ class ServerStatus extends ServerStatusApi
     public function __construct()
     {
         new FilterFetchItems();
-        EventsApi::on('mods', [$this, 'filter']);
+        EventsApi::on('mods', array($this, 'filter'));
     }
 
     public function filter(array $mods)
     {
-        $mods[$this->ID] = [
+        $mods[$this->ID] = array(
             'title'     => I18nApi::_('Server status'),
             'tinyTitle' => I18nApi::_('Status'),
-            'display'   => [$this, 'display'],
-        ];
+            'display'   => array($this, 'display'),
+        );
 
         return $mods;
     }
@@ -42,7 +42,7 @@ HTML;
 
     private function getDisplaySysLoad()
     {
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('System load'),
             'id'      => 'systemLoadAvg',
             'col'     => '1-1',
@@ -53,34 +53,34 @@ HTML;
 <div class="inn-system-load-avg__group">{$avg}</div>
 HTML;
             }, HelperApi::getSysLoadAvg())),
-        ]);
+        ));
     }
 
     private function getDisplayCpuUsage()
     {
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('CPU usage'),
             'col'     => '1-1',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'       => 'cpuUsage',
                 'usage'    => 10,
                 'total'    => 100,
                 'overview' => '10% / 100%',
-            ]),
-        ]);
+            )),
+        ));
     }
 
     private function getDisplayMemoryUsage()
     {
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('Memory usage'),
             'col'     => '1-1',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'memUsage',
                 'usage'   => HelperApi::getMemoryUsage('MemUsage'),
                 'total'   => HelperApi::getMemoryUsage('MemTotal'),
-            ]),
-        ]);
+            )),
+        ));
     }
 
     private function getDisplaySwapUsage()
@@ -91,15 +91,15 @@ HTML;
             return '';
         }
 
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('SWAP usage'),
             'col'     => '1-1',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'swapUsage',
                 'usage'   => HelperApi::getMemoryUsage('SwapUsage'),
                 'total'   => $total,
-            ]),
-        ]);
+            )),
+        ));
     }
 
     private function getDisplaySwapCached()
@@ -110,40 +110,40 @@ HTML;
             return '';
         }
 
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('SWAP cached'),
             'col'     => '1-1',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'swapCached',
                 'usage'   => HelperApi::getMemoryUsage('SwapCached'),
                 'total'   => $total,
-            ]),
-        ]);
+            )),
+        ));
     }
 
     private function getDisplayMemCached()
     {
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('Memory cached'),
             'col'     => '1-2',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'memCached',
                 'usage'   => HelperApi::getMemoryUsage('Cached'),
                 'total'   => HelperApi::getMemoryUsage('MemTotal'),
-            ]),
-        ]);
+            )),
+        ));
     }
 
     private function getDisplayMemBuffers()
     {
-        return HelperApi::getGroup([
+        return HelperApi::getGroup(array(
             'label'   => I18nApi::_('Memory buffers'),
             'col'     => '1-2',
-            'content' => HelperApi::getProgressTpl([
+            'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'memBuffers',
                 'usage'   => HelperApi::getMemoryUsage('Buffers'),
                 'total'   => HelperApi::getMemoryUsage('MemTotal'),
-            ]),
-        ]);
+            )),
+        ));
     }
 }
