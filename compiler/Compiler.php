@@ -23,20 +23,22 @@ class Compiler
 
         $code = '';
 
-        foreach ($this->yieldFiles($this->COMPONENTS_DIR) as $filePath) {
-            if (\is_dir($filePath) || false === \strpos($filePath, '.php')) {
-                continue;
-            }
+        if ( ! $this->isDev()) {
+            foreach ($this->yieldFiles($this->COMPONENTS_DIR) as $filePath) {
+                if (\is_dir($filePath) || false === \strpos($filePath, '.php')) {
+                    continue;
+                }
 
-            $content = $this->getCodeViaFilePath($filePath);
-            $code .= $content;
+                $content = $this->getCodeViaFilePath($filePath);
+                $code .= $content;
+            }
         }
 
         $preDefineCode = $this->preDefine([
             $this->getTimerCode(),
             $this->getDevMode(),
-            $this->getDebugCode(),
             $this->getLangLoaderCode(),
+            $this->getVendorCode(),
         ]);
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
@@ -52,7 +54,7 @@ class Compiler
                 'distFilePath'  => $this->COMPILE_FILE_PATH,
             ]);
 
-            if ( $this->isDev() || ! $this->isDebug()) {
+            if ( ! $this->isDev()) {
                 $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
             }
 
@@ -82,7 +84,7 @@ class Compiler
 
         echo "Packing `{$filePath}...";
 
-        if ($this->isDev() || $this->isDebug()) {
+        if ($this->isDev()) {
             $code = \file_get_contents($filePath);
         } else {
             $code     = \php_strip_whitespace($filePath);
@@ -129,35 +131,23 @@ PHP;
         $isDev = $this->isDev() ? 'true' : 'false';
 
         return <<<PHP
-\define('IS_DEV', {$isDev});
+\\define('XPROBER_IS_DEV', {$isDev});
 PHP;
     }
 
     private function getTimerCode(): string
     {
         return <<<'PHP'
-\define('TIMER', \microtime(true));
-PHP;
-    }
-
-    private function isDebug(): bool
-    {
-        global $argv;
-
-        return \in_array('debug', $argv);
-    }
-
-    private function getDebugCode(): string
-    {
-        $debug = $this->isDev() || $this->isDebug() ? 'true' : 'false';
-
-        return <<<PHP
-\\define('DEBUG', {$debug});
+\define('XPROBER_TIMER', \microtime(true));
 PHP;
     }
 
     private function getLangLoaderCode(): string
     {
+        if ($this->isDev()) {
+            return '';
+        }
+
         $filePath = $this->COMPONENTS_DIR . '/I18n/Lang.json';
 
         if ( ! \is_readable($filePath)) {
@@ -177,10 +167,10 @@ PHP;
             die('Invalid json format.');
         }
 
-        $json = \base64_encode(\json_encode($json));
+        $json = \serialize($json);
 
         return <<<PHP
-\\define('LANG', '{$json}');
+\\define('XPROBER_LANGUAGES', '{$json}');
 PHP;
     }
 
@@ -212,6 +202,17 @@ PHP;
         $files[] = 'new \\InnStudio\\Prober\\Components\\Bootstrap\\Bootstrap();';
 
         return \implode("\n", $files);
+    }
+
+    private function getVendorCode(): string
+    {
+        if ( ! $this->isDev()) {
+            return '';
+        }
+
+        return <<<PHP
+include \dirname(__DIR__) . '/vendor/autoload.php';
+PHP;
     }
 
     private function yieldFiles(string $dir): \Iterator

@@ -9,7 +9,13 @@ class I18nApi
         static $translation = null;
 
         if (null === $translation) {
-            $translation = \json_decode(\base64_decode(\LANG), true);
+            if (\defined('\XPROBER_IS_DEV') && \XPROBER_IS_DEV) {
+                $translation = \file(__DIR__ . '/Lang.json');
+                unset($translation[0]);
+                $translation = \json_decode(\implode("\n", $translation), true);
+            } else {
+                $translation = \unserialize(\XPROBER_LANGUAGES);
+            }
         }
 
         $clientLang = self::getClientLang();

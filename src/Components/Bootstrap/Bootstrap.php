@@ -46,8 +46,8 @@ HTML;
         $scriptConf    = \json_encode(EventsApi::emit('conf', array()));
         $footer        = EventsApi::emit('footer', '');
         $footerOutline = EventsApi::emit('footerOutline', '');
-        $scriptUrl     = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
-        $styleUrl      = \defined('IS_DEV')   && \IS_DEV ? "../tmp/app.css?v={$_SERVER['REQUEST_TIME']}" : "?action=getStyle&amp;v={$version}";
+        $scriptUrl     = \defined('\XPROBER_IS_DEV')  && \XPROBER_IS_DEV ? "../tmp/app.js?v={$_SERVER['REQUEST_TIME']}" : "?action=getScript&amp;v={$version}";
+        $styleUrl      = \defined('\XPROBER_IS_DEV')  && \XPROBER_IS_DEV ? "../tmp/app.css?v={$_SERVER['REQUEST_TIME']}" : "?action=getStyle&amp;v={$version}";
 
         return <<<HTML
 <!DOCTYPE html>
