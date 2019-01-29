@@ -14,7 +14,7 @@ class MemBuffers extends Component {
     'inn-memBuffersPercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-memBuffers'
+    'inn-memBuffersOverview'
   ) as HTMLElement
   public progress = document.getElementById(
     'inn-memBuffersProgressValue'

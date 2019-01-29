@@ -14,7 +14,7 @@ class SwapCached extends Component {
     'inn-swapCachedPercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-swapCached'
+    'inn-swapCachedOverview'
   ) as HTMLElement
   public progress = document.getElementById(
     'inn-swapCachedProgressValue'

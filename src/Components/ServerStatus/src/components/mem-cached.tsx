@@ -14,7 +14,7 @@ class MemCached extends Component {
     'inn-memCachedPercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-memCached'
+    'inn-memCachedOverview'
   ) as HTMLElement
   public progress = document.getElementById(
     'inn-memCachedProgressValue'

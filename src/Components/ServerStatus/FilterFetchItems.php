@@ -9,22 +9,22 @@ class FilterFetchItems extends ServerStatusApi
 {
     public function __construct()
     {
-        EventsApi::on('fetchItems', array($this, 'filterMemCached'));
-        EventsApi::on('fetchItems', array($this, 'filterMemBuffers'));
-        EventsApi::on('fetchItems', array($this, 'filterSwapUsage'));
-        EventsApi::on('fetchItems', array($this, 'filterSwapCached'));
-        EventsApi::on('fetchItems', array($this, 'filterMemUsage'));
-        EventsApi::on('fetchItems', array($this, 'filterDiskUsage'));
+        EventsApi::on('fetchItems', [$this, 'filterMemCached']);
+        EventsApi::on('fetchItems', [$this, 'filterMemBuffers']);
+        EventsApi::on('fetchItems', [$this, 'filterSwapUsage']);
+        EventsApi::on('fetchItems', [$this, 'filterSwapCached']);
+        EventsApi::on('fetchItems', [$this, 'filterMemUsage']);
+        EventsApi::on('fetchItems', [$this, 'filterDiskUsage']);
     }
 
     public function filterSwapUsage(array $items)
     {
         $total = HelperApi::getMemoryUsage('SwapTotal');
 
-        $items['swapUsage'] = array(
+        $items['swapUsage'] = [
             'usage' => $total ? HelperApi::getMemoryUsage('SwapUsage') : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }
@@ -33,10 +33,10 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('SwapTotal');
 
-        $items['swapCached'] = array(
+        $items['swapCached'] = [
             'usage' => $total ? HelperApi::getMemoryUsage('SwapCached') : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }
@@ -45,10 +45,10 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('MemTotal');
 
-        $items['memUsage'] = array(
+        $items['memUsage'] = [
             'usage' => $total ? HelperApi::getMemoryUsage('MemUsage') : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }
@@ -57,10 +57,10 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('MemTotal');
 
-        $items['memBuffers'] = array(
-            'usage' => $total ? HelperApi::getMemoryUsage('MemBuffers') : 0,
+        $items['memBuffers'] = [
+            'usage' => $total ? HelperApi::getMemoryUsage('Buffers') : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }
@@ -69,10 +69,10 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getMemoryUsage('MemTotal');
 
-        $items['memCached'] = array(
-            'usage' => $total ? HelperApi::getMemoryUsage('MemCached') : 0,
+        $items['memCached'] = [
+            'usage' => $total ? HelperApi::getMemoryUsage('Cached') : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }
@@ -81,10 +81,10 @@ class FilterFetchItems extends ServerStatusApi
     {
         $total = HelperApi::getDiskTotalSpace();
 
-        $items['diskUsage'] = array(
+        $items['diskUsage'] = [
             'usage' => $total ? (int) HelperApi::getDiskTotalSpace() - (int) HelperApi::getDiskFreeSpace() : 0,
             'total' => $total,
-        );
+        ];
 
         return $items;
     }

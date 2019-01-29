@@ -14,7 +14,7 @@ class SwapUsage extends Component {
     'inn-swapUsagePercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-swapUsage'
+    'inn-swapUsageOverview'
   ) as HTMLElement
   public progress = document.getElementById(
     'inn-swapUsageProgressValue'
@@ -35,7 +35,6 @@ class SwapUsage extends Component {
 
     const percent = Math.floor((usage / total) * 1000) / 10
     const overview = `${formatBytes(usage)} / ${formatBytes(total)}`
-
     setProgress(this.progress, percent)
 
     return (
