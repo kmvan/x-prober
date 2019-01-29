@@ -27,27 +27,28 @@ class ServerStatus extends ServerStatusApi
 
     public function display()
     {
-        $sysLoadAvg    = HelperApi::getSysLoadAvg();
-        $langSysLoad   = I18nApi::_('System load');
-        $cpuUsage      = I18nApi::_('CPU usage');
-
-        $sysLoadAvg = \implode('', \array_map(function ($avg) {
-            $avg = \sprintf('%.2f', $avg);
-
-            return <<<HTML
-<div class="inn-system-load-avg__group">{$avg}</div>
-HTML;
-        }, $sysLoadAvg));
-
         return <<<HTML
-<div class="inn-group">
-    <div class="inn-group__label">{$langSysLoad}</div>
-    <div class="inn-group__content" id="inn-systemLoadAvg">{$sysLoadAvg}</div>
-</div>
+{$this->getDisplaySysLoad()}
 {$this->getDisplayCpuUsage()}
 {$this->getDisplayMemoryUsage()}
 {$this->getDisplaySwapUsage()}
 HTML;
+    }
+
+    private function getDisplaySysLoad()
+    {
+        return HelperApi::getGroup(array(
+            'label'   => I18nApi::_('System load'),
+            'id'      => 'systemLoadAvg',
+            'col'     => '1-1',
+            'content' => \implode('', \array_map(function ($avg) {
+                $avg = \sprintf('%.2f', $avg);
+
+                return <<<HTML
+<div class="inn-system-load-avg__group">{$avg}</div>
+HTML;
+            }, HelperApi::getSysLoadAvg())),
+        ));
     }
 
     private function getDisplayCpuUsage()
@@ -79,13 +80,19 @@ HTML;
 
     private function getDisplaySwapUsage()
     {
+        $total = HelperApi::getMemoryUsage('SwapTotal');
+
+        if ( ! $total) {
+            return '';
+        }
+
         return HelperApi::getGroup(array(
             'label'   => I18nApi::_('SWAP usage'),
             'col'     => '1-1',
             'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'swapRealUsage',
                 'usage'   => HelperApi::getMemoryUsage('SwapRealUsage'),
-                'total'   => HelperApi::getMemoryUsage('SwapTotal'),
+                'total'   => $total,
             )),
         ));
     }

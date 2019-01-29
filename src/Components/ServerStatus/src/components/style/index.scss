@@ -1,7 +1,8 @@
 @import "~components/Style/src/components/style/config";
 
-#inn-systemLoadAvg {
+.inn-systemLoadAvg-group__content {
   display: flex;
+  align-items: center;
 }
 
 .inn-system-load-avg {

@@ -8,7 +8,9 @@ import Portal from '~components/Helper/src/components/portal'
 class SystemLoad extends Component {
   public FetchStore = FetchStore
 
-  public container = document.getElementById('inn-systemLoadAvg') as HTMLElement
+  public container = document.querySelector(
+    '.inn-systemLoadAvg-group__content'
+  ) as HTMLElement
 
   public render() {
     const { sysLoadAvg } = this.FetchStore.data as any
