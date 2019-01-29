@@ -7,22 +7,26 @@ import Portal from '~components/Helper/src/components/portal'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
-class MemoryUsage extends Component {
+class MemBuffers extends Component {
   public FetchStore = FetchStore
 
   public percentContainer = document.getElementById(
-    'inn-memRealUsagePercent'
+    'inn-memBuffersPercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-memRealUsageOverview'
+    'inn-memBuffers'
   ) as HTMLElement
   public progress = document.getElementById(
-    'inn-memRealUsageProgressValue'
+    'inn-memBuffersProgressValue'
   ) as HTMLElement
 
   public render() {
+    if (!this.percentContainer || !this.overviewContainer) {
+      return null
+    }
+
     const {
-      memRealUsage: { usage, total },
+      memBuffers: { total, usage },
     } = this.FetchStore.data as any
 
     if (!total) {
@@ -43,4 +47,4 @@ class MemoryUsage extends Component {
   }
 }
 
-export default MemoryUsage
+export default MemBuffers

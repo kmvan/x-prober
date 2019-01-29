@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
 
+import './style'
+
 import { observer } from 'mobx-react'
 import FetchStore from '~components/Fetch/src/stores'
 import SystemLoad from './system-load'
 import CpuUsage from './cpu-usage'
 import SwapUsage from './swap-usage'
-import MemoryUsage from './memory-usage'
-
-import './style'
+import MemUsage from './mem-usage'
+import MemCached from './mem-cached'
+import MemBuffers from './mem-buffers'
+import SwapCached from './swap-cached'
 
 @observer
 class ServerStatus extends Component {
   public FetchStore = FetchStore
-
-  public systemLoadAvgContainer = document.getElementById(
-    'inn-systemLoadAvg'
-  ) as HTMLElement
 
   public render() {
     if (this.FetchStore.isLoading) {
@@ -26,8 +25,11 @@ class ServerStatus extends Component {
       <>
         <SystemLoad />
         <CpuUsage />
-        <MemoryUsage />
+        <MemUsage />
+        <MemCached />
+        <MemBuffers />
         <SwapUsage />
+        <SwapCached />
       </>
     )
   }

@@ -7,17 +7,17 @@ import Portal from '~components/Helper/src/components/portal'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
-class SwapUsage extends Component {
+class SwapCached extends Component {
   public FetchStore = FetchStore
 
   public percentContainer = document.getElementById(
-    'inn-swapUsagePercent'
+    'inn-swapCachedPercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-swapUsage'
+    'inn-swapCached'
   ) as HTMLElement
   public progress = document.getElementById(
-    'inn-swapUsageProgressValue'
+    'inn-swapCachedProgressValue'
   ) as HTMLElement
 
   public render() {
@@ -26,7 +26,7 @@ class SwapUsage extends Component {
     }
 
     const {
-      swapUsage: { total, usage },
+      swapCached: { total, usage },
     } = this.FetchStore.data as any
 
     if (!total) {
@@ -47,4 +47,4 @@ class SwapUsage extends Component {
   }
 }
 
-export default SwapUsage
+export default SwapCached

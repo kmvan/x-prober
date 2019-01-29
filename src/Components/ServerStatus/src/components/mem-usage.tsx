@@ -7,26 +7,22 @@ import Portal from '~components/Helper/src/components/portal'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
-class SwapUsage extends Component {
+class MemUsage extends Component {
   public FetchStore = FetchStore
 
   public percentContainer = document.getElementById(
-    'inn-swapUsagePercent'
+    'inn-memUsagePercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-swapUsage'
+    'inn-memUsageOverview'
   ) as HTMLElement
   public progress = document.getElementById(
-    'inn-swapUsageProgressValue'
+    'inn-memUsageProgressValue'
   ) as HTMLElement
 
   public render() {
-    if (!this.percentContainer || !this.overviewContainer) {
-      return null
-    }
-
     const {
-      swapUsage: { total, usage },
+      memUsage: { usage, total },
     } = this.FetchStore.data as any
 
     if (!total) {
@@ -47,4 +43,4 @@ class SwapUsage extends Component {
   }
 }
 
-export default SwapUsage
+export default MemUsage
