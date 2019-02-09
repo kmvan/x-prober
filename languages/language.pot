@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-01-29 12:21+0800\n"
+"POT-Creation-Date: 2019-02-09 19:05+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -265,43 +265,7 @@ msgid ""
 "the quality of a host/server."
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:59
-msgid "Amazon/EC2"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:64
-msgid "VPSSERVER/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:69
-msgid "SpartanHost/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:74
-msgid "Aliyun/ECS"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:79
-msgid "Vultr"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:84
-msgid "RamNode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:89
-msgid "Linode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Tencent"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:99
-msgid "BandwagonHOST/SSD"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:123
+#: Components/ServerBenchmark/ServerBenchmark.php:128
 msgid "My server"
 msgstr ""
 

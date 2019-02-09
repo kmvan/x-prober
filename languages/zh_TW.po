@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 12:18+0800\n"
-"PO-Revision-Date: 2019-01-29 12:20+0800\n"
+"POT-Creation-Date: 2019-02-09 19:06+0800\n"
+"PO-Revision-Date: 2019-02-09 19:06+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
 "Language: zh_TW\n"
@@ -270,43 +270,7 @@ msgstr ""
 "💡 分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主"
 "機或伺服器的唯一準則。"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:59
-msgid "Amazon/EC2"
-msgstr "亞馬遜/EC2"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:64
-msgid "VPSSERVER/KVM"
-msgstr "VPSSERVER/KVM"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:69
-msgid "SpartanHost/KVM"
-msgstr "斯巴達/KVM"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:74
-msgid "Aliyun/ECS"
-msgstr "阿里雲/ECS"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:79
-msgid "Vultr"
-msgstr "Vultr"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:84
-msgid "RamNode"
-msgstr "RamNode"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:89
-msgid "Linode"
-msgstr "Linode"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Tencent"
-msgstr "騰訊雲"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:99
-msgid "BandwagonHOST/SSD"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:123
+#: Components/ServerBenchmark/ServerBenchmark.php:128
 msgid "My server"
 msgstr "我的伺服器"
 
@@ -422,6 +386,30 @@ msgstr "更新成功……"
 #: Components/Updater/Updater.php:79
 msgid "Update error."
 msgstr "更新出錯。"
+
+#~ msgid "Amazon/EC2"
+#~ msgstr "亞馬遜/EC2"
+
+#~ msgid "VPSSERVER/KVM"
+#~ msgstr "VPSSERVER/KVM"
+
+#~ msgid "SpartanHost/KVM"
+#~ msgstr "斯巴達/KVM"
+
+#~ msgid "Aliyun/ECS"
+#~ msgstr "阿里雲/ECS"
+
+#~ msgid "Vultr"
+#~ msgstr "Vultr"
+
+#~ msgid "RamNode"
+#~ msgstr "RamNode"
+
+#~ msgid "Linode"
+#~ msgstr "Linode"
+
+#~ msgid "Tencent"
+#~ msgstr "騰訊雲"
 
 #~ msgid "%s extension"
 #~ msgstr "%s 擴展"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-29 12:13+0800\n"
-"PO-Revision-Date: 2019-01-29 12:18+0800\n"
+"POT-Creation-Date: 2019-02-09 19:06+0800\n"
+"PO-Revision-Date: 2019-02-09 19:06+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -270,43 +270,7 @@ msgstr ""
 "💡 分数越高越好。该结果仅作为作者测试的参考数据。注意：跑分结果不是评价服务器"
 "优劣的唯一标准。"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:59
-msgid "Amazon/EC2"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:64
-msgid "VPSSERVER/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:69
-msgid "SpartanHost/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:74
-msgid "Aliyun/ECS"
-msgstr "阿里云/ECS"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:79
-msgid "Vultr"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:84
-msgid "RamNode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:89
-msgid "Linode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Tencent"
-msgstr "腾讯云"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:99
-msgid "BandwagonHOST/SSD"
-msgstr "搬瓦工/SSD"
-
-#: Components/ServerBenchmark/ServerBenchmark.php:123
+#: Components/ServerBenchmark/ServerBenchmark.php:128
 msgid "My server"
 msgstr "我的服务器"
 
@@ -422,6 +386,15 @@ msgstr "更新成功……"
 #: Components/Updater/Updater.php:79
 msgid "Update error."
 msgstr "更新出错。"
+
+#~ msgid "Aliyun/ECS"
+#~ msgstr "阿里云/ECS"
+
+#~ msgid "Tencent"
+#~ msgstr "腾讯云"
+
+#~ msgid "BandwagonHOST/SSD"
+#~ msgstr "搬瓦工/SSD"
 
 #~ msgid "%s extension"
 #~ msgstr "%s 扩展"
