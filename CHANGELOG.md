@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.1 - 2019-02-09
+
+### Add
+
+- Add Vultr PHP7.3 benchmarks
+- Update package assets
+
 ## 2.1.0 - 2019-01-29
 
 ### Add
