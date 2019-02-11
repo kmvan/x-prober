@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.2- 2019-02-11
+
+### Update
+
+- Update latest version to PHP 7.3.2
+
 ## 2.1.1 - 2019-02-09
 
 ### Add
