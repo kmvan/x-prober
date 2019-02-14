@@ -18,9 +18,10 @@ class HelperApi
 
         $items = \implode('', \array_map(function ($item) {
             $item = \trim($item);
+            $kw = \urlencode($item);
 
             return <<<HTML
-<span class="inn-group__item-list">{$item}</span>
+<a href="https://www.google.com/search?q=PHP+{$kw}" target="_blank" class="inn-group__item-list" title="Google: PHP {$kw}">{$item}</a>
 HTML;
         }, $items));
 
