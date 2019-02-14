@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.3 - 2019-02-14
+
+### Add
+
+- Add Google search keyword
+
 ## 2.1.2 - 2019-02-11
 
 ### Update
