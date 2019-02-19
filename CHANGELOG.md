@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.4 - 2019-02-19
+
+### Add
+
+- Add memory real usage
+
+### Optimize
+
+- Optimize memory cache/buffers usage information
+
 ## 2.1.3 - 2019-02-14
 
 ### Add
