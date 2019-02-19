@@ -13,7 +13,7 @@ class FilterFetchItems extends ServerStatusApi
         EventsApi::on('fetchItems', array($this, 'filterMemBuffers'));
         EventsApi::on('fetchItems', array($this, 'filterSwapUsage'));
         EventsApi::on('fetchItems', array($this, 'filterSwapCached'));
-        EventsApi::on('fetchItems', array($this, 'filterMemUsage'));
+        EventsApi::on('fetchItems', array($this, 'filterMemRealUsage'));
         EventsApi::on('fetchItems', array($this, 'filterDiskUsage'));
     }
 
@@ -31,7 +31,7 @@ class FilterFetchItems extends ServerStatusApi
 
     public function filterSwapCached(array $items)
     {
-        $total = HelperApi::getMemoryUsage('SwapTotal');
+        $total = HelperApi::getMemoryUsage('SwapUsage');
 
         $items['swapCached'] = array(
             'usage' => $total ? HelperApi::getMemoryUsage('SwapCached') : 0,
@@ -41,12 +41,12 @@ class FilterFetchItems extends ServerStatusApi
         return $items;
     }
 
-    public function filterMemUsage(array $items)
+    public function filterMemRealUsage(array $items)
     {
         $total = HelperApi::getMemoryUsage('MemTotal');
 
-        $items['memUsage'] = array(
-            'usage' => $total ? HelperApi::getMemoryUsage('MemUsage') : 0,
+        $items['memRealUsage'] = array(
+            'usage' => $total ? HelperApi::getMemoryUsage('MemRealUsage') : 0,
             'total' => $total,
         );
 
@@ -55,7 +55,7 @@ class FilterFetchItems extends ServerStatusApi
 
     public function filterMemBuffers(array $items)
     {
-        $total = HelperApi::getMemoryUsage('MemTotal');
+        $total = HelperApi::getMemoryUsage('MemUsage');
 
         $items['memBuffers'] = array(
             'usage' => $total ? HelperApi::getMemoryUsage('Buffers') : 0,
@@ -67,7 +67,7 @@ class FilterFetchItems extends ServerStatusApi
 
     public function filterMemCached(array $items)
     {
-        $total = HelperApi::getMemoryUsage('MemTotal');
+        $total = HelperApi::getMemoryUsage('MemUsage');
 
         $items['memCached'] = array(
             'usage' => $total ? HelperApi::getMemoryUsage('Cached') : 0,
@@ -82,7 +82,7 @@ class FilterFetchItems extends ServerStatusApi
         $total = HelperApi::getDiskTotalSpace();
 
         $items['diskUsage'] = array(
-            'usage' => $total ? (float) $total - (float) HelperApi::getDiskFreeSpace() : 0,
+            'usage' => $total ? $total -  HelperApi::getDiskFreeSpace() : 0,
             'total' => $total,
         );
 

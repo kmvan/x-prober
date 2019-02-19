@@ -31,7 +31,7 @@ class ServerStatus extends ServerStatusApi
 <div class="inn-row">
     {$this->getDisplaySysLoad()}
     {$this->getDisplayCpuUsage()}
-    {$this->getDisplayMemoryUsage()}
+    {$this->getDisplayMemRealUsage()}
     {$this->getDisplayMemCached()}
     {$this->getDisplayMemBuffers()}
     {$this->getDisplaySwapUsage()}
@@ -70,14 +70,14 @@ HTML;
         ));
     }
 
-    private function getDisplayMemoryUsage()
+    private function getDisplayMemRealUsage()
     {
         return HelperApi::getGroup(array(
-            'label'   => I18nApi::_('Memory usage'),
+            'label'   => I18nApi::_('Memory real usage'),
             'col'     => '1-1',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'memUsage',
-                'usage'   => HelperApi::getMemoryUsage('MemUsage'),
+                'id'      => 'memRealUsage',
+                'usage'   => HelperApi::getMemoryUsage('MemRealUsage'),
                 'total'   => HelperApi::getMemoryUsage('MemTotal'),
             )),
         ));
@@ -116,7 +116,7 @@ HTML;
             'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'swapCached',
                 'usage'   => HelperApi::getMemoryUsage('SwapCached'),
-                'total'   => $total,
+                'total'   => HelperApi::getMemoryUsage('SwapUsage'),
             )),
         ));
     }
@@ -129,7 +129,7 @@ HTML;
             'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'memCached',
                 'usage'   => HelperApi::getMemoryUsage('Cached'),
-                'total'   => HelperApi::getMemoryUsage('MemTotal'),
+                'total'   => HelperApi::getMemoryUsage('MemUsage'),
             )),
         ));
     }
@@ -142,7 +142,7 @@ HTML;
             'content' => HelperApi::getProgressTpl(array(
                 'id'      => 'memBuffers',
                 'usage'   => HelperApi::getMemoryUsage('Buffers'),
-                'total'   => HelperApi::getMemoryUsage('MemTotal'),
+                'total'   => HelperApi::getMemoryUsage('MemUsage'),
             )),
         ));
     }

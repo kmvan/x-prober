@@ -196,7 +196,7 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            $space = \disk_total_space(__DIR__);
+            $space = (float) \disk_total_space(__DIR__);
         }
 
         if (true === $human) {
@@ -211,7 +211,7 @@ HTML;
         static $space = null;
 
         if (null === $space) {
-            $space = \disk_free_space(__DIR__);
+            $space = (float) \disk_free_space(__DIR__);
         }
 
         if (true === $human) {
@@ -478,32 +478,42 @@ HTML;
                 }
 
                 $line            = \explode(':', $line);
-                $lines[$line[0]] = (int) $line[1] * 1024;
+                $lines[$line[0]] = (float) $line[1] * 1024;
             }
 
             $memInfo = $lines;
         }
 
+        if ( ! isset($memInfo['MemTotal'])) {
+            return 0;
+        }
+
         switch ($key) {
-        case 'MemUsage':
+        case 'MemRealUsage':
             if (isset($memInfo['MemAvailable'])) {
-                $memAvailable = $memInfo['MemAvailable'];
-            } elseif (isset($memInfo['MemFree'])) {
-                $memAvailable = $memInfo['MemFree'];
-            } else {
-                $memAvailable = 0;
+                return $memInfo['MemTotal'] - $memInfo['MemAvailable'];
             }
 
-            return $memInfo['MemTotal'] - $memAvailable;
+            if (isset($memInfo['MemFree'])) {
+                if (isset($memInfo['Buffers'], $memInfo['Cached'])) {
+                    return $memInfo['MemTotal'] - $memInfo['MemFree'] - $memInfo['Buffers'] - $memInfo['Cached'];
+                }
+
+                return $memInfo['MemTotal'] - $memInfo['Buffers'];
+            }
+
+            return 0;
+        case 'MemUsage':
+            return isset($memInfo['MemFree']) ? $memInfo['MemTotal'] - $memInfo['MemFree'] : 0;
         case 'SwapUsage':
-            if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree']) || ! isset($memInfo['SwapCached'])) {
+            if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree'])) {
                 return 0;
             }
 
             return $memInfo['SwapTotal'] - $memInfo['SwapFree'];
         }
 
-        return isset($memInfo[$key]) ? (int) $memInfo[$key] : 0;
+        return isset($memInfo[$key]) ? $memInfo[$key] : 0;
     }
 
     public static function formatBytes($bytes, $precision = 2)

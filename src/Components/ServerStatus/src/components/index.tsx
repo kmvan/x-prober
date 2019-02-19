@@ -7,7 +7,7 @@ import FetchStore from '~components/Fetch/src/stores'
 import SystemLoad from './system-load'
 import CpuUsage from './cpu-usage'
 import SwapUsage from './swap-usage'
-import MemUsage from './mem-usage'
+import MemRealUsage from './mem-real-usage'
 import MemCached from './mem-cached'
 import MemBuffers from './mem-buffers'
 import SwapCached from './swap-cached'
@@ -25,7 +25,7 @@ class ServerStatus extends Component {
       <>
         <SystemLoad />
         <CpuUsage />
-        <MemUsage />
+        <MemRealUsage />
         <MemCached />
         <MemBuffers />
         <SwapUsage />

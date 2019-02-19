@@ -7,22 +7,22 @@ import Portal from '~components/Helper/src/components/portal'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 
 @observer
-class MemUsage extends Component {
+class MemRealUsage extends Component {
   public FetchStore = FetchStore
 
   public percentContainer = document.getElementById(
-    'inn-memUsagePercent'
+    'inn-memRealUsagePercent'
   ) as HTMLElement
   public overviewContainer = document.getElementById(
-    'inn-memUsageOverview'
+    'inn-memRealUsageOverview'
   ) as HTMLElement
   public progress = document.getElementById(
-    'inn-memUsageProgressValue'
+    'inn-memRealUsageProgressValue'
   ) as HTMLElement
 
   public render() {
     const {
-      memUsage: { usage, total },
+      memRealUsage: { usage, total },
     } = this.FetchStore.data as any
 
     if (!total) {
@@ -43,4 +43,4 @@ class MemUsage extends Component {
   }
 }
 
-export default MemUsage
+export default MemRealUsage
