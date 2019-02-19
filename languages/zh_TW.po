@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-09 19:06+0800\n"
-"PO-Revision-Date: 2019-02-09 19:06+0800\n"
+"POT-Creation-Date: 2019-02-19 20:48+0800\n"
+"PO-Revision-Date: 2019-02-19 20:48+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
 "Language: zh_TW\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
@@ -91,18 +91,18 @@ msgstr "該頁面由 %s 生成"
 msgid "Author %s"
 msgstr "作者為 %s"
 
-#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
-#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
+#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
+#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Components/Helper/HelperApi.php:240
+#: Components/Helper/HelperApi.php:241
 #, php-format
 msgid "%s cache"
 msgstr "%s 快取"
 
-#: Components/Helper/HelperApi.php:267
+#: Components/Helper/HelperApi.php:268
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
@@ -339,8 +339,8 @@ msgid "CPU usage"
 msgstr "CPU 使用率"
 
 #: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory usage"
-msgstr "記憶體使用"
+msgid "Memory real usage"
+msgstr "真實記憶體使用"
 
 #: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"

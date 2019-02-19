@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-02-09 19:05+0800\n"
+"POT-Creation-Date: 2019-02-19 20:48+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -88,18 +88,18 @@ msgstr ""
 msgid "Author %s"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
-#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
+#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
+#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:240
+#: Components/Helper/HelperApi.php:241
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:267
+#: Components/Helper/HelperApi.php:268
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
@@ -334,7 +334,7 @@ msgid "CPU usage"
 msgstr ""
 
 #: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory usage"
+msgid "Memory real usage"
 msgstr ""
 
 #: Components/ServerStatus/ServerStatus.php:95

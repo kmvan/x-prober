@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-01-29 12:17+0800\n"
-"PO-Revision-Date: 2019-01-29 12:18+0800\n"
+"POT-Creation-Date: 2019-02-19 20:47+0800\n"
+"PO-Revision-Date: 2019-02-19 20:48+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -87,18 +87,18 @@ msgstr "ジェネレータ %s"
 msgid "Author %s"
 msgstr "作成者 %s"
 
-#: Components/Helper/HelperApi.php:42 Components/Helper/HelperApi.php:160
-#: Components/Helper/HelperApi.php:228 Components/Helper/HelperApi.php:253
+#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
+#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
 #: Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "利用不可"
 
-#: Components/Helper/HelperApi.php:240
+#: Components/Helper/HelperApi.php:241
 #, php-format
 msgid "%s cache"
 msgstr "%s キャッシュ"
 
-#: Components/Helper/HelperApi.php:267
+#: Components/Helper/HelperApi.php:268
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
@@ -267,43 +267,7 @@ msgstr ""
 "れます。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一"
 "の基準ではありません。"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:59
-msgid "Amazon/EC2"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:64
-msgid "VPSSERVER/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:69
-msgid "SpartanHost/KVM"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:74
-msgid "Aliyun/ECS"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:79
-msgid "Vultr"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:84
-msgid "RamNode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:89
-msgid "Linode"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Tencent"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:99
-msgid "BandwagonHOST/SSD"
-msgstr ""
-
-#: Components/ServerBenchmark/ServerBenchmark.php:123
+#: Components/ServerBenchmark/ServerBenchmark.php:128
 msgid "My server"
 msgstr "私のサーバー"
 
@@ -372,8 +336,8 @@ msgid "CPU usage"
 msgstr "CPU 使用率"
 
 #: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory usage"
-msgstr "メモリ使用量"
+msgid "Memory real usage"
+msgstr "実メモリ使用量"
 
 #: Components/ServerStatus/ServerStatus.php:95
 msgid "SWAP usage"
