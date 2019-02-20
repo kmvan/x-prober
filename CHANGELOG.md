@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.5 - 2019-02-20
+
+### Add
+
+- Add detail information benchmark
+- Add Monovm benchmark result
+
+### Fix
+
+- Fix zero value text description error in progress
+
 ## 2.1.4 - 2019-02-19
 
 ### Add
