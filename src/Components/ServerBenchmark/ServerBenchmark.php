@@ -56,6 +56,16 @@ HTML;
     {
         $items = array(
             array(
+                'label'   => 'Monovm/PHP7.3',
+                'url'     => 'https://monovm.com/affiliate/ref/528',
+                'detail'  => array(
+                    'hash'      => 778,
+                    'intLoop'   => 942,
+                    'floatLoop' => 943,
+                    'ioLoop'    => 725,
+                ),
+            ),
+            array(
                 'label'   => 'Vultr/PHP7.3',
                 'url'     => 'https://www.vultr.com/?ref=7826363-4F',
                 'content' => 3305,
@@ -110,7 +120,11 @@ HTML;
         // order
         $sort = array();
 
-        foreach ($items as $item) {
+        foreach ($items as &$item) {
+            if (isset($item['detail'])) {
+                $item['content'] = \array_sum($item['detail']);
+            }
+
             $sort[] = (int) $item['content'];
         }
 
@@ -137,9 +151,13 @@ HTML;
 HTML;
             }
 
-            if (\is_numeric($item['content'])) {
+            if (isset($item['content']) && \is_numeric($item['content'])) {
                 $item['content'] = \number_format((float) $item['content']);
             }
+
+            $item['title'] = isset($item['detail']) ? \implode(', ', \array_map(function ($id, $v) {
+                return "{$id}: {$v}";
+            }, \array_keys($item['detail']), $item['detail'])) : '';
 
             return $item;
         }, $items);
