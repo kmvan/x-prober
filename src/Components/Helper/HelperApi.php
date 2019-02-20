@@ -40,13 +40,16 @@ HTML;
         ), $args);
 
         if ( ! $args['total']) {
-            return I18nApi::_('Unavailable');
+            $percent    = 0;
+            $totalHuman = 0;
+            $usageHuman = 0;
+            $overview   = '0 / 0';
+        } else {
+            $percent    = \round($args['usage'] / $args['total'], 2) * 100;
+            $totalHuman = self::formatBytes($args['total']);
+            $usageHuman = self::formatBytes($args['usage']);
+            $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
         }
-
-        $percent    = \round($args['usage'] / $args['total'], 2) * 100;
-        $totalHuman = self::formatBytes($args['total']);
-        $usageHuman = self::formatBytes($args['usage']);
-        $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
 
         return <<<HTML
 <div class="inn-progress__container">
