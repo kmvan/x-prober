@@ -43,6 +43,10 @@ HTML;
                 'content' => HelperApi::alert(\extension_loaded('redis') && \class_exists('\\Redis')),
             ),
             array(
+                'label'   => 'SQLite3',
+                'content' => HelperApi::alert(\extension_loaded('sqlite3') && \class_exists('\\SQLite3')),
+            ),
+            array(
                 'label'   => 'Memcache',
                 'content' => HelperApi::alert(\extension_loaded('memcache') && \class_exists('\\Memcache')),
             ),
@@ -72,19 +76,23 @@ HTML;
             ),
             array(
                 'label'   => 'Exif',
-                'content' => HelperApi::alert(\extension_loaded('Exif') && \function_exists('\\exif_imagetype')),
+                'content' => HelperApi::alert(\extension_loaded('exif') && \function_exists('\\exif_imagetype')),
             ),
             array(
                 'label'   => 'Fileinfo',
                 'content' => HelperApi::alert(\extension_loaded('fileinfo')),
             ),
             array(
+                'label'   => 'SimpleXML',
+                'content' => HelperApi::alert(\extension_loaded('simplexml')),
+            ),
+            array(
                 'label'   => 'Sockets',
-                'content' => HelperApi::alert(\extension_loaded('Sockets') && \function_exists('\\socket_accept')),
+                'content' => HelperApi::alert(\extension_loaded('sockets') && \function_exists('\\socket_accept')),
             ),
             array(
                 'label'   => 'MySQLi',
-                'content' => HelperApi::alert(\extension_loaded('MySQLi') && \class_exists('\\mysqli')),
+                'content' => HelperApi::alert(\extension_loaded('mysqli') && \class_exists('\\mysqli')),
             ),
             array(
                 'label'   => 'Zip',
@@ -127,7 +135,8 @@ HTML;
         // order
         $itemsOrder = array();
 
-        foreach ($items as $item) {
+        foreach ($items as &$item) {
+            $item['col']  = '1-4';
             $itemsOrder[] = \strtolower($item['label']);
         }
 
