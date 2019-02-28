@@ -1,4 +1,7 @@
 <?php
+/**
+ * The file is automatically generated.
+ */
 
 namespace InnStudio\Prober\Components\Config;
 

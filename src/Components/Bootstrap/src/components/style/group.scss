@@ -92,6 +92,10 @@
 
   &__content {
     flex-grow: 1;
+
+    &__small {
+      opacity: .5;
+    }
   }
 
   &__label {
@@ -99,7 +103,7 @@
     word-break: normal;
 
     @include mq(lg) {
-      flex: 0 0 15rem;
+      flex: 0 0 12rem;
     }
   }
 }

@@ -1,0 +1,85 @@
+{
+  "APP_VERSION": "2.1.5",
+  "APP_NAME": "X Prober",
+  "APP_URL": "https://github.com/kmvan/x-prober",
+  "AUTHOR_URL": "https://inn-studio.com/prober",
+  "UPDATE_PHP_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php",
+  "AUTHOR_NAME": "INN STUDIO",
+  "CHANGELOG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md",
+  "LATEST_PHP_STABLE_VERSION": "7.3.2",
+  "BENCHMARKS": [
+    {
+      "label": "Monovm/PHP7.3",
+      "url": "https://monovm.com/affiliate/ref/528",
+      "date": "2019-02-20",
+      "detail": {
+        "hash": 778,
+        "intLoop": 942,
+        "floatLoop": 943,
+        "ioLoop": 725
+      }
+    },
+    {
+      "label": "Vultr/PHP7.3",
+      "url": "https://www.vultr.com/?ref=7826363-4F",
+      "date": "2019-03-01",
+      "detail": {
+        "hash": 822,
+        "intLoop": 958,
+        "floatLoop": 958,
+        "ioLoop": 653
+      }
+    },
+    {
+      "label": "Amazon/EC2/PHP7.2",
+      "url": "https://aws.amazon.com/",
+      "content": 3150
+    },
+    {
+      "label": "VPSSERVER/KVM/PHP7.2",
+      "url": "https://www.vpsserver.com/?affcode=32d56f2dd1b6",
+      "content": 3125
+    },
+    {
+      "label": "SpartanHost/KVM/PHP7.2",
+      "url": "https://billing.spartanhost.net/aff.php?aff=801",
+      "content": 3174
+    },
+    {
+      "label": "Aliyun/ECS/PHP7.2",
+      "url": "https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=0nry1oii&amp;utm_source=0nry1oii",
+      "content": 3302
+    },
+    {
+      "label": "Vultr/PHP7.2",
+      "url": "https://www.vultr.com/?ref=7256513",
+      "content": 3182
+    },
+    {
+      "label": "RamNode/PHP7.2",
+      "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
+      "content": 3131
+    },
+    {
+      "label": "Linode/PHP7.2",
+      "url": "https://www.linode.com/?r=2edf930598b4165760c1da9e77b995bac72f8ad1",
+      "content": 3091
+    },
+    {
+      "label": "Tencent/PHP7.2",
+      "url": "https://cloud.tencent.com/",
+      "content": 3055
+    },
+    {
+      "label": "BandwagonHOST/KVM/PHP7.2",
+      "url": "https://bandwagonhost.com/aff.php?aff=34116",
+      "date": "2019-02-25",
+      "detail": {
+        "hash": 682,
+        "intLoop": 855,
+        "floatLoop": 797,
+        "ioLoop": -218
+      }
+    }
+  ]
+}

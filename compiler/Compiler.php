@@ -16,6 +16,18 @@ class Compiler
         $this->COMPONENTS_DIR    = "{$this->BASE_DIR}/Components";
         $this->COMPILE_FILE_PATH = "{$dir}/dist/prober.php";
 
+        // generate config
+        new ConfigGeneration([
+            'phpConfigPath' => "{$this->COMPONENTS_DIR}/Config/ConfigApi.php",
+            'configPath'    => "{$this->ROOT}/AppConfig.json",
+        ]);
+
+        // generate benchmark
+        new ServerBenchmarkGeneration([
+            'phpConfigPath' => "{$this->COMPONENTS_DIR}/ServerBenchmark/ServerBenchmarkMarks.php",
+            'configPath'    => "{$this->ROOT}/AppConfig.json",
+        ]);
+
         // lang
         $this->languageGeneration($dir);
 
