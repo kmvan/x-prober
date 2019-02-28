@@ -36,16 +36,25 @@
     border-radius: $borderRadius;
     background: #00cc00;
     box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.4), 0 5px 10px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 
+    &:before,
     &:after {
       position: absolute;
       content: '';
       top: 0;
       height: 50%;
       width: 100%;
-      border-radius: $borderRadius $borderRadius 0 0;
-      background: #fff;
-      opacity: 0.1;
+      border-radius: 0 0 50% 50%;
+      background: linear-gradient(#fff, rgba(#fff, 0.3));
+      opacity: 0.3;
+    }
+
+    &:before {
+      height: 1px;
+      border-radius: 0;
+      background: linear-gradient(to right, rgba(#fff, 0.1), rgba(#fff, 0.5), rgba(#fff, 0.1));
+      opacity: 1;
     }
   }
 
