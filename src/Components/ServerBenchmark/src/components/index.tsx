@@ -4,7 +4,8 @@ import { observer } from 'mobx-react'
 import Portal from '~components/Helper/src/components/portal'
 import store from '../stores'
 import fetchServer from '~components/Helper/src/components/fetch-server'
-import Alert from '~components/Helper/src/components/alert'
+
+import './style/index.scss'
 
 @observer
 class ServerBenchmark extends Component {
