@@ -2,6 +2,21 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.6 - 2019-03-01
+
+### Add
+
+- Add server benchmark date
+- Add APP config file
+- Add progress high light style
+- add SQLite3 ext detection
+- add SimpleXML ext detection
+
+### Optimize
+
+- Optimize server benchmark style
+- Optimize module title style for firefox
+
 ## 2.1.5 - 2019-02-20
 
 ### Add
