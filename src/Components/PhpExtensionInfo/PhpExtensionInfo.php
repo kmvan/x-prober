@@ -136,7 +136,6 @@ HTML;
         $itemsOrder = array();
 
         foreach ($items as &$item) {
-            $item['col']  = '1-4';
             $itemsOrder[] = \strtolower($item['label']);
         }
 
