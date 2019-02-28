@@ -18,6 +18,11 @@ class HelperApi
 
         $items = \implode('', \array_map(function ($item) {
             $item = \trim($item);
+
+            if ( ! $item) {
+                return '';
+            }
+
             $kw = \urlencode($item);
 
             return <<<HTML
@@ -76,6 +81,7 @@ HTML;
     public static function getGroup(array $item)
     {
         $item = \array_merge(array(
+            'groupId' => '',
             'id'      => '',
             'label'   => '',
             'title'   => '',
@@ -101,11 +107,12 @@ HTML
         $idClassNameGroupContainer        = $item['id'] ? "inn-{$item['id']}-group__container" : '';
         $idClassNameGroupLabel            = $item['id'] ? "inn-{$item['id']}-group__label" : '';
         $idClassNameGroupContent          = $item['id'] ? "inn-{$item['id']}-group__content" : '';
+        $groupClassNameLabel              = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
 
         return <<<HTML
 <div class="inn-group__container {$col} {$idClassNameGroupContainer}">
     <div class="inn-group {$idClassNameGroup}">
-        <div class="inn-group__label {$idClassNameGroupLabel} {$hasTitleClassName}" {$title}>{$item['label']}</div>
+        <div class="inn-group__label {$groupClassNameLabel} {$idClassNameGroupLabel} {$hasTitleClassName}" {$title}>{$item['label']}</div>
         <div class="inn-group__content {$idClassNameGroupContent} {$hasTitleClassName}" {$title}>{$item['content']}</div>
     </div>
 </div>
@@ -135,6 +142,8 @@ HTML;
 
             $cpus = array();
 
+            $total = 0;
+
             foreach ($server as $cpu) {
                 $total += (int) $cpu->loadpercentage;
             }
@@ -144,6 +153,7 @@ HTML;
             $cpus['user'] = $total;
         // exec
         } else {
+            $p = array();
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
