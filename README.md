@@ -1,6 +1,9 @@
 [![V-Bed by INN STUDIO](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)
 
 * [Simplified Chinese | 简体中文](README-zh_CN.md)
+* [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
+* [Traditional Chinese(Hong Kong) | 正體中文（香港）](README-zh_HK.md)
+* Japanese | 日本語
 
 # 😎 X Prober
 
