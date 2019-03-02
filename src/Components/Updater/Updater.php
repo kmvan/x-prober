@@ -64,8 +64,8 @@ class Updater
         }
 
         if ((bool) \file_put_contents(__FILE__, $content)) {
-            if (\function_exists('\\opcache_reset')) {
-                \opcache_reset();
+            if (\function_exists('\\opcache_compile_file')) {
+                \opcache_compile_file(__FILE__) || \opcache_reset();
             }
 
             HelperApi::dieJson(array(
