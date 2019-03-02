@@ -1,5 +1,5 @@
 {
-  "APP_VERSION": "2.1.6",
+  "APP_VERSION": "2.1.7",
   "APP_NAME": "X Prober",
   "APP_URL": "https://github.com/kmvan/x-prober",
   "AUTHOR_URL": "https://inn-studio.com/prober",
@@ -7,6 +7,9 @@
   "AUTHOR_NAME": "INN STUDIO",
   "CHANGELOG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md",
   "LATEST_PHP_STABLE_VERSION": "7.3.2",
+  "LATEST_NGINX_STABLE_VERSION": "1.14.2",
+  "LATEST_SQLITE3_STABLE_VERSION": "3.27.1",
+  "LATEST_MYSQL_CLIENT_STABLE_VERSION": "50012",
   "BENCHMARKS": [
     {
       "label": "Monovm/PHP7.3",
