@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.7 - 2019-03-02
+
+### Optimize
+
+- Optimize clean opcache operation after update
+
 ## 2.1.6 - 2019-03-01
 
 ### Add
