@@ -133,7 +133,6 @@ class Compiler
         $codeStr = \implode("\n", $code);
 
         return <<<PHP
-declare(strict_types=1);
 namespace InnStudio\\Prober\\Components\\PreDefine;
 {$codeStr}
 PHP;
