@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.1.8 - 2019-03-05
+
+### Add
+
+- Disable cache for fetch request
+
 ## 2.1.7 - 2019-03-02
 
 ### Optimize
