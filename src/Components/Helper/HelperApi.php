@@ -122,6 +122,11 @@ HTML;
     public static function dieJson($data)
     {
         \header('Content-Type: application/json');
+        \header("Expires: 0");
+        \header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+        \header("Cache-Control: no-store, no-cache, must-revalidate");
+        \header("Pragma: no-cache");
+
 
         die(\json_encode($data));
     }
