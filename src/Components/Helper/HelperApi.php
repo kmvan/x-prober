@@ -71,24 +71,12 @@ HTML;
 
     public static function setFileCacheHeader()
     {
+        // 1 year expired
         $seconds = 3600 * 24 * 30 * 12;
         $ts      = \gmdate('D, d M Y H:i:s', (int) $_SERVER['REQUEST_TIME'] + $seconds) . ' GMT';
-        \header("Expires: $ts");
+        \header("Expires: {$ts}");
         \header('Pragma: cache');
         \header("Cache-Control: public, max-age={$seconds}");
-        $mtime = \gmdate('D, d M Y H:i:s', (int)filemtime(__FILE__) ) . ' GMT';
-        $action = \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING);
-        $etag = \md5($mtime . $action);
-        \header("Last-Modified: $mtime"); 
-        \header("ETag: $etag");
-
-        $ifModifiedSince=(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : 0);
-        $etagHeader=(isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : '');
-        if ($ifModifiedSince === $mtime || $etagHeader === $etag)
-        {
-            \header("HTTP/1.1 304 Not Modified");
-            die;
-        }
     }
 
     public static function getGroup(array $item)
