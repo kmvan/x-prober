@@ -1,4 +1,4 @@
-[![V-Bed by INN STUDIO](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)
+[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)
 
 # 😎 X 探针、刘海探针
 
@@ -45,7 +45,7 @@
 
 - **Fork** 项目。
 - 使用 [Poedit](https://poedit.net/) 通过 `./languages/language.pot` 语言模板来创建和翻译您的语言。
-- 保存翻译语言文件 *（例如：`en_US.po`)*  到 `./languages` 目录里面。
+- 保存翻译语言文件 _（例如：`en_US.po`)_ 到 `./languages` 目录里面。
 - 添加您的称呼到贡献者名单里面。
 - 进行 Pull Request，十分感谢。😘
 

@@ -1,4 +1,4 @@
-[![V-Bed by INN STUDIO](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)](https://wx4.sinaimg.cn/large/686ee05dly1fzlg58htdkj20wp0gywgd.jpg)
+[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)
 
 # 😎 X 探針、劉海探針
 
