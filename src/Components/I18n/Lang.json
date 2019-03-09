@@ -1,7 +1,7 @@
 // Do not edit the json file
 {
     "ja": {
-        "Please wait %d seconds": "%d 秒お待ちください",
+        "Please wait %ds": "%d 秒お待ちください",
         "Database": "データベース",
         "DB": "",
         "SQLite3": "",
@@ -59,8 +59,11 @@
         "👆 Click to test": "👆クリックしてテスト",
         "Server Benchmark": "サーバー基準",
         "Benchmark": "基準",
-        "💡 Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡高いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用されます。 注：ベンチマークマークは、ホスト\/サーバーの品質を評価するための唯一の基準ではありません。",
+        "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用されます。 注：ベンチマークマークは、ホスト\/サーバーの品質を評価するための唯一の基準ではありません。",
         "My server": "私のサーバー",
+        "Go to service provider homepage": "サービス提供者ホームページへ",
+        "Go to prober page": "X-Prober ホームページへ",
+        "Download file for network speed testing": "ネットワーク速度テスト用のダウンロードファイル",
         "Server information": "サーバー情報",
         "Info": "情報",
         "Server name": "サーバーの名前",
@@ -91,7 +94,7 @@
         "Update error.": "更新エラーです。"
     },
     "zh_CN": {
-        "Please wait %d seconds": "请等待 %d 秒",
+        "Please wait %ds": "请等待 %d 秒",
         "Database": "数据库",
         "DB": "数据库",
         "SQLite3": "",
@@ -149,8 +152,11 @@
         "👆 Click to test": "👆 点击测试",
         "Server Benchmark": "服务器跑分",
         "Benchmark": "跑分",
-        "💡 Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡 分数越高越好。该结果仅作为作者测试的参考数据。注意：跑分结果不是评价服务器优劣的唯一标准。",
+        "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "分数越高越好。该结果仅作为作者测试的性能参考数据。注意：跑分结果不是评价服务器优劣的唯一标准。",
         "My server": "我的服务器",
+        "Go to service provider homepage": "查看服务供应商主页",
+        "Go to prober page": "查看探针页面",
+        "Download file for network speed testing": "下载文件以测试网速",
         "Server information": "服务器信息",
         "Info": "信息",
         "Server name": "服务器名",
@@ -181,7 +187,7 @@
         "Update error.": "更新出错。"
     },
     "zh_HK": {
-        "Please wait %d seconds": "請等待 %d 秒",
+        "Please wait %ds": "請等待 %d 秒",
         "Database": "資料庫",
         "DB": "資料庫",
         "SQLite3": "",
@@ -239,8 +245,11 @@
         "👆 Click to test": "👆 點擊測試",
         "Server Benchmark": "伺服器性能跑分",
         "Benchmark": "跑分",
-        "💡 Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡 分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
+        "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
         "My server": "我的伺服器",
+        "Go to service provider homepage": "查閱供應商主頁",
+        "Go to prober page": "查閱探針頁面",
+        "Download file for network speed testing": "下載文件以測試網速",
         "Server information": "伺服器訊息",
         "Info": "訊息",
         "Server name": "伺服器名",
@@ -271,7 +280,7 @@
         "Update error.": "更新出錯。"
     },
     "zh_TW": {
-        "Please wait %d seconds": "請等待 %d 秒",
+        "Please wait %ds": "請等待 %d 秒",
         "Database": "資料庫",
         "DB": "資料庫",
         "SQLite3": "",
@@ -329,8 +338,11 @@
         "👆 Click to test": "👆 點擊測試",
         "Server Benchmark": "伺服器性能跑分",
         "Benchmark": "跑分",
-        "💡 Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "💡 分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
+        "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host\/server.": "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
         "My server": "我的伺服器",
+        "Go to service provider homepage": "查閱供應商主頁",
+        "Go to prober page": "查閱探針頁面",
+        "Download file for network speed testing": "下載文件以測試網速",
         "Server information": "伺服器訊息",
         "Info": "訊息",
         "Server name": "伺服器名",
