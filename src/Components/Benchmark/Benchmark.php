@@ -29,7 +29,7 @@ class Benchmark extends BenchmarkApi
         if ($remainingSeconds) {
             HelperApi::dieJson(array(
                 'code' => -1,
-                'msg'  => '⏳ ' . \sprintf(I18nApi::_('Please wait %d seconds'), $remainingSeconds),
+                'msg'  => '⏳ ' . \sprintf(I18nApi::_('Please wait %ds'), $remainingSeconds),
             ));
         }
 
