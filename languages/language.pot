@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-02-19 20:48+0800\n"
+"POT-Creation-Date: 2019-03-09 14:49+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Benchmark/Benchmark.php:152
+#: Components/Benchmark/Benchmark.php:32
 #, php-format
-msgid "Please wait %d seconds"
+msgid "Please wait %ds"
 msgstr ""
 
 #: Components/Database/Database.php:21
@@ -88,18 +88,17 @@ msgstr ""
 msgid "Author %s"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
-#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
-#: Components/ServerInfo/ServerInfo.php:92
+#: Components/Helper/HelperApi.php:179 Components/Helper/HelperApi.php:247
+#: Components/Helper/HelperApi.php:272 Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:241
+#: Components/Helper/HelperApi.php:259
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:268
+#: Components/Helper/HelperApi.php:286
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
@@ -140,16 +139,16 @@ msgstr ""
 msgid "Ext"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
 #, php-format
 msgid "%s enabled"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:106
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
 msgid "Loaded extensions"
 msgstr ""
 
@@ -260,13 +259,25 @@ msgstr ""
 
 #: Components/ServerBenchmark/ServerBenchmark.php:45
 msgid ""
-"💡 Higher is better. This result is only used as reference data for author "
+"Higher is better. This result is only used as reference data for author "
 "testing. Note: the benchmark marks are not the only criterion for evaluating "
 "the quality of a host/server."
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:128
+#: Components/ServerBenchmark/ServerBenchmark.php:84
 msgid "My server"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:94
+msgid "Go to service provider homepage"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:115
+msgid "Go to prober page"
+msgstr ""
+
+#: Components/ServerBenchmark/ServerBenchmark.php:123
+msgid "Download file for network speed testing"
 msgstr ""
 
 #: Components/ServerInfo/ServerInfo.php:21

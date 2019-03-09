@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-19 20:48+0800\n"
-"PO-Revision-Date: 2019-02-19 20:48+0800\n"
+"POT-Creation-Date: 2019-03-09 14:45+0800\n"
+"PO-Revision-Date: 2019-03-09 14:46+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
 "Language: zh_TW\n"
@@ -20,9 +20,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
 "X-Poedit-SearchPathExcluded-1: ../dist\n"
 
-#: Components/Benchmark/Benchmark.php:152
+#: Components/Benchmark/Benchmark.php:32
 #, php-format
-msgid "Please wait %d seconds"
+msgid "Please wait %ds"
 msgstr "請等待 %d 秒"
 
 #: Components/Database/Database.php:21
@@ -91,18 +91,17 @@ msgstr "該頁面由 %s 生成"
 msgid "Author %s"
 msgstr "作者為 %s"
 
-#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
-#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
-#: Components/ServerInfo/ServerInfo.php:92
+#: Components/Helper/HelperApi.php:179 Components/Helper/HelperApi.php:247
+#: Components/Helper/HelperApi.php:272 Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Components/Helper/HelperApi.php:241
+#: Components/Helper/HelperApi.php:259
 #, php-format
 msgid "%s cache"
 msgstr "%s 快取"
 
-#: Components/Helper/HelperApi.php:268
+#: Components/Helper/HelperApi.php:286
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
@@ -143,16 +142,16 @@ msgstr "PHP 擴展"
 msgid "Ext"
 msgstr "擴展"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
 #, php-format
 msgid "%s enabled"
 msgstr "%s 啟用"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:106
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
@@ -263,16 +262,28 @@ msgstr "跑分"
 
 #: Components/ServerBenchmark/ServerBenchmark.php:45
 msgid ""
-"💡 Higher is better. This result is only used as reference data for author "
+"Higher is better. This result is only used as reference data for author "
 "testing. Note: the benchmark marks are not the only criterion for evaluating "
 "the quality of a host/server."
 msgstr ""
-"💡 分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主"
-"機或伺服器的唯一準則。"
+"分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機"
+"或伺服器的唯一準則。"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:128
+#: Components/ServerBenchmark/ServerBenchmark.php:84
 msgid "My server"
 msgstr "我的伺服器"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:94
+msgid "Go to service provider homepage"
+msgstr "查閱供應商主頁"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:115
+msgid "Go to prober page"
+msgstr "查閱探針頁面"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:123
+msgid "Download file for network speed testing"
+msgstr "下載文件以測試網速"
 
 #: Components/ServerInfo/ServerInfo.php:21
 msgid "Server information"

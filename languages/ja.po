@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-02-19 20:47+0800\n"
-"PO-Revision-Date: 2019-02-19 20:48+0800\n"
+"POT-Creation-Date: 2019-03-09 14:46+0800\n"
+"PO-Revision-Date: 2019-03-09 14:48+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
 "Language: ja\n"
@@ -16,9 +16,9 @@ msgstr ""
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Benchmark/Benchmark.php:152
+#: Components/Benchmark/Benchmark.php:32
 #, php-format
-msgid "Please wait %d seconds"
+msgid "Please wait %ds"
 msgstr "%d 秒お待ちください"
 
 #: Components/Database/Database.php:21
@@ -87,18 +87,17 @@ msgstr "ジェネレータ %s"
 msgid "Author %s"
 msgstr "作成者 %s"
 
-#: Components/Helper/HelperApi.php:43 Components/Helper/HelperApi.php:161
-#: Components/Helper/HelperApi.php:229 Components/Helper/HelperApi.php:254
-#: Components/ServerInfo/ServerInfo.php:92
+#: Components/Helper/HelperApi.php:179 Components/Helper/HelperApi.php:247
+#: Components/Helper/HelperApi.php:272 Components/ServerInfo/ServerInfo.php:92
 msgid "Unavailable"
 msgstr "利用不可"
 
-#: Components/Helper/HelperApi.php:241
+#: Components/Helper/HelperApi.php:259
 #, php-format
 msgid "%s cache"
 msgstr "%s キャッシュ"
 
-#: Components/Helper/HelperApi.php:268
+#: Components/Helper/HelperApi.php:286
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
@@ -139,16 +138,16 @@ msgstr "PHPエクステンション"
 msgid "Ext"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:58
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
 #, php-format
 msgid "%s enabled"
 msgstr "%s 有効"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:106
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
 msgid "Zend Optimizer"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:138
+#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
 msgid "Loaded extensions"
 msgstr "ロードエクステンション"
 
@@ -259,17 +258,29 @@ msgstr "基準"
 
 #: Components/ServerBenchmark/ServerBenchmark.php:45
 msgid ""
-"💡 Higher is better. This result is only used as reference data for author "
+"Higher is better. This result is only used as reference data for author "
 "testing. Note: the benchmark marks are not the only criterion for evaluating "
 "the quality of a host/server."
 msgstr ""
-"💡高いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用さ"
-"れます。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一"
-"の基準ではありません。"
+"いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用されま"
+"す。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一の基"
+"準ではありません。"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:128
+#: Components/ServerBenchmark/ServerBenchmark.php:84
 msgid "My server"
 msgstr "私のサーバー"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:94
+msgid "Go to service provider homepage"
+msgstr "サービス提供者ホームページへ"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:115
+msgid "Go to prober page"
+msgstr "X-Prober ホームページへ"
+
+#: Components/ServerBenchmark/ServerBenchmark.php:123
+msgid "Download file for network speed testing"
+msgstr "ネットワーク速度テスト用のダウンロードファイル"
 
 #: Components/ServerInfo/ServerInfo.php:21
 msgid "Server information"
