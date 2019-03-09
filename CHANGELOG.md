@@ -2,6 +2,21 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.2.0 - 2019-03-09
+
+### Add
+
+- Add debug mode for compiler
+- Add bin download for network speed testing (server benchmark)
+- Add prober page (server benchmark)
+- Add sleep operating when doing server benchmark
+- Add latest PHP version 7.3.3
+- Add 1Gbits server benchmark
+
+### Optimize
+
+- Change `seconds` to `s`
+
 ## 2.1.8 - 2019-03-05
 
 ### Add
