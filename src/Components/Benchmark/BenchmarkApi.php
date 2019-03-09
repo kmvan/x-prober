@@ -11,34 +11,37 @@ class BenchmarkApi
         return \sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
     }
 
-    public function saveTmpRecorder()
+    public function setRecorder(array $data)
     {
-        return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(array(
-            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
-        )));
+        return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(\array_merge($this->getRecorder(), $data)));
+    }
+
+    public function setExpired()
+    {
+        return (bool) $this->setRecorder(array(
+            'expired'   => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
+        ));
+    }
+
+    public function setIsRunning($isRunning)
+    {
+        return (bool) $this->setRecorder(array(
+            'isRunning' => true === (bool) $isRunning ? 1 : 0,
+        ));
+    }
+
+    public function isRunning()
+    {
+        $recorder = $this->getRecorder();
+
+        return isset($recorder['isRunning']) ? 1 === (int) $recorder['isRunning'] : false;
     }
 
     public function getRemainingSeconds()
     {
-        $path = $this->getTmpRecorderPath();
+        $recorder = $this->getRecorder();
 
-        if ( ! @\is_readable($path)) {
-            return 0;
-        }
-
-        $data = (string) \file_get_contents($this->getTmpRecorderPath());
-
-        if ( ! $data) {
-            return 0;
-        }
-
-        $data = \json_decode($data, true);
-
-        if ( ! $data) {
-            return 0;
-        }
-
-        $expired = isset($data['expired']) ? (int) $data['expired'] : 0;
+        $expired = isset($recorder['expired']) ? (int) $recorder['expired'] : 0;
 
         if ( ! $expired) {
             return 0;
@@ -122,5 +125,32 @@ class BenchmarkApi
             'floatLoop' => $this->getFloatLoopPoints(),
             'ioLoop'    => $this->getIoLoopPoints(),
         );
+    }
+
+    private function getRecorder()
+    {
+        $path     = $this->getTmpRecorderPath();
+        $defaults = array(
+            'expired' => 0,
+            'running' => 0,
+        );
+
+        if ( ! @\is_readable($path)) {
+            return $defaults;
+        }
+
+        $data = (string) \file_get_contents($path);
+
+        if ( ! $data) {
+            return $defaults;
+        }
+
+        $data = \json_decode($data, true);
+
+        if ( ! $data) {
+            return $defaults;
+        }
+
+        return \array_merge($defaults, $data);
     }
 }

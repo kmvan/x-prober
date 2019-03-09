@@ -33,11 +33,16 @@ class Benchmark extends BenchmarkApi
             ));
         }
 
-        $this->saveTmpRecorder();
-
         \set_time_limit(0);
 
+        $this->setExpired();
+        $this->setIsRunning(true);
+
+        // start benchmark
         $points = $this->getPoints();
+        // end benchmark
+
+        $this->setIsRunning(false);
 
         HelperApi::dieJson(array(
             'code' => 0,

@@ -17,8 +17,8 @@ class FilterFetchItems extends ServerStatusApi
     {
         $benchmark = new BenchmarkApi();
 
-        while (0 !== $benchmark->getRemainingSeconds()) {
-            \sleep(5);
+        while ($benchmark->isRunning()) {
+            \sleep(2);
         }
 
         return \array_merge(
@@ -28,7 +28,7 @@ class FilterFetchItems extends ServerStatusApi
             $this->filterSwapUsage($items),
             $this->filterSwapCached($items),
             $this->filterMemRealUsage($items),
-            $this->filterDiskUsage($items),
+            $this->filterDiskUsage($items)
         );
     }
 
