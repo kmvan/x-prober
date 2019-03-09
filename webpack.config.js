@@ -38,7 +38,9 @@ let plugins = [
     },
     DEBUG: __DEV__,
   }),
-  new CleanWebpackPlugin(['tmp']),
+  new CleanWebpackPlugin({
+    cleanOnceBeforeBuildPatterns: ['tmp'],
+  }),
   new ExtractTextPlugin({
     filename: getPath => {
       return getPath('[name].css')
