@@ -82,22 +82,38 @@ HTML;
             array(
                 'groupId' => $this->ID,
                 'label'   => I18nApi::_('My server'),
-                'content' => '<div id="inn-benchmark__container"></div>',
+                'content' => <<<HTML
+<div id="inn-benchmark__container"></div>
+HTML
             )
         );
 
         $items = \array_map(function (array $item) {
+            // set aff url
             if (isset($item['url'])) {
                 $item['label'] = <<<HTML
 <a href="{$item['url']}" target="_blank">{$item['label']}</a>
 HTML;
             }
 
+            // check prober url
+            $proberUrl = isset($item['proberUrl']) && $item['proberUrl'] ? $item['proberUrl'] : '';
+
             if (isset($item['content']) && \is_numeric($item['content'])) {
                 $item['content'] = \number_format((float) $item['content']);
 
+                // set date
                 if (isset($item['date'])) {
-                    $item['content'] .= " <small class=\"inn-group__content__small\">({$item['date']})</small>";
+                    $item['content'] .= <<<HTML
+<small class="inn-group__content__small"> ({$item['date']})</small>
+HTML;
+                }
+
+                // set x prober url
+                if ($proberUrl) {
+                    $item['content'] = <<<HTML
+<a href="{$item['proberUrl']}" target="_blank">👆 {$item['content']}</a>
+HTML;
                 }
             }
 
