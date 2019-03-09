@@ -67,7 +67,11 @@ class Compiler
             ]);
 
             if ( ! $this->isDev()) {
-                $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
+                if ($this->isDebug()) {
+                    $this->writeFile(\file_get_contents($this->COMPILE_FILE_PATH));
+                } else {
+                    $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
+                }
             }
 
             echo 'Compiled!';
@@ -99,19 +103,23 @@ class Compiler
         if ($this->isDev()) {
             $code = \file_get_contents($filePath);
         } else {
-            $code     = \php_strip_whitespace($filePath);
-            $lines    = \explode("\n", $code);
-            $lineCode = [];
+            if ($this->isDebug()) {
+                $code = \file_get_contents($filePath);
+            } else {
+                $code     =  \php_strip_whitespace($filePath);
+                $lines    = \explode("\n", $code);
+                $lineCode = [];
 
-            foreach ($lines as $line) {
-                $lineStr = \trim($line);
+                foreach ($lines as $line) {
+                    $lineStr = \trim($line);
 
-                if ($lineStr) {
-                    $lineCode[] = $lineStr;
+                    if ($lineStr) {
+                        $lineCode[] = $lineStr;
+                    }
                 }
-            }
 
-            $code = \implode("\n", $lineCode);
+                $code = \implode("\n", $lineCode);
+            }
         }
 
         $code = \trim($code, "\n");
@@ -126,6 +134,13 @@ class Compiler
         global $argv;
 
         return \in_array('dev', $argv);
+    }
+
+    private function isDebug(): bool
+    {
+        global $argv;
+
+        return \in_array('debug', $argv);
     }
 
     private function preDefine(array $code): string
