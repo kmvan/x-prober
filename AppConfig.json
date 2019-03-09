@@ -12,6 +12,18 @@
   "LATEST_MYSQL_CLIENT_STABLE_VERSION": "50012",
   "BENCHMARKS": [
     {
+      "label": "1Gbits/SSD/PHP7.3",
+      "url": "https://1gbits.com/my/aff.php?aff=12",
+      "date": "2019-03-09",
+      "proberUrl": "",
+      "detail": {
+        "hash": 809,
+        "intLoop": 953,
+        "floatLoop": 953,
+        "ioLoop": 771
+      }
+    },
+    {
       "label": "Monovm/PHP7.3",
       "url": "https://monovm.com/affiliate/ref/528",
       "date": "2019-02-20",
@@ -28,6 +40,7 @@
       "url": "https://www.vultr.com/?ref=7826363-4F",
       "date": "2019-03-01",
       "proberUrl": "https://x-prober-server-benchmark-vultr-los-angeles.inn-studio.com/",
+      "binUrl": "https://x-prober-server-benchmark-vultr-los-angeles.inn-studio.com/512m.bin",
       "detail": {
         "hash": 822,
         "intLoop": 958,
@@ -84,13 +97,14 @@
     {
       "label": "BandwagonHOST/KVM/PHP7.2",
       "url": "https://bandwagonhost.com/aff.php?aff=34116",
-      "proberUrl": "",
-      "date": "2019-02-25",
+      "proberUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/",
+      "binUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/512m.bin",
+      "date": "2019-03-09",
       "detail": {
-        "hash": 682,
-        "intLoop": 855,
-        "floatLoop": 797,
-        "ioLoop": -218
+        "hash": 679,
+        "intLoop": 882,
+        "floatLoop": 806,
+        "ioLoop": 72
       }
     }
   ]
