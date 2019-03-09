@@ -14,5 +14,5 @@ class ConfigApi
     public static $UPDATE_PHP_URL            = 'https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php';
     public static $AUTHOR_NAME               = 'INN STUDIO';
     public static $CHANGELOG_URL             = 'https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md';
-    public static $LATEST_PHP_STABLE_VERSION = '7.3.2';
+    public static $LATEST_PHP_STABLE_VERSION = '7.3.3';
 }
