@@ -42,7 +42,7 @@ class ServerBenchmark
 
     public function display()
     {
-        $lang = I18nApi::_('💡 Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
+        $lang = '<span class="inn-emoji">💡</span> ' . I18nApi::_('Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.');
 
         return <<<HTML
 <p class="inn-mod__description">{$lang}</p>
@@ -91,8 +91,9 @@ HTML
         $items = \array_map(function (array $item) {
             // set aff url
             if (isset($item['url'])) {
+                $lang = I18nApi::_('Go to service provider homepage');
                 $item['label'] = <<<HTML
-<a href="{$item['url']}" target="_blank">{$item['label']}</a>
+<a href="{$item['url']}" title="{$lang}" target="_blank">{$item['label']}</a>
 HTML;
             }
 
@@ -105,14 +106,23 @@ HTML;
                 // set date
                 if (isset($item['date'])) {
                     $item['content'] .= <<<HTML
-<small class="inn-group__content__small"> ({$item['date']})</small>
+&nbsp;<small class="inn-group__content__small">({$item['date']})</small>
 HTML;
                 }
 
                 // set x prober url
                 if ($proberUrl) {
-                    $item['content'] = <<<HTML
-<a href="{$item['proberUrl']}" target="_blank">👆 {$item['content']}</a>
+                    $lang = I18nApi::_('Go to prober page');
+                    $item['content'] .= <<<HTML
+&nbsp;<a href="{$item['proberUrl']}" title="{$lang}" class="inn-emoji" target="_blank">🔗</a>
+HTML;
+                }
+
+                // set bin url
+                if (isset($item['binUrl']) && $item['binUrl']) {
+                    $lang = I18nApi::_('Download file for network speed testing');
+                    $item['content'] .= <<<HTML
+&nbsp;<a href="{$item['binUrl']}" title="{$lang}" class="inn-emoji" target="_blank">⬇️</a>
 HTML;
                 }
             }
