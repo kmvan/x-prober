@@ -8,13 +8,7 @@ class HelperApi
 {
     public static function getClassNames(array $classNames)
     {
-        foreach ($classNames as $k => $v) {
-            if ( ! $v) {
-                unset($classNames[$k]);
-            }
-        }
-
-        return \implode(' ', \array_map('\\trim', \array_keys($classNames)));
+        return \implode(' ', \array_keys(\array_filter($classNames)));
     }
 
     public static function getGroupItemLists(array $items, $sorted = false)
