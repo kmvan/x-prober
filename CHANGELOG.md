@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.2.1 - 2019-03-13
+
+### Optimize
+
+- Optimize class name HTML
+
 ## 2.2.0 - 2019-03-09
 
 ### Add

@@ -69,7 +69,7 @@
     "@types/classnames": "^2.2.7",
     "@types/core-js": "^2.5.0",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "^11.11.0",
+    "@types/node": "^11.11.1",
     "@types/query-string": "^6.3.0",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
