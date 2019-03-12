@@ -6,6 +6,17 @@ use InnStudio\Prober\Components\I18n\I18nApi;
 
 class HelperApi
 {
+    public static function getClassNames(array $classNames)
+    {
+        foreach ($classNames as $k => $v) {
+            if ( ! $v) {
+                unset($classNames[$k]);
+            }
+        }
+
+        return \implode(' ', \array_map('\\trim', \array_keys($classNames)));
+    }
+
     public static function getGroupItemLists(array $items, $sorted = false)
     {
         if ( ! \array_filter($items)) {
@@ -109,12 +120,32 @@ HTML
         $idClassNameGroupLabel            = $item['id'] ? "inn-{$item['id']}-group__label" : '';
         $idClassNameGroupContent          = $item['id'] ? "inn-{$item['id']}-group__content" : '';
         $groupClassNameLabel              = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
+        $groupContainerClassNames         = self::getClassNames(array(
+            'inn-group__container'     => true,
+            $col                       => (bool) $col,
+            $idClassNameGroupContainer => (bool) $idClassNameGroupContainer,
+        ));
+        $groupClassNames = self::getClassNames(array(
+            'inn-group'       => true,
+            $idClassNameGroup => (bool) $idClassNameGroup,
+        ));
+        $groupLabelClassNames = self::getClassNames(array(
+            'inn-group__label'     => true,
+            $groupClassNameLabel   => (bool) $groupClassNameLabel,
+            $idClassNameGroupLabel => (bool) $idClassNameGroupLabel,
+            $hasTitleClassName     => (bool) $hasTitleClassName,
+        ));
+        $groupContentClassNames = self::getClassNames(array(
+            'inn-group__content'     => true,
+            $idClassNameGroupContent => (bool) $idClassNameGroupContent,
+            $hasTitleClassName       => (bool) $hasTitleClassName,
+        ));
 
         return <<<HTML
-<div class="inn-group__container {$col} {$idClassNameGroupContainer}">
-    <div class="inn-group {$idClassNameGroup}">
-        <div class="inn-group__label {$groupClassNameLabel} {$idClassNameGroupLabel} {$hasTitleClassName}" {$title}>{$item['label']}</div>
-        <div class="inn-group__content {$idClassNameGroupContent} {$hasTitleClassName}" {$title}>{$item['content']}</div>
+<div class="{$groupContainerClassNames}">
+    <div class="{$groupClassNames}">
+        <div class="{$groupLabelClassNames}" {$title}>{$item['label']}</div>
+        <div class="{$groupContentClassNames}" {$title}>{$item['content']}</div>
     </div>
 </div>
 HTML;
