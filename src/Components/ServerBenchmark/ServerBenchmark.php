@@ -54,7 +54,7 @@ HTML;
 
     private function getContent()
     {
-        $items = ServerBenchmarkMarks::$marks;
+        $items = \unserialize(ServerBenchmarkMarks::$marks);
 
         // order
         $sort = array();

@@ -44,7 +44,7 @@ class ServerBenchmarkGeneration
             'BENCHMARKS' => $marks,
         ] = $config;
 
-        $marks = \var_export($marks, true);
+        $marks = \serialize($marks);
 
         $configContent = <<<PHP
 <?php
@@ -56,7 +56,7 @@ namespace InnStudio\Prober\Components\ServerBenchmark;
 
 class ServerBenchmarkMarks
 {
-    public static \$marks = {$marks};
+    public static \$marks = '{$marks}';
 }
 
 PHP;
