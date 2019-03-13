@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.3.0 - 2019-03-15
+
+### Add
+
+- Add multi update sources
+- Add NGINX latest version tip
+
 ## 2.2.2 - 2019-03-14
 
 ### Fix
