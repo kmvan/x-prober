@@ -293,7 +293,7 @@ HTML;
     {
         $filePath = '/proc/uptime';
 
-        if ( ! @($filePath)) {
+        if ( ! @\is_file($filePath)) {
             return I18nApi::_('Unavailable');
         }
 
