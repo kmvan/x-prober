@@ -41,15 +41,17 @@ class ConfigGeneration
         }
 
         [
-            'APP_VERSION'               => $appVersion,
-            'APP_NAME'                  => $appName,
-            'APP_URL'                   => $appUrl,
-            'AUTHOR_URL'                => $authorUrl,
-            'UPDATE_PHP_URL'            => $updatePhpUrl,
-            'AUTHOR_NAME'               => $authorName,
-            'CHANGELOG_URL'             => $changelogUrl,
-            'LATEST_PHP_STABLE_VERSION' => $latestPhpStableVersion,
+            'APP_VERSION'                  => $appVersion,
+            'APP_NAME'                     => $appName,
+            'APP_URL'                      => $appUrl,
+            'AUTHOR_URL'                   => $authorUrl,
+            'UPDATE_PHP_URLS'              => $updatePhpUrls,
+            'AUTHOR_NAME'                  => $authorName,
+            'CHANGELOG_URL'                => $changelogUrl,
+            'LATEST_PHP_STABLE_VERSION'    => $latestPhpStableVersion,
         ] = $config;
+
+        $updatePhpUrls = \implode("', '", $updatePhpUrls);
 
         $configContent = <<<PHP
 <?php
@@ -65,7 +67,7 @@ class ConfigApi
     public static \$APP_NAME                  = '{$appName}';
     public static \$APP_URL                   = '{$appUrl}';
     public static \$AUTHOR_URL                = '{$authorUrl}';
-    public static \$UPDATE_PHP_URL            = '{$updatePhpUrl}';
+    public static \$UPDATE_PHP_URLS            = ['{$updatePhpUrls}'];
     public static \$AUTHOR_NAME               = '{$authorName}';
     public static \$CHANGELOG_URL             = '{$changelogUrl}';
     public static \$LATEST_PHP_STABLE_VERSION = '{$latestPhpStableVersion}';

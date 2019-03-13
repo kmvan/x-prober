@@ -54,16 +54,24 @@ class Updater
             ));
         }
 
-        $content = \file_get_contents(ConfigApi::$UPDATE_PHP_URL);
+        $code = '';
 
-        if ( ! $content) {
+        foreach (ConfigApi::$UPDATE_PHP_URLS as $url) {
+            $code = (string) \file_get_contents($url);
+
+            if ('' !== \trim($code)) {
+                break;
+            }
+        }
+
+        if ( ! $code) {
             HelperApi::dieJson(array(
                 'code' => -1,
                 'msg'  => I18nApi::_('Update file not found.'),
             ));
         }
 
-        if ((bool) \file_put_contents(__FILE__, $content)) {
+        if ((bool) \file_put_contents(__FILE__, $code)) {
             if (\function_exists('\\opcache_compile_file')) {
                 \opcache_compile_file(__FILE__) || \opcache_reset();
             }
