@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.2.2 - 2019-03-14
+
+### Fix
+
+- Fix error on Windows
+
 ## 2.2.1 - 2019-03-13
 
 ### Optimize
