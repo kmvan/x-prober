@@ -68,7 +68,7 @@ class ConfigApi
     public static \$APP_NAME                    = '{$appName}';
     public static \$APP_URL                     = '{$appUrl}';
     public static \$AUTHOR_URL                  = '{$authorUrl}';
-    public static \$UPDATE_PHP_URLS             = ['{$updatePhpUrls}'];
+    public static \$UPDATE_PHP_URLS             = array('{$updatePhpUrls}');
     public static \$AUTHOR_NAME                 = '{$authorName}';
     public static \$CHANGELOG_URL               = '{$changelogUrl}';
     public static \$LATEST_PHP_STABLE_VERSION   = '{$latestPhpStableVersion}';
