@@ -41,14 +41,15 @@ class ConfigGeneration
         }
 
         [
-            'APP_VERSION'                  => $appVersion,
-            'APP_NAME'                     => $appName,
-            'APP_URL'                      => $appUrl,
-            'AUTHOR_URL'                   => $authorUrl,
-            'UPDATE_PHP_URLS'              => $updatePhpUrls,
-            'AUTHOR_NAME'                  => $authorName,
-            'CHANGELOG_URL'                => $changelogUrl,
-            'LATEST_PHP_STABLE_VERSION'    => $latestPhpStableVersion,
+            'APP_VERSION'                 => $appVersion,
+            'APP_NAME'                    => $appName,
+            'APP_URL'                     => $appUrl,
+            'AUTHOR_URL'                  => $authorUrl,
+            'UPDATE_PHP_URLS'             => $updatePhpUrls,
+            'AUTHOR_NAME'                 => $authorName,
+            'CHANGELOG_URL'               => $changelogUrl,
+            'LATEST_PHP_STABLE_VERSION'   => $latestPhpStableVersion,
+            'LATEST_NGINX_STABLE_VERSION' => $latestNginxStableVersion,
         ] = $config;
 
         $updatePhpUrls = \implode("', '", $updatePhpUrls);
@@ -63,14 +64,15 @@ namespace InnStudio\Prober\Components\Config;
 
 class ConfigApi
 {
-    public static \$APP_VERSION               = '{$appVersion}';
-    public static \$APP_NAME                  = '{$appName}';
-    public static \$APP_URL                   = '{$appUrl}';
-    public static \$AUTHOR_URL                = '{$authorUrl}';
-    public static \$UPDATE_PHP_URLS            = ['{$updatePhpUrls}'];
-    public static \$AUTHOR_NAME               = '{$authorName}';
-    public static \$CHANGELOG_URL             = '{$changelogUrl}';
-    public static \$LATEST_PHP_STABLE_VERSION = '{$latestPhpStableVersion}';
+    public static \$APP_VERSION                 = '{$appVersion}';
+    public static \$APP_NAME                    = '{$appName}';
+    public static \$APP_URL                     = '{$appUrl}';
+    public static \$AUTHOR_URL                  = '{$authorUrl}';
+    public static \$UPDATE_PHP_URLS             = ['{$updatePhpUrls}'];
+    public static \$AUTHOR_NAME                 = '{$authorName}';
+    public static \$CHANGELOG_URL               = '{$changelogUrl}';
+    public static \$LATEST_PHP_STABLE_VERSION   = '{$latestPhpStableVersion}';
+    public static \$LATEST_NGINX_STABLE_VERSION = '{$latestNginxStableVersion}';
 }
 
 PHP;

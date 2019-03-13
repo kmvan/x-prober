@@ -2,6 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerInfo;
 
+use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
 use InnStudio\Prober\Components\I18n\I18nApi;
@@ -35,6 +36,34 @@ class ServerInfo
 HTML;
     }
 
+    private function getNginxTitle()
+    {
+        if (false === \stripos($this->getServerInfo('SERVER_SOFTWARE'), 'nginx/')) {
+            return '';
+        }
+
+        return \sprintf(I18nApi::_('X Prober builtin latest NGINX stable version: %s'), ConfigApi::$LATEST_NGINX_STABLE_VERSION);
+    }
+
+    private function getNginxContent()
+    {
+        $name = $this->getServerInfo('SERVER_SOFTWARE');
+
+        if (false === \stripos($name, 'nginx/')) {
+            return $name;
+        }
+
+        $version = \str_replace('nginx/', '', $name);
+
+        if ($version === $name) {
+            return $name;
+        }
+
+        $status = \version_compare($version, ConfigApi::$LATEST_NGINX_STABLE_VERSION, '<') ? I18nApi::_('(Old)') : I18nApi::_('(Up to date)');
+
+        return "{$name} {$status}";
+    }
+
     private function getContent()
     {
         $items = array(
@@ -58,7 +87,8 @@ HTML;
             ),
             array(
                 'label'   => I18nApi::_('Server software'),
-                'content' => $this->getServerInfo('SERVER_SOFTWARE'),
+                'title'   => $this->getNginxTitle(),
+                'content' => $this->getNginxContent(),
             ),
             array(
                 'label'   => I18nApi::_('PHP version'),
