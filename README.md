@@ -52,9 +52,9 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 ## Help and translate more languages
 
 - **Fork** project.
+- Fetch your project.
 - Use [Poedit](https://poedit.net/) to create your language from `./languages/language.pot` language template file and translates it.
 - Save your language file _(like: `en_US.po`)_ into `./languages`.
-- Add your name and URL to contributors list.
 - Pull Request and thank you. 😘
 
 ## Note for participate in contribution
@@ -63,20 +63,19 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 
 ## Contributors
 
-- Km.Van https://inn-studio.com
-- Jack Cherng https://github.com/jfcherng
-
-<a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
+[![Contributors](https://opencollective.com/x-prober/contributors.svg?width=890&amp;button=false)](https://github.com/kmvan/x-prober/graphs/contributors)
 
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/x-prober#backer)]
 
-<a href="https://opencollective.com/x-prober#backers" target="_blank"><img src="https://opencollective.com/x-prober/backers.svg?width=890"></a>
+[![Contributors](https://opencollective.com/x-prober/backers.svg?width=890)](https://opencollective.com/x-prober#backers)
 
 ## Sponsors
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
+
+- Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - $50
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
