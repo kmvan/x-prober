@@ -2,6 +2,15 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.3.1 - 2019-03-16
+
+### Optimize
+
+- Change fork me image to HTML text
+- Remove Microsoft YaHei/YaHei UI fonts
+- Adjust vscode settings profile
+- Adjust php-cs-fixer config
+
 ## 2.3.0 - 2019-03-15
 
 ### Add
