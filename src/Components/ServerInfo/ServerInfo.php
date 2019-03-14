@@ -116,9 +116,9 @@ HTML;
                 'col'     => '1-1',
                 'label'   => I18nApi::_('Disk usage'),
                 'content' => HelperApi::getDiskTotalSpace() ? HelperApi::getProgressTpl(array(
-                    'id'      => 'diskUsage',
-                    'usage'   => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
-                    'total'   => HelperApi::getDiskTotalSpace(),
+                    'id'    => 'diskUsage',
+                    'usage' => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
+                    'total' => HelperApi::getDiskTotalSpace(),
                 )) : I18nApi::_('Unavailable'),
             ),
         );

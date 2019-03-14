@@ -76,9 +76,9 @@ HTML;
             'label'   => I18nApi::_('Memory real usage'),
             'col'     => '1-1',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'memRealUsage',
-                'usage'   => HelperApi::getMemoryUsage('MemRealUsage'),
-                'total'   => HelperApi::getMemoryUsage('MemTotal'),
+                'id'    => 'memRealUsage',
+                'usage' => HelperApi::getMemoryUsage('MemRealUsage'),
+                'total' => HelperApi::getMemoryUsage('MemTotal'),
             )),
         ));
     }
@@ -95,9 +95,9 @@ HTML;
             'label'   => I18nApi::_('SWAP usage'),
             'col'     => '1-1',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'swapUsage',
-                'usage'   => HelperApi::getMemoryUsage('SwapUsage'),
-                'total'   => $total,
+                'id'    => 'swapUsage',
+                'usage' => HelperApi::getMemoryUsage('SwapUsage'),
+                'total' => $total,
             )),
         ));
     }
@@ -114,9 +114,9 @@ HTML;
             'label'   => I18nApi::_('SWAP cached'),
             'col'     => '1-1',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'swapCached',
-                'usage'   => HelperApi::getMemoryUsage('SwapCached'),
-                'total'   => HelperApi::getMemoryUsage('SwapUsage'),
+                'id'    => 'swapCached',
+                'usage' => HelperApi::getMemoryUsage('SwapCached'),
+                'total' => HelperApi::getMemoryUsage('SwapUsage'),
             )),
         ));
     }
@@ -127,9 +127,9 @@ HTML;
             'label'   => I18nApi::_('Memory cached'),
             'col'     => '1-2',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'memCached',
-                'usage'   => HelperApi::getMemoryUsage('Cached'),
-                'total'   => HelperApi::getMemoryUsage('MemUsage'),
+                'id'    => 'memCached',
+                'usage' => HelperApi::getMemoryUsage('Cached'),
+                'total' => HelperApi::getMemoryUsage('MemUsage'),
             )),
         ));
     }
@@ -140,9 +140,9 @@ HTML;
             'label'   => I18nApi::_('Memory buffers'),
             'col'     => '1-2',
             'content' => HelperApi::getProgressTpl(array(
-                'id'      => 'memBuffers',
-                'usage'   => HelperApi::getMemoryUsage('Buffers'),
-                'total'   => HelperApi::getMemoryUsage('MemUsage'),
+                'id'    => 'memBuffers',
+                'usage' => HelperApi::getMemoryUsage('Buffers'),
+                'total' => HelperApi::getMemoryUsage('MemUsage'),
             )),
         ));
     }

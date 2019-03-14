@@ -19,7 +19,7 @@ class BenchmarkApi
     public function setExpired()
     {
         return (bool) $this->setRecorder(array(
-            'expired'   => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
+            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
         ));
     }
 

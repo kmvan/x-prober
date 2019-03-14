@@ -109,12 +109,12 @@ HTML
             $col = "inn-g_lg-{$col}";
         }
 
-        $idClassNameGroup                 = $item['id'] ? "inn-{$item['id']}-group" : '';
-        $idClassNameGroupContainer        = $item['id'] ? "inn-{$item['id']}-group__container" : '';
-        $idClassNameGroupLabel            = $item['id'] ? "inn-{$item['id']}-group__label" : '';
-        $idClassNameGroupContent          = $item['id'] ? "inn-{$item['id']}-group__content" : '';
-        $groupClassNameLabel              = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
-        $groupContainerClassNames         = self::getClassNames(array(
+        $idClassNameGroup          = $item['id'] ? "inn-{$item['id']}-group" : '';
+        $idClassNameGroupContainer = $item['id'] ? "inn-{$item['id']}-group__container" : '';
+        $idClassNameGroupLabel     = $item['id'] ? "inn-{$item['id']}-group__label" : '';
+        $idClassNameGroupContent   = $item['id'] ? "inn-{$item['id']}-group__content" : '';
+        $groupClassNameLabel       = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
+        $groupContainerClassNames  = self::getClassNames(array(
             'inn-group__container'     => true,
             $col                       => (bool) $col,
             $idClassNameGroupContainer => (bool) $idClassNameGroupContainer,

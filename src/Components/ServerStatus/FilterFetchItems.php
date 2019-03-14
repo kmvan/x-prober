@@ -97,7 +97,7 @@ class FilterFetchItems extends ServerStatusApi
         $total = HelperApi::getDiskTotalSpace();
 
         $items['diskUsage'] = array(
-            'usage' => $total ? $total -  HelperApi::getDiskFreeSpace() : 0,
+            'usage' => $total ? $total - HelperApi::getDiskFreeSpace() : 0,
             'total' => $total,
         );
 

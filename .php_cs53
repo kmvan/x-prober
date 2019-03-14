@@ -3,18 +3,23 @@
 $config = PhpCsFixer\Config::create()
     ->setIndent('    ')
     ->setLineEnding("\n")
-    ->setCacheFile(__DIR__ . '/.php_cs53.cache')
+    ->setCacheFile(__DIR__ . '/tmp/.php_cs53.cache')
     ->setRiskyAllowed(true)
     ->setRules([
-        '@PHP70Migration'                           => false,
-        '@PHP71Migration'                           => false,
-        '@PSR2'                                     => true,
-        '@Symfony'                                  => true,
-        '@Symfony:risky'                            => true,
-        'align_multiline_comment'                   => true,
-        'array_indentation'                         => true,
-        'array_syntax'                              => ['syntax' => 'long'],
-        'binary_operator_spaces'                    => ['default' => 'align_single_space'],
+        '@PHP70Migration'            => false,
+        '@PHP71Migration'            => false,
+        '@PSR2'                      => true,
+        '@Symfony'                   => true,
+        '@Symfony:risky'             => true,
+        'align_multiline_comment'    => true,
+        'array_indentation'          => true,
+        'cast_spaces'                => true,
+        'declare_equal_normalize'    => ['space' => 'single'],
+        'blank_line_after_namespace' => true,
+        'array_syntax'               => ['syntax' => 'long'],
+        'binary_operator_spaces'     => [
+            'default' => 'align_single_space_minimal',
+        ],
         'combine_consecutive_issets'                => true,
         'combine_consecutive_unsets'                => true,
         'combine_nested_dirname'                    => true,
@@ -50,27 +55,15 @@ $config = PhpCsFixer\Config::create()
         'pow_to_exponentiation'                     => false,
         'random_api_migration'                      => true,
         'single_line_comment_style'                 => true,
-        'string_line_ending'                        => true,
         'strict_comparison'                         => false,
         'strict_param'                              => false,
-        'yoda_style'                                => true,
-        'ternary_to_null_coalescing'                => false,
-        'pre_increment'                             => true,
-        'single_blank_line_at_eof'                  => true,
-        'single_blank_line_before_namespace'        => true,
-        'single_class_element_per_statement'        => true,
-        'single_import_per_statement'               => true,
-        'single_line_after_imports'                 => true,
-        'single_quote'                              => true,
-        'space_after_semicolon'                     => true,
-        'standardize_not_equals'                    => true,
-        'switch_case_semicolon_to_colon'            => true,
-        'switch_case_space'                         => true,
+        'string_line_ending'                        => true,
         'ternary_operator_spaces'                   => true,
-        'trailing_comma_in_multiline_array'         => true,
+        'ternary_to_null_coalescing'                => false,
         'trim_array_spaces'                         => true,
         'unary_operator_spaces'                     => true,
         'whitespace_after_comma_in_array'           => true,
+        'yoda_style'                                => true,
     ])
     ->setFinder(
         PhpCsFixer\Finder::create()
