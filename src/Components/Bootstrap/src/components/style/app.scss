@@ -11,6 +11,7 @@
   padding-top: $gridGutter * 3;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  box-shadow: inset 0 0 5px rgba(#000, 0.3);
 
   @include mq(lg) {
     &::-webkit-scrollbar-track {
