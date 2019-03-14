@@ -11,6 +11,12 @@
   ],
   "minimum-stability": "stable",
   "prefer-stable": true,
+  "archive": {
+    "exclude": [
+      "/dist",
+      "node_modules"
+    ]
+  },
   "require": {
     "friendsofphp/php-cs-fixer": "^2.13",
     "gettext/gettext": "dev-master"
