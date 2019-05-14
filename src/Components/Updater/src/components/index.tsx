@@ -8,7 +8,6 @@ import fetchServer from '~components/Helper/src/components/fetch-server'
 @observer
 class Updater extends Component {
   public container = document.getElementById('inn-title') as HTMLElement
-
   public store = store
 
   public componentDidMount() {
