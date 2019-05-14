@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-03-09 14:49+0800\n"
+"POT-Creation-Date: 2019-05-14 23:12+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -88,39 +88,57 @@ msgstr ""
 msgid "Author %s"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:179 Components/Helper/HelperApi.php:247
-#: Components/Helper/HelperApi.php:272 Components/ServerInfo/ServerInfo.php:92
+#: Components/Footer/Footer.php:55
+msgid "STAR 🌟 ME"
+msgstr ""
+
+#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
+#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
 msgid "Unavailable"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:259
+#: Components/Helper/HelperApi.php:287
 #, php-format
 msgid "%s cache"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:286
+#: Components/Helper/HelperApi.php:314
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:21
+#: Components/MyInfo/MyInfo.php:24
+#, php-format
+msgid "Min/Avg/Max = %s"
+msgstr ""
+
+#: Components/MyInfo/MyInfo.php:25
+#, php-format
+msgid "Times: %d"
+msgstr ""
+
+#: Components/MyInfo/MyInfo.php:35
 msgid "My information"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:22
+#: Components/MyInfo/MyInfo.php:36
 msgid "Mine"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:33
+#: Components/MyInfo/MyInfo.php:47
 msgid "My IP"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:38
+#: Components/MyInfo/MyInfo.php:52
 msgid "My browser UA"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:43
+#: Components/MyInfo/MyInfo.php:57
 msgid "My browser language"
+msgstr ""
+
+#: Components/MyInfo/MyInfo.php:62
+msgid "Ping server"
 msgstr ""
 
 #: Components/NetworkStats/NetworkStats.php:21
@@ -177,11 +195,11 @@ msgstr ""
 msgid "X Prober builtin latest PHP stable version: %s"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:54
+#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
 msgid "(Old)"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:54
+#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
 msgid "(Up to date)"
 msgstr ""
 
@@ -280,51 +298,56 @@ msgstr ""
 msgid "Download file for network speed testing"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:21
+#: Components/ServerInfo/ServerInfo.php:22
 msgid "Server information"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:22
+#: Components/ServerInfo/ServerInfo.php:23
 msgid "Info"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:42
+#: Components/ServerInfo/ServerInfo.php:45
+#, php-format
+msgid "X Prober builtin latest NGINX stable version: %s"
+msgstr ""
+
+#: Components/ServerInfo/ServerInfo.php:71
 msgid "Server name"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:47
+#: Components/ServerInfo/ServerInfo.php:76
 msgid "Server time"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:52
+#: Components/ServerInfo/ServerInfo.php:81
 msgid "Server uptime"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:56
+#: Components/ServerInfo/ServerInfo.php:85
 msgid "Server IP"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:60
+#: Components/ServerInfo/ServerInfo.php:89
 msgid "Server software"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:64
+#: Components/ServerInfo/ServerInfo.php:94
 msgid "PHP version"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:69
+#: Components/ServerInfo/ServerInfo.php:99
 msgid "CPU model"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:75
+#: Components/ServerInfo/ServerInfo.php:105
 msgid "Server OS"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:82
+#: Components/ServerInfo/ServerInfo.php:112
 msgid "Script path"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:87
+#: Components/ServerInfo/ServerInfo.php:117
 msgid "Disk usage"
 msgstr ""
 
@@ -381,14 +404,14 @@ msgstr ""
 msgid "File can not update."
 msgstr ""
 
-#: Components/Updater/Updater.php:62
+#: Components/Updater/Updater.php:70
 msgid "Update file not found."
 msgstr ""
 
-#: Components/Updater/Updater.php:73
+#: Components/Updater/Updater.php:81
 msgid "Update success..."
 msgstr ""
 
-#: Components/Updater/Updater.php:79
+#: Components/Updater/Updater.php:87
 msgid "Update error."
 msgstr ""

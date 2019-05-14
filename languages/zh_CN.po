@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-09 14:44+0800\n"
-"PO-Revision-Date: 2019-03-09 14:44+0800\n"
+"POT-Creation-Date: 2019-05-14 22:50+0800\n"
+"PO-Revision-Date: 2019-05-14 22:50+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -21,8 +21,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: ../dist\n"
 
 #: Components/Benchmark/Benchmark.php:32
-#, fuzzy, php-format
-#| msgid "Please wait %d seconds"
+#, php-format
 msgid "Please wait %ds"
 msgstr "请等待 %d 秒"
 
@@ -92,40 +91,58 @@ msgstr "该页面由 %s 生成"
 msgid "Author %s"
 msgstr "作者为 %s"
 
-#: Components/Helper/HelperApi.php:179 Components/Helper/HelperApi.php:247
-#: Components/Helper/HelperApi.php:272 Components/ServerInfo/ServerInfo.php:92
+#: Components/Footer/Footer.php:55
+msgid "STAR 🌟 ME"
+msgstr ""
+
+#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
+#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
 msgid "Unavailable"
 msgstr "不可用"
 
-#: Components/Helper/HelperApi.php:259
+#: Components/Helper/HelperApi.php:287
 #, php-format
 msgid "%s cache"
 msgstr "%s 缓存"
 
-#: Components/Helper/HelperApi.php:286
+#: Components/Helper/HelperApi.php:314
 #, php-format
 msgid "%1$dd %2$dh %3$dm %4$ds"
 msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
 
-#: Components/MyInfo/MyInfo.php:21
+#: Components/MyInfo/MyInfo.php:24
+#, php-format
+msgid "Min/Avg/Max = %s"
+msgstr "最小/平均/最大 = %s"
+
+#: Components/MyInfo/MyInfo.php:25
+#, php-format
+msgid "Times: %d"
+msgstr "次数：%d"
+
+#: Components/MyInfo/MyInfo.php:35
 msgid "My information"
 msgstr "我的信息"
 
-#: Components/MyInfo/MyInfo.php:22
+#: Components/MyInfo/MyInfo.php:36
 msgid "Mine"
 msgstr "我的"
 
-#: Components/MyInfo/MyInfo.php:33
+#: Components/MyInfo/MyInfo.php:47
 msgid "My IP"
 msgstr "我的 IP"
 
-#: Components/MyInfo/MyInfo.php:38
+#: Components/MyInfo/MyInfo.php:52
 msgid "My browser UA"
 msgstr "我的浏览器 UA"
 
-#: Components/MyInfo/MyInfo.php:43
+#: Components/MyInfo/MyInfo.php:57
 msgid "My browser language"
 msgstr "我的浏览器语言"
+
+#: Components/MyInfo/MyInfo.php:62
+msgid "Ping server"
+msgstr "Ping 服务器"
 
 #: Components/NetworkStats/NetworkStats.php:21
 msgid "Network stats"
@@ -181,11 +198,11 @@ msgstr "版本"
 msgid "X Prober builtin latest PHP stable version: %s"
 msgstr "X 探针内置最新 PHP 正式版版本：%s"
 
-#: Components/PhpInfo/PhpInfo.php:54
+#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
 msgid "(Old)"
 msgstr "(旧)"
 
-#: Components/PhpInfo/PhpInfo.php:54
+#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
 msgid "(Up to date)"
 msgstr "(最新)"
 
@@ -286,51 +303,56 @@ msgstr "查看探针页面"
 msgid "Download file for network speed testing"
 msgstr "下载文件以测试网速"
 
-#: Components/ServerInfo/ServerInfo.php:21
+#: Components/ServerInfo/ServerInfo.php:22
 msgid "Server information"
 msgstr "服务器信息"
 
-#: Components/ServerInfo/ServerInfo.php:22
+#: Components/ServerInfo/ServerInfo.php:23
 msgid "Info"
 msgstr "信息"
 
-#: Components/ServerInfo/ServerInfo.php:42
+#: Components/ServerInfo/ServerInfo.php:45
+#, php-format
+msgid "X Prober builtin latest NGINX stable version: %s"
+msgstr "X 探针内置最新 NGINX 正式版版本：%s"
+
+#: Components/ServerInfo/ServerInfo.php:71
 msgid "Server name"
 msgstr "服务器名"
 
-#: Components/ServerInfo/ServerInfo.php:47
+#: Components/ServerInfo/ServerInfo.php:76
 msgid "Server time"
 msgstr "服务器时间"
 
-#: Components/ServerInfo/ServerInfo.php:52
+#: Components/ServerInfo/ServerInfo.php:81
 msgid "Server uptime"
 msgstr "持续运作时间"
 
-#: Components/ServerInfo/ServerInfo.php:56
+#: Components/ServerInfo/ServerInfo.php:85
 msgid "Server IP"
 msgstr "服务器 IP"
 
-#: Components/ServerInfo/ServerInfo.php:60
+#: Components/ServerInfo/ServerInfo.php:89
 msgid "Server software"
 msgstr "服务器软件"
 
-#: Components/ServerInfo/ServerInfo.php:64
+#: Components/ServerInfo/ServerInfo.php:94
 msgid "PHP version"
 msgstr "PHP 版本"
 
-#: Components/ServerInfo/ServerInfo.php:69
+#: Components/ServerInfo/ServerInfo.php:99
 msgid "CPU model"
 msgstr "CPU 型号"
 
-#: Components/ServerInfo/ServerInfo.php:75
+#: Components/ServerInfo/ServerInfo.php:105
 msgid "Server OS"
 msgstr "服务器系统"
 
-#: Components/ServerInfo/ServerInfo.php:82
+#: Components/ServerInfo/ServerInfo.php:112
 msgid "Script path"
 msgstr "脚本路径"
 
-#: Components/ServerInfo/ServerInfo.php:87
+#: Components/ServerInfo/ServerInfo.php:117
 msgid "Disk usage"
 msgstr "磁盘使用量"
 
@@ -387,15 +409,15 @@ msgstr "更新出错"
 msgid "File can not update."
 msgstr "无法更新文件。"
 
-#: Components/Updater/Updater.php:62
+#: Components/Updater/Updater.php:70
 msgid "Update file not found."
 msgstr "未找到更新文件。"
 
-#: Components/Updater/Updater.php:73
+#: Components/Updater/Updater.php:81
 msgid "Update success..."
 msgstr "更新成功……"
 
-#: Components/Updater/Updater.php:79
+#: Components/Updater/Updater.php:87
 msgid "Update error."
 msgstr "更新出错。"
 

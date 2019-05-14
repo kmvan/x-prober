@@ -13,6 +13,20 @@ class MyInfo
     public function __construct()
     {
         EventsApi::on('mods', array($this, 'filter'), 900);
+        EventsApi::on('conf', array($this, 'conf'));
+        new FilterPing();
+    }
+
+    public function conf(array $conf)
+    {
+        $conf[$this->ID] = array(
+            'lang' => array(
+                'minAvgMax' => I18nApi::_('Min/Avg/Max = %s'),
+                'times'     => I18nApi::_('Times: %d'),
+            ),
+        );
+
+        return $conf;
     }
 
     public function filter(array $mods)
@@ -43,6 +57,11 @@ class MyInfo
                 'label'   => I18nApi::_('My browser language'),
                 'col'     => null,
                 'content' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '',
+            ),
+            array(
+                'label'   => I18nApi::_('Ping server'),
+                'col'     => null,
+                'content' => '<div class="inn-ping__container"></div>',
             ),
         );
 

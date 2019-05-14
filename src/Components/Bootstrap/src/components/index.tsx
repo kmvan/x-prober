@@ -14,6 +14,7 @@ import NetworkStats from '~components/NetworkStats/src/components'
 import ServerInfo from '~components/ServerInfo/src/components'
 import ServerBenchmark from '~components/ServerBenchmark/src/components'
 import Updater from '~components/Updater/src/components'
+import MyInfo from '~components/MyInfo/src/components'
 
 const App = () => (
   <>
@@ -23,12 +24,13 @@ const App = () => (
     <ServerInfo />
     <ServerBenchmark />
     <Updater />
+    <MyInfo />
   </>
 )
 
 ready(() => {
-  const container = document.createElement('div')
-  document.body.appendChild(container)
+  const c = document.createElement('div')
+  document.body.appendChild(c)
 
-  render(<App />, container)
+  render(<App />, c)
 })

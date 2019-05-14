@@ -1,0 +1,117 @@
+@import "~components/Style/src/components/style/config";
+@import "~components/Style/src/components/style/media-query";
+
+.inn-ping {
+  @keyframes flash {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: scale3d(0.7, 0.7, 1);
+    }
+
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  &__results {
+    display: flex;
+    align-items: center;
+    background: $colorDark;
+    color: $colorTextLight;
+    border-radius: 0 0 $gridGutter $gridGutter;
+    padding: ($gridGutter / 2) $gridGutter;
+    border-top: 1px dashed rgba(#fff, 0.1);
+    flex-wrap: wrap;
+
+    &__times {
+      flex: 0 0 100%;
+
+      @include mq(lg) {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: '👆';
+      margin-right: $gridGutter / 2;
+    }
+
+    &.is-active::before {
+      animation: spin 0.5s linear infinite;
+      content: '❤️';
+    }
+  }
+
+  &__item {
+    flex: 0 0 100%;
+
+    @include mq(sm) {
+      flex: 0 0 percentage(1 / 2);
+    }
+
+
+    @include mq(md) {
+      flex: 0 0 percentage(1 / 3);
+    }
+
+
+    @include mq(lg) {
+      flex: 0 0 percentage(1 / 4);
+    }
+
+
+    @include mq(xl) {
+      flex: 0 0 percentage(1 / 5);
+    }
+
+
+    &:last-child {
+      &:after {
+        content: '_';
+        color: $colorTextLight;
+        font-weight: bold;
+        animation: flash .2s linear infinite;
+      }
+    }
+
+    &__no {
+      opacity: 0.5;
+    }
+
+    &__line {
+      opacity: 0.3;
+    }
+
+    &__time {
+      font-weight: bold;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      background: $colorDark;
+      color: $colorTextLight;
+      padding: ($gridGutter / 2) $gridGutter;
+      margin: ($gridGutter / 2) 0 0;
+      max-height: 8rem;
+      overflow-y: auto;
+      border-radius: $gridGutter $gridGutter 0 0;
+      box-shadow: inset 0 10px 10px rgba(#000, 0.1);
+    }
+  }
+}
