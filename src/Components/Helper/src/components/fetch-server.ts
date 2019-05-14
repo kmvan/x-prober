@@ -1,22 +1,22 @@
 import queryString from 'query-string'
 
-interface Iheader {
+interface IHeader {
   body?: any
   method?: string
   [key: string]: any
 }
 
-interface IurlArgs {
+interface IUrlArgs {
   [key: string]: string
 }
 
-interface Iresults {
+interface IResults {
   code?: number
   msg?: string
   data?: any
 }
 
-export default (urlArgs: IurlArgs, header: Iheader = {}) => {
+export default (urlArgs: IUrlArgs, header: IHeader = {}) => {
   return new Promise(async (resolve, reject) => {
     if (header.body) {
       if (!header.method) {
@@ -32,7 +32,7 @@ export default (urlArgs: IurlArgs, header: Iheader = {}) => {
       ...header,
     }
 
-    let res: Iresults = {}
+    let res: IResults = {}
 
     try {
       const resource = await fetch('?' + queryString.stringify(urlArgs), header)
@@ -40,5 +40,5 @@ export default (urlArgs: IurlArgs, header: Iheader = {}) => {
     } finally {
       resolve(res)
     }
-  }) as Iresults | undefined
+  }) as IResults | undefined
 }
