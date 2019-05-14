@@ -1,10 +1,10 @@
-[antergos]: https://antergos.com/distro-logos/logo-square26x26.png "antergos"
-[arch]: https://antergos.com/distro-logos/archlogo26x26.png "arch"
-[fedora]: https://antergos.com/distro-logos/fedora-logo.png "fedora"
-[openSUSE]: https://antergos.com/distro-logos/Geeko-button-bling7.png "openSUSE"
-[ubuntu]: https://antergos.com/distro-logos/ubuntu_orange_hex.png "ubuntu"
-[debian]: https://antergos.com/distro-logos/openlogo-nd-25.png "debian"
-[windows]: http://www.likoton.pl/likoton-content/uploads/2013/07/Przycisk-Windows.png "windows"
+[antergos]: https://antergos.com/distro-logos/logo-square26x26.png 'antergos'
+[arch]: https://antergos.com/distro-logos/archlogo26x26.png 'arch'
+[fedora]: https://antergos.com/distro-logos/fedora-logo.png 'fedora'
+[opensuse]: https://antergos.com/distro-logos/Geeko-button-bling7.png 'openSUSE'
+[ubuntu]: https://antergos.com/distro-logos/ubuntu_orange_hex.png 'ubuntu'
+[debian]: https://antergos.com/distro-logos/openlogo-nd-25.png 'debian'
+[windows]: http://www.likoton.pl/likoton-content/uploads/2013/07/Przycisk-Windows.png 'windows'
 
 [![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)
 
@@ -72,7 +72,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
 
 ## Contributors
 
-[![Contributors](https://opencollective.com/x-prober/contributors.svg?width=890&amp;button=false)](https://github.com/kmvan/x-prober/graphs/contributors)
+[![Contributors](https://opencollective.com/x-prober/contributors.svg?width=890&button=false)](https://github.com/kmvan/x-prober/graphs/contributors)
 
 ## Backers
 
@@ -84,7 +84,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
 
-- Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - $50
+- Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - \$50
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
@@ -105,7 +105,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 - [ ] Add Email send testing.
 - [ ] Add network speed testing.
 - [x] Add more servers benchmark.
-- [ ] Add PING feature.
+- [x] Add PING feature.
 
 ## Keywords
 
