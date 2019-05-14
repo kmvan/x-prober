@@ -145,7 +145,7 @@ HTML
 HTML;
     }
 
-    public static function dieJson($data)
+    public static function dieJson(array $data)
     {
         \header('Content-Type: application/json');
         \header('Expires: 0');
@@ -153,7 +153,10 @@ HTML;
         \header('Cache-Control: no-store, no-cache, must-revalidate');
         \header('Pragma: no-cache');
 
-        die(\json_encode($data));
+        die(\json_encode(\array_merge(array(
+            'code' => 0,
+            'data' => null,
+        ), $data)));
     }
 
     public static function isAction($action)
