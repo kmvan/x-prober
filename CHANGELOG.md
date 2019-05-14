@@ -2,6 +2,18 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.4.0 - 2019-05-14
+
+### Add
+
+- Add Ping Server feature
+
+### Update
+
+- Update PHP version to 7.3.5
+- Update NGINX version to 1.16.0
+- Update SQLite version to 3.28.0
+
 ## 2.3.2 - 2019-04-07
 
 ### Update
