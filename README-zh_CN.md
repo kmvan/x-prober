@@ -1,4 +1,4 @@
-[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)
+[![X Prober preview](preview.png)](preview.png)
 
 # 😎 X 探针、刘海探针
 

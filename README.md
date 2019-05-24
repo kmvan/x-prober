@@ -6,7 +6,7 @@
 [debian]: https://antergos.com/distro-logos/openlogo-nd-25.png 'debian'
 [windows]: http://www.likoton.pl/likoton-content/uploads/2013/07/Przycisk-Windows.png 'windows'
 
-[![V-Bed by INN STUDIO](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)](https://wx3.sinaimg.cn/large/686ee05dly1g0r88psr5yj21140es770.jpg)
+[![X Prober preview](preview.png)](preview.png)
 
 - [Simplified Chinese | 简体中文](README-zh_CN.md)
 - [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
