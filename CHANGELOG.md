@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.4.1 - 2019-05-24
+
+### Optimize
+
+- Optimize `position:fixed` performance
+
 ## 2.4.0 - 2019-05-14
 
 ### Add
