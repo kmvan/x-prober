@@ -63,15 +63,15 @@ HTML;
     <script src="{$scriptUrl}" async></script>
 </head>
 <body>
+<h1 class="inn-title" id="inn-title">
+    <a class="inn-title__link" href="{$appUrl}" target="_blank">{$appName} v{$version}</a>
+</h1>
 <div class="inn-app">
     <div class="inn-container">
-        <h1 class="inn-title" id="inn-title">
-            <a class="inn-title__link" href="{$appUrl}" target="_blank">{$appName} v{$version}</a>
-        </h1>
         {$this->getFieldsets()}
     </div>
-    {$footer}
 </div>
+{$footer}
 {$footerOutline}
 </body>
 </html>
