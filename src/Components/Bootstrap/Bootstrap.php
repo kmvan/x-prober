@@ -70,8 +70,8 @@ HTML;
     <div class="inn-container">
         {$this->getFieldsets()}
     </div>
+    {$footer}
 </div>
-{$footer}
 {$footerOutline}
 </body>
 </html>

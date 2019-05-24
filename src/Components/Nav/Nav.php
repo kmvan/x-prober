@@ -10,7 +10,7 @@ class Nav
 
     public function __construct()
     {
-        EventsApi::on('footer', array($this, 'filter'));
+        EventsApi::on('footerOutline', array($this, 'filter'));
     }
 
     public function filter($content)
