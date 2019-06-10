@@ -12,7 +12,7 @@ const node_modules = path.resolve(__dirname, 'node_modules')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const glob = require('glob')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ShakePlugin = require('webpack-common-shake')
 
 console.log(`Run in ${process.env.WEBPACK_ENV}`)
