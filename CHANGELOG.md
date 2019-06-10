@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.4.2 - 2019-06-10
+
+### Update
+
+- Update PHP lastest version 7.3.6
+- Update SpartanHost benchmarks
+
+### Fix
+
+- Fix `tar` package
+
 ## 2.4.1 - 2019-05-24
 
 ### Optimize
