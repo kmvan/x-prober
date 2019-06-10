@@ -9,21 +9,21 @@
   ],
   "AUTHOR_NAME": "INN STUDIO",
   "CHANGELOG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md",
-  "LATEST_PHP_STABLE_VERSION": "7.3.5",
+  "LATEST_PHP_STABLE_VERSION": "7.3.6",
   "LATEST_NGINX_STABLE_VERSION": "1.16.0",
   "LATEST_SQLITE3_STABLE_VERSION": "3.28.0",
   "LATEST_MYSQL_CLIENT_STABLE_VERSION": "50012",
   "BENCHMARKS": [
     {
-      "label": "1Gbits/SSD/PHP7.3",
-      "url": "https://1gbits.com/my/aff.php?aff=12",
+      "label": "SpartanHost/HDD/PHP7.3",
+      "url": "https://billing.spartanhost.net/aff.php?aff=801",
       "date": "2019-03-09",
-      "proberUrl": "",
+      "proberUrl": "https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com",
       "detail": {
-        "hash": 809,
-        "intLoop": 953,
-        "floatLoop": 953,
-        "ioLoop": 771
+        "hash": 830,
+        "intLoop": 958,
+        "floatLoop": 957,
+        "ioLoop": 582
       }
     },
     {
@@ -62,12 +62,6 @@
       "url": "https://www.vpsserver.com/?affcode=32d56f2dd1b6",
       "proberUrl": "",
       "content": 3125
-    },
-    {
-      "label": "SpartanHost/KVM/PHP7.2",
-      "url": "https://billing.spartanhost.net/aff.php?aff=801",
-      "proberUrl": "",
-      "content": 3174
     },
     {
       "label": "Aliyun/ECS/PHP7.2",
