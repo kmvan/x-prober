@@ -55,7 +55,7 @@ HTML;
             $usageHuman = 0;
             $overview   = '0 / 0';
         } else {
-            $percent    = \round($args['usage'] / $args['total'], 2) * 100;
+            $percent    = $args['total'] ? \round($args['usage'] / $args['total'], 2) * 100 : 0;
             $totalHuman = self::formatBytes($args['total']);
             $usageHuman = self::formatBytes($args['usage']);
             $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
