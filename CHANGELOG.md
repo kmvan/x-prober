@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.4.3 - 2019-07-06
+
+### Fix
+
+- Fix #31 division by zero error
+
+### Update
+
+- Update PHP lastest version 7.3.7
+
 ## 2.4.2 - 2019-06-10
 
 ### Update
