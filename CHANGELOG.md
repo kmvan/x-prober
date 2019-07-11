@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 2.4.4 - 2019-07-11
+
+### Fix
+
+- Fix lodash security vulnerabilities
+
 ## 2.4.3 - 2019-07-06
 
 ### Fix
