@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerStatus;
 
-class ServerStatusApi
+class ServerStatusConstants
 {
-    public $ID = 'serverStatus';
+    protected $ID = 'serverStatus';
 }

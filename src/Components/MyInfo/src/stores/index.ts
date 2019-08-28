@@ -7,7 +7,7 @@ export interface IPingItem {
 
 class MyInfoStore {
   public ID = 'myInfo'
-  public conf = conf[this.ID] || false
+  public conf = conf[this.ID]
 
   @observable public isPing: boolean = false
   @observable public pingItems: IPingItem[] = []
@@ -15,7 +15,7 @@ class MyInfoStore {
   @observable public refs = {}
 
   @action
-  public setRef = (id: string, c) => {
+  public setRef = (id: string, c: HTMLElement) => {
     this.refs[id] = c
   }
 

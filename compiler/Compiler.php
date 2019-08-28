@@ -58,11 +58,11 @@ class Compiler
 
         if (true === $this->writeFile($code)) {
             new ScriptGeneration([
-                'scriptFilePath' => "{$this->ROOT}/tmp/app.js",
+                'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
                 'distFilePath'   => $this->COMPILE_FILE_PATH,
             ]);
             new StyleGeneration([
-                'styleFilePath' => "{$this->ROOT}/tmp/app.css",
+                'styleFilePath' => "{$this->ROOT}/.tmp/app.css",
                 'distFilePath'  => $this->COMPILE_FILE_PATH,
             ]);
 
@@ -106,7 +106,7 @@ class Compiler
             if ($this->isDebug()) {
                 $code = \file_get_contents($filePath);
             } else {
-                $code     =  \php_strip_whitespace($filePath);
+                $code     = \php_strip_whitespace($filePath);
                 $lines    = \explode("\n", $code);
                 $lineCode = [];
 

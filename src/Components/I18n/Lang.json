@@ -1,6 +1,6 @@
 // Do not edit the json file
 {
-    "ja": {
+    "js-ja": {
         "Please wait %ds": "%d 秒お待ちください",
         "Database": "データベース",
         "DB": "",
@@ -98,7 +98,7 @@
         "Update success...": "成功を更新します...",
         "Update error.": "更新エラーです。"
     },
-    "zh_CN": {
+    "js-zh_CN": {
         "Please wait %ds": "请等待 %d 秒",
         "Database": "数据库",
         "DB": "数据库",
@@ -196,7 +196,7 @@
         "Update success...": "更新成功……",
         "Update error.": "更新出错。"
     },
-    "zh_HK": {
+    "js-zh_HK": {
         "Please wait %ds": "請等待 %d 秒",
         "Database": "資料庫",
         "DB": "資料庫",
@@ -294,7 +294,7 @@
         "Update success...": "更新成功……",
         "Update error.": "更新出錯。"
     },
-    "zh_TW": {
+    "js-zh_TW": {
         "Please wait %ds": "請等待 %d 秒",
         "Database": "資料庫",
         "DB": "資料庫",

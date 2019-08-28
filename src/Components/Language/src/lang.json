@@ -1,0 +1,5258 @@
+{
+  "Saved.": {
+    "zh_CN": "已保存。"
+  },
+  "Favorite visible for myself": {
+    "zh_CN": "收藏夹仅自己可见"
+  },
+  "Favorite visible for everyone": {
+    "zh_CN": "收藏夹所有人可见"
+  },
+  "Sure delete this item?": {
+    "zh_CN": "您确定要删除此条目吗？"
+  },
+  "Next page": {
+    "zh_CN": "下一页"
+  },
+  "Previous Page": {
+    "zh_CN": "上一页"
+  },
+  "Page <%=page%>": {
+    "zh_CN": "第 <%=page%> 页"
+  },
+  "Active color scheme": {
+    "zh_CN": "正在使用"
+  },
+  "Width": {
+    "zh_CN": "宽度"
+  },
+  "Height": {
+    "zh_CN": "高度"
+  },
+  "Crop": {
+    "zh_CN": "裁剪"
+  },
+  "Please scan the QR code via AliPay to pay": {
+    "zh_CN": "支付宝扫一扫"
+  },
+  "You will get notification when you pay for success.": {
+    "zh_CN": "当您支付成功时会收到提示。"
+  },
+  "Cancel": {
+    "zh_CN": "取消"
+  },
+  "My balance": {
+    "zh_CN": "我的余额"
+  },
+  "Please select the amount to top up": {
+    "zh_CN": "请选择充值金额"
+  },
+  "Top-up": {
+    "zh_CN": "充值"
+  },
+  "Your payment has been paid successful and your balance has been updated!": {
+    "zh_CN": "您已成功支付，余额已更新！"
+  },
+  "Recent top up histories": {
+    "zh_CN": "最近充值记录"
+  },
+  "Withdrawal processing": {
+    "zh_CN": "提现处理中"
+  },
+  "Withdrawal request": {
+    "zh_CN": "申请提现"
+  },
+  "Theme AD(Normal)": {
+    "zh_CN": "（常规）"
+  },
+  "Theme AD(Mobile)": {
+    "zh_CN": "（移动）"
+  },
+  "Theme AD(Login)": {
+    "zh_CN": "（登录）"
+  },
+  "Theme AD(Login + Mobile)": {
+    "zh_CN": "（登录+移动）"
+  },
+  "You can put some ADs into your site. Here are some AD areas for using.": {
+    "zh_CN": "可以把一些广告放到您的网站，这里有一些广告区域供使用。"
+  },
+  "Widget groupHome": {
+    "zh_CN": "首页"
+  },
+  "Widget groupArchive": {
+    "zh_CN": "归档页"
+  },
+  "Widget groupPost": {
+    "zh_CN": "文章页"
+  },
+  "Widget groupPage": {
+    "zh_CN": "单页"
+  },
+  "Widget groupFooter": {
+    "zh_CN": "底部"
+  },
+  "Widget name": {
+    "zh_CN": "挂件名称"
+  },
+  "Widget icon": {
+    "zh_CN": "挂件图标"
+  },
+  "HTML code": {
+    "zh_CN": "HTML 代码"
+  },
+  "Advertisement name": {
+    "zh_CN": "广告名称"
+  },
+  "Advertisement URL": {
+    "zh_CN": "广告 URL"
+  },
+  "Image URL": {
+    "zh_CN": "图片 URL"
+  },
+  "Image width (px)": {
+    "zh_CN": "图片高度（像素）"
+  },
+  "Image height (px)": {
+    "zh_CN": "图片高度（像素）"
+  },
+  "Image advertisement": {
+    "zh_CN": "图片广告"
+  },
+  "Number of displayed": {
+    "zh_CN": "显示数量"
+  },
+  "Latest comments": {
+    "zh_CN": "最新评论"
+  },
+  "Displaying menu": {
+    "zh_CN": "显示的菜单"
+  },
+  "Menu": {
+    "zh_CN": "菜单"
+  },
+  "More link text": {
+    "zh_CN": "更多链接文本"
+  },
+  "More": {
+    "zh_CN": "更多"
+  },
+  "More link URL": {
+    "zh_CN": "更多 URL 地址"
+  },
+  "Maximize font size (REM)": {
+    "zh_CN": "最大字体尺寸（REM）"
+  },
+  "Minimize font size (REM)": {
+    "zh_CN": "最小字体尺寸（REM）"
+  },
+  "Include tags ID": {
+    "zh_CN": "包含的标签 ID"
+  },
+  "Tag ID, likes: 1,2,3": {
+    "zh_CN": "标签 ID，例如：1,2,3"
+  },
+  "Exclude tags ID": {
+    "zh_CN": "排除的标签 ID"
+  },
+  "Popular tags": {
+    "zh_CN": "热门标签"
+  },
+  "Enable text mode": {
+    "zh_CN": "启用文本模式"
+  },
+  "Order by": {
+    "zh_CN": "排序"
+  },
+  "Date filter": {
+    "zh_CN": "日期过滤"
+  },
+  "Date filterAll": {
+    "zh_CN": "全部"
+  },
+  "Date filterDaily": {
+    "zh_CN": "每日"
+  },
+  "Date filterWeekly": {
+    "zh_CN": "每周"
+  },
+  "Date filterMonthly": {
+    "zh_CN": "每月"
+  },
+  "Which categories can be matched?": {
+    "zh_CN": "哪个分类会被匹配？"
+  },
+  "Latest": {
+    "zh_CN": "最新"
+  },
+  "Random": {
+    "zh_CN": "随机"
+  },
+  "Post leaderboard": {
+    "zh_CN": "文章排行榜"
+  },
+  "Use Fontawesome": {
+    "zh_CN": "使用字棒图标"
+  },
+  "CSS name": {
+    "zh_CN": "CSS 名称"
+  },
+  "Recent update": {
+    "zh_CN": "最近更新"
+  },
+  "Lastest version": {
+    "zh_CN": "最新版本"
+  },
+  "Homepage": {
+    "zh_CN": "首页"
+  },
+  "You can custom the assets URL here.": {
+    "zh_CN": "您可以在这里自定义资源 URL。"
+  },
+  "Custom meta theme color": {
+    "zh_CN": "自定义元主题色"
+  },
+  "Theme Font Awesome version": {
+    "zh_CN": "主题字棒版本"
+  },
+  "Font Awesome URL (Free)": {
+    "zh_CN": "字棒地址（免费版）"
+  },
+  "Default Font Awesome URL (Free/CF)": {
+    "zh_CN": "默认字棒地址（免费版/CF）"
+  },
+  "Default Font Awesome URL (Free/Official)": {
+    "zh_CN": "默认字棒地址（免费版/官方）"
+  },
+  "Font Awesome URL (Pro)": {
+    "zh_CN": "字棒地址（专业版）"
+  },
+  "Default Font Awesome URL (Pro/Official)": {
+    "zh_CN": "默认字棒地址（专业版/官方）"
+  },
+  "External CSS": {
+    "zh_CN": "外部 CSS"
+  },
+  "External css supports auto-update when the callback URL is available. Check every 6 hours for updates.": {
+    "zh_CN": "主题主 CSS 可使用外部 CSS 代替。在使用该功能时，您应当对自己负责并感谢外部 CSS 提供者。当 URL 可用时，外部 CSS 支持自动更新。每 6 小时检测一次更新。"
+  },
+  "JSON callback URL data example": {
+    "zh_CN": "JSON 回调地址数据事例"
+  },
+  "External css URL": {
+    "zh_CN": "外部 CSS 地址"
+  },
+  "External css data callback URL": {
+    "zh_CN": "外部 CSS 数据回调 URL"
+  },
+  "Are you sure you want to start processing? The operation may consumes a lot of time and server resources.": {
+    "zh_CN": "您确定要开始处理吗？该操作将会大量消耗服务器时间和资源。"
+  },
+  "Processing...": {
+    "zh_CN": "处理中，请稍等……"
+  },
+  "Processing is complete.": {
+    "zh_CN": "处理完成。"
+  },
+  "This tool will help you to select the parent categories for all child category posts": {
+    "zh_CN": "此工具将会帮助你自动选上所有子目录但没有父目录的文章。"
+  },
+  "Select a category": {
+    "zh_CN": "选择一个分类"
+  },
+  "Control": {
+    "zh_CN": "操作"
+  },
+  "Process start": {
+    "zh_CN": "开始处理"
+  },
+  "Authorized.": {
+    "zh_CN": "功能已授权。"
+  },
+  "Unauthorized, please go to the Theme Extension Feature area to authorize if you want.": {
+    "zh_CN": "未授权，如需使用请到“主题扩展功能”区域解锁该功能。"
+  },
+  "Add item": {
+    "zh_CN": "添加条目"
+  },
+  "Move top": {
+    "zh_CN": "置顶"
+  },
+  "Move up": {
+    "zh_CN": "上移"
+  },
+  "Move down": {
+    "zh_CN": "下移"
+  },
+  "Move bottom": {
+    "zh_CN": "置底"
+  },
+  "Remove item": {
+    "zh_CN": "移除条目"
+  },
+  "Preview HTML code": {
+    "zh_CN": "预览 HTML 代码"
+  },
+  "Capability": {
+    "zh_CN": "权限"
+  },
+  "Feature icon": {
+    "zh_CN": "功能图标"
+  },
+  "Feature icon (actived)": {
+    "zh_CN": "功能图标（已激活）"
+  },
+  "xFeature name": {
+    "zh_CN": "功能名称"
+  },
+  "Add new item": {
+    "zh_CN": "添加新条目"
+  },
+  "Capabilitiy: <%= cap %>": {
+    "zh_CN": "权限：<%= cap %>"
+  },
+  "Enable?": {
+    "zh_CN": "是否启用？"
+  },
+  "Yes": {
+    "zh_CN": "是"
+  },
+  "No": {
+    "zh_CN": "不"
+  },
+  "Are you sure?": {
+    "zh_CN": "您确定吗？"
+  },
+  "PoiCache": {
+    "zh_CN": "PoiCache"
+  },
+  "Theme used cache for improve performance, you can clean it when you modify some site contents if you want.": {
+    "zh_CN": "主题使用了缓存提高了性能，当您改变了站点内容时候，您可以选择清空缓存。"
+  },
+  "Your server supports [<%=exts%>] cache extensions and using <%=active%>.": {
+    "zh_CN": "您的服务器支持【<%=exts%>】缓存类型，目前正在使用 <%=active%>。"
+  },
+  "More cache extensions": {
+    "zh_CN": "更多缓存扩展"
+  },
+  "Re-build file cache": {
+    "zh_CN": "重新启用文件对象缓存"
+  },
+  "Clean cache": {
+    "zh_CN": "清空缓存"
+  },
+  "All cache": {
+    "zh_CN": "全部缓存"
+  },
+  "Hidden categories": {
+    "zh_CN": "隐藏的分类"
+  },
+  "Hide thumbnail?": {
+    "zh_CN": "是否隐藏特色图？"
+  },
+  "Hide post content?": {
+    "zh_CN": "是否隐藏文章内容？"
+  },
+  "Custom page": {
+    "zh_CN": "自定义页面"
+  },
+  "Thumbnail image URL": {
+    "zh_CN": "特色图（文章封面）URL"
+  },
+  "Text: invalid permission": {
+    "zh_CN": "文本：无效的权限"
+  },
+  "Default text: invalid permission": {
+    "zh_CN": "默认文本：无效的权限"
+  },
+  "Threshold": {
+    "zh_CN": "阈值"
+  },
+  "Check interval seconds": {
+    "zh_CN": "检查间隔秒数"
+  },
+  "You need know what are you doing now, sure contine? Your options can not restore.": {
+    "zh_CN": "您需要知道您正在做什么，确定继续吗？您的设置无法恢复。"
+  },
+  "You can clean and restore to default options for this page. You need know what are you doing now.": {
+    "zh_CN": "您可以清空并还原该页面的所有默认设置。您需要现在您知道正在做什么。"
+  },
+  "Restore options to defaults": {
+    "zh_CN": "还原主题默认选项"
+  },
+  "This operation will optimize of the Chinese version. Warning! This operation is not reversible.": {
+    "zh_CN": "此操作将会对中文版 WP 进行一些优化。警告！此操作不可逆，您需要知道自己正在做什么。操作前请备份您的网站。"
+  },
+  "Need logged?": {
+    "zh_CN": "需要登录？"
+  },
+  "At least likes to be popular": {
+    "zh_CN": "成为热门的最少点赞数量"
+  },
+  "Max popular comments": {
+    "zh_CN": "最大热门评论数量"
+  },
+  "Text: like button": {
+    "zh_CN": "文本：点赞按钮"
+  },
+  "Text: add like success": {
+    "zh_CN": "文本：点赞成功"
+  },
+  "Text: liked duplicate": {
+    "zh_CN": "文本：重复点赞"
+  },
+  "It will send a mail to notify the being reply comment author when comment has been reply or comment approved, if your server supports.": {
+    "zh_CN": "如果您的服务器支持，当评论被回复或通过审核时，它将会发送一封通知邮件给被回复人。"
+  },
+  "Default code": {
+    "zh_CN": "默认 HTML 代码"
+  },
+  "Custom 404 page URL": {
+    "zh_CN": "自定义 404 页面 URL"
+  },
+  "Avatar URL": {
+    "zh_CN": "头像图片 URL"
+  },
+  "Default avatar URL": {
+    "zh_CN": "默认头像 URL 地址"
+  },
+  "For developers to debug the site and it will affect the user experience if enable, please note it.": {
+    "zh_CN": "针对开发人员进行网站的相关调试，开启前台性能提示将会影响前台的体验，请注意。"
+  },
+  "Display frontend performance": {
+    "zh_CN": "显示前台性能"
+  },
+  "Display database queries detail": {
+    "zh_CN": "显示数据库查询明细"
+  },
+  "Disable send Email notication when user change Email.": {
+    "zh_CN": "当用户修改邮箱时候禁用邮件通知。"
+  },
+  "Disable send Email notication when user change password.": {
+    "zh_CN": "当用户修改密码时候禁用邮件通知。"
+  },
+  "Are you sure start process?": {
+    "zh_CN": "您确定开始处理吗？"
+  },
+  "Processing, please wait...": {
+    "zh_CN": "处理中，请稍候…"
+  },
+  "Processing completed.": {
+    "zh_CN": "处理完成。"
+  },
+  "Disable <%=itemId%>": {
+    "zh_CN": "禁用 <%=itemId%>"
+  },
+  "Disabled or clean WordPress useless user meta for getting better performance under this theme. The feature is Extended feature which you need to be authorize to use.": {
+    "zh_CN": "禁用或清理 WordPress 对于该主题无用的用户元数据来提升性能。该功能是扩展功能因此需要授权使用。"
+  },
+  "Clean operation is irreversible for database and you need know what will you doing!": {
+    "zh_CN": "清除操作对于数据库是不可逆的，您需要了解自己将会做什么！"
+  },
+  "All theme js, css and images static files are output with timestamp, you can refresh these files after theme updates or when you want.": {
+    "zh_CN": "所有主题JS、CSS和图像等静态文件输出时候会带上时间戳，在主题更新后它们将会自动被刷新，或者在您需要的时候可以手动刷新。"
+  },
+  "Current timestamp": {
+    "zh_CN": "当前时间戳"
+  },
+  "Refresh timestamp": {
+    "zh_CN": "刷新时间戳"
+  },
+  "This feature can fix the gravatar image to display in China. Just for Chinese users. If using \"Custom default gravatar\" please DO NOT enable this feature.": {
+    "zh_CN": "此功能可以修复 Gravatar 头像无法在中国内地显示，仅对中国内地用户使用。如果使用“自定义默认 Gravatar 头像”，请不要启用此功能。"
+  },
+  "Code will be insert prepend to <body> only in homepage.": {
+    "zh_CN": "代码将插入追加到 <body> 只有在主页。"
+  },
+  "You can custom homepage <h1> tag content here.": {
+    "zh_CN": "您可以在这里自定义首页 <h1> 标签内容。"
+  },
+  "Content": {
+    "zh_CN": "内容"
+  },
+  "Content, not include <h1> tag": {
+    "zh_CN": "内容, 不包括 <h1> 标记"
+  },
+  "Global image uploader settings.": {
+    "zh_CN": "全局图片上传设置。"
+  },
+  "It will convent png to jpg image format When user upload image file. This feature always disable if is administrator.": {
+    "zh_CN": "此功能会在用户上传图片时候，将会使 PNG 图片转换为 JPG 图片。如果是管理员此功能无效。"
+  },
+  "Enable PNG to JPG(JPEG) convertion?": {
+    "zh_CN": "启用 PNG 至 JPG（JPEG）转换器？"
+  },
+  "Value 100 to disable.": {
+    "zh_CN": "100 值即禁用。"
+  },
+  "JPG image compress quality": {
+    "zh_CN": "JPG 图片压缩等级"
+  },
+  "Value 0 to disable.": {
+    "zh_CN": "0 值即禁用。"
+  },
+  "Maximum width/height (px)": {
+    "zh_CN": "最大宽/高值（像素）"
+  },
+  "Thumbnail image URL (default)": {
+    "zh_CN": "特色图 URL 地址（默认）"
+  },
+  "Avatar image URL": {
+    "zh_CN": "头像图片 URL"
+  },
+  "Avatar image URL (default)": {
+    "zh_CN": "头像图片 URL 地址（默认）"
+  },
+  "You can settings global link target here.": {
+    "zh_CN": "您可以再这里设置全局链接打开方式。"
+  },
+  "Target": {
+    "zh_CN": "目标"
+  },
+  "Open in new window": {
+    "zh_CN": "在新窗口中打开"
+  },
+  "Open in current window": {
+    "zh_CN": "在当前窗口中打开"
+  },
+  "Square loading icon image URL": {
+    "zh_CN": "方形加载图片 URL 地址"
+  },
+  "Text: loading": {
+    "zh_CN": "文本：加载中"
+  },
+  "Text: error": {
+    "zh_CN": "文本：错误"
+  },
+  "Text: close": {
+    "zh_CN": "文本：关闭"
+  },
+  "Text: ok": {
+    "zh_CN": "文本：确定"
+  },
+  "Text: no data yet": {
+    "zh_CN": "文本：暂无数据"
+  },
+  "Text: no more data": {
+    "zh_CN": "文字：没有更多数据"
+  },
+  "Text: previous page": {
+    "zh_CN": "文本：上一页"
+  },
+  "Text: next page": {
+    "zh_CN": "文本：下一页"
+  },
+  "Text: middle page": {
+    "zh_CN": "文本：中间页"
+  },
+  "Default image URL": {
+    "zh_CN": "默认图片 URL 地址"
+  },
+  "Start number": {
+    "zh_CN": "开始号码"
+  },
+  "Start number (default)": {
+    "zh_CN": "开始号码（默认）"
+  },
+  "Start rename": {
+    "zh_CN": "开始重命名"
+  },
+  "Saving settings...": {
+    "zh_CN": "正在保存您的设置，请稍等……"
+  },
+  "Button text": {
+    "zh_CN": "按钮文本"
+  },
+  "Text: need higher user level": {
+    "zh_CN": "文本：需要更高用户等级"
+  },
+  "Text: success": {
+    "zh_CN": "文本：成功"
+  },
+  "Text: success for logged in user": {
+    "zh_CN": "文本：登录用户成功"
+  },
+  "Text: already approved": {
+    "zh_CN": "文本：已经赞过"
+  },
+  "Text: approves myself": {
+    "zh_CN": "文本：赞自己"
+  },
+  "Enable logged in?": {
+    "zh_CN": "需要登录？"
+  },
+  "Maximum image width": {
+    "zh_CN": "最大图片宽度"
+  },
+  "Maximum image height": {
+    "zh_CN": "最大图片高度"
+  },
+  "Crop image": {
+    "zh_CN": "裁剪图片"
+  },
+  "Enable bottom tools position": {
+    "zh_CN": "是否启用底部工具位置？"
+  },
+  "Enable asynchronous refresh": {
+    "zh_CN": "启用异步刷新"
+  },
+  "Left arrow icon": {
+    "zh_CN": "左箭头图标"
+  },
+  "Right arrow icon": {
+    "zh_CN": "右箭头图标"
+  },
+  "Text: first page": {
+    "zh_CN": "文本：已是首页"
+  },
+  "Text: last page": {
+    "zh_CN": "文本：已是尾页"
+  },
+  "Share your post to everywhere.": {
+    "zh_CN": "分享您的文章到每个地方。"
+  },
+  "Default HTML code": {
+    "zh_CN": "默认 HTML 代码"
+  },
+  "Max cache storage times": {
+    "zh_CN": "最大缓存次数"
+  },
+  "Prevent duplicate time threshold (second)": {
+    "zh_CN": "防止重复时间阈值（秒）"
+  },
+  "Maximum number of posts": {
+    "zh_CN": "最大文章数量"
+  },
+  "Cache expire time (hours)": {
+    "zh_CN": "缓存过期时间（小时）"
+  },
+  "You can custom search with Google or other search engine.": {
+    "zh_CN": "您可以使用谷歌或其他搜索引擎来自定义搜索。"
+  },
+  "Custom search URL address": {
+    "zh_CN": "自定义搜索 URL 地址"
+  },
+  "Enable keyword transcoding?": {
+    "zh_CN": "启用转码？"
+  },
+  "Text: searching": {
+    "zh_CN": "文本：正在搜索中"
+  },
+  "Text: search placeholder": {
+    "zh_CN": "文本：搜索预设"
+  },
+  "Preset keywords": {
+    "zh_CN": "预设关键词"
+  },
+  "One keyword per line": {
+    "zh_CN": "每行一个"
+  },
+  "Referer checker": {
+    "zh_CN": "来路检测器"
+  },
+  "Similar threshold": {
+    "zh_CN": "相似阈值"
+  },
+  "Enable for visitor?": {
+    "zh_CN": "是否对访客启用？"
+  },
+  "Check interval minute": {
+    "zh_CN": "检查间隔分钟"
+  },
+  "Text: similar comment": {
+    "zh_CN": "文字：相似评论"
+  },
+  "Text: submit button": {
+    "zh_CN": "文本：提交按钮"
+  },
+  "Text: submitting": {
+    "zh_CN": "文本：提交中"
+  },
+  "Text: comment success for visitor": {
+    "zh_CN": "文本：提交成功（游客）"
+  },
+  "Text: comment success for user": {
+    "zh_CN": "文本：提交成功（用户）"
+  },
+  "Text: login to comment": {
+    "zh_CN": "文本：登录才能评论"
+  },
+  "Text: post comment": {
+    "zh_CN": "文本：发表评论"
+  },
+  "Text: comment content": {
+    "zh_CN": "文本：评论内容"
+  },
+  "Label: post author": {
+    "zh_CN": "标签：文章作者"
+  },
+  "Enable pager?": {
+    "zh_CN": "启用分页？"
+  },
+  "Kaomoji emotion": {
+    "zh_CN": "颜文表情"
+  },
+  "One per line": {
+    "zh_CN": "每行一个"
+  },
+  "Default Kaomoji emotion": {
+    "zh_CN": "默认颜文表情"
+  },
+  "Image emotion": {
+    "zh_CN": "图片表情"
+  },
+  "One per line. E.g., img01 = https://inn-studio.com/img01.jpg": {
+    "zh_CN": "每行一个，例如：img01 = https://inn-studio.com/img01.jpg"
+  },
+  "Default image emotion": {
+    "zh_CN": "默认图片表情"
+  },
+  "Comment": {
+    "zh_CN": "评论"
+  },
+  "Author avatar": {
+    "zh_CN": "作者头像"
+  },
+  "Enable pager": {
+    "zh_CN": "启用分页"
+  },
+  "Which categories can be searched?": {
+    "zh_CN": "选择哪个分类？"
+  },
+  "Filter name": {
+    "zh_CN": "过滤器名称"
+  },
+  "The filter name, for example: area": {
+    "zh_CN": "筛选名称，例如：区域"
+  },
+  "Filter tags": {
+    "zh_CN": "标签过滤"
+  },
+  "Fill the tag name and tag slug. For example: Tagname = Tagslug, one per line": {
+    "zh_CN": "填写标签名称和标签别名。例如：标签名称 = 标签别名，一行一个"
+  },
+  "The super search is a powerful search feature, you can set category or filter to improve search experience.": {
+    "zh_CN": "超级搜索是一个强大的搜索功能，您可以设置分类或过滤来提高搜索体验。"
+  },
+  "Tags filter": {
+    "zh_CN": "标签过滤"
+  },
+  "All": {
+    "zh_CN": "全部"
+  },
+  "Category type": {
+    "zh_CN": "分类"
+  },
+  "What you want to search?": {
+    "zh_CN": "您想搜索什么？"
+  },
+  "No data yet.": {
+    "zh_CN": "此类别暂无资料。"
+  },
+  "Access capability": {
+    "zh_CN": "访问权限"
+  },
+  "Hidden tags ID": {
+    "zh_CN": "隐藏的标签 ID"
+  },
+  "Tag ID, e.g., 1,2,3": {
+    "zh_CN": "标签 ID，例如：1,2,3"
+  },
+  "Text: invalid permission (default)": {
+    "zh_CN": "文本：无效的权限（默认）"
+  },
+  "Theme informationName": {
+    "zh_CN": "名称"
+  },
+  "Theme informationVersion": {
+    "zh_CN": "版本"
+  },
+  "Theme informationDescription": {
+    "zh_CN": "描述"
+  },
+  "Theme informationAuthor": {
+    "zh_CN": "作者"
+  },
+  "Theme informationOfficial website": {
+    "zh_CN": "官网"
+  },
+  "Theme informationAuthor official website": {
+    "zh_CN": "作者官网"
+  },
+  "Theme informationQQ group": {
+    "zh_CN": "QQ 群"
+  },
+  "The theme information and support shows here. Welcome to contact theme author for get help if you are a genuine user.": {
+    "zh_CN": "在此处显示的主题的信息和支持。如果您购入了正版，欢迎您联系主题作者为获得帮助。"
+  },
+  "Thank you for your support genuine software.": {
+    "zh_CN": "感谢您支持正版软件。"
+  },
+  "Cake": {
+    "zh_CN": "蛋糕"
+  },
+  "Donate via PayPal": {
+    "zh_CN": "通过 Paypal（贝宝）打赏"
+  },
+  "Donate via Alipay": {
+    "zh_CN": "通过 Alipay（支付宝）打赏"
+  },
+  "Donate via WeChat": {
+    "zh_CN": "通过 WeChat（微信）打赏"
+  },
+  "When enabled, it speeds up the site, but it is incompatible with some plugins": {
+    "zh_CN": "启用后会加快站点运行速度，但会对某些插件造成不兼容。"
+  },
+  "TOC will list the article content title.": {
+    "zh_CN": "TOC 将会列出文章内容标题。"
+  },
+  "Enable for post?": {
+    "zh_CN": "是否对文章启用？"
+  },
+  "Enable for page?": {
+    "zh_CN": "是否对页面启用？"
+  },
+  "Default fold?": {
+    "zh_CN": "默认收缩？"
+  },
+  "Exclude posts or pages ID": {
+    "zh_CN": "例外的文章或页面 ID"
+  },
+  "E.g., 1,2,3,4,5": {
+    "zh_CN": "例如：1,2,3,4,5"
+  },
+  "Go to update page": {
+    "zh_CN": "前往更新页面"
+  },
+  "Remind me tomorrow": {
+    "zh_CN": "明天提醒我"
+  },
+  "Latest version: <%=newVersion%>": {
+    "zh_CN": "最新版本：<%=newVersion%>"
+  },
+  "Found new <%=themeName%> version!": {
+    "zh_CN": "发现新的 <%=themeName%> 版本！"
+  },
+  "Current version: <%=currentVersion%>": {
+    "zh_CN": "当前版本：<%=currentVersion%>"
+  },
+  "Header code (high priority)": {
+    "zh_CN": "头部代码（高优先）"
+  },
+  "This code will be put between <head> and </head>.": {
+    "zh_CN": "此处代码将会被放在 <head> 和 </head> 标签之间。"
+  },
+  "Header CSS code": {
+    "zh_CN": "头部 CSS 代码"
+  },
+  "This CSS code will be put between <head> and </head> and <style> and </style>.": {
+    "zh_CN": "此处代码将会被放在 <head> 和 </head> 和 <style> 和</style> 标签之间。"
+  },
+  "Header JavaScript code": {
+    "zh_CN": "头部 JavaScript 代码"
+  },
+  "This JavaScript code will be put between <head> and </head> and <script> and </script>.": {
+    "zh_CN": "此处代码将会被放在 <head> 和 </head> <script> 和 </script> 标签之间。"
+  },
+  "Footer code": {
+    "zh_CN": "底部代码"
+  },
+  "This code will be display on frontend page footer. You can put some statistics code in here.": {
+    "zh_CN": "此代码将显示在前台页面底部。你可以把一些统计数据代码在这里。"
+  },
+  "Footer CSS code": {
+    "zh_CN": "底部 CSS 代码"
+  },
+  "This CSS code will be display on frontend page footer between <style> and </style>.": {
+    "zh_CN": "此代码将显示在前台页面底部和 <style> 和 </style>之间。"
+  },
+  "Footer JavaScript code": {
+    "zh_CN": "底部 JavaScript 代码"
+  },
+  "This JavaScript code will be display on frontend page footer between <script> and </script>.": {
+    "zh_CN": "此代码将显示在前台页面底部和 <script> 和 <script> 之间。"
+  },
+  "You can write some HTML code for your frontend page. Including JavaScript or CSS code.": {
+    "zh_CN": "你可以写一些自定义的前端页面 HTML 代码。包括 JavaScript 或 CSS 代码。"
+  },
+  "User login expired days": {
+    "zh_CN": "用户登录过期天数"
+  },
+  "Ready to save all settings?": {
+    "zh_CN": "准备保存所有设置？"
+  },
+  "Saving, please wait...": {
+    "zh_CN": "正在保存您的设置，请稍等……"
+  },
+  "Options saved.": {
+    "zh_CN": "设置已保存。"
+  },
+  "Add new widget": {
+    "zh_CN": "添加新挂件"
+  },
+  "Select a widget": {
+    "zh_CN": "选择一个挂件"
+  },
+  "Save": {
+    "zh_CN": "保存设置"
+  },
+  "Must be login?": {
+    "zh_CN": "必须登录？"
+  },
+  "Links": {
+    "zh_CN": "友情链接"
+  },
+  "More link open in new window": {
+    "zh_CN": "更多链接新窗打开"
+  },
+  "Sticky tags ID": {
+    "zh_CN": "固顶标签 ID"
+  },
+  "Widget ID": {
+    "zh_CN": "小工具 ID"
+  },
+  "Your settings has been updated.": {
+    "zh_CN": "您的设置更新成功。"
+  },
+  "Search URL address (default)": {
+    "zh_CN": "搜索 URL 地址（默认）"
+  },
+  "Search keyword name": {
+    "zh_CN": "搜索关键词名称"
+  },
+  "Authorized. Clean operation is irreversible for database and you need know what will you doing!": {
+    "zh_CN": "已授权。清理操作对于数据库是不可逆的，您需要了解自己将会做什么！"
+  },
+  "Latest posts": {
+    "zh_CN": "最新日志"
+  },
+  "Color scheme": {
+    "zh_CN": "颜色方案"
+  },
+  "Default": {
+    "zh_CN": "默认"
+  },
+  "CrumbPage %d": {
+    "zh_CN": "第 %d 页"
+  },
+  "Header main menu": {
+    "zh_CN": "头部主栏"
+  },
+  "Header main menu(logged)": {
+    "zh_CN": "头部主菜单（已登录）"
+  },
+  "Header main menu(mobile)": {
+    "zh_CN": "头部主菜单（移动版）"
+  },
+  "Header main menu(mobile &amp; logged)": {
+    "zh_CN": "头部主菜单（移动设备 &amp; 已登录）"
+  },
+  "Header tools": {
+    "zh_CN": "头部工具菜单"
+  },
+  "Header tools(logged)": {
+    "zh_CN": "头部工具栏（已登录）"
+  },
+  "Header tools(mobile)": {
+    "zh_CN": "头部工具栏（移动版）"
+  },
+  "Header tools(mobile &amp; logged)": {
+    "zh_CN": "头部工具栏（移动版 &amp; 已登录）"
+  },
+  "Homepage links": {
+    "zh_CN": "首页链接"
+  },
+  "Pagination navigation": {
+    "zh_CN": "文章分页导航"
+  },
+  "Post thumbnail": {
+    "zh_CN": "文章特色图"
+  },
+  "Pixels": {
+    "zh_CN": "像素"
+  },
+  "Category": {
+    "zh_CN": "分类"
+  },
+  "Views": {
+    "zh_CN": "查看数"
+  },
+  "Below the header menu (singular post page)": {
+    "zh_CN": "标题菜单下面 (文章页)"
+  },
+  "Below the header menu (archive page)": {
+    "zh_CN": "标题菜单下方 (存档页)"
+  },
+  "Above the footer (all page)": {
+    "zh_CN": "底部之上（所有页面）"
+  },
+  "Below the post title (singular post page)": {
+    "zh_CN": "文章标题之下（文章页面）"
+  },
+  "Above the related post (singular post page)": {
+    "zh_CN": "相关文章之上（文章页面）"
+  },
+  "Below the related post (singular post page)": {
+    "zh_CN": "相关文章之下（文章页面）"
+  },
+  "Desktop code": {
+    "zh_CN": "桌面版代码"
+  },
+  "Mobile code": {
+    "zh_CN": "手机版代码"
+  },
+  "Home widget area": {
+    "zh_CN": "首页小工具区域"
+  },
+  "Appears on home in the sidebar.": {
+    "zh_CN": "显示在首页的边栏中。"
+  },
+  "User homepage widget area": {
+    "zh_CN": "用户首页小工具区域"
+  },
+  "Appears on user homepage.": {
+    "zh_CN": "显示在用户首页。"
+  },
+  "Singular post widget area": {
+    "zh_CN": "单文章小工具区域"
+  },
+  "Appears on post in the sidebar.": {
+    "zh_CN": "显示在文章页面的边栏中。"
+  },
+  "Singular page widget area": {
+    "zh_CN": "单页 小工具区域"
+  },
+  "Appears on page in the sidebar.": {
+    "zh_CN": "显示在单页的边栏中。"
+  },
+  "Footer widget area": {
+    "zh_CN": "底部 小工具区域"
+  },
+  "Appears on all page in the footer.": {
+    "zh_CN": "显示在每个页面的底部。"
+  },
+  "A.D image URL": {
+    "zh_CN": "广告图片地址"
+  },
+  "A.D link URL": {
+    "zh_CN": "广告链接地址"
+  },
+  "A.D name": {
+    "zh_CN": "广告名称"
+  },
+  "External awesome css version": {
+    "zh_CN": "外部真棒 CSS 版本"
+  },
+  "External frontend css version": {
+    "zh_CN": "外部前端 css 版本"
+  },
+  "Asset URL": {
+    "zh_CN": "资源 URL 地址"
+  },
+  "Font Awesome icon": {
+    "zh_CN": "字棒图标"
+  },
+  "Use Font Awesome FREE": {
+    "zh_CN": "使用字棒图标免费版"
+  },
+  "Buy PRO version": {
+    "zh_CN": "购买 PRO 版本"
+  },
+  "Default Font Awesome URL (Free/INN)": {
+    "zh_CN": "默认字棒地址（免费版/INN）"
+  },
+  "Default Font Awesome URL (Pro/INN)": {
+    "zh_CN": "默认字棒地址（专业版/INN）"
+  },
+  "Note: callback URL data must return JSON format: %s": {
+    "zh_CN": "注意：回调 URL 数据必须返回 JSON 格式（时间为 UTC），例如：%s"
+  },
+  "Last update: %s": {
+    "zh_CN": "最后更新：%s"
+  },
+  "CSS homepage: %s": {
+    "zh_CN": "CSS 主页：%s"
+  },
+  "For example: %s": {
+    "zh_CN": "例如：%s"
+  },
+  "Please select a child category.": {
+    "zh_CN": "请选择一个子类别。"
+  },
+  "There is not any post in this category.": {
+    "zh_CN": "此分类中无任何文章。"
+  },
+  "Post %1$s upgrading...": {
+    "zh_CN": "文章%1$s更新中……"
+  },
+  "Operation completed.": {
+    "zh_CN": "操作完成。"
+  },
+  "Auto category selector": {
+    "zh_CN": "自动分类选择者"
+  },
+  "Start conversion": {
+    "zh_CN": "开始转换"
+  },
+  "Back to top": {
+    "zh_CN": "返回顶部"
+  },
+  "Icon": {
+    "zh_CN": "图标"
+  },
+  "Registered date": {
+    "zh_CN": "注册日期"
+  },
+  "User ID": {
+    "zh_CN": "用户 ID"
+  },
+  "Option templatesControl": {
+    "zh_CN": "操作"
+  },
+  "Option templatesEnabled": {
+    "zh_CN": "已启用"
+  },
+  "Option templatesDisabled": {
+    "zh_CN": "已禁用"
+  },
+  "Option templatesMove up": {
+    "zh_CN": "上移"
+  },
+  "Option templatesMove down": {
+    "zh_CN": "下移"
+  },
+  "Bottom tools": {
+    "zh_CN": "底部工具"
+  },
+  "Cache operation completed.": {
+    "zh_CN": "对缓存的操作完成。"
+  },
+  "Theme cache": {
+    "zh_CN": "主题缓存"
+  },
+  "Save your settings before click.": {
+    "zh_CN": "点击之前保存设置。"
+  },
+  "You are using %s object cache now.": {
+    "zh_CN": "您现在正在使用 %s 对象缓存。"
+  },
+  "Warning: you are not using any or unknow object cache now.": {
+    "zh_CN": "警告：您现在没有使用任何或未知对象缓存。"
+  },
+  "Clean PoiCache cache": {
+    "zh_CN": "清空 PoiCache 缓存"
+  },
+  "Clean widget cache": {
+    "zh_CN": "清空小工具缓存"
+  },
+  "Clean menu cache": {
+    "zh_CN": "清空菜单缓存"
+  },
+  "Re-enable %s object cache": {
+    "zh_CN": "重新启用 %s 对象缓存"
+  },
+  "Are you sure RE-CREATE object-cache.php to re-enable %s object cache?": {
+    "zh_CN": "你确定重建 object-cache.php 来重新启用 %s 对象缓存吗？"
+  },
+  "Enable %s object cache": {
+    "zh_CN": "启用 %s 对象缓存"
+  },
+  "Can not create the %s file, please make sure the folder can be written.": {
+    "zh_CN": "无法创建 %s 文件，请确定文件夹是否可写。"
+  },
+  "Can not delete the %s file, please make sure the folder can be written.": {
+    "zh_CN": "无法删除 %s 文件，请确保该文件夹可写。"
+  },
+  "Select category": {
+    "zh_CN": "选择目录"
+  },
+  "Error codeNo category found.": {
+    "zh_CN": "未发现到分类目录。"
+  },
+  "Post thumbnail size for category": {
+    "zh_CN": "目录文章特色图尺寸"
+  },
+  "You can set post thumbnail for different categories.": {
+    "zh_CN": "您可为不同的目录设置文章特色图"
+  },
+  "Select size": {
+    "zh_CN": "选择尺寸"
+  },
+  "Category visibility": {
+    "zh_CN": "分类可见性"
+  },
+  "Your custom thumbnail image URL address": {
+    "zh_CN": "您的自定义特色图 URL 地址"
+  },
+  "Default value: %s": {
+    "zh_CN": "默认值：%s"
+  },
+  "Your user group can not access this post.": {
+    "zh_CN": "您的用户组无法访问此文章"
+  },
+  "Challenge collapsar checker": {
+    "zh_CN": "挑战黑洞检查"
+  },
+  "Clean options": {
+    "zh_CN": "清空选项"
+  },
+  "File can not write.": {
+    "zh_CN": "文件无法写入。"
+  },
+  "Optimize zh_CN language pack": {
+    "zh_CN": "优化中文版"
+  },
+  "Optimize": {
+    "zh_CN": "立即优化"
+  },
+  "User role Color": {
+    "zh_CN": "用户角色颜色"
+  },
+  "Colorful category": {
+    "zh_CN": "彩色分类"
+  },
+  "You can set color for category. Preset is random color.": {
+    "zh_CN": "您可以选择分类目录按钮以将其设置颜色。预设颜色为随机色彩。"
+  },
+  "Category to color": {
+    "zh_CN": "为目录设置颜色"
+  },
+  "Empty category.": {
+    "zh_CN": "空分类。"
+  },
+  "Error codeNo comment found.": {
+    "zh_CN": "暂无评论。"
+  },
+  "Error codeComment closed.": {
+    "zh_CN": "评论已关闭。"
+  },
+  "Error codeComment on trash.": {
+    "zh_CN": "在垃圾箱中评论。"
+  },
+  "Error codeComment on draft.": {
+    "zh_CN": "在草稿中评论。"
+  },
+  "Error codeComment on password protected.": {
+    "zh_CN": "在密码保护中评论。"
+  },
+  "Error codeNeed registration.": {
+    "zh_CN": "需要注册。"
+  },
+  "Error codeRequire name and email.": {
+    "zh_CN": "需要名称和电子邮件。"
+  },
+  "Reply": {
+    "zh_CN": "回复"
+  },
+  "This comment has been deleted.": {
+    "zh_CN": "该评论已删除。"
+  },
+  "This comment does not approval yet.": {
+    "zh_CN": "该评论还没点赞。"
+  },
+  "Comment like": {
+    "zh_CN": "评论点赞"
+  },
+  "Feature authorized.": {
+    "zh_CN": "功能已授权。"
+  },
+  "Icon active": {
+    "zh_CN": "图标激活"
+  },
+  "Popular comments": {
+    "zh_CN": "热门评论"
+  },
+  "Thank you for your approval.": {
+    "zh_CN": "感谢您的认可！"
+  },
+  "Like it": {
+    "zh_CN": "赞"
+  },
+  "You already liked this.": {
+    "zh_CN": "您已经赞过了。"
+  },
+  "Like feature for comment. And filter out popular comments by the number of likes.": {
+    "zh_CN": "为评论增加点赞功能，并且能根据点赞数量筛选出热门评论。"
+  },
+  "Comment mail notify": {
+    "zh_CN": "评论邮件通知"
+  },
+  "[%s] Your comment has a reply in \"%s\".": {
+    "zh_CN": "[%s] 您的评论有回复于《%s》。"
+  },
+  "Your comment: %s": {
+    "zh_CN": "您的评论：%s"
+  },
+  "%1$s's reply: %2$s": {
+    "zh_CN": "%1$s的回复：%2$s"
+  },
+  "Views the comment: %s": {
+    "zh_CN": "查看此条评论：%s"
+  },
+  "[%s] Your comment has been approved in \"%s\".": {
+    "zh_CN": "[%s] 您的评论通过审核于《%s》。"
+  },
+  "Your comment has been approved in \"%s\".": {
+    "zh_CN": "您的评论已通过审核与《%s》。"
+  },
+  "Comment content: %s": {
+    "zh_CN": "评论内容：%s"
+  },
+  "Article URL: %s": {
+    "zh_CN": "文章 URL：%s"
+  },
+  "Comment URL: %s": {
+    "zh_CN": "评论 URL：%s"
+  },
+  "SelectorYes": {
+    "zh_CN": "好"
+  },
+  "SelectorNo": {
+    "zh_CN": "不"
+  },
+  "A.D HTML code": {
+    "zh_CN": "广告 HTML 代码"
+  },
+  "Categories": {
+    "zh_CN": "分类"
+  },
+  "Placeholder - %s": {
+    "zh_CN": "占位符 - %s"
+  },
+  "Backend templateCategory": {
+    "zh_CN": "分类"
+  },
+  "Backend templateCategories": {
+    "zh_CN": "分类"
+  },
+  "Display categories": {
+    "zh_CN": "显示的分类"
+  },
+  "Save options": {
+    "zh_CN": "保存选项"
+  },
+  "Backend templateCategoryies": {
+    "zh_CN": "分类"
+  },
+  "Custom 404 page": {
+    "zh_CN": "自定义 404 页面"
+  },
+  "Default avatar": {
+    "zh_CN": "默认头像"
+  },
+  "Development options": {
+    "zh_CN": "开发选项"
+  },
+  "Disable Email change notification": {
+    "zh_CN": "禁用邮箱修改邮件通知"
+  },
+  "Disable pwd change notification": {
+    "zh_CN": "禁用密码修改邮件通知"
+  },
+  "Disable WP user meta": {
+    "zh_CN": "禁用 WP 用户元"
+  },
+  "Select operation to clean": {
+    "zh_CN": "选择操作以清理"
+  },
+  "Clean all": {
+    "zh_CN": "清理所有"
+  },
+  "Clean %s": {
+    "zh_CN": "清理 %s"
+  },
+  "Operation": {
+    "zh_CN": "操作"
+  },
+  "For a large number of users. Disabled or clean WordPress useless user meta for getting better performance under this theme.": {
+    "zh_CN": "针对大量用户，禁用或清理 WordPress 对于该主题无用的用户元数据来提升性能。"
+  },
+  "Next...": {
+    "zh_CN": "下一个……"
+  },
+  "Deleted.": {
+    "zh_CN": "已删除。"
+  },
+  "External post thumbnail": {
+    "zh_CN": "外链文章特色图"
+  },
+  "Set external post thumbnail": {
+    "zh_CN": "设置外链文章特色图"
+  },
+  "Post meta key": {
+    "zh_CN": "文章字段"
+  },
+  "You need clean all cache and modify all old posts meta key manually after changing current post meta key.": {
+    "zh_CN": "当更改当前文章字段后，您需要手动清空所有缓存并且更改所有旧的文章字段。"
+  },
+  "Url prefix": {
+    "zh_CN": "URL 前缀"
+  },
+  "Url suffix": {
+    "zh_CN": "URL 后缀"
+  },
+  "Enable storage URL": {
+    "zh_CN": "启用 URL 存储"
+  },
+  "Image URL will save into post meta when post does not exist thumbnail.": {
+    "zh_CN": "当文章没有设置特色图时候，文章第一张图片 URL 将会保存到文章元数据里。"
+  },
+  "You can use external image URL as post thumbnail and custom post meta key of thumbnail.": {
+    "zh_CN": "您可以使用外链图片地址作为文章特色图并且可以自定义特色图的文章自定义字段。"
+  },
+  "Convert now (Save before operation)": {
+    "zh_CN": "立即转换（操作前请保存）"
+  },
+  "Content image to meta": {
+    "zh_CN": "内容图片转换为元数据"
+  },
+  "External Post Thumbnail Image URL": {
+    "zh_CN": "外链文章特色图图片地址"
+  },
+  "Image URL address": {
+    "zh_CN": "图片 URL 地址"
+  },
+  "Delete": {
+    "zh_CN": "删除"
+  },
+  "Extra services": {
+    "zh_CN": "额外服务"
+  },
+  "Here are extra services by theme author. You can get these services for a fee.": {
+    "zh_CN": "主题作者提供一些额外额外服务。您可以通过付费在这里获取这些服务。"
+  },
+  "Contact now! %1$s or %2$s": {
+    "zh_CN": "立即联系！通过 %1$s 或 %2$s 咨询。"
+  },
+  "%1$s+/time or %2$s+/month": {
+    "zh_CN": "%1$s+每次 或 %2$s+每月"
+  },
+  "Linux Server Operations": {
+    "zh_CN": "Linux 服务器运维"
+  },
+  "Operation and maintenance for Linux server. You can get help if you are in trouble or you need an Operations Engineer to maintain your server.": {
+    "zh_CN": "维护您的 Linux 服务器。如果您的服务器出现问题或需要运维人员，您可以在这里得到帮助。"
+  },
+  "WordPress Data Transfer": {
+    "zh_CN": "WordPress 数据转移（搬家）"
+  },
+  "Transfer old WordPress data to new server. Includes database, file, ssl and latest version server softwares.": {
+    "zh_CN": "将旧的 WordPress 数据转移到新服务器。包括数据库、文件、证书和最新服务器软件。"
+  },
+  "WordPress Environmental Configuration": {
+    "zh_CN": "WordPress 环境配置"
+  },
+  "Config new WordPress runtime environmental. Includes latest version server softwares.": {
+    "zh_CN": "配置全新的 WordPress 运行环境。包括最新服务器软件。"
+  },
+  "WordPress Environmental Upgrade": {
+    "zh_CN": "WordPress 环境更新"
+  },
+  "Upgrade to latest WordPress runtime environmental. Includes latest version server softwares.": {
+    "zh_CN": "升级到最新 WordPress 运行环境。包括最新服务器软件。"
+  },
+  "WordPress Basic Optimization": {
+    "zh_CN": "WordPress 基本优化"
+  },
+  "Install optimization plugin to speed up for WordPress.": {
+    "zh_CN": "安装优化插件以提速。"
+  },
+  "WordPress Medium Optimization": {
+    "zh_CN": "WordPress 中等优化"
+  },
+  "Install optimization plugin and update server softwares to speed up for WordPress.": {
+    "zh_CN": "安装优化插件并更新服务器软件以提速。"
+  },
+  "Need talk about": {
+    "zh_CN": "需要详情"
+  },
+  "WordPress Deep Optimization": {
+    "zh_CN": "WordPress 深度优化"
+  },
+  "Adjust code and install optimization plugin and update server softwares to speed up for WordPress.": {
+    "zh_CN": "调整代码、安装优化插件和更新服务器软件以提速。"
+  },
+  "WordPress Theme Development": {
+    "zh_CN": "WordPress 主题开发"
+  },
+  "If you need a custom WordPress theme, here you will get it.": {
+    "zh_CN": "如果您想要定制一款主题，这里能得到你所需的。"
+  },
+  "WordPress Theme Design": {
+    "zh_CN": "WordPress 主题设计"
+  },
+  "If you need to design WordPress theme, here you will get it.": {
+    "zh_CN": "如果您想要设计一款主题界面，这里能到得你所需的。"
+  },
+  "WordPress Plugin Development": {
+    "zh_CN": "WordPress 插件开发"
+  },
+  "You can get any feature for your theme, just via plugin.": {
+    "zh_CN": "仅需通过插件，您可以在您的主题中获得任何功能。"
+  },
+  "Price: %s CNY": {
+    "zh_CN": "价格：%s RMB"
+  },
+  "Description: %s": {
+    "zh_CN": "描述：%s"
+  },
+  "Save your settings before click": {
+    "zh_CN": "点击前请保存您的设置。"
+  },
+  "Gravatar fixer": {
+    "zh_CN": "Gra 头像修复"
+  },
+  "Donate to INN STUDIO (%s)": {
+    "zh_CN": "捐赠给 INN 工作室（%s）"
+  },
+  "Redirecting...": {
+    "zh_CN": "跳转中，请稍后……"
+  },
+  "Theme help": {
+    "zh_CN": "主题帮助"
+  },
+  "Theme name": {
+    "zh_CN": "主题名称"
+  },
+  "Theme version": {
+    "zh_CN": "主题版本"
+  },
+  "Theme description": {
+    "zh_CN": "主题描述"
+  },
+  "The theme is not activation, visit the theme official homepage or contact service to purchase if you like it. Thank you for your support genuine software.": {
+    "zh_CN": "主题尚未激活，如果您喜欢她的话请访问主题官网或联系客服购买。感谢您对正版软件的支持。"
+  },
+  "Theme author": {
+    "zh_CN": "主题作者"
+  },
+  "Theme homepage": {
+    "zh_CN": "主题官网"
+  },
+  "Author site": {
+    "zh_CN": "作者网站"
+  },
+  "Support email": {
+    "zh_CN": "支援邮箱"
+  },
+  "Donate": {
+    "zh_CN": "请一杯咖啡"
+  },
+  "Theme core": {
+    "zh_CN": "内核程序"
+  },
+  "Home prepend body code": {
+    "zh_CN": "首页 body 前置代码"
+  },
+  "%s - Homepage": {
+    "zh_CN": "%s - 首页"
+  },
+  "Image compress": {
+    "zh_CN": "图片压缩"
+  },
+  "It will compress image When user upload image file.": {
+    "zh_CN": "此功能将会在用户上传图片时候自动压缩图片质量。"
+  },
+  "Image placeholder": {
+    "zh_CN": "占位图片"
+  },
+  "You can custom the image placeholder here.": {
+    "zh_CN": "您可以在这里自定义占位图片。"
+  },
+  "Your custom avatar image URL address": {
+    "zh_CN": "您的自定义头像图片的 URL 地址"
+  },
+  "Default avatar image URL": {
+    "zh_CN": "默认头像图片 URL"
+  },
+  "Link target": {
+    "zh_CN": "链接目标"
+  },
+  "Loading icon": {
+    "zh_CN": "加载图标"
+  },
+  "Image size must be square.": {
+    "zh_CN": "图像大小必须为正方形。"
+  },
+  "Global message": {
+    "zh_CN": "全局消息"
+  },
+  "Loading, please wait...": {
+    "zh_CN": "加载中，请稍候…"
+  },
+  "Sorry, server is busy now, can not respond your request, please try again later.": {
+    "zh_CN": "抱歉，服务器正忙，无法响应你的请求，请稍候重试。"
+  },
+  "Close": {
+    "zh_CN": "关闭"
+  },
+  "OK": {
+    "zh_CN": "确定"
+  },
+  "No more data.": {
+    "zh_CN": "没有更多的数据。"
+  },
+  "Theme by INN STUDIO, powered by WordPress.": {
+    "zh_CN": "萤栈工作室出品主题，基于 WordPress 驱动。"
+  },
+  "This is a test email.": {
+    "zh_CN": "这是一封测试邮件。"
+  },
+  "This is a test email generated by your blog.": {
+    "zh_CN": "这是一封来自您的博客的测试邮件。"
+  },
+  "SMTP mail": {
+    "zh_CN": "SMTP 邮件"
+  },
+  "Enabled?": {
+    "zh_CN": "是否启用？"
+  },
+  "Forward mail remote server URL": {
+    "zh_CN": "转发邮件远端服务器 URL"
+  },
+  "Send test mail": {
+    "zh_CN": "发送一封测试邮件"
+  },
+  "Sending test mail, please wait...": {
+    "zh_CN": "邮件发送中，请稍等…"
+  },
+  "Your test inbox": {
+    "zh_CN": "您测试的收件箱"
+  },
+  "Form mail": {
+    "zh_CN": "发送人邮箱"
+  },
+  "For example: Jack@gmail.com": {
+    "zh_CN": "例如：Jack@gmail.com"
+  },
+  "You can specify the email address that emails should be sent from": {
+    "zh_CN": "你可以指定电子邮件地址作为发件人地址"
+  },
+  "From Name": {
+    "zh_CN": "发件人姓名"
+  },
+  "For example: Jack": {
+    "zh_CN": "例如：杰克"
+  },
+  "You can specify the name that emails should be sent from. If you leave this blank, the emails will be sent from your blog name.": {
+    "zh_CN": "您可以指定发件人的姓名"
+  },
+  "SMTP host": {
+    "zh_CN": "SMTP 主机"
+  },
+  "For example: smtp.gmail.com": {
+    "zh_CN": "例如：smtp.gmail.com"
+  },
+  "Send all emails via this SMTP server": {
+    "zh_CN": "发送的全部邮件都通过 SMTP 服务器"
+  },
+  "Port": {
+    "zh_CN": "端口"
+  },
+  "For example: 25": {
+    "zh_CN": "例如：25"
+  },
+  "TCP port": {
+    "zh_CN": "TCP 端口"
+  },
+  "Encryption type": {
+    "zh_CN": "加密类型"
+  },
+  "For example: tls": {
+    "zh_CN": "例如：tls"
+  },
+  "Encryption type, `tls` or `ssl`": {
+    "zh_CN": "加密类型，`tls` 或 `ssl`"
+  },
+  "Username": {
+    "zh_CN": "用户名"
+  },
+  "SMTP username": {
+    "zh_CN": "SMTP 用户名"
+  },
+  "Password": {
+    "zh_CN": "密码"
+  },
+  "Your mail password": {
+    "zh_CN": "您的邮箱密码"
+  },
+  "SMTP password": {
+    "zh_CN": "SMTP 密码"
+  },
+  "Meta Og setting": {
+    "zh_CN": "Meta OG 设置"
+  },
+  "Add a menu": {
+    "zh_CN": "添加一个菜单"
+  },
+  "%s (Invalid)": {
+    "zh_CN": "%s （无效）"
+  },
+  "%s (Pending)": {
+    "zh_CN": "（%s）待审核"
+  },
+  "Move": {
+    "zh_CN": "移动"
+  },
+  "Up one": {
+    "zh_CN": "上移"
+  },
+  "Down one": {
+    "zh_CN": "下移"
+  },
+  "To the top": {
+    "zh_CN": "移至最顶"
+  },
+  "URL": {
+    "zh_CN": "URL"
+  },
+  "Navigation label": {
+    "zh_CN": "导航标签"
+  },
+  "Attribute title": {
+    "zh_CN": "属性 title"
+  },
+  "Awesome icon": {
+    "zh_CN": "字棒图标"
+  },
+  "Class name": {
+    "zh_CN": "类名"
+  },
+  "XHTML Friends Network (XFN)": {
+    "zh_CN": "XHTML 朋友网络（XFN）"
+  },
+  "Show navigation label": {
+    "zh_CN": "显示"
+  },
+  "Hide navigation label": {
+    "zh_CN": "隐藏导航标签"
+  },
+  "sub item": {
+    "zh_CN": "子菜单"
+  },
+  "Edit Menu Item": {
+    "zh_CN": "编辑菜单条目"
+  },
+  "Original: %s": {
+    "zh_CN": "原始：%s"
+  },
+  "Remove": {
+    "zh_CN": "移除"
+  },
+  "Rename completed!": {
+    "zh_CN": "重命名完毕！"
+  },
+  "Renaming...": {
+    "zh_CN": "正在重命名……"
+  },
+  "User %1$s nicename is already %2$s, skipped.": {
+    "zh_CN": "用户 %1$s 的 URL 名称已是 %2$s，已跳过。"
+  },
+  "User %1$s nicename rename to %2$s, upgraded.": {
+    "zh_CN": "用户 %1$s 的 URL 名称重命名为 %2$s，已更新。"
+  },
+  "Number nicename": {
+    "zh_CN": "数字好名字"
+  },
+  "Remark nicename": {
+    "zh_CN": "重命名好名字"
+  },
+  "Open platform": {
+    "zh_CN": "开放平台"
+  },
+  "App ID": {
+    "zh_CN": "App ID"
+  },
+  "App secret": {
+    "zh_CN": "App secret"
+  },
+  "App name": {
+    "zh_CN": "应用名称"
+  },
+  "You can use WordPress Rest API or theme extension feature. This feature needs to authorize to enable.": {
+    "zh_CN": "您可以使用 WordPress Rest API 或主题扩展功能。此功能需要授权才能启用。"
+  },
+  "Feature unauthorized.": {
+    "zh_CN": "功能未授权。"
+  },
+  "Api action": {
+    "zh_CN": "API 动作"
+  },
+  "Error codeInvalid token.": {
+    "zh_CN": "无效的令牌。"
+  },
+  "Error codeInvalid appid.": {
+    "zh_CN": "无效的 appid。"
+  },
+  "Error codeInvalid appsecret.": {
+    "zh_CN": "无效的安全码。"
+  },
+  "Error codeUser password not match.": {
+    "zh_CN": "用户密码不匹配。"
+  },
+  "Error codeUser has been disabled.": {
+    "zh_CN": "用户已被禁用。"
+  },
+  "Error codeYou can not register now.": {
+    "zh_CN": "目前您无法注册。"
+  },
+  "Error codeEmail already exists.": {
+    "zh_CN": "邮箱已经存在"
+  },
+  "An error has occurred. Please reload the page and try again.": {
+    "zh_CN": "发生了错误。请刷新页面，然后再试一次。"
+  },
+  "%s settings": {
+    "zh_CN": "%s 设置"
+  },
+  "Options saved, page is refreshing...": {
+    "zh_CN": "选项成功保存，页面正在刷新……"
+  },
+  "System can not save option.": {
+    "zh_CN": "系统无法保存选项。"
+  },
+  "Your options may have been modified (%s). Do you need to force override? This may cause the previous modifications to be restored to your modifications.": {
+    "zh_CN": "您的选项可能已经过修改（%s），是否需要强制覆盖？可能会导致之前修改被还原为您的修改。"
+  },
+  "Force override": {
+    "zh_CN": "强制覆盖"
+  },
+  "Saving settings, please wait...": {
+    "zh_CN": "正在保存您的设置，请稍等……"
+  },
+  "Error: %s must be writable.": {
+    "zh_CN": "错误：%s 必须填写。"
+  },
+  "Error codeNo post found.": {
+    "zh_CN": "未发现到文章。"
+  },
+  "Protected: %s": {
+    "zh_CN": "需要密码：%s"
+  },
+  "Private: %s": {
+    "zh_CN": "私有：%s"
+  },
+  "Post approval": {
+    "zh_CN": "文章点赞"
+  },
+  "Need to login?": {
+    "zh_CN": "需要登录？"
+  },
+  "Good": {
+    "zh_CN": "赞"
+  },
+  "Post approvalApproved": {
+    "zh_CN": "已赞"
+  },
+  "You need a higher user level to continue.": {
+    "zh_CN": "你需要更高的用户等级才能继续。"
+  },
+  "Thank you for your approval!": {
+    "zh_CN": "感谢您的认可。"
+  },
+  "You already approved, thank you.": {
+    "zh_CN": "您已经赞过了。"
+  },
+  "Sorry, you can not approve yourself.": {
+    "zh_CN": "抱歉，您不能自己赞自己这么不要脸。"
+  },
+  "Approval": {
+    "zh_CN": "赞许"
+  },
+  "Post content thumbnail size": {
+    "zh_CN": "文章内容缩略图尺寸"
+  },
+  "Thumbnail width": {
+    "zh_CN": "缩略图宽度"
+  },
+  "Thumbnail height": {
+    "zh_CN": "缩略图高度"
+  },
+  "Post flip": {
+    "zh_CN": "文章翻页"
+  },
+  "Already first page": {
+    "zh_CN": "已是首页"
+  },
+  "Already last page": {
+    "zh_CN": "已是尾页"
+  },
+  "Page %1$s/%2$d - %3$s": {
+    "zh_CN": "第 %1$s/%2$d 页 - %3$s"
+  },
+  "Scan QR code via wechat": {
+    "zh_CN": "通过微信扫描二维码"
+  },
+  "Share": {
+    "zh_CN": "分享"
+  },
+  "Post share": {
+    "zh_CN": "文章分享"
+  },
+  "Share your post to everywhere. Here are some keywords that can be used:": {
+    "zh_CN": "分享您的文章到每个地方。以下有一些关键词供您使用："
+  },
+  "Weibo": {
+    "zh_CN": "微博"
+  },
+  "QQ zone": {
+    "zh_CN": "QQ空间"
+  },
+  "WeChat": {
+    "zh_CN": "微信"
+  },
+  "Tieba": {
+    "zh_CN": "贴吧"
+  },
+  "Share to %s": {
+    "zh_CN": "分享到%s"
+  },
+  "Post ID": {
+    "zh_CN": "文章 ID"
+  },
+  "Post title": {
+    "zh_CN": "文章标题"
+  },
+  "Post URL address": {
+    "zh_CN": "文章 URL 地址"
+  },
+  "Blog name": {
+    "zh_CN": "博客名称"
+  },
+  "Blog URL address": {
+    "zh_CN": "博客 URL 地址"
+  },
+  "Post cover image URL address": {
+    "zh_CN": "文章封面图片 URL 地址"
+  },
+  "Post excerpt": {
+    "zh_CN": "文章摘要"
+  },
+  "Post content": {
+    "zh_CN": "文章内容"
+  },
+  "Post author name": {
+    "zh_CN": "文章作者名字"
+  },
+  "Current user ID": {
+    "zh_CN": "当前用户ID"
+  },
+  "Post status history": {
+    "zh_CN": "文章状态历史"
+  },
+  "No data": {
+    "zh_CN": "暂无资料"
+  },
+  "Post views": {
+    "zh_CN": "文章查看数"
+  },
+  "Using cache to improve performance. When the views more than max storage times, views will save to database.": {
+    "zh_CN": "使用缓存提高性能。当每篇文章查看数大于最大储存次数后，查看数会写入到数据库保存。"
+  },
+  "In the same post repeatedly refresh time is not recorded.": {
+    "zh_CN": "在同一文章多次刷新时间不被记录。"
+  },
+  "Recommend hosts": {
+    "zh_CN": "推荐主机"
+  },
+  "Here are theme author recommendation hosts, you maybe try it if you like. Last update %s.": {
+    "zh_CN": "这里是一些主题作者推荐的主机，如果您喜欢的话可以尝试购买。最后更新于 %s。"
+  },
+  "Price advantage": {
+    "zh_CN": "价格优势"
+  },
+  "Speed advantage": {
+    "zh_CN": "速度优势"
+  },
+  "Performance advantage": {
+    "zh_CN": "性能优势"
+  },
+  "Customer service advantage": {
+    "zh_CN": "客服优势"
+  },
+  "Stability advantage": {
+    "zh_CN": "稳定性"
+  },
+  "Chinese friendly": {
+    "zh_CN": "国内友好"
+  },
+  "Overview advantage": {
+    "zh_CN": "综合优势"
+  },
+  "Spartan Host": {
+    "zh_CN": "斯巴达"
+  },
+  "Good network quality and CPU performance with DDoS protection. Can pay annually.": {
+    "zh_CN": "网络质量好，性能高，带 DDoS 保护，可年付。"
+  },
+  "Aliyun/ECS": {
+    "zh_CN": "阿里云/ECS"
+  },
+  "Good network quality and CPU performance. High price. Under monitoring.": {
+    "zh_CN": "网络质量好，性能好，价格昂贵。有监控。"
+  },
+  "Good network quality and CPU performance, many nodes, easy to use, billing on time.": {
+    "zh_CN": "网络质量好，性能好，节点多，按量付费。"
+  },
+  "Good CPU performance, good network quality, easy to use, many nodes, billing on time.": {
+    "zh_CN": "CPU 性能好，网络质量好，易用，节点多，按量付费。"
+  },
+  "BandgwagonHOST": {
+    "zh_CN": "搬瓦工"
+  },
+  "Best network quality for China mainland, easy to use, many nodes, poor CPU performance. Can pay annually.": {
+    "zh_CN": "是到中国大陆最好的网络质量，易用，节点多，CPU 性能弱。可年付。"
+  },
+  "Old CPU, many nodes. Can pay annually.": {
+    "zh_CN": "CPU 老旧，节点多。可年付。"
+  },
+  "Related post": {
+    "zh_CN": "相关文章"
+  },
+  "Number": {
+    "zh_CN": "数量"
+  },
+  "Maybe you like": {
+    "zh_CN": "或许您会喜欢"
+  },
+  "Remove custom metabox": {
+    "zh_CN": "移除自定义元框"
+  },
+  "Remove WP RESTful": {
+    "zh_CN": "移除 WP RSF"
+  },
+  "Dynamic request": {
+    "zh_CN": "动态请求"
+  },
+  "Keep it by default.": {
+    "zh_CN": "保持默认。"
+  },
+  "Error codeOK": {
+    "zh_CN": "确定"
+  },
+  "Error codeSystem busy.": {
+    "zh_CN": "系統繁忙。"
+  },
+  "Error codeIllegal nonce.": {
+    "zh_CN": "非法验证。"
+  },
+  "Error codeIllegal referer.": {
+    "zh_CN": "非法來路。"
+  },
+  "Error codeIP limit.": {
+    "zh_CN": "IP 限制。"
+  },
+  "Error codeParam error, see doc for more info.": {
+    "zh_CN": "参数错误，更多的信息见文档。"
+  },
+  "Error codeToo many pending tasks, system is busy.": {
+    "zh_CN": "太多有待完成的任务，系统正忙。"
+  },
+  "Error codePermission denied, need a high user level.": {
+    "zh_CN": "拒绝权限，需要更高的用户等级。"
+  },
+  "Error codeIP requests out of rate limit.": {
+    "zh_CN": "IP 请求的速率限制。"
+  },
+  "Error codeUser requests out of rate limit.": {
+    "zh_CN": "用户请求的速率限制。"
+  },
+  "Error codeApi has been disabled.": {
+    "zh_CN": "该接口已禁用。"
+  },
+  "Error codeNo data.": {
+    "zh_CN": "无资料。"
+  },
+  "Administrator has not set the search URL.": {
+    "zh_CN": "管理员还未设置搜索地址"
+  },
+  "Custom search": {
+    "zh_CN": "自定义搜索"
+  },
+  "Default URL: %s": {
+    "zh_CN": "默认地址：%s"
+  },
+  "Search": {
+    "zh_CN": "搜索"
+  },
+  "Try: %s": {
+    "zh_CN": "试试：%s"
+  },
+  "Security": {
+    "zh_CN": "保护"
+  },
+  "SEO": {
+    "zh_CN": "搜索引擎优化"
+  },
+  "Fill in the appropriate keywords, can improve search engine friendliness. Use different key words in English comma (%s) to separate.": {
+    "zh_CN": "适当填写关键词，能提高对搜索引擎的友好度。不同关键词请用英文逗号（%s）分隔。"
+  },
+  "Keywords": {
+    "zh_CN": "搜索关键词"
+  },
+  "Show your advertisement.": {
+    "zh_CN": "显示您的广告"
+  },
+  "Device visibility": {
+    "zh_CN": "设备可见性"
+  },
+  "Shows in all devices": {
+    "zh_CN": "显示在所有设备"
+  },
+  "Shows in desktop device": {
+    "zh_CN": "显示在桌面设备"
+  },
+  "Shows in mobile device": {
+    "zh_CN": "显示在移动设备"
+  },
+  "Code": {
+    "zh_CN": "代码"
+  },
+  "Similar comment checker": {
+    "zh_CN": "相似评论检查"
+  },
+  "Maybe you had commented the same content, please change the way.": {
+    "zh_CN": "也许您已经评论过相同的内容，不让换个方式？"
+  },
+  "Done, click to close this page.": {
+    "zh_CN": "完成，单击以关闭此页面。"
+  },
+  "Special meta SEO": {
+    "zh_CN": "特别的 Meta SEO"
+  },
+  "The <title> text": {
+    "zh_CN": "<title> 文本"
+  },
+  "Use (%s) to separate meta keywords": {
+    "zh_CN": "使用（%s）分隔多个关键词"
+  },
+  "Meta description for this article": {
+    "zh_CN": "给这篇文章设置 Meta 描述"
+  },
+  "Super comment": {
+    "zh_CN": "超级评论"
+  },
+  "The theme comment system.": {
+    "zh_CN": "主题评论系统。"
+  },
+  "Submit button": {
+    "zh_CN": "文本：提交按钮"
+  },
+  "Shy": {
+    "zh_CN": "脸红"
+  },
+  "Sad": {
+    "zh_CN": "杯具"
+  },
+  "Street": {
+    "zh_CN": "压力"
+  },
+  "Want": {
+    "zh_CN": "想要"
+  },
+  "Shocked": {
+    "zh_CN": "吃惊"
+  },
+  "GJ": {
+    "zh_CN": "好样的"
+  },
+  "Join to talking": {
+    "zh_CN": "参与讨论聊一聊"
+  },
+  "Your comment is sending, please wait...": {
+    "zh_CN": "您的评论正在提交中，请稍等……"
+  },
+  "Commented successfully, thank you!": {
+    "zh_CN": "发表评论成功，感谢您的参与！"
+  },
+  "Your comment content": {
+    "zh_CN": "您的评论内容"
+  },
+  "Submit": {
+    "zh_CN": "提交"
+  },
+  "Sign-in to comment": {
+    "zh_CN": "登录后才能评论哦！"
+  },
+  "Super commentPost comment": {
+    "zh_CN": "发表评论"
+  },
+  "Blocked comment from frontend.": {
+    "zh_CN": "已禁止前台评论"
+  },
+  "Your name": {
+    "zh_CN": "您的名字"
+  },
+  "Your email": {
+    "zh_CN": "您的邮箱"
+  },
+  "Reply comment": {
+    "zh_CN": "回复评论"
+  },
+  "Tip": {
+    "zh_CN": "提示"
+  },
+  ": ": {
+    "zh_CN": "："
+  },
+  "No comment yet.": {
+    "zh_CN": "暂无评论"
+  },
+  "Select emotion": {
+    "zh_CN": "选择表情"
+  },
+  "Me": {
+    "zh_CN": "我"
+  },
+  "Sorry, can not match any content.": {
+    "zh_CN": "抱歉，找不到匹配的内容。"
+  },
+  "Super search": {
+    "zh_CN": "超级搜索"
+  },
+  "Search result: %s": {
+    "zh_CN": "搜索结果：%s"
+  },
+  "Tag visibility": {
+    "zh_CN": "标签可见性"
+  },
+  "Masked Tags: %s": {
+    "zh_CN": "已标记标签：%s"
+  },
+  "Tag ID, example: %s": {
+    "zh_CN": "标签 ID，例如：%s"
+  },
+  "Human time%d year(s)": {
+    "zh_CN": "%d 年"
+  },
+  "Human time%d month(s)": {
+    "zh_CN": "%d 月"
+  },
+  "Human time%d day(s)": {
+    "zh_CN": "%d 天"
+  },
+  "Human time%d hour(s)": {
+    "zh_CN": "%d 小时"
+  },
+  "Human time%d minute(s)": {
+    "zh_CN": "%d 分"
+  },
+  "Human time%d second(s)": {
+    "zh_CN": "%d 秒"
+  },
+  "Human timeJust": {
+    "zh_CN": "刚刚"
+  },
+  "Human time%dmin ago": {
+    "zh_CN": "%d分钟前"
+  },
+  "Human time%dh ago": {
+    "zh_CN": "%d小时前"
+  },
+  "Human time%dd ago": {
+    "zh_CN": "%d天前"
+  },
+  "Human time%dm ago": {
+    "zh_CN": "%d个月前"
+  },
+  "Human time%dy ago": {
+    "zh_CN": "%d年前"
+  },
+  "Human timeM j, Y": {
+    "zh_CN": "Y年m月d日"
+  },
+  "Tiny WP post content": {
+    "zh_CN": "精简 WP 文章内容"
+  },
+  "Tiny WP post thumbnail": {
+    "zh_CN": "精简 WP 文章特色图"
+  },
+  "Next page tag": {
+    "zh_CN": "分页符"
+  },
+  "Undeline tag": {
+    "zh_CN": "下划线"
+  },
+  "Table of content": {
+    "zh_CN": "目录大纲"
+  },
+  "Back to TOC": {
+    "zh_CN": "返回到大纲"
+  },
+  "New version: <strong>%s</strong>": {
+    "zh_CN": "最新版本：<strong>%s</strong>"
+  },
+  "Unable to rename downloaded theme.": {
+    "zh_CN": "无法重命名已下载的主题。"
+  },
+  "Error codeNo user found.": {
+    "zh_CN": "未发现到用户。"
+  },
+  "User roleAdministrator": {
+    "zh_CN": "管理员"
+  },
+  "User roleEditor": {
+    "zh_CN": "编辑"
+  },
+  "User roleAuthor": {
+    "zh_CN": "作者"
+  },
+  "User roleContributor": {
+    "zh_CN": "投稿者"
+  },
+  "User roleSubscriber": {
+    "zh_CN": "订阅者"
+  },
+  "User code": {
+    "zh_CN": "用户代码"
+  },
+  "Header code": {
+    "zh_CN": "头部代码"
+  },
+  "&copy; %1$s %2$s &frasl; Theme by %3$s": {
+    "zh_CN": "版权所有 &copy; %1$s %2$s &frasl; 主题 %3$s"
+  },
+  "Views theme homepage": {
+    "zh_CN": "查看主题首页"
+  },
+  "Current year": {
+    "zh_CN": "当前年份"
+  },
+  "Role has been deleted.": {
+    "zh_CN": "角色已删除。"
+  },
+  "User role editor": {
+    "zh_CN": "用户角色编辑器"
+  },
+  "You can edit user role here. This feature may cause a security risk if you operate improperly. Warning! You need know what are you doing now": {
+    "zh_CN": "您可以编辑用户角色在这里。此功能可能会导致安全风险，如果你操作不当。"
+  },
+  "Role": {
+    "zh_CN": "角色"
+  },
+  "Capabilities": {
+    "zh_CN": "权限"
+  },
+  "New role": {
+    "zh_CN": "新建角色"
+  },
+  "Rename role name": {
+    "zh_CN": "重命名角色名称"
+  },
+  "Rename role ID": {
+    "zh_CN": "重命名角色 ID "
+  },
+  "Delete role": {
+    "zh_CN": "删除角色"
+  },
+  "Please type new role ID (lowercase), for example: inn_studio_editor": {
+    "zh_CN": "请输入新角色 ID，例如：inn_studio_editor"
+  },
+  "Please type new role display name, for example: INN STUDIO Editor": {
+    "zh_CN": "请输入新角色显示名称，例如：INN编辑"
+  },
+  "Are you sure add this new role? %roleName% - %roleId%": {
+    "zh_CN": "您确定添加这个新角色吗？%roleName% - %roleId%"
+  },
+  "Are you sure delete this capability?": {
+    "zh_CN": "您确定删除此权限吗？无法恢复的哦！"
+  },
+  "The role ID is exist, please try another one.": {
+    "zh_CN": "该角色 ID 已存在，请尝试另一个"
+  },
+  "Copy roles": {
+    "zh_CN": "复制角色"
+  },
+  "Paste roles": {
+    "zh_CN": "粘贴角色"
+  },
+  "Apply": {
+    "zh_CN": "应用"
+  },
+  "Show the latest comments": {
+    "zh_CN": "显示最新的评论"
+  },
+  "No any comment yet.": {
+    "zh_CN": "暂无任何评论。"
+  },
+  "Title": {
+    "zh_CN": "标题"
+  },
+  "Image": {
+    "zh_CN": "图片"
+  },
+  "Display leaderboard of posts.": {
+    "zh_CN": "显示文章排行榜"
+  },
+  "Items count": {
+    "zh_CN": "条目数量"
+  },
+  "Content type": {
+    "zh_CN": "内容类型"
+  },
+  "Image type": {
+    "zh_CN": "图片类型"
+  },
+  "Text type": {
+    "zh_CN": "文本类型"
+  },
+  "Views more": {
+    "zh_CN": "查看更多"
+  },
+  "More &raquo;": {
+    "zh_CN": "更多 &raquo;"
+  },
+  "Show the popular tags.": {
+    "zh_CN": "显示热门标签"
+  },
+  "Title (optional)": {
+    "zh_CN": "标题（可选）"
+  },
+  "More link (optional)": {
+    "zh_CN": "更多链接（可选）"
+  },
+  "Tags number": {
+    "zh_CN": "标签数量"
+  },
+  "Sticky tags (optional, one tag per line)": {
+    "zh_CN": "固定标签（可选，一行一个）"
+  },
+  "WP image sizes": {
+    "zh_CN": "WP 图片尺寸"
+  },
+  "WP image sizesThumbnail": {
+    "zh_CN": "缩略图"
+  },
+  "WP image sizesMedium": {
+    "zh_CN": "中尺寸"
+  },
+  "WP image sizesMedium large": {
+    "zh_CN": "中大尺寸"
+  },
+  "WP image sizesLarge": {
+    "zh_CN": "大尺寸"
+  },
+  "WP image sizesWidth": {
+    "zh_CN": "宽度"
+  },
+  "WP image sizesHeight": {
+    "zh_CN": "高度"
+  },
+  "WP image sizesCrop": {
+    "zh_CN": "裁剪"
+  },
+  "WP image sizesNo crop": {
+    "zh_CN": "不裁切"
+  },
+  "WP image sizesSave": {
+    "zh_CN": "保存"
+  },
+  "WordPress config error, please check your wp-config.php file.": {
+    "zh_CN": "WordPress 配置错误，请检查您的 wp-config.php 文件。"
+  },
+  "WordPress config error": {
+    "zh_CN": "WordPress  配置错误"
+  },
+  "Error code2User password not match.": {
+    "zh_CN": "用户密码不匹配。2"
+  },
+  "Category to control": {
+    "zh_CN": "目录控制"
+  },
+  "Open API": {
+    "zh_CN": "开放接口"
+  },
+  "Price": {
+    "zh_CN": "价格"
+  },
+  "Speed": {
+    "zh_CN": "速度"
+  },
+  "Which category can be searched?": {
+    "zh_CN": "选择哪个分类？"
+  },
+  "Select role and set color": {
+    "zh_CN": "选择角色并设置颜色"
+  },
+  "Back to Homepage": {
+    "zh_CN": "返回到首页"
+  },
+  "Category Browser": {
+    "zh_CN": "目录浏览"
+  },
+  "Tags Browser": {
+    "zh_CN": "标签归档浏览"
+  },
+  "Date Browser": {
+    "zh_CN": "日期归档浏览"
+  },
+  "Search Result: %s": {
+    "zh_CN": "搜索结果：%s"
+  },
+  "Author posts": {
+    "zh_CN": "作者文章"
+  },
+  "Not found": {
+    "zh_CN": "暂无资料"
+  },
+  "Send mail using smtp server instead of the default mode.": {
+    "zh_CN": "使用 SMTP 服务器发送邮件来代替默认模式。"
+  },
+  "Test": {
+    "zh_CN": "测试"
+  },
+  "%1$s update: %2$s → %3$s": {
+    "zh_CN": "%1$s 更新：%2$s → %3$s"
+  },
+  "Below the header menu (not in homepage)": {
+    "zh_CN": "顶部菜单之下（不在首页）"
+  },
+  "Coffee": {
+    "zh_CN": "咖啡"
+  },
+  "Publish on %s": {
+    "zh_CN": "发布于 %s"
+  },
+  "Update on %s": {
+    "zh_CN": "更新于 %s"
+  },
+  "Name: %s": {
+    "zh_CN": "CSS 名称：%s"
+  },
+  "Cache file error.": {
+    "zh_CN": "缓存文件错误"
+  },
+  "Disable theme object cache": {
+    "zh_CN": "禁用主题对象缓存"
+  },
+  "Fast speed, easy to use, more nodes.": {
+    "zh_CN": "速度快，界面易用，节点多。"
+  },
+  "No description yet": {
+    "zh_CN": "暂无描述。"
+  },
+  "Title attribute": {
+    "zh_CN": "Title 属性"
+  },
+  "CSS classes (optional)": {
+    "zh_CN": "CSS 样式名（可选）"
+  },
+  "Display navigation label": {
+    "zh_CN": "显示导航标签"
+  },
+  "Nav menuDisplay": {
+    "zh_CN": "显示"
+  },
+  "Nav menuHide": {
+    "zh_CN": "隐藏"
+  },
+  "Link Relationship (XFN)": {
+    "zh_CN": "链接关系（XFN）"
+  },
+  "The description will be displayed in the menu if the current theme supports it.": {
+    "zh_CN": "如果当前主题支持，可以显示该描述。"
+  },
+  "Some unpredictable errors happen. Please try again later.": {
+    "zh_CN": "有一些不可预知的错误。请稍后再试。"
+  },
+  "Theme options": {
+    "zh_CN": "主题选项"
+  },
+  "Error codeok": {
+    "zh_CN": "ok"
+  },
+  "Comments": {
+    "zh_CN": "评论"
+  },
+  "Next Page": {
+    "zh_CN": "下一页"
+  },
+  "Copy": {
+    "zh_CN": "拷贝"
+  },
+  "Paste": {
+    "zh_CN": "粘贴"
+  },
+  "Recommenation": {
+    "zh_CN": "推荐"
+  },
+  "M j, Y": {
+    "zh_CN": "Y年m月d日"
+  },
+  "Sorry, I was not able to find what you need, what about look at other content :)": {
+    "zh_CN": "抱歉，我没能找到您需要的内容，不放看看其他东西 ：）"
+  },
+  "INN 2016": {
+    "zh_CN": "INN 2016"
+  },
+  "https://inn-studio.com/inn2016": {
+    "zh_CN": "https://inn-studio.com/inn2016"
+  },
+  "https://inn-studio.com": {
+    "zh_CN": "https://inn-studio.com"
+  },
+  "INN STUDIO": {
+    "zh_CN": "INN STUDIO"
+  },
+  "Professional edition": {
+    "zh_CN": "专业版"
+  },
+  "E.g: %s": {
+    "zh_CN": "例如：%s"
+  },
+  "E-Mail": {
+    "zh_CN": "电子邮箱"
+  },
+  "E.g., Jack": {
+    "zh_CN": "例如：杰克"
+  },
+  "E.g., 25": {
+    "zh_CN": "例如：25"
+  },
+  "E.g., tls": {
+    "zh_CN": "例如：tls"
+  },
+  "Are you sure DELETE object-cache.php to disable theme object cache?": {
+    "zh_CN": "你确定删除 object-cache.php 来禁用主题对象缓存吗？"
+  },
+  "Views all icons": {
+    "zh_CN": "查看所有图标"
+  },
+  "Tool": {
+    "zh_CN": "工具"
+  },
+  "Feedback &amp; technical support": {
+    "zh_CN": "反馈 &amp; 支持"
+  },
+  "Submitted comment without refreshing page. Recommended enable to improve the user experience.": {
+    "zh_CN": "提交评论无需刷新页面。推荐使以改善用户体验。"
+  },
+  "Are you sure ENABLE %1$s object cache? You have to understand how %1$s works and its configuration or your site will down.": {
+    "zh_CN": "在启用 %1$s 对象缓存之前，您必须清楚了解 %1$s 工作原理以及其配置信息，否则你的站点无法正常运作以及无法预料的后果，其风险您需自行承担！\\n\\n清楚了解后，依然要继续吗？"
+  },
+  "Appears on archive page in the sidebar.": {
+    "zh_CN": "显示在归档页面的边栏中。"
+  },
+  "Bottom nav": {
+    "zh_CN": "底部导航"
+  },
+  "Select the parent category in generally, and only support 2 level.": {
+    "zh_CN": "一般选择父目录即可，仅支持 2 层目录。"
+  },
+  "Restore": {
+    "zh_CN": "还原"
+  },
+  "Restore the post share settings": {
+    "zh_CN": "还原文章分享设置"
+  },
+  "TCP port to connect to.": {
+    "zh_CN": "TCP 端口连接到。"
+  },
+  "SMTP secure type": {
+    "zh_CN": "SMTP 安全类型"
+  },
+  "Enable TLS encryption, `ssl` also accepted": {
+    "zh_CN": "启用 TLS 加密，`ssl` 也可以接受。"
+  },
+  "View all posts in %s": {
+    "zh_CN": "查看 %s 目录下的所有文章"
+  },
+  "404 page widget area": {
+    "zh_CN": "404 页面小工具区域"
+  },
+  "Appears on 404 no found page in the sidebar.": {
+    "zh_CN": "显示在 404 页面的边栏中。"
+  },
+  "Awesome URL auto update or not?": {
+    "zh_CN": "Awesome 版本"
+  },
+  "Frontend JS URL": {
+    "zh_CN": "前台 JS 地址"
+  },
+  "Frontend CSS URL": {
+    "zh_CN": "前台 CSS 地址"
+  },
+  "Open link in a new window/tab": {
+    "zh_CN": "在新窗口中打开"
+  },
+  "ALL": {
+    "zh_CN": "全部"
+  },
+  "Time (second)": {
+    "zh_CN": "时间（秒）"
+  },
+  "Query": {
+    "zh_CN": "查询数"
+  },
+  "Memory (MB)": {
+    "zh_CN": "内存（兆）"
+  },
+  "&lsaquo; Previous": {
+    "zh_CN": "&lsaquo;  上一页"
+  },
+  "Next &rsaquo;": {
+    "zh_CN": "下一页 &rsaquo;"
+  },
+  "&laquo; First": {
+    "zh_CN": "&laquo; 首页"
+  },
+  "Last &raquo;": {
+    "zh_CN": "尾页 &raquo;"
+  },
+  "Numbers show": {
+    "zh_CN": "显示数量"
+  },
+  "Most views": {
+    "zh_CN": "最多查看"
+  },
+  "Most approval": {
+    "zh_CN": "最多点赞"
+  },
+  "according to your server network condition to set the appropriate asset URL.": {
+    "zh_CN": "根据你服务器网络条件，设置适当的资源 URL 地址。"
+  },
+  "Filecache": {
+    "zh_CN": "文件缓存"
+  },
+  "Are you sure RE-CREATE object-cache.php to re-enable filecache object cache?": {
+    "zh_CN": "你确定重建 object-cache.php 来重新启用文件对象缓存吗？"
+  },
+  "Enable filecache object cache": {
+    "zh_CN": "启用文件对象缓存"
+  },
+  "Memcache cache": {
+    "zh_CN": "Memcache 缓存"
+  },
+  "Are you sure RE-CREATE object-cache.php to re-enable Memcache object cache?": {
+    "zh_CN": "你确定重建 object-cache.php 来重新启用 Memcache 对象缓存吗？"
+  },
+  "Re-enable Memcache object cache": {
+    "zh_CN": "重新启用 Memcache 对象缓存"
+  },
+  "Enable Memcache object cache": {
+    "zh_CN": "启用 Memcache 对象缓存"
+  },
+  "Memcached cache": {
+    "zh_CN": "Memcached 缓存"
+  },
+  "Are you sure RE-CREATE object-cache.php to re-enable Memcached object cache?": {
+    "zh_CN": "你确定重建 object-cache.php 来重新启用 Memcached 对象缓存吗？"
+  },
+  "Re-enable Memcached object cache": {
+    "zh_CN": "重新启用 Memcached 对象缓存"
+  },
+  "Enable Memcached object cache": {
+    "zh_CN": "启用 Memcached 对象缓存"
+  },
+  "&laquo;": {
+    "zh_CN": "&laquo;"
+  },
+  "&raquo;": {
+    "zh_CN": "&raquo;"
+  },
+  "Views all post by %s": {
+    "zh_CN": "查看 %s 目录下的所有文章"
+  },
+  "Recommendation post": {
+    "zh_CN": "推荐文章"
+  },
+  "Recommendation posts will display some where if enabled.": {
+    "zh_CN": "如果启用，将会在首页显示推荐文章。"
+  },
+  "Box title": {
+    "zh_CN": "盒子标题"
+  },
+  "Show posts number": {
+    "zh_CN": "文章数量"
+  },
+  "Storage pool": {
+    "zh_CN": "储存池数量"
+  },
+  "Import posts ID": {
+    "zh_CN": "导入文章 ID"
+  },
+  "If you need not import posts, just left blank otherwise save settings.": {
+    "zh_CN": "如果您不需要导入文章则留空，反之保存设置。"
+  },
+  "Fill the posts ID, separated by English comma. E.g., 13,22,41,5": {
+    "zh_CN": "填写文章 ID，多篇文章使用,英文逗号分隔。例如 13,22,41,5"
+  },
+  "Marked posts": {
+    "zh_CN": "已标记的文章"
+  },
+  "Open in open window": {
+    "zh_CN": "在新窗口中打开"
+  },
+  "No any post yet": {
+    "zh_CN": "暂无任何资料"
+  },
+  "Flush cache": {
+    "zh_CN": "刷新缓存"
+  },
+  "Recommenation post": {
+    "zh_CN": "推荐文章"
+  },
+  "Do not set as recommenation post": {
+    "zh_CN": "不作为推荐文章"
+  },
+  "Set as recommenation post": {
+    "zh_CN": "作为推荐文章"
+  },
+  "Sorry, your permission is invalid.": {
+    "zh_CN": "抱歉，您的权限无效。"
+  },
+  "Sorry, test mail is invalid.": {
+    "zh_CN": "抱歉，测试邮箱无效。"
+  },
+  "New version changelog:": {
+    "zh_CN": "新版更新介绍："
+  },
+  "Change log:": {
+    "zh_CN": "修改密码"
+  },
+  "The theme key and theme secure are you theme unique identification. You should be keep it and prevent leakage. Thank you for your support genuine software.": {
+    "zh_CN": "主题 K 码和 S 码是您主题的唯一识别号。您应该妥善保存慎防泄露。感谢您对正版软件的支持！"
+  },
+  "Theme key": {
+    "zh_CN": "主题 K 码"
+  },
+  "Theme secure": {
+    "zh_CN": "主题 S 码"
+  },
+  "Free trial, if you like this theme please contact the author to buy.": {
+    "zh_CN": "免费试用中，如果你喜欢这个主题不妨与作者联系购买吧。"
+  },
+  "Something error with theme? Try to restore. Be careful, theme options will be cleared up!": {
+    "zh_CN": "主题发生了错误？试试还原数据。注意，主题选项将会被清空！"
+  },
+  "Level %d": {
+    "zh_CN": "等级 %d"
+  },
+  "You need login to continue.": {
+    "zh_CN": "抱歉，您必须登录后才能继续。"
+  },
+  "The post is not exist.": {
+    "zh_CN": "文章不存在。"
+  },
+  "Solemn": {
+    "zh_CN": "婚姻"
+  },
+  "Rose": {
+    "zh_CN": "蔷薇"
+  },
+  "Palette": {
+    "zh_CN": "星辰"
+  },
+  "High-end black": {
+    "zh_CN": "高端黑"
+  },
+  "Violet": {
+    "zh_CN": "紫罗兰"
+  },
+  "Sorry, your email and password do not match. Please correct and try again.": {
+    "zh_CN": "抱歉，您的邮箱和密码不匹配，请重试。"
+  },
+  "Sorry, you have not enough permission to opera.": {
+    "zh_CN": "抱歉，您权限不足无法继续操作。"
+  },
+  "Sorry, role name is invalid.": {
+    "zh_CN": "抱歉，角色名无效。"
+  },
+  "Role has been saved.": {
+    "zh_CN": "角色已保存。"
+  },
+  "You can edit user role here.": {
+    "zh_CN": "您可以编辑用户角色。"
+  },
+  "Basic Performance": {
+    "zh_CN": "基本性能"
+  },
+  "Final Performance": {
+    "zh_CN": "最终性能"
+  },
+  "Error codeSuccess.": {
+    "zh_CN": "成功。"
+  },
+  "Sorry, post ID is invalid.": {
+    "zh_CN": "抱歉，文章 ID 编号无效。"
+  },
+  "Sorry, the post does not exist.": {
+    "zh_CN": "抱歉，文章不存在。"
+  },
+  "Sorry, page number is invalid.": {
+    "zh_CN": "对不起，页码无效。"
+  },
+  "Sorry, comments are closed for this item.": {
+    "zh_CN": "抱歉，该文章的评论已被关闭。"
+  },
+  "Sorry, can not comment on trash post.": {
+    "zh_CN": "抱歉，您必须登陆后才能发表评论。"
+  },
+  "Sorry, can not comment draft post.": {
+    "zh_CN": "抱歉，您必须登陆后才能发表评论。"
+  },
+  "Sorry, the post needs password to comment.": {
+    "zh_CN": "抱歉，您必须登陆后才能发表评论。"
+  },
+  "Sorry, you must be logged in to post a comment.": {
+    "zh_CN": "抱歉，您必须登陆后才能发表评论。"
+  },
+  "Error: please fill your name.": {
+    "zh_CN": "错误：请填写你的名字。"
+  },
+  "Error: please enter a valid email address.": {
+    "zh_CN": "错误：请输入一个合法的邮箱地址。"
+  },
+  "Error: please type comment content.": {
+    "zh_CN": "错误：请输入评论内容。"
+  },
+  "Sorry, the post ID is invalid.": {
+    "zh_CN": "抱歉，文章 ID 编号无效。"
+  },
+  "Error: system can not create comment.": {
+    "zh_CN": "错误：系统无法创建评论。"
+  },
+  "View conversation": {
+    "zh_CN": "查看对话"
+  },
+  "Post URL": {
+    "zh_CN": "文章地址"
+  },
+  "Blog URL": {
+    "zh_CN": "博客地址"
+  },
+  "The first picture of the post.": {
+    "zh_CN": "文章的第一幅图"
+  },
+  "The excerpt of post.": {
+    "zh_CN": "文章摘要"
+  },
+  "The content of post.": {
+    "zh_CN": "文章内容"
+  },
+  "Hell": {
+    "zh_CN": "地狱"
+  },
+  "Timestamp has been updated.": {
+    "zh_CN": "时间戳已成功更新。"
+  },
+  "-- from %blog_name%": {
+    "zh_CN": "—— 来自 %blog_name%"
+  },
+  "Wechat": {
+    "zh_CN": "微信"
+  },
+  "Fantasy": {
+    "zh_CN": "范特西"
+  },
+  "Erropr: invalid category.": {
+    "zh_CN": "抱歉，无效的分类。"
+  },
+  "Invalid post.": {
+    "zh_CN": "无效的文章。"
+  },
+  "Error: invalid app ID or app secure.": {
+    "zh_CN": "错误：无效的应用身份或应用安全码。"
+  },
+  "Error: token has been expired.": {
+    "zh_CN": "错误：令牌已经过期。"
+  },
+  "Error: empty user ID.": {
+    "zh_CN": "错误：用户 ID 为空。"
+  },
+  "Error: invalid user.": {
+    "zh_CN": "错误：无效的用户。"
+  },
+  "Error: Api disabled.": {
+    "zh_CN": "错误：接口已禁用。"
+  },
+  "Upgrade post approval": {
+    "zh_CN": "升级文章点赞"
+  },
+  "Upgrading...": {
+    "zh_CN": "升级中……"
+  },
+  "Upgrade to new data": {
+    "zh_CN": "升级为新版数据"
+  },
+  "You can write AD HTML code here.": {
+    "zh_CN": "您可以在此处填写广告 HTML 代码"
+  },
+  "ADs": {
+    "zh_CN": "广告"
+  },
+  "APP": {
+    "zh_CN": "阿噗噗"
+  },
+  "Free trial": {
+    "zh_CN": "免费试用中"
+  },
+  "Developer mode": {
+    "zh_CN": "开发者模式"
+  },
+  "If enable, your site will work within development mode, or works within high performance product mode.": {
+    "zh_CN": "如果启用，您的站点将会以开发模式运作，否则以高性能的运营模式运作。"
+  },
+  "Display theme performance information on frontend from F12 console.": {
+    "zh_CN": "在前台从 F12 控制台中显示主题性能信息."
+  },
+  "Display database queries detail on frontend from F12 console.": {
+    "zh_CN": "在前台从 F12 控制台中显示数据库查询明细。"
+  },
+  "Theme edition": {
+    "zh_CN": "主题性质"
+  },
+  "Theme URI": {
+    "zh_CN": "主题网址"
+  },
+  "QQ": {
+    "zh_CN": "QQ"
+  },
+  "Sorry, param is invalid.": {
+    "zh_CN": "抱歉，无效的参数。"
+  },
+  "Enable": {
+    "zh_CN": "启用"
+  },
+  "Related Post Settings": {
+    "zh_CN": "相关文章设置"
+  },
+  "The related posts will be displayed below the post content and some settings in here.": {
+    "zh_CN": "相关文章将会在日志下方显示，下面是一些相关设置。"
+  },
+  "Related post title:": {
+    "zh_CN": "相关文章标题："
+  },
+  "Related post title": {
+    "zh_CN": "文章标题文字"
+  },
+  "For example: Maybe you will like them": {
+    "zh_CN": "例如：或许您会喜欢"
+  },
+  "How many posts to show:": {
+    "zh_CN": "显示最新的多少篇文章"
+  },
+  "Related post number": {
+    "zh_CN": "显示数量"
+  },
+  "Preset search keywords, keyword per line": {
+    "zh_CN": "预设搜索关键词，每行一个"
+  },
+  "Sorry, referer is invalid.": {
+    "zh_CN": "抱歉，无效的来路。"
+  },
+  "Recommend to control that less than 100 words.": {
+    "zh_CN": "建议控制在 100 个字内。"
+  },
+  "For example: graphic design%s 3D design ...": {
+    "zh_CN": "例如：平面设计%s三维设计 ……"
+  },
+  "Kaomoji emoticon": {
+    "zh_CN": "颜文字表情"
+  },
+  "Image emoticon": {
+    "zh_CN": "图片表情"
+  },
+  "Visitor Text: Submitted success": {
+    "zh_CN": "访客文本：提交成功"
+  },
+  "Tablet of content": {
+    "zh_CN": "目录大纲"
+  },
+  "Show tablet of content for post content.": {
+    "zh_CN": "显示文章内容的目录大纲"
+  },
+  "TOC will not display for those post.": {
+    "zh_CN": "TOC 不会显示上述这些文章。"
+  },
+  "Thumb up": {
+    "zh_CN": "顶/赞"
+  },
+  "No content yet.": {
+    "zh_CN": "暂无资料"
+  },
+  "Please set some widgets in footer.": {
+    "zh_CN": "请放一些小工具到底部栏目"
+  },
+  "Mobile menu": {
+    "zh_CN": "手机菜单"
+  },
+  "INN 2016 theme": {
+    "zh_CN": "INN 2016 主题"
+  },
+  "Please set some widgets in homepage.": {
+    "zh_CN": "请在【外观 - 小组件】中为首页设置一些小组件"
+  },
+  "Theme Information": {
+    "zh_CN": "主题信息"
+  },
+  "Global link target": {
+    "zh_CN": "链接目标"
+  },
+  "Not calculated at this time for a client and a post.": {
+    "zh_CN": "在同一个客户端和一篇文章中不作计算。"
+  },
+  "Rrecommendation posts": {
+    "zh_CN": "推荐文章"
+  },
+  "Theme options list": {
+    "zh_CN": "主题选项列表"
+  },
+  "Sorry, post id is invalid.": {
+    "zh_CN": "抱歉，文章 ID 编号无效。"
+  },
+  "Unregistered version": {
+    "zh_CN": "未注册版本"
+  },
+  "Recommended post": {
+    "zh_CN": "推荐文章"
+  },
+  "http://update.inn-studio.com": {
+    "zh_CN": "http://update.cn.inn-studio.com"
+  },
+  "Visit the official of theme": {
+    "zh_CN": "访问主题官网"
+  },
+  "You can customize the theme in this label.": {
+    "zh_CN": "您可以在这个标签中自定义主题。"
+  },
+  "Page options": {
+    "zh_CN": "页面选项"
+  },
+  "If the theme there are some problems, you can try to use these options.": {
+    "zh_CN": "如果主题有一些问题，你可以尝试使用这些选项。"
+  },
+  "Advanced options": {
+    "zh_CN": "高级选项"
+  },
+  "The options is for developer, if you want to debug code, you can try this.": {
+    "zh_CN": "此选项专为开发者，如果你想调试代码，你可以试试这个。"
+  },
+  "If you in trouble, maybe this label can help you.": {
+    "zh_CN": "如果你陷入困境，也许这个标签可以帮助你。"
+  },
+  "About &amp; help": {
+    "zh_CN": "关于 &amp; 帮助"
+  },
+  "http://inn-studio.com/super-inn": {
+    "zh_CN": "http://inn-studio.com/inn2015"
+  },
+  "Type your test mail": {
+    "zh_CN": "输入您的测试邮箱"
+  },
+  "Sorry, the keyword is invalid.": {
+    "zh_CN": "抱歉，关键词无效。"
+  },
+  "Tags": {
+    "zh_CN": "Tag 标签"
+  },
+  "The tag slug, one per line": {
+    "zh_CN": "标签别名，一行一个"
+  },
+  "Your comment is awaiting moderation.": {
+    "zh_CN": "您的评论正在审核中。"
+  },
+  "Cancel reply": {
+    "zh_CN": "取消回复"
+  },
+  "Nickname": {
+    "zh_CN": "昵称"
+  },
+  "Whats your nickname?": {
+    "zh_CN": "您的昵称"
+  },
+  "Email": {
+    "zh_CN": "邮箱"
+  },
+  "Whats your Email?": {
+    "zh_CN": "您的邮箱"
+  },
+  "Hi, have something to say?": {
+    "zh_CN": "Hi, 有什么要说的吗？"
+  },
+  "Nothing to say?": {
+    "zh_CN": "没什么好说的吗？"
+  },
+  "Search keyword": {
+    "zh_CN": "搜索关键词"
+  },
+  "Type keywords to search": {
+    "zh_CN": "输入关键字搜索"
+  },
+  "Please set some widgets in sidebar.": {
+    "zh_CN": "请设置一些小工具在侧栏。"
+  },
+  "Footer links": {
+    "zh_CN": "底部友情链接"
+  },
+  "Table of Content": {
+    "zh_CN": "目录大纲"
+  },
+  "Emoji emotion": {
+    "zh_CN": "Emoji 表情"
+  },
+  "I have something to talk about": {
+    "zh_CN": "不说点什么吗？"
+  },
+  "Say what": {
+    "zh_CN": "Hi, 有什么要说的吗？"
+  },
+  "Write a comment": {
+    "zh_CN": "写个评论"
+  },
+  "Theme cache has been cleaned or rebuilt.": {
+    "zh_CN": "主题缓存已被清空或重建。"
+  },
+  "If your site works for a long time, maybe will have some redundant data in the database, they will reduce the operating speed of the your site, recommend to clean them regularly.": {
+    "zh_CN": "如果您的站点运作了一段很长的时间，也许会在数据库中产生了一些冗余数据，它们会降低站点的运作效率，建议定期清理。"
+  },
+  "Attention: this action will be auto clean up all theme cache.": {
+    "zh_CN": "注意：这个操作将会清空所有主题缓存。"
+  },
+  "Clean redundant post data": {
+    "zh_CN": "清理冗余文章数据"
+  },
+  "Delete revision &amp; draft &amp; auto-draft &amp; trash posts": {
+    "zh_CN": "删除修订 &amp; 草稿 &amp; 自动草稿 & 垃圾箱文章"
+  },
+  "Delete orphan post meta": {
+    "zh_CN": "删除冗余的文章元数据"
+  },
+  "Clean redundant comment data": {
+    "zh_CN": "删除冗余的评论元数据"
+  },
+  "Delete moderated &amp; spam &amp; trash comments": {
+    "zh_CN": "删除待审核 &amp; 广告 &amp; 垃圾箱评论"
+  },
+  "Delete orphan comment meta": {
+    "zh_CN": "删除冗余的评论元数据"
+  },
+  "Clean redundant other data": {
+    "zh_CN": "清理其它冗余数据"
+  },
+  "Delete orphan relationship": {
+    "zh_CN": "删除冗余的关系数据"
+  },
+  "Optimizate the WP Database": {
+    "zh_CN": "立即优化"
+  },
+  "No param": {
+    "zh_CN": "无参数"
+  },
+  "Database updated in %s s.": {
+    "zh_CN": "数据库已在 %s 秒内更新。"
+  },
+  "Comment AJAX": {
+    "zh_CN": "即时评论"
+  },
+  "Post ID is invalid.": {
+    "zh_CN": "无效的文章 ID 参数。"
+  },
+  "Data sent.": {
+    "zh_CN": "数据传送完毕。"
+  },
+  "{n} page": {
+    "zh_CN": "第 {n} 页"
+  },
+  "Comment can use Kaomoji or image emotions if enable.": {
+    "zh_CN": "如果启用的话，评论可以使用 颜文字或图片表情。"
+  },
+  "Kaomoji": {
+    "zh_CN": "颜文字"
+  },
+  "Emotion": {
+    "zh_CN": "表情"
+  },
+  "Theme colorful": {
+    "zh_CN": "主题颜色"
+  },
+  "The theme has some color schemes, you can choose a color scheme you like. Also ,you can try to choose random scheme.": {
+    "zh_CN": "该主题有一些配色方案，你可以选择你喜欢的颜色。此外，您也可以选择每日随机色彩方案。"
+  },
+  "Schemes": {
+    "zh_CN": "配色方案"
+  },
+  "You have not permission.": {
+    "zh_CN": "你有没有权限。"
+  },
+  "The file timestamp has been refresh.": {
+    "zh_CN": "文件时间戳已被成功刷新。"
+  },
+  "Click here to authorize.": {
+    "zh_CN": "点击进行授权"
+  },
+  "Maintenance Mode": {
+    "zh_CN": "维护模式"
+  },
+  "If your site needs to test privately, maybe fill a URL in the redirect area that the the visitors will see the redirect page but yourself, otherwise left blank.": {
+    "zh_CN": "如果您的站点需要内测，您可以填写跳转地址到下面的区域，这样访客访问站点时便会跳转到您所指定的网址，但管理员则不会。"
+  },
+  "Attention: if theme has frontend log-in page, please DO NOT use maintenance mode, or you can not log-in to background.": {
+    "zh_CN": "注意：如果主题拥有前台登录页面，请不要使用维护模式，否则您将无法登录后台。"
+  },
+  "Redirect URL (include http://):": {
+    "zh_CN": "跳转地址（包括 http://）："
+  },
+  "Optional template URL: ": {
+    "zh_CN": "可选的模板地址："
+  },
+  "We&rsquo;ll be back soon!": {
+    "zh_CN": "我们稍后就回来！"
+  },
+  "Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href=\"mailto:%s\">contact us</a>, otherwise we&rsquo;ll be back online shortly!": {
+    "zh_CN": "很抱歉给您带来不便，我们目前执行一些维护。如果需要您可以随时<a href=\"mailto:%s\">联系我们</a>，我们很快就回来！"
+  },
+  "Activate theme": {
+    "zh_CN": "激活主题"
+  },
+  "Please enter your authentication key to verify the following text box, and save it. All that is in order to activate %s theme. Thank you for your support of genuine software.": {
+    "zh_CN": "请在下面文本框中输入您的激活码并保存以激活 %s 主题。感谢您支持正版软件。"
+  },
+  "The activation code": {
+    "zh_CN": "激活码"
+  },
+  "Your theme is not activate, please go to %sbackground theme setting%s to activate theme.": {
+    "zh_CN": "您的主题暂未激活，请到 %s后台设置%s 中激活主题。"
+  },
+  "Add to recommended posts": {
+    "zh_CN": "添加到推荐文章"
+  },
+  "Import &amp; export theme": {
+    "zh_CN": "导入 &amp; 导出"
+  },
+  "You can select the settings file to upload and restore settings if you have the *.txt file. If you want to export the settings backup, please click the export button.": {
+    "zh_CN": "如果您有 *.txt 文件，可以将其上传并还原。如果您想导出设置备份，请点击点出按钮。"
+  },
+  "Import": {
+    "zh_CN": "导入"
+  },
+  "Select a setting file to restore": {
+    "zh_CN": "选择一个文件还原"
+  },
+  "Export": {
+    "zh_CN": "导出"
+  },
+  "Start export settings file": {
+    "zh_CN": "开始导出设置文件"
+  },
+  "Invalid file.": {
+    "zh_CN": "无效的文件类型。"
+  },
+  "Settings has been restored, refreshing page, please wait...": {
+    "zh_CN": "设置已经成功还原，页面正在刷新，请稍候…"
+  },
+  "Invalid file content.": {
+    "zh_CN": "无效的文件内容。"
+  },
+  "Backup": {
+    "zh_CN": "备份"
+  },
+  "Regen. Thumbnails": {
+    "zh_CN": "重建缩略图"
+  },
+  "Regenerate the thumbnails for this single image": {
+    "zh_CN": "给单张图片重建缩略图"
+  },
+  "Cheatin&#8217; uh?": {
+    "zh_CN": "作弊&#8217; 嗯？"
+  },
+  "Unable to find any images. Are you sure <a href='%s'>some exist</a>?": {
+    "zh_CN": "不能找到任何图片。你确定<a href='%s'>他们存在</a>吗？"
+  },
+  "Please be patient while the thumbnails are regenerated. This can take a while if your server is slow (inexpensive hosting) or if you have many images. Do not navigate away from this page until this script is done or the thumbnails will not be resized. You will be notified via this page when the regenerating is completed.": {
+    "zh_CN": "请耐心等待，正在重建缩略图中。这可能需要一段时间，如果你的服务器渣（廉价主机） ，或者如果你有很多的图像。直到这个脚本重建完缩略图大小之前，请不要离开此页面。在重建完毕时，您将收到提示消息。"
+  },
+  "To go back to the previous page, <a href=\"%s\">click here</a>.": {
+    "zh_CN": "返回上一页， <a href=\"%s\">请点击</a>。"
+  },
+  "All done! %1$s image(s) were successfully resized in %2$s seconds and there were %3$s failure(s). To try regenerating the failed images again, <a href=\"%4$s\">click here</a>. %5$s": {
+    "zh_CN": "任务完成！在 %2$s 秒内已成功重建了 %1$s 张图片，失败 %3$s 张。要尝试重建失败的图片， <a href=\"%4$s\">请点击此处</a>。%5$s"
+  },
+  "All done! %1$s image(s) were successfully resized in %2$s seconds and there were 0 failures. %3$s": {
+    "zh_CN": "任务完成！在 %2$s 秒内已成功重建了 %1$s 张图片，失败 0 张。%3$s"
+  },
+  "You must enable Javascript in order to proceed!": {
+    "zh_CN": "你必须启用 Javascript 才能继续操作！"
+  },
+  "Abort Resizing Images": {
+    "zh_CN": "终止修改图片尺寸"
+  },
+  "Debugging Information": {
+    "zh_CN": "调试信息"
+  },
+  "Total Images: %s": {
+    "zh_CN": "合计图片：%s"
+  },
+  "Resize Failures: %s": {
+    "zh_CN": "重建失败：%s"
+  },
+  "The resize request was abnormally terminated (ID %s). This is likely due to the image exceeding available memory or some other type of fatal error.": {
+    "zh_CN": "调整大小请求异常终止（ID %s）。这可能是由于超过可用内存或一些其他类型的致命错误的图像。"
+  },
+  "Use this tool to regenerate thumbnails for all images that you have uploaded to your blog. This is useful if you've changed any of the thumbnail dimensions on the <a href='%s'>media settings page</a>. Old thumbnails will be kept to avoid any broken images due to hard-coded URLs.": {
+    "zh_CN": "使用这个工具重新生成缩略图已上传到博客的所有图像。请在<a href='%s'>媒体设置页面</a>中改变缩略图大小 。由于页面的图片URL，旧的缩略图将会被保留。"
+  },
+  "You can regenerate specific images (rather than all images) from the <a href='%s'>Media</a> page. Hover over an image's row and click the link to resize just that one image or use the checkboxes and the &quot;Bulk Actions&quot; dropdown to resize multiple images (WordPress 3.1+ only).": {
+    "zh_CN": "您可以重新生成特定的图像（而不是全部图片） ，从<a href='%s'>媒体</a>页。将鼠标悬停在图像的行，单击该链接来调整一个图像或使用复选框和&quot;批量操作&quot;下拉调整多个图像（WordPress 3.1 + ） 。"
+  },
+  "Thumbnail regeneration is not reversible, but you can just change your thumbnail dimensions back to the old values and click the button again if you don't like the results.": {
+    "zh_CN": "重建缩略图操作是不可逆的，如果你不喜欢这个结果，你可以再次点击按钮，改变缩略图大小重建回旧尺寸。"
+  },
+  "To begin, just press the button below.": {
+    "zh_CN": "立即开始，只需点击下面的按钮。"
+  },
+  "Regenerate All Thumbnails": {
+    "zh_CN": "重建所有缩略图"
+  },
+  "Failed resize: %s is an invalid image ID.": {
+    "zh_CN": "重建失败：%s 是无效的图片ID。"
+  },
+  "Your user account doesn't have permission to resize images": {
+    "zh_CN": "你的用户帐号没有重建缩略图尺寸的权限。"
+  },
+  "The originally uploaded image file cannot be found at %s": {
+    "zh_CN": "在 %s 中无法找到最初上传的图片。"
+  },
+  "Unknown failure reason.": {
+    "zh_CN": "位置失败原因。"
+  },
+  "&quot;%1$s&quot; (ID %2$s) was successfully resized in %3$s seconds.": {
+    "zh_CN": "&quot;%1$s&quot; （ID %2$s） 在 %3$s 秒内已经成功重建。"
+  },
+  "&quot;%1$s&quot; (ID %2$s) failed to resize. The error message was: %3$s": {
+    "zh_CN": "&quot;%1$s&quot; （ID %2$s）重建失败。错误信息：%3$s"
+  },
+  "User custom code settings": {
+    "zh_CN": "用户自定义代码设置"
+  },
+  "Footer codes": {
+    "zh_CN": "底部代码"
+  },
+  "Header codes": {
+    "zh_CN": "顶部代码"
+  },
+  "Posts ranking": {
+    "zh_CN": "排行榜"
+  },
+  "Display different type posts ranking.": {
+    "zh_CN": "显示不同类型的文章排行"
+  },
+  "Posts rank": {
+    "zh_CN": "排行榜"
+  },
+  "Views more about %s": {
+    "zh_CN": "查看更多%s"
+  },
+  "Recommended": {
+    "zh_CN": "推荐文章"
+  },
+  "No category, pleass go to add some categories.": {
+    "zh_CN": "暂无分类目录，请去添加一些分类。"
+  },
+  "Views tags index": {
+    "zh_CN": "查看标签索引"
+  },
+  "Tags number (required)": {
+    "zh_CN": "标签数量（必填）"
+  },
+  "Sorry, security code is invalid.": {
+    "zh_CN": "抱歉，无效的安全码。"
+  },
+  "Basic settings": {
+    "zh_CN": "基本设置"
+  },
+  "Theme settings": {
+    "zh_CN": "主题设置"
+  },
+  "Please input search keyword": {
+    "zh_CN": "请输入搜索关键词"
+  },
+  "Sun rise": {
+    "zh_CN": "日出"
+  },
+  "Random daily": {
+    "zh_CN": "每日随机"
+  },
+  "Advertisement code <small>(Custom)</small>": {
+    "zh_CN": "广告代码 <small>（定制）</small>"
+  },
+  "Type": {
+    "zh_CN": "类型"
+  },
+  "Desktop": {
+    "zh_CN": "桌面"
+  },
+  "Server error or network is disconnected.": {
+    "zh_CN": "服务器错误或网络未连接。"
+  },
+  "Comment AJAX settings": {
+    "zh_CN": "AJAX 评论设置"
+  },
+  "Theme options debug": {
+    "zh_CN": "主题选项调试"
+  },
+  "Message for INN STUDIO:": {
+    "zh_CN": "给 INN 工作室留言："
+  },
+  "Enables the Link manager that existed in WordPress until version 3.5. But in fact it is not recommend to enable, because you can use Menu instead of Link manager.": {
+    "zh_CN": "使存在于 WordPress 3.5 版本前的链接管理器。但实际上并不建议使用它，因为你可以用“菜单”来代替“链路管理器”。"
+  },
+  "Rebuild minify version": {
+    "zh_CN": "重建压缩版文件"
+  },
+  "Rebuild the minify version file of JS and CSS. If you have edit JS or CSS file, please run it. May take several minutes.": {
+    "zh_CN": "重建 JS 和 CSS 的压缩版文件。如果你曾经修改过 JS 或 CSS 文件，请运行它。执行过程可能需数分钟。"
+  },
+  "Files have been rebuilt.": {
+    "zh_CN": "文件已经重建完成。"
+  },
+  "Rebuilding, please wait...": {
+    "zh_CN": "重建中，请稍后…"
+  },
+  "Start rebuild": {
+    "zh_CN": "开始重建"
+  },
+  "Save your settings before rebuild": {
+    "zh_CN": "在重建前请保存您的设置"
+  },
+  "Post copyright settings": {
+    "zh_CN": "文章版权设置"
+  },
+  "Posts copyright settings maybe protect your word. Here are some keywords that can be used:": {
+    "zh_CN": "分享您的文章到每个地方。以下有一些关键词供您使用："
+  },
+  "HTML code:": {
+    "zh_CN": "HTML 代码："
+  },
+  "Restore the post copyright settings": {
+    "zh_CN": "还原文章分享设置"
+  },
+  "Permanent URL: ": {
+    "zh_CN": "永久地址："
+  },
+  "Welcome to reprint: ": {
+    "zh_CN": "欢迎转载："
+  },
+  "Addition to indicate the original, the article of <a href=\"%blog_url%\">%blog_name%</a> comes from internet. If infringement, please contact me to delete.": {
+    "zh_CN": "除非注明，<a href=\"%blog_url%\">%blog_name%</a> 的文章均来自网络。如有侵权，请及时告知删除。"
+  },
+  "Posts share settings": {
+    "zh_CN": "文章分享设置"
+  },
+  "Post Thumb Up or Down Settings": {
+    "zh_CN": "文章顶踩设置"
+  },
+  "Agree or not? Just thumb up or down! You can set some sentences to show randomly when votes success. Multiple sentences that please use New Line to split them.": {
+    "zh_CN": "喜欢与否？只需要顶踩一下！您能设置一些提示语，当投票成功时候能随机地显示。不同的语句请用“换行”分隔。"
+  },
+  "Thumb up text": {
+    "zh_CN": "顶/赞文本"
+  },
+  "Thumb down text": {
+    "zh_CN": "踩/渣文本"
+  },
+  "Restore post thumb option?": {
+    "zh_CN": "还原文章顶踩选项？"
+  },
+  "Restore post thumb option": {
+    "zh_CN": "还原文章顶踩选项"
+  },
+  "Convert to new version data": {
+    "zh_CN": "转换为新版本数据"
+  },
+  "You thumbed up, I am agree it, too!\nYou are right, I think so.": {
+    "zh_CN": "您顶了我一下，我好舒服哦！\n嗯，您说的对，我也同意。"
+  },
+  "You thumbed down, you are a honest guy!\nYou are right, I think so.": {
+    "zh_CN": "您踩了我一下，我好舒服哦！\n嗯，您说的对，我也同意。"
+  },
+  "Sorry, the post does not exists.": {
+    "zh_CN": "抱歉，文章不存在。"
+  },
+  "Data has been converted.": {
+    "zh_CN": "数据已成功转换。"
+  },
+  "[TOC]": {
+    "zh_CN": "[目录]"
+  },
+  "Post views settings": {
+    "zh_CN": "文章查看数设置"
+  },
+  "Error: Your browser does not support HTML5. ": {
+    "zh_CN": "错误：您的浏览器不支持 HTML5。"
+  },
+  "Error: failed to complete the operation. ": {
+    "zh_CN": "错误：无法完成操作。"
+  },
+  "Latest comments <small>(custom)</small>": {
+    "zh_CN": "最新评论 <small>定制</small>"
+  },
+  "Post number (required)": {
+    "zh_CN": "文章数量（必填）"
+  },
+  "Categories: ": {
+    "zh_CN": "分类目录："
+  },
+  "Date": {
+    "zh_CN": "日期"
+  },
+  "Popular tags <small>(custom)</small>": {
+    "zh_CN": "热门标签 <small>（定制）</small>"
+  },
+  "Hot tags": {
+    "zh_CN": "热门标签"
+  },
+  "Your settings were saved successfully.": {
+    "zh_CN": "您的设置已保存成功。"
+  },
+  "Loading your settings, please wait...": {
+    "zh_CN": "正在加载您的设置，请稍后……"
+  },
+  "You must be %s to post a comment.": {
+    "zh_CN": "您需要 %s 后才能发表评论。"
+  },
+  "log-in": {
+    "zh_CN": "登录"
+  },
+  "Respond": {
+    "zh_CN": "添加评论"
+  },
+  "Sidebar widget area": {
+    "zh_CN": "侧栏小工具区域"
+  },
+  "comments": {
+    "zh_CN": "评论"
+  },
+  "Preview page": {
+    "zh_CN": "上一页"
+  },
+  "Preview post": {
+    "zh_CN": "上一篇"
+  },
+  "Next post": {
+    "zh_CN": "下一篇"
+  },
+  "Leave a comment": {
+    "zh_CN": "留下评论"
+  },
+  "Posts rank <small>(custom)</small>": {
+    "zh_CN": "文章排行 <small>（定制）</small>"
+  },
+  "(%s)": {
+    "zh_CN": "（%s）"
+  },
+  "theme settings": {
+    "zh_CN": "主题设置"
+  },
+  "Theme common settings.": {
+    "zh_CN": "主题通用的设置。"
+  },
+  "Basic Settings": {
+    "zh_CN": "基本设置"
+  },
+  "Theme appearance/template settings.": {
+    "zh_CN": "主题的外观/模板设置。"
+  },
+  "Page Settings": {
+    "zh_CN": "页面设置"
+  },
+  "Advanced Settings": {
+    "zh_CN": "高级设置"
+  },
+  "Developer Mode": {
+    "zh_CN": "开发者模式"
+  },
+  "About &amp; Help": {
+    "zh_CN": "关于 &amp; 帮助"
+  },
+  "Please set some recommended posts to display.": {
+    "zh_CN": "请设置一些推荐文章以显示。"
+  },
+  "Please add some homebox.": {
+    "zh_CN": "请添加一些首页盒子。"
+  },
+  "&raquo; more": {
+    "zh_CN": "&raquo; 更多"
+  },
+  "This code will be put between <header> and </header>.": {
+    "zh_CN": "该代码会放置在 <header> 和 </header> 标签之间。"
+  },
+  ", ": {
+    "zh_CN": "、"
+  },
+  "Views all posts by %s tag": {
+    "zh_CN": "查看 %s 标签下的所有文章"
+  },
+  "Previous post: %s": {
+    "zh_CN": "上一篇：%s"
+  },
+  "Next post: %s": {
+    "zh_CN": "下一篇：%s"
+  },
+  "Custom default gravatar settings": {
+    "zh_CN": "自定义默认头像设置"
+  },
+  "You can change the default gravatar image using custom avatar url address. After save settings please click here to %s select the custom gravatar.": {
+    "zh_CN": "您可以使用自定义图片 URL 来更改 Gravatar 默认头像。保存设置后，请点击 %s 选择自定义 Gravatar 头像。"
+  },
+  "here": {
+    "zh_CN": "这里"
+  },
+  "Custom avatar URL": {
+    "zh_CN": "自定义头像地址 URL"
+  },
+  "Invaild file type.": {
+    "zh_CN": "无效的文件类型。"
+  },
+  "You have not permission to upload.": {
+    "zh_CN": "您没有上传的权限。"
+  },
+  "You can set a PNG image for blog favicon. Image size is %s&times;%s px. Remember save your settings when all done.": {
+    "zh_CN": "您可以设置一张 PNG 图片作为博客图标。图片尺寸为 %s&times;%s px。记得编辑完成后保存设置成哦。"
+  },
+  "Image URL (include http://)": {
+    "zh_CN": "图片 URL（包括 http://）"
+  },
+  "Group": {
+    "zh_CN": "分组"
+  },
+  "You can give a group number for similar categories or tags. For example: Red, green, blue can be group 1 of categories. Small, medium, large can be group 2 of categories.": {
+    "zh_CN": "你可以给一组号码相似类别或标签。例如：红色，绿色，蓝色可以是类别的组1。小，中，大可以是类组2 。"
+  },
+  "Category posts <small>(custom)</small>": {
+    "zh_CN": "分类目录文章<small>（定制）</small>"
+  },
+  "Show your posts by category.": {
+    "zh_CN": "根据分类目录显示的日志。"
+  },
+  "Category posts": {
+    "zh_CN": "分类目录文章"
+  },
+  "Show date: ": {
+    "zh_CN": "显示日期："
+  },
+  "Show": {
+    "zh_CN": "显示"
+  },
+  "Sorry, some server error occurred, the operation can not be completed, please try again later.": {
+    "zh_CN": "抱歉，服务器发生了一些错误，该操作无法完成，请稍后重试。"
+  },
+  "The email has been sent, please check.": {
+    "zh_CN": "邮件已发送，请验收。"
+  },
+  "Author card <small>(custom)</small>": {
+    "zh_CN": "作者名片 <small>（定制）</small>"
+  },
+  "Show the author information.": {
+    "zh_CN": "显示作者信息。"
+  },
+  "Views the author information detail": {
+    "zh_CN": "查看作者资料"
+  },
+  "The author is lazy, nothing writes here.": {
+    "zh_CN": "作者很懒，啥都没写。"
+  },
+  "Author meta link group": {
+    "zh_CN": "作者相关链接"
+  },
+  "Followed": {
+    "zh_CN": "已关注"
+  },
+  "Follow": {
+    "zh_CN": "关注"
+  },
+  "Message": {
+    "zh_CN": "提示"
+  },
+  "Member information": {
+    "zh_CN": "会员资料"
+  },
+  "Face settings": {
+    "zh_CN": "表情设置"
+  },
+  "Face": {
+    "zh_CN": "表情"
+  },
+  "&copy; %s %s.": {
+    "zh_CN": "&copy; 版权所有 %s %s"
+  },
+  "Theme %s by %s.": {
+    "zh_CN": "Theme %s by %s."
+  },
+  "Invail post id.": {
+    "zh_CN": "无效的文章 ID。"
+  },
+  "This post comment has closed.": {
+    "zh_CN": "这篇文章的评论已关闭。"
+  },
+  "Invail comment content": {
+    "zh_CN": "无效的评论内容。"
+  },
+  "Anonymous": {
+    "zh_CN": "匿名"
+  },
+  "Invail email address.": {
+    "zh_CN": "无效的电子邮箱地址。"
+  },
+  "Invail type": {
+    "zh_CN": "无效的类型。"
+  },
+  "Total %d comments": {
+    "zh_CN": "共 %d 条评论"
+  },
+  "Join the comments": {
+    "zh_CN": "加入讨论"
+  },
+  "No comment yet, you are first commenter.": {
+    "zh_CN": "暂无评论，果断抢沙发。"
+  },
+  "Closing tip after 3s": {
+    "zh_CN": "3秒后关闭提示"
+  },
+  "Error": {
+    "zh_CN": "错误"
+  },
+  "Thumb down": {
+    "zh_CN": "踩/喷"
+  },
+  "You thumbed up, I am agree it, too!%sYou are right, I think so.": {
+    "zh_CN": "您顶了我一下，我好舒服哦！%s嗯，您说的对，我也同意。"
+  },
+  "You thumbed down, you are a honest guy!%sYou are right, I think so.": {
+    "zh_CN": "您踩了我一下，看来您是一个诚实的人！%s嗯，您说的对，我也同意。"
+  },
+  "You have already voted.": {
+    "zh_CN": "您已经投过票了。"
+  },
+  "Not enough parameter.": {
+    "zh_CN": "缺少参数"
+  },
+  "I dislike it": {
+    "zh_CN": "我不喜欢"
+  },
+  "Open sign settings": {
+    "zh_CN": "第三方登录设置"
+  },
+  "Invalid callback data.": {
+    "zh_CN": "无效的回调数据。"
+  },
+  "Redirecting, please wait...": {
+    "zh_CN": "跳转中，请稍后……"
+  },
+  "Invalid access token,": {
+    "zh_CN": "无效的token。"
+  },
+  "Invalid expires time.": {
+    "zh_CN": "无效的 expires time。"
+  },
+  "Invalid refresh token.": {
+    "zh_CN": "无效的 refresh token。"
+  },
+  "MX": {
+    "zh_CN": "MX"
+  },
+  "MX - Dream starts": {
+    "zh_CN": "MX - 梦想起航"
+  },
+  "Sign page widget area": {
+    "zh_CN": "登录页面 小工具区域"
+  },
+  "Appears on sign page in the sidebar.": {
+    "zh_CN": "显示在登录页面的边栏中。"
+  },
+  "Popular": {
+    "zh_CN": "最赞"
+  },
+  "My notifications": {
+    "zh_CN": "我的提醒"
+  },
+  "Account": {
+    "zh_CN": "会员帐号"
+  },
+  "Profile": {
+    "zh_CN": "资料"
+  },
+  "Works": {
+    "zh_CN": "作品"
+  },
+  "Followers": {
+    "zh_CN": "粉丝"
+  },
+  "Following": {
+    "zh_CN": "正在关注"
+  },
+  "Collection settings": {
+    "zh_CN": "专刊设置"
+  },
+  "Which categories will be added after submit?": {
+    "zh_CN": "在提交后哪些分类目录将会自动添加？"
+  },
+  "Shows tags number": {
+    "zh_CN": "显示的标签数量"
+  },
+  "Post boxes min number": {
+    "zh_CN": "文章盒子最小数量"
+  },
+  "Post boxes max number": {
+    "zh_CN": "文章盒子最大数量"
+  },
+  "You can write some description for collection page header. Please use tag <p> to wrap your HTML codes.": {
+    "zh_CN": "你可以给专刊投稿页面写一些说明，将会在页面头部显示。请使用标签 <p> 包裹你的 HTML 代码。"
+  },
+  "Please write the post ID number, e.g. 4015.": {
+    "zh_CN": "请填写文章 ID 编号，例如 4015。"
+  },
+  "The recommended post title": {
+    "zh_CN": "推荐的文章标题"
+  },
+  "Please write the recommended post title.": {
+    "zh_CN": "请填写推荐的文章标题。"
+  },
+  "Why recommend the post? Talking about your point.": {
+    "zh_CN": "为什么推荐这篇文章？写写理由吧，120 字左右即可。"
+  },
+  "Welcome to collection page, you can fill in the post ID and make them as a collection to share you favorite posts.": {
+    "zh_CN": "欢迎来到专刊投稿页面，您可以填写你喜欢的文章的 ID 编号后，将它们作为一个专刊合集向广大绅士分享。"
+  },
+  "Invaild collection param.": {
+    "zh_CN": "无效的专刊参数。"
+  },
+  "Sorry, posts can not be empty.": {
+    "zh_CN": "抱歉，文章不能为空。"
+  },
+  "Please write the post title.": {
+    "zh_CN": "请填写文章标题。"
+  },
+  "Please set an image as post thumbnail": {
+    "zh_CN": "请选择一张图片作为封面"
+  },
+  "Please explain why you recommend this collection.": {
+    "zh_CN": "请描述一下为什么推荐此专刊？"
+  },
+  "Your collection submitted successful, it will be published after approve in a while. Thank you very much! How about %s again?": {
+    "zh_CN": "专刊提交成功，等会通过审核后就会发布了。十分感谢！%s 吗？"
+  },
+  "write a new collection": {
+    "zh_CN": "再来一发"
+  },
+  "Congratulation! Your post has been published. You can %s or %s.": {
+    "zh_CN": "恭喜！您的文章已发表成功。现在您可以 %s 或 %s。"
+  },
+  "View it now": {
+    "zh_CN": "立即查看它"
+  },
+  "countinue to write a new collection": {
+    "zh_CN": "继续写一篇新专刊"
+  },
+  "Post published": {
+    "zh_CN": "文章发表"
+  },
+  "Finished get the post data.": {
+    "zh_CN": "获取文章数据成功。"
+  },
+  "Sorry, your posts are not enough, please add more posts.": {
+    "zh_CN": "抱歉，你的文章数量不充足，请添加更多文章。"
+  },
+  "Sorry, your post are too many, please reduce some posts and try again.": {
+    "zh_CN": "抱歉，你的文章数量太多了，请减少一些文章再尝试。"
+  },
+  "Sorry, the post id is invaild, please try again.": {
+    "zh_CN": "抱歉，文章 ID 编号无效，请重试。"
+  },
+  "Sorry, the post content is invaild, please try again.": {
+    "zh_CN": "抱歉，文章内容无效，请重试。"
+  },
+  "Sorry, the post thumbnail is invaild, please try again.": {
+    "zh_CN": "抱歉，文章封面无效，请重试。"
+  },
+  "Sorry, the post do not exist, please try again.": {
+    "zh_CN": "抱歉，该文章不存在，请重试。"
+  },
+  "Getting post data, please wait...": {
+    "zh_CN": "正在获取文章数据，请稍候……"
+  },
+  "Previewing, please wait...": {
+    "zh_CN": "正在预览，请稍候……"
+  },
+  "Sorry, the minimum number of posts is %d.": {
+    "zh_CN": "抱歉，最少的文章数量为 %d。"
+  },
+  "Sorry, the post id must be number, please correct it.": {
+    "zh_CN": "抱歉，文章 ID 编号必须为数字，请更正后重试。"
+  },
+  "Contribution settings": {
+    "zh_CN": "投稿设置"
+  },
+  "You can write some description for contribution page header. Please use tag <p> to wrap your HTML codes.": {
+    "zh_CN": "你可以给投稿页面写一些说明，将会在页面头部显示。请使用标签 <p> 包裹你的 HTML 代码。"
+  },
+  "Edit post": {
+    "zh_CN": "编辑文章"
+  },
+  "Post contribution": {
+    "zh_CN": "文章投稿"
+  },
+  "Sorry, you are not the post author, can not edit it.": {
+    "zh_CN": "抱歉，你不是该作品的作者，无法编辑。"
+  },
+  "Invaild contribution param.": {
+    "zh_CN": "无效的投稿参数。"
+  },
+  "Please write the post content.": {
+    "zh_CN": "文章内容必须填写哦"
+  },
+  "Your post submitted successful, it will be published after approve in a while.": {
+    "zh_CN": "你的文章提交成功，一会儿审核通过后将会发表，感谢您的参与！"
+  },
+  "countinue to write a new post": {
+    "zh_CN": "继续写一篇"
+  },
+  "Your post has updated successful.": {
+    "zh_CN": "你的作品已成功更新。"
+  },
+  "Views it now": {
+    "zh_CN": "立即查看它"
+  },
+  "Uploading {0}/{1}, please wait...": {
+    "zh_CN": "正在上传 {0}/{1}，请稍候…"
+  },
+  "Click to delete": {
+    "zh_CN": "点击删除此张图片"
+  },
+  "{0} files have been uploaded.": {
+    "zh_CN": "{0} 个文件上传成功，嘻嘻…"
+  },
+  "Source": {
+    "zh_CN": "来源"
+  },
+  "Set as cover.": {
+    "zh_CN": "设为封面"
+  },
+  "Optional: some description": {
+    "zh_CN": "[在此处写下一些描述]"
+  },
+  "Insert": {
+    "zh_CN": "插入"
+  },
+  "Small size": {
+    "zh_CN": "小尺寸"
+  },
+  "My dashboard": {
+    "zh_CN": "我的仪表盘"
+  },
+  "My recent reward point actives": {
+    "zh_CN": "我最近的积分动态"
+  },
+  "Recent comments for my posts": {
+    "zh_CN": "最近给我文章的的评论"
+  },
+  "%s commented your post \"%s\".": {
+    "zh_CN": "%s 评论了您的文章《%s》。"
+  },
+  "My statistics": {
+    "zh_CN": "我的统计状态"
+  },
+  "My posts: %s": {
+    "zh_CN": "我的文章：%s"
+  },
+  "My comments: %s": {
+    "zh_CN": "我的评论：%s"
+  },
+  "My followers: %s": {
+    "zh_CN": "我的粉丝：%s"
+  },
+  "My following: %s": {
+    "zh_CN": "我在关注：%s"
+  },
+  "My recent posts": {
+    "zh_CN": "我最近的文章"
+  },
+  "No posts yet": {
+    "zh_CN": "还没有文章"
+  },
+  "My posts": {
+    "zh_CN": "我的作品"
+  },
+  "Follow success.": {
+    "zh_CN": "关注成功。"
+  },
+  "Unfollow success.": {
+    "zh_CN": "取消关注成功。"
+  },
+  "Unkown param.": {
+    "zh_CN": "位置参数。"
+  },
+  "link": {
+    "zh_CN": "链接"
+  },
+  "Theme home box settings": {
+    "zh_CN": "首页盒子设置"
+  },
+  "Home box control": {
+    "zh_CN": "盒子操作"
+  },
+  "Add a new home box": {
+    "zh_CN": "添加一个新的盒子"
+  },
+  "Box link (include http://)": {
+    "zh_CN": "盒子地址（包括 http://）"
+  },
+  "Keywords and links": {
+    "zh_CN": "关键词与链接"
+  },
+  "Eg. Tag1 = http://inn-studio.com": {
+    "zh_CN": "例如 标签1 = http://inn-studio.com"
+  },
+  "Per keyword/line": {
+    "zh_CN": "一行一个关键词"
+  },
+  "Categories index settings": {
+    "zh_CN": "分类目录索引设置"
+  },
+  "Display posts number or alphabet slug index on categories index page.": {
+    "zh_CN": "在分类目录中根据日志的数字或英文字母别名来显示索引。"
+  },
+  "Cache has been cleaned.": {
+    "zh_CN": "缓存已成功清空。"
+  },
+  "Categories index": {
+    "zh_CN": "分类索引"
+  },
+  "Initial": {
+    "zh_CN": "首字"
+  },
+  "Rank": {
+    "zh_CN": "排行榜"
+  },
+  "Daily popular": {
+    "zh_CN": "每日最赞"
+  },
+  "Weekly popular": {
+    "zh_CN": "每周最赞"
+  },
+  "Monthly popular": {
+    "zh_CN": "每月最赞"
+  },
+  "Users": {
+    "zh_CN": "会员"
+  },
+  "Tags index settings": {
+    "zh_CN": "标签索引设置"
+  },
+  "Display posts chinese pinyin title index on tags index page.": {
+    "zh_CN": "在标签索引页面中显示中文标题的文章索引。"
+  },
+  "Whitelist - users ": {
+    "zh_CN": "白名单 - 用户"
+  },
+  "No tag yet.": {
+    "zh_CN": "还没有标签"
+  },
+  "Pinyin initial": {
+    "zh_CN": "拼音首字母"
+  },
+  "Preview image is loading...": {
+    "zh_CN": "正在加载预览图……"
+  },
+  "ERROR: can not load the preview image.": {
+    "zh_CN": "错误: 无法加载预览图。"
+  },
+  "Cat-paw": {
+    "zh_CN": "喵爪"
+  },
+  "User point settings": {
+    "zh_CN": "用户积分设置"
+  },
+  "About user point settings.": {
+    "zh_CN": "关于用户积分设置。"
+  },
+  "Description on point history page": {
+    "zh_CN": "关于历史积分记录的描述"
+  },
+  "Add/Reduce point for user - special event": {
+    "zh_CN": "增加/削减用户积分 - 特别事件"
+  },
+  "How many point to add/reduce": {
+    "zh_CN": "增/减用户多少积分"
+  },
+  "Event description": {
+    "zh_CN": "事件描述"
+  },
+  "Add/Reduce": {
+    "zh_CN": "增加/削减"
+  },
+  "Restore point options": {
+    "zh_CN": "还原至积分默认选项"
+  },
+  "You can restore the point options when you want.": {
+    "zh_CN": "当你想要的时候，您可以恢复至积分默认选项。"
+  },
+  "Check the box and save all settings to restore point options.": {
+    "zh_CN": "选中的复选框并保存所有的设置恢复至默认积分选项。"
+  },
+  "Invaild user id.": {
+    "zh_CN": "无效的用户 ID。"
+  },
+  "The user has %d points now.": {
+    "zh_CN": "该用户当前积分为 %d。"
+  },
+  "Invaild param.": {
+    "zh_CN": "无效的参数。"
+  },
+  "Invaild user ID.": {
+    "zh_CN": "无效的用户 ID。"
+  },
+  "Invaild point.": {
+    "zh_CN": "无效的积分。"
+  },
+  "Invaild event.": {
+    "zh_CN": "无效的事件。"
+  },
+  "Fuck you man, the user is not exist": {
+    "zh_CN": "用户不存在。"
+  },
+  "The user %s(%d) point has set to %s.": {
+    "zh_CN": "用户 %s（%d）积分已设置为 %s。"
+  },
+  "When sign-up": {
+    "zh_CN": "当注册时"
+  },
+  "When sign-in daily": {
+    "zh_CN": "当每天登录时"
+  },
+  "When publish comment": {
+    "zh_CN": "当发表评论时"
+  },
+  "When delete comment": {
+    "zh_CN": "当删除评论时"
+  },
+  "When publish post": {
+    "zh_CN": "当发表文章时"
+  },
+  "When reply post": {
+    "zh_CN": "当文章被回复时"
+  },
+  "When delete post": {
+    "zh_CN": "当文章被删除时"
+  },
+  "When post per hundred view ": {
+    "zh_CN": "当文章增加 100 查看数时"
+  },
+  "When aff sign-up": {
+    "zh_CN": "当推广注册时"
+  },
+  "Point can exchange many things.": {
+    "zh_CN": "积分能换许多东西哦。"
+  },
+  "One special event happened: %s": {
+    "zh_CN": "一个特别事件发生了：%s"
+  },
+  "Your post \"%s\" has been deleted.": {
+    "zh_CN": "你的文章 \"%s\" 已被删除。"
+  },
+  "You published a comment in %1$s.": {
+    "zh_CN": "你在 %1$s 中发表了一篇评论。"
+  },
+  "You published a post %s.": {
+    "zh_CN": "您发布了一篇文章 %s。"
+  },
+  "Your post %1$s has a new comment by %2$s.": {
+    "zh_CN": "%2$s 评论了您的文章 %1$s。"
+  },
+  "Log-in daily reward.": {
+    "zh_CN": "每天登录奖励。"
+  },
+  "Sign-in daily points: +%s": {
+    "zh_CN": "当每天登录奖励：+%s"
+  },
+  "User point rank <small>(custom)</small>": {
+    "zh_CN": "用户积分排行 <small>（定制）</small>"
+  },
+  "Display user point rank list": {
+    "zh_CN": "显示用户积分排行列表"
+  },
+  "User point rank": {
+    "zh_CN": "用户积分排行"
+  },
+  "No matched user yet.": {
+    "zh_CN": "暂无匹配到的用户。"
+  },
+  "Random number": {
+    "zh_CN": "随机数量"
+  },
+  "Sorry, type param is invaild.": {
+    "zh_CN": "抱歉，缺少类型参数。"
+  },
+  "Recalculate": {
+    "zh_CN": "重新计算"
+  },
+  "Recalculate all posts point": {
+    "zh_CN": "重新计算所有文章积分点"
+  },
+  "Recalculate now": {
+    "zh_CN": "立即计算"
+  },
+  "When post point swap": {
+    "zh_CN": "当文章积分被交换时"
+  },
+  "Use commas to separate multiple point, first as the default.": {
+    "zh_CN": "多个积分点使用英文逗号（,）分隔，第一个为默认值。"
+  },
+  "Invaild post id param.": {
+    "zh_CN": "无效的文章 ID 参数。"
+  },
+  "Post does not exist.": {
+    "zh_CN": "文章不存在。"
+  },
+  "Sorry, please log-in.": {
+    "zh_CN": "抱歉，请先登录。"
+  },
+  "Invaild point value.": {
+    "zh_CN": "无效的积分点数。"
+  },
+  "Sorry, system can not increase post points count.": {
+    "zh_CN": "抱歉，系统无法增加文章积分统计点数。"
+  },
+  "Invaild type param.": {
+    "zh_CN": "无效的类型参数。"
+  },
+  "You rated %1$d %2$s for the post %3$s.": {
+    "zh_CN": "你对文章 %3$s 送了 %1$d 个%2$s。"
+  },
+  "You post %1$s has been rated %2$d %3$s by %4$s.": {
+    "zh_CN": "%4$s 给你的文章 %1$s 送了 %2$d 个%3$s。"
+  },
+  "Invaild post id.": {
+    "zh_CN": "无效的文章 ID 参数。"
+  },
+  "Invaild points value.": {
+    "zh_CN": "无效的积分点数。"
+  },
+  "Invaild rater id.": {
+    "zh_CN": "无效的评分用户 ID。"
+  },
+  "Invaild points.": {
+    "zh_CN": "无效的积分点数。"
+  },
+  "Rater is not exist.": {
+    "zh_CN": "评分人不存在。"
+  },
+  "You did not rate this post yet.": {
+    "zh_CN": "您还未对次文章评分。"
+  },
+  "Rate %d %s": {
+    "zh_CN": "打赏 %d 个%s"
+  },
+  "Toggle Dropdown": {
+    "zh_CN": "下拉菜单"
+  },
+  "Reprint": {
+    "zh_CN": "转载"
+  },
+  "Source URL, for reprint work": {
+    "zh_CN": "作品的来源地址，包括 http://（原创作品不填写）"
+  },
+  "Author, for reprint work": {
+    "zh_CN": "作者（原创作品不填写）"
+  },
+  "This article is %1$s member %2$s's original work.": {
+    "zh_CN": "本作品是由 %1$s 会员 %2$s 的投递作品。"
+  },
+  "Welcome to reprint but must indicate the source url %1$s.": {
+    "zh_CN": "欢迎转载，但请务必注明来源地址：%1$s。"
+  },
+  "Unkown": {
+    "zh_CN": "不详"
+  },
+  "This article is %1$s member %2$s's reprint work.": {
+    "zh_CN": "本作品是由 %1$s 会员 %2$s 的搬运作品。"
+  },
+  "Source: %s, author: %s.": {
+    "zh_CN": "来源：%s，作者：%s。"
+  },
+  "storage download": {
+    "zh_CN": "网盘下载"
+  },
+  "Baidu storage": {
+    "zh_CN": "百度网盘"
+  },
+  "File storage": {
+    "zh_CN": "文件存储"
+  },
+  "%s url": {
+    "zh_CN": "%s url"
+  },
+  "%s password": {
+    "zh_CN": "%s 密码"
+  },
+  "Storage download": {
+    "zh_CN": "网盘下载"
+  },
+  "Password: %s": {
+    "zh_CN": "提取码：%s"
+  },
+  "Custom sign settings": {
+    "zh_CN": "自定义登录设置"
+  },
+  "Sign-in avatar URL": {
+    "zh_CN": "登录的头像图片 URL"
+  },
+  "Recommend 100x100 px image.": {
+    "zh_CN": "建议 100x100 象素的图片。"
+  },
+  "Terms of service page URL": {
+    "zh_CN": "服务协议页面 URL"
+  },
+  "Register": {
+    "zh_CN": "注册"
+  },
+  "Recover password": {
+    "zh_CN": "找回密码"
+  },
+  "Sign": {
+    "zh_CN": "登录"
+  },
+  "Slide-box title - %s": {
+    "zh_CN": "幻灯片标题 - %s"
+  },
+  "Title will be display as attribute-alt": {
+    "zh_CN": "将会被作用于 alt 属性"
+  },
+  "Subtitle can be date or any text": {
+    "zh_CN": "子标题可以是日期或任何纯文本"
+  },
+  "Url address": {
+    "zh_CN": "Url 地址"
+  },
+  "Image url": {
+    "zh_CN": "图片 url"
+  },
+  "Addon options": {
+    "zh_CN": "附加选项"
+  },
+  "Nofollow link": {
+    "zh_CN": "Nofollow 链接"
+  },
+  "Slide-box settings": {
+    "zh_CN": "幻灯片设置"
+  },
+  "You can set images and link to slide-box on homepage. Image size is %s&times;%s px. Remember save your settings when all done.": {
+    "zh_CN": "您可以设置图片和链接在首页的幻灯片中。图像尺寸为 %s&times;%s 象素。记得完成设置后保存哦。"
+  },
+  "unlimited": {
+    "zh_CN": "不限制"
+  },
+  "When user save settings": {
+    "zh_CN": "当用户保存设置时"
+  },
+  "When user save avatar": {
+    "zh_CN": "当用户保存头像时"
+  },
+  "Sorry, your points are not enough to modify settings.": {
+    "zh_CN": "抱歉，您的积分不足，无法修改设置。"
+  },
+  "Invaild nickname.": {
+    "zh_CN": "无效的昵称。"
+  },
+  "Password invaild twice.": {
+    "zh_CN": "两次密码无效。"
+  },
+  "Invaild current password.": {
+    "zh_CN": "当前密码无效。"
+  },
+  "Your new password has been saved. Re-logging in, please wait...": {
+    "zh_CN": "您的新密码已保存。正在重新登录，请稍候……"
+  },
+  "Sorry, your points are not enough to modify avatar.": {
+    "zh_CN": "抱歉，您的积分不足，无法修改头像。"
+  },
+  "Sorry, your file is invaild format, please check it again.": {
+    "zh_CN": "对不起，您的文件是无效的格式，请再检查一下。"
+  },
+  "Sorry, system can not write file, please try again later or contact the administrator.": {
+    "zh_CN": "对不起，系统无法写入文件，请稍后重试或联系管理员。"
+  },
+  "Congratulation! Your avatar has been updated. Page is redirecting, please wait...": {
+    "zh_CN": "恭喜！你的头像已经成功更新。页面正在刷新，请稍候.……"
+  },
+  "Sorry, the type param is invaild.": {
+    "zh_CN": "抱歉，缺少类型参数。"
+  },
+  "Reward history": {
+    "zh_CN": "积分历史"
+  },
+  "My avatar": {
+    "zh_CN": "我的头像"
+  },
+  "You modified your settings.": {
+    "zh_CN": "你修改了你的设置。"
+  },
+  "You modified your avatar.": {
+    "zh_CN": "你修改了你的头像。"
+  },
+  "Sorry, you nick name is invalid, at least %d characters in length, please try again.": {
+    "zh_CN": "抱歉，您的昵称长度太短，至少需要 %d 个字符，请重试。"
+  },
+  "Sorry, you password is invalid, at least %d characters in length, please try again.": {
+    "zh_CN": "抱歉，您的密码无效，至少需要 %d 个字符，请重试。"
+  },
+  "Sorry, your email address is invalid, please check it and try again.": {
+    "zh_CN": "抱歉，您的邮箱地址不正确，请检查并再尝试。"
+  },
+  "Register successfully, page is refreshing, please wait...": {
+    "zh_CN": "注册成功，页面正在刷新，请稍候…"
+  },
+  "Sorry, the email does not exist.": {
+    "zh_CN": "抱歉，该邮箱不存在。"
+  },
+  "Dear %s!": {
+    "zh_CN": "亲爱的 %s！"
+  },
+  "You are receiving this email because you forgot your password. We already made an address for your account, you can access this address ( %s ) to log-in and change your password in 3 hours.": {
+    "zh_CN": "您接收到这封邮件是因为您忘记了密码。我们已为您创建了一个地址，您可以在 3 小时内，访问此链接地址（ %s ）登录并修改您的密码。"
+  },
+  "-- From %s": {
+    "zh_CN": "—— 来自 %s"
+  },
+  "You are applying to retrieve your password.": {
+    "zh_CN": "您正在申请找回密码。"
+  },
+  "Success, we sent an email that includes how to retrieve your password, please check it out in 3 hours.": {
+    "zh_CN": "成功，我们已发送了一封包括如何找回密码的邮件，请您在 3 小时内查收。"
+  },
+  "Error, server can not send email, please contact the administrator.": {
+    "zh_CN": "抱歉，服务器无法发送邮件，请联系管理员。"
+  },
+  "Invalid param.": {
+    "zh_CN": "抱歉，无效的类型参数。"
+  },
+  "Invalid twice password.": {
+    "zh_CN": "抱歉，两次密码无效。"
+  },
+  "Empty token.": {
+    "zh_CN": "空令牌。"
+  },
+  "The token email and you account email do not match.": {
+    "zh_CN": "令牌邮箱与您的帐号邮箱不匹配。"
+  },
+  "Sorry, your account email is not exist.": {
+    "zh_CN": "抱歉，您张帐号电子邮件不存在。"
+  },
+  "Sorry, the user do not apply recover yet.": {
+    "zh_CN": "抱歉，该用户未申请密码寻回。"
+  },
+  "Congratulation, your account has been recovered! Password has been updated. Redirecting home page, please wait...": {
+    "zh_CN": "恭喜，您的帐号已成功寻回！密码已更新。正在跳转到首页，请稍候……"
+  },
+  "Sorry, password is invalid, please try again.": {
+    "zh_CN": "抱歉，密码无效，请重试。"
+  },
+  "Sorry, email is invalid, please try again.": {
+    "zh_CN": "抱歉，邮箱无效，请重试。"
+  },
+  "Sorry, nickname is invalid, please try again.": {
+    "zh_CN": "抱歉，昵称无效，请输入另一个后重试。"
+  },
+  "Sorry, email already exists, please change another one and try again.": {
+    "zh_CN": "抱歉，邮箱已经存在，请输入另一个再尝试。"
+  },
+  "Re-type password": {
+    "zh_CN": "重复密码"
+  },
+  "Login / Register": {
+    "zh_CN": "登录/注册"
+  },
+  "Remember me": {
+    "zh_CN": "下次自动登录"
+  },
+  "Login successful, closing tip after %d seconds.": {
+    "zh_CN": "登录成功，%d 秒后关闭提示。"
+  },
+  "Login successful, page is refreshing, please wait..": {
+    "zh_CN": "登录成功，页面正在刷新，请稍候…"
+  },
+  "Forgot my password?": {
+    "zh_CN": "忘记了密码？"
+  },
+  "Settings has been restored, refreshing page, please wait... ": {
+    "zh_CN": "设置将会被还原，页面正在刷新，请稍候…"
+  },
+  "Please set some slidebox posts.": {
+    "zh_CN": "请设置一些幻灯片文章"
+  },
+  "Account menu": {
+    "zh_CN": "账号菜单"
+  },
+  "Missing initialization files.": {
+    "zh_CN": "缺少初始化文件。"
+  },
+  "Can not find the include file.": {
+    "zh_CN": "无法找到包含文件。"
+  },
+  "Login from QQ": {
+    "zh_CN": "使用 QQ 登录"
+  },
+  "Login from Weibo": {
+    "zh_CN": "使用渣浪微博登录"
+  },
+  "Account register": {
+    "zh_CN": "用户注册"
+  },
+  "Your nickname, at least 2 length": {
+    "zh_CN": "昵称，至少 2 个字符"
+  },
+  "Please type nickname, at least 2 length": {
+    "zh_CN": "请输入昵称，2个字符以上"
+  },
+  "Please type email": {
+    "zh_CN": "请输入 Email"
+  },
+  "Your password, at least 3 length": {
+    "zh_CN": "密码，至少 3 个字符"
+  },
+  "Please type password, at least 3 length": {
+    "zh_CN": "请输入密码，3个字符以上"
+  },
+  "I am agree the %s": {
+    "zh_CN": "我已同意本站的 %s"
+  },
+  "TOS": {
+    "zh_CN": "服务协议"
+  },
+  "Register &amp; Log-in": {
+    "zh_CN": "注册 &amp; 登录"
+  },
+  "Forgot password?": {
+    "zh_CN": "忘记密码 了？"
+  },
+  "If you forgot your account password, you can recover your password by your account email. Please entry your account email, we will send a confirm email to it and reset your password.": {
+    "zh_CN": "如果您忘记了账号密码，您可以通过账号邮箱来重置密码。请输入您的账号邮箱，我们将会发送一封确认邮件，并根据提示重置您的密码。"
+  },
+  "Send an email to confirm": {
+    "zh_CN": "发送邮件以确认"
+  },
+  "Register new account": {
+    "zh_CN": "注册新用户"
+  },
+  "Account login": {
+    "zh_CN": "用户登录"
+  },
+  "Please type password": {
+    "zh_CN": "请输入密码"
+  },
+  "Logging in, please wait...": {
+    "zh_CN": "登录中，请稍候……"
+  },
+  "Lacking the class theme_custom_storage": {
+    "zh_CN": "缺少类 theme_custom_storage"
+  },
+  "You are ready to download \"%s\"": {
+    "zh_CN": "你正准备下载 《%s》"
+  },
+  "Please set some widgets in singluar post.": {
+    "zh_CN": "请在【外观 - 小组件】中为单文章设置一些小组件"
+  },
+  "Please set some widgets in archive.": {
+    "zh_CN": "请在【外观 - 小组件】中为归档页面设置一些小组件"
+  },
+  "Please set some widgets in singluar page.": {
+    "zh_CN": "请在【外观 - 小组件】中为单页面设置一些小组件"
+  },
+  "Please set some widgets in 404 page.": {
+    "zh_CN": "请在【外观 - 小组件】中为404页面设置一些小组件"
+  },
+  "%1$s published a comment in %2$s.": {
+    "zh_CN": "%1$s 在 %2$s 中发表了一条评论。"
+  },
+  "This feature is under development.": {
+    "zh_CN": "这个功能是正在开发中。"
+  },
+  "Basic profile": {
+    "zh_CN": "基本资料"
+  },
+  "Unique identifier": {
+    "zh_CN": "唯一的标识（不能被更改）"
+  },
+  "UID": {
+    "zh_CN": "UID"
+  },
+  "Website / Blog": {
+    "zh_CN": "网站 / 博客"
+  },
+  "Statistics": {
+    "zh_CN": "统计"
+  },
+  "No post yet.": {
+    "zh_CN": "暂无文章。"
+  },
+  "My profile": {
+    "zh_CN": "我的资料"
+  },
+  "My points": {
+    "zh_CN": "我的积分"
+  },
+  "Notification": {
+    "zh_CN": "提醒"
+  },
+  "My favor": {
+    "zh_CN": "我的收藏"
+  },
+  "Log-out": {
+    "zh_CN": "登出"
+  },
+  "My reward point histories": {
+    "zh_CN": "我的积分历史"
+  },
+  "You have %1$d %2$s, You need to collect %3$d %2%s to modify the avatar.": {
+    "zh_CN": "你目前有 %1$d 个%2$s，你需要收集 %3$d 个%2$s才能修改头像。"
+  },
+  "You have %1$d %2$s, modify avatar will consume %3$d %2$s.": {
+    "zh_CN": "你目前有 %1$d 个%2$s，修改头像将会消耗 %3$d 个%2$s。"
+  },
+  "New avatar": {
+    "zh_CN": "新头像"
+  },
+  "Save my avatar": {
+    "zh_CN": "保存我的头像"
+  },
+  "Collection title": {
+    "zh_CN": "专刊标题"
+  },
+  "Collection title (require)": {
+    "zh_CN": "专刊标题（必填）"
+  },
+  "Collection title must to write": {
+    "zh_CN": "专刊标题必须填写"
+  },
+  "Collection description": {
+    "zh_CN": "专刊介绍"
+  },
+  "Explain why you recommend this collection. (require)": {
+    "zh_CN": "请介绍一下你的专刊（必填）。"
+  },
+  "Upload a cover": {
+    "zh_CN": "上传一张封面"
+  },
+  "Cover": {
+    "zh_CN": "封面"
+  },
+  "Select or Drag images": {
+    "zh_CN": "选择或拖放图片"
+  },
+  "Collection posts": {
+    "zh_CN": "专刊文章"
+  },
+  "(At least %d, max %d posts)": {
+    "zh_CN": "（至少 %d，最多 %d 篇文章）"
+  },
+  "Preview the collection": {
+    "zh_CN": "预览专刊"
+  },
+  "Add new post": {
+    "zh_CN": "添加新文章"
+  },
+  "tag %d": {
+    "zh_CN": "标签 %d"
+  },
+  "Post title (require)": {
+    "zh_CN": "文章标题（必填）"
+  },
+  "The source of work URL, includes http://": {
+    "zh_CN": "作品的来源地址，包括 http://"
+  },
+  "Click to edit": {
+    "zh_CN": "点击编辑"
+  },
+  "View": {
+    "zh_CN": "查看"
+  },
+  "Your have not any history yet.": {
+    "zh_CN": "您暂无任何历史记录哦。"
+  },
+  "Your post %1$s has a comment by %2$s.": {
+    "zh_CN": "您的文章 %1$s 有一条来自 %2$s 的评论。"
+  },
+  "Your comment has a reply by %1$s in %2$s.": {
+    "zh_CN": "%1$s 回复了您在 %2$s 的评论。"
+  },
+  "%s is following you.": {
+    "zh_CN": "%s 正在关注您。"
+  },
+  "%s published a post %s.": {
+    "zh_CN": "%s 发布了一片文章 %s。"
+  },
+  "You have not any notification yet": {
+    "zh_CN": "您暂无任何提醒。"
+  },
+  "Change my password": {
+    "zh_CN": "修改密码"
+  },
+  "Current password": {
+    "zh_CN": "当前密码"
+  },
+  "Type your current password": {
+    "zh_CN": "输入当前的密码"
+  },
+  "New password": {
+    "zh_CN": "新密码"
+  },
+  "Type new password": {
+    "zh_CN": "输入新密码"
+  },
+  "Re-type new password": {
+    "zh_CN": "重新输入新密码"
+  },
+  "Update password": {
+    "zh_CN": "更新密码"
+  },
+  "Sorry, collection edits feature is not supported currently.": {
+    "zh_CN": "抱歉，目前不支持编辑专刊的功能。"
+  },
+  "Sorry, you can not edit this post now, because editor is editing. Please wait a minute...": {
+    "zh_CN": "对不起，你现在不能编辑这篇文章，因为编辑正在编辑它。请稍候一会……"
+  },
+  "Edit my profile": {
+    "zh_CN": "编辑我的资料"
+  },
+  "You have %1$d %2$s, You need to collect %3$d %2%s to modify the settings.": {
+    "zh_CN": "你目前有 %1$d 个%2$s，你需要收集 %3$d 个%2$s才能修改设置"
+  },
+  "You have %1$d %2$s, modify settings will consume %3$d %2$s.": {
+    "zh_CN": "你目前有 %1$d 个%2$s，修改设置将会消耗 %3$d 个%2$s。"
+  },
+  "Views source image": {
+    "zh_CN": "查看原图"
+  },
+  "Change avatar": {
+    "zh_CN": "更改头像"
+  },
+  "Please type nickname (required)": {
+    "zh_CN": "请输入昵称（必填）"
+  },
+  "Please type nickname": {
+    "zh_CN": "请输入昵称"
+  },
+  "Your blog url (include http://)": {
+    "zh_CN": "您的博客网址（包含http://）"
+  },
+  "Please type your blog url": {
+    "zh_CN": "请输入您的博客网址"
+  },
+  "Introduce yourself to everyone": {
+    "zh_CN": "向每个人介绍自己"
+  },
+  "Save my settings": {
+    "zh_CN": "保存我的设置"
+  },
+  "Views more posts in the category": {
+    "zh_CN": "查看该目录的更多文章"
+  },
+  "Sorry, the post do not exist or you are not the post author.": {
+    "zh_CN": "抱歉，文章不存在或你不是该文章的作者。"
+  },
+  "a minute ago": {
+    "zh_CN": "一分钟前"
+  },
+  "an hour ago": {
+    "zh_CN": "一小时前"
+  },
+  "yesterday": {
+    "zh_CN": "昨天"
+  },
+  "M j": {
+    "zh_CN": "m月d日"
+  },
+  "User rank": {
+    "zh_CN": "用户排行"
+  },
+  "My rank": {
+    "zh_CN": "我的位置"
+  },
+  "Comment AJAX Settings": {
+    "zh_CN": "AJAX 评论设置"
+  },
+  "Visitor submitted comment without refreshing page. Recommended enable to improve the user experience.": {
+    "zh_CN": "用户提交评论不需要刷新页面即可显示。建议启用提高用户体验。"
+  },
+  "Your collection submitted successful, it will be published after approve in a while. Thank you very much!": {
+    "zh_CN": "专刊提交成功，一会通过审核后就会发布。十分感谢！"
+  },
+  "Your post submitted successful, it will be published after approve in a while. Thank you very much!": {
+    "zh_CN": "提交成功，专刊将会被"
+  },
+  "&raquo; detail": {
+    "zh_CN": "&raquo; 详细"
+  },
+  "Not data in this category": {
+    "zh_CN": "在此分类目录中找不到数据"
+  },
+  "Import & Export Theme Settings": {
+    "zh_CN": "导入 & 导出主题选项"
+  },
+  "Invalid content. ": {
+    "zh_CN": "抱歉，私信内容无效。"
+  },
+  "Some feature will be use recommended posts.": {
+    "zh_CN": "有些功能将会使用到推荐文章。"
+  },
+  "Popular tags <small>(Custom)</small>": {
+    "zh_CN": "热门标签 <small>（定制）</small>"
+  },
+  "Add": {
+    "zh_CN": "添加"
+  },
+  "Copyright &copy; %s %s.": {
+    "zh_CN": "Copyright &copy; %s %s."
+  },
+  "Powered by %s.": {
+    "zh_CN": "Powered by %s."
+  },
+  "Sticky post": {
+    "zh_CN": "顶置文章"
+  },
+  "Export: ": {
+    "zh_CN": "导出"
+  },
+  "Posts rank <small>(Custom)</small>": {
+    "zh_CN": "文章排行 <small>（定制）</small>"
+  },
+  "Invaild post title.": {
+    "zh_CN": "无效的文章标题。"
+  },
+  "Views source image: %d x %d": {
+    "zh_CN": "查看原图：%d x %d"
+  },
+  "Just write about introduction (require)": {
+    "zh_CN": "关于文章的介绍，写一下嘛（必填）"
+  },
+  "Post content must to write": {
+    "zh_CN": "文章内容必须填写哦"
+  },
+  "Preview images": {
+    "zh_CN": "预览图"
+  },
+  "A special event happend: %s": {
+    "zh_CN": "一个特别的事件发生了：%s"
+  },
+  "The user %s(%d) point has set to %d.": {
+    "zh_CN": "用户 %s（%d）积分已设置为 %d。"
+  },
+  "&larr; Preview page": {
+    "zh_CN": "&larr; 上一页"
+  },
+  "Next page &rarr;": {
+    "zh_CN": "下一页 &rarr;"
+  },
+  "Next post &rarr;": {
+    "zh_CN": "下一页 &rarr;"
+  },
+  "%s &rarr;": {
+    "zh_CN": "%s &rarr;"
+  },
+  "&larr; Preview post": {
+    "zh_CN": "&larr; 上一页"
+  },
+  "&larr; %s": {
+    "zh_CN": "&larr; %s"
+  },
+  "Previous": {
+    "zh_CN": "上一页"
+  },
+  "My comments: %d": {
+    "zh_CN": "我的评论：%d"
+  },
+  "My followers: %d": {
+    "zh_CN": "我的粉丝：%d"
+  },
+  "My following: %d": {
+    "zh_CN": "我在关注：%d"
+  },
+  "I published a post %s.": {
+    "zh_CN": "我发布了一片文章：%s。"
+  },
+  "Latest comments <small>(Custom)</small>": {
+    "zh_CN": "最新评论 <small>（定制）</small>"
+  },
+  "Comments number": {
+    "zh_CN": "评论数量"
+  },
+  "Set it to recommended post": {
+    "zh_CN": "设置推荐文章"
+  },
+  "User point rank <small>custom</small>": {
+    "zh_CN": "用户积分排行 <small>定制</small>"
+  },
+  "Lack the return param.": {
+    "zh_CN": "缺少返回值。"
+  },
+  "Author card <small>(Custom)</small>": {
+    "zh_CN": "作者名片 <small>（定制版）</small>"
+  },
+  "User point rank <small>(Custom)</small>": {
+    "zh_CN": "用户积分排行 <small>（定制版）</small>"
+  },
+  "Sorry, the code is wrong.": {
+    "zh_CN": "抱歉，无效的安全码。"
+  },
+  "Invaild post value.": {
+    "zh_CN": "无效的文章"
+  },
+  "Comments list (%d)": {
+    "zh_CN": "评论列表（%d）"
+  },
+  "Log-in to reply": {
+    "zh_CN": "登录后回复"
+  },
+  "Same tag": {
+    "zh_CN": "同标签"
+  },
+  "Error: please fill the required fields(name, email).": {
+    "zh_CN": "错误：请输入必须的字段（姓名，邮箱）。"
+  },
+  "Param error": {
+    "zh_CN": "参数错误"
+  },
+  "Sorry, system can not increase post givers, maybe you are post author.": {
+    "zh_CN": "抱歉，系统无法增加文章打赏者，也许您就是文章作者？"
+  },
+  "System can not increase giver posts.": {
+    "zh_CN": "系统无法增加打赏文章。"
+  },
+  "Give %d %s": {
+    "zh_CN": "打赏 %d 个 %s"
+  },
+  "Your comment %1$s has a reply by %2$s in %3$s.": {
+    "zh_CN": "您在 %3$s 的评论 %1$s 有一条来自 %2$s 的回复。"
+  },
+  "About & Help": {
+    "zh_CN": "关于&amp;帮助"
+  },
+  "Something error with theme? Try to restore:)": {
+    "zh_CN": "主题数据出错？还原默认设置试试：）"
+  },
+  "Restore default theme options": {
+    "zh_CN": "还原主题默认选项"
+  },
+  "I gave %d %s": {
+    "zh_CN": "我已打赏了 %d 个 %s"
+  },
+  "Good! I like it.": {
+    "zh_CN": "赞！我喜欢"
+  },
+  "Bad idea!": {
+    "zh_CN": "坏主意！"
+  },
+  "Baidu": {
+    "zh_CN": "百度"
+  },
+  "%s storage download": {
+    "zh_CN": "%s 网盘下载"
+  },
+  "Statistics Settings": {
+    "zh_CN": "统计设置"
+  },
+  "You can put the statistics codes into the text area if you need. (The statistics codes maybe JavasSript)": {
+    "zh_CN": "如果你需要的话，可以把统计代码到文本区域（统计代码可以是 JavaScript） 。"
+  },
+  "Welcome to log-in ": {
+    "zh_CN": "欢迎登录"
+  },
+  "Post Toc": {
+    "zh_CN": "文章目录"
+  },
+  "[Top]": {
+    "zh_CN": "[目录]"
+  },
+  "My posts: %d": {
+    "zh_CN": "我的文章：%d"
+  },
+  "One special event happened!": {
+    "zh_CN": "一个特别事件发生了！"
+  },
+  "How many point to add": {
+    "zh_CN": "为用户增加多少积分"
+  },
+  "Article permalink: %s": {
+    "zh_CN": "本作品地址：%s"
+  },
+  "This article is %s's original work. Please indicate source is %s if reprints.": {
+    "zh_CN": "本作品是本站会员 %s 的原创作品，如需转载请注明来源为 %s。"
+  },
+  "This article is reprint work. Source: %s, author: %s.": {
+    "zh_CN": "本作品为搬运，来源：%s，作为：%s。"
+  },
+  "Post Copyright Settings": {
+    "zh_CN": "文章版权设置"
+  },
+  "(required)": {
+    "zh_CN": "（需要）"
+  },
+  "Leave a Reply": {
+    "zh_CN": "留下评论"
+  },
+  "Leave a Reply to %s": {
+    "zh_CN": "回复给 %s"
+  },
+  "Pic-face": {
+    "zh_CN": "图片表情"
+  },
+  "Emoticons": {
+    "zh_CN": "颜文表情"
+  },
+  "Your behavior looks like brute Force attack, page will be refreshed after %s seconds automatically.": {
+    "zh_CN": "您的行为看起来洪水攻击，页面将会在 %s 秒后自动刷新。"
+  },
+  "Defender": {
+    "zh_CN": "防御者"
+  },
+  "Your comment \"%1$s\" has a reply by %2$s in \"%3$s\".": {
+    "zh_CN": "您的评论《%1$s》在 《有％2 $ S在“％3 $ S”的答复。"
+  },
+  "Your post %s has a comment by %s.": {
+    "zh_CN": "您的文章 %s 有一条来自 %s 的评论。"
+  },
+  "Your comment %s$1 has a reply by %s$2.": {
+    "zh_CN": "%s 回复了您的评论 %s。"
+  },
+  "Your comment %s has a reply by %s.": {
+    "zh_CN": "%s 回复了您的评论 %s。"
+  },
+  "Authorized from author": {
+    "zh_CN": "已获转载授权"
+  },
+  "History": {
+    "zh_CN": "历史积分记录"
+  },
+  "Avatar": {
+    "zh_CN": "头像"
+  },
+  "Notifications": {
+    "zh_CN": "提醒"
+  },
+  "Your post %s has a new comment by %s.": {
+    "zh_CN": "%s 评论了您的文章 %s "
+  },
+  "Redirect to change avatar": {
+    "zh_CN": "跳转更改头像"
+  },
+  "Which category will be added when contributes": {
+    "zh_CN": "投稿的时候哪些分类将会被自动添加"
+  },
+  "Login required.": {
+    "zh_CN": "需要登录。"
+  },
+  "Invalid post content.": {
+    "zh_CN": "抱歉，无效的文章内容。"
+  },
+  "Thank you for sharing, everybody will get your happiness in few minutes. %s": {
+    "zh_CN": "感谢分享，几分钟后大家将会感受到你的欢乐。%s"
+  },
+  "Share anthor one~": {
+    "zh_CN": "再来一发～"
+  },
+  "Invalid typ.": {
+    "zh_CN": "抱歉，无效的类型。"
+  },
+  "Already reached max number of tags.": {
+    "zh_CN": "已达到最大标签数量。"
+  },
+  "Now share anthor one again?": {
+    "zh_CN": "不放再分享一篇？"
+  },
+  "Invalid type param.": {
+    "zh_CN": "抱歉，无效的类型参数。"
+  },
+  "Your email address": {
+    "zh_CN": "邮箱"
+  },
+  "Your account email": {
+    "zh_CN": "账号邮箱"
+  },
+  "Your password": {
+    "zh_CN": "密码"
+  },
+  "Sorry, twice password does not match, please try again": {
+    "zh_CN": "抱歉，两次密码不相同，请修正后重试。"
+  },
+  "Maybe you would like them": {
+    "zh_CN": "或许您会喜欢"
+  },
+  "Click to show QR code for this page": {
+    "zh_CN": "扫描二维码即可访问此页面。"
+  },
+  "This is an unique theme, beautiful UI, delicate features, excellent efficiency, good experience, all in one for your blog.": {
+    "zh_CN": "这是一款独特的主题，漂亮的界面、精致的功能、优秀的效率、人性化的体验，一切只为您的博客。"
+  },
+  "We recommend that you upgrade your web browser so that you can get the most of the %s website. Upgrading your browser should only take a few minutes. Please download the latest version of one of the following free browsers:": {
+    "zh_CN": "我们建议您升级您的浏览器以更好地访问 %s。升级您的浏览器只需花费几分钟时间，可从选择下列数款浏览器中选择下载："
+  },
+  "Chrome": {
+    "zh_CN": "谷歌浏览器"
+  },
+  "Firefox": {
+    "zh_CN": "火狐浏览器"
+  },
+  "Maxthon": {
+    "zh_CN": "傲游浏览器"
+  },
+  "Internet Explorer": {
+    "zh_CN": "IE 浏览器"
+  },
+  "Navigation": {
+    "zh_CN": "导航菜单"
+  },
+  "Your comment has been approved in \"%s\"": {
+    "zh_CN": "您的评论已通过审核与《%s》"
+  },
+  "Your comment (%s) has been approved.": {
+    "zh_CN": "您的评论（%s）已通过审核。"
+  },
+  "View it on \"%s\".": {
+    "zh_CN": "查看 %s"
+  },
+  "Your comment (%s) about \"%s\" has a reply.": {
+    "zh_CN": "您对《%s》的评论（%s）有一条回复。"
+  },
+  "Count your post views.": {
+    "zh_CN": "统计您的日志查看数"
+  },
+  "Member": {
+    "zh_CN": "会员"
+  },
+  "Invalid nickname.": {
+    "zh_CN": "无效的昵称。"
+  },
+  "Your profile data has been updated.": {
+    "zh_CN": "您的资料数据已更新。"
+  },
+  "Current password is invalid, please try again.": {
+    "zh_CN": "当前密码不正确，请重新输入。"
+  },
+  "Twice password is invalid, please try again.": {
+    "zh_CN": "两次密码不正确，请重新输入。"
+  },
+  "Your password has been updated.": {
+    "zh_CN": "您的密码已更新。"
+  },
+  "Views hot keyword": {
+    "zh_CN": "查看热门关键词"
+  },
+  "Home box": {
+    "zh_CN": "首页盒子"
+  },
+  "Must be common multiple of 5 and 2.": {
+    "zh_CN": "必须是 2 和 5 的公倍数。"
+  },
+  "Show thumbnail number": {
+    "zh_CN": "显示特色图数量："
+  },
+  "Tag1 = http://www.inn-studio.com": {
+    "zh_CN": "例如 标签1 = http://inn-studio.com"
+  },
+  "1 tag 1 line.": {
+    "zh_CN": "例如（1个标签1行）：标签1 = http://abc.com"
+  },
+  "Clean theme cache": {
+    "zh_CN": "清空主题缓存"
+  }
+}
