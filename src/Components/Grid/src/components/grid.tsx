@@ -39,11 +39,11 @@ const createCss = (types: ISizes) => {
   return style
 }
 
-interface IDiv {
+export interface IGridStyle {
   types: ISizes
 }
 
-const Div = styled.div<IDiv>`
+export const GridStyle = styled.div<IGridStyle>`
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
   flex: 0 0 100%;
@@ -70,7 +70,7 @@ const Grid = ({
     desktopLg,
   }
 
-  return <Div types={types}>{children}</Div>
+  return <GridStyle types={types}>{children}</GridStyle>
 }
 
 export default Grid

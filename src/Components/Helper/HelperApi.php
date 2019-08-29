@@ -204,7 +204,7 @@ HTML;
         $filePath = '/proc/net/dev';
 
         if ( ! \is_readable($filePath)) {
-            return I18nApi::_('Unavailable');
+            return null;
         }
 
         static $eths = null;

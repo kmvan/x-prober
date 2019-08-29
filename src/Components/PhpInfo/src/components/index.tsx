@@ -6,11 +6,8 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import store from '../stores'
 import Alert from '~components/Helper/src/components/alert'
 import styled from 'styled-components'
-
-const FnContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
+import MultiItemContainer from '~components/Card/src/components/multi-item-container'
+import SearchLink from '~components/Helper/src/components/search-link'
 
 const Fn = styled.a.attrs(({ href }: { href: string }) => ({
   target: '_blank',
@@ -59,9 +56,7 @@ class PhpInfo extends Component {
         gettext('Disabled functions'),
         conf.disableFunctions.length
           ? conf.disableFunctions.map((fn: string, i: number) => (
-              <Fn key={i} href={fn}>
-                {fn}
-              </Fn>
+              <SearchLink key={i} keyword={fn}></SearchLink>
             ))
           : '-',
       ],
@@ -69,9 +64,7 @@ class PhpInfo extends Component {
         gettext('Disabled classes'),
         conf.disableClasses.length
           ? conf.disableClasses.map((fn: string, i: number) => (
-              <Fn key={i} href={fn}>
-                {fn}
-              </Fn>
+              <SearchLink key={i} keyword={fn}></SearchLink>
             ))
           : '-',
       ],
@@ -89,7 +82,7 @@ class PhpInfo extends Component {
         {longItems.map(([title, content]) => {
           return (
             <CardGrid key={title} title={title} tablet={[1, 1]}>
-              <FnContainer>{content}</FnContainer>
+              <MultiItemContainer>{content}</MultiItemContainer>
             </CardGrid>
           )
         })}

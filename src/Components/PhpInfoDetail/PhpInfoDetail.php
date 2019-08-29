@@ -18,6 +18,7 @@ class PhpInfoDetail
         }
 
         \phpinfo();
+
         die;
     }
 }

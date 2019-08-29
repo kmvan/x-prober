@@ -1,7 +1,12 @@
 import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
-import { configure, observable, action, computed } from 'mobx'
+import { configure, computed } from 'mobx'
 import FetchStore from '~components/Fetch/src/stores'
+
+interface IServerInfoDiskUsage {
+  max: number
+  value: number
+}
 
 configure({
   enforceActions: 'observed',
@@ -20,11 +25,9 @@ class ServerInfoStore {
 
   @computed
   get serverTime(): string {
-    if (FetchStore.isLoading) {
-      return get(this.conf, 'serverTime')
-    }
-
-    return FetchStore.data[this.ID].serverTime
+    return FetchStore.isLoading
+      ? get(this.conf, 'serverTime')
+      : get(FetchStore.data, `${this.ID}.serverTime`)
   }
 
   @computed
@@ -36,11 +39,16 @@ class ServerInfoStore {
 
   @computed
   get serverUtcTime(): string {
-    if (FetchStore.isLoading) {
-      return get(this.conf, 'serverUtcTime')
-    }
+    return FetchStore.isLoading
+      ? get(this.conf, 'serverUtcTime')
+      : FetchStore.data[this.ID].serverUtcTime
+  }
 
-    return FetchStore.data[this.ID].serverUtcTime
+  @computed
+  get diskUsage(): IServerInfoDiskUsage {
+    return FetchStore.isLoading
+      ? get(this.conf, 'diskUsage')
+      : FetchStore.data[this.ID].diskUsage
   }
 }
 

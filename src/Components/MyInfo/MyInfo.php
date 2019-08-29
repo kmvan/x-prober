@@ -7,6 +7,5 @@ class MyInfo
     public function __construct()
     {
         new Conf();
-        new FilterPing();
     }
 }

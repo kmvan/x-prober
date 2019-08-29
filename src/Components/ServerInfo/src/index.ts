@@ -6,6 +6,6 @@ CardStore.addCard({
   id: 'serverInfo',
   title: gettext('Server Information'),
   tinyTitle: gettext('Info'),
-  priority: 20,
+  priority: 300,
   component,
 })

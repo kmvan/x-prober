@@ -6,6 +6,6 @@ CardStore.addCard({
   id: 'phpExtensions',
   title: gettext('PHP extensions'),
   tinyTitle: gettext('Ext'),
-  priority: 40,
+  priority: 500,
   component,
 })

@@ -11,7 +11,7 @@ class MemCached extends Component {
     const { max, value } = store.memCached
 
     return (
-      <CardGrid title={gettext('Memory cached')} tablet={[1, 1]}>
+      <CardGrid title={gettext('Memory cached')} tablet={[1, 2]}>
         <ProgressBar value={value} max={max} isCapacity={true} />
       </CardGrid>
     )

@@ -3,9 +3,9 @@ import { gettext } from '~components/Language/src'
 import component from './components'
 
 CardStore.addCard({
-  id: 'phpInfo',
-  title: gettext('PHP Information'),
-  tinyTitle: gettext('PHP'),
-  priority: 400,
+  id: 'ping',
+  title: gettext('Network Ping'),
+  tinyTitle: gettext('Ping'),
+  priority: 250,
   component,
 })

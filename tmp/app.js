@@ -67778,11 +67778,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Card_src_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~components/Card/src/components */ "./src/Components/Card/src/components/index.tsx");
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style */ "./src/Components/Bootstrap/src/components/style/index.ts");
 /* harmony import */ var _components_ServerStatus_src__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~components/ServerStatus/src */ "./src/Components/ServerStatus/src/index.ts");
-/* harmony import */ var _components_ServerInfo_src__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~components/ServerInfo/src */ "./src/Components/ServerInfo/src/index.ts");
-/* harmony import */ var _components_PhpInfo_src__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~components/PhpInfo/src */ "./src/Components/PhpInfo/src/index.ts");
-/* harmony import */ var _components_PhpExtensions_src__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~components/PhpExtensions/src */ "./src/Components/PhpExtensions/src/index.ts");
-/* harmony import */ var _components_Database_src__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ~components/Database/src */ "./src/Components/Database/src/index.ts");
-/* harmony import */ var _components_MyInfo_src__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ~components/MyInfo/src */ "./src/Components/MyInfo/src/index.ts");
+/* harmony import */ var _components_NetworkStats_src__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~components/NetworkStats/src */ "./src/Components/NetworkStats/src/index.ts");
+/* harmony import */ var _components_Ping_src__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ~components/Ping/src */ "./src/Components/Ping/src/index.ts");
+/* harmony import */ var _components_ServerInfo_src__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ~components/ServerInfo/src */ "./src/Components/ServerInfo/src/index.ts");
+/* harmony import */ var _components_PhpInfo_src__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ~components/PhpInfo/src */ "./src/Components/PhpInfo/src/index.ts");
+/* harmony import */ var _components_PhpExtensions_src__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ~components/PhpExtensions/src */ "./src/Components/PhpExtensions/src/index.ts");
+/* harmony import */ var _components_Database_src__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ~components/Database/src */ "./src/Components/Database/src/index.ts");
+/* harmony import */ var _components_MyInfo_src__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ~components/MyInfo/src */ "./src/Components/MyInfo/src/index.ts");
 // import '@babel/polyfill'
 // import 'isomorphic-fetch'
 
@@ -67790,18 +67792,11 @@ __webpack_require__.r(__webpack_exports__);
 // import './style'
 // import '~components/Footer/src/components/style'
 
-// import Nav from '~components/Nav/src/components'
-// import ServerStatus from '~components/ServerStatus/src/components'
-// import NetworkStats from '~components/NetworkStats/src/components'
-// import ServerInfo from '~components/ServerInfo/src/components'
-// import ServerBenchmark from '~components/ServerBenchmark/src/components'
-// import Updater from '~components/Updater/src/components'
-// import MyInfo from '~components/MyInfo/src/components'
 
 
 
-// import Row from '~components/Grid/src/components/row'
-// import Grid from '~components/Grid/src/components/grid'
+
+
 
 
 
@@ -67970,10 +67965,10 @@ const CardContent = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].di
   flex-grow: 1;
   padding: 0.5rem 1rem;
 `;
-const CardGrid = ({ title, children, ...props }) => {
+const CardGrid = ({ title = '', children, ...props }) => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Grid_src_components_grid__WEBPACK_IMPORTED_MODULE_1__["default"], Object.assign({}, props),
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardGroup, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardTitle, null, title),
+            title && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardTitle, null, title),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardContent, null, children))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (CardGrid);
@@ -68265,7 +68260,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'database',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Database'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('DB'),
-    priority: 40,
+    priority: 600,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 
@@ -68416,11 +68411,12 @@ __decorate([
 /*!*****************************************************!*\
   !*** ./src/Components/Grid/src/components/grid.tsx ***!
   \*****************************************************/
-/*! exports provided: default */
+/*! exports provided: GridStyle, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GridStyle", function() { return GridStyle; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -68447,7 +68443,7 @@ const createCss = (types) => {
     });
     return style;
 };
-const Div = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div `
+const GridStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div `
   padding-left: calc(${_components_Config_src__WEBPACK_IMPORTED_MODULE_3__["GUTTER"]} / 2);
   padding-right: calc(${_components_Config_src__WEBPACK_IMPORTED_MODULE_3__["GUTTER"]} / 2);
   flex: 0 0 100%;
@@ -68463,7 +68459,7 @@ const Grid = ({ mobileSm, mobileMd, mobileLg, tablet, desktopSm, desktopMd, desk
         desktopMd,
         desktopLg,
     };
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Div, { types: types }, children);
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GridStyle, { types: types }, children);
 };
 /* harmony default export */ __webpack_exports__["default"] = (Grid);
 
@@ -68840,7 +68836,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'myInfo',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('My information'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Mine'),
-    priority: 90,
+    priority: 900,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 
@@ -68927,6 +68923,193 @@ __decorate([
     __metadata("design:type", Object)
 ], MyInfoStore.prototype, "appendPingItem", void 0);
 /* harmony default export */ __webpack_exports__["default"] = (new MyInfoStore());
+
+
+/***/ }),
+
+/***/ "./src/Components/NetworkStats/src/components/index.tsx":
+/*!**************************************************************!*\
+  !*** ./src/Components/NetworkStats/src/components/index.tsx ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/dist/mobx-react.module.js");
+/* harmony import */ var _components_Helper_src_components_format_bytes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~components/Helper/src/components/format-bytes */ "./src/Components/Helper/src/components/format-bytes.ts");
+/* harmony import */ var _components_Grid_src_components_row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~components/Grid/src/components/row */ "./src/Components/Grid/src/components/row.tsx");
+/* harmony import */ var _components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~components/Card/src/components/card-grid */ "./src/Components/Card/src/components/card-grid.tsx");
+/* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stores */ "./src/Components/NetworkStats/src/stores/index.ts");
+/* harmony import */ var _components_Grid_src_components_grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~components/Grid/src/components/grid */ "./src/Components/Grid/src/components/grid.tsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+const NetworkId = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
+  text-decoration: underline;
+`;
+const NetworkIdRow = Object(styled_components__WEBPACK_IMPORTED_MODULE_7__["default"])(_components_Grid_src_components_row__WEBPACK_IMPORTED_MODULE_3__["default"]) `
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+const DataContainer = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+const Data = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
+  flex: 0 0 50%;
+`;
+const Total = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div ``;
+const Rate = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
+  font-family: 'Arial Black';
+
+  ::before {
+    margin-right: 0.5rem;
+  }
+`;
+const RateRx = Object(styled_components__WEBPACK_IMPORTED_MODULE_7__["default"])(Rate) `
+  ::before {
+    content: '▼';
+  }
+`;
+const RateTx = Object(styled_components__WEBPACK_IMPORTED_MODULE_7__["default"])(Rate) `
+  ::before {
+    content: '▲';
+  }
+`;
+let NetworkStats = class NetworkStats extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+    constructor() {
+        super(...arguments);
+        this.items = {};
+    }
+    render() {
+        const { items } = _stores__WEBPACK_IMPORTED_MODULE_5__["default"];
+        if (!items) {
+            return null;
+        }
+        const lastItems = Object(mobx__WEBPACK_IMPORTED_MODULE_8__["toJS"])(Object.keys(this.items).length ? this.items : items);
+        this.items = items;
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Grid_src_components_row__WEBPACK_IMPORTED_MODULE_3__["default"], null, Object.entries(items).map(([id, { rx, tx }]) => {
+            if (!rx && !tx) {
+                return null;
+            }
+            return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_4__["default"], { key: id, tablet: [1, 2] },
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NetworkIdRow, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Grid_src_components_grid__WEBPACK_IMPORTED_MODULE_6__["default"], { mobileSm: [1, 3] },
+                        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NetworkId, null, id)),
+                    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Grid_src_components_grid__WEBPACK_IMPORTED_MODULE_6__["default"], { mobileSm: [2, 3] },
+                        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DataContainer, null,
+                            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Data, null,
+                                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Total, null, Object(_components_Helper_src_components_format_bytes__WEBPACK_IMPORTED_MODULE_2__["default"])(rx)),
+                                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RateRx, null, Object(_components_Helper_src_components_format_bytes__WEBPACK_IMPORTED_MODULE_2__["default"])(rx - lastItems[id].rx))),
+                            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Data, null,
+                                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Total, null, Object(_components_Helper_src_components_format_bytes__WEBPACK_IMPORTED_MODULE_2__["default"])(tx)),
+                                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RateTx, null, Object(_components_Helper_src_components_format_bytes__WEBPACK_IMPORTED_MODULE_2__["default"])(tx - lastItems[id].tx))))))));
+        })));
+    }
+};
+NetworkStats = __decorate([
+    mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"]
+], NetworkStats);
+/* harmony default export */ __webpack_exports__["default"] = (NetworkStats);
+
+
+/***/ }),
+
+/***/ "./src/Components/NetworkStats/src/index.ts":
+/*!**************************************************!*\
+  !*** ./src/Components/NetworkStats/src/index.ts ***!
+  \**************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~components/Card/src/stores */ "./src/Components/Card/src/stores/index.ts");
+/* harmony import */ var _components_Language_src__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~components/Language/src */ "./src/Components/Language/src/index.ts");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/Components/NetworkStats/src/components/index.tsx");
+/* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./stores */ "./src/Components/NetworkStats/src/stores/index.ts");
+
+
+
+
+_stores__WEBPACK_IMPORTED_MODULE_3__["default"].conf &&
+    _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
+        id: 'networkStats',
+        title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Network stats'),
+        tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Net'),
+        priority: 200,
+        component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
+    });
+
+
+/***/ }),
+
+/***/ "./src/Components/NetworkStats/src/stores/index.ts":
+/*!*********************************************************!*\
+  !*** ./src/Components/NetworkStats/src/stores/index.ts ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash-es */ "./node_modules/lodash-es/lodash.js");
+/* harmony import */ var _components_Helper_src_components_conf__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~components/Helper/src/components/conf */ "./src/Components/Helper/src/components/conf.ts");
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+/* harmony import */ var _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~components/Fetch/src/stores */ "./src/Components/Fetch/src/stores/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+Object(mobx__WEBPACK_IMPORTED_MODULE_2__["configure"])({
+    enforceActions: 'observed',
+});
+class NetworkStatsStore {
+    constructor() {
+        this.ID = 'networkStats';
+        this.conf = Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(_components_Helper_src_components_conf__WEBPACK_IMPORTED_MODULE_1__["default"], this.ID);
+    }
+    get items() {
+        return ((_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading
+            ? Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'networks')
+            : Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data, `${this.ID}.networks`)) || null);
+    }
+}
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_2__["computed"],
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [])
+], NetworkStatsStore.prototype, "items", null);
+/* harmony default export */ __webpack_exports__["default"] = (new NetworkStatsStore());
 
 
 /***/ }),
@@ -69035,7 +69218,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'phpExtensions',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('PHP extensions'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Ext'),
-    priority: 40,
+    priority: 500,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 
@@ -69084,6 +69267,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../stores */ "./src/Components/PhpInfo/src/stores/index.ts");
 /* harmony import */ var _components_Helper_src_components_alert__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~components/Helper/src/components/alert */ "./src/Components/Helper/src/components/alert.tsx");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Card_src_components_multi_item_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~components/Card/src/components/multi-item-container */ "./src/Components/Card/src/components/multi-item-container.tsx");
+/* harmony import */ var _components_Helper_src_components_search_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~components/Helper/src/components/search-link */ "./src/Components/Helper/src/components/search-link.tsx");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -69098,10 +69283,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-const FnContainer = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
-  display: flex;
-  align-items: center;
-`;
+
+
 const Fn = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].a.attrs(({ href }) => ({
     target: '_blank',
     rel: 'nofollow',
@@ -69143,13 +69326,13 @@ let PhpInfo = class PhpInfo extends react__WEBPACK_IMPORTED_MODULE_0__["Componen
             [
                 Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_2__["gettext"])('Disabled functions'),
                 conf.disableFunctions.length
-                    ? conf.disableFunctions.map((fn, i) => (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fn, { key: i, href: fn }, fn)))
+                    ? conf.disableFunctions.map((fn, i) => (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Helper_src_components_search_link__WEBPACK_IMPORTED_MODULE_9__["default"], { key: i, keyword: fn })))
                     : '-',
             ],
             [
                 Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_2__["gettext"])('Disabled classes'),
                 conf.disableClasses.length
-                    ? conf.disableClasses.map((fn, i) => (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fn, { key: i, href: fn }, fn)))
+                    ? conf.disableClasses.map((fn, i) => (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Helper_src_components_search_link__WEBPACK_IMPORTED_MODULE_9__["default"], { key: i, keyword: fn })))
                     : '-',
             ],
         ];
@@ -69159,7 +69342,7 @@ let PhpInfo = class PhpInfo extends react__WEBPACK_IMPORTED_MODULE_0__["Componen
             }),
             longItems.map(([title, content]) => {
                 return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_4__["default"], { key: title, title: title, tablet: [1, 1] },
-                    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FnContainer, null, content)));
+                    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_multi_item_container__WEBPACK_IMPORTED_MODULE_8__["default"], null, content)));
             })));
     }
 };
@@ -69190,7 +69373,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'phpInfo',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('PHP Information'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('PHP'),
-    priority: 20,
+    priority: 400,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 
@@ -69217,6 +69400,244 @@ class PhpInfoStore {
     }
 }
 /* harmony default export */ __webpack_exports__["default"] = (new PhpInfoStore());
+
+
+/***/ }),
+
+/***/ "./src/Components/Ping/src/components/index.tsx":
+/*!******************************************************!*\
+  !*** ./src/Components/Ping/src/components/index.tsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/dist/mobx-react.module.js");
+/* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../stores */ "./src/Components/Ping/src/stores/index.ts");
+/* harmony import */ var lodash_es__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash-es */ "./node_modules/lodash-es/lodash.js");
+/* harmony import */ var _components_Grid_src_components_row__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~components/Grid/src/components/row */ "./src/Components/Grid/src/components/row.tsx");
+/* harmony import */ var _components_Language_src__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~components/Language/src */ "./src/Components/Language/src/index.ts");
+/* harmony import */ var _components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~components/Card/src/components/card-grid */ "./src/Components/Card/src/components/card-grid.tsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_Fetch_src_restful_fetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ~components/Fetch/src/restful-fetch */ "./src/Components/Fetch/src/restful-fetch.ts");
+/* harmony import */ var _components_Restful_src_http_status__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ~components/Restful/src/http-status */ "./src/Components/Restful/src/http-status.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+const PingBtn = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].a ``;
+const PingItemContainer = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].ul ``;
+const PingItem = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].li ``;
+const PingItemNumber = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].span ``;
+const PingItemLine = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].span ``;
+const PingItemTime = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].span ``;
+const PingResult = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div `
+  display: flex;
+`;
+const PingResultTimes = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div ``;
+const PingResultAvg = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div ``;
+let Ping = class Ping extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+    constructor() {
+        super(...arguments);
+        this.pingTimer = 0;
+        this.onClickPing = async () => {
+            const { isPing, setIsPing } = _stores__WEBPACK_IMPORTED_MODULE_2__["default"];
+            if (isPing) {
+                setIsPing(false);
+                clearTimeout(this.pingTimer);
+                return;
+            }
+            setIsPing(true);
+            await this.pingLoop();
+        };
+        this.pingLoop = async () => {
+            await this.ping();
+            this.pingTimer = window.setTimeout(async () => {
+                await this.pingLoop();
+            }, 1000);
+        };
+        this.ping = async () => {
+            const { refs: { itemContainer }, appendPingItem, } = _stores__WEBPACK_IMPORTED_MODULE_2__["default"];
+            const start = +new Date();
+            await Object(_components_Fetch_src_restful_fetch__WEBPACK_IMPORTED_MODULE_8__["default"])('ping')
+                .then(([{ status }, { time }]) => {
+                if (status === _components_Restful_src_http_status__WEBPACK_IMPORTED_MODULE_9__["OK"]) {
+                    const end = +new Date();
+                    const serverTime = time * 1000;
+                    appendPingItem({
+                        time: Math.floor(end - start - serverTime),
+                    });
+                    setTimeout(() => {
+                        if (itemContainer.scrollTop < itemContainer.scrollHeight) {
+                            itemContainer.scrollTop = itemContainer.scrollHeight;
+                        }
+                    }, 10);
+                }
+            })
+                .catch(err => { });
+        };
+    }
+    renderItems() {
+        const { pingItemsCount, pingItems, setRef } = _stores__WEBPACK_IMPORTED_MODULE_2__["default"];
+        if (!pingItemsCount) {
+            return;
+        }
+        const items = pingItems.map(({ time }, i) => {
+            return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingItem, { key: i },
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingItemNumber, null, i + 1),
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingItemLine, null, ' ------------ '),
+                react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingItemTime, null, `${time} ms`)));
+        });
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingItemContainer, { ref: c => setRef('itemContainer', c) }, items));
+    }
+    renderResults() {
+        const { pingItemsCount, pingItems } = _stores__WEBPACK_IMPORTED_MODULE_2__["default"];
+        if (!pingItemsCount) {
+            return;
+        }
+        const avg = Math.floor(Object(lodash_es__WEBPACK_IMPORTED_MODULE_3__["sumBy"])(pingItems, 'time') / pingItemsCount);
+        const max = Number(Object(lodash_es__WEBPACK_IMPORTED_MODULE_3__["maxBy"])(pingItems, 'time').time);
+        const min = Number(Object(lodash_es__WEBPACK_IMPORTED_MODULE_3__["minBy"])(pingItems, 'time').time);
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingResult, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingResultTimes, null, Object(lodash_es__WEBPACK_IMPORTED_MODULE_3__["template"])(Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_5__["gettext"])('Times: <%= times %>'))({ times: pingItemsCount })),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingResultAvg, null, Object(lodash_es__WEBPACK_IMPORTED_MODULE_3__["template"])(Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_5__["gettext"])('Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>'))({ min, max, avg }))));
+    }
+    pingBtn() {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PingBtn, { onClick: this.onClickPing }, _stores__WEBPACK_IMPORTED_MODULE_2__["default"].isPing ? Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_5__["gettext"])('Stop ping') : Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_5__["gettext"])('Start ping')));
+    }
+    render() {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Grid_src_components_row__WEBPACK_IMPORTED_MODULE_4__["default"], null,
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_6__["default"], { title: this.pingBtn(), tablet: [1, 1] },
+                this.renderItems(),
+                this.renderResults())));
+    }
+};
+Ping = __decorate([
+    mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"]
+], Ping);
+/* harmony default export */ __webpack_exports__["default"] = (Ping);
+
+
+/***/ }),
+
+/***/ "./src/Components/Ping/src/index.ts":
+/*!******************************************!*\
+  !*** ./src/Components/Ping/src/index.ts ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ~components/Card/src/stores */ "./src/Components/Card/src/stores/index.ts");
+/* harmony import */ var _components_Language_src__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ~components/Language/src */ "./src/Components/Language/src/index.ts");
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/Components/Ping/src/components/index.tsx");
+
+
+
+_components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
+    id: 'ping',
+    title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Network Ping'),
+    tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Ping'),
+    priority: 250,
+    component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
+});
+
+
+/***/ }),
+
+/***/ "./src/Components/Ping/src/stores/index.ts":
+/*!*************************************************!*\
+  !*** ./src/Components/Ping/src/stores/index.ts ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "./node_modules/mobx/lib/mobx.module.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+class PingStore {
+    constructor() {
+        this.ID = 'ping';
+        this.isPing = false;
+        this.pingItems = [];
+        this.refs = {};
+        this.setRef = (id, c) => {
+            this.refs[id] = c;
+        };
+        this.setIsPing = (isPing) => {
+            this.isPing = isPing;
+        };
+        this.setPingItems = (pingItems) => {
+            this.pingItems = pingItems;
+        };
+        this.appendPingItem = (item) => {
+            this.pingItems.push(item);
+        };
+    }
+    get pingItemsCount() {
+        return this.pingItems.length;
+    }
+}
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+    __metadata("design:type", Boolean)
+], PingStore.prototype, "isPing", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+    __metadata("design:type", Array)
+], PingStore.prototype, "pingItems", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["observable"],
+    __metadata("design:type", Object)
+], PingStore.prototype, "refs", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+    __metadata("design:type", Object)
+], PingStore.prototype, "setRef", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+    __metadata("design:type", Object)
+], PingStore.prototype, "setIsPing", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+    __metadata("design:type", Object)
+], PingStore.prototype, "setPingItems", void 0);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["computed"],
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [])
+], PingStore.prototype, "pingItemsCount", null);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_0__["action"],
+    __metadata("design:type", Object)
+], PingStore.prototype, "appendPingItem", void 0);
+/* harmony default export */ __webpack_exports__["default"] = (new PingStore());
 
 
 /***/ }),
@@ -69576,7 +69997,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'serverInfo',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Server Information'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Info'),
-    priority: 20,
+    priority: 300,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 
@@ -69618,10 +70039,9 @@ class ServerInfoStore {
         this.conf = Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(_components_Helper_src_components_conf__WEBPACK_IMPORTED_MODULE_1__["default"], this.ID);
     }
     get serverTime() {
-        if (_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading) {
-            return Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'serverTime');
-        }
-        return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.ID].serverTime;
+        return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading
+            ? Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'serverTime')
+            : Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data, `${this.ID}.serverTime`);
     }
     get serverUptime() {
         return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading
@@ -69629,10 +70049,14 @@ class ServerInfoStore {
             : Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data, `${this.ID}.serverUptime`);
     }
     get serverUtcTime() {
-        if (_components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading) {
-            return Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'serverUtcTime');
-        }
-        return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.ID].serverUtcTime;
+        return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading
+            ? Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'serverUtcTime')
+            : _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.ID].serverUtcTime;
+    }
+    get diskUsage() {
+        return _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].isLoading
+            ? Object(lodash_es__WEBPACK_IMPORTED_MODULE_0__["get"])(this.conf, 'diskUsage')
+            : _components_Fetch_src_stores__WEBPACK_IMPORTED_MODULE_3__["default"].data[this.ID].diskUsage;
     }
 }
 __decorate([
@@ -69650,6 +70074,11 @@ __decorate([
     __metadata("design:type", String),
     __metadata("design:paramtypes", [])
 ], ServerInfoStore.prototype, "serverUtcTime", null);
+__decorate([
+    mobx__WEBPACK_IMPORTED_MODULE_2__["computed"],
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [])
+], ServerInfoStore.prototype, "diskUsage", null);
 /* harmony default export */ __webpack_exports__["default"] = (new ServerInfoStore());
 
 
@@ -69687,14 +70116,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 let CpuUsage = class CpuUsage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     render() {
-        const { idle, nice, sys, user } = _stores__WEBPACK_IMPORTED_MODULE_4__["default"].cpuUsage;
+        const { idle } = _stores__WEBPACK_IMPORTED_MODULE_4__["default"].cpuUsage;
         return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('CPU usage'), tablet: [1, 1] },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__["default"], { title: Object(lodash_es__WEBPACK_IMPORTED_MODULE_6__["template"])(Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>'))({
-                    idle,
-                    nice,
-                    sys,
-                    user,
-                }), value: 100 - idle, max: 100, isCapacity: false })));
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__["default"], { title: Object(lodash_es__WEBPACK_IMPORTED_MODULE_6__["template"])(Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>'))(_stores__WEBPACK_IMPORTED_MODULE_4__["default"].cpuUsage), value: 100 - idle, max: 100, isCapacity: false })));
     }
 };
 CpuUsage = __decorate([
@@ -69724,12 +70148,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mem_cached__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mem-cached */ "./src/Components/ServerStatus/src/components/mem-cached.tsx");
 /* harmony import */ var _swap_usage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./swap-usage */ "./src/Components/ServerStatus/src/components/swap-usage.tsx");
 /* harmony import */ var _swap_cached__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./swap-cached */ "./src/Components/ServerStatus/src/components/swap-cached.tsx");
+/* harmony import */ var _mem_buffers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./mem-buffers */ "./src/Components/ServerStatus/src/components/mem-buffers.tsx");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -69746,6 +70172,7 @@ let ServerStatus = class ServerStatus extends react__WEBPACK_IMPORTED_MODULE_0__
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cpu_usage__WEBPACK_IMPORTED_MODULE_4__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mem_real_usage__WEBPACK_IMPORTED_MODULE_5__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mem_cached__WEBPACK_IMPORTED_MODULE_6__["default"], null),
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mem_buffers__WEBPACK_IMPORTED_MODULE_9__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_swap_usage__WEBPACK_IMPORTED_MODULE_7__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_swap_cached__WEBPACK_IMPORTED_MODULE_8__["default"], null)));
     }
@@ -69754,6 +70181,49 @@ ServerStatus = __decorate([
     mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"]
 ], ServerStatus);
 /* harmony default export */ __webpack_exports__["default"] = (ServerStatus);
+
+
+/***/ }),
+
+/***/ "./src/Components/ServerStatus/src/components/mem-buffers.tsx":
+/*!********************************************************************!*\
+  !*** ./src/Components/ServerStatus/src/components/mem-buffers.tsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "./node_modules/mobx-react/dist/mobx-react.module.js");
+/* harmony import */ var _components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ~components/Card/src/components/card-grid */ "./src/Components/Card/src/components/card-grid.tsx");
+/* harmony import */ var _components_Language_src__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~components/Language/src */ "./src/Components/Language/src/index.ts");
+/* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../stores */ "./src/Components/ServerStatus/src/stores/index.ts");
+/* harmony import */ var _components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~components/ProgressBar/src/components */ "./src/Components/ProgressBar/src/components/index.tsx");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+let MemBuffers = class MemBuffers extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+    render() {
+        const { max, value } = _stores__WEBPACK_IMPORTED_MODULE_4__["default"].memBuffers;
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('Memory buffers'), tablet: [1, 2] },
+            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__["default"], { value: value, max: max, isCapacity: true })));
+    }
+};
+MemBuffers = __decorate([
+    mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"]
+], MemBuffers);
+/* harmony default export */ __webpack_exports__["default"] = (MemBuffers);
 
 
 /***/ }),
@@ -69789,7 +70259,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 let MemCached = class MemCached extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     render() {
         const { max, value } = _stores__WEBPACK_IMPORTED_MODULE_4__["default"].memCached;
-        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('Memory cached'), tablet: [1, 1] },
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('Memory cached'), tablet: [1, 2] },
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__["default"], { value: value, max: max, isCapacity: true })));
     }
 };
@@ -69918,7 +70388,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 let SwapUsage = class SwapUsage extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     render() {
         const { max, value } = _stores__WEBPACK_IMPORTED_MODULE_4__["default"].swapUsage;
-        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('Memory cached'), tablet: [1, 1] },
+        return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Card_src_components_card_grid__WEBPACK_IMPORTED_MODULE_2__["default"], { title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_3__["gettext"])('Swap usage'), tablet: [1, 1] },
             react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ProgressBar_src_components__WEBPACK_IMPORTED_MODULE_5__["default"], { value: value, max: max, isCapacity: true })));
     }
 };
@@ -70006,7 +70476,7 @@ _components_Card_src_stores__WEBPACK_IMPORTED_MODULE_0__["default"].addCard({
     id: 'serverStatus',
     title: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Server Status'),
     tinyTitle: Object(_components_Language_src__WEBPACK_IMPORTED_MODULE_1__["gettext"])('Status'),
-    priority: 10,
+    priority: 100,
     component: _components__WEBPACK_IMPORTED_MODULE_2__["default"],
 });
 

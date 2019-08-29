@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
 
 export interface ICardGrid extends IGrid {
-  title: ReactNode
+  title?: ReactNode
   children: ReactNode
 }
 
@@ -30,11 +30,11 @@ const CardContent = styled.div`
   padding: 0.5rem 1rem;
 `
 
-const CardGrid = ({ title, children, ...props }: ICardGrid) => {
+const CardGrid = ({ title = '', children, ...props }: ICardGrid) => {
   return (
     <Grid {...props}>
       <CardGroup>
-        <CardTitle>{title}</CardTitle>
+        {title && <CardTitle>{title}</CardTitle>}
         <CardContent>{children}</CardContent>
       </CardGroup>
     </Grid>
