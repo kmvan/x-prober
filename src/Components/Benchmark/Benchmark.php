@@ -10,13 +10,14 @@ class Benchmark extends BenchmarkApi
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('init', [$this, 'filter']);
+        new FetchBefore();
     }
 
-    public function filter()
+    public function filter($action)
     {
-        if ( ! HelperApi::isAction('benchmark')) {
-            return;
+        if ('benchmark' !== $action) {
+            return $action;
         }
 
         $this->display();
@@ -27,10 +28,10 @@ class Benchmark extends BenchmarkApi
         $remainingSeconds = $this->getRemainingSeconds();
 
         if ($remainingSeconds) {
-            HelperApi::dieJson(array(
+            HelperApi::dieJson([
                 'code' => -1,
                 'msg'  => '⏳ ' . \sprintf(I18nApi::_('Please wait %ds'), $remainingSeconds),
-            ));
+            ]);
         }
 
         \set_time_limit(0);
@@ -44,13 +45,13 @@ class Benchmark extends BenchmarkApi
 
         $this->setIsRunning(false);
 
-        HelperApi::dieJson(array(
+        HelperApi::dieJson([
             'code' => 0,
-            'data' => array(
+            'data' => [
                 'points'     => $points,
                 'total'      => \array_sum($points),
                 'totalHuman' => \number_format(\array_sum($points)),
-            ),
-        ));
+            ],
+        ]);
     }
 }

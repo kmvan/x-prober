@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import { BORDER_RADOIS } from '~components/Config/src/index'
 import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
+import UpdaterStore from '~components/Updater/src/stores'
+import UpdaterLink from '~components/Updater/src/components/updater-link'
+import UpdaterChecker from '~components/Updater/src/components/updater-checker'
 
-const H1 = styled.h1`
+export const TitleH1 = styled.h1`
   background: #333;
   position: fixed;
   top: 1rem;
@@ -21,7 +24,7 @@ const H1 = styled.h1`
   box-shadow: inset 0 -7px 20px -7px rgba(0, 0, 0, 0.3);
   z-index: 10;
 `
-const A = styled.a`
+export const TitleLink = styled.a`
   display: block;
   padding: 0 1rem 1rem;
   color: #fff;
@@ -33,11 +36,18 @@ const A = styled.a`
 class Title extends Component {
   public render() {
     return (
-      <H1>
-        <A href='https://github.com/kmvan/x-prober' target='_blank'>
-          {`X Prober v${BootstrapStore.version}`}
-        </A>
-      </H1>
+      <>
+        <UpdaterChecker />
+        <TitleH1>
+          {UpdaterStore.newVersion ? (
+            <TitleLink href='https://github.com/kmvan/x-prober' target='_blank'>
+              {`X Prober v${BootstrapStore.version}`}
+            </TitleLink>
+          ) : (
+            <UpdaterLink />
+          )}
+        </TitleH1>
+      </>
     )
   }
 }

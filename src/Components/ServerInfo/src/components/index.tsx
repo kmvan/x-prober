@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import FetchStore from '~components/Fetch/src/stores'
 import Row from '~components/Grid/src/components/row'
 import { gettext } from '~components/Language/src'
 import store from '../stores'
 import CardGrid from '~components/Card/src/components/card-grid'
 import ProgressBar from '~components/ProgressBar/src/components'
+import { template } from 'lodash-es'
 
 @observer
 class ServerInfo extends Component {
@@ -24,11 +24,19 @@ class ServerInfo extends Component {
   }
 
   public render() {
-    const { conf } = store
+    const {
+      conf,
+      serverUptime: { days, hours, mins, secs },
+    } = store
+    const uptime = template(
+      gettext(
+        '<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs'
+      )
+    )({ days, hours, mins, secs })
     const shortItems = [
       [gettext('Server name'), conf.serverName],
       [gettext('Server time'), store.serverTime],
-      [gettext('Server uptime'), store.serverUptime],
+      [gettext('Server uptime'), uptime],
       [gettext('Server IP'), conf.serverIp],
       [gettext('Server software'), conf.serverSoftware],
       [gettext('PHP version'), conf.phpVersion],

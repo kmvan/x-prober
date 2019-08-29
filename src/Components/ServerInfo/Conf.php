@@ -11,15 +11,16 @@ class Conf extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf'], 20);
+        EventsApi::on('conf', [$this, 'conf']);
     }
 
     public function conf(array $conf)
     {
         $conf[$this->ID] = [
             'serverName'     => $this->getServerInfo('SERVER_NAME'),
+            'serverUtcTime'  => HelperApi::getServerUtcTime(),
             'serverTime'     => HelperApi::getServerTime(),
-            'serverUptime'   => HelperApi::getServerUpTime(),
+            'serverUptime'   => HelperApi::getServerUptime(),
             'serverIp'       => $this->getServerInfo('SERVER_ADDR'),
             'serverSoftware' => $this->getServerInfo('SERVER_SOFTWARE'),
             'phpVersion'     => \PHP_VERSION,

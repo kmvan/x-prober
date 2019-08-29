@@ -1,26 +1,39 @@
-import { observable, action } from 'mobx'
-import conf from '~components/Helper/src/components/conf'
+import { observable, action, computed } from 'mobx'
+import { template } from 'lodash-es'
+import { gettext } from '~components/Language/src'
+import BootstrapStore from '~components/Bootstrap/src/stores'
 
 class UpdaterStore {
-  public ID = 'updater'
-  public conf = conf[this.ID] || false
-
-  @observable public title: any = ''
-  @observable public isLoading: boolean = false
-  @observable public newVersion: string = this.conf.version
+  @observable public newVersion: string = ''
+  @observable public isUpdating: boolean = false
 
   @action public setNewVersion = (newVersion: string) => {
     this.newVersion = newVersion
   }
 
   @action
-  public setTitle = (title: any) => {
-    this.title = title
+  public setIsUpdating = (isUpdating: boolean) => {
+    this.isUpdating = isUpdating
   }
 
-  @action
-  public setIsLoading = (isLoading: boolean) => {
-    this.isLoading = isLoading
+  @computed
+  get notiText(): string {
+    if (this.newVersion) {
+      return template(
+        gettext(
+          '✨ Found update! Version <%= oldVersion %> → <%= newVersion %>'
+        )
+      )({
+        oldVersion: BootstrapStore.version,
+        newVersion: this.newVersion,
+      })
+    }
+
+    if (this.isUpdating) {
+      return gettext('⏳ Updating...')
+    }
+
+    return ''
   }
 }
 

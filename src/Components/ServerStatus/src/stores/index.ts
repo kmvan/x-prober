@@ -1,6 +1,7 @@
 import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
-import { observable, configure, action } from 'mobx'
+import { observable, configure, action, computed } from 'mobx'
+import FetchStore from '~components/Fetch/src/stores'
 
 configure({
   enforceActions: 'observed',
@@ -11,26 +12,40 @@ export interface IServerStatusUsage {
   value: number
 }
 
+export interface IServerStatusCpuUsage {
+  idle: number
+  nice: number
+  sys: number
+  user: number
+}
+
 class ServerStatus {
   public ID = 'serverStatus'
   public conf = get(conf, this.ID)
 
-  @observable public sysLoad: number[] = this.conf.sysLoad
-  @observable public cpuUsage: number = 10
   @observable public memRealUsage: IServerStatusUsage = this.conf.memRealUsage
   @observable public memBuffers: IServerStatusUsage = this.conf.memBuffers
   @observable public memCached: IServerStatusUsage = this.conf.memCached
   @observable public swapUsage: IServerStatusUsage = this.conf.swapUsage
   @observable public swapCached: IServerStatusUsage = this.conf.swapCached
 
-  @action
-  public setSysLoad = (sysLoad: number[]) => {
-    this.sysLoad = sysLoad
+  @computed
+  get sysLoad(): number[] {
+    return FetchStore.isLoading
+      ? get(this.conf, 'sysLoad')
+      : get(FetchStore.data, `${this.ID}.sysLoad`) || [0, 0, 0]
   }
 
-  @action
-  public setCpuUsage = (cpuUsage: number) => {
-    this.cpuUsage = cpuUsage
+  @computed
+  get cpuUsage(): IServerStatusCpuUsage {
+    return FetchStore.isLoading
+      ? {
+          idle: 90,
+          nice: 0,
+          sys: 5,
+          user: 5,
+        }
+      : get(FetchStore.data, `${this.ID}.cpuUsage`)
   }
 
   @action

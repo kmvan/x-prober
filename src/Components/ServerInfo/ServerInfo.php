@@ -7,5 +7,6 @@ class ServerInfo
     public function __construct()
     {
         new Conf();
+        new Fetch();
     }
 }

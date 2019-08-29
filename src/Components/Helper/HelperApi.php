@@ -42,12 +42,12 @@ HTML;
 
     public static function getProgressTpl(array $args)
     {
-        $args = \array_merge(array(
+        $args = \array_merge([
             'id'       => '',
             'usage'    => 0,
             'total'    => 0,
             'overview' => '',
-        ), $args);
+        ], $args);
 
         if ( ! $args['total']) {
             $percent    = 0;
@@ -86,14 +86,14 @@ HTML;
 
     public static function getGroup(array $item)
     {
-        $item = \array_merge(array(
+        $item = \array_merge([
             'groupId' => '',
             'id'      => '',
             'label'   => '',
             'title'   => '',
             'content' => '',
             'col'     => '',
-        ), $item);
+        ], $item);
 
         $title = $item['title'] ? <<<HTML
 title="{$item['title']}"
@@ -114,26 +114,26 @@ HTML
         $idClassNameGroupLabel     = $item['id'] ? "inn-{$item['id']}-group__label" : '';
         $idClassNameGroupContent   = $item['id'] ? "inn-{$item['id']}-group__content" : '';
         $groupClassNameLabel       = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
-        $groupContainerClassNames  = self::getClassNames(array(
+        $groupContainerClassNames  = self::getClassNames([
             'inn-group__container'     => true,
             $col                       => (bool) $col,
             $idClassNameGroupContainer => (bool) $idClassNameGroupContainer,
-        ));
-        $groupClassNames = self::getClassNames(array(
+        ]);
+        $groupClassNames = self::getClassNames([
             'inn-group'       => true,
             $idClassNameGroup => (bool) $idClassNameGroup,
-        ));
-        $groupLabelClassNames = self::getClassNames(array(
+        ]);
+        $groupLabelClassNames = self::getClassNames([
             'inn-group__label'     => true,
             $groupClassNameLabel   => (bool) $groupClassNameLabel,
             $idClassNameGroupLabel => (bool) $idClassNameGroupLabel,
             $hasTitleClassName     => (bool) $hasTitleClassName,
-        ));
-        $groupContentClassNames = self::getClassNames(array(
+        ]);
+        $groupContentClassNames = self::getClassNames([
             'inn-group__content'     => true,
             $idClassNameGroupContent => (bool) $idClassNameGroupContent,
             $hasTitleClassName       => (bool) $hasTitleClassName,
-        ));
+        ]);
 
         return <<<HTML
 <div class="{$groupContainerClassNames}">
@@ -153,10 +153,10 @@ HTML;
         \header('Cache-Control: no-store, no-cache, must-revalidate');
         \header('Pragma: no-cache');
 
-        die(\json_encode(\array_merge(array(
+        die(\json_encode(\array_merge([
             'code' => 0,
             'data' => null,
-        ), $data)));
+        ], $data)));
     }
 
     public static function isAction($action)
@@ -166,14 +166,14 @@ HTML;
 
     public static function getWinCpuUsage()
     {
-        $cpus = array();
+        $cpus = [];
 
         // com
         if (\class_exists('\\COM')) {
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
 
-            $cpus = array();
+            $cpus = [];
 
             $total = 0;
 
@@ -186,7 +186,7 @@ HTML;
             $cpus['user'] = $total;
         // exec
         } else {
-            $p = array();
+            $p = [];
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
@@ -215,16 +215,16 @@ HTML;
 
         $lines = \file($filePath);
         unset($lines[0], $lines[1]);
-        $eths = array();
+        $eths = [];
 
         foreach ($lines as $line) {
             $line              = \preg_replace('/\s+/', ' ', \trim($line));
             $lineArr           = \explode(':', $line);
             $numberArr         = \explode(' ', \trim($lineArr[1]));
-            $eths[$lineArr[0]] = array(
+            $eths[$lineArr[0]] = [
                 'rx' => (int) $numberArr[0],
                 'tx' => (int) $numberArr[8],
-            );
+            ];
         }
 
         return $eths;
@@ -292,31 +292,40 @@ HTML;
         return \date('Y-m-d H:i:s');
     }
 
-    public static function getServerUpTime()
+    public static function getServerUtcTime()
+    {
+        return \gmdate('Y/m/d H:i:s');
+    }
+
+    public static function getServerUptime()
     {
         $filePath = '/proc/uptime';
 
         if ( ! @\is_file($filePath)) {
-            return I18nApi::_('Unavailable');
+            return [
+                'days'  => 0,
+                'hours' => 0,
+                'mins'  => 0,
+                'secs'  => 0,
+            ];
         }
 
         $str   = \file_get_contents($filePath);
         $num   = (float) $str;
-        $secs  = \fmod($num, 60);
+        $secs  = (int) \fmod($num, 60);
         $num   = (int) ($num / 60);
-        $mins  = $num % 60;
+        $mins  = (int) $num % 60;
         $num   = (int) ($num / 60);
-        $hours = $num % 24;
+        $hours = (int) $num % 24;
         $num   = (int) ($num / 24);
-        $days  = $num;
+        $days  = (int) $num;
 
-        return \sprintf(
-            I18nApi::_('%1$dd %2$dh %3$dm %4$ds'),
-            $days,
-            $hours,
-            $mins,
-            $secs
-        );
+        return [
+            'days'  => $days,
+            'hours' => $hours,
+            'mins'  => $mins,
+            'secs'  => $secs,
+        ];
     }
 
     public static function getErrNameByCode($code)
@@ -325,7 +334,7 @@ HTML;
             return '';
         }
 
-        $levels = array(
+        $levels = [
             \E_ALL               => 'E_ALL',
             \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
             \E_DEPRECATED        => 'E_DEPRECATED',
@@ -342,7 +351,7 @@ HTML;
             \E_PARSE             => 'E_PARSE',
             \E_WARNING           => 'E_WARNING',
             \E_ERROR             => 'E_ERROR',
-        );
+        ];
 
         $result = '';
 
@@ -393,7 +402,7 @@ HTML;
 
     public static function getClientIp()
     {
-        $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
+        $keys = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
 
         foreach ($keys as $key) {
             if ( ! isset($_SERVER[$key])) {
@@ -428,7 +437,7 @@ HTML;
         $filePath = ('/proc/stat');
 
         if ( ! @\is_readable($filePath)) {
-            $cpu = array();
+            $cpu = [];
 
             return $cpu;
         }
@@ -438,13 +447,13 @@ HTML;
         $stat2       = \file($filePath);
         $info1       = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0]));
         $info2       = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0]));
-        $dif         = array();
+        $dif         = [];
         $dif['user'] = $info2[0] - $info1[0];
         $dif['nice'] = $info2[1] - $info1[1];
         $dif['sys']  = $info2[2] - $info1[2];
         $dif['idle'] = $info2[3] - $info1[3];
         $total       = \array_sum($dif);
-        $cpu         = array();
+        $cpu         = [];
 
         foreach ($dif as $x => $y) {
             $cpu[$x] = \round($y / $total * 100, 1);
@@ -477,13 +486,13 @@ HTML;
     {
         $cpu = self::getCpuUsage();
 
-        return $cpu ?: array();
+        return $cpu ?: [];
     }
 
     public static function getSysLoadAvg()
     {
         if (self::isWin()) {
-            return array(0, 0, 0);
+            return [0, 0, 0];
         }
 
         return \array_map(function ($load) {
@@ -511,12 +520,12 @@ HTML;
             }
 
             $memInfo = \file_get_contents($memInfoFile);
-            $memInfo = \str_replace(array(
+            $memInfo = \str_replace([
                 ' kB',
                 '  ',
-            ), '', $memInfo);
+            ], '', $memInfo);
 
-            $lines = array();
+            $lines = [];
 
             foreach (\explode("\n", $memInfo) as $line) {
                 if ( ! $line) {
@@ -569,7 +578,7 @@ HTML;
         }
 
         $base     = \log($bytes, 1024);
-        $suffixes = array('', ' K', ' M', ' G', ' T');
+        $suffixes = ['', ' K', ' M', ' G', ' T'];
 
         return \round(\pow(1024, ($base - \floor($base))), $precision) . $suffixes[\floor($base)];
     }

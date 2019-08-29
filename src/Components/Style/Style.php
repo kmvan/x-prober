@@ -11,18 +11,20 @@ class Style
 
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        // EventsApi::on('init', [$this, 'filter']);
     }
 
-    public function filter()
+    public function filter($action)
     {
-        switch (true) {
-        case true === HelperApi::isAction('getStyle'):
-            $this->displayDefault();
+        switch ($action) {
+        case 'style':
+            $this->output();
         }
+
+        return $action;
     }
 
-    private function displayDefault()
+    private function output()
     {
         HelperApi::setFileCacheHeader();
 

@@ -5,6 +5,7 @@ import gradientColors from '~components/Helper/src/components/gradient'
 import rgbaToHex from '~components/Helper/src/components/rgbToHex'
 
 export interface IProgressBar {
+  title?: string
   value: number
   max: number
   isCapacity: boolean
@@ -79,14 +80,14 @@ const ProgressValue = styled.div<IProgressValue>`
   }
 `
 
-const ProgressBar = ({ value, max, isCapacity }: IProgressBar) => {
+const ProgressBar = ({ title = '', value, max, isCapacity }: IProgressBar) => {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`
-    : `${value}% / ${max}%`
+    : `${value.toFixed(1)}% / ${max}%`
 
   return (
-    <ProgressContainer>
+    <ProgressContainer title={title}>
       <ProgressPercent>{`${percent.toFixed(1)}%`}</ProgressPercent>
       <ProgressOverview>{overview}</ProgressOverview>
       <ProgressShell>
