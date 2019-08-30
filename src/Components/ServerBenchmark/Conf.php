@@ -2,6 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
+use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
 use InnStudio\Prober\Components\I18n\I18nApi;
 
@@ -11,29 +12,30 @@ class ServerBenchmark
 
     public function __construct()
     {
-        // new
+        EventsApi::on('mods', array($this, 'filter'), 600);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = [
-            'lang' => [
+        $conf[$this->ID] = array(
+            'lang' => array(
                 'loading' => I18nApi::_('⏳ Loading...'),
                 'retry'   => I18nApi::_('❌ Error, click to retry'),
                 'goTest'  => I18nApi::_('👆 Click to test'),
-            ],
-        ];
+            ),
+        );
 
         return $conf;
     }
 
     public function filter(array $mods)
     {
-        $mods[$this->ID] = [
+        $mods[$this->ID] = array(
             'title'     => I18nApi::_('Server Benchmark'),
             'tinyTitle' => I18nApi::_('Benchmark'),
-            'display'   => [$this, 'display'],
-        ];
+            'display'   => array($this, 'display'),
+        );
 
         return $mods;
     }
@@ -55,7 +57,7 @@ HTML;
         $items = \unserialize(ServerBenchmarkMarks::$marks);
 
         // order
-        $sort = [];
+        $sort = array();
 
         foreach ($items as &$item) {
             $item['groupId'] = $this->ID;
@@ -77,13 +79,13 @@ HTML;
         );
         \array_unshift(
             $items,
-            [
+            array(
                 'groupId' => $this->ID,
                 'label'   => I18nApi::_('My server'),
                 'content' => <<<HTML
 <div id="inn-benchmark__container"></div>
 HTML
-            ]
+            )
         );
 
         $items = \array_map(function (array $item) {

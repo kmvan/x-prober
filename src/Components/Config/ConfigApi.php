@@ -10,9 +10,9 @@ class ConfigApi
     public static $APP_VERSION                 = '2.4.5';
     public static $APP_NAME                    = 'X Prober';
     public static $APP_URL                     = 'https://github.com/kmvan/x-prober';
-    public static $APP_CONFIG_URL              = 'https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json';
+    public static $APP_CONFIG_URL              = 'https://raw.githubusertotal.com/kmvan/x-prober/master/AppConfig.json';
     public static $AUTHOR_URL                  = 'https://inn-studio.com/prober';
-    public static $UPDATE_PHP_URLS             = array('https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php', 'https://api.inn-studio.com/download/?id=xprober');
+    public static $UPDATE_PHP_URLS             = array('https://raw.githubusertotal.com/kmvan/x-prober/master/dist/prober.php', 'https://api.inn-studio.com/download/?id=xprober');
     public static $AUTHOR_NAME                 = 'INN STUDIO';
     public static $LATEST_PHP_STABLE_VERSION   = '7';
     public static $LATEST_NGINX_STABLE_VERSION = '1.16.0';

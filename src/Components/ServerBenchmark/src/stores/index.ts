@@ -1,7 +1,7 @@
 import { observable, action, computed } from 'mobx'
-import conf from '~components/Helper/src/components/conf'
+import { gettext } from '~components/Language/src'
 
-interface Imarks {
+interface IMarks {
   floatLoop: number
   hash: number
   intLoop: number
@@ -10,11 +10,10 @@ interface Imarks {
 
 class ServerBenchmarkStore {
   public ID = 'serverBenchmark'
-  public conf = conf[this.ID]
 
   @observable public isLoading: boolean = false
-  @observable public linkText: string = this.conf.lang.goTest
-  @observable public marks: Imarks = {
+  @observable public linkText: string = gettext('Click to test')
+  @observable public marks: IMarks = {
     floatLoop: 0,
     hash: 0,
     intLoop: 0,
@@ -22,7 +21,7 @@ class ServerBenchmarkStore {
   }
 
   @action
-  public setMarks = (marks: Imarks) => {
+  public setMarks = (marks: IMarks) => {
     this.marks = marks
   }
 

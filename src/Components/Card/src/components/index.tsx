@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { DARK_COLOR } from '~components/Config/src'
+import { DARK_COLOR, GUTTER } from '~components/Config/src'
 
 const Fieldset = styled.fieldset`
   position: relative;
   border: 5px solid #eee;
-  border-radius: 1.5rem;
+  border-radius: calc(${GUTTER} * 1.5);
   background: linear-gradient(#fff, #ffffff80);
-  margin-bottom: 1.5rem;
-  padding: 1.5rem 0 0;
+  margin-bottom: calc(${GUTTER} * 1.5);
+  padding: calc(${GUTTER} * 1.5) 0 0;
   box-shadow: -1px -1px 0 rgba(#000, 0.1), 1px 1px 0 hsla(0, 0%, 100%, 0.5),
     inset 1px 1px 0 hsla(0, 0%, 100%, 0.5), inset -1px -1px 0 rgba(#000, 0.1);
 `

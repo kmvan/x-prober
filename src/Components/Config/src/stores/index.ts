@@ -8,7 +8,8 @@ interface IAppConfigBenchmark {
   url: string
   date: string
   proberUrl: string
-  detail: {
+  total?: number
+  detail?: {
     hash: number
     intLoop: number
     floatLoop: number

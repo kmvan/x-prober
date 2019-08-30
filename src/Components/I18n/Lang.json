@@ -99,6 +99,7 @@
         "Update error.": "更新エラーです。"
     },
     "js-zh_CN": {
+        "Error: can not fetch remote config data, update checker is disabled.": "错误：无法获取远程配置数据，更新检测已禁用。",
         "SQLite3": "",
         "SQLite": "",
         "MySQLi client": "",
@@ -113,6 +114,7 @@
         "Database": "数据库",
         "DB": "数据库",
         "Fetch error, please refresh page.": "获取信息错误，请刷新页面。",
+        "Generator <%= appName %> \/ Author <%= authorName %> \/ <%= memUsage %> \/ <%= time %>ms": "该页面由 <%= appName %> 生成 \/ 作者为 <%= authorName %> \/ <%= memUsage %> \/ <%= time %> 毫秒",
         "My IP": "我的 IP",
         "My browser UA": "我的浏览器 UA",
         "My browser languages (via JS)": "我的浏览器语言（JS）",
@@ -180,9 +182,6 @@
         "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>": "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>",
         "⏳ Updating...": "⏳ 更新中……",
         "Please wait %ds": "请等待 %d 秒",
-        "Generator %s": "该页面由 %s 生成",
-        "Author %s": "作者为 %s",
-        "STAR 🌟 ME": "星 🌟 标",
         "%s cache": "%s 缓存",
         "⏳ Loading...": "⏳ 加载中……",
         "❌ Error, click to retry": "❌ 错误，点击重试",

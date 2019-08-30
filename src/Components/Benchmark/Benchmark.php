@@ -3,8 +3,8 @@
 namespace InnStudio\Prober\Components\Benchmark;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
-use InnStudio\Prober\Components\I18n\I18nApi;
+use InnStudio\Prober\Components\Restful\HttpStatus;
+use InnStudio\Prober\Components\Restful\RestfulResponse;
 
 class Benchmark extends BenchmarkApi
 {
@@ -27,10 +27,12 @@ class Benchmark extends BenchmarkApi
     {
         $remainingSeconds = $this->getRemainingSeconds();
 
+        $response = new RestfulResponse();
+
         if ($remainingSeconds) {
-            HelperApi::dieJson([
-                'code' => -1,
-                'msg'  => '⏳ ' . \sprintf(I18nApi::_('Please wait %ds'), $remainingSeconds),
+            $response->setStatus(HttpStatus::$TOO_MANY_REQUESTS);
+            $response->setData([
+                'seconds' => $remainingSeconds,
             ]);
         }
 
@@ -45,13 +47,9 @@ class Benchmark extends BenchmarkApi
 
         $this->setIsRunning(false);
 
-        HelperApi::dieJson([
-            'code' => 0,
-            'data' => [
-                'points'     => $points,
-                'total'      => \array_sum($points),
-                'totalHuman' => \number_format(\array_sum($points)),
-            ],
+        $response->setData([
+            'points' => $points,
+            'total'  => \array_sum($points),
         ]);
     }
 }

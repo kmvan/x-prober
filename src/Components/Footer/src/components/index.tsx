@@ -4,7 +4,7 @@ import { gettext } from '~components/Language/src'
 import { template } from 'lodash-es'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import store from '../stores'
-import { DARK_COLOR } from '~components/Config/src'
+import { DARK_COLOR, GUTTER } from '~components/Config/src'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import { device } from '~components/Style/src/components/devices'
 
@@ -14,8 +14,8 @@ const Div = styled.div`
   width: 100%;
   border-radius: 10rem;
   text-align: center;
-  padding: 0.5rem 1rem;
-  margin: 1rem auto;
+  padding: calc(${GUTTER} / 2) ${GUTTER};
+  margin: calc(${GUTTER} * 1.5) auto;
   word-break: normal;
 
   @media ${device('tablet')} {

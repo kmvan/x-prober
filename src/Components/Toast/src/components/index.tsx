@@ -4,6 +4,7 @@ import Portal from '~components/Helper/src/components/portal'
 import store from '../stores'
 import styled from 'styled-components'
 import { GUTTER } from '~components/Config/src'
+import { gettext } from '~components/Language/src'
 
 const ToastContainer = styled.div`
   position: fixed;
@@ -15,13 +16,14 @@ const ToastContainer = styled.div`
   background: rgba(0, 0, 0, 0.85);
   color: #fff;
   border-radius: ${GUTTER};
-  padding: ${GUTTER};
+  padding: calc(${GUTTER} / 2) ${GUTTER};
+  cursor: pointer;
 `
 
 @observer
 class Toast extends Component {
   public render() {
-    const { isOpen, msg } = store
+    const { isOpen, msg, close } = store
 
     if (!isOpen) {
       return null
@@ -29,7 +31,12 @@ class Toast extends Component {
 
     return (
       <Portal>
-        <ToastContainer>{msg}</ToastContainer>
+        <ToastContainer
+          title={gettext('Click to close')}
+          onClick={() => close()}
+        >
+          {msg}
+        </ToastContainer>
       </Portal>
     )
   }

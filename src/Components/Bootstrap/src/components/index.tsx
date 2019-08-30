@@ -17,10 +17,12 @@ import '~components/PhpInfo/src'
 import '~components/PhpExtensions/src'
 import '~components/Database/src'
 import '~components/MyInfo/src'
+import '~components/ServerBenchmark/src'
 import Nav from '~components/Nav/src/components'
 import store from '../stores'
 import Forkme from '~components/Forkme/src/components'
 import Footer from '~components/Footer/src/components'
+import Toast from '~components/Toast/src/components'
 
 const App = styled.div`
   position: fixed;
@@ -48,6 +50,7 @@ const Bootstrap = () => (
     </App>
     <Nav />
     <Forkme />
+    <Toast />
     {/*
     <ServerStatus />
     <NetworkStats />
