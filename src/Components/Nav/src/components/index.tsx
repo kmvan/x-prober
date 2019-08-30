@@ -43,14 +43,14 @@ const NavLink = styled.a`
 
 const NavLinkTitle = styled.span`
   display: none;
-  @media ${device('tablet')} {
+  @media ${device('desktopSm')} {
     display: block;
   }
 `
 
 const NavLinkTinyTitle = styled.span`
   display: block;
-  @media ${device('tablet')} {
+  @media ${device('desktopSm')} {
     display: none;
   }
 `

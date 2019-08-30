@@ -5,7 +5,6 @@ import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
 import UpdaterLink from '~components/Updater/src/components/updater-link'
-import UpdaterChecker from '~components/Updater/src/components/updater-checker'
 
 export const TitleH1 = styled.h1`
   background: #333;
@@ -37,12 +36,11 @@ class Title extends Component {
   public render() {
     return (
       <>
-        <UpdaterChecker />
         <TitleH1>
           {UpdaterStore.newVersion ? (
             <UpdaterLink />
           ) : (
-            <TitleLink href='https://github.com/kmvan/x-prober' target='_blank'>
+            <TitleLink href={BootstrapStore.appUrl} target='_blank'>
               {`X Prober v${BootstrapStore.version}`}
             </TitleLink>
           )}

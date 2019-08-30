@@ -6,7 +6,7 @@ class BootstrapStore {
   public ID = 'bootstrap'
   public conf = get(conf, this.ID)
   public version: string = get(this.conf, 'version')
-  public changelogUrl: string = get(this.conf, 'changelogUrl')
+  public appConfigUrl: string = get(this.conf, 'appConfigUrl')
   public appName: string = get(this.conf, 'appName')
   public appUrl: string = get(this.conf, 'appUrl')
   public authorUrl: string = get(this.conf, 'authorUrl')

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-14 22:50+0800\n"
-"PO-Revision-Date: 2019-05-14 22:50+0800\n"
+"POT-Creation-Date: 2019-08-30 21:46+0800\n"
+"PO-Revision-Date: 2019-08-30 21:48+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -20,243 +20,351 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
 "X-Poedit-SearchPathExcluded-1: ../dist\n"
 
-#: Components/Benchmark/Benchmark.php:32
-#, php-format
-msgid "Please wait %ds"
-msgstr "请等待 %d 秒"
+#: Components/Config/src/stores/index.ts:40
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr "错误：无法获取远程配置数据，更新检测已禁用。"
 
-#: Components/Database/Database.php:21
-msgid "Database"
-msgstr "数据库"
-
-#: Components/Database/Database.php:22
-msgid "DB"
-msgstr "数据库"
-
-#: Components/Database/Database.php:44
+#: Components/Database/src/components/index.tsx:14
+#: Components/PhpExtensions/src/components/index.tsx:18
 msgid "SQLite3"
 msgstr ""
 
-#: Components/Database/Database.php:52
+#: Components/Database/src/components/index.tsx:15
 msgid "SQLite"
 msgstr ""
 
-#: Components/Database/Database.php:57
+#: Components/Database/src/components/index.tsx:16
 msgid "MySQLi client"
 msgstr ""
 
-#: Components/Database/Database.php:61
+#: Components/Database/src/components/index.tsx:17
 msgid "Mongo"
 msgstr ""
 
-#: Components/Database/Database.php:65
+#: Components/Database/src/components/index.tsx:18
 msgid "MongoDB"
 msgstr ""
 
-#: Components/Database/Database.php:69
+#: Components/Database/src/components/index.tsx:19
 msgid "PostgreSQL"
 msgstr ""
 
-#: Components/Database/Database.php:73
+#: Components/Database/src/components/index.tsx:20
 msgid "Paradox"
 msgstr ""
 
-#: Components/Database/Database.php:77
-msgid "Microsoft SQL Server Driver for PHP"
-msgstr ""
-
-#: Components/Database/Database.php:78
+#: Components/Database/src/components/index.tsx:21
 msgid "MS SQL"
 msgstr ""
 
-#: Components/Database/Database.php:82
+#: Components/Database/src/components/index.tsx:22
 msgid "File Pro"
 msgstr ""
 
-#: Components/Database/Database.php:86
+#: Components/Database/src/components/index.tsx:23
 msgid "MaxDB client"
 msgstr ""
 
-#: Components/Database/Database.php:90
+#: Components/Database/src/components/index.tsx:24
 msgid "MaxDB server"
 msgstr ""
 
-#: Components/Footer/Footer.php:29
-#, php-format
-msgid "Generator %s"
-msgstr "该页面由 %s 生成"
+#: Components/Database/src/index.ts:7
+msgid "Database"
+msgstr "数据库"
 
-#: Components/Footer/Footer.php:35
-#, php-format
-msgid "Author %s"
-msgstr "作者为 %s"
+#: Components/Database/src/index.ts:8
+msgid "DB"
+msgstr "数据库"
 
-#: Components/Footer/Footer.php:55
-msgid "STAR 🌟 ME"
+#: Components/Fetch/src/stores/index.ts:26
+msgid "Fetch error, please refresh page."
+msgstr "获取信息错误，请刷新页面。"
+
+#: Components/Footer/src/components/index.tsx:39
+msgid ""
+"Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
+"time %>ms"
+msgstr ""
+"该页面由 <%= appName %> 生成 / 作者为 <%= authorName %> / <%= memUsage %> / <"
+"%= time %> 毫秒"
+
+#: Components/MyInfo/src/components/index.tsx:13
+msgid "My IP"
+msgstr "我的 IP"
+
+#: Components/MyInfo/src/components/index.tsx:14
+msgid "My browser UA"
+msgstr "我的浏览器 UA"
+
+#: Components/MyInfo/src/components/index.tsx:15
+msgid "My browser languages (via JS)"
+msgstr "我的浏览器语言（JS）"
+
+#: Components/MyInfo/src/components/index.tsx:16
+msgid "My browser languages (via PHP)"
+msgstr "我的浏览器语言（PHP）"
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "My location"
+msgstr "我的位置"
+
+#: Components/MyInfo/src/index.ts:7
+msgid "My information"
+msgstr "我的信息"
+
+#: Components/MyInfo/src/index.ts:8
+msgid "Mine"
+msgstr "我的"
+
+#: Components/NetworkStats/src/index.ts:9
+msgid "Network stats"
+msgstr "流量统计"
+
+#: Components/NetworkStats/src/index.ts:10
+msgid "Net"
+msgstr "网络"
+
+#: Components/PhpExtensions/src/components/index.tsx:17
+msgid "Redis"
 msgstr ""
 
-#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
-#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
+#: Components/PhpExtensions/src/components/index.tsx:19
+msgid "Memcache"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:20
+msgid "Memcached"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:21
+msgid "Opcache"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:22
+msgid "Opcache enabled"
+msgstr "OPcache 已启用"
+
+#: Components/PhpExtensions/src/components/index.tsx:23
+msgid "Swoole"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:24
+msgid "Image Magick"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:25
+msgid "Graphics Magick"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:26
+msgid "Exif"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:27
+msgid "Fileinfo"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:28
+msgid "SimpleXML"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:29
+msgid "Sockets"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:30
+msgid "MySQLi"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:31
+msgid "Zip"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:32
+msgid "Multibyte String"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:33
+msgid "Phalcon"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:34
+msgid "Xdebug"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:35
+msgid "Zend Otimizer"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:36
+msgid "ionCube"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:37
+msgid "SourceGuardian"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:38
+msgid "LDAP"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:39
+msgid "cURL"
+msgstr ""
+
+#: Components/PhpExtensions/src/components/index.tsx:57
+msgid "Loaded extensions"
+msgstr "已加载的扩展"
+
+#: Components/PhpExtensions/src/index.ts:7
+msgid "PHP extensions"
+msgstr "PHP 扩展"
+
+#: Components/PhpExtensions/src/index.ts:8
+msgid "Ext"
+msgstr "扩展"
+
+#: Components/PhpInfo/src/components/index.tsx:19
+msgid "PHP info detail"
+msgstr "PHP 详细信息"
+
+#: Components/PhpInfo/src/components/index.tsx:25
+msgid "SAPI interface"
+msgstr "SAPI 接口"
+
+#: Components/PhpInfo/src/components/index.tsx:27
+msgid "Display errors"
+msgstr "显示错误"
+
+#: Components/PhpInfo/src/components/index.tsx:41
+msgid "SMTP support"
+msgstr "SMTP 支持"
+
+#: Components/PhpInfo/src/components/index.tsx:53
+msgid "Disabled classes"
+msgstr "已禁用的类"
+
+#: Components/PhpInfo/src/components/php-version.tsx:37
+msgid "Visit PHP.net Official website"
+msgstr "访问 PHP.net 官网"
+
+#: Components/PhpInfo/src/components/php-version.tsx:42
+msgid "(old, latest: <%= latestPhpVersion %>)"
+msgstr "（旧，最新：<%= latestPhpVersion %>）"
+
+#: Components/PhpInfo/src/index.ts:7
+msgid "PHP Information"
+msgstr "PHP 信息"
+
+#: Components/PhpInfo/src/index.ts:8
+msgid "PHP"
+msgstr "PHP"
+
+#: Components/Ping/src/components/index.tsx:172
+msgid "Times: <%= times %>"
+msgstr "次数：<%= times %>"
+
+#: Components/Ping/src/components/index.tsx:176
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
+
+#: Components/Ping/src/components/index.tsx:186
+msgid "Stop ping"
+msgstr "停止 Ping"
+
+#: Components/Ping/src/components/index.tsx:186
+msgid "Start ping"
+msgstr "开始 Ping"
+
+#: Components/Ping/src/index.ts:7
+msgid "Network Ping"
+msgstr "网络 Ping"
+
+#: Components/Ping/src/index.ts:8
+msgid "Ping"
+msgstr ""
+
+#: Components/ServerInfo/src/components/index.tsx:20
+#: Components/Helper/HelperApi.php:275 Components/ServerInfo/Conf.php:142
 msgid "Unavailable"
 msgstr "不可用"
+
+#: Components/ServerInfo/src/index.ts:7
+msgid "Server Information"
+msgstr "服务器信息"
+
+#: Components/ServerInfo/src/index.ts:8 Components/ServerInfo/Conf.php:43
+msgid "Info"
+msgstr "信息"
+
+#: Components/ServerStatus/src/components/cpu-usage.tsx:15
+msgid "CPU usage"
+msgstr "CPU 占用"
+
+#: Components/ServerStatus/src/components/cpu-usage.tsx:19
+msgid ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr ""
+"空闲：<%= idle %>、亲和：<%= nice %>、系统：<%= sys %>、用户：<%= user %>"
+
+#: Components/ServerStatus/src/components/mem-buffers.tsx:14
+msgid "Memory buffers"
+msgstr "内存缓冲"
+
+#: Components/ServerStatus/src/components/mem-cached.tsx:14
+msgid "Memory cached"
+msgstr "内存缓存"
+
+#: Components/ServerStatus/src/components/mem-real-usage.tsx:14
+msgid "Memory real usage"
+msgstr "真实内存占用"
+
+#: Components/ServerStatus/src/components/swap-cached.tsx:14
+msgid "Swap cached"
+msgstr "SWAP 缓存"
+
+#: Components/ServerStatus/src/components/swap-usage.tsx:14
+msgid "Swap usage"
+msgstr "SWAP 占用"
+
+#: Components/ServerStatus/src/components/system-load.tsx:29
+msgid "System load"
+msgstr "系统负载"
+
+#: Components/ServerStatus/src/index.ts:7
+msgid "Server Status"
+msgstr "服务器状态"
+
+#: Components/ServerStatus/src/index.ts:8
+msgid "Status"
+msgstr "状态"
+
+#: Components/Updater/src/components/updater-link.tsx:30
+msgid "Can not update file, please check the server permissions and space."
+msgstr "无法更新文件，请检查服务器权限和空间。"
+
+#: Components/Updater/src/components/updater-link.tsx:38
+msgid "Network error, please try again later."
+msgstr "网络错误，请稍候重试。"
+
+#: Components/Updater/src/stores/index.ts:24
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>"
+
+#: Components/Updater/src/stores/index.ts:33
+msgid "⏳ Updating..."
+msgstr "⏳ 更新中……"
+
+#: Components/Benchmark/Benchmark.php:33
+#, php-format
+msgid "Please wait %ds"
+msgstr "请等待 %d 秒"
 
 #: Components/Helper/HelperApi.php:287
 #, php-format
 msgid "%s cache"
 msgstr "%s 缓存"
-
-#: Components/Helper/HelperApi.php:314
-#, php-format
-msgid "%1$dd %2$dh %3$dm %4$ds"
-msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
-
-#: Components/MyInfo/MyInfo.php:24
-#, php-format
-msgid "Min/Avg/Max = %s"
-msgstr "最小/平均/最大 = %s"
-
-#: Components/MyInfo/MyInfo.php:25
-#, php-format
-msgid "Times: %d"
-msgstr "次数：%d"
-
-#: Components/MyInfo/MyInfo.php:35
-msgid "My information"
-msgstr "我的信息"
-
-#: Components/MyInfo/MyInfo.php:36
-msgid "Mine"
-msgstr "我的"
-
-#: Components/MyInfo/MyInfo.php:47
-msgid "My IP"
-msgstr "我的 IP"
-
-#: Components/MyInfo/MyInfo.php:52
-msgid "My browser UA"
-msgstr "我的浏览器 UA"
-
-#: Components/MyInfo/MyInfo.php:57
-msgid "My browser language"
-msgstr "我的浏览器语言"
-
-#: Components/MyInfo/MyInfo.php:62
-msgid "Ping server"
-msgstr "Ping 服务器"
-
-#: Components/NetworkStats/NetworkStats.php:21
-msgid "Network stats"
-msgstr "流量统计"
-
-#: Components/NetworkStats/NetworkStats.php:22
-msgid "Net"
-msgstr "网络"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
-msgid "PHP extensions"
-msgstr "PHP 扩展"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
-msgid "Ext"
-msgstr "扩展"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#, php-format
-msgid "%s enabled"
-msgstr "%s 已启用"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-msgid "Zend Optimizer"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
-msgid "Loaded extensions"
-msgstr "已加载的扩展"
-
-#: Components/PhpInfo/PhpInfo.php:22
-msgid "PHP information"
-msgstr "PHP 信息"
-
-#: Components/PhpInfo/PhpInfo.php:23
-msgid "PHP"
-msgstr "PHP"
-
-#: Components/PhpInfo/PhpInfo.php:42
-msgid "Click for detail"
-msgstr "PHP 详细信息"
-
-#: Components/PhpInfo/PhpInfo.php:48
-msgid "PHP info detail"
-msgstr "PHP 详细信息"
-
-#: Components/PhpInfo/PhpInfo.php:52
-msgid "Version"
-msgstr "版本"
-
-#: Components/PhpInfo/PhpInfo.php:53
-#, php-format
-msgid "X Prober builtin latest PHP stable version: %s"
-msgstr "X 探针内置最新 PHP 正式版版本：%s"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Old)"
-msgstr "(旧)"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Up to date)"
-msgstr "(最新)"
-
-#: Components/PhpInfo/PhpInfo.php:57
-msgid "SAPI interface"
-msgstr "SAPI 接口"
-
-#: Components/PhpInfo/PhpInfo.php:61
-msgid "Display errors"
-msgstr "显示错误"
-
-#: Components/PhpInfo/PhpInfo.php:66
-msgid "Error reporting"
-msgstr "错误报告"
-
-#: Components/PhpInfo/PhpInfo.php:71
-msgid "Max memory limit"
-msgstr "运行内存限制"
-
-#: Components/PhpInfo/PhpInfo.php:76
-msgid "Max POST size"
-msgstr "POST 提交限制"
-
-#: Components/PhpInfo/PhpInfo.php:81
-msgid "Max upload size"
-msgstr "上传文件限制"
-
-#: Components/PhpInfo/PhpInfo.php:86
-msgid "Max input variables"
-msgstr "提交表单限制"
-
-#: Components/PhpInfo/PhpInfo.php:91
-msgid "Max execution time"
-msgstr "运行超时秒数"
-
-#: Components/PhpInfo/PhpInfo.php:96
-msgid "Timeout for socket"
-msgstr "Socket 超时秒数"
-
-#: Components/PhpInfo/PhpInfo.php:101
-msgid "Treatment URLs file"
-msgstr "文件远端打开"
-
-#: Components/PhpInfo/PhpInfo.php:106
-msgid "SMTP support"
-msgstr "SMTP 支持"
-
-#: Components/PhpInfo/PhpInfo.php:112
-msgid "Disabled functions"
-msgstr "已禁用的函数"
-
-#: Components/PhpInfo/PhpInfo.php:119
-msgid "Disabled classes"
-msgstr "已禁用的类"
 
 #: Components/ServerBenchmark/ServerBenchmark.php:23
 msgid "⏳ Loading..."
@@ -303,123 +411,140 @@ msgstr "查看探针页面"
 msgid "Download file for network speed testing"
 msgstr "下载文件以测试网速"
 
-#: Components/ServerInfo/ServerInfo.php:22
+#: Components/ServerInfo/Conf.php:42
 msgid "Server information"
 msgstr "服务器信息"
 
-#: Components/ServerInfo/ServerInfo.php:23
-msgid "Info"
-msgstr "信息"
-
-#: Components/ServerInfo/ServerInfo.php:45
+#: Components/ServerInfo/Conf.php:65
 #, php-format
 msgid "X Prober builtin latest NGINX stable version: %s"
 msgstr "X 探针内置最新 NGINX 正式版版本：%s"
 
-#: Components/ServerInfo/ServerInfo.php:71
+#: Components/ServerInfo/Conf.php:82
+msgid "(Old)"
+msgstr "(旧)"
+
+#: Components/ServerInfo/Conf.php:82
+msgid "(Up to date)"
+msgstr "(最新)"
+
+#: Components/ServerInfo/Conf.php:91
 msgid "Server name"
 msgstr "服务器名"
 
-#: Components/ServerInfo/ServerInfo.php:76
+#: Components/ServerInfo/Conf.php:96
 msgid "Server time"
 msgstr "服务器时间"
 
-#: Components/ServerInfo/ServerInfo.php:81
+#: Components/ServerInfo/Conf.php:101
 msgid "Server uptime"
 msgstr "持续运作时间"
 
-#: Components/ServerInfo/ServerInfo.php:85
+#: Components/ServerInfo/Conf.php:105
 msgid "Server IP"
 msgstr "服务器 IP"
 
-#: Components/ServerInfo/ServerInfo.php:89
+#: Components/ServerInfo/Conf.php:109
 msgid "Server software"
 msgstr "服务器软件"
 
-#: Components/ServerInfo/ServerInfo.php:94
+#: Components/ServerInfo/Conf.php:114
 msgid "PHP version"
 msgstr "PHP 版本"
 
-#: Components/ServerInfo/ServerInfo.php:99
+#: Components/ServerInfo/Conf.php:119
 msgid "CPU model"
 msgstr "CPU 型号"
 
-#: Components/ServerInfo/ServerInfo.php:105
+#: Components/ServerInfo/Conf.php:125
 msgid "Server OS"
 msgstr "服务器系统"
 
-#: Components/ServerInfo/ServerInfo.php:112
+#: Components/ServerInfo/Conf.php:132
 msgid "Script path"
 msgstr "脚本路径"
 
-#: Components/ServerInfo/ServerInfo.php:117
+#: Components/ServerInfo/Conf.php:137
 msgid "Disk usage"
 msgstr "磁盘使用量"
 
-#: Components/ServerStatus/ServerStatus.php:20
-msgid "Server status"
-msgstr "服务器状态"
+#~ msgid "Generator %s"
+#~ msgstr "该页面由 %s 生成"
 
-#: Components/ServerStatus/ServerStatus.php:21
-msgid "Status"
-msgstr "状态"
+#~ msgid "Author %s"
+#~ msgstr "作者为 %s"
 
-#: Components/ServerStatus/ServerStatus.php:46
-msgid "System load"
-msgstr "系统负载"
+#~ msgid "STAR 🌟 ME"
+#~ msgstr "星 🌟 标"
 
-#: Components/ServerStatus/ServerStatus.php:62
-msgid "CPU usage"
-msgstr "CPU 占用"
+#~ msgid "%1$dd %2$dh %3$dm %4$ds"
+#~ msgstr "%1$d 天 %2$d 时 %3$d 分 %4$d 秒"
 
-#: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory real usage"
-msgstr "真实内存占用"
+#~ msgid "Min/Avg/Max = %s"
+#~ msgstr "最小/平均/最大 = %s"
 
-#: Components/ServerStatus/ServerStatus.php:95
-msgid "SWAP usage"
-msgstr "SWAP 占用"
+#~ msgid "Times: %d"
+#~ msgstr "次数：%d"
 
-#: Components/ServerStatus/ServerStatus.php:114
-msgid "SWAP cached"
-msgstr "SWAP 缓存"
+#~ msgid "Ping server"
+#~ msgstr "Ping 服务器"
 
-#: Components/ServerStatus/ServerStatus.php:127
-msgid "Memory cached"
-msgstr "内存缓存"
+#~ msgid "Click for detail"
+#~ msgstr "PHP 详细信息"
 
-#: Components/ServerStatus/ServerStatus.php:140
-msgid "Memory buffers"
-msgstr "内存缓冲"
+#~ msgid "Version"
+#~ msgstr "版本"
 
-#: Components/Updater/Updater.php:22
-#, php-format
-msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
-msgstr "%1$s 发现更新！版本 %2$s → {APP_NEW_VERSION}"
+#~ msgid "X Prober builtin latest PHP stable version: %s"
+#~ msgstr "X 探针内置最新 PHP 正式版版本：%s"
 
-#: Components/Updater/Updater.php:23
-msgid "Updating..."
-msgstr "更新中……"
+#~ msgid "Error reporting"
+#~ msgstr "错误报告"
 
-#: Components/Updater/Updater.php:24
-msgid "Update error"
-msgstr "更新出错"
+#~ msgid "Max memory limit"
+#~ msgstr "运行内存限制"
 
-#: Components/Updater/Updater.php:53
-msgid "File can not update."
-msgstr "无法更新文件。"
+#~ msgid "Max POST size"
+#~ msgstr "POST 提交限制"
 
-#: Components/Updater/Updater.php:70
-msgid "Update file not found."
-msgstr "未找到更新文件。"
+#~ msgid "Max upload size"
+#~ msgstr "上传文件限制"
 
-#: Components/Updater/Updater.php:81
-msgid "Update success..."
-msgstr "更新成功……"
+#~ msgid "Max input variables"
+#~ msgstr "提交表单限制"
 
-#: Components/Updater/Updater.php:87
-msgid "Update error."
-msgstr "更新出错。"
+#~ msgid "Max execution time"
+#~ msgstr "运行超时秒数"
+
+#~ msgid "Timeout for socket"
+#~ msgstr "Socket 超时秒数"
+
+#~ msgid "Treatment URLs file"
+#~ msgstr "文件远端打开"
+
+#~ msgid "Disabled functions"
+#~ msgstr "已禁用的函数"
+
+#~ msgid "SWAP usage"
+#~ msgstr "SWAP 占用"
+
+#~ msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+#~ msgstr "%1$s 发现更新！版本 %2$s → {APP_NEW_VERSION}"
+
+#~ msgid "Update error"
+#~ msgstr "更新出错"
+
+#~ msgid "File can not update."
+#~ msgstr "无法更新文件。"
+
+#~ msgid "Update file not found."
+#~ msgstr "未找到更新文件。"
+
+#~ msgid "Update success..."
+#~ msgstr "更新成功……"
+
+#~ msgid "Update error."
+#~ msgstr "更新出错。"
 
 #~ msgid "Aliyun/ECS"
 #~ msgstr "阿里云/ECS"
@@ -441,6 +566,3 @@ msgstr "更新出错。"
 
 #~ msgid "AnyNode/HDD"
 #~ msgstr "AnyNode/HDD"
-
-#~ msgid "Real swap usage"
-#~ msgstr "真实 SWAP 使用"

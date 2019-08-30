@@ -38,7 +38,7 @@ let plugins = [
     DEBUG: __DEV__,
   }),
   new CleanWebpackPlugin({
-    cleanOnceBeforeBuildPatterns: ['tmp'],
+    cleanOnceBeforeBuildPatterns: ['.tmp'],
   }),
   // new ExtractTextPlugin({
   //   filename: getPath => {
@@ -79,9 +79,9 @@ let config = {
     ),
   },
   output: {
-    path: path.resolve(__dirname, 'tmp'),
+    path: path.resolve(__dirname, '.tmp'),
     filename: '[name].js',
-    publicPath: './tmp',
+    publicPath: './.tmp',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.scss', '.sass', '.css'],

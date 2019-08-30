@@ -7,9 +7,9 @@
     "https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php",
     "https://api.inn-studio.com/download/?id=xprober"
   ],
+  "APP_CONFIG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json",
   "AUTHOR_NAME": "INN STUDIO",
-  "CHANGELOG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/CHANGELOG.md",
-  "LATEST_PHP_STABLE_VERSION": "7.3.8",
+  "LATEST_PHP_STABLE_VERSION": 7,
   "LATEST_NGINX_STABLE_VERSION": "1.16.0",
   "LATEST_SQLITE3_STABLE_VERSION": "3.28.0",
   "LATEST_MYSQL_CLIENT_STABLE_VERSION": "50012",

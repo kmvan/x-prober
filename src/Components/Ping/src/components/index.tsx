@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
 import { DARK_COLOR } from '~components/Config/src'
+import { device } from '~components/Style/src/components/devices'
 
 const PingBtn = styled.a`
   display: block;
@@ -30,13 +31,29 @@ const PingItemContainer = styled.ul`
 `
 
 const PingItem = styled.li`
-  flex: 0 0 20%;
+  flex: 0 0 ${(1 / 3) * 100}%;
+  @media ${device('tablet')} {
+    flex: 0 0 25%;
+  }
+  @media ${device('desktopSm')} {
+    flex: 0 0 20%;
+  }
 `
 const PingItemNumber = styled.span`
   opacity: 0.5;
+  display: none;
+
+  @media ${device('tablet')} {
+    display: inline;
+  }
 `
 const PingItemLine = styled.span`
   opacity: 0.3;
+  display: none;
+
+  @media ${device('tablet')} {
+    display: inline;
+  }
 `
 const PingItemTime = styled.span`
   font-weight: bold;

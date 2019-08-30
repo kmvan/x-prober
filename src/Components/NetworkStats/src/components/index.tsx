@@ -81,11 +81,11 @@ class NetworkStats extends Component {
                   <DataContainer>
                     <Data>
                       <Total>{formatBytes(rx)}</Total>
-                      <RateRx>{formatBytes(rx - lastItems[id].rx)}</RateRx>
+                      <RateRx>{formatBytes(rx - lastItems[id].rx)}/s</RateRx>
                     </Data>
                     <Data>
                       <Total>{formatBytes(tx)}</Total>
-                      <RateTx>{formatBytes(tx - lastItems[id].tx)}</RateTx>
+                      <RateTx>{formatBytes(tx - lastItems[id].tx)}/s</RateTx>
                     </Data>
                   </DataContainer>
                 </Grid>

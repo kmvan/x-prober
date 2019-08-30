@@ -3,10 +3,6 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-
-// import './style'
-// import '~components/Footer/src/components/style'
-
 import ready from '~components/Helper/src/components/ready'
 import styled from 'styled-components'
 import Title from '~components/Title/src/components'
@@ -24,6 +20,7 @@ import '~components/MyInfo/src'
 import Nav from '~components/Nav/src/components'
 import store from '../stores'
 import Forkme from '~components/Forkme/src/components'
+import Footer from '~components/Footer/src/components'
 
 const App = styled.div`
   position: fixed;
@@ -46,6 +43,7 @@ const Bootstrap = () => (
     <App ref={c => store.setAppContainer(c)}>
       <Container>
         <Cards />
+        <Footer />
       </Container>
     </App>
     <Nav />

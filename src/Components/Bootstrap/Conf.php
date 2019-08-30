@@ -16,9 +16,9 @@ class Conf extends BootstrapConstants
     {
         $conf[$this->ID] = [
             'version'      => ConfigApi::$APP_VERSION,
-            'changelogUrl' => ConfigApi::$CHANGELOG_URL,
             'appName'      => ConfigApi::$APP_NAME,
             'appUrl'       => ConfigApi::$APP_URL,
+            'appConfigUrl' => ConfigApi::$APP_CONFIG_URL,
             'authorUrl'    => ConfigApi::$AUTHOR_URL,
             'authorName'   => ConfigApi::$AUTHOR_NAME,
         ];

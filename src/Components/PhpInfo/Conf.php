@@ -8,7 +8,7 @@ class Conf extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf'], 30);
+        EventsApi::on('conf', [$this, 'conf']);
     }
 
     public function conf(array $conf)

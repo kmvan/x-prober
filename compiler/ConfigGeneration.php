@@ -44,10 +44,10 @@ class ConfigGeneration
             'APP_VERSION'                 => $appVersion,
             'APP_NAME'                    => $appName,
             'APP_URL'                     => $appUrl,
+            'APP_CONFIG_URL'              => $appConfigUrl,
             'AUTHOR_URL'                  => $authorUrl,
             'UPDATE_PHP_URLS'             => $updatePhpUrls,
             'AUTHOR_NAME'                 => $authorName,
-            'CHANGELOG_URL'               => $changelogUrl,
             'LATEST_PHP_STABLE_VERSION'   => $latestPhpStableVersion,
             'LATEST_NGINX_STABLE_VERSION' => $latestNginxStableVersion,
         ] = $config;
@@ -67,10 +67,10 @@ class ConfigApi
     public static \$APP_VERSION                 = '{$appVersion}';
     public static \$APP_NAME                    = '{$appName}';
     public static \$APP_URL                     = '{$appUrl}';
+    public static \$APP_CONFIG_URL              = '{$appConfigUrl}';
     public static \$AUTHOR_URL                  = '{$authorUrl}';
     public static \$UPDATE_PHP_URLS             = array('{$updatePhpUrls}');
     public static \$AUTHOR_NAME                 = '{$authorName}';
-    public static \$CHANGELOG_URL               = '{$changelogUrl}';
     public static \$LATEST_PHP_STABLE_VERSION   = '{$latestPhpStableVersion}';
     public static \$LATEST_NGINX_STABLE_VERSION = '{$latestNginxStableVersion}';
 }

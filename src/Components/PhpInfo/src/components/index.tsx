@@ -7,6 +7,7 @@ import store from '../stores'
 import Alert from '~components/Helper/src/components/alert'
 import MultiItemContainer from '~components/Card/src/components/multi-item-container'
 import SearchLink from '~components/Helper/src/components/search-link'
+import PhpInfoPhpVersion from './php-version'
 
 @observer
 class PhpInfo extends Component {
@@ -20,7 +21,7 @@ class PhpInfo extends Component {
           {'👆 Click for detail'}
         </a>,
       ],
-      [gettext('Version'), conf.version],
+      [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
       [gettext('SAPI interface'), conf.sapi],
       [
         gettext('Display errors'),

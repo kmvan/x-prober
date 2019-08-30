@@ -8,7 +8,6 @@ new \InnStudio\Prober\Components\Database\Database();
 new \InnStudio\Prober\Components\Fetch\Fetch();
 new \InnStudio\Prober\Components\Footer\Footer();
 new \InnStudio\Prober\Components\MyInfo\MyInfo();
-new \InnStudio\Prober\Components\Nav\Nav();
 new \InnStudio\Prober\Components\NetworkStats\NetworkStats();
 new \InnStudio\Prober\Components\PhpExtensions\PhpExtensions();
 new \InnStudio\Prober\Components\PhpInfo\PhpInfo();

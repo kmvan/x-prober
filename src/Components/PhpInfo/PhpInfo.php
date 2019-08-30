@@ -7,5 +7,6 @@ class PhpInfo
     public function __construct()
     {
         new Conf();
+        new FetchLatestPhpVersion();
     }
 }
