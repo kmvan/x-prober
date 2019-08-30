@@ -1,4 +1,4 @@
-export const size = {
+export const breakPoints = {
   mobileSm: '320px',
   mobileMd: '375px',
   mobileLg: '425px',
@@ -9,9 +9,9 @@ export const size = {
 }
 
 export const device = (id: string): string => {
-  if (!size[id]) {
+  if (!breakPoints[id]) {
     return ''
   }
 
-  return `(min-width: ${size[id]})`
+  return `(min-width: ${breakPoints[id]})`
 }

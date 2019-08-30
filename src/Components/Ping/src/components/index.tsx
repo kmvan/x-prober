@@ -8,18 +8,55 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
+import { DARK_COLOR } from '~components/Config/src'
 
-const PingBtn = styled.a``
+const PingBtn = styled.a`
+  display: block;
+  text-align: center;
+`
 
-const PingItemContainer = styled.ul``
-
-const PingItem = styled.li``
-const PingItemNumber = styled.span``
-const PingItemLine = styled.span``
-const PingItemTime = styled.span``
-
-const PingResult = styled.div`
+const PingItemContainer = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  background: ${DARK_COLOR};
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0 0;
+  max-height: 8rem;
+  overflow-y: auto;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+`
+
+const PingItem = styled.li`
+  flex: 0 0 20%;
+`
+const PingItemNumber = styled.span`
+  opacity: 0.5;
+`
+const PingItemLine = styled.span`
+  opacity: 0.3;
+`
+const PingItemTime = styled.span`
+  font-weight: bold;
+`
+
+interface IPingResult {
+  hasPing: boolean
+}
+
+const PingResult = styled.div<IPingResult>`
+  display: flex;
+  align-items: center;
+  background: ${DARK_COLOR};
+  color: #ccc;
+  border-radius: ${({ hasPing }) => (hasPing ? 0 : '1rem')}
+    ${({ hasPing }) => (hasPing ? 0 : '1rem')} 1rem 1rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px dashed #ffffff1a;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `
 const PingResultTimes = styled.div``
 const PingResultAvg = styled.div``
@@ -85,7 +122,7 @@ class Ping extends Component {
     const items = pingItems.map(({ time }, i) => {
       return (
         <PingItem key={i}>
-          <PingItemNumber>{i + 1}</PingItemNumber>
+          <PingItemNumber>{i + 1 < 10 ? `0${i + 1}` : i + 1}</PingItemNumber>
           <PingItemLine>{' ------------ '}</PingItemLine>
           <PingItemTime>{`${time} ms`}</PingItemTime>
         </PingItem>
@@ -102,16 +139,18 @@ class Ping extends Component {
   private renderResults() {
     const { pingItemsCount, pingItems } = store
 
-    if (!pingItemsCount) {
-      return
-    }
-
-    const avg = Math.floor(sumBy(pingItems, 'time') / pingItemsCount)
-    const max = Number((maxBy(pingItems, 'time') as IPingItem).time)
-    const min = Number((minBy(pingItems, 'time') as IPingItem).time)
+    const avg = pingItemsCount
+      ? Math.floor(sumBy(pingItems, 'time') / pingItemsCount)
+      : 0
+    const max = pingItemsCount
+      ? Number((maxBy(pingItems, 'time') as IPingItem).time)
+      : 0
+    const min = pingItemsCount
+      ? Number((minBy(pingItems, 'time') as IPingItem).time)
+      : 0
 
     return (
-      <PingResult>
+      <PingResult hasPing={!!pingItemsCount}>
         <PingResultTimes>
           {template(gettext('Times: <%= times %>'))({ times: pingItemsCount })}
         </PingResultTimes>

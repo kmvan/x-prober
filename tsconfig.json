@@ -28,7 +28,7 @@
       "~components/*": ["Components/*"]
     },
     "typeRoots": ["../node_modules/@types"],
-    "types": ["core-js", "node"],
+    "types": ["core-js"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

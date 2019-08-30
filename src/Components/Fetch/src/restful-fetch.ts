@@ -12,7 +12,7 @@ const restfulFetch = (action: string, opts = {}) => {
       ...opts,
     }
 
-    const url = `${location.href}?action=${action}`
+    const url = `${location.pathname}?action=${action}`
     const res = await fetch(url, opts)
     const text = await res.text()
 

@@ -27,7 +27,7 @@ const CardTitle = styled.div`
 `
 const CardContent = styled.div`
   flex-grow: 1;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 0;
 `
 
 const CardGrid = ({ title = '', children, ...props }: ICardGrid) => {

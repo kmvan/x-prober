@@ -21,6 +21,9 @@ import '~components/PhpInfo/src'
 import '~components/PhpExtensions/src'
 import '~components/Database/src'
 import '~components/MyInfo/src'
+import Nav from '~components/Nav/src/components'
+import store from '../stores'
+import Forkme from '~components/Forkme/src/components'
 
 const App = styled.div`
   position: fixed;
@@ -40,12 +43,14 @@ const Bootstrap = () => (
   <>
     <Normalize />
     <Title />
-    <App>
+    <App ref={c => store.setAppContainer(c)}>
       <Container>
         <Cards />
       </Container>
     </App>
-    {/* <Nav />
+    <Nav />
+    <Forkme />
+    {/*
     <ServerStatus />
     <NetworkStats />
     <ServerInfo />

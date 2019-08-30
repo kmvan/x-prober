@@ -13,6 +13,7 @@ new \InnStudio\Prober\Components\NetworkStats\NetworkStats();
 new \InnStudio\Prober\Components\PhpExtensions\PhpExtensions();
 new \InnStudio\Prober\Components\PhpInfo\PhpInfo();
 new \InnStudio\Prober\Components\PhpInfoDetail\PhpInfoDetail();
+new \InnStudio\Prober\Components\Ping\Ping();
 new \InnStudio\Prober\Components\Script\Script();
 new \InnStudio\Prober\Components\ServerBenchmark\ServerBenchmark();
 new \InnStudio\Prober\Components\ServerInfo\ServerInfo();

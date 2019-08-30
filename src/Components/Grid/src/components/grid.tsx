@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
-import { device, size } from '~components/Style/src/components/devices'
+import { device, breakPoints } from '~components/Style/src/components/devices'
 import { GUTTER } from '~components/Config/src'
 
-interface ISizes {
+interface IBreakPoints {
   mobileSm?: [number, number]
   mobileMd?: [number, number]
   mobileLg?: [number, number]
@@ -13,13 +13,13 @@ interface ISizes {
   desktopLg?: [number, number]
 }
 
-export interface IGrid extends ISizes {
+export interface IGrid extends IBreakPoints {
   children: ReactNode
 }
 
-const createCss = (types: ISizes) => {
+const createCss = (types: IBreakPoints) => {
   const style = Object.entries(types).map(([id, sizes]) => {
-    if (!size[id]) {
+    if (!breakPoints[id]) {
       return ''
     }
 
@@ -31,7 +31,12 @@ const createCss = (types: ISizes) => {
 
     return css`
       @media ${device(id)} {
-        flex: 0 0 ${(span / col) * 100}%;
+        flex: ${() => {
+          // wtf safari flex bug
+          return /constructor/i.test((window as any).HTMLElement)
+            ? `0 0 calc(${(span / col) * 100}% - 0.5px);`
+            : `0 0 ${(span / col) * 100}%;`
+        }};
       }
     `
   })
@@ -40,7 +45,7 @@ const createCss = (types: ISizes) => {
 }
 
 export interface IGridStyle {
-  types: ISizes
+  types: IBreakPoints
 }
 
 export const GridStyle = styled.div<IGridStyle>`

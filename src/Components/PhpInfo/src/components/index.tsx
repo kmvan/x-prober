@@ -5,20 +5,8 @@ import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import store from '../stores'
 import Alert from '~components/Helper/src/components/alert'
-import styled from 'styled-components'
 import MultiItemContainer from '~components/Card/src/components/multi-item-container'
 import SearchLink from '~components/Helper/src/components/search-link'
-
-const Fn = styled.a.attrs(({ href }: { href: string }) => ({
-  target: '_blank',
-  rel: 'nofollow',
-  href: `https://www.google.com/search?q=${encodeURIComponent(href)}`,
-}))`
-  margin-right: 0.5rem;
-  :hover {
-    text-decoration: underline;
-  }
-`
 
 @observer
 class PhpInfo extends Component {
@@ -56,7 +44,7 @@ class PhpInfo extends Component {
         gettext('Disabled functions'),
         conf.disableFunctions.length
           ? conf.disableFunctions.map((fn: string, i: number) => (
-              <SearchLink key={i} keyword={fn}></SearchLink>
+              <SearchLink key={i} keyword={fn} />
             ))
           : '-',
       ],
@@ -64,7 +52,7 @@ class PhpInfo extends Component {
         gettext('Disabled classes'),
         conf.disableClasses.length
           ? conf.disableClasses.map((fn: string, i: number) => (
-              <SearchLink key={i} keyword={fn}></SearchLink>
+              <SearchLink key={i} keyword={fn} />
             ))
           : '-',
       ],

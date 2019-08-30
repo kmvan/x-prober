@@ -40,11 +40,11 @@ class Title extends Component {
         <UpdaterChecker />
         <TitleH1>
           {UpdaterStore.newVersion ? (
+            <UpdaterLink />
+          ) : (
             <TitleLink href='https://github.com/kmvan/x-prober' target='_blank'>
               {`X Prober v${BootstrapStore.version}`}
             </TitleLink>
-          ) : (
-            <UpdaterLink />
           )}
         </TitleH1>
       </>

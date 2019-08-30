@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import Portal from '~components/Helper/src/components/portal'
 import store from '../stores'
-import fetchServer from '~components/Helper/src/components/fetch-server'
+import fetchServer from '~components/Fetch/src/restful-fetch'
 
-import './style/index.scss'
+// import './style/index.scss'
 
 @observer
 class ServerBenchmark extends Component {
@@ -53,7 +53,7 @@ class ServerBenchmark extends Component {
       <Portal target={this.container}>
         <a
           onClick={this.onClick}
-          className="inn-benchmark__link inn-tooltip is-top"
+          className='inn-benchmark__link inn-tooltip is-top'
           title={this.store.linkTitle}
         >
           {linkText}

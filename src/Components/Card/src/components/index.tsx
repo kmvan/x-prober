@@ -1,8 +1,8 @@
-import React, { Component, ComponentClass } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { ReactNode } from 'react'
+import { DARK_COLOR } from '~components/Config/src'
 
 const Fieldset = styled.fieldset`
   position: relative;
@@ -20,12 +20,13 @@ const Legend = styled.legend`
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  background: #333;
+  background: ${DARK_COLOR};
   padding: 0.5rem 2rem;
   border-radius: 5rem;
   color: #fff;
   margin: 0 auto;
-  text-shadow: 0 1px 1px #333;
+  text-shadow: 0 1px 1px ${DARK_COLOR};
+  white-space: nowrap;
 `
 
 const Body = styled.div``
@@ -33,7 +34,7 @@ const Body = styled.div``
 @observer
 class Cards extends Component {
   public render() {
-    const { cardsLength, sortedCards } = store
+    const { cardsLength, sortedCards, setCardsContainer } = store
 
     if (!cardsLength) {
       return null
@@ -43,7 +44,7 @@ class Cards extends Component {
       <>
         {sortedCards.map(({ id, title, component: Tag }) => {
           return (
-            <Fieldset key={id}>
+            <Fieldset key={id} id={id}>
               <Legend>{title}</Legend>
               <Body>
                 <Tag />
