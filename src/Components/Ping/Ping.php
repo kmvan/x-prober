@@ -9,7 +9,7 @@ class Ping
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -18,8 +18,8 @@ class Ping
             return $action;
         }
 
-        (new RestfulResponse([
+        (new RestfulResponse(array(
             'time' => \microtime(true) - \XPROBER_TIMER,
-        ]))->dieJson();
+        )))->dieJson();
     }
 }

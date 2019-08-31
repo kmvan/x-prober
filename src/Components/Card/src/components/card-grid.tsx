@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import Grid, { IGrid } from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
+import { GUTTER } from '~components/Config/src'
 
 export interface ICardGrid extends IGrid {
   title?: ReactNode
@@ -19,7 +20,7 @@ const CardGroup = styled.div`
 `
 const CardTitle = styled.div`
   word-break: normal;
-  padding: 0.5rem 1rem;
+  padding: calc(${GUTTER} / 2) ${GUTTER};
   flex: 0 0 8rem;
   @media ${device('tablet')} {
     flex: 0 0 12rem;
@@ -27,7 +28,7 @@ const CardTitle = styled.div`
 `
 const CardContent = styled.div`
   flex-grow: 1;
-  padding: 0.5rem 1rem 0.5rem 0;
+  padding: calc(${GUTTER} / 2) ${GUTTER} calc(${GUTTER} / 2) 0;
 `
 
 const CardGrid = ({ title = '', children, ...props }: ICardGrid) => {

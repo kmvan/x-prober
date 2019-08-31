@@ -8,7 +8,7 @@ class Timezone
 {
     public function __construct()
     {
-        // EventsApi::on('init', [$this, 'filter'], 1);
+        EventsApi::on('init', array($this, 'filter'), 1);
     }
 
     public function filter($action)

@@ -7,10 +7,12 @@ class BootstrapStore {
   public conf = get(conf, this.ID)
   public version: string = get(this.conf, 'version')
   public appConfigUrl: string = get(this.conf, 'appConfigUrl')
+  public appConfigUrlDev: string = get(this.conf, 'appConfigUrlDev')
   public appName: string = get(this.conf, 'appName')
   public appUrl: string = get(this.conf, 'appUrl')
   public authorUrl: string = get(this.conf, 'authorUrl')
   public authorName: string = get(this.conf, 'authorName')
+  public isDev: boolean = get(this.conf, 'isDev')
 
   @observable public appContainer: HTMLElement | null = null
 

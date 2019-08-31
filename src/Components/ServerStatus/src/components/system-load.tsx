@@ -4,6 +4,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import { gettext } from '~components/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
+import { GUTTER } from '~components/Config/src'
 
 const GroupContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const GroupItem = styled.span`
   margin-right: 0.5rem;
   background: #33333380;
   color: #fff;
-  padding: 0.1rem 1rem;
+  padding: calc(${GUTTER} / 10) ${GUTTER};
   border-radius: 10rem;
   font-family: Arial Black;
   text-shadow: 0 1px 1px #333;

@@ -2,6 +2,18 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.0.0 - 2019-08-31
+
+### Add
+
+- Independent PING feature
+- Only JS to render information
+
+### Optimize
+
+- Optimize languages
+- Tiny server benchmarks items
+
 ## 2.4.5 - 2019-08-04
 
 ### Update

@@ -8,7 +8,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
-import { DARK_COLOR } from '~components/Config/src'
+import { DARK_COLOR, GUTTER } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
 const PingBtn = styled.a`
@@ -21,13 +21,32 @@ const PingItemContainer = styled.ul`
   flex-wrap: wrap;
   background: ${DARK_COLOR};
   color: #ccc;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
   max-height: 8rem;
   overflow-y: auto;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: ${GUTTER} ${GUTTER} 0 0;
   box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
   list-style-type: none;
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: ${GUTTER};
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: ${GUTTER} 0 0 ${GUTTER};
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `
 
 const PingItem = styled.li`
@@ -68,9 +87,9 @@ const PingResult = styled.div<IPingResult>`
   align-items: center;
   background: ${DARK_COLOR};
   color: #ccc;
-  border-radius: ${({ hasPing }) => (hasPing ? 0 : '1rem')}
-    ${({ hasPing }) => (hasPing ? 0 : '1rem')} 1rem 1rem;
-  padding: 0.5rem 1rem;
+  border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
+    ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
+  padding: calc(${GUTTER} / 2) ${GUTTER};
   border-top: 1px dashed #ffffff1a;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -183,7 +202,7 @@ class Ping extends Component {
   private pingBtn() {
     return (
       <PingBtn onClick={this.onClickPing}>
-        {store.isPing ? gettext('Stop ping') : gettext('Start ping')}
+        {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
       </PingBtn>
     )
   }

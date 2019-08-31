@@ -10,7 +10,7 @@ class Benchmark extends BenchmarkApi
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
         new FetchBefore();
     }
 
@@ -26,14 +26,14 @@ class Benchmark extends BenchmarkApi
     public function display()
     {
         $remainingSeconds = $this->getRemainingSeconds();
-
-        $response = new RestfulResponse();
+        $response         = new RestfulResponse();
 
         if ($remainingSeconds) {
             $response->setStatus(HttpStatus::$TOO_MANY_REQUESTS);
-            $response->setData([
+            $response->setData(array(
                 'seconds' => $remainingSeconds,
-            ]);
+            ));
+            $response->dieJson();
         }
 
         \set_time_limit(0);
@@ -42,14 +42,14 @@ class Benchmark extends BenchmarkApi
         $this->setIsRunning(true);
 
         // start benchmark
-        $points = $this->getPoints();
+        $marks = $this->getPoints();
         // end benchmark
 
         $this->setIsRunning(false);
 
-        $response->setData([
-            'points' => $points,
-            'total'  => \array_sum($points),
-        ]);
+        $response->setData(array(
+            'marks' => $marks,
+        ));
+        $response->dieJson();
     }
 }

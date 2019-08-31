@@ -20,6 +20,11 @@ class ServerInfo extends Component {
       return gettext('Unavailable')
     }
 
+    // for poedit bug
+    gettext(
+      '<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs'
+    )
+
     return <ProgressBar value={value} max={max} isCapacity={true} />
   }
 
@@ -43,7 +48,7 @@ class ServerInfo extends Component {
     ]
 
     const longItems = [
-      [gettext('CPU model'), conf.cpuModel],
+      [gettext('CPU model'), conf.cpuModel || gettext('Unavailable')],
       [gettext('Server OS'), conf.serverOs],
       [gettext('Script path'), conf.scriptPath],
       [gettext('Disk usage'), this.diskUsage()],

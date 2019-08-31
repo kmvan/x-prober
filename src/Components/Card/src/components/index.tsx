@@ -34,7 +34,7 @@ const Body = styled.div``
 @observer
 class Cards extends Component {
   public render() {
-    const { cardsLength, sortedCards, setCardsContainer } = store
+    const { cardsLength, sortedCards } = store
 
     if (!cardsLength) {
       return null

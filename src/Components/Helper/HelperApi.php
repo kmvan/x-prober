@@ -2,78 +2,8 @@
 
 namespace InnStudio\Prober\Components\Helper;
 
-use InnStudio\Prober\Components\I18n\I18nApi;
-
 class HelperApi
 {
-    public static function getClassNames(array $classNames)
-    {
-        return \implode(' ', \array_keys(\array_filter($classNames)));
-    }
-
-    public static function getGroupItemLists(array $items, $sorted = false)
-    {
-        if ( ! \array_filter($items)) {
-            return '';
-        }
-
-        if ($sorted) {
-            \sort($items);
-        }
-
-        $items = \implode('', \array_map(function ($item) {
-            $item = \trim($item);
-
-            if ( ! $item) {
-                return '';
-            }
-
-            $kw = \urlencode($item);
-
-            return <<<HTML
-<a href="https://www.google.com/search?q=PHP+{$kw}" target="_blank" class="inn-group__item-list" title="Google: PHP {$kw}">{$item}</a>
-HTML;
-        }, $items));
-
-        return <<<HTML
-<div class="inn-group__item-list__container">{$items}</div>
-HTML;
-    }
-
-    public static function getProgressTpl(array $args)
-    {
-        $args = \array_merge([
-            'id'       => '',
-            'usage'    => 0,
-            'total'    => 0,
-            'overview' => '',
-        ], $args);
-
-        if ( ! $args['total']) {
-            $percent    = 0;
-            $totalHuman = 0;
-            $usageHuman = 0;
-            $overview   = '0 / 0';
-        } else {
-            $percent    = $args['total'] ? \round($args['usage'] / $args['total'], 2) * 100 : 0;
-            $totalHuman = self::formatBytes($args['total']);
-            $usageHuman = self::formatBytes($args['usage']);
-            $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
-        }
-
-        return <<<HTML
-<div class="inn-progress__container">
-    <div class="inn-progress__percent" id="inn-{$args['id']}Percent">{$percent}%</div>
-    <div class="inn-progress__overview" id="inn-{$args['id']}Overview">
-        {$overview}
-    </div>
-    <div class="inn-progress" id="inn-{$args['id']}Progress">
-        <div id="inn-{$args['id']}ProgressValue" class="inn-progress__value" style="width: {$percent}%"></div>
-    </div>
-</div>
-HTML;
-    }
-
     public static function setFileCacheHeader()
     {
         // 1 year expired
@@ -84,96 +14,17 @@ HTML;
         \header("Cache-Control: public, max-age={$seconds}");
     }
 
-    public static function getGroup(array $item)
-    {
-        $item = \array_merge([
-            'groupId' => '',
-            'id'      => '',
-            'label'   => '',
-            'title'   => '',
-            'content' => '',
-            'col'     => '',
-        ], $item);
-
-        $title = $item['title'] ? <<<HTML
-title="{$item['title']}"
-HTML
-        : '';
-
-        $hasTitleClassName = $title ? 'inn-tooltip is-top' : '';
-
-        if (null === $item['col']) {
-            $col = '';
-        } else {
-            $col = $item['col'] ?: '1-3';
-            $col = "inn-g_lg-{$col}";
-        }
-
-        $idClassNameGroup          = $item['id'] ? "inn-{$item['id']}-group" : '';
-        $idClassNameGroupContainer = $item['id'] ? "inn-{$item['id']}-group__container" : '';
-        $idClassNameGroupLabel     = $item['id'] ? "inn-{$item['id']}-group__label" : '';
-        $idClassNameGroupContent   = $item['id'] ? "inn-{$item['id']}-group__content" : '';
-        $groupClassNameLabel       = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
-        $groupContainerClassNames  = self::getClassNames([
-            'inn-group__container'     => true,
-            $col                       => (bool) $col,
-            $idClassNameGroupContainer => (bool) $idClassNameGroupContainer,
-        ]);
-        $groupClassNames = self::getClassNames([
-            'inn-group'       => true,
-            $idClassNameGroup => (bool) $idClassNameGroup,
-        ]);
-        $groupLabelClassNames = self::getClassNames([
-            'inn-group__label'     => true,
-            $groupClassNameLabel   => (bool) $groupClassNameLabel,
-            $idClassNameGroupLabel => (bool) $idClassNameGroupLabel,
-            $hasTitleClassName     => (bool) $hasTitleClassName,
-        ]);
-        $groupContentClassNames = self::getClassNames([
-            'inn-group__content'     => true,
-            $idClassNameGroupContent => (bool) $idClassNameGroupContent,
-            $hasTitleClassName       => (bool) $hasTitleClassName,
-        ]);
-
-        return <<<HTML
-<div class="{$groupContainerClassNames}">
-    <div class="{$groupClassNames}">
-        <div class="{$groupLabelClassNames}" {$title}>{$item['label']}</div>
-        <div class="{$groupContentClassNames}" {$title}>{$item['content']}</div>
-    </div>
-</div>
-HTML;
-    }
-
-    public static function dieJson(array $data)
-    {
-        \header('Content-Type: application/json');
-        \header('Expires: 0');
-        \header('Last-Modified: ' . \gmdate('D, d M Y H:i:s') . ' GMT');
-        \header('Cache-Control: no-store, no-cache, must-revalidate');
-        \header('Pragma: no-cache');
-
-        die(\json_encode(\array_merge([
-            'code' => 0,
-            'data' => null,
-        ], $data)));
-    }
-
-    public static function isAction($action)
-    {
-        return \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING) === $action;
-    }
-
     public static function getWinCpuUsage()
     {
-        $cpus = [];
+        $cpus = array();
 
         // com
         if (\class_exists('\\COM')) {
+            // need help
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
 
-            $cpus = [];
+            $cpus = array();
 
             $total = 0;
 
@@ -186,7 +37,7 @@ HTML;
             $cpus['user'] = $total;
         // exec
         } else {
-            $p = [];
+            $p = array();
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
@@ -203,7 +54,7 @@ HTML;
     {
         $filePath = '/proc/net/dev';
 
-        if ( ! \is_readable($filePath)) {
+        if ( ! @\is_readable($filePath)) {
             return null;
         }
 
@@ -215,26 +66,19 @@ HTML;
 
         $lines = \file($filePath);
         unset($lines[0], $lines[1]);
-        $eths = [];
+        $eths = array();
 
         foreach ($lines as $line) {
             $line              = \preg_replace('/\s+/', ' ', \trim($line));
             $lineArr           = \explode(':', $line);
             $numberArr         = \explode(' ', \trim($lineArr[1]));
-            $eths[$lineArr[0]] = [
+            $eths[$lineArr[0]] = array(
                 'rx' => (int) $numberArr[0],
                 'tx' => (int) $numberArr[8],
-            ];
+            );
         }
 
         return $eths;
-    }
-
-    public static function getBtn($tx, $url)
-    {
-        return <<<HTML
-<a href="{$url}" target="_blank" class="btn">{$tx}</a>
-HTML;
     }
 
     public static function getDiskTotalSpace($human = false)
@@ -272,7 +116,7 @@ HTML;
         $filePath = '/proc/cpuinfo';
 
         if ( ! @\is_readable($filePath)) {
-            return I18nApi::_('Unavailable');
+            return '';
         }
 
         $content = \file_get_contents($filePath);
@@ -284,7 +128,7 @@ HTML;
         $cacheSize = \explode(':', $lines[8]);
         $cacheSize = \trim($cacheSize[1]);
 
-        return "{$cores} x {$modelName} / " . \sprintf(I18nApi::_('%s cache'), $cacheSize);
+        return "{$cores} x {$modelName} / " . \sprintf('%s cache', $cacheSize);
     }
 
     public static function getServerTime()
@@ -302,12 +146,12 @@ HTML;
         $filePath = '/proc/uptime';
 
         if ( ! @\is_file($filePath)) {
-            return [
+            return array(
                 'days'  => 0,
                 'hours' => 0,
                 'mins'  => 0,
                 'secs'  => 0,
-            ];
+            );
         }
 
         $str   = \file_get_contents($filePath);
@@ -320,12 +164,12 @@ HTML;
         $num   = (int) ($num / 24);
         $days  = (int) $num;
 
-        return [
+        return array(
             'days'  => $days,
             'hours' => $hours,
             'mins'  => $mins,
             'secs'  => $secs,
-        ];
+        );
     }
 
     public static function getErrNameByCode($code)
@@ -334,7 +178,7 @@ HTML;
             return '';
         }
 
-        $levels = [
+        $levels = array(
             \E_ALL               => 'E_ALL',
             \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
             \E_DEPRECATED        => 'E_DEPRECATED',
@@ -351,7 +195,7 @@ HTML;
             \E_PARSE             => 'E_PARSE',
             \E_WARNING           => 'E_WARNING',
             \E_ERROR             => 'E_ERROR',
-        ];
+        );
 
         $result = '';
 
@@ -364,37 +208,6 @@ HTML;
         return $result;
     }
 
-    public static function alert($isOk, $text = '')
-    {
-        $isOk = (bool) $isOk;
-
-        switch ($isOk) {
-        case true:
-            $status = 'ok';
-            $icon   = '&check;';
-            break;
-        case false:
-            $status = 'error';
-            $icon   = '&times;';
-            break;
-        default:
-            $icon = '';
-        }
-
-        if ($text) {
-            $text = <<<HTML
-<div class="inn-alert__text">{$text}</div>
-HTML;
-        }
-
-        return <<<HTML
-<div class="inn-alert is-{$status}">
-    <div class="inn-alert__icon">{$icon}</div>
-    {$text}
-</div>
-HTML;
-    }
-
     public static function isWin()
     {
         return \PHP_OS === 'WINNT';
@@ -402,7 +215,7 @@ HTML;
 
     public static function getClientIp()
     {
-        $keys = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
+        $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
 
         foreach ($keys as $key) {
             if ( ! isset($_SERVER[$key])) {
@@ -437,7 +250,7 @@ HTML;
         $filePath = ('/proc/stat');
 
         if ( ! @\is_readable($filePath)) {
-            $cpu = [];
+            $cpu = array();
 
             return $cpu;
         }
@@ -447,13 +260,13 @@ HTML;
         $stat2       = \file($filePath);
         $info1       = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0]));
         $info2       = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0]));
-        $dif         = [];
+        $dif         = array();
         $dif['user'] = $info2[0] - $info1[0];
         $dif['nice'] = $info2[1] - $info1[1];
         $dif['sys']  = $info2[2] - $info1[2];
         $dif['idle'] = $info2[3] - $info1[3];
         $total       = \array_sum($dif);
-        $cpu         = [];
+        $cpu         = array();
 
         foreach ($dif as $x => $y) {
             $cpu[$x] = \round($y / $total * 100, 1);
@@ -462,37 +275,17 @@ HTML;
         return $cpu;
     }
 
-    public static function getHumanCpuUsageDetail()
-    {
-        $cpu = self::getCpuUsage();
-
-        if ( ! $cpu) {
-            return '';
-        }
-
-        $html = '';
-
-        foreach ($cpu as $k => $v) {
-            $html .= <<<HTML
-<span class="inn-small-group"><span class="item-name">{$k}</span>
-<span class="item-value">{$v}</span></span>
-HTML;
-        }
-
-        return $html;
-    }
-
     public static function getHumanCpuUsage()
     {
         $cpu = self::getCpuUsage();
 
-        return $cpu ?: [];
+        return $cpu ?: array();
     }
 
     public static function getSysLoadAvg()
     {
         if (self::isWin()) {
-            return [0, 0, 0];
+            return array(0, 0, 0);
         }
 
         return \array_map(function ($load) {
@@ -520,12 +313,12 @@ HTML;
             }
 
             $memInfo = \file_get_contents($memInfoFile);
-            $memInfo = \str_replace([
+            $memInfo = \str_replace(array(
                 ' kB',
                 '  ',
-            ], '', $memInfo);
+            ), '', $memInfo);
 
-            $lines = [];
+            $lines = array();
 
             foreach (\explode("\n", $memInfo) as $line) {
                 if ( ! $line) {
@@ -578,7 +371,7 @@ HTML;
         }
 
         $base     = \log($bytes, 1024);
-        $suffixes = ['', ' K', ' M', ' G', ' T'];
+        $suffixes = array('', ' K', ' M', ' G', ' T');
 
         return \round(\pow(1024, ($base - \floor($base))), $precision) . $suffixes[\floor($base)];
     }

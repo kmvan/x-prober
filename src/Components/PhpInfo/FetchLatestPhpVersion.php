@@ -11,7 +11,7 @@ class FetchLatestPhpVersion extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -42,10 +42,10 @@ class FetchLatestPhpVersion extends PhpInfoConstants
             $response->dieJson();
         }
 
-        $response->setData([
+        $response->setData(array(
             'version' => $version,
             'date'    => $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['date'],
-        ]);
+        ));
         $response->dieJson();
     }
 }

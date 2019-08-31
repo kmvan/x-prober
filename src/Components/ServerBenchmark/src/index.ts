@@ -3,9 +3,9 @@ import { gettext } from '~components/Language/src'
 import component from './components'
 
 CardStore.addCard({
-  id: 'serverBechmark',
-  title: gettext('Server Bechmark'),
-  tinyTitle: gettext('Bechmark'),
+  id: 'serverBenchmark',
+  title: gettext('Server Benchmark'),
+  tinyTitle: gettext('Becnhmark'),
   priority: 800,
   component,
 })

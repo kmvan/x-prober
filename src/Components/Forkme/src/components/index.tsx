@@ -12,7 +12,7 @@ const ForkmeLink = styled.a`
   background: ${DARK_COLOR};
   color: #fffc;
   font-family: Arial Black;
-  padding: calc(${GUTTER} / 2) calc(${GUTTER} * 2);
+  padding: calc(${GUTTER} / 3) calc(${GUTTER} * 2);
   transform: rotate(-45deg) translate(-30%, -50%);
   font-size: 0.7rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);

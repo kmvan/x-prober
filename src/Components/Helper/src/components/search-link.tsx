@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DARK_COLOR } from '~components/Config/src'
+import { DARK_COLOR, GUTTER } from '~components/Config/src'
 
 const A = styled.a`
   margin: 0 0.2rem 0.2rem 0;
   background: #3333330d;
   padding: 0 0.3rem;
-  border-radius: 1rem;
+  border-radius: ${GUTTER};
   font-family: consolas;
   :hover {
     background: ${DARK_COLOR};

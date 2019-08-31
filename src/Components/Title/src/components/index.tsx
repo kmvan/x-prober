@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { BORDER_RADOIS } from '~components/Config/src/index'
+import { BORDER_RADOIS, GUTTER } from '~components/Config/src/index'
 import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
 import UpdaterLink from '~components/Updater/src/components/updater-link'
 
-export const TitleH1 = styled.h1`
+export const TitleContainer = styled.h1`
   background: #333;
   position: fixed;
-  top: 1rem;
+  top: ${GUTTER};
   left: 50%;
   transform: translateX(-50%);
   justify-content: center;
@@ -17,7 +17,7 @@ export const TitleH1 = styled.h1`
   margin: 0;
   min-width: 60vw;
   width: 50vw;
-  font-size: 1rem;
+  font-size: ${GUTTER};
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADOIS} ${BORDER_RADOIS};
   box-shadow: inset 0 -7px 20px -7px rgba(0, 0, 0, 0.3);
@@ -25,7 +25,7 @@ export const TitleH1 = styled.h1`
 `
 export const TitleLink = styled.a`
   display: block;
-  padding: 0 1rem 1rem;
+  padding: 0 ${GUTTER} ${GUTTER};
   color: #fff;
   &:hover {
     color: #fff;
@@ -36,7 +36,7 @@ class Title extends Component {
   public render() {
     return (
       <>
-        <TitleH1>
+        <TitleContainer>
           {UpdaterStore.newVersion ? (
             <UpdaterLink />
           ) : (
@@ -44,7 +44,7 @@ class Title extends Component {
               {`X Prober v${BootstrapStore.version}`}
             </TitleLink>
           )}
-        </TitleH1>
+        </TitleContainer>
       </>
     )
   }

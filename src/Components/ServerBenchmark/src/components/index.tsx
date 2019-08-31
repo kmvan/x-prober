@@ -7,39 +7,41 @@ import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK, TOO_MANY_REQUESTS } from '~components/Restful/src/http-status'
-import { template, get } from 'lodash-es'
+import { template } from 'lodash-es'
 import CardError from '~components/Card/src/components/error'
+import CardRuby from '~components/Card/src/components/card-ruby'
 
 @observer
 class ServerBenchmark extends Component {
   public onClick = async () => {
-    const { isLoading, totalMarks } = store
+    const { isLoading, setIsLoading, setMarks, setLinkText } = store
 
     if (isLoading) {
       return false
     }
 
-    store.setLinkText(gettext('Testing, please wait...'))
-    store.setIsLoading(true)
+    setLinkText(gettext('⏳ Testing, please wait...'))
+    setIsLoading(true)
 
     await restfulFetch('benchmark')
-      .then(([{ status }, { points, total, seconds }]) => {
+      .then(([{ status }, { marks, seconds }]) => {
         if (status === OK) {
-          store.setMarks(points)
-          store.setLinkText(`✓ ${total.toLocaleString()}`)
+          setMarks(marks)
+          setLinkText('')
         } else if (status === TOO_MANY_REQUESTS) {
-          const msg = totalMarks
-            ? template(gettext('Please wait <%= seconds %>'))({ seconds }) +
-              ` (${totalMarks})`
-            : template(gettext('Please wait <%= seconds %>'))({ seconds })
-          store.setLinkText(msg)
+          const secondsMsg = template(
+            gettext('⏳ Please wait <%= seconds %>s')
+          )({
+            seconds,
+          })
+          setLinkText(secondsMsg)
         }
       })
       .catch(err => {
-        store.setLinkText(gettext('Error'))
+        setLinkText(gettext('Network error, please try again later.'))
       })
 
-    store.setIsLoading(false)
+    setIsLoading(false)
   }
 
   private renderItems() {
@@ -55,7 +57,11 @@ class ServerBenchmark extends Component {
 
     const items = appConfig.BENCHMARKS || []
 
-    return items.map(({ label, total, url, date, proberUrl, detail }) => {
+    return items.map(({ name, url, date, proberUrl, binUrl, detail }) => {
+      if (!detail) {
+        return
+      }
+
       const { hash, intLoop, floatLoop, ioLoop } = detail || {
         hash: 0,
         intLoop: 0,
@@ -63,38 +69,101 @@ class ServerBenchmark extends Component {
         ioLoop: 0,
       }
 
-      const title = url ? (
-        <a href={url} target='_blank'>
-          {label}
+      const proberLink = proberUrl ? (
+        <a
+          href={proberUrl}
+          target='_blank'
+          title={gettext('Visit prober page')}
+        >
+          {' 🔗 '}
         </a>
       ) : (
-        label
+        ''
+      )
+
+      const binLink = binUrl ? (
+        <a href={binUrl} target='_blank' title={gettext('Download speed test')}>
+          {' ⬇️ '}
+        </a>
+      ) : (
+        ''
+      )
+
+      const title = (
+        <a
+          href={url}
+          target='_blank'
+          title={gettext('Visit the official website')}
+        >
+          {name}
+        </a>
       )
 
       return (
-        <CardGrid key={label} title={title} tablet={[1, 2]} mobileSm={[1, 3]}>
-          {total ||
-            `${hash}+${intLoop}+${floatLoop}+${ioLoop}=${hash +
-              intLoop +
-              floatLoop +
-              ioLoop}`}
+        <CardGrid key={name} title={title} tablet={[1, 2]} desktopSm={[1, 3]}>
+          {this.renderResult({
+            hash,
+            intLoop,
+            floatLoop,
+            ioLoop,
+            date,
+          })}
+          {proberLink}
+          {binLink}
         </CardGrid>
       )
     })
   }
 
+  private renderResult({
+    hash,
+    intLoop,
+    floatLoop,
+    ioLoop,
+    date,
+  }: {
+    hash: number
+    intLoop: number
+    floatLoop: number
+    ioLoop: number
+    date?: string
+  }) {
+    return (
+      <>
+        <CardRuby ruby={hash.toLocaleString()} rt='HASH' />
+        {' + '}
+        <CardRuby ruby={intLoop.toLocaleString()} rt='INT' />
+        {' + '}
+        <CardRuby ruby={floatLoop.toLocaleString()} rt='FLOAT' />
+        {' + '}
+        <CardRuby ruby={ioLoop.toLocaleString()} rt='IO' />
+        {' = '}
+        <CardRuby
+          isResult={true}
+          ruby={(hash + intLoop + floatLoop + ioLoop).toLocaleString()}
+          rt={date || ''}
+        />
+      </>
+    )
+  }
+
+  private renderTestBtn() {
+    const { marks, linkText } = store
+
+    const marksText = marks ? this.renderResult(marks) : ''
+    return (
+      <CardGrid title={gettext('My server')} tablet={[1, 2]} desktopSm={[1, 3]}>
+        <a onClick={this.onClick}>
+          {linkText} {marksText}
+        </a>
+      </CardGrid>
+    )
+  }
+
   public render() {
     return (
       <Row>
-        <CardGrid
-          title={gettext('My server')}
-          tablet={[1, 2]}
-          mobileSm={[1, 3]}
-        >
-          <a onClick={this.onClick} title={store.linkTitle}>
-            {store.linkText}
-          </a>
-        </CardGrid>
+        {this.renderTestBtn()}
         {this.renderItems()}
       </Row>
     )

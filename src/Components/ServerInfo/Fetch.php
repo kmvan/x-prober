@@ -9,20 +9,20 @@ class Fetch extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('fetch', [$this, 'filter']);
+        EventsApi::on('fetch', array($this, 'filter'));
     }
 
     public function filter(array $items)
     {
-        $items[$this->ID] = [
+        $items[$this->ID] = array(
             'serverTime'    => HelperApi::getServerTime(),
             'serverUptime'  => HelperApi::getServerUptime(),
             'serverUtcTime' => HelperApi::getServerUtcTime(),
-            'diskUsage'     => [
+            'diskUsage'     => array(
                 'value' => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
                 'max'   => HelperApi::getDiskTotalSpace(),
-            ],
-        ];
+            ),
+        );
 
         return $items;
     }

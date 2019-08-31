@@ -11,7 +11,7 @@ class Updater
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -43,12 +43,16 @@ class Updater
             $response->dieJson();
         }
 
+        // prevent update file on dev mode
+        if (\XPROBER_IS_DEV) {
+            $response->dieJson();
+        }
+
         if ((bool) \file_put_contents(__FILE__, $code)) {
             if (\function_exists('\\opcache_compile_file')) {
                 @\opcache_compile_file(__FILE__) || \opcache_reset();
             }
 
-            // success
             $response->dieJson();
         }
 

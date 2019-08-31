@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { gettext } from '~components/Language/src'
 import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import store from '../stores'
@@ -11,17 +10,17 @@ class Database extends Component {
   public render() {
     const { conf } = store
     const shortItems: any[] = [
-      [gettext('SQLite3'), conf.sqlite3],
-      [gettext('SQLite'), conf.sqliteLibversion],
-      [gettext('MySQLi client'), conf.mysqliClientVersion],
-      [gettext('Mongo'), conf.mongo],
-      [gettext('MongoDB'), conf.mongoDb],
-      [gettext('PostgreSQL'), conf.postgreSql],
-      [gettext('Paradox'), conf.paradox],
-      [gettext('MS SQL'), conf.msSql],
-      [gettext('File Pro'), conf.filePro],
-      [gettext('MaxDB client'), conf.maxDbClient],
-      [gettext('MaxDB server'), conf.maxDbServer],
+      ['SQLite3', conf.sqlite3],
+      ['SQLite', conf.sqliteLibversion],
+      ['MySQLi client', conf.mysqliClientVersion],
+      ['Mongo', conf.mongo],
+      ['MongoDB', conf.mongoDb],
+      ['PostgreSQL', conf.postgreSql],
+      ['Paradox', conf.paradox],
+      ['MS SQL', conf.msSql],
+      ['File Pro', conf.filePro],
+      ['MaxDB client', conf.maxDbClient],
+      ['MaxDB server', conf.maxDbServer],
     ]
 
     return (

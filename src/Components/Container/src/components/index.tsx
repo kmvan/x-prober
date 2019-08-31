@@ -7,14 +7,20 @@ const Div = styled.div`
   ${Object.entries(breakPoints).map(([id, px]) => {
     return css`
       @media ${device(id)} {
-        padding-left: ${GUTTER};
-        padding-right: ${GUTTER};
         max-width: ${px};
-        margin-left: auto;
-        margin-right: auto;
       }
     `
   })}
+
+  margin-left:  auto;
+  margin-right: auto;
+  padding-left: calc(${GUTTER} / 2);
+  padding-right: calc (${GUTTER} / 2);
+
+  @media ${device('tablet')} {
+    padding-left: ${GUTTER};
+    padding-right: ${GUTTER};
+  }
 `
 
 const Container = props => {

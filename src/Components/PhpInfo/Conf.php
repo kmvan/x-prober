@@ -8,12 +8,12 @@ class Conf extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'version'              => \PHP_VERSION,
             'sapi'                 => \PHP_SAPI,
             'displayErrors'        => (bool) \ini_get('display_errors'),
@@ -28,7 +28,7 @@ class Conf extends PhpInfoConstants
             'smtp'                 => (bool) \ini_get('SMTP'),
             'disableFunctions'     => \array_filter(\explode(',', (string) \ini_get('disable_functions'))),
             'disableClasses'       => \array_filter(\explode(',', (string) \ini_get('disable_classes'))),
-        ];
+        );
 
         return $conf;
     }

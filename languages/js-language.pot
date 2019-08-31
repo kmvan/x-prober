@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-05-14 23:12+0800\n"
+"POT-Creation-Date: 2019-08-31 20:28+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -14,404 +14,258 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _\n"
+"X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Benchmark/Benchmark.php:32
-#, php-format
-msgid "Please wait %ds"
+#: Components/Config/src/stores/index.ts:43
+msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
 
-#: Components/Database/Database.php:21
+#: Components/Database/src/index.ts:7
 msgid "Database"
 msgstr ""
 
-#: Components/Database/Database.php:22
+#: Components/Database/src/index.ts:8
 msgid "DB"
 msgstr ""
 
-#: Components/Database/Database.php:44
-msgid "SQLite3"
+#: Components/Fetch/src/stores/index.ts:26
+msgid "Fetch error, please refresh page."
 msgstr ""
 
-#: Components/Database/Database.php:52
-msgid "SQLite"
-msgstr ""
-
-#: Components/Database/Database.php:57
-msgid "MySQLi client"
-msgstr ""
-
-#: Components/Database/Database.php:61
-msgid "Mongo"
-msgstr ""
-
-#: Components/Database/Database.php:65
-msgid "MongoDB"
-msgstr ""
-
-#: Components/Database/Database.php:69
-msgid "PostgreSQL"
-msgstr ""
-
-#: Components/Database/Database.php:73
-msgid "Paradox"
-msgstr ""
-
-#: Components/Database/Database.php:77
-msgid "Microsoft SQL Server Driver for PHP"
-msgstr ""
-
-#: Components/Database/Database.php:78
-msgid "MS SQL"
-msgstr ""
-
-#: Components/Database/Database.php:82
-msgid "File Pro"
-msgstr ""
-
-#: Components/Database/Database.php:86
-msgid "MaxDB client"
-msgstr ""
-
-#: Components/Database/Database.php:90
-msgid "MaxDB server"
-msgstr ""
-
-#: Components/Footer/Footer.php:29
-#, php-format
-msgid "Generator %s"
-msgstr ""
-
-#: Components/Footer/Footer.php:35
-#, php-format
-msgid "Author %s"
-msgstr ""
-
-#: Components/Footer/Footer.php:55
-msgid "STAR 🌟 ME"
-msgstr ""
-
-#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
-#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
-msgid "Unavailable"
-msgstr ""
-
-#: Components/Helper/HelperApi.php:287
-#, php-format
-msgid "%s cache"
-msgstr ""
-
-#: Components/Helper/HelperApi.php:314
-#, php-format
-msgid "%1$dd %2$dh %3$dm %4$ds"
-msgstr ""
-
-#: Components/MyInfo/MyInfo.php:24
-#, php-format
-msgid "Min/Avg/Max = %s"
-msgstr ""
-
-#: Components/MyInfo/MyInfo.php:25
-#, php-format
-msgid "Times: %d"
-msgstr ""
-
-#: Components/MyInfo/MyInfo.php:35
-msgid "My information"
-msgstr ""
-
-#: Components/MyInfo/MyInfo.php:36
-msgid "Mine"
-msgstr ""
-
-#: Components/MyInfo/MyInfo.php:47
+#: Components/MyInfo/src/components/index.tsx:13
 msgid "My IP"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:52
+#: Components/MyInfo/src/components/index.tsx:14
 msgid "My browser UA"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:57
-msgid "My browser language"
+#: Components/MyInfo/src/components/index.tsx:15
+msgid "My browser languages (via JS)"
 msgstr ""
 
-#: Components/MyInfo/MyInfo.php:62
-msgid "Ping server"
+#: Components/MyInfo/src/components/index.tsx:16
+msgid "My browser languages (via PHP)"
 msgstr ""
 
-#: Components/NetworkStats/NetworkStats.php:21
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "My location"
+msgstr ""
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "In development"
+msgstr ""
+
+#: Components/MyInfo/src/index.ts:7
+msgid "My information"
+msgstr ""
+
+#: Components/MyInfo/src/index.ts:8
+msgid "Mine"
+msgstr ""
+
+#: Components/NetworkStats/src/index.ts:9
 msgid "Network stats"
 msgstr ""
 
-#: Components/NetworkStats/NetworkStats.php:22
+#: Components/NetworkStats/src/index.ts:10
 msgid "Net"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
-msgid "PHP extensions"
+#: Components/PhpExtensions/src/components/index.tsx:22
+msgid "Opcache enabled"
 msgstr ""
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
-msgid "Ext"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#, php-format
-msgid "%s enabled"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-msgid "Zend Optimizer"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
+#: Components/PhpExtensions/src/components/index.tsx:57
 msgid "Loaded extensions"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:22
-msgid "PHP information"
+#: Components/PhpExtensions/src/index.ts:7
+msgid "PHP extensions"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:23
-msgid "PHP"
+#: Components/PhpExtensions/src/index.ts:8
+msgid "Ext"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:42
-msgid "Click for detail"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:48
+#: Components/PhpInfo/src/components/index.tsx:19
 msgid "PHP info detail"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:52
-msgid "Version"
+#: Components/PhpInfo/src/components/index.tsx:21
+msgid "👆 Click for detail"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:53
-#, php-format
-msgid "X Prober builtin latest PHP stable version: %s"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Old)"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Up to date)"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:57
+#: Components/PhpInfo/src/components/index.tsx:25
 msgid "SAPI interface"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:61
+#: Components/PhpInfo/src/components/index.tsx:27
 msgid "Display errors"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:66
-msgid "Error reporting"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:71
-msgid "Max memory limit"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:76
-msgid "Max POST size"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:81
-msgid "Max upload size"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:86
-msgid "Max input variables"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:91
-msgid "Max execution time"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:96
-msgid "Timeout for socket"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:101
-msgid "Treatment URLs file"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:106
+#: Components/PhpInfo/src/components/index.tsx:41
 msgid "SMTP support"
 msgstr ""
 
-#: Components/PhpInfo/PhpInfo.php:112
-msgid "Disabled functions"
-msgstr ""
-
-#: Components/PhpInfo/PhpInfo.php:119
+#: Components/PhpInfo/src/components/index.tsx:53
 msgid "Disabled classes"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:23
-msgid "⏳ Loading..."
+#: Components/PhpInfo/src/components/php-version.tsx:37
+msgid "Visit PHP.net Official website"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:24
-msgid "❌ Error, click to retry"
+#: Components/PhpInfo/src/components/php-version.tsx:42
+msgid "(old, latest: <%= latestPhpVersion %>)"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:25
-msgid "👆 Click to test"
+#: Components/PhpInfo/src/index.ts:7
+msgid "PHP Information"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:35
-msgid "Server Benchmark"
+#: Components/PhpInfo/src/index.ts:8
+msgid "PHP"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:36
-msgid "Benchmark"
+#: Components/Ping/src/components/index.tsx:191
+msgid "Times: <%= times %>"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:45
-msgid ""
-"Higher is better. This result is only used as reference data for author "
-"testing. Note: the benchmark marks are not the only criterion for evaluating "
-"the quality of a host/server."
+#: Components/Ping/src/components/index.tsx:195
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:84
+#: Components/Ping/src/components/index.tsx:205
+msgid "⏸️ Stop ping"
+msgstr ""
+
+#: Components/Ping/src/components/index.tsx:205
+msgid "👆 Start ping"
+msgstr ""
+
+#: Components/Ping/src/index.ts:7
+msgid "Network Ping"
+msgstr ""
+
+#: Components/Ping/src/index.ts:8
+msgid "Ping"
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:23
+msgid "⏳ Testing, please wait..."
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:33
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/Updater/src/components/updater-link.tsx:39
+msgid "Network error, please try again later."
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:53
+msgid "Can not fetch marks data from GitHub."
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:76
+msgid "Visit prober page"
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:85
+msgid "Download speed test"
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:96
+msgid "Visit the official website"
+msgstr ""
+
+#: Components/ServerBenchmark/src/components/index.tsx:155
 msgid "My server"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Go to service provider homepage"
+#: Components/ServerBenchmark/src/index.ts:7
+msgid "Server Benchmark"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:115
-msgid "Go to prober page"
+#: Components/ServerBenchmark/src/index.ts:8
+msgid "Becnhmark"
 msgstr ""
 
-#: Components/ServerBenchmark/ServerBenchmark.php:123
-msgid "Download file for network speed testing"
+#: Components/ServerBenchmark/src/stores/index.ts:15
+msgid "Click to test"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:22
-msgid "Server information"
+#: Components/ServerInfo/src/components/index.tsx:20
+msgid "Unavailable"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:23
+#: Components/ServerInfo/src/components/index.tsx:25
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr ""
+
+#: Components/ServerInfo/src/index.ts:7
+msgid "Server Information"
+msgstr ""
+
+#: Components/ServerInfo/src/index.ts:8
 msgid "Info"
 msgstr ""
 
-#: Components/ServerInfo/ServerInfo.php:45
-#, php-format
-msgid "X Prober builtin latest NGINX stable version: %s"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:71
-msgid "Server name"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:76
-msgid "Server time"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:81
-msgid "Server uptime"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:85
-msgid "Server IP"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:89
-msgid "Server software"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:94
-msgid "PHP version"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:99
-msgid "CPU model"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:105
-msgid "Server OS"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:112
-msgid "Script path"
-msgstr ""
-
-#: Components/ServerInfo/ServerInfo.php:117
-msgid "Disk usage"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:20
-msgid "Server status"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:21
-msgid "Status"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:46
-msgid "System load"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:62
+#: Components/ServerStatus/src/components/cpu-usage.tsx:15
 msgid "CPU usage"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory real usage"
+#: Components/ServerStatus/src/components/cpu-usage.tsx:19
+msgid "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
 msgstr ""
 
-#: Components/ServerStatus/ServerStatus.php:95
-msgid "SWAP usage"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:114
-msgid "SWAP cached"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:127
-msgid "Memory cached"
-msgstr ""
-
-#: Components/ServerStatus/ServerStatus.php:140
+#: Components/ServerStatus/src/components/mem-buffers.tsx:14
 msgid "Memory buffers"
 msgstr ""
 
-#: Components/Updater/Updater.php:22
-#, php-format
-msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+#: Components/ServerStatus/src/components/mem-cached.tsx:14
+msgid "Memory cached"
 msgstr ""
 
-#: Components/Updater/Updater.php:23
-msgid "Updating..."
+#: Components/ServerStatus/src/components/mem-real-usage.tsx:14
+msgid "Memory real usage"
 msgstr ""
 
-#: Components/Updater/Updater.php:24
-msgid "Update error"
+#: Components/ServerStatus/src/components/swap-cached.tsx:14
+msgid "Swap cached"
 msgstr ""
 
-#: Components/Updater/Updater.php:53
-msgid "File can not update."
+#: Components/ServerStatus/src/components/swap-usage.tsx:14
+msgid "Swap usage"
 msgstr ""
 
-#: Components/Updater/Updater.php:70
-msgid "Update file not found."
+#: Components/ServerStatus/src/index.ts:7
+msgid "Server Status"
 msgstr ""
 
-#: Components/Updater/Updater.php:81
-msgid "Update success..."
+#: Components/ServerStatus/src/index.ts:8
+msgid "Status"
 msgstr ""
 
-#: Components/Updater/Updater.php:87
-msgid "Update error."
+#: Components/Updater/src/components/updater-link.tsx:30
+msgid "Can not update file, please check the server permissions and space."
+msgstr ""
+
+#: Components/Updater/src/components/updater-link.tsx:47
+msgid "Click to update"
+msgstr ""
+
+#: Components/Updater/src/stores/index.ts:38
+msgid "⏳ Updating, please wait a second..."
+msgstr ""
+
+#: Components/Updater/src/stores/index.ts:42
+msgid "❌ Update error, click here to try again?"
+msgstr ""
+
+#: Components/Updater/src/stores/index.ts:48
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
 msgstr ""

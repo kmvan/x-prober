@@ -9,34 +9,34 @@ class Conf extends ServerStatusConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'sysLoad'      => HelperApi::getSysLoadAvg(),
-            'memRealUsage' => [
+            'memRealUsage' => array(
                 'value' => HelperApi::getMemoryUsage('MemRealUsage'),
                 'max'   => HelperApi::getMemoryUsage('MemTotal'),
-            ],
-            'memBuffers' => [
+            ),
+            'memBuffers' => array(
                 'value' => HelperApi::getMemoryUsage('Buffers'),
                 'max'   => HelperApi::getMemoryUsage('MemUsage'),
-            ],
-            'memCached' => [
+            ),
+            'memCached' => array(
                 'value' => HelperApi::getMemoryUsage('Cached'),
                 'max'   => HelperApi::getMemoryUsage('MemUsage'),
-            ],
-            'swapUsage' => [
+            ),
+            'swapUsage' => array(
                 'value' => HelperApi::getMemoryUsage('SwapUsage'),
                 'max'   => HelperApi::getMemoryUsage('SwapTotal'),
-            ],
-            'swapCached' => [
+            ),
+            'swapCached' => array(
                 'value' => HelperApi::getMemoryUsage('SwapCached'),
                 'max'   => HelperApi::getMemoryUsage('SwapUsage'),
-            ],
-        ];
+            ),
+        );
 
         return $conf;
     }

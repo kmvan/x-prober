@@ -18,7 +18,7 @@ class PhpInfo extends Component {
       [
         gettext('PHP info detail'),
         <a key='phpInfoDetail' href='?action=phpInfo' target='_blank'>
-          {'👆 Click for detail'}
+          {gettext('👆 Click for detail')}
         </a>,
       ],
       [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],

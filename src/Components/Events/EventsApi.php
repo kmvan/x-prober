@@ -4,20 +4,20 @@ namespace InnStudio\Prober\Components\Events;
 
 class EventsApi
 {
-    private static $events      = [];
+    private static $events      = array();
     private static $PRIORITY_ID = 'priority';
     private static $CALLBACK_ID = 'callback';
 
     public static function on($name, $callback, $priority = 10)
     {
         if ( ! isset(self::$events[$name])) {
-            self::$events[$name] = [];
+            self::$events[$name] = array();
         }
 
-        self::$events[$name][] = [
+        self::$events[$name][] = array(
             self::$PRIORITY_ID => $priority,
             self::$CALLBACK_ID => $callback,
-        ];
+        );
     }
 
     public static function emit()
@@ -35,7 +35,7 @@ class EventsApi
             return $return;
         }
 
-        $sortArr = [];
+        $sortArr = array();
 
         foreach ($events as $k => $filter) {
             $sortArr[$k] = $filter[self::$PRIORITY_ID];
@@ -44,7 +44,7 @@ class EventsApi
         \array_multisort($sortArr, $events);
 
         foreach ($events as $filter) {
-            $return = \call_user_func_array($filter[self::$CALLBACK_ID], [$return, $args]);
+            $return = \call_user_func_array($filter[self::$CALLBACK_ID], array($return, $args));
         }
 
         return $return;

@@ -4,12 +4,12 @@ import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 
 interface IAppConfigBenchmark {
-  label: string
+  name: string
   url: string
-  date: string
-  proberUrl: string
-  total?: number
-  detail?: {
+  date?: string
+  proberUrl?: string
+  binUrl?: string
+  detail: {
     hash: number
     intLoop: number
     floatLoop: number
@@ -30,7 +30,9 @@ class ConfigStore {
   }
 
   private fetch = async () => {
-    await fetch(BootstrapStore.appConfigUrl)
+    const { isDev, appConfigUrl, appConfigUrlDev } = BootstrapStore
+
+    await fetch(isDev ? appConfigUrlDev : appConfigUrl)
       .then(res => res.json())
       .then(res => {
         this.setAppConfig(res)

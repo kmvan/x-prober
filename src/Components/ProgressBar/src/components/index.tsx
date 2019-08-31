@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import gradientColors from '~components/Helper/src/components/gradient'
 import rgbaToHex from '~components/Helper/src/components/rgbToHex'
+import { GUTTER } from '~components/Config/src'
 
 export interface IProgressBar {
   title?: string
@@ -17,7 +18,7 @@ const ProgressContainer = styled.div`
 
 const ProgressOverview = styled.div`
   position: absolute;
-  right: 1rem;
+  right: ${GUTTER};
   bottom: 0;
   z-index: 1;
   font-weight: 700;
@@ -27,7 +28,7 @@ const ProgressOverview = styled.div`
   font-family: 'Arial Black';
 `
 const ProgressPercent = styled(ProgressOverview)`
-  left: 1rem;
+  left: ${GUTTER};
   right: auto;
 `
 
@@ -37,7 +38,7 @@ const ProgressShell = styled.div`
   width: 100%;
   height: 2rem;
   background: #444;
-  border-radius: 1rem;
+  border-radius: ${GUTTER};
   box-shadow: inset 0 10px 20px ${rgbaToHex(0, 0, 0, 0.3)};
   padding: 0.35rem;
 `
@@ -49,7 +50,7 @@ interface IProgressValue {
 const ProgressValue = styled.div<IProgressValue>`
   position: relative;
   transition: all 1s;
-  border-radius: 1rem;
+  border-radius: ${GUTTER};
   background: #0c0;
   box-shadow: inset 0 -5px 10px #${rgbaToHex(0, 0, 0, 0.4)},
     0 5px 10px 0 #${rgbaToHex(0, 0, 0, 0.3)};

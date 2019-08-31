@@ -4,15 +4,16 @@ global.__DEV__ = process.env.WEBPACK_ENV === 'development'
 global.__TEST__ = process.env.WEBPACK_ENV === 'test'
 
 const __DEV__ = global.__DEV__
+const __TEST__ = global.__TEST__
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const node_modules = path.resolve(__dirname, 'node_modules')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
-const glob = require('glob')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ShakePlugin = require('webpack-common-shake')
+const TerserPlugin = require('terser-webpack-plugin')
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
+  .default
+const styledComponentsTransformer = createStyledComponentsTransformer()
 
 console.log(`Run in ${process.env.WEBPACK_ENV}`)
 
@@ -40,12 +41,6 @@ let plugins = [
   new CleanWebpackPlugin({
     cleanOnceBeforeBuildPatterns: ['.tmp'],
   }),
-  // new ExtractTextPlugin({
-  //   filename: getPath => {
-  //     return getPath('[name].css')
-  //   },
-  //   allChunks: true,
-  // }),
   new LodashModuleReplacementPlugin({
     shorthands: true,
     collections: true,
@@ -56,18 +51,7 @@ let plugins = [
 
 // dev plugins
 if (!__DEV__) {
-  plugins = plugins.concat([
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    // new webpack.optimize.LimitChunkCountPlugin(),
-    // new OptimizeCssAssetsPlugin({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: require('cssnano'),
-    //   cssProcessorOptions: {
-    //     discardComments: { removeAll: true },
-    //   },
-    //   canPrint: true,
-    // }),
-  ])
+  plugins = plugins.concat([new webpack.optimize.ModuleConcatenationPlugin()])
 }
 
 let config = {
@@ -84,8 +68,29 @@ let config = {
     publicPath: './.tmp',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.scss', '.sass', '.css'],
+    extensions: ['.ts', '.tsx', '.js'],
     alias: alias || {},
+  },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        cache: true,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+          compress: {
+            unsafe_comps: true,
+            unsafe_Function: true,
+            unsafe_math: true,
+            unsafe_methods: true,
+            unsafe_proto: true,
+            warnings: true,
+          },
+        },
+      }),
+    ],
   },
   plugins,
   module: {
@@ -97,47 +102,15 @@ let config = {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
+              getCustomTransformers: () => ({
+                before: [styledComponentsTransformer],
+              }),
             },
           },
         ],
         exclude: __DEV__ ? /node_modules/ : undefined,
         include: path.resolve(__dirname, 'src'),
       },
-      // {
-      //   test: /\.(scss)$/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: 'style-loader',
-      //     use: [
-      //       {
-      //         loader: 'css-loader',
-      //         options: {
-      //           sourceMap: __DEV__,
-      //           //   minimize: !__DEV__,
-      //         },
-      //       },
-      //       {
-      //         loader: 'postcss-loader',
-      //         options: {
-      //           sourceMap: __DEV__,
-      //           ident: 'postcss',
-      //           plugins: () => [
-      //             require('postcss-flexbugs-fixes')(),
-      //             require('postcss-preset-env')({
-      //               stage: 0,
-      //             }),
-      //             require('autoprefixer')(),
-      //           ],
-      //         },
-      //       },
-      //       {
-      //         loader: 'sass-loader',
-      //         options: {
-      //           sourceMap: __DEV__,
-      //         },
-      //       },
-      //     ],
-      //   }),
-      // },
       {
         test: /\.(png|jpg|gif)$/i,
         use: [

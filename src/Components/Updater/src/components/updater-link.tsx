@@ -13,7 +13,7 @@ import restfulFetch from '~components/Fetch/src/restful-fetch'
 @observer
 class UpdaterLink extends Component {
   private onClick = async () => {
-    const { setIsUpdating } = store
+    const { setIsUpdating, setIsUpdateError } = store
 
     setIsUpdating(true)
 
@@ -31,17 +31,23 @@ class UpdaterLink extends Component {
               )
             )
             setIsUpdating(false)
+            setIsUpdateError(true)
             return
         }
       })
       .catch(err => {
         alert(gettext('Network error, please try again later.'))
         setIsUpdating(false)
+        setIsUpdateError(true)
       })
   }
 
   public render() {
-    return <TitleLink onClick={this.onClick}>{store.notiText}</TitleLink>
+    return (
+      <TitleLink title={gettext('Click to update')} onClick={this.onClick}>
+        {store.notiText}
+      </TitleLink>
+    )
   }
 }
 

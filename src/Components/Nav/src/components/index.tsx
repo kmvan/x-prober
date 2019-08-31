@@ -3,14 +3,14 @@ import { observer } from 'mobx-react'
 import CardStore from '~components/Card/src/stores'
 import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
-import { DARK_COLOR } from '~components/Config/src'
+import { DARK_COLOR, GUTTER } from '~components/Config/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 
 const NavContainer = styled.div`
   position: fixed;
   bottom: 0;
   background: ${DARK_COLOR};
-  padding: 0 1rem;
+  padding: 0 ${GUTTER};
   left: 0;
   right: 0;
   z-index: 10;
@@ -27,7 +27,7 @@ const NavLink = styled.a`
   padding: 0.3rem 0.5rem;
   border-right: 1px solid #ffffff0d;
   @media ${device('tablet')} {
-    padding: 0.3rem 1rem;
+    padding: 0.3rem ${GUTTER};
   }
   :hover {
     background: #f8f8f8;

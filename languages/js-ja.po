@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-05-14 23:08+0800\n"
-"PO-Revision-Date: 2019-05-14 23:10+0800\n"
+"POT-Creation-Date: 2019-08-31 20:28+0800\n"
+"PO-Revision-Date: 2019-08-31 20:28+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
 "Language: ja\n"
@@ -13,407 +13,396 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _\n"
+"X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Benchmark/Benchmark.php:32
-#, php-format
-msgid "Please wait %ds"
-msgstr "%d 秒お待ちください"
+#: Components/Config/src/stores/index.ts:43
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr ""
+"エラー：リモート設定データを取得できません。更新チェッカーが無効になってい"
+"ます。"
 
-#: Components/Database/Database.php:21
+#: Components/Database/src/index.ts:7
 msgid "Database"
 msgstr "データベース"
 
-#: Components/Database/Database.php:22
+#: Components/Database/src/index.ts:8
 msgid "DB"
-msgstr ""
+msgstr "DB"
 
-#: Components/Database/Database.php:44
-msgid "SQLite3"
-msgstr ""
+#: Components/Fetch/src/stores/index.ts:26
+msgid "Fetch error, please refresh page."
+msgstr "取得エラー。ページを更新してください。"
 
-#: Components/Database/Database.php:52
-msgid "SQLite"
-msgstr ""
-
-#: Components/Database/Database.php:57
-msgid "MySQLi client"
-msgstr ""
-
-#: Components/Database/Database.php:61
-msgid "Mongo"
-msgstr ""
-
-#: Components/Database/Database.php:65
-msgid "MongoDB"
-msgstr ""
-
-#: Components/Database/Database.php:69
-msgid "PostgreSQL"
-msgstr ""
-
-#: Components/Database/Database.php:73
-msgid "Paradox"
-msgstr ""
-
-#: Components/Database/Database.php:77
-msgid "Microsoft SQL Server Driver for PHP"
-msgstr ""
-
-#: Components/Database/Database.php:78
-msgid "MS SQL"
-msgstr ""
-
-#: Components/Database/Database.php:82
-msgid "File Pro"
-msgstr ""
-
-#: Components/Database/Database.php:86
-msgid "MaxDB client"
-msgstr ""
-
-#: Components/Database/Database.php:90
-msgid "MaxDB server"
-msgstr ""
-
-#: Components/Footer/Footer.php:29
-#, php-format
-msgid "Generator %s"
-msgstr "ジェネレータ %s"
-
-#: Components/Footer/Footer.php:35
-#, php-format
-msgid "Author %s"
-msgstr "作成者 %s"
-
-#: Components/Footer/Footer.php:55
-msgid "STAR 🌟 ME"
-msgstr ""
-
-#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
-#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
-msgid "Unavailable"
-msgstr "利用不可"
-
-#: Components/Helper/HelperApi.php:287
-#, php-format
-msgid "%s cache"
-msgstr "%s キャッシュ"
-
-#: Components/Helper/HelperApi.php:314
-#, php-format
-msgid "%1$dd %2$dh %3$dm %4$ds"
-msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
-
-#: Components/MyInfo/MyInfo.php:24
-#, php-format
-msgid "Min/Avg/Max = %s"
-msgstr "最小/平均/最大 = %s"
-
-#: Components/MyInfo/MyInfo.php:25
-#, php-format
-msgid "Times: %d"
-msgstr "回数：%d"
-
-#: Components/MyInfo/MyInfo.php:35
-msgid "My information"
-msgstr "私の情報"
-
-#: Components/MyInfo/MyInfo.php:36
-msgid "Mine"
-msgstr "私の"
-
-#: Components/MyInfo/MyInfo.php:47
+#: Components/MyInfo/src/components/index.tsx:13
 msgid "My IP"
 msgstr "私のIP"
 
-#: Components/MyInfo/MyInfo.php:52
+#: Components/MyInfo/src/components/index.tsx:14
 msgid "My browser UA"
 msgstr "私のブラウザ UA"
 
-#: Components/MyInfo/MyInfo.php:57
-msgid "My browser language"
-msgstr "私のブラウザの言語"
+#: Components/MyInfo/src/components/index.tsx:15
+msgid "My browser languages (via JS)"
+msgstr "私のブラウザの言語（JS）"
 
-#: Components/MyInfo/MyInfo.php:62
-msgid "Ping server"
-msgstr "Ping サーバー"
+#: Components/MyInfo/src/components/index.tsx:16
+msgid "My browser languages (via PHP)"
+msgstr "私のブラウザの言語（PHP）"
 
-#: Components/NetworkStats/NetworkStats.php:21
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "My location"
+msgstr "私の場所"
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "In development"
+msgstr "開発中"
+
+#: Components/MyInfo/src/index.ts:7
+msgid "My information"
+msgstr "私の情報"
+
+#: Components/MyInfo/src/index.ts:8
+msgid "Mine"
+msgstr "私の"
+
+#: Components/NetworkStats/src/index.ts:9
 msgid "Network stats"
 msgstr "ネットワーク統計"
 
-#: Components/NetworkStats/NetworkStats.php:22
+#: Components/NetworkStats/src/index.ts:10
 msgid "Net"
-msgstr ""
+msgstr "ネット"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
-msgid "PHP extensions"
-msgstr "PHPエクステンション"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
-msgid "Ext"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#, php-format
-msgid "%s enabled"
+#: Components/PhpExtensions/src/components/index.tsx:22
+msgid "Opcache enabled"
 msgstr "%s 有効"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-msgid "Zend Optimizer"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
+#: Components/PhpExtensions/src/components/index.tsx:57
 msgid "Loaded extensions"
 msgstr "ロードエクステンション"
 
-#: Components/PhpInfo/PhpInfo.php:22
-msgid "PHP information"
-msgstr "PHP情報"
+#: Components/PhpExtensions/src/index.ts:7
+msgid "PHP extensions"
+msgstr "PHPエクステンション"
 
-#: Components/PhpInfo/PhpInfo.php:23
-msgid "PHP"
-msgstr ""
+#: Components/PhpExtensions/src/index.ts:8
+msgid "Ext"
+msgstr "拡張"
 
-#: Components/PhpInfo/PhpInfo.php:42
-msgid "Click for detail"
-msgstr "詳細はこちら"
-
-#: Components/PhpInfo/PhpInfo.php:48
+#: Components/PhpInfo/src/components/index.tsx:19
 msgid "PHP info detail"
 msgstr "PHP情報詳細"
 
-#: Components/PhpInfo/PhpInfo.php:52
-msgid "Version"
-msgstr "バージョン"
+#: Components/PhpInfo/src/components/index.tsx:21
+msgid "👆 Click for detail"
+msgstr "詳細はこちら"
 
-#: Components/PhpInfo/PhpInfo.php:53
-#, php-format
-msgid "X Prober builtin latest PHP stable version: %s"
-msgstr "X Prober 組み込みの最新の PHP 安定版：%s"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Old)"
-msgstr "(古い)"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Up to date)"
-msgstr "(最新)"
-
-#: Components/PhpInfo/PhpInfo.php:57
+#: Components/PhpInfo/src/components/index.tsx:25
 msgid "SAPI interface"
 msgstr "SAPI インタフェース"
 
-#: Components/PhpInfo/PhpInfo.php:61
+#: Components/PhpInfo/src/components/index.tsx:27
 msgid "Display errors"
 msgstr "エラー表示"
 
-#: Components/PhpInfo/PhpInfo.php:66
-msgid "Error reporting"
-msgstr "エラー報告"
-
-#: Components/PhpInfo/PhpInfo.php:71
-msgid "Max memory limit"
-msgstr "最大メモリ制限"
-
-#: Components/PhpInfo/PhpInfo.php:76
-msgid "Max POST size"
-msgstr "最大 POST サイズ"
-
-#: Components/PhpInfo/PhpInfo.php:81
-msgid "Max upload size"
-msgstr "最大アップロードサイズ"
-
-#: Components/PhpInfo/PhpInfo.php:86
-msgid "Max input variables"
-msgstr "最大入力変数"
-
-#: Components/PhpInfo/PhpInfo.php:91
-msgid "Max execution time"
-msgstr "最大実行時間"
-
-#: Components/PhpInfo/PhpInfo.php:96
-msgid "Timeout for socket"
-msgstr "ソケットのタイムアウト"
-
-#: Components/PhpInfo/PhpInfo.php:101
-msgid "Treatment URLs file"
-msgstr "Treatment URLs ファイル"
-
-#: Components/PhpInfo/PhpInfo.php:106
+#: Components/PhpInfo/src/components/index.tsx:41
 msgid "SMTP support"
 msgstr "SMTP サポート"
 
-#: Components/PhpInfo/PhpInfo.php:112
-msgid "Disabled functions"
-msgstr "無効な機能"
-
-#: Components/PhpInfo/PhpInfo.php:119
+#: Components/PhpInfo/src/components/index.tsx:53
 msgid "Disabled classes"
 msgstr "無効なクラス"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:23
-msgid "⏳ Loading..."
-msgstr "⏳ロード中..."
+#: Components/PhpInfo/src/components/php-version.tsx:37
+msgid "Visit PHP.net Official website"
+msgstr "PHP.net 公式ウェブサイトにアクセス"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:24
-msgid "❌ Error, click to retry"
-msgstr "❌エラー、クリックして再試行してください"
+#: Components/PhpInfo/src/components/php-version.tsx:42
+msgid "(old, latest: <%= latestPhpVersion %>)"
+msgstr "（古い、最新：<％= latestPhpVersion ％>）"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:25
-msgid "👆 Click to test"
-msgstr "👆クリックしてテスト"
+#: Components/PhpInfo/src/index.ts:7
+msgid "PHP Information"
+msgstr "PHP情報"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:35
-msgid "Server Benchmark"
-msgstr "サーバー基準"
+#: Components/PhpInfo/src/index.ts:8
+msgid "PHP"
+msgstr "PHP"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:36
-msgid "Benchmark"
-msgstr "基準"
+#: Components/Ping/src/components/index.tsx:191
+msgid "Times: <%= times %>"
+msgstr "回: <%= times %>"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:45
-msgid ""
-"Higher is better. This result is only used as reference data for author "
-"testing. Note: the benchmark marks are not the only criterion for evaluating "
-"the quality of a host/server."
-msgstr ""
-"いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用されま"
-"す。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一の基"
-"準ではありません。"
+#: Components/Ping/src/components/index.tsx:195
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小: <%= min %> / 最大: <%= max %> / 平均: <%= avg %>"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:84
+#: Components/Ping/src/components/index.tsx:205
+msgid "⏸️ Stop ping"
+msgstr "⏸️ Pingを停止"
+
+#: Components/Ping/src/components/index.tsx:205
+msgid "👆 Start ping"
+msgstr "👆 Pingを開始"
+
+#: Components/Ping/src/index.ts:7
+msgid "Network Ping"
+msgstr "ネットワークPing"
+
+#: Components/Ping/src/index.ts:8
+msgid "Ping"
+msgstr "Ping"
+
+#: Components/ServerBenchmark/src/components/index.tsx:23
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ テストしています。お待ちください..."
+
+#: Components/ServerBenchmark/src/components/index.tsx:33
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr "⏳ <%= seconds %>s 秒お待ちください"
+
+#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/Updater/src/components/updater-link.tsx:39
+msgid "Network error, please try again later."
+msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:53
+msgid "Can not fetch marks data from GitHub."
+msgstr "GitHubからマークデータを取得できません。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:76
+msgid "Visit prober page"
+msgstr "X-Prober ホームページへ"
+
+#: Components/ServerBenchmark/src/components/index.tsx:85
+msgid "Download speed test"
+msgstr "ネットワーク速度テスト用のダウンロードファイル"
+
+#: Components/ServerBenchmark/src/components/index.tsx:96
+msgid "Visit the official website"
+msgstr "公式ウェブサイトをご覧ください"
+
+#: Components/ServerBenchmark/src/components/index.tsx:155
 msgid "My server"
 msgstr "私のサーバー"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Go to service provider homepage"
-msgstr "サービス提供者ホームページへ"
+#: Components/ServerBenchmark/src/index.ts:7
+msgid "Server Benchmark"
+msgstr "サーバー基準"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:115
-msgid "Go to prober page"
-msgstr "X-Prober ホームページへ"
+#: Components/ServerBenchmark/src/index.ts:8
+msgid "Becnhmark"
+msgstr "基準"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:123
-msgid "Download file for network speed testing"
-msgstr "ネットワーク速度テスト用のダウンロードファイル"
+#: Components/ServerBenchmark/src/stores/index.ts:15
+msgid "Click to test"
+msgstr "👆クリックしてテスト"
 
-#: Components/ServerInfo/ServerInfo.php:22
-msgid "Server information"
+#: Components/ServerInfo/src/components/index.tsx:20
+msgid "Unavailable"
+msgstr "利用不可"
+
+#: Components/ServerInfo/src/components/index.tsx:25
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr "<%= days %> 日 <%= hours %> 時 <%= mins %> 分 <%= secs %> 秒"
+
+#: Components/ServerInfo/src/index.ts:7
+msgid "Server Information"
 msgstr "サーバー情報"
 
-#: Components/ServerInfo/ServerInfo.php:23
+#: Components/ServerInfo/src/index.ts:8
 msgid "Info"
 msgstr "情報"
 
-#: Components/ServerInfo/ServerInfo.php:45
-#, php-format
-msgid "X Prober builtin latest NGINX stable version: %s"
-msgstr "X Prober 組み込みの最新の NGINX 安定版：%s"
-
-#: Components/ServerInfo/ServerInfo.php:71
-msgid "Server name"
-msgstr "サーバーの名前"
-
-#: Components/ServerInfo/ServerInfo.php:76
-msgid "Server time"
-msgstr "サーバー時間"
-
-#: Components/ServerInfo/ServerInfo.php:81
-msgid "Server uptime"
-msgstr "サーバーの稼働時間"
-
-#: Components/ServerInfo/ServerInfo.php:85
-msgid "Server IP"
-msgstr "サーバー IP"
-
-#: Components/ServerInfo/ServerInfo.php:89
-msgid "Server software"
-msgstr "サーバーソフトウェア"
-
-#: Components/ServerInfo/ServerInfo.php:94
-msgid "PHP version"
-msgstr "PHP バージョン"
-
-#: Components/ServerInfo/ServerInfo.php:99
-msgid "CPU model"
-msgstr "CPUモデル"
-
-#: Components/ServerInfo/ServerInfo.php:105
-msgid "Server OS"
-msgstr "サーバー OS"
-
-#: Components/ServerInfo/ServerInfo.php:112
-msgid "Script path"
-msgstr "スクリプトパス"
-
-#: Components/ServerInfo/ServerInfo.php:117
-msgid "Disk usage"
-msgstr "ディスクの使用状況"
-
-#: Components/ServerStatus/ServerStatus.php:20
-msgid "Server status"
-msgstr "サーバーの状態"
-
-#: Components/ServerStatus/ServerStatus.php:21
-msgid "Status"
-msgstr "状態"
-
-#: Components/ServerStatus/ServerStatus.php:46
-msgid "System load"
-msgstr "システム負荷"
-
-#: Components/ServerStatus/ServerStatus.php:62
+#: Components/ServerStatus/src/components/cpu-usage.tsx:15
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-#: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory real usage"
-msgstr "実メモリ使用量"
+#: Components/ServerStatus/src/components/cpu-usage.tsx:19
+msgid ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
 
-#: Components/ServerStatus/ServerStatus.php:95
-msgid "SWAP usage"
-msgstr "SWAP 使用量"
-
-#: Components/ServerStatus/ServerStatus.php:114
-msgid "SWAP cached"
-msgstr "SWAP キャッシュ"
-
-#: Components/ServerStatus/ServerStatus.php:127
-msgid "Memory cached"
-msgstr "メモリキャッシュ"
-
-#: Components/ServerStatus/ServerStatus.php:140
+#: Components/ServerStatus/src/components/mem-buffers.tsx:14
 msgid "Memory buffers"
 msgstr "メモリバッファ"
 
-#: Components/Updater/Updater.php:22
-#, php-format
-msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
-msgstr "%1$s 更新を見つけました！ バージョン %2$s → {APP_NEW_VERSION}"
+#: Components/ServerStatus/src/components/mem-cached.tsx:14
+msgid "Memory cached"
+msgstr "メモリキャッシュ"
 
-#: Components/Updater/Updater.php:23
-msgid "Updating..."
-msgstr "更新しています..."
+#: Components/ServerStatus/src/components/mem-real-usage.tsx:14
+msgid "Memory real usage"
+msgstr "実メモリ使用量"
 
-#: Components/Updater/Updater.php:24
-msgid "Update error"
-msgstr "更新エラー"
+#: Components/ServerStatus/src/components/swap-cached.tsx:14
+msgid "Swap cached"
+msgstr "SWAP キャッシュ"
 
-#: Components/Updater/Updater.php:53
-msgid "File can not update."
-msgstr "ファイルを更新できません。"
+#: Components/ServerStatus/src/components/swap-usage.tsx:14
+msgid "Swap usage"
+msgstr "SWAP 使用量"
 
-#: Components/Updater/Updater.php:70
-msgid "Update file not found."
-msgstr "更新ファイルが見つかりません。"
+#: Components/ServerStatus/src/index.ts:7
+msgid "Server Status"
+msgstr "サーバーの状態"
 
-#: Components/Updater/Updater.php:81
-msgid "Update success..."
-msgstr "成功を更新します..."
+#: Components/ServerStatus/src/index.ts:8
+msgid "Status"
+msgstr "状態"
 
-#: Components/Updater/Updater.php:87
-msgid "Update error."
-msgstr "更新エラーです。"
+#: Components/Updater/src/components/updater-link.tsx:30
+msgid "Can not update file, please check the server permissions and space."
+msgstr ""
+"ファイルを更新できません。サーバーの権限とスペースを確認してください。"
+
+#: Components/Updater/src/components/updater-link.tsx:47
+msgid "Click to update"
+msgstr "クリックして更新"
+
+#: Components/Updater/src/stores/index.ts:38
+msgid "⏳ Updating, please wait a second..."
+msgstr "⏳ 更新しています。しばらくお待ちください..."
+
+#: Components/Updater/src/stores/index.ts:42
+msgid "❌ Update error, click here to try again?"
+msgstr "❌ 更新エラー。ここをクリックして再試行しますか？"
+
+#: Components/Updater/src/stores/index.ts:48
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr ""
+"✨ アップデートが見た！バージョン <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "Generator %s"
+#~ msgstr "ジェネレータ %s"
+
+#~ msgid "Author %s"
+#~ msgstr "作成者 %s"
+
+#~ msgid "%s cache"
+#~ msgstr "%s キャッシュ"
+
+#~ msgid "%1$dd %2$dh %3$dm %4$ds"
+#~ msgstr "%1$d日 %2$d時 %3$d分 %4$d秒"
+
+#~ msgid "Min/Avg/Max = %s"
+#~ msgstr "最小/平均/最大 = %s"
+
+#~ msgid "Times: %d"
+#~ msgstr "回数：%d"
+
+#~ msgid "Ping server"
+#~ msgstr "Ping サーバー"
+
+#~ msgid "Version"
+#~ msgstr "バージョン"
+
+#~ msgid "X Prober builtin latest PHP stable version: %s"
+#~ msgstr "X Prober 組み込みの最新の PHP 安定版：%s"
+
+#~ msgid "(Old)"
+#~ msgstr "(古い)"
+
+#~ msgid "(Up to date)"
+#~ msgstr "(最新)"
+
+#~ msgid "Error reporting"
+#~ msgstr "エラー報告"
+
+#~ msgid "Max memory limit"
+#~ msgstr "最大メモリ制限"
+
+#~ msgid "Max POST size"
+#~ msgstr "最大 POST サイズ"
+
+#~ msgid "Max upload size"
+#~ msgstr "最大アップロードサイズ"
+
+#~ msgid "Max input variables"
+#~ msgstr "最大入力変数"
+
+#~ msgid "Max execution time"
+#~ msgstr "最大実行時間"
+
+#~ msgid "Timeout for socket"
+#~ msgstr "ソケットのタイムアウト"
+
+#~ msgid "Treatment URLs file"
+#~ msgstr "Treatment URLs ファイル"
+
+#~ msgid "Disabled functions"
+#~ msgstr "無効な機能"
+
+#~ msgid "⏳ Loading..."
+#~ msgstr "⏳ロード中..."
+
+#~ msgid ""
+#~ "Higher is better. This result is only used as reference data for author "
+#~ "testing. Note: the benchmark marks are not the only criterion for "
+#~ "evaluating the quality of a host/server."
+#~ msgstr ""
+#~ "いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用"
+#~ "されます。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するため"
+#~ "の唯一の基準ではありません。"
+
+#~ msgid "Go to service provider homepage"
+#~ msgstr "サービス提供者ホームページへ"
+
+#~ msgid "X Prober builtin latest NGINX stable version: %s"
+#~ msgstr "X Prober 組み込みの最新の NGINX 安定版：%s"
+
+#~ msgid "Server name"
+#~ msgstr "サーバーの名前"
+
+#~ msgid "Server time"
+#~ msgstr "サーバー時間"
+
+#~ msgid "Server uptime"
+#~ msgstr "サーバーの稼働時間"
+
+#~ msgid "Server IP"
+#~ msgstr "サーバー IP"
+
+#~ msgid "Server software"
+#~ msgstr "サーバーソフトウェア"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP バージョン"
+
+#~ msgid "CPU model"
+#~ msgstr "CPUモデル"
+
+#~ msgid "Server OS"
+#~ msgstr "サーバー OS"
+
+#~ msgid "Script path"
+#~ msgstr "スクリプトパス"
+
+#~ msgid "Disk usage"
+#~ msgstr "ディスクの使用状況"
+
+#~ msgid "System load"
+#~ msgstr "システム負荷"
+
+#~ msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+#~ msgstr "%1$s 更新を見つけました！ バージョン %2$s → {APP_NEW_VERSION}"
+
+#~ msgid "Updating..."
+#~ msgstr "更新しています..."
+
+#~ msgid "Update error"
+#~ msgstr "更新エラー"
+
+#~ msgid "File can not update."
+#~ msgstr "ファイルを更新できません。"
+
+#~ msgid "Update file not found."
+#~ msgstr "更新ファイルが見つかりません。"
+
+#~ msgid "Update success..."
+#~ msgstr "成功を更新します..."
+
+#~ msgid "Update error."
+#~ msgstr "更新エラーです。"

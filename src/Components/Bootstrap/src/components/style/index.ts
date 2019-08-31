@@ -35,16 +35,3 @@ const normalize = css`
 const Normalize = createGlobalStyle`${normalize}`
 
 export default Normalize
-// @import "~components/Style/src/components/style/grid";
-// @import "./emoji";
-// @import "./app";
-// @import "./body";
-// @import "./html";
-// @import "./title";
-// @import "./a";
-// @import "./mod";
-// @import "./group";
-// @import "./alert";
-// @import "./progress";
-// @import "./tooltip";
-// @import "./break-normal";

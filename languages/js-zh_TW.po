@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-14 23:06+0800\n"
-"PO-Revision-Date: 2019-05-14 23:07+0800\n"
+"POT-Creation-Date: 2019-08-31 20:28+0800\n"
+"PO-Revision-Date: 2019-08-31 20:28+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
-"Language-Team: Jack Cherng <https://github.com/jfcherng>\n"
+"Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _\n"
+"X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,406 +20,408 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
 "X-Poedit-SearchPathExcluded-1: ../dist\n"
 
-#: Components/Benchmark/Benchmark.php:32
-#, php-format
-msgid "Please wait %ds"
-msgstr "請等待 %d 秒"
+#: Components/Config/src/stores/index.ts:43
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
 
-#: Components/Database/Database.php:21
+#: Components/Database/src/index.ts:7
 msgid "Database"
 msgstr "資料庫"
 
-#: Components/Database/Database.php:22
+#: Components/Database/src/index.ts:8
 msgid "DB"
 msgstr "資料庫"
 
-#: Components/Database/Database.php:44
-msgid "SQLite3"
-msgstr ""
+#: Components/Fetch/src/stores/index.ts:26
+msgid "Fetch error, please refresh page."
+msgstr "獲取錯誤，請刷新頁面。"
 
-#: Components/Database/Database.php:52
-msgid "SQLite"
-msgstr ""
-
-#: Components/Database/Database.php:57
-msgid "MySQLi client"
-msgstr ""
-
-#: Components/Database/Database.php:61
-msgid "Mongo"
-msgstr ""
-
-#: Components/Database/Database.php:65
-msgid "MongoDB"
-msgstr ""
-
-#: Components/Database/Database.php:69
-msgid "PostgreSQL"
-msgstr ""
-
-#: Components/Database/Database.php:73
-msgid "Paradox"
-msgstr ""
-
-#: Components/Database/Database.php:77
-msgid "Microsoft SQL Server Driver for PHP"
-msgstr ""
-
-#: Components/Database/Database.php:78
-msgid "MS SQL"
-msgstr ""
-
-#: Components/Database/Database.php:82
-msgid "File Pro"
-msgstr ""
-
-#: Components/Database/Database.php:86
-msgid "MaxDB client"
-msgstr ""
-
-#: Components/Database/Database.php:90
-msgid "MaxDB server"
-msgstr ""
-
-#: Components/Footer/Footer.php:29
-#, php-format
-msgid "Generator %s"
-msgstr "該頁面由 %s 生成"
-
-#: Components/Footer/Footer.php:35
-#, php-format
-msgid "Author %s"
-msgstr "作者為 %s"
-
-#: Components/Footer/Footer.php:55
-msgid "STAR 🌟 ME"
-msgstr ""
-
-#: Components/Helper/HelperApi.php:207 Components/Helper/HelperApi.php:275
-#: Components/Helper/HelperApi.php:300 Components/ServerInfo/ServerInfo.php:122
-msgid "Unavailable"
-msgstr "不可用"
-
-#: Components/Helper/HelperApi.php:287
-#, php-format
-msgid "%s cache"
-msgstr "%s 快取"
-
-#: Components/Helper/HelperApi.php:314
-#, php-format
-msgid "%1$dd %2$dh %3$dm %4$ds"
-msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
-
-#: Components/MyInfo/MyInfo.php:24
-#, php-format
-msgid "Min/Avg/Max = %s"
-msgstr "最小/平均/最大 = %s"
-
-#: Components/MyInfo/MyInfo.php:25
-#, php-format
-msgid "Times: %d"
-msgstr "次數：%d"
-
-#: Components/MyInfo/MyInfo.php:35
-msgid "My information"
-msgstr "我的訊息"
-
-#: Components/MyInfo/MyInfo.php:36
-msgid "Mine"
-msgstr "我的"
-
-#: Components/MyInfo/MyInfo.php:47
+#: Components/MyInfo/src/components/index.tsx:13
 msgid "My IP"
 msgstr "我的 IP"
 
-#: Components/MyInfo/MyInfo.php:52
+#: Components/MyInfo/src/components/index.tsx:14
 msgid "My browser UA"
 msgstr "我的瀏覽器"
 
-#: Components/MyInfo/MyInfo.php:57
-msgid "My browser language"
-msgstr "我的瀏覽器語言"
+#: Components/MyInfo/src/components/index.tsx:15
+msgid "My browser languages (via JS)"
+msgstr "我的瀏覽器語言（JS）"
 
-#: Components/MyInfo/MyInfo.php:62
-msgid "Ping server"
-msgstr "Ping 伺服器"
+#: Components/MyInfo/src/components/index.tsx:16
+msgid "My browser languages (via PHP)"
+msgstr "我的瀏覽器語言（PHP）"
 
-#: Components/NetworkStats/NetworkStats.php:21
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "My location"
+msgstr "我的位置"
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "In development"
+msgstr "開發中"
+
+#: Components/MyInfo/src/index.ts:7
+msgid "My information"
+msgstr "我的訊息"
+
+#: Components/MyInfo/src/index.ts:8
+msgid "Mine"
+msgstr "我的"
+
+#: Components/NetworkStats/src/index.ts:9
 msgid "Network stats"
 msgstr "流量統計"
 
-#: Components/NetworkStats/NetworkStats.php:22
+#: Components/NetworkStats/src/index.ts:10
 msgid "Net"
 msgstr "流量"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:21
-msgid "PHP extensions"
-msgstr "PHP 擴展"
+#: Components/PhpExtensions/src/components/index.tsx:22
+msgid "Opcache enabled"
+msgstr "OPcache 已啓用"
 
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:22
-msgid "Ext"
-msgstr "擴展"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:62
-#, php-format
-msgid "%s enabled"
-msgstr "%s 啟用"
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:114
-msgid "Zend Optimizer"
-msgstr ""
-
-#: Components/PhpExtensionInfo/PhpExtensionInfo.php:146
+#: Components/PhpExtensions/src/components/index.tsx:57
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
-#: Components/PhpInfo/PhpInfo.php:22
-msgid "PHP information"
-msgstr "PHP 訊息"
+#: Components/PhpExtensions/src/index.ts:7
+msgid "PHP extensions"
+msgstr "PHP 擴展"
 
-#: Components/PhpInfo/PhpInfo.php:23
-msgid "PHP"
-msgstr "PHP"
+#: Components/PhpExtensions/src/index.ts:8
+msgid "Ext"
+msgstr "擴展"
 
-#: Components/PhpInfo/PhpInfo.php:42
-msgid "Click for detail"
-msgstr "PHP 詳細資訊"
-
-#: Components/PhpInfo/PhpInfo.php:48
+#: Components/PhpInfo/src/components/index.tsx:19
 msgid "PHP info detail"
 msgstr "PHP 詳細訊息"
 
-#: Components/PhpInfo/PhpInfo.php:52
-msgid "Version"
-msgstr "版本"
+#: Components/PhpInfo/src/components/index.tsx:21
+msgid "👆 Click for detail"
+msgstr "👆 查看詳細"
 
-#: Components/PhpInfo/PhpInfo.php:53
-#, php-format
-msgid "X Prober builtin latest PHP stable version: %s"
-msgstr "X 探針內建最新的 PHP 正式版：%s"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Old)"
-msgstr "(舊)"
-
-#: Components/PhpInfo/PhpInfo.php:54 Components/ServerInfo/ServerInfo.php:62
-msgid "(Up to date)"
-msgstr "(最新)"
-
-#: Components/PhpInfo/PhpInfo.php:57
+#: Components/PhpInfo/src/components/index.tsx:25
 msgid "SAPI interface"
 msgstr "SAPI 介面"
 
-#: Components/PhpInfo/PhpInfo.php:61
+#: Components/PhpInfo/src/components/index.tsx:27
 msgid "Display errors"
 msgstr "顯示錯誤"
 
-#: Components/PhpInfo/PhpInfo.php:66
-msgid "Error reporting"
-msgstr "錯誤報告"
-
-#: Components/PhpInfo/PhpInfo.php:71
-msgid "Max memory limit"
-msgstr "執行記憶體限制"
-
-#: Components/PhpInfo/PhpInfo.php:76
-msgid "Max POST size"
-msgstr "POST 提交限制"
-
-#: Components/PhpInfo/PhpInfo.php:81
-msgid "Max upload size"
-msgstr "上傳檔案限制"
-
-#: Components/PhpInfo/PhpInfo.php:86
-msgid "Max input variables"
-msgstr "提交表單限制"
-
-#: Components/PhpInfo/PhpInfo.php:91
-msgid "Max execution time"
-msgstr "執行超時秒數"
-
-#: Components/PhpInfo/PhpInfo.php:96
-msgid "Timeout for socket"
-msgstr "Socket 超時秒數"
-
-#: Components/PhpInfo/PhpInfo.php:101
-msgid "Treatment URLs file"
-msgstr "檔案遠端打開"
-
-#: Components/PhpInfo/PhpInfo.php:106
+#: Components/PhpInfo/src/components/index.tsx:41
 msgid "SMTP support"
 msgstr "SMTP 支援"
 
-#: Components/PhpInfo/PhpInfo.php:112
-msgid "Disabled functions"
-msgstr "禁用的函數"
-
-#: Components/PhpInfo/PhpInfo.php:119
+#: Components/PhpInfo/src/components/index.tsx:53
 msgid "Disabled classes"
 msgstr "禁用的類"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:23
-msgid "⏳ Loading..."
-msgstr "⏳ 載入中……"
+#: Components/PhpInfo/src/components/php-version.tsx:37
+msgid "Visit PHP.net Official website"
+msgstr "訪問 PHP.net 官網"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:24
-msgid "❌ Error, click to retry"
-msgstr "❌ 錯誤，點擊重試"
+#: Components/PhpInfo/src/components/php-version.tsx:42
+msgid "(old, latest: <%= latestPhpVersion %>)"
+msgstr "（舊，最新：<%= latestPhpVersion %>）"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:25
-msgid "👆 Click to test"
-msgstr "👆 點擊測試"
+#: Components/PhpInfo/src/index.ts:7
+msgid "PHP Information"
+msgstr "PHP 資訊"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:35
-msgid "Server Benchmark"
-msgstr "伺服器性能跑分"
+#: Components/PhpInfo/src/index.ts:8
+msgid "PHP"
+msgstr "PHP"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:36
-msgid "Benchmark"
-msgstr "跑分"
+#: Components/Ping/src/components/index.tsx:191
+msgid "Times: <%= times %>"
+msgstr "次數：<%= times %>"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:45
-msgid ""
-"Higher is better. This result is only used as reference data for author "
-"testing. Note: the benchmark marks are not the only criterion for evaluating "
-"the quality of a host/server."
-msgstr ""
-"分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機"
-"或伺服器的唯一準則。"
+#: Components/Ping/src/components/index.tsx:195
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:84
+#: Components/Ping/src/components/index.tsx:205
+msgid "⏸️ Stop ping"
+msgstr "⏸️ 停止 Ping"
+
+#: Components/Ping/src/components/index.tsx:205
+msgid "👆 Start ping"
+msgstr "👆 開始 Ping"
+
+#: Components/Ping/src/index.ts:7
+msgid "Network Ping"
+msgstr "網速 Ping"
+
+#: Components/Ping/src/index.ts:8
+msgid "Ping"
+msgstr "Ping"
+
+#: Components/ServerBenchmark/src/components/index.tsx:23
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ 跑分中，請稍等……"
+
+#: Components/ServerBenchmark/src/components/index.tsx:33
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr "⏳ 請等待 <%= seconds %> 秒"
+
+#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/Updater/src/components/updater-link.tsx:39
+msgid "Network error, please try again later."
+msgstr "網路錯誤，請稍後重試。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:53
+msgid "Can not fetch marks data from GitHub."
+msgstr "無法從 GitHub 中獲取跑分數據。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:76
+msgid "Visit prober page"
+msgstr "查閱探針頁面"
+
+#: Components/ServerBenchmark/src/components/index.tsx:85
+msgid "Download speed test"
+msgstr "下載文件以測試網速"
+
+#: Components/ServerBenchmark/src/components/index.tsx:96
+msgid "Visit the official website"
+msgstr "訪問官網"
+
+#: Components/ServerBenchmark/src/components/index.tsx:155
 msgid "My server"
 msgstr "我的伺服器"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:94
-msgid "Go to service provider homepage"
-msgstr "查閱供應商主頁"
+#: Components/ServerBenchmark/src/index.ts:7
+msgid "Server Benchmark"
+msgstr "伺服器性能跑分"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:115
-msgid "Go to prober page"
-msgstr "查閱探針頁面"
+#: Components/ServerBenchmark/src/index.ts:8
+msgid "Becnhmark"
+msgstr "跑分"
 
-#: Components/ServerBenchmark/ServerBenchmark.php:123
-msgid "Download file for network speed testing"
-msgstr "下載文件以測試網速"
+#: Components/ServerBenchmark/src/stores/index.ts:15
+msgid "Click to test"
+msgstr "👆 點擊測試"
 
-#: Components/ServerInfo/ServerInfo.php:22
-msgid "Server information"
+#: Components/ServerInfo/src/components/index.tsx:20
+msgid "Unavailable"
+msgstr "不可用"
+
+#: Components/ServerInfo/src/components/index.tsx:25
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒"
+
+#: Components/ServerInfo/src/index.ts:7
+msgid "Server Information"
 msgstr "伺服器訊息"
 
-#: Components/ServerInfo/ServerInfo.php:23
+#: Components/ServerInfo/src/index.ts:8
 msgid "Info"
 msgstr "訊息"
 
-#: Components/ServerInfo/ServerInfo.php:45
-#, php-format
-msgid "X Prober builtin latest NGINX stable version: %s"
-msgstr "X 探針內建最新的 NGINX 正式版：%s"
-
-#: Components/ServerInfo/ServerInfo.php:71
-msgid "Server name"
-msgstr "伺服器名"
-
-#: Components/ServerInfo/ServerInfo.php:76
-msgid "Server time"
-msgstr "持續上線時間"
-
-#: Components/ServerInfo/ServerInfo.php:81
-msgid "Server uptime"
-msgstr "持續上線時間"
-
-#: Components/ServerInfo/ServerInfo.php:85
-msgid "Server IP"
-msgstr "伺服器 IP"
-
-#: Components/ServerInfo/ServerInfo.php:89
-msgid "Server software"
-msgstr "伺服器軟體"
-
-#: Components/ServerInfo/ServerInfo.php:94
-msgid "PHP version"
-msgstr "PHP 版本"
-
-#: Components/ServerInfo/ServerInfo.php:99
-msgid "CPU model"
-msgstr "CPU 型號"
-
-#: Components/ServerInfo/ServerInfo.php:105
-msgid "Server OS"
-msgstr "伺服器系統"
-
-#: Components/ServerInfo/ServerInfo.php:112
-msgid "Script path"
-msgstr "腳本路徑"
-
-#: Components/ServerInfo/ServerInfo.php:117
-msgid "Disk usage"
-msgstr "磁碟使用"
-
-#: Components/ServerStatus/ServerStatus.php:20
-msgid "Server status"
-msgstr "伺服器狀態"
-
-#: Components/ServerStatus/ServerStatus.php:21
-msgid "Status"
-msgstr "狀態"
-
-#: Components/ServerStatus/ServerStatus.php:46
-msgid "System load"
-msgstr "系統負載"
-
-#: Components/ServerStatus/ServerStatus.php:62
+#: Components/ServerStatus/src/components/cpu-usage.tsx:15
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-#: Components/ServerStatus/ServerStatus.php:76
-msgid "Memory real usage"
-msgstr "真實記憶體使用"
+#: Components/ServerStatus/src/components/cpu-usage.tsx:19
+msgid "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
 
-#: Components/ServerStatus/ServerStatus.php:95
-msgid "SWAP usage"
-msgstr "SWAP 使用"
-
-#: Components/ServerStatus/ServerStatus.php:114
-msgid "SWAP cached"
-msgstr "SWAP 快取"
-
-#: Components/ServerStatus/ServerStatus.php:127
-msgid "Memory cached"
-msgstr "記憶體快取"
-
-#: Components/ServerStatus/ServerStatus.php:140
+#: Components/ServerStatus/src/components/mem-buffers.tsx:14
 msgid "Memory buffers"
 msgstr "記憶體緩衝"
 
-#: Components/Updater/Updater.php:22
-#, php-format
-msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
-msgstr "%1$s 發現新版！版本 %2$s → {APP_NEW_VERSION}"
+#: Components/ServerStatus/src/components/mem-cached.tsx:14
+msgid "Memory cached"
+msgstr "記憶體快取"
 
-#: Components/Updater/Updater.php:23
-msgid "Updating..."
-msgstr "更新中……"
+#: Components/ServerStatus/src/components/mem-real-usage.tsx:14
+msgid "Memory real usage"
+msgstr "真實記憶體使用"
 
-#: Components/Updater/Updater.php:24
-msgid "Update error"
-msgstr "更新出錯"
+#: Components/ServerStatus/src/components/swap-cached.tsx:14
+msgid "Swap cached"
+msgstr "SWAP 快取"
 
-#: Components/Updater/Updater.php:53
-msgid "File can not update."
-msgstr "檔案無法被更新。"
+#: Components/ServerStatus/src/components/swap-usage.tsx:14
+msgid "Swap usage"
+msgstr "SWAP 使用"
 
-#: Components/Updater/Updater.php:70
-msgid "Update file not found."
-msgstr "未發現更新檔案。"
+#: Components/ServerStatus/src/index.ts:7
+msgid "Server Status"
+msgstr "伺服器狀態"
 
-#: Components/Updater/Updater.php:81
-msgid "Update success..."
-msgstr "更新成功……"
+#: Components/ServerStatus/src/index.ts:8
+msgid "Status"
+msgstr "狀態"
 
-#: Components/Updater/Updater.php:87
-msgid "Update error."
-msgstr "更新出錯。"
+#: Components/Updater/src/components/updater-link.tsx:30
+msgid "Can not update file, please check the server permissions and space."
+msgstr "無法更新文件，請檢查伺服器權限和空間。"
+
+#: Components/Updater/src/components/updater-link.tsx:47
+msgid "Click to update"
+msgstr "👆 點擊更新"
+
+#: Components/Updater/src/stores/index.ts:38
+msgid "⏳ Updating, please wait a second..."
+msgstr "⏳ 更新中，請稍等……"
+
+#: Components/Updater/src/stores/index.ts:42
+msgid "❌ Update error, click here to try again?"
+msgstr "❌ 更新錯誤，點擊此處再試一次？"
+
+#: Components/Updater/src/stores/index.ts:48
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "Server Bechmark"
+#~ msgstr "伺服器性能跑分"
+
+#~ msgid "%s cache"
+#~ msgstr "%s 快取"
+
+#~ msgid "⏳ Loading..."
+#~ msgstr "⏳ 載入中……"
+
+#~ msgid "❌ Error, click to retry"
+#~ msgstr "❌ 錯誤，點擊重試"
+
+#~ msgid "👆 Click to test"
+#~ msgstr "👆 點擊測試"
+
+#~ msgid "Benchmark"
+#~ msgstr "跑分"
+
+#~ msgid "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server."
+#~ msgstr "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。"
+
+#~ msgid "Go to service provider homepage"
+#~ msgstr "查閱供應商主頁"
+
+#~ msgid "Go to prober page"
+#~ msgstr "查閱探針頁面"
+
+#~ msgid "Download file for network speed testing"
+#~ msgstr "下載文件以測試網速"
+
+#~ msgid "Server information"
+#~ msgstr "伺服器訊息"
+
+#~ msgid "X Prober builtin latest NGINX stable version: %s"
+#~ msgstr "X 探針內建最新的 NGINX 正式版：%s"
+
+#~ msgid "(Old)"
+#~ msgstr "(舊)"
+
+#~ msgid "(Up to date)"
+#~ msgstr "(最新)"
+
+#~ msgid "Server name"
+#~ msgstr "伺服器名"
+
+#~ msgid "Server time"
+#~ msgstr "持續上線時間"
+
+#~ msgid "Server uptime"
+#~ msgstr "持續上線時間"
+
+#~ msgid "Server IP"
+#~ msgstr "伺服器 IP"
+
+#~ msgid "Server software"
+#~ msgstr "伺服器軟體"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP 版本"
+
+#~ msgid "CPU model"
+#~ msgstr "CPU 型號"
+
+#~ msgid "Server OS"
+#~ msgstr "伺服器系統"
+
+#~ msgid "Script path"
+#~ msgstr "腳本路徑"
+
+#~ msgid "Disk usage"
+#~ msgstr "磁碟使用"
+
+#~ msgid "Generator %s"
+#~ msgstr "該頁面由 %s 生成"
+
+#~ msgid "Author %s"
+#~ msgstr "作者為 %s"
+
+#~ msgid "%1$dd %2$dh %3$dm %4$ds"
+#~ msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
+
+#~ msgid "Min/Avg/Max = %s"
+#~ msgstr "最小/平均/最大 = %s"
+
+#~ msgid "Times: %d"
+#~ msgstr "次數：%d"
+
+#~ msgid "Ping server"
+#~ msgstr "Ping 伺服器"
+
+#~ msgid "Version"
+#~ msgstr "版本"
+
+#~ msgid "X Prober builtin latest PHP stable version: %s"
+#~ msgstr "X 探針內建最新的 PHP 正式版：%s"
+
+#~ msgid "Error reporting"
+#~ msgstr "錯誤報告"
+
+#~ msgid "Max memory limit"
+#~ msgstr "執行記憶體限制"
+
+#~ msgid "Max POST size"
+#~ msgstr "POST 提交限制"
+
+#~ msgid "Max upload size"
+#~ msgstr "上傳檔案限制"
+
+#~ msgid "Max input variables"
+#~ msgstr "提交表單限制"
+
+#~ msgid "Max execution time"
+#~ msgstr "執行超時秒數"
+
+#~ msgid "Timeout for socket"
+#~ msgstr "Socket 超時秒數"
+
+#~ msgid "Treatment URLs file"
+#~ msgstr "檔案遠端打開"
+
+#~ msgid "Disabled functions"
+#~ msgstr "禁用的函數"
+
+#~ msgid "System load"
+#~ msgstr "系統負載"
+
+#~ msgid "SWAP usage"
+#~ msgstr "SWAP 使用"
+
+#~ msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+#~ msgstr "%1$s 發現新版！版本 %2$s → {APP_NEW_VERSION}"
+
+#~ msgid "Updating..."
+#~ msgstr "更新中……"
+
+#~ msgid "Update error"
+#~ msgstr "更新出錯"
+
+#~ msgid "File can not update."
+#~ msgstr "檔案無法被更新。"
+
+#~ msgid "Update file not found."
+#~ msgstr "未發現更新檔案。"
+
+#~ msgid "Update success..."
+#~ msgstr "更新成功……"
+
+#~ msgid "Update error."
+#~ msgstr "更新出錯。"
 
 #~ msgid "Amazon/EC2"
 #~ msgstr "亞馬遜/EC2"
@@ -453,6 +455,3 @@ msgstr "更新出錯。"
 
 #~ msgid "AnyNode/HDD"
 #~ msgstr "AnyNode/HDD"
-
-#~ msgid "Real swap usage"
-#~ msgstr "SWAP 使用"

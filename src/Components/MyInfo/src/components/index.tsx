@@ -14,7 +14,7 @@ class MyInfo extends Component {
       [gettext('My browser UA'), navigator.userAgent],
       [gettext('My browser languages (via JS)'), navigator.languages.join(',')],
       [gettext('My browser languages (via PHP)'), conf.phpLanguage],
-      [gettext('My location'), conf.curl],
+      [gettext('My location'), gettext('In development')],
     ]
 
     return (

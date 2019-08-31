@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import rgbaToHex from './rgbToHex'
+import { GUTTER } from '~components/Config/src'
 
 interface IDiv {
   isSuccess: boolean
@@ -12,7 +13,7 @@ const Msg = styled.span`
 
 const Div = styled.div<IDiv>`
   display: inline-flex;
-  border-radius: 1rem;
+  border-radius: ${GUTTER};
   align-items: center;
   justify-content:center;
   font-family: Arial Black;

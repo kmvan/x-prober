@@ -9,7 +9,6 @@ class LanguageGeneration
     public $langDir = '';
 
     private $moFiles = [];
-    private $code    = [];
 
     public function __construct(string $langDir)
     {

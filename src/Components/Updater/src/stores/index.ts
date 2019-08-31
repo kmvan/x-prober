@@ -7,6 +7,7 @@ import versionCompare from '~components/Helper/src/components/version-compare'
 
 class UpdaterStore {
   @observable public isUpdating: boolean = false
+  @observable public isUpdateError: boolean = false
 
   @computed
   get newVersion(): string {
@@ -26,8 +27,21 @@ class UpdaterStore {
     this.isUpdating = isUpdating
   }
 
+  @action
+  public setIsUpdateError = (isUpdateError: boolean) => {
+    this.isUpdateError = isUpdateError
+  }
+
   @computed
   get notiText(): string {
+    if (this.isUpdating) {
+      return gettext('⏳ Updating, please wait a second...')
+    }
+
+    if (this.isUpdateError) {
+      return gettext('❌ Update error, click here to try again?')
+    }
+
     if (this.newVersion) {
       return template(
         gettext(
@@ -37,10 +51,6 @@ class UpdaterStore {
         oldVersion: BootstrapStore.version,
         newVersion: this.newVersion,
       })
-    }
-
-    if (this.isUpdating) {
-      return gettext('⏳ Updating...')
     }
 
     return ''

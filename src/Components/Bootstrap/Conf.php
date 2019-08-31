@@ -9,19 +9,21 @@ class Conf extends BootstrapConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = [
-            'version'      => ConfigApi::$APP_VERSION,
-            'appName'      => ConfigApi::$APP_NAME,
-            'appUrl'       => ConfigApi::$APP_URL,
-            'appConfigUrl' => ConfigApi::$APP_CONFIG_URL,
-            'authorUrl'    => ConfigApi::$AUTHOR_URL,
-            'authorName'   => ConfigApi::$AUTHOR_NAME,
-        ];
+        $conf[$this->ID] = array(
+            'isDev'           => \XPROBER_IS_DEV,
+            'version'         => ConfigApi::$APP_VERSION,
+            'appName'         => ConfigApi::$APP_NAME,
+            'appUrl'          => ConfigApi::$APP_URL,
+            'appConfigUrl'    => ConfigApi::$APP_CONFIG_URL,
+            'appConfigUrlDev' => ConfigApi::$APP_CONFIG_URL_DEV,
+            'authorUrl'       => ConfigApi::$AUTHOR_URL,
+            'authorName'      => ConfigApi::$AUTHOR_NAME,
+        );
 
         return $conf;
     }
