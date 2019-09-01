@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.1 - 2019-08-01
+
+### Optimize
+
+- Optimize page scroller
+- Optimize viewer size
+
 ## 3.0 - 2019-08-31
 
 ### Add
