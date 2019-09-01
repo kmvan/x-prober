@@ -1,0 +1,738 @@
+{
+  "Error: can not fetch remote config data, update checker is disabled.": {
+    "ja": "エラー：リモート設定データを取得できません。更新チェッカーが無効になっています。",
+    "zh_CN": "错误：无法获取远程配置数据，更新检测已禁用。",
+    "zh_HK": "錯誤：無法獲取配置數據，更新檢測已禁用。",
+    "zh_TW": "錯誤：無法獲取配置數據，更新檢測已禁用。"
+  },
+  "Database": {
+    "ja": "データベース",
+    "zh_CN": "数据库",
+    "zh_HK": "資料庫",
+    "zh_TW": "資料庫"
+  },
+  "DB": {
+    "ja": "DB",
+    "zh_CN": "数据库",
+    "zh_HK": "資料庫",
+    "zh_TW": "資料庫"
+  },
+  "Fetch error, please refresh page.": {
+    "ja": "取得エラー。ページを更新してください。",
+    "zh_CN": "获取信息错误，请刷新页面。",
+    "zh_HK": "獲取錯誤，請刷新頁面。",
+    "zh_TW": "獲取錯誤，請刷新頁面。"
+  },
+  "My IP": {
+    "ja": "私のIP",
+    "zh_CN": "我的 IP",
+    "zh_HK": "我的 IP",
+    "zh_TW": "我的 IP"
+  },
+  "My browser UA": {
+    "ja": "私のブラウザ UA",
+    "zh_CN": "我的浏览器 UA",
+    "zh_HK": "我的瀏覽器",
+    "zh_TW": "我的瀏覽器"
+  },
+  "My browser languages (via JS)": {
+    "ja": "私のブラウザの言語（JS）",
+    "zh_CN": "我的浏览器语言（JS）",
+    "zh_HK": "我的瀏覽器語言（JS）",
+    "zh_TW": "我的瀏覽器語言（JS）"
+  },
+  "My browser languages (via PHP)": {
+    "ja": "私のブラウザの言語（PHP）",
+    "zh_CN": "我的浏览器语言（PHP）",
+    "zh_HK": "我的瀏覽器語言（PHP）",
+    "zh_TW": "我的瀏覽器語言（PHP）"
+  },
+  "My location": {
+    "ja": "私の場所",
+    "zh_CN": "我的位置",
+    "zh_HK": "我的位置",
+    "zh_TW": "我的位置"
+  },
+  "In development": {
+    "ja": "開発中",
+    "zh_CN": "开发中",
+    "zh_HK": "開發中",
+    "zh_TW": "開發中"
+  },
+  "My information": {
+    "ja": "私の情報",
+    "zh_CN": "我的信息",
+    "zh_HK": "我的訊息",
+    "zh_TW": "我的訊息"
+  },
+  "Mine": {
+    "ja": "私の",
+    "zh_CN": "我的",
+    "zh_HK": "我的",
+    "zh_TW": "我的"
+  },
+  "Network stats": {
+    "ja": "ネットワーク統計",
+    "zh_CN": "流量统计",
+    "zh_HK": "流量統計",
+    "zh_TW": "流量統計"
+  },
+  "Net": {
+    "ja": "ネット",
+    "zh_CN": "网络",
+    "zh_HK": "流量",
+    "zh_TW": "流量"
+  },
+  "Opcache enabled": {
+    "ja": "%s 有効",
+    "zh_CN": "OPcache 已启用",
+    "zh_HK": "OPcache 已啓用",
+    "zh_TW": "OPcache 已啓用"
+  },
+  "Loaded extensions": {
+    "ja": "ロードエクステンション",
+    "zh_CN": "已加载的扩展",
+    "zh_HK": "載入的 PHP 擴展",
+    "zh_TW": "載入的 PHP 擴展"
+  },
+  "PHP extensions": {
+    "ja": "PHPエクステンション",
+    "zh_CN": "PHP 扩展",
+    "zh_HK": "PHP 擴展",
+    "zh_TW": "PHP 擴展"
+  },
+  "Ext": {
+    "ja": "拡張",
+    "zh_CN": "扩展",
+    "zh_HK": "擴展",
+    "zh_TW": "擴展"
+  },
+  "👆 Click for detail": {
+    "ja": "詳細はこちら",
+    "zh_CN": "👆 详细信息",
+    "zh_HK": "👆 查看詳細",
+    "zh_TW": "👆 查看詳細"
+  },
+  "SAPI interface": {
+    "ja": "SAPI インタフェース",
+    "zh_CN": "SAPI 接口",
+    "zh_HK": "SAPI 介面",
+    "zh_TW": "SAPI 介面"
+  },
+  "Display errors": {
+    "ja": "エラー表示",
+    "zh_CN": "显示错误",
+    "zh_HK": "顯示錯誤",
+    "zh_TW": "顯示錯誤"
+  },
+  "SMTP support": {
+    "ja": "SMTP サポート",
+    "zh_CN": "SMTP 支持",
+    "zh_HK": "SMTP 支援",
+    "zh_TW": "SMTP 支援"
+  },
+  "Disabled classes": {
+    "ja": "無効なクラス",
+    "zh_CN": "已禁用的类",
+    "zh_HK": "禁用的類",
+    "zh_TW": "禁用的類"
+  },
+  "Visit PHP.net Official website": {
+    "ja": "PHP.net 公式ウェブサイトにアクセス",
+    "zh_CN": "访问 PHP.net 官网",
+    "zh_HK": "訪問 PHP.net 官網",
+    "zh_TW": "訪問 PHP.net 官網"
+  },
+  "(Latest <%= latestPhpVersion %>)": {
+    "ja": "（最新 <％= latestPhpVersion ％>）",
+    "zh_CN": "（最新  <%= latestPhpVersion %>）",
+    "zh_HK": "（最新 <%= latestPhpVersion %>）",
+    "zh_TW": "（最新 <%= latestPhpVersion %>）"
+  },
+  "PHP Information": {
+    "ja": "PHP情報",
+    "zh_CN": "PHP 信息",
+    "zh_HK": "PHP 資訊",
+    "zh_TW": "PHP 資訊"
+  },
+  "PHP": {
+    "ja": "PHP",
+    "zh_CN": "PHP",
+    "zh_HK": "PHP",
+    "zh_TW": "PHP"
+  },
+  "Times: <%= times %>": {
+    "ja": "回: <%= times %>",
+    "zh_CN": "次数：<%= times %>",
+    "zh_HK": "次數：<%= times %>",
+    "zh_TW": "次數：<%= times %>"
+  },
+  "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>": {
+    "ja": "最小: <%= min %> / 最大: <%= max %> / 平均: <%= avg %>",
+    "zh_CN": "最小: <%= min %> / 最大: <%= max %> / 平均: <%= avg %>",
+    "zh_HK": "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>",
+    "zh_TW": "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
+  },
+  "⏸️ Stop ping": {
+    "ja": "⏸️ Pingを停止",
+    "zh_CN": "⏸️ 停止 Ping",
+    "zh_HK": "⏸️ 停止 Ping",
+    "zh_TW": "⏸️ 停止 Ping"
+  },
+  "👆 Start ping": {
+    "ja": "👆 Pingを開始",
+    "zh_CN": "👆 开始 Ping",
+    "zh_HK": "👆 開始 Ping",
+    "zh_TW": "👆 開始 Ping"
+  },
+  "Network Ping": {
+    "ja": "ネットワークPing",
+    "zh_CN": "网络 Ping",
+    "zh_HK": "網速 Ping",
+    "zh_TW": "網速 Ping"
+  },
+  "Ping": {
+    "ja": "Ping",
+    "zh_CN": "Ping",
+    "zh_HK": "Ping",
+    "zh_TW": "Ping"
+  },
+  "⏳ Testing, please wait...": {
+    "ja": "⏳ テストしています。お待ちください...",
+    "zh_CN": "⏳ 跑分中，请稍等……",
+    "zh_HK": "⏳ 跑分中，請稍等……",
+    "zh_TW": "⏳ 跑分中，請稍等……"
+  },
+  "⏳ Please wait <%= seconds %>s": {
+    "ja": "⏳ <%= seconds %>s 秒お待ちください",
+    "zh_CN": "⏳ 请等待 <%= seconds %> 秒",
+    "zh_HK": "⏳ 請等待 <%= seconds %> 秒",
+    "zh_TW": "⏳ 請等待 <%= seconds %> 秒"
+  },
+  "Network error, please try again later.": {
+    "ja": "ネットワークエラーです。しばらくしてからもう一度お試しください。",
+    "zh_CN": "网络错误，请稍候重试。",
+    "zh_HK": "網路錯誤，請稍後重試。",
+    "zh_TW": "網路錯誤，請稍後重試。"
+  },
+  "Can not fetch marks data from GitHub.": {
+    "ja": "GitHubからマークデータを取得できません。",
+    "zh_CN": "无法从 GitHub 中获取跑分数据。",
+    "zh_HK": "無法從 GitHub 中獲取跑分數據。",
+    "zh_TW": "無法從 GitHub 中獲取跑分數據。"
+  },
+  "Visit prober page": {
+    "ja": "X-Prober ホームページへ",
+    "zh_CN": "查看探针页面",
+    "zh_HK": "查閱探針頁面",
+    "zh_TW": "查閱探針頁面"
+  },
+  "Download speed test": {
+    "ja": "ネットワーク速度テスト用のダウンロードファイル",
+    "zh_CN": "下载速度测试",
+    "zh_HK": "下載文件以測試網速",
+    "zh_TW": "下載文件以測試網速"
+  },
+  "Visit the official website": {
+    "ja": "公式ウェブサイトをご覧ください",
+    "zh_CN": "访问官网",
+    "zh_HK": "訪問官網",
+    "zh_TW": "訪問官網"
+  },
+  "My server": {
+    "ja": "私のサーバー",
+    "zh_CN": "我的服务器",
+    "zh_HK": "我的伺服器",
+    "zh_TW": "我的伺服器"
+  },
+  "Server Benchmark": {
+    "ja": "サーバー基準",
+    "zh_CN": "服务器跑分",
+    "zh_HK": "伺服器性能跑分",
+    "zh_TW": "伺服器性能跑分"
+  },
+  "Becnhmark": {
+    "ja": "基準",
+    "zh_CN": "跑分",
+    "zh_HK": "跑分",
+    "zh_TW": "跑分"
+  },
+  "Click to test": {
+    "ja": "👆クリックしてテスト",
+    "zh_CN": "👆 点击测试",
+    "zh_HK": "👆 點擊測試",
+    "zh_TW": "👆 點擊測試"
+  },
+  "Unavailable": {
+    "ja": "利用不可",
+    "zh_CN": "不可用",
+    "zh_HK": "不可用",
+    "zh_TW": "不可用"
+  },
+  "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs": {
+    "ja": "<%= days %> 日 <%= hours %> 時 <%= mins %> 分 <%= secs %> 秒",
+    "zh_CN": "<%= days %> 天 <%= hours %> 小时 <%= mins %> 分 <%= secs %> 秒",
+    "zh_HK": "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒",
+    "zh_TW": "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒"
+  },
+  "Server Information": {
+    "ja": "サーバー情報",
+    "zh_CN": "服务器信息",
+    "zh_HK": "伺服器訊息",
+    "zh_TW": "伺服器訊息"
+  },
+  "Info": {
+    "ja": "情報",
+    "zh_CN": "信息",
+    "zh_HK": "訊息",
+    "zh_TW": "訊息"
+  },
+  "CPU usage": {
+    "ja": "CPU 使用率",
+    "zh_CN": "CPU 占用",
+    "zh_HK": "CPU 使用率",
+    "zh_TW": "CPU 使用率"
+  },
+  "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>": {
+    "ja": "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>",
+    "zh_CN": "空闲: <%= idle %> 亲和: <%= nice %> 系统: <%= sys %> 用户: <%= user %>",
+    "zh_HK": "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>",
+    "zh_TW": "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
+  },
+  "Memory buffers": {
+    "ja": "メモリバッファ",
+    "zh_CN": "内存缓冲",
+    "zh_HK": "記憶體緩衝",
+    "zh_TW": "記憶體緩衝"
+  },
+  "Memory cached": {
+    "ja": "メモリキャッシュ",
+    "zh_CN": "内存缓存",
+    "zh_HK": "記憶體快取",
+    "zh_TW": "記憶體快取"
+  },
+  "Memory real usage": {
+    "ja": "実メモリ使用量",
+    "zh_CN": "真实内存占用",
+    "zh_HK": "真實記憶體使用",
+    "zh_TW": "真實記憶體使用"
+  },
+  "Swap cached": {
+    "ja": "SWAP キャッシュ",
+    "zh_CN": "SWAP 缓存",
+    "zh_HK": "SWAP 快取",
+    "zh_TW": "SWAP 快取"
+  },
+  "Swap usage": {
+    "ja": "SWAP 使用量",
+    "zh_CN": "SWAP 占用",
+    "zh_HK": "SWAP 使用",
+    "zh_TW": "SWAP 使用"
+  },
+  "Server Status": {
+    "ja": "サーバーの状態",
+    "zh_CN": "服务器状态",
+    "zh_HK": "伺服器狀態",
+    "zh_TW": "伺服器狀態"
+  },
+  "Status": {
+    "ja": "状態",
+    "zh_CN": "状态",
+    "zh_HK": "狀態",
+    "zh_TW": "狀態"
+  },
+  "Can not update file, please check the server permissions and space.": {
+    "ja": "ファイルを更新できません。サーバーの権限とスペースを確認してください。",
+    "zh_CN": "无法更新文件，请检查服务器权限和空间。",
+    "zh_HK": "無法更新文件，請檢查伺服器權限和空間。",
+    "zh_TW": "無法更新文件，請檢查伺服器權限和空間。"
+  },
+  "Click to update": {
+    "ja": "クリックして更新",
+    "zh_CN": "点击更新",
+    "zh_HK": "👆 點擊更新",
+    "zh_TW": "👆 點擊更新"
+  },
+  "⏳ Updating, please wait a second...": {
+    "ja": "⏳ 更新しています。しばらくお待ちください...",
+    "zh_CN": "⏳ 更新中，请稍等一会……",
+    "zh_HK": "⏳ 更新中，請稍等……",
+    "zh_TW": "⏳ 更新中，請稍等……"
+  },
+  "❌ Update error, click here to try again?": {
+    "ja": "❌ 更新エラー。ここをクリックして再試行しますか？",
+    "zh_CN": "❌ 更新错误，点击此处再试一次？",
+    "zh_HK": "❌ 更新錯誤，點擊此處再試一次？",
+    "zh_TW": "❌ 更新錯誤，點擊此處再試一次？"
+  },
+  "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>": {
+    "ja": "✨ アップデートが見た！バージョン <%= oldVersion %> → <%= newVersion %>",
+    "zh_CN": "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>",
+    "zh_HK": "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>",
+    "zh_TW": "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+  },
+  "PHP info detail": {
+    "ja": "PHP情報詳細",
+    "zh_CN": "PHP 详细信息",
+    "zh_HK": "PHP 詳細訊息",
+    "zh_TW": "PHP 詳細訊息"
+  },
+  "Generator %s": {
+    "ja": "ジェネレータ %s",
+    "zh_CN": "该页面由 %s 生成",
+    "zh_HK": "該頁面由 %s 生成",
+    "zh_TW": "該頁面由 %s 生成"
+  },
+  "Author %s": {
+    "ja": "作成者 %s",
+    "zh_CN": "作者为 %s",
+    "zh_HK": "作者為 %s",
+    "zh_TW": "作者為 %s"
+  },
+  "%s cache": {
+    "ja": "%s キャッシュ",
+    "zh_CN": "%s 缓存",
+    "zh_HK": "%s 快取",
+    "zh_TW": "%s 快取"
+  },
+  "%1$dd %2$dh %3$dm %4$ds": {
+    "ja": "%1$d日 %2$d時 %3$d分 %4$d秒",
+    "zh_CN": "%1$d 天 %2$d 时 %3$d 分 %4$d 秒",
+    "zh_HK": "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒",
+    "zh_TW": "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
+  },
+  "Min/Avg/Max = %s": {
+    "ja": "最小/平均/最大 = %s",
+    "zh_CN": "最小/平均/最大 = %s",
+    "zh_HK": "最小/平均/最大 = %s",
+    "zh_TW": "最小/平均/最大 = %s"
+  },
+  "Times: %d": {
+    "ja": "回数：%d",
+    "zh_CN": "次数：%d",
+    "zh_HK": "次數：%d",
+    "zh_TW": "次數：%d"
+  },
+  "Ping server": {
+    "ja": "Ping サーバー",
+    "zh_CN": "Ping 服务器",
+    "zh_HK": "Ping 伺服器",
+    "zh_TW": "Ping 伺服器"
+  },
+  "Version": {
+    "ja": "バージョン",
+    "zh_CN": "版本",
+    "zh_HK": "版本",
+    "zh_TW": "版本"
+  },
+  "X Prober builtin latest PHP stable version: %s": {
+    "ja": "X Prober 組み込みの最新の PHP 安定版：%s",
+    "zh_CN": "X 探针内置最新 PHP 正式版版本：%s",
+    "zh_HK": "X 探針內建最新的 PHP 正式版：%s",
+    "zh_TW": "X 探針內建最新的 PHP 正式版：%s"
+  },
+  "(Old)": {
+    "ja": "(古い)",
+    "zh_CN": "(旧)",
+    "zh_HK": "(舊)",
+    "zh_TW": "(舊)"
+  },
+  "(Up to date)": {
+    "ja": "(最新)",
+    "zh_CN": "(最新)",
+    "zh_HK": "(最新)",
+    "zh_TW": "(最新)"
+  },
+  "Error reporting": {
+    "ja": "エラー報告",
+    "zh_CN": "错误报告",
+    "zh_HK": "錯誤報告",
+    "zh_TW": "錯誤報告"
+  },
+  "Max memory limit": {
+    "ja": "最大メモリ制限",
+    "zh_CN": "运行内存限制",
+    "zh_HK": "執行記憶體限制",
+    "zh_TW": "執行記憶體限制"
+  },
+  "Max POST size": {
+    "ja": "最大 POST サイズ",
+    "zh_CN": "POST 提交限制",
+    "zh_HK": "POST 提交限制",
+    "zh_TW": "POST 提交限制"
+  },
+  "Max upload size": {
+    "ja": "最大アップロードサイズ",
+    "zh_CN": "上传文件限制",
+    "zh_HK": "上傳檔案限制",
+    "zh_TW": "上傳檔案限制"
+  },
+  "Max input variables": {
+    "ja": "最大入力変数",
+    "zh_CN": "提交表单限制",
+    "zh_HK": "提交表單限制",
+    "zh_TW": "提交表單限制"
+  },
+  "Max execution time": {
+    "ja": "最大実行時間",
+    "zh_CN": "运行超时秒数",
+    "zh_HK": "執行超時秒數",
+    "zh_TW": "執行超時秒數"
+  },
+  "Timeout for socket": {
+    "ja": "ソケットのタイムアウト",
+    "zh_CN": "Socket 超时秒数",
+    "zh_HK": "Socket 超時秒數",
+    "zh_TW": "Socket 超時秒數"
+  },
+  "Treatment URLs file": {
+    "ja": "Treatment URLs ファイル",
+    "zh_CN": "文件远端打开",
+    "zh_HK": "檔案遠端打開",
+    "zh_TW": "檔案遠端打開"
+  },
+  "Disabled functions": {
+    "ja": "無効な機能",
+    "zh_CN": "已禁用的函数",
+    "zh_HK": "禁用的函數",
+    "zh_TW": "禁用的函數"
+  },
+  "⏳ Loading...": {
+    "ja": "⏳ロード中...",
+    "zh_CN": "⏳ 加载中……",
+    "zh_HK": "⏳ 載入中……",
+    "zh_TW": "⏳ 載入中……"
+  },
+  "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server.": {
+    "ja": "いほど良いです。 この結果は著者のテストのための参照データとしてのみ使用されます。 注：ベンチマークマークは、ホスト/サーバーの品質を評価するための唯一の基準ではありません。",
+    "zh_CN": "分数越高越好。该结果仅作为作者测试的性能参考数据。注意：跑分结果不是评价服务器优劣的唯一标准。",
+    "zh_HK": "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。",
+    "zh_TW": "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。"
+  },
+  "Go to service provider homepage": {
+    "ja": "サービス提供者ホームページへ",
+    "zh_CN": "查看服务供应商主页",
+    "zh_HK": "查閱供應商主頁",
+    "zh_TW": "查閱供應商主頁"
+  },
+  "X Prober builtin latest NGINX stable version: %s": {
+    "ja": "X Prober 組み込みの最新の NGINX 安定版：%s",
+    "zh_CN": "X 探针内置最新 NGINX 正式版版本：%s",
+    "zh_HK": "X 探針內建最新的 NGINX 正式版：%s",
+    "zh_TW": "X 探針內建最新的 NGINX 正式版：%s"
+  },
+  "Server name": {
+    "ja": "サーバーの名前",
+    "zh_CN": "服务器名",
+    "zh_HK": "伺服器名",
+    "zh_TW": "伺服器名"
+  },
+  "Server time": {
+    "ja": "サーバー時間",
+    "zh_CN": "服务器时间",
+    "zh_HK": "持續上線時間",
+    "zh_TW": "持續上線時間"
+  },
+  "Server uptime": {
+    "ja": "サーバーの稼働時間",
+    "zh_CN": "持续运作时间",
+    "zh_HK": "持續上線時間",
+    "zh_TW": "持續上線時間"
+  },
+  "Server IP": {
+    "ja": "サーバー IP",
+    "zh_CN": "服务器 IP",
+    "zh_HK": "伺服器 IP",
+    "zh_TW": "伺服器 IP"
+  },
+  "Server software": {
+    "ja": "サーバーソフトウェア",
+    "zh_CN": "服务器软件",
+    "zh_HK": "伺服器軟體",
+    "zh_TW": "伺服器軟體"
+  },
+  "PHP version": {
+    "ja": "PHP バージョン",
+    "zh_CN": "PHP 版本",
+    "zh_HK": "PHP 版本",
+    "zh_TW": "PHP 版本"
+  },
+  "CPU model": {
+    "ja": "CPUモデル",
+    "zh_CN": "CPU 型号",
+    "zh_HK": "CPU 型號",
+    "zh_TW": "CPU 型號"
+  },
+  "Server OS": {
+    "ja": "サーバー OS",
+    "zh_CN": "服务器系统",
+    "zh_HK": "伺服器系統",
+    "zh_TW": "伺服器系統"
+  },
+  "Script path": {
+    "ja": "スクリプトパス",
+    "zh_CN": "脚本路径",
+    "zh_HK": "腳本路徑",
+    "zh_TW": "腳本路徑"
+  },
+  "Disk usage": {
+    "ja": "ディスクの使用状況",
+    "zh_CN": "磁盘使用量",
+    "zh_HK": "磁碟使用",
+    "zh_TW": "磁碟使用"
+  },
+  "System load": {
+    "ja": "システム負荷",
+    "zh_CN": "系统负载",
+    "zh_HK": "系統負載",
+    "zh_TW": "系統負載"
+  },
+  "%1$s found update! Version %2$s → {APP_NEW_VERSION}": {
+    "ja": "%1$s 更新を見つけました！ バージョン %2$s → {APP_NEW_VERSION}",
+    "zh_CN": "%1$s 发现更新！版本 %2$s → {APP_NEW_VERSION}",
+    "zh_HK": "%1$s 發現新版！版本 %2$s → {APP_NEW_VERSION}",
+    "zh_TW": "%1$s 發現新版！版本 %2$s → {APP_NEW_VERSION}"
+  },
+  "Updating...": {
+    "ja": "更新しています...",
+    "zh_HK": "更新中……",
+    "zh_TW": "更新中……"
+  },
+  "Update error": {
+    "ja": "更新エラー",
+    "zh_CN": "更新出错",
+    "zh_HK": "更新出錯",
+    "zh_TW": "更新出錯"
+  },
+  "File can not update.": {
+    "ja": "ファイルを更新できません。",
+    "zh_CN": "无法更新文件。",
+    "zh_HK": "檔案無法被更新。",
+    "zh_TW": "檔案無法被更新。"
+  },
+  "Update file not found.": {
+    "ja": "更新ファイルが見つかりません。",
+    "zh_CN": "未找到更新文件。",
+    "zh_HK": "未發現更新檔案。",
+    "zh_TW": "未發現更新檔案。"
+  },
+  "Update success...": {
+    "ja": "成功を更新します...",
+    "zh_CN": "更新成功……",
+    "zh_HK": "更新成功……",
+    "zh_TW": "更新成功……"
+  },
+  "Update error.": {
+    "ja": "更新エラーです。",
+    "zh_CN": "更新出错。",
+    "zh_HK": "更新出錯。",
+    "zh_TW": "更新出錯。"
+  },
+  "Server Bechmark": {
+    "zh_CN": "服务器跑分",
+    "zh_HK": "伺服器性能跑分",
+    "zh_TW": "伺服器性能跑分"
+  },
+  "❌ Error, click to retry": {
+    "zh_CN": "❌ 错误，点击重试",
+    "zh_HK": "❌ 錯誤，點擊重試",
+    "zh_TW": "❌ 錯誤，點擊重試"
+  },
+  "👆 Click to test": {
+    "zh_CN": "👆 点击测试",
+    "zh_HK": "👆 點擊測試",
+    "zh_TW": "👆 點擊測試"
+  },
+  "Benchmark": {
+    "zh_CN": "跑分",
+    "zh_HK": "跑分",
+    "zh_TW": "跑分"
+  },
+  "Go to prober page": {
+    "zh_CN": "查看探针页面",
+    "zh_HK": "查閱探針頁面",
+    "zh_TW": "查閱探針頁面"
+  },
+  "Download file for network speed testing": {
+    "zh_CN": "下载文件以测试网速",
+    "zh_HK": "下載文件以測試網速",
+    "zh_TW": "下載文件以測試網速"
+  },
+  "Server information": {
+    "zh_CN": "服务器信息",
+    "zh_HK": "伺服器訊息",
+    "zh_TW": "伺服器訊息"
+  },
+  "Error": {
+    "zh_CN": "错误"
+  },
+  "⏳ Updating...": {
+    "zh_CN": "⏳ 更新中……"
+  },
+  "Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= time %>ms": {
+    "zh_CN": "该页面由 <%= appName %> 生成 / 作者为 <%= authorName %> / <%= memUsage %> / <%= time %> 毫秒"
+  },
+  "STAR 🌟 ME": {
+    "zh_CN": "星 🌟 标"
+  },
+  "SWAP usage": {
+    "zh_CN": "SWAP 占用",
+    "zh_HK": "SWAP 使用",
+    "zh_TW": "SWAP 使用"
+  },
+  "Aliyun/ECS": {
+    "zh_CN": "阿里云/ECS",
+    "zh_HK": "阿里雲/ECS",
+    "zh_TW": "阿里雲/ECS"
+  },
+  "Tencent": {
+    "zh_CN": "腾讯云",
+    "zh_HK": "騰訊雲",
+    "zh_TW": "騰訊雲"
+  },
+  "BandwagonHOST/SSD": {
+    "zh_CN": "搬瓦工/SSD"
+  },
+  "%s extension": {
+    "zh_CN": "%s 扩展",
+    "zh_HK": "%s 擴展",
+    "zh_TW": "%s 擴展"
+  },
+  "Not support on Windows": {
+    "zh_CN": "Windows 系统尚未支持该功能",
+    "zh_HK": "Windows 系統尚未支援該功能\t",
+    "zh_TW": "Windows 系統尚未支援該功能\t"
+  },
+  "%d minute(s)": {
+    "zh_CN": "%d 分钟"
+  },
+  "AnyNode/HDD": {
+    "zh_CN": "AnyNode/HDD",
+    "zh_HK": "AnyNode/HDD",
+    "zh_TW": "AnyNode/HDD"
+  },
+  "Amazon/EC2": {
+    "zh_HK": "亞馬遜/EC2",
+    "zh_TW": "亞馬遜/EC2"
+  },
+  "VPSSERVER/KVM": {
+    "zh_HK": "VPSSERVER/KVM",
+    "zh_TW": "VPSSERVER/KVM"
+  },
+  "SpartanHost/KVM": {
+    "zh_HK": "斯巴達/KVM",
+    "zh_TW": "斯巴達/KVM"
+  },
+  "Vultr": {
+    "zh_HK": "Vultr",
+    "zh_TW": "Vultr"
+  },
+  "RamNode": {
+    "zh_HK": "RamNode",
+    "zh_TW": "RamNode"
+  },
+  "Linode": {
+    "zh_HK": "Linode",
+    "zh_TW": "Linode"
+  }
+}

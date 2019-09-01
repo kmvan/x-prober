@@ -1,28 +1,19 @@
 import React, { Component } from 'react'
-
-import './style'
-
 import { observer } from 'mobx-react'
-import FetchStore from '~components/Fetch/src/stores'
+import Row from '~components/Grid/src/components/row'
 import SystemLoad from './system-load'
 import CpuUsage from './cpu-usage'
-import SwapUsage from './swap-usage'
 import MemRealUsage from './mem-real-usage'
 import MemCached from './mem-cached'
-import MemBuffers from './mem-buffers'
+import SwapUsage from './swap-usage'
 import SwapCached from './swap-cached'
+import MemBuffers from './mem-buffers'
 
 @observer
 class ServerStatus extends Component {
-  public FetchStore = FetchStore
-
   public render() {
-    if (this.FetchStore.isLoading) {
-      return null
-    }
-
     return (
-      <>
+      <Row>
         <SystemLoad />
         <CpuUsage />
         <MemRealUsage />
@@ -30,7 +21,7 @@ class ServerStatus extends Component {
         <MemBuffers />
         <SwapUsage />
         <SwapCached />
-      </>
+      </Row>
     )
   }
 }

@@ -1,6 +1,15 @@
-const rgbToHex = (r: number, g: number, b: number): string => {
-  const hex: string = ((r << 16) | (g << 8) | b).toString(16)
-  return '#' + new Array(Math.abs(hex.length - 7)).join('0') + hex
+const rgbaToHex = (
+  red: number,
+  green: number,
+  blue: number,
+  alpha: number = 1
+): string => {
+  const hex = `${(red | (1 << 8)).toString(16).slice(1)}${(green | (1 << 8))
+    .toString(16)
+    .slice(1)}${(blue | (1 << 8)).toString(16).slice(1)}`
+  const colorAlpha = ((alpha * 255) | (1 << 8)).toString(16).slice(1)
+
+  return hex + colorAlpha
 }
 
-export default rgbToHex
+export default rgbaToHex

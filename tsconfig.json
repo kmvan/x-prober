@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "module": "esnext",
-    "target": "esnext",
+    "target": "es5",
     "lib": ["esnext", "dom"],
     "sourceMap": true,
     "allowJs": true,
@@ -28,7 +28,7 @@
       "~components/*": ["Components/*"]
     },
     "typeRoots": ["../node_modules/@types"],
-    "types": ["core-js", "node"],
+    "types": ["core-js"],
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

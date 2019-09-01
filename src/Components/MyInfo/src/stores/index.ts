@@ -1,13 +1,17 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, configure } from 'mobx'
 import conf from '~components/Helper/src/components/conf'
+
+configure({
+  enforceActions: 'observed',
+})
 
 export interface IPingItem {
   time: number
 }
 
 class MyInfoStore {
-  public ID = 'myInfo'
-  public conf = conf[this.ID] || false
+  public readonly ID = 'myInfo'
+  public readonly conf = conf[this.ID]
 
   @observable public isPing: boolean = false
   @observable public pingItems: IPingItem[] = []
@@ -15,7 +19,7 @@ class MyInfoStore {
   @observable public refs = {}
 
   @action
-  public setRef = (id: string, c) => {
+  public setRef = (id: string, c: HTMLElement) => {
     this.refs[id] = c
   }
 

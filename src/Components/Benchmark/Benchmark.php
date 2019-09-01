@@ -3,20 +3,21 @@
 namespace InnStudio\Prober\Components\Benchmark;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
-use InnStudio\Prober\Components\I18n\I18nApi;
+use InnStudio\Prober\Components\Restful\HttpStatus;
+use InnStudio\Prober\Components\Restful\RestfulResponse;
 
 class Benchmark extends BenchmarkApi
 {
     public function __construct()
     {
         EventsApi::on('init', array($this, 'filter'));
+        new FetchBefore();
     }
 
-    public function filter()
+    public function filter($action)
     {
-        if ( ! HelperApi::isAction('benchmark')) {
-            return;
+        if ('benchmark' !== $action) {
+            return $action;
         }
 
         $this->display();
@@ -25,12 +26,14 @@ class Benchmark extends BenchmarkApi
     public function display()
     {
         $remainingSeconds = $this->getRemainingSeconds();
+        $response         = new RestfulResponse();
 
         if ($remainingSeconds) {
-            HelperApi::dieJson(array(
-                'code' => -1,
-                'msg'  => '⏳ ' . \sprintf(I18nApi::_('Please wait %ds'), $remainingSeconds),
+            $response->setStatus(HttpStatus::$TOO_MANY_REQUESTS);
+            $response->setData(array(
+                'seconds' => $remainingSeconds,
             ));
+            $response->dieJson();
         }
 
         \set_time_limit(0);
@@ -39,18 +42,14 @@ class Benchmark extends BenchmarkApi
         $this->setIsRunning(true);
 
         // start benchmark
-        $points = $this->getPoints();
+        $marks = $this->getPoints();
         // end benchmark
 
         $this->setIsRunning(false);
 
-        HelperApi::dieJson(array(
-            'code' => 0,
-            'data' => array(
-                'points'     => $points,
-                'total'      => \array_sum($points),
-                'totalHuman' => \number_format(\array_sum($points)),
-            ),
+        $response->setData(array(
+            'marks' => $marks,
         ));
+        $response->dieJson();
     }
 }

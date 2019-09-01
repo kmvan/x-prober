@@ -14,15 +14,16 @@ class Script
         EventsApi::on('init', array($this, 'filter'));
     }
 
-    public function filter()
+    public function filter($action)
     {
-        switch (true) {
-        case true === HelperApi::isAction('getScript'):
-            $this->displayDefault();
+        if ('script' !== $action) {
+            return $action;
         }
+
+        $this->output();
     }
 
-    private function displayDefault()
+    private function output()
     {
         HelperApi::setFileCacheHeader();
 

@@ -2,78 +2,8 @@
 
 namespace InnStudio\Prober\Components\Helper;
 
-use InnStudio\Prober\Components\I18n\I18nApi;
-
 class HelperApi
 {
-    public static function getClassNames(array $classNames)
-    {
-        return \implode(' ', \array_keys(\array_filter($classNames)));
-    }
-
-    public static function getGroupItemLists(array $items, $sorted = false)
-    {
-        if ( ! \array_filter($items)) {
-            return '';
-        }
-
-        if ($sorted) {
-            \sort($items);
-        }
-
-        $items = \implode('', \array_map(function ($item) {
-            $item = \trim($item);
-
-            if ( ! $item) {
-                return '';
-            }
-
-            $kw = \urlencode($item);
-
-            return <<<HTML
-<a href="https://www.google.com/search?q=PHP+{$kw}" target="_blank" class="inn-group__item-list" title="Google: PHP {$kw}">{$item}</a>
-HTML;
-        }, $items));
-
-        return <<<HTML
-<div class="inn-group__item-list__container">{$items}</div>
-HTML;
-    }
-
-    public static function getProgressTpl(array $args)
-    {
-        $args = \array_merge(array(
-            'id'       => '',
-            'usage'    => 0,
-            'total'    => 0,
-            'overview' => '',
-        ), $args);
-
-        if ( ! $args['total']) {
-            $percent    = 0;
-            $totalHuman = 0;
-            $usageHuman = 0;
-            $overview   = '0 / 0';
-        } else {
-            $percent    = $args['total'] ? \round($args['usage'] / $args['total'], 2) * 100 : 0;
-            $totalHuman = self::formatBytes($args['total']);
-            $usageHuman = self::formatBytes($args['usage']);
-            $overview   = $args['overview'] ? $args['overview'] : "{$usageHuman} / {$totalHuman}";
-        }
-
-        return <<<HTML
-<div class="inn-progress__container">
-    <div class="inn-progress__percent" id="inn-{$args['id']}Percent">{$percent}%</div>
-    <div class="inn-progress__overview" id="inn-{$args['id']}Overview">
-        {$overview}
-    </div>
-    <div class="inn-progress" id="inn-{$args['id']}Progress">
-        <div id="inn-{$args['id']}ProgressValue" class="inn-progress__value" style="width: {$percent}%"></div>
-    </div>
-</div>
-HTML;
-    }
-
     public static function setFileCacheHeader()
     {
         // 1 year expired
@@ -84,127 +14,54 @@ HTML;
         \header("Cache-Control: public, max-age={$seconds}");
     }
 
-    public static function getGroup(array $item)
-    {
-        $item = \array_merge(array(
-            'groupId' => '',
-            'id'      => '',
-            'label'   => '',
-            'title'   => '',
-            'content' => '',
-            'col'     => '',
-        ), $item);
-
-        $title = $item['title'] ? <<<HTML
-title="{$item['title']}"
-HTML
-        : '';
-
-        $hasTitleClassName = $title ? 'inn-tooltip is-top' : '';
-
-        if (null === $item['col']) {
-            $col = '';
-        } else {
-            $col = $item['col'] ?: '1-3';
-            $col = "inn-g_lg-{$col}";
-        }
-
-        $idClassNameGroup          = $item['id'] ? "inn-{$item['id']}-group" : '';
-        $idClassNameGroupContainer = $item['id'] ? "inn-{$item['id']}-group__container" : '';
-        $idClassNameGroupLabel     = $item['id'] ? "inn-{$item['id']}-group__label" : '';
-        $idClassNameGroupContent   = $item['id'] ? "inn-{$item['id']}-group__content" : '';
-        $groupClassNameLabel       = $item['groupId'] ? "inn-group__label_{$item['groupId']}" : '';
-        $groupContainerClassNames  = self::getClassNames(array(
-            'inn-group__container'     => true,
-            $col                       => (bool) $col,
-            $idClassNameGroupContainer => (bool) $idClassNameGroupContainer,
-        ));
-        $groupClassNames = self::getClassNames(array(
-            'inn-group'       => true,
-            $idClassNameGroup => (bool) $idClassNameGroup,
-        ));
-        $groupLabelClassNames = self::getClassNames(array(
-            'inn-group__label'     => true,
-            $groupClassNameLabel   => (bool) $groupClassNameLabel,
-            $idClassNameGroupLabel => (bool) $idClassNameGroupLabel,
-            $hasTitleClassName     => (bool) $hasTitleClassName,
-        ));
-        $groupContentClassNames = self::getClassNames(array(
-            'inn-group__content'     => true,
-            $idClassNameGroupContent => (bool) $idClassNameGroupContent,
-            $hasTitleClassName       => (bool) $hasTitleClassName,
-        ));
-
-        return <<<HTML
-<div class="{$groupContainerClassNames}">
-    <div class="{$groupClassNames}">
-        <div class="{$groupLabelClassNames}" {$title}>{$item['label']}</div>
-        <div class="{$groupContentClassNames}" {$title}>{$item['content']}</div>
-    </div>
-</div>
-HTML;
-    }
-
-    public static function dieJson(array $data)
-    {
-        \header('Content-Type: application/json');
-        \header('Expires: 0');
-        \header('Last-Modified: ' . \gmdate('D, d M Y H:i:s') . ' GMT');
-        \header('Cache-Control: no-store, no-cache, must-revalidate');
-        \header('Pragma: no-cache');
-
-        die(\json_encode(\array_merge(array(
-            'code' => 0,
-            'data' => null,
-        ), $data)));
-    }
-
-    public static function isAction($action)
-    {
-        return \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING) === $action;
-    }
-
     public static function getWinCpuUsage()
     {
-        $cpus = array();
+        $usage = array(
+            'idle' => 100,
+            'user' => 0,
+            'sys'  => 0,
+            'nice' => 0,
+        );
 
         // com
         if (\class_exists('\\COM')) {
+            // need help
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
-
-            $cpus = array();
-
-            $total = 0;
+            $total  = 0;
 
             foreach ($server as $cpu) {
                 $total += (int) $cpu->loadpercentage;
             }
 
-            $total        = (int) $total / \count($server);
-            $cpus['idle'] = 100 - $total;
-            $cpus['user'] = $total;
+            $total         = (int) $total / \count($server);
+            $usage['idle'] = 100 - $total;
+            $usage['user'] = $total;
         // exec
         } else {
+            if ( ! \function_exists('\exec')) {
+                return $usage;
+            }
+
             $p = array();
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
-                $percent      = (int) $p[1];
-                $cpus['idle'] = 100 - $percent;
-                $cpus['user'] = $percent;
+                $percent       = (int) $p[1];
+                $usage['idle'] = 100 - $percent;
+                $usage['user'] = $percent;
             }
         }
 
-        return $cpus;
+        return $usage;
     }
 
     public static function getNetworkStats()
     {
         $filePath = '/proc/net/dev';
 
-        if ( ! \is_readable($filePath)) {
-            return I18nApi::_('Unavailable');
+        if ( ! @\is_readable($filePath)) {
+            return null;
         }
 
         static $eths = null;
@@ -230,38 +87,31 @@ HTML;
         return $eths;
     }
 
-    public static function getBtn($tx, $url)
+    public static function getDiskTotalSpace()
     {
-        return <<<HTML
-<a href="{$url}" target="_blank" class="btn">{$tx}</a>
-HTML;
-    }
+        if ( ! \function_exists('\disk_total_space')) {
+            return 0;
+        }
 
-    public static function getDiskTotalSpace($human = false)
-    {
         static $space = null;
 
         if (null === $space) {
             $space = (float) \disk_total_space(__DIR__);
         }
 
-        if (true === $human) {
-            return self::formatBytes($space);
-        }
-
         return $space;
     }
 
-    public static function getDiskFreeSpace($human = false)
+    public static function getDiskFreeSpace()
     {
+        if ( ! \function_exists('\disk_total_space')) {
+            return 0;
+        }
+
         static $space = null;
 
         if (null === $space) {
             $space = (float) \disk_free_space(__DIR__);
-        }
-
-        if (true === $human) {
-            return self::formatBytes($space);
         }
 
         return $space;
@@ -272,7 +122,7 @@ HTML;
         $filePath = '/proc/cpuinfo';
 
         if ( ! @\is_readable($filePath)) {
-            return I18nApi::_('Unavailable');
+            return '';
         }
 
         $content = \file_get_contents($filePath);
@@ -284,7 +134,7 @@ HTML;
         $cacheSize = \explode(':', $lines[8]);
         $cacheSize = \trim($cacheSize[1]);
 
-        return "{$cores} x {$modelName} / " . \sprintf(I18nApi::_('%s cache'), $cacheSize);
+        return "{$cores} x {$modelName} / " . \sprintf('%s cache', $cacheSize);
     }
 
     public static function getServerTime()
@@ -292,30 +142,39 @@ HTML;
         return \date('Y-m-d H:i:s');
     }
 
-    public static function getServerUpTime()
+    public static function getServerUtcTime()
+    {
+        return \gmdate('Y/m/d H:i:s');
+    }
+
+    public static function getServerUptime()
     {
         $filePath = '/proc/uptime';
 
         if ( ! @\is_file($filePath)) {
-            return I18nApi::_('Unavailable');
+            return array(
+                'days'  => 0,
+                'hours' => 0,
+                'mins'  => 0,
+                'secs'  => 0,
+            );
         }
 
         $str   = \file_get_contents($filePath);
         $num   = (float) $str;
-        $secs  = \fmod($num, 60);
+        $secs  = (int) \fmod($num, 60);
         $num   = (int) ($num / 60);
-        $mins  = $num % 60;
+        $mins  = (int) $num % 60;
         $num   = (int) ($num / 60);
-        $hours = $num % 24;
+        $hours = (int) $num % 24;
         $num   = (int) ($num / 24);
-        $days  = $num;
+        $days  = (int) $num;
 
-        return \sprintf(
-            I18nApi::_('%1$dd %2$dh %3$dm %4$ds'),
-            $days,
-            $hours,
-            $mins,
-            $secs
+        return array(
+            'days'  => $days,
+            'hours' => $hours,
+            'mins'  => $mins,
+            'secs'  => $secs,
         );
     }
 
@@ -353,37 +212,6 @@ HTML;
         }
 
         return $result;
-    }
-
-    public static function alert($isOk, $text = '')
-    {
-        $isOk = (bool) $isOk;
-
-        switch ($isOk) {
-        case true:
-            $status = 'ok';
-            $icon   = '&check;';
-            break;
-        case false:
-            $status = 'error';
-            $icon   = '&times;';
-            break;
-        default:
-            $icon = '';
-        }
-
-        if ($text) {
-            $text = <<<HTML
-<div class="inn-alert__text">{$text}</div>
-HTML;
-        }
-
-        return <<<HTML
-<div class="inn-alert is-{$status}">
-    <div class="inn-alert__icon">{$icon}</div>
-    {$text}
-</div>
-HTML;
     }
 
     public static function isWin()
@@ -451,26 +279,6 @@ HTML;
         }
 
         return $cpu;
-    }
-
-    public static function getHumanCpuUsageDetail()
-    {
-        $cpu = self::getCpuUsage();
-
-        if ( ! $cpu) {
-            return '';
-        }
-
-        $html = '';
-
-        foreach ($cpu as $k => $v) {
-            $html .= <<<HTML
-<span class="inn-small-group"><span class="item-name">{$k}</span>
-<span class="item-value">{$v}</span></span>
-HTML;
-        }
-
-        return $html;
     }
 
     public static function getHumanCpuUsage()

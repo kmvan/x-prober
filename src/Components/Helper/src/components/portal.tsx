@@ -1,12 +1,12 @@
 import { Component } from 'react'
 import { createPortal } from 'react-dom'
 
-interface IProps {
+interface IPortal {
   target?: HTMLElement
 }
 
-class Portal extends Component<IProps> {
-  public target: HTMLElement
+class Portal extends Component<IPortal, {}> {
+  private target: HTMLElement
 
   constructor(props) {
     super(props)

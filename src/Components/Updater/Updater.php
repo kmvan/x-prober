@@ -4,54 +4,28 @@ namespace InnStudio\Prober\Components\Updater;
 
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
-use InnStudio\Prober\Components\I18n\I18nApi;
+use InnStudio\Prober\Components\Restful\HttpStatus;
+use InnStudio\Prober\Components\Restful\RestfulResponse;
 
 class Updater
 {
-    private $ID = 'updater';
-
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'update'));
-        EventsApi::on('conf', array($this, 'conf'));
+        EventsApi::on('init', array($this, 'filter'));
     }
 
-    public function conf(array $conf)
+    public function filter($action)
     {
-        $langUpdateNotice = I18nApi::_('%1$s found update! Version %2$s → {APP_NEW_VERSION}');
-        $langUpdating     = I18nApi::_('Updating...');
-        $langUpdateError  = I18nApi::_('Update error');
-
-        $conf[$this->ID] = array(
-            'changelogUrl' => ConfigApi::$CHANGELOG_URL,
-            'version'      => ConfigApi::$APP_VERSION,
-            'lang'         => array(
-                'foundNewVersion' => \sprintf(
-                    "✨ {$langUpdateNotice}",
-                    $this->_(ConfigApi::$APP_NAME),
-                    ConfigApi::$APP_VERSION
-                ),
-                'loading' => "⏳ {$langUpdating}",
-                'error'   => "❌ {$langUpdateError}",
-            ),
-        );
-
-        return $conf;
-    }
-
-    public function update()
-    {
-        if ( ! HelperApi::isAction('update')) {
-            return;
+        if ('update' !== $action) {
+            return $action;
         }
+
+        $response = new RestfulResponse();
 
         // check file writable
         if ( ! \is_writable(__FILE__)) {
-            HelperApi::dieJson(array(
-                'code' => -1,
-                'msg'  => I18nApi::_('File can not update.'),
-            ));
+            $response->setStatus(HttpStatus::$INSUFFICIENT_STORAGE);
+            $response->dieJson();
         }
 
         $code = '';
@@ -65,10 +39,13 @@ class Updater
         }
 
         if ( ! $code) {
-            HelperApi::dieJson(array(
-                'code' => -1,
-                'msg'  => I18nApi::_('Update file not found.'),
-            ));
+            $response->setStatus(HttpStatus::$NOT_FOUND);
+            $response->dieJson();
+        }
+
+        // prevent update file on dev mode
+        if (\XPROBER_IS_DEV) {
+            $response->dieJson();
         }
 
         if ((bool) \file_put_contents(__FILE__, $code)) {
@@ -76,20 +53,10 @@ class Updater
                 @\opcache_compile_file(__FILE__) || \opcache_reset();
             }
 
-            HelperApi::dieJson(array(
-                'code' => 0,
-                'msg'  => I18nApi::_('Update success...'),
-            ));
+            $response->dieJson();
         }
 
-        HelperApi::dieJson(array(
-            'code' => -1,
-            'msg'  => I18nApi::_('Update error.'),
-        ));
-    }
-
-    private function _($str)
-    {
-        return I18nApi::_($str);
+        $response->setStatus(HttpStatus::$INTERNAL_SERVER_ERROR);
+        $response->dieJson();
     }
 }

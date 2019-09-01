@@ -1,35 +1,51 @@
-import React from 'react'
-import classNames from 'classnames'
+import React, { ReactNode } from 'react'
+import styled from 'styled-components'
+import { GUTTER, DARK_COLOR } from '~components/Config/src'
 
-const Alert = (type: string, msg = '') => {
-  type = type === 'success' ? 'ok' : type
+interface IAlertContainer {
+  isSuccess: boolean
+  withIcon: boolean
+}
 
-  const className = classNames({
-    'inn-alert': true,
-    [`is-${type}`]: true,
-  })
-
-  let icon = '&times;'
-
-  switch (type) {
-    case 'ok':
-      icon = '&check;'
-    case 'loading':
-      icon = '⏳'
+const AlertContainer = styled.div<IAlertContainer>`
+  display: inline-flex;
+  border-radius: ${GUTTER};
+  align-items: center;
+  justify-content:center;
+  font-family: Arial Black;
+  font-weight: bolder;
+  min-width: 2em;
+  color: #fff;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px ${DARK_COLOR};
+  padding: 0 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
+  :active{
+    transform: scale3d(.9,.9,1);
+    background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
+  ::before {
+    content: '${({ isSuccess, withIcon }) => {
+      if (!withIcon) {
+        return ''
+      }
+      return isSuccess ? '✓' : '×'
+    }}';
+  }
+`
 
+export interface IAlert {
+  isSuccess: boolean
+  msg?: ReactNode
+}
+
+const Alert = ({ isSuccess, msg = '' }: IAlert) => {
   return (
-    <>
-      <div className={className}>
-        <div className="inn-alert__icon">{icon}</div>
-        {msg && (
-          <span
-            className="inn-alert__text"
-            dangerouslySetInnerHTML={{ __html: msg }}
-          />
-        )}
-      </div>
-    </>
+    <AlertContainer isSuccess={isSuccess} withIcon={!msg}>
+      {msg}
+    </AlertContainer>
   )
 }
 

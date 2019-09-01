@@ -1,111 +1,104 @@
 import React, { Component } from 'react'
-
 import { observer } from 'mobx-react'
-import FetchStore from '~components/Fetch/src/stores'
-import Portal from '~components/Helper/src/components/portal'
 import formatBytes from '~components/Helper/src/components/format-bytes'
-import './style'
+import Row from '~components/Grid/src/components/row'
+import CardGrid from '~components/Card/src/components/card-grid'
+import store, { INetworkStatsItem } from '../stores'
+import Grid from '~components/Grid/src/components/grid'
+import styled from 'styled-components'
+import { toJS } from 'mobx'
+
+const NetworkId = styled.div`
+  text-decoration: underline;
+`
+
+const NetworkIdRow = styled(Row)`
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`
+
+const DataContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`
+
+const Data = styled.div`
+  flex: 0 0 50%;
+`
+
+const Total = styled.div``
+const Rate = styled.div`
+  font-family: 'Arial Black';
+
+  ::before {
+    margin-right: 0.5rem;
+  }
+`
+
+const RateRx = styled(Rate)`
+  ::before {
+    content: '▼';
+  }
+`
+const RateTx = styled(Rate)`
+  ::before {
+    content: '▲';
+  }
+`
 
 @observer
 class NetworkStats extends Component {
-  public FetchStore = FetchStore
-
-  public lastRx = {}
-  public lastTx = {}
+  private items: INetworkStatsItem = {}
 
   public render() {
-    if (this.FetchStore.isLoading) {
+    const { items } = store
+
+    if (!items) {
       return null
     }
 
-    const { networkStats } = this.FetchStore.data as any
+    const lastItems = toJS(Object.keys(this.items).length ? this.items : items)
 
-    if (!networkStats) {
-      return null
-    }
+    this.items = items
 
     return (
-      <>
-        {Object.keys(networkStats).map((ethName: string) => {
-          const content: any[] = []
-          const { rx, tx } = networkStats[ethName]
-
+      <Row>
+        {Object.entries(items).map(([id, { rx, tx }]) => {
           if (!rx && !tx) {
             return null
           }
 
-          ethName = encodeURIComponent(ethName)
-
-          const rxContainer = document.getElementById(
-            `inn-network-stats__rx__total__${ethName}`
-          ) as HTMLElement
-          const txRateContainer = document.getElementById(
-            `inn-network-stats__tx__rate__${ethName}`
-          ) as HTMLElement
-
-          const txContainer = document.getElementById(
-            `inn-network-stats__tx__total__${ethName}`
-          ) as HTMLElement
-
-          const rxRateContainer = document.getElementById(
-            `inn-network-stats__rx__rate__${ethName}`
-          ) as HTMLElement
-
-          // total rx
-          if (rxContainer) {
-            content.push(
-              <Portal key="rx" target={rxContainer}>
-                {formatBytes(rx)}
-              </Portal>
-            )
-          }
-
-          // rate rx
-          if (rxRateContainer) {
-            if (!this.lastRx[ethName]) {
-              this.lastRx[ethName] = rx
-            }
-
-            content.push(
-              <Portal key="rxRate" target={rxRateContainer}>
-                {formatBytes(rx - this.lastRx[ethName])}
-              </Portal>
-            )
-
-            if (this.lastRx[ethName] !== rx) {
-              this.lastRx[ethName] = rx
-            }
-          }
-
-          // total tx
-          if (txContainer) {
-            content.push(
-              <Portal key="tx" target={txContainer}>
-                {formatBytes(tx)}
-              </Portal>
-            )
-          }
-
-          // rate tx
-          if (txRateContainer) {
-            if (!this.lastTx[ethName]) {
-              this.lastTx[ethName] = tx
-            }
-
-            content.push(
-              <Portal key="txRate" target={txRateContainer}>
-                {formatBytes(tx - this.lastTx[ethName])}
-              </Portal>
-            )
-
-            if (this.lastTx[ethName] !== tx) {
-              this.lastTx[ethName] = tx
-            }
-          }
-
-          return content
+          return (
+            <CardGrid
+              key={id}
+              tablet={[1, 2]}
+              desktopMd={[1, 3]}
+              desktopLg={[1, 4]}
+            >
+              <NetworkIdRow>
+                <Grid mobileSm={[1, 3]}>
+                  <NetworkId>{id}</NetworkId>
+                </Grid>
+                <Grid mobileSm={[2, 3]}>
+                  <DataContainer>
+                    <Data>
+                      <Total>{formatBytes(rx)}</Total>
+                      <RateRx>{formatBytes(rx - lastItems[id].rx)}/s</RateRx>
+                    </Data>
+                    <Data>
+                      <Total>{formatBytes(tx)}</Total>
+                      <RateTx>{formatBytes(tx - lastItems[id].tx)}/s</RateTx>
+                    </Data>
+                  </DataContainer>
+                </Grid>
+              </NetworkIdRow>
+            </CardGrid>
+          )
         })}
-      </>
+      </Row>
     )
   }
 }

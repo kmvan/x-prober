@@ -27,7 +27,7 @@ class EventsApi
         $name   = $args[0];
         $return = isset($args[1]) ? $args[1] : null;
 
-        unset($args[0],$args[1]);
+        unset($args[0], $args[1]);
 
         $events = isset(self::$events[$name]) ? self::$events[$name] : false;
 

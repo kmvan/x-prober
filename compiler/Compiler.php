@@ -22,15 +22,6 @@ class Compiler
             'configPath'    => "{$this->ROOT}/AppConfig.json",
         ]);
 
-        // generate benchmark
-        new ServerBenchmarkGeneration([
-            'phpConfigPath' => "{$this->COMPONENTS_DIR}/ServerBenchmark/ServerBenchmarkMarks.php",
-            'configPath'    => "{$this->ROOT}/AppConfig.json",
-        ]);
-
-        // lang
-        $this->languageGeneration($dir);
-
         echo "Compile starting...\n";
 
         $code = '';
@@ -49,7 +40,6 @@ class Compiler
         $preDefineCode = $this->preDefine([
             $this->getTimerCode(),
             $this->getDevMode(),
-            $this->getLangLoaderCode(),
             $this->getVendorCode(),
         ]);
         $code = "<?php\n{$preDefineCode}\n{$code}";
@@ -58,12 +48,8 @@ class Compiler
 
         if (true === $this->writeFile($code)) {
             new ScriptGeneration([
-                'scriptFilePath' => "{$this->ROOT}/tmp/app.js",
+                'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
                 'distFilePath'   => $this->COMPILE_FILE_PATH,
-            ]);
-            new StyleGeneration([
-                'styleFilePath' => "{$this->ROOT}/tmp/app.css",
-                'distFilePath'  => $this->COMPILE_FILE_PATH,
             ]);
 
             if ( ! $this->isDev()) {
@@ -80,20 +66,6 @@ class Compiler
         }
     }
 
-    private function languageGeneration(string $dir): void
-    {
-        echo "Generating I18n language pack...\n";
-
-        $langGen = new LanguageGeneration("{$dir}/languages");
-        $status  = $langGen->writeJsonFile("{$this->COMPONENTS_DIR}/I18n/Lang.json");
-
-        if ( ! $status) {
-            die("Error: can not generate languages.\n");
-        }
-
-        echo "Generated I18n...\n";
-    }
-
     private function getCodeViaFilePath(string $filePath): string
     {
         $code = '';
@@ -106,7 +78,7 @@ class Compiler
             if ($this->isDebug()) {
                 $code = \file_get_contents($filePath);
             } else {
-                $code     =  \php_strip_whitespace($filePath);
+                $code     = \php_strip_whitespace($filePath);
                 $lines    = \explode("\n", $code);
                 $lineCode = [];
 
@@ -166,38 +138,6 @@ PHP;
     {
         return <<<'PHP'
 \define('XPROBER_TIMER', \microtime(true));
-PHP;
-    }
-
-    private function getLangLoaderCode(): string
-    {
-        if ($this->isDev()) {
-            return '';
-        }
-
-        $filePath = $this->COMPONENTS_DIR . '/I18n/Lang.json';
-
-        if ( ! \is_readable($filePath)) {
-            die('Language is missing.');
-        }
-
-        $lines = \file($filePath);
-
-        $lines = \array_map(function (string $line): string {
-            return 0 === \strpos(\trim($line), '// ') ? '' : $line;
-        }, $lines);
-
-        $json = \implode('', $lines);
-        $json = \json_decode($json, true);
-
-        if ( ! $json) {
-            die('Invalid json format.');
-        }
-
-        $json = \serialize($json);
-
-        return <<<PHP
-\\define('XPROBER_LANGUAGES', '{$json}');
 PHP;
     }
 

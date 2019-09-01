@@ -3,21 +3,22 @@
 namespace InnStudio\Prober\Components\PhpInfoDetail;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
 
 class PhpInfoDetail
 {
     public function __construct()
     {
-        EventsApi::on('fetch', array($this, 'filter'));
+        EventsApi::on('init', array($this, 'filter'));
     }
 
-    public function filter()
+    public function filter($action)
     {
-        if (HelperApi::isAction('phpInfo')) {
-            \phpinfo();
-
-            die;
+        if ('phpInfo' !== $action) {
+            return $action;
         }
+
+        \phpinfo();
+
+        die;
     }
 }

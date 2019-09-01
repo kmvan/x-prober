@@ -1,0 +1,456 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-01 11:50+0800\n"
+"PO-Revision-Date: 2019-09-01 11:50+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language-Team: Km.Van <inn-studio.com>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Flags-xgettext: --add-comments\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../.git\n"
+"X-Poedit-SearchPathExcluded-1: ../dist\n"
+
+#: Components/Config/src/stores/index.ts:48
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
+
+#: Components/Database/src/index.ts:7
+msgid "Database"
+msgstr "資料庫"
+
+#: Components/Database/src/index.ts:8
+msgid "DB"
+msgstr "資料庫"
+
+#: Components/Fetch/src/stores/index.ts:30
+msgid "Fetch error, please refresh page."
+msgstr "獲取錯誤，請刷新頁面。"
+
+#: Components/MyInfo/src/components/index.tsx:13
+msgid "My IP"
+msgstr "我的 IP"
+
+#: Components/MyInfo/src/components/index.tsx:14
+msgid "My browser UA"
+msgstr "我的瀏覽器"
+
+#: Components/MyInfo/src/components/index.tsx:15
+msgid "My browser languages (via JS)"
+msgstr "我的瀏覽器語言（JS）"
+
+#: Components/MyInfo/src/components/index.tsx:16
+msgid "My browser languages (via PHP)"
+msgstr "我的瀏覽器語言（PHP）"
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "My location"
+msgstr "我的位置"
+
+#: Components/MyInfo/src/components/index.tsx:17
+msgid "In development"
+msgstr "開發中"
+
+#: Components/MyInfo/src/index.ts:7
+msgid "My information"
+msgstr "我的訊息"
+
+#: Components/MyInfo/src/index.ts:8
+msgid "Mine"
+msgstr "我的"
+
+#: Components/NetworkStats/src/index.ts:9
+msgid "Network stats"
+msgstr "流量統計"
+
+#: Components/NetworkStats/src/index.ts:10
+msgid "Net"
+msgstr "流量"
+
+#: Components/PhpExtensions/src/components/index.tsx:22
+msgid "Opcache enabled"
+msgstr "OPcache 已啓用"
+
+#: Components/PhpExtensions/src/components/index.tsx:64
+msgid "Loaded extensions"
+msgstr "載入的 PHP 擴展"
+
+#: Components/PhpExtensions/src/index.ts:7
+msgid "PHP extensions"
+msgstr "PHP 擴展"
+
+#: Components/PhpExtensions/src/index.ts:8
+msgid "Ext"
+msgstr "擴展"
+
+#: Components/PhpInfo/src/components/index.tsx:20
+msgid "👆 Click for detail"
+msgstr "👆 查看詳細"
+
+#: Components/PhpInfo/src/components/index.tsx:26
+msgid "SAPI interface"
+msgstr "SAPI 介面"
+
+#: Components/PhpInfo/src/components/index.tsx:28
+msgid "Display errors"
+msgstr "顯示錯誤"
+
+#: Components/PhpInfo/src/components/index.tsx:42
+msgid "SMTP support"
+msgstr "SMTP 支援"
+
+#: Components/PhpInfo/src/components/index.tsx:60
+msgid "Disabled classes"
+msgstr "禁用的類"
+
+#: Components/PhpInfo/src/components/php-version.tsx:37
+msgid "Visit PHP.net Official website"
+msgstr "訪問 PHP.net 官網"
+
+#: Components/PhpInfo/src/components/php-version.tsx:42
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr "（最新 <%= latestPhpVersion %>）"
+
+#: Components/PhpInfo/src/index.ts:7
+msgid "PHP Information"
+msgstr "PHP 資訊"
+
+#: Components/PhpInfo/src/index.ts:8
+msgid "PHP"
+msgstr "PHP"
+
+#: Components/Ping/src/components/index.tsx:191
+msgid "Times: <%= times %>"
+msgstr "次數：<%= times %>"
+
+#: Components/Ping/src/components/index.tsx:195
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
+
+#: Components/Ping/src/components/index.tsx:205
+msgid "⏸️ Stop ping"
+msgstr "⏸️ 停止 Ping"
+
+#: Components/Ping/src/components/index.tsx:205
+msgid "👆 Start ping"
+msgstr "👆 開始 Ping"
+
+#: Components/Ping/src/index.ts:7
+msgid "Network Ping"
+msgstr "網速 Ping"
+
+#: Components/Ping/src/index.ts:8
+msgid "Ping"
+msgstr "Ping"
+
+#: Components/ServerBenchmark/src/components/index.tsx:22
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ 跑分中，請稍等……"
+
+#: Components/ServerBenchmark/src/components/index.tsx:32
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr "⏳ 請等待 <%= seconds %> 秒"
+
+#: Components/ServerBenchmark/src/components/index.tsx:40
+#: Components/Updater/src/components/updater-link.tsx:39
+msgid "Network error, please try again later."
+msgstr "網路錯誤，請稍後重試。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:52
+msgid "Can not fetch marks data from GitHub."
+msgstr "無法從 GitHub 中獲取跑分數據。"
+
+#: Components/ServerBenchmark/src/components/index.tsx:81
+msgid "Visit prober page"
+msgstr "查閱探針頁面"
+
+#: Components/ServerBenchmark/src/components/index.tsx:90
+msgid "Download speed test"
+msgstr "下載文件以測試網速"
+
+#: Components/ServerBenchmark/src/components/index.tsx:101
+msgid "Visit the official website"
+msgstr "訪問官網"
+
+#: Components/ServerBenchmark/src/components/index.tsx:167
+msgid "My server"
+msgstr "我的伺服器"
+
+#: Components/ServerBenchmark/src/index.ts:7
+msgid "Server Benchmark"
+msgstr "伺服器性能跑分"
+
+#: Components/ServerBenchmark/src/index.ts:8
+msgid "Becnhmark"
+msgstr "跑分"
+
+#: Components/ServerBenchmark/src/stores/index.ts:21
+msgid "Click to test"
+msgstr "👆 點擊測試"
+
+#: Components/ServerInfo/src/components/index.tsx:20
+msgid "Unavailable"
+msgstr "不可用"
+
+#: Components/ServerInfo/src/components/index.tsx:25
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒"
+
+#: Components/ServerInfo/src/index.ts:7
+msgid "Server Information"
+msgstr "伺服器訊息"
+
+#: Components/ServerInfo/src/index.ts:8
+msgid "Info"
+msgstr "訊息"
+
+#: Components/ServerStatus/src/components/cpu-usage.tsx:15
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+#: Components/ServerStatus/src/components/cpu-usage.tsx:19
+msgid "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
+
+#: Components/ServerStatus/src/components/mem-buffers.tsx:14
+msgid "Memory buffers"
+msgstr "記憶體緩衝"
+
+#: Components/ServerStatus/src/components/mem-cached.tsx:14
+msgid "Memory cached"
+msgstr "記憶體快取"
+
+#: Components/ServerStatus/src/components/mem-real-usage.tsx:14
+msgid "Memory real usage"
+msgstr "真實記憶體使用"
+
+#: Components/ServerStatus/src/components/swap-cached.tsx:14
+msgid "Swap cached"
+msgstr "SWAP 快取"
+
+#: Components/ServerStatus/src/components/swap-usage.tsx:14
+msgid "Swap usage"
+msgstr "SWAP 使用"
+
+#: Components/ServerStatus/src/index.ts:7
+msgid "Server Status"
+msgstr "伺服器狀態"
+
+#: Components/ServerStatus/src/index.ts:8
+msgid "Status"
+msgstr "狀態"
+
+#: Components/Updater/src/components/updater-link.tsx:30
+msgid "Can not update file, please check the server permissions and space."
+msgstr "無法更新文件，請檢查伺服器權限和空間。"
+
+#: Components/Updater/src/components/updater-link.tsx:47
+msgid "Click to update"
+msgstr "👆 點擊更新"
+
+#: Components/Updater/src/stores/index.ts:42
+msgid "⏳ Updating, please wait a second..."
+msgstr "⏳ 更新中，請稍等……"
+
+#: Components/Updater/src/stores/index.ts:46
+msgid "❌ Update error, click here to try again?"
+msgstr "❌ 更新錯誤，點擊此處再試一次？"
+
+#: Components/Updater/src/stores/index.ts:52
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "PHP info detail"
+#~ msgstr "PHP 詳細訊息"
+
+#~ msgid "Server Bechmark"
+#~ msgstr "伺服器性能跑分"
+
+#~ msgid "%s cache"
+#~ msgstr "%s 快取"
+
+#~ msgid "⏳ Loading..."
+#~ msgstr "⏳ 載入中……"
+
+#~ msgid "❌ Error, click to retry"
+#~ msgstr "❌ 錯誤，點擊重試"
+
+#~ msgid "👆 Click to test"
+#~ msgstr "👆 點擊測試"
+
+#~ msgid "Benchmark"
+#~ msgstr "跑分"
+
+#~ msgid "Higher is better. This result is only used as reference data for author testing. Note: the benchmark marks are not the only criterion for evaluating the quality of a host/server."
+#~ msgstr "分數越高越好。該結果僅作爲作者測試的參考數據。注：跑分數值並不是評價一臺主機或伺服器的唯一準則。"
+
+#~ msgid "Go to service provider homepage"
+#~ msgstr "查閱供應商主頁"
+
+#~ msgid "Go to prober page"
+#~ msgstr "查閱探針頁面"
+
+#~ msgid "Download file for network speed testing"
+#~ msgstr "下載文件以測試網速"
+
+#~ msgid "Server information"
+#~ msgstr "伺服器訊息"
+
+#~ msgid "X Prober builtin latest NGINX stable version: %s"
+#~ msgstr "X 探針內建最新的 NGINX 正式版：%s"
+
+#~ msgid "(Old)"
+#~ msgstr "(舊)"
+
+#~ msgid "(Up to date)"
+#~ msgstr "(最新)"
+
+#~ msgid "Server name"
+#~ msgstr "伺服器名"
+
+#~ msgid "Server time"
+#~ msgstr "持續上線時間"
+
+#~ msgid "Server uptime"
+#~ msgstr "持續上線時間"
+
+#~ msgid "Server IP"
+#~ msgstr "伺服器 IP"
+
+#~ msgid "Server software"
+#~ msgstr "伺服器軟體"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP 版本"
+
+#~ msgid "CPU model"
+#~ msgstr "CPU 型號"
+
+#~ msgid "Server OS"
+#~ msgstr "伺服器系統"
+
+#~ msgid "Script path"
+#~ msgstr "腳本路徑"
+
+#~ msgid "Disk usage"
+#~ msgstr "磁碟使用"
+
+#~ msgid "Generator %s"
+#~ msgstr "該頁面由 %s 生成"
+
+#~ msgid "Author %s"
+#~ msgstr "作者為 %s"
+
+#~ msgid "%1$dd %2$dh %3$dm %4$ds"
+#~ msgstr "%1$d 天 %2$d 小時 %3$d 分 %4$d 秒"
+
+#~ msgid "Min/Avg/Max = %s"
+#~ msgstr "最小/平均/最大 = %s"
+
+#~ msgid "Times: %d"
+#~ msgstr "次數：%d"
+
+#~ msgid "Ping server"
+#~ msgstr "Ping 伺服器"
+
+#~ msgid "Version"
+#~ msgstr "版本"
+
+#~ msgid "X Prober builtin latest PHP stable version: %s"
+#~ msgstr "X 探針內建最新的 PHP 正式版：%s"
+
+#~ msgid "Error reporting"
+#~ msgstr "錯誤報告"
+
+#~ msgid "Max memory limit"
+#~ msgstr "執行記憶體限制"
+
+#~ msgid "Max POST size"
+#~ msgstr "POST 提交限制"
+
+#~ msgid "Max upload size"
+#~ msgstr "上傳檔案限制"
+
+#~ msgid "Max input variables"
+#~ msgstr "提交表單限制"
+
+#~ msgid "Max execution time"
+#~ msgstr "執行超時秒數"
+
+#~ msgid "Timeout for socket"
+#~ msgstr "Socket 超時秒數"
+
+#~ msgid "Treatment URLs file"
+#~ msgstr "檔案遠端打開"
+
+#~ msgid "Disabled functions"
+#~ msgstr "禁用的函數"
+
+#~ msgid "System load"
+#~ msgstr "系統負載"
+
+#~ msgid "SWAP usage"
+#~ msgstr "SWAP 使用"
+
+#~ msgid "%1$s found update! Version %2$s → {APP_NEW_VERSION}"
+#~ msgstr "%1$s 發現新版！版本 %2$s → {APP_NEW_VERSION}"
+
+#~ msgid "Updating..."
+#~ msgstr "更新中……"
+
+#~ msgid "Update error"
+#~ msgstr "更新出錯"
+
+#~ msgid "File can not update."
+#~ msgstr "檔案無法被更新。"
+
+#~ msgid "Update file not found."
+#~ msgstr "未發現更新檔案。"
+
+#~ msgid "Update success..."
+#~ msgstr "更新成功……"
+
+#~ msgid "Update error."
+#~ msgstr "更新出錯。"
+
+#~ msgid "Amazon/EC2"
+#~ msgstr "亞馬遜/EC2"
+
+#~ msgid "VPSSERVER/KVM"
+#~ msgstr "VPSSERVER/KVM"
+
+#~ msgid "SpartanHost/KVM"
+#~ msgstr "斯巴達/KVM"
+
+#~ msgid "Aliyun/ECS"
+#~ msgstr "阿里雲/ECS"
+
+#~ msgid "Vultr"
+#~ msgstr "Vultr"
+
+#~ msgid "RamNode"
+#~ msgstr "RamNode"
+
+#~ msgid "Linode"
+#~ msgstr "Linode"
+
+#~ msgid "Tencent"
+#~ msgstr "騰訊雲"
+
+#~ msgid "%s extension"
+#~ msgstr "%s 擴展"
+
+#~ msgid "Not support on Windows"
+#~ msgstr "Windows 系統尚未支援該功能\t"
+
+#~ msgid "AnyNode/HDD"
+#~ msgstr "AnyNode/HDD"

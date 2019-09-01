@@ -3,5 +3,5 @@
 /languages/*.mo
 /.npmrc
 /.git
-/tmp
 /node_modules
+/.tmp
