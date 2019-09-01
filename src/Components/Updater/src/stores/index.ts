@@ -1,9 +1,13 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, configure } from 'mobx'
 import { template } from 'lodash-es'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import ConfigStore from '~components/Config/src/stores'
 import versionCompare from '~components/Helper/src/components/version-compare'
+
+configure({
+  enforceActions: 'observed',
+})
 
 class UpdaterStore {
   @observable public isUpdating: boolean = false

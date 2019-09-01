@@ -1,5 +1,9 @@
-import { observable, action, runInAction } from 'mobx'
+import { observable, action, runInAction, configure } from 'mobx'
 import { ReactNode } from 'react'
+
+configure({
+  enforceActions: 'observed',
+})
 
 class ToastStore {
   @observable public isOpen: boolean = false

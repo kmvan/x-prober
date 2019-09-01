@@ -8,6 +8,8 @@ All Notable changes to `X-Prober` will be documented in this file
 
 - Independent PING feature
 - Only JS to render information
+- Support 2k/4k resolution
+- Add CPU usage for Windows
 
 ### Optimize
 

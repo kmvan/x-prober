@@ -1,7 +1,11 @@
-import { observable, action } from 'mobx'
+import { observable, action, configure } from 'mobx'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
 import { gettext } from '~components/Language/src'
+
+configure({
+  enforceActions: 'observed',
+})
 
 class FetchStore {
   @observable public isLoading: boolean = true

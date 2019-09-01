@@ -3,7 +3,6 @@ import { observer } from 'mobx-react'
 import store from '../stores'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
-import BootstrapStore from '~components/Bootstrap/src/stores'
 import versionCompare from '~components/Helper/src/components/version-compare'
 import { template } from 'lodash-es'
 import { gettext } from '~components/Language/src'
@@ -31,6 +30,7 @@ class PhpInfoPhpVersion extends Component {
       latestPhpVersion,
     } = store
     const compare = versionCompare(version, latestPhpVersion)
+
     return (
       <CardLink
         href='https://www.php.net/'
@@ -39,7 +39,7 @@ class PhpInfoPhpVersion extends Component {
         {version}
         {compare === -1
           ? ' ' +
-            template(gettext('(old, latest: <%= latestPhpVersion %>)'))({
+            template(gettext('(Latest <%= latestPhpVersion %>)'))({
               latestPhpVersion,
             })
           : ''}

@@ -139,10 +139,13 @@ class Ping extends Component {
           })
 
           setTimeout(() => {
-            if (itemContainer.scrollTop < itemContainer.scrollHeight) {
+            if (
+              itemContainer &&
+              itemContainer.scrollTop < itemContainer.scrollHeight
+            ) {
               itemContainer.scrollTop = itemContainer.scrollHeight
             }
-          }, 10)
+          }, 100)
         }
       })
       .catch(err => {})

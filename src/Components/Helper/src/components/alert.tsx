@@ -1,17 +1,13 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import rgbaToHex from './rgbToHex'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER, DARK_COLOR } from '~components/Config/src'
 
-interface IDiv {
+interface IAlertContainer {
   isSuccess: boolean
+  withIcon: boolean
 }
 
-const Msg = styled.span`
-  margin-left: 0.5rem;
-`
-
-const Div = styled.div<IDiv>`
+const AlertContainer = styled.div<IAlertContainer>`
   display: inline-flex;
   border-radius: ${GUTTER};
   align-items: center;
@@ -20,9 +16,10 @@ const Div = styled.div<IDiv>`
   font-weight: bolder;
   min-width: 2em;
   color: #fff;
-  box-shadow: inset 0 5px 10px #${rgbaToHex(0, 0, 0, 0.3)};
-  text-shadow: 0 1px 1px #333;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 1px ${DARK_COLOR};
   padding: 0 0.5rem;
+  white-space: nowrap;
   cursor: pointer;
   background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
   :active{
@@ -30,7 +27,12 @@ const Div = styled.div<IDiv>`
     background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
   ::before {
-    content: '${({ isSuccess }) => (isSuccess ? '✓' : '×')}';
+    content: '${({ isSuccess, withIcon }) => {
+      if (!withIcon) {
+        return ''
+      }
+      return isSuccess ? '✓' : '×'
+    }}';
   }
 `
 
@@ -40,7 +42,11 @@ export interface IAlert {
 }
 
 const Alert = ({ isSuccess, msg = '' }: IAlert) => {
-  return <Div isSuccess={isSuccess}>{msg ? <Msg>{msg}</Msg> : ''}</Div>
+  return (
+    <AlertContainer isSuccess={isSuccess} withIcon={!msg}>
+      {msg}
+    </AlertContainer>
+  )
 }
 
 export default Alert

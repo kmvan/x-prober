@@ -56,21 +56,22 @@ class ServerInfo extends Component {
 
     return (
       <Row>
-        {shortItems.map(([title, content]) => {
+        {shortItems.map(([title, content], i) => {
           return (
             <CardGrid
-              key={title}
+              key={i}
               title={title}
               tablet={[1, 2]}
-              desktopSm={[1, 3]}
+              desktopMd={[1, 4]}
+              desktopLg={[1, 5]}
             >
               {content}
             </CardGrid>
           )
         })}
-        {longItems.map(([title, content]) => {
+        {longItems.map(([title, content], i) => {
           return (
-            <CardGrid key={title} title={title} tablet={[1, 1]}>
+            <CardGrid key={i} title={title} tablet={[1, 1]}>
               {content}
             </CardGrid>
           )

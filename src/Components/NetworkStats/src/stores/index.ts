@@ -15,8 +15,8 @@ export interface INetworkStatsItem {
 }
 
 class NetworkStatsStore {
-  public ID = 'networkStats'
-  public conf = get(conf, this.ID)
+  public readonly ID = 'networkStats'
+  public readonly conf = get(conf, this.ID)
 
   @computed
   get items(): INetworkStatsItem | null {

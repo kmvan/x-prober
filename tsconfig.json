@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "module": "esnext",
-    "target": "esnext",
+    "target": "es5",
     "lib": ["esnext", "dom"],
     "sourceMap": true,
     "allowJs": true,

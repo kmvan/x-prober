@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import { observer } from 'mobx-react'
 import { gettext } from '~components/Language/src'
 import Row from '~components/Grid/src/components/row'
@@ -13,15 +13,16 @@ import PhpInfoPhpVersion from './php-version'
 class PhpInfo extends Component {
   public render() {
     const { conf } = store
-
-    const shortItems = [
+    const oneLineItems: Array<[string, ReactNode]> = [
       [
-        gettext('PHP info detail'),
+        'PHP info',
         <a key='phpInfoDetail' href='?action=phpInfo' target='_blank'>
           {gettext('👆 Click for detail')}
         </a>,
       ],
       [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
+    ]
+    const shortItems = [
       [gettext('SAPI interface'), conf.sapi],
       [
         gettext('Display errors'),
@@ -40,19 +41,25 @@ class PhpInfo extends Component {
       ],
       [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf.smtp} />],
     ]
-    const longItems = [
+
+    const { disableFunctions, disableClasses } = conf
+
+    disableFunctions.sort()
+    disableClasses.sort()
+
+    const longItems: Array<[string, ReactNode]> = [
       [
         gettext('Disabled functions'),
-        conf.disableFunctions.length
-          ? conf.disableFunctions.map((fn: string, i: number) => (
+        disableFunctions.length
+          ? disableFunctions.map((fn: string, i: number) => (
               <SearchLink key={i} keyword={fn} />
             ))
           : '-',
       ],
       [
         gettext('Disabled classes'),
-        conf.disableClasses.length
-          ? conf.disableClasses.map((fn: string, i: number) => (
+        disableClasses.length
+          ? disableClasses.map((fn: string, i: number) => (
               <SearchLink key={i} keyword={fn} />
             ))
           : '-',
@@ -61,16 +68,36 @@ class PhpInfo extends Component {
 
     return (
       <Row>
+        {oneLineItems.map(([title, content]) => {
+          return (
+            <CardGrid
+              key={title}
+              title={title}
+              tablet={[1, 3]}
+              desktopMd={[1, 4]}
+              desktopLg={[1, 5]}
+            >
+              {content}
+            </CardGrid>
+          )
+        })}
         {shortItems.map(([title, content]) => {
           return (
-            <CardGrid key={title} title={title} tablet={[1, 3]}>
+            <CardGrid
+              key={title}
+              title={title}
+              mobileMd={[1, 2]}
+              tablet={[1, 3]}
+              desktopMd={[1, 4]}
+              desktopLg={[1, 5]}
+            >
               {content}
             </CardGrid>
           )
         })}
         {longItems.map(([title, content]) => {
           return (
-            <CardGrid key={title} title={title} tablet={[1, 1]}>
+            <CardGrid key={title} title={title}>
               <MultiItemContainer>{content}</MultiItemContainer>
             </CardGrid>
           )

@@ -8,7 +8,7 @@ const normalize = css`
   }
   html {
     font-size: 75%;
-    background: #333;
+    background: ${DARK_COLOR};
   }
   body {
     background: ${DARK_COLOR};

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-31 20:28+0800\n"
-"PO-Revision-Date: 2019-08-31 20:28+0800\n"
+"POT-Creation-Date: 2019-09-01 11:50+0800\n"
+"PO-Revision-Date: 2019-09-01 11:50+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_TW\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../.git\n"
 "X-Poedit-SearchPathExcluded-1: ../dist\n"
 
-#: Components/Config/src/stores/index.ts:43
+#: Components/Config/src/stores/index.ts:48
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
 
@@ -32,7 +32,7 @@ msgstr "資料庫"
 msgid "DB"
 msgstr "資料庫"
 
-#: Components/Fetch/src/stores/index.ts:26
+#: Components/Fetch/src/stores/index.ts:30
 msgid "Fetch error, please refresh page."
 msgstr "獲取錯誤，請刷新頁面。"
 
@@ -80,7 +80,7 @@ msgstr "流量"
 msgid "Opcache enabled"
 msgstr "OPcache 已啓用"
 
-#: Components/PhpExtensions/src/components/index.tsx:57
+#: Components/PhpExtensions/src/components/index.tsx:64
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
@@ -92,27 +92,23 @@ msgstr "PHP 擴展"
 msgid "Ext"
 msgstr "擴展"
 
-#: Components/PhpInfo/src/components/index.tsx:19
-msgid "PHP info detail"
-msgstr "PHP 詳細訊息"
-
-#: Components/PhpInfo/src/components/index.tsx:21
+#: Components/PhpInfo/src/components/index.tsx:20
 msgid "👆 Click for detail"
 msgstr "👆 查看詳細"
 
-#: Components/PhpInfo/src/components/index.tsx:25
+#: Components/PhpInfo/src/components/index.tsx:26
 msgid "SAPI interface"
 msgstr "SAPI 介面"
 
-#: Components/PhpInfo/src/components/index.tsx:27
+#: Components/PhpInfo/src/components/index.tsx:28
 msgid "Display errors"
 msgstr "顯示錯誤"
 
-#: Components/PhpInfo/src/components/index.tsx:41
+#: Components/PhpInfo/src/components/index.tsx:42
 msgid "SMTP support"
 msgstr "SMTP 支援"
 
-#: Components/PhpInfo/src/components/index.tsx:53
+#: Components/PhpInfo/src/components/index.tsx:60
 msgid "Disabled classes"
 msgstr "禁用的類"
 
@@ -121,8 +117,8 @@ msgid "Visit PHP.net Official website"
 msgstr "訪問 PHP.net 官網"
 
 #: Components/PhpInfo/src/components/php-version.tsx:42
-msgid "(old, latest: <%= latestPhpVersion %>)"
-msgstr "（舊，最新：<%= latestPhpVersion %>）"
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr "（最新 <%= latestPhpVersion %>）"
 
 #: Components/PhpInfo/src/index.ts:7
 msgid "PHP Information"
@@ -156,36 +152,36 @@ msgstr "網速 Ping"
 msgid "Ping"
 msgstr "Ping"
 
-#: Components/ServerBenchmark/src/components/index.tsx:23
+#: Components/ServerBenchmark/src/components/index.tsx:22
 msgid "⏳ Testing, please wait..."
 msgstr "⏳ 跑分中，請稍等……"
 
-#: Components/ServerBenchmark/src/components/index.tsx:33
+#: Components/ServerBenchmark/src/components/index.tsx:32
 msgid "⏳ Please wait <%= seconds %>s"
 msgstr "⏳ 請等待 <%= seconds %> 秒"
 
-#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/ServerBenchmark/src/components/index.tsx:40
 #: Components/Updater/src/components/updater-link.tsx:39
 msgid "Network error, please try again later."
 msgstr "網路錯誤，請稍後重試。"
 
-#: Components/ServerBenchmark/src/components/index.tsx:53
+#: Components/ServerBenchmark/src/components/index.tsx:52
 msgid "Can not fetch marks data from GitHub."
 msgstr "無法從 GitHub 中獲取跑分數據。"
 
-#: Components/ServerBenchmark/src/components/index.tsx:76
+#: Components/ServerBenchmark/src/components/index.tsx:81
 msgid "Visit prober page"
 msgstr "查閱探針頁面"
 
-#: Components/ServerBenchmark/src/components/index.tsx:85
+#: Components/ServerBenchmark/src/components/index.tsx:90
 msgid "Download speed test"
 msgstr "下載文件以測試網速"
 
-#: Components/ServerBenchmark/src/components/index.tsx:96
+#: Components/ServerBenchmark/src/components/index.tsx:101
 msgid "Visit the official website"
 msgstr "訪問官網"
 
-#: Components/ServerBenchmark/src/components/index.tsx:155
+#: Components/ServerBenchmark/src/components/index.tsx:167
 msgid "My server"
 msgstr "我的伺服器"
 
@@ -197,7 +193,7 @@ msgstr "伺服器性能跑分"
 msgid "Becnhmark"
 msgstr "跑分"
 
-#: Components/ServerBenchmark/src/stores/index.ts:15
+#: Components/ServerBenchmark/src/stores/index.ts:21
 msgid "Click to test"
 msgstr "👆 點擊測試"
 
@@ -261,17 +257,20 @@ msgstr "無法更新文件，請檢查伺服器權限和空間。"
 msgid "Click to update"
 msgstr "👆 點擊更新"
 
-#: Components/Updater/src/stores/index.ts:38
+#: Components/Updater/src/stores/index.ts:42
 msgid "⏳ Updating, please wait a second..."
 msgstr "⏳ 更新中，請稍等……"
 
-#: Components/Updater/src/stores/index.ts:42
+#: Components/Updater/src/stores/index.ts:46
 msgid "❌ Update error, click here to try again?"
 msgstr "❌ 更新錯誤，點擊此處再試一次？"
 
-#: Components/Updater/src/stores/index.ts:48
+#: Components/Updater/src/stores/index.ts:52
 msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
 msgstr "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "PHP info detail"
+#~ msgstr "PHP 詳細訊息"
 
 #~ msgid "Server Bechmark"
 #~ msgstr "伺服器性能跑分"

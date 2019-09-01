@@ -74,19 +74,12 @@ const Bootstrap = () => (
     <Nav />
     <Forkme />
     <Toast />
-    {/*
-    <ServerStatus />
-    <NetworkStats />
-    <ServerInfo />
-    <ServerBenchmark />
-    <Updater />
-    <MyInfo /> */}
   </>
 )
 
 ready(() => {
   const c = document.createElement('div')
+  document.body.innerHTML = ''
   document.body.appendChild(c)
-
   render(<Bootstrap />, c)
 })

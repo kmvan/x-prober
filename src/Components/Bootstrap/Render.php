@@ -27,6 +27,9 @@ class Render
     <script src="{$scriptUrl}" async></script>
 </head>
 <body>
+<div style="display:flex;height:calc(100vh - 16px);width:calc(100vw - 16px);align-items:center;justify-content:center;flex-wrap:wrap;">
+    <div style="font-size:15px;background:#333;color:#fff;padding:0.5rem 1rem;border-radius:10rem;box-shadow: 0 5px 10px rgba(0,0,0,0.3);">⏳ Loading...</div>
+</div>
 </body>
 </html>
 HTML;

@@ -1,11 +1,15 @@
-import { observable, action, computed } from 'mobx'
+import { observable, action, computed, configure } from 'mobx'
+
+configure({
+  enforceActions: 'observed',
+})
 
 export interface IPingItem {
   time: number
 }
 
 class PingStore {
-  public ID = 'ping'
+  public readonly ID = 'ping'
 
   @observable public isPing: boolean = false
   @observable public pingItems: IPingItem[] = []

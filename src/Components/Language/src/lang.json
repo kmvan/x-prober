@@ -107,12 +107,6 @@
     "zh_HK": "擴展",
     "zh_TW": "擴展"
   },
-  "PHP info detail": {
-    "ja": "PHP情報詳細",
-    "zh_CN": "PHP 详细信息",
-    "zh_HK": "PHP 詳細訊息",
-    "zh_TW": "PHP 詳細訊息"
-  },
   "👆 Click for detail": {
     "ja": "詳細はこちら",
     "zh_CN": "👆 详细信息",
@@ -149,11 +143,11 @@
     "zh_HK": "訪問 PHP.net 官網",
     "zh_TW": "訪問 PHP.net 官網"
   },
-  "(old, latest: <%= latestPhpVersion %>)": {
-    "ja": "（古い、最新：<％= latestPhpVersion ％>）",
-    "zh_CN": "（旧，最新: <%= latestPhpVersion %>）",
-    "zh_HK": "（舊，最新：<%= latestPhpVersion %>）",
-    "zh_TW": "（舊，最新：<%= latestPhpVersion %>）"
+  "(Latest <%= latestPhpVersion %>)": {
+    "ja": "（最新 <％= latestPhpVersion ％>）",
+    "zh_CN": "（最新  <%= latestPhpVersion %>）",
+    "zh_HK": "（最新 <%= latestPhpVersion %>）",
+    "zh_TW": "（最新 <%= latestPhpVersion %>）"
   },
   "PHP Information": {
     "ja": "PHP情報",
@@ -376,6 +370,12 @@
     "zh_CN": "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>",
     "zh_HK": "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>",
     "zh_TW": "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+  },
+  "PHP info detail": {
+    "ja": "PHP情報詳細",
+    "zh_CN": "PHP 详细信息",
+    "zh_HK": "PHP 詳細訊息",
+    "zh_TW": "PHP 詳細訊息"
   },
   "Generator %s": {
     "ja": "ジェネレータ %s",

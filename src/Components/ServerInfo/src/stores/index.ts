@@ -3,14 +3,14 @@ import conf from '~components/Helper/src/components/conf'
 import { configure, computed } from 'mobx'
 import FetchStore from '~components/Fetch/src/stores'
 
+configure({
+  enforceActions: 'observed',
+})
+
 interface IServerInfoDiskUsage {
   max: number
   value: number
 }
-
-configure({
-  enforceActions: 'observed',
-})
 
 interface IUptime {
   days: number
@@ -20,8 +20,8 @@ interface IUptime {
 }
 
 class ServerInfoStore {
-  public ID = 'serverInfo'
-  public conf = get(conf, this.ID)
+  public readonly ID = 'serverInfo'
+  public readonly conf = get(conf, this.ID)
 
   @computed
   get serverTime(): string {

@@ -25,14 +25,17 @@ class Database extends Component {
 
     return (
       <Row>
-        {shortItems.map(([name, enabled]: [string, boolean | string]) => {
+        {shortItems.map(([name, content]: [string, boolean | string]) => {
           return (
-            <CardGrid key={name} title={name} tablet={[1, 3]}>
-              {typeof enabled !== 'boolean' ? (
-                <Alert isSuccess={true} msg={enabled} />
-              ) : (
-                <Alert isSuccess={enabled} />
-              )}
+            <CardGrid
+              key={name}
+              title={name}
+              mobileMd={[1, 2]}
+              tablet={[1, 3]}
+              desktopMd={[1, 4]}
+              desktopLg={[1, 5]}
+            >
+              <Alert isSuccess={!!content} msg={content} />
             </CardGrid>
           )
         })}

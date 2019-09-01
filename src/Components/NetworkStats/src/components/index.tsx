@@ -72,7 +72,12 @@ class NetworkStats extends Component {
           }
 
           return (
-            <CardGrid key={id} tablet={[1, 2]}>
+            <CardGrid
+              key={id}
+              tablet={[1, 2]}
+              desktopMd={[1, 3]}
+              desktopLg={[1, 4]}
+            >
               <NetworkIdRow>
                 <Grid mobileSm={[1, 3]}>
                   <NetworkId>{id}</NetworkId>

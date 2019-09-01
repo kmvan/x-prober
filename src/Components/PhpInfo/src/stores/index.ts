@@ -1,10 +1,14 @@
 import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
-import { observable, action } from 'mobx'
+import { observable, action, configure } from 'mobx'
+
+configure({
+  enforceActions: 'observed',
+})
 
 class PhpInfoStore {
-  public ID = 'phpInfo'
-  public conf = get(conf, this.ID)
+  public readonly ID = 'phpInfo'
+  public readonly conf = get(conf, this.ID)
 
   @observable public latestPhpVersion: string = ''
   @observable public latestPhpDate: string = ''

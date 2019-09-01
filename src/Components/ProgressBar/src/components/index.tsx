@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import gradientColors from '~components/Helper/src/components/gradient'
-import rgbaToHex from '~components/Helper/src/components/rgbToHex'
 import { GUTTER } from '~components/Config/src'
 
 export interface IProgressBar {
@@ -39,7 +38,7 @@ const ProgressShell = styled.div`
   height: 2rem;
   background: #444;
   border-radius: ${GUTTER};
-  box-shadow: inset 0 10px 20px ${rgbaToHex(0, 0, 0, 0.3)};
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
   padding: 0.35rem;
 `
 
@@ -52,8 +51,8 @@ const ProgressValue = styled.div<IProgressValue>`
   transition: all 1s;
   border-radius: ${GUTTER};
   background: #0c0;
-  box-shadow: inset 0 -5px 10px #${rgbaToHex(0, 0, 0, 0.4)},
-    0 5px 10px 0 #${rgbaToHex(0, 0, 0, 0.3)};
+  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.4),
+    0 5px 10px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
   background: #${({ percent }: IProgressValue) => gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]};
   width: ${({ percent }: IProgressValue) => percent}%;
@@ -65,15 +64,15 @@ const ProgressValue = styled.div<IProgressValue>`
     height: 50%;
     width: 100%;
     border-radius: 0 0 50% 50%;
-    background: linear-gradient(#fff, #${rgbaToHex(255, 255, 255, 0.3)});
+    background: linear-gradient(#fff, rgba(255, 255, 255, 0.3));
     opacity: 0.3;
   }
   ::before {
     background: linear-gradient(
       90deg,
-      #${rgbaToHex(255, 255, 255, 0.1)},
-      #${rgbaToHex(255, 255, 255, 0.5)},
-      #${rgbaToHex(255, 255, 255, 0.1)}
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.1)
     );
     opacity: 1;
     height: 1px;

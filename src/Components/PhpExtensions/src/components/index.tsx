@@ -34,7 +34,7 @@ class PhpExtensions extends Component {
       ['Xdebug', conf.xdebug],
       ['Zend Otimizer', conf.zendOtimizer],
       ['ionCube', conf.ionCube],
-      ['SourceGuardian', conf.sourceGuardian],
+      ['Source Guardian', conf.sourceGuardian],
       ['LDAP', conf.ldap],
       ['cURL', conf.curl],
     ]
@@ -49,7 +49,14 @@ class PhpExtensions extends Component {
       <Row>
         {shortItems.map(([name, enabled]: [string, boolean]) => {
           return (
-            <CardGrid key={name} title={name} tablet={[1, 3]}>
+            <CardGrid
+              key={name}
+              title={name}
+              mobileMd={[1, 2]}
+              tablet={[1, 3]}
+              desktopMd={[1, 4]}
+              desktopLg={[1, 5]}
+            >
               <Alert isSuccess={enabled} />
             </CardGrid>
           )

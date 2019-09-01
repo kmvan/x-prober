@@ -1,14 +1,19 @@
-import { observable, action } from 'mobx'
+import { observable, action, configure } from 'mobx'
 import ToastStore from '~components/Toast/src/stores'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 
-interface IAppConfigBenchmark {
+configure({
+  enforceActions: 'observed',
+})
+
+export interface IAppConfigBenchmark {
   name: string
   url: string
   date?: string
   proberUrl?: string
   binUrl?: string
+  total?: number
   detail: {
     hash: number
     intLoop: number

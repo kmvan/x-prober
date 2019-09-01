@@ -16,38 +16,44 @@ class HelperApi
 
     public static function getWinCpuUsage()
     {
-        $cpus = array();
+        $usage = array(
+            'idle' => 100,
+            'user' => 0,
+            'sys'  => 0,
+            'nice' => 0,
+        );
 
         // com
         if (\class_exists('\\COM')) {
             // need help
             $wmi    = new \COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
-
-            $cpus = array();
-
-            $total = 0;
+            $total  = 0;
 
             foreach ($server as $cpu) {
                 $total += (int) $cpu->loadpercentage;
             }
 
-            $total        = (int) $total / \count($server);
-            $cpus['idle'] = 100 - $total;
-            $cpus['user'] = $total;
+            $total         = (int) $total / \count($server);
+            $usage['idle'] = 100 - $total;
+            $usage['user'] = $total;
         // exec
         } else {
+            if ( ! \function_exists('\exec')) {
+                return $usage;
+            }
+
             $p = array();
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
-                $percent      = (int) $p[1];
-                $cpus['idle'] = 100 - $percent;
-                $cpus['user'] = $percent;
+                $percent       = (int) $p[1];
+                $usage['idle'] = 100 - $percent;
+                $usage['user'] = $percent;
             }
         }
 
-        return $cpus;
+        return $usage;
     }
 
     public static function getNetworkStats()
@@ -81,31 +87,31 @@ class HelperApi
         return $eths;
     }
 
-    public static function getDiskTotalSpace($human = false)
+    public static function getDiskTotalSpace()
     {
+        if ( ! \function_exists('\disk_total_space')) {
+            return 0;
+        }
+
         static $space = null;
 
         if (null === $space) {
             $space = (float) \disk_total_space(__DIR__);
         }
 
-        if (true === $human) {
-            return self::formatBytes($space);
-        }
-
         return $space;
     }
 
-    public static function getDiskFreeSpace($human = false)
+    public static function getDiskFreeSpace()
     {
+        if ( ! \function_exists('\disk_total_space')) {
+            return 0;
+        }
+
         static $space = null;
 
         if (null === $space) {
             $space = (float) \disk_free_space(__DIR__);
-        }
-
-        if (true === $human) {
-            return self::formatBytes($space);
         }
 
         return $space;

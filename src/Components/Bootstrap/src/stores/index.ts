@@ -1,10 +1,14 @@
 import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
-import { observable, action } from 'mobx'
+import { observable, action, configure } from 'mobx'
+
+configure({
+  enforceActions: 'observed',
+})
 
 class BootstrapStore {
-  public ID = 'bootstrap'
-  public conf = get(conf, this.ID)
+  public readonly ID = 'bootstrap'
+  public readonly conf = get(conf, this.ID)
   public version: string = get(this.conf, 'version')
   public appConfigUrl: string = get(this.conf, 'appConfigUrl')
   public appConfigUrlDev: string = get(this.conf, 'appConfigUrlDev')

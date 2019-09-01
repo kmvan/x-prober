@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-08-31 20:28+0800\n"
-"PO-Revision-Date: 2019-08-31 20:28+0800\n"
+"POT-Creation-Date: 2019-09-01 11:50+0800\n"
+"PO-Revision-Date: 2019-09-01 11:50+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
 "Language: ja\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Config/src/stores/index.ts:43
+#: Components/Config/src/stores/index.ts:48
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
 "エラー：リモート設定データを取得できません。更新チェッカーが無効になってい"
@@ -30,7 +30,7 @@ msgstr "データベース"
 msgid "DB"
 msgstr "DB"
 
-#: Components/Fetch/src/stores/index.ts:26
+#: Components/Fetch/src/stores/index.ts:30
 msgid "Fetch error, please refresh page."
 msgstr "取得エラー。ページを更新してください。"
 
@@ -78,7 +78,7 @@ msgstr "ネット"
 msgid "Opcache enabled"
 msgstr "%s 有効"
 
-#: Components/PhpExtensions/src/components/index.tsx:57
+#: Components/PhpExtensions/src/components/index.tsx:64
 msgid "Loaded extensions"
 msgstr "ロードエクステンション"
 
@@ -90,27 +90,23 @@ msgstr "PHPエクステンション"
 msgid "Ext"
 msgstr "拡張"
 
-#: Components/PhpInfo/src/components/index.tsx:19
-msgid "PHP info detail"
-msgstr "PHP情報詳細"
-
-#: Components/PhpInfo/src/components/index.tsx:21
+#: Components/PhpInfo/src/components/index.tsx:20
 msgid "👆 Click for detail"
 msgstr "詳細はこちら"
 
-#: Components/PhpInfo/src/components/index.tsx:25
+#: Components/PhpInfo/src/components/index.tsx:26
 msgid "SAPI interface"
 msgstr "SAPI インタフェース"
 
-#: Components/PhpInfo/src/components/index.tsx:27
+#: Components/PhpInfo/src/components/index.tsx:28
 msgid "Display errors"
 msgstr "エラー表示"
 
-#: Components/PhpInfo/src/components/index.tsx:41
+#: Components/PhpInfo/src/components/index.tsx:42
 msgid "SMTP support"
 msgstr "SMTP サポート"
 
-#: Components/PhpInfo/src/components/index.tsx:53
+#: Components/PhpInfo/src/components/index.tsx:60
 msgid "Disabled classes"
 msgstr "無効なクラス"
 
@@ -119,8 +115,8 @@ msgid "Visit PHP.net Official website"
 msgstr "PHP.net 公式ウェブサイトにアクセス"
 
 #: Components/PhpInfo/src/components/php-version.tsx:42
-msgid "(old, latest: <%= latestPhpVersion %>)"
-msgstr "（古い、最新：<％= latestPhpVersion ％>）"
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr "（最新 <％= latestPhpVersion ％>）"
 
 #: Components/PhpInfo/src/index.ts:7
 msgid "PHP Information"
@@ -154,36 +150,36 @@ msgstr "ネットワークPing"
 msgid "Ping"
 msgstr "Ping"
 
-#: Components/ServerBenchmark/src/components/index.tsx:23
+#: Components/ServerBenchmark/src/components/index.tsx:22
 msgid "⏳ Testing, please wait..."
 msgstr "⏳ テストしています。お待ちください..."
 
-#: Components/ServerBenchmark/src/components/index.tsx:33
+#: Components/ServerBenchmark/src/components/index.tsx:32
 msgid "⏳ Please wait <%= seconds %>s"
 msgstr "⏳ <%= seconds %>s 秒お待ちください"
 
-#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/ServerBenchmark/src/components/index.tsx:40
 #: Components/Updater/src/components/updater-link.tsx:39
 msgid "Network error, please try again later."
 msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
 
-#: Components/ServerBenchmark/src/components/index.tsx:53
+#: Components/ServerBenchmark/src/components/index.tsx:52
 msgid "Can not fetch marks data from GitHub."
 msgstr "GitHubからマークデータを取得できません。"
 
-#: Components/ServerBenchmark/src/components/index.tsx:76
+#: Components/ServerBenchmark/src/components/index.tsx:81
 msgid "Visit prober page"
 msgstr "X-Prober ホームページへ"
 
-#: Components/ServerBenchmark/src/components/index.tsx:85
+#: Components/ServerBenchmark/src/components/index.tsx:90
 msgid "Download speed test"
 msgstr "ネットワーク速度テスト用のダウンロードファイル"
 
-#: Components/ServerBenchmark/src/components/index.tsx:96
+#: Components/ServerBenchmark/src/components/index.tsx:101
 msgid "Visit the official website"
 msgstr "公式ウェブサイトをご覧ください"
 
-#: Components/ServerBenchmark/src/components/index.tsx:155
+#: Components/ServerBenchmark/src/components/index.tsx:167
 msgid "My server"
 msgstr "私のサーバー"
 
@@ -195,7 +191,7 @@ msgstr "サーバー基準"
 msgid "Becnhmark"
 msgstr "基準"
 
-#: Components/ServerBenchmark/src/stores/index.ts:15
+#: Components/ServerBenchmark/src/stores/index.ts:21
 msgid "Click to test"
 msgstr "👆クリックしてテスト"
 
@@ -262,18 +258,21 @@ msgstr ""
 msgid "Click to update"
 msgstr "クリックして更新"
 
-#: Components/Updater/src/stores/index.ts:38
+#: Components/Updater/src/stores/index.ts:42
 msgid "⏳ Updating, please wait a second..."
 msgstr "⏳ 更新しています。しばらくお待ちください..."
 
-#: Components/Updater/src/stores/index.ts:42
+#: Components/Updater/src/stores/index.ts:46
 msgid "❌ Update error, click here to try again?"
 msgstr "❌ 更新エラー。ここをクリックして再試行しますか？"
 
-#: Components/Updater/src/stores/index.ts:48
+#: Components/Updater/src/stores/index.ts:52
 msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
 msgstr ""
 "✨ アップデートが見た！バージョン <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "PHP info detail"
+#~ msgstr "PHP情報詳細"
 
 #~ msgid "Generator %s"
 #~ msgstr "ジェネレータ %s"

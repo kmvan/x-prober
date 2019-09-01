@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
-"POT-Creation-Date: 2019-08-31 20:28+0800\n"
+"POT-Creation-Date: 2019-09-01 11:50+0800\n"
 "PO-Revision-Date: 2018-09-18 21:29+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Yourname <your mail or URL>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Components/Config/src/stores/index.ts:43
+#: Components/Config/src/stores/index.ts:48
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
 
@@ -29,7 +29,7 @@ msgstr ""
 msgid "DB"
 msgstr ""
 
-#: Components/Fetch/src/stores/index.ts:26
+#: Components/Fetch/src/stores/index.ts:30
 msgid "Fetch error, please refresh page."
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Opcache enabled"
 msgstr ""
 
-#: Components/PhpExtensions/src/components/index.tsx:57
+#: Components/PhpExtensions/src/components/index.tsx:64
 msgid "Loaded extensions"
 msgstr ""
 
@@ -89,27 +89,23 @@ msgstr ""
 msgid "Ext"
 msgstr ""
 
-#: Components/PhpInfo/src/components/index.tsx:19
-msgid "PHP info detail"
-msgstr ""
-
-#: Components/PhpInfo/src/components/index.tsx:21
+#: Components/PhpInfo/src/components/index.tsx:20
 msgid "👆 Click for detail"
 msgstr ""
 
-#: Components/PhpInfo/src/components/index.tsx:25
+#: Components/PhpInfo/src/components/index.tsx:26
 msgid "SAPI interface"
 msgstr ""
 
-#: Components/PhpInfo/src/components/index.tsx:27
+#: Components/PhpInfo/src/components/index.tsx:28
 msgid "Display errors"
 msgstr ""
 
-#: Components/PhpInfo/src/components/index.tsx:41
+#: Components/PhpInfo/src/components/index.tsx:42
 msgid "SMTP support"
 msgstr ""
 
-#: Components/PhpInfo/src/components/index.tsx:53
+#: Components/PhpInfo/src/components/index.tsx:60
 msgid "Disabled classes"
 msgstr ""
 
@@ -118,7 +114,7 @@ msgid "Visit PHP.net Official website"
 msgstr ""
 
 #: Components/PhpInfo/src/components/php-version.tsx:42
-msgid "(old, latest: <%= latestPhpVersion %>)"
+msgid "(Latest <%= latestPhpVersion %>)"
 msgstr ""
 
 #: Components/PhpInfo/src/index.ts:7
@@ -153,36 +149,36 @@ msgstr ""
 msgid "Ping"
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:23
+#: Components/ServerBenchmark/src/components/index.tsx:22
 msgid "⏳ Testing, please wait..."
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:33
+#: Components/ServerBenchmark/src/components/index.tsx:32
 msgid "⏳ Please wait <%= seconds %>s"
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:41
+#: Components/ServerBenchmark/src/components/index.tsx:40
 #: Components/Updater/src/components/updater-link.tsx:39
 msgid "Network error, please try again later."
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:53
+#: Components/ServerBenchmark/src/components/index.tsx:52
 msgid "Can not fetch marks data from GitHub."
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:76
+#: Components/ServerBenchmark/src/components/index.tsx:81
 msgid "Visit prober page"
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:85
+#: Components/ServerBenchmark/src/components/index.tsx:90
 msgid "Download speed test"
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:96
+#: Components/ServerBenchmark/src/components/index.tsx:101
 msgid "Visit the official website"
 msgstr ""
 
-#: Components/ServerBenchmark/src/components/index.tsx:155
+#: Components/ServerBenchmark/src/components/index.tsx:167
 msgid "My server"
 msgstr ""
 
@@ -194,7 +190,7 @@ msgstr ""
 msgid "Becnhmark"
 msgstr ""
 
-#: Components/ServerBenchmark/src/stores/index.ts:15
+#: Components/ServerBenchmark/src/stores/index.ts:21
 msgid "Click to test"
 msgstr ""
 
@@ -258,14 +254,14 @@ msgstr ""
 msgid "Click to update"
 msgstr ""
 
-#: Components/Updater/src/stores/index.ts:38
+#: Components/Updater/src/stores/index.ts:42
 msgid "⏳ Updating, please wait a second..."
 msgstr ""
 
-#: Components/Updater/src/stores/index.ts:42
+#: Components/Updater/src/stores/index.ts:46
 msgid "❌ Update error, click here to try again?"
 msgstr ""
 
-#: Components/Updater/src/stores/index.ts:48
+#: Components/Updater/src/stores/index.ts:52
 msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
 msgstr ""

@@ -16,7 +16,8 @@ class Fetch
     {
         if ('fetch' === $action) {
             EventsApi::emit('fetchBefore');
-            (new RestfulResponse(EventsApi::emit('fetch', array())))->dieJson();
+            $response = new RestfulResponse(EventsApi::emit('fetch', array()));
+            $response->dieJson();
         }
 
         return $action;

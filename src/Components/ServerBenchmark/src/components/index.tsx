@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import ConfigStore from '~components/Config/src/stores'
 import { gettext } from '~components/Language/src'
 import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK, TOO_MANY_REQUESTS } from '~components/Restful/src/http-status'
-import { template } from 'lodash-es'
+import { template, sum, orderBy } from 'lodash-es'
 import CardError from '~components/Card/src/components/error'
 import CardRuby from '~components/Card/src/components/card-ruby'
+import { toJS } from 'mobx'
 
 @observer
 class ServerBenchmark extends Component {
@@ -26,8 +26,12 @@ class ServerBenchmark extends Component {
     await restfulFetch('benchmark')
       .then(([{ status }, { marks, seconds }]) => {
         if (status === OK) {
-          setMarks(marks)
-          setLinkText('')
+          if (marks) {
+            setMarks(marks)
+            setLinkText('')
+          } else {
+            setLinkText(gettext('Network error, please try again later.'))
+          }
         } else if (status === TOO_MANY_REQUESTS) {
           const secondsMsg = template(
             gettext('⏳ Please wait <%= seconds %>s')
@@ -45,9 +49,9 @@ class ServerBenchmark extends Component {
   }
 
   private renderItems() {
-    const { appConfig } = ConfigStore
+    const { servers } = store
 
-    if (!appConfig) {
+    if (!servers) {
       return (
         <CardError>
           {gettext('Can not fetch marks data from GitHub.')}
@@ -55,7 +59,13 @@ class ServerBenchmark extends Component {
       )
     }
 
-    const items = appConfig.BENCHMARKS || []
+    let items = toJS(servers).map(item => {
+      item.total = item.detail ? sum(Object.values(item.detail)) : 0
+
+      return item
+    })
+
+    items = orderBy(items, ({ total }) => total).reverse()
 
     return items.map(({ name, url, date, proberUrl, binUrl, detail }) => {
       if (!detail) {
@@ -100,7 +110,13 @@ class ServerBenchmark extends Component {
       )
 
       return (
-        <CardGrid key={name} title={title} tablet={[1, 2]} desktopSm={[1, 3]}>
+        <CardGrid
+          key={name}
+          title={title}
+          tablet={[1, 2]}
+          desktopMd={[1, 3]}
+          desktopLg={[1, 4]}
+        >
           {this.renderResult({
             hash,
             intLoop,
@@ -149,10 +165,15 @@ class ServerBenchmark extends Component {
 
   private renderTestBtn() {
     const { marks, linkText } = store
-
     const marksText = marks ? this.renderResult(marks) : ''
+
     return (
-      <CardGrid title={gettext('My server')} tablet={[1, 2]} desktopSm={[1, 3]}>
+      <CardGrid
+        title={gettext('My server')}
+        tablet={[1, 2]}
+        desktopMd={[1, 3]}
+        desktopLg={[1, 4]}
+      >
         <a onClick={this.onClick}>
           {linkText} {marksText}
         </a>

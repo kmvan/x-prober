@@ -20,8 +20,8 @@ export interface IServerStatusCpuUsage {
 }
 
 class ServerStatus {
-  public ID = 'serverStatus'
-  public conf = get(conf, this.ID)
+  public readonly ID = 'serverStatus'
+  public readonly conf = get(conf, this.ID)
 
   @observable public memRealUsage: IServerStatusUsage = this.conf.memRealUsage
   @observable public memBuffers: IServerStatusUsage = this.conf.memBuffers

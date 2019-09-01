@@ -4,21 +4,27 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import { gettext } from '~components/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER, DARK_COLOR_RGB } from '~components/Config/src'
+import { device } from '~components/Style/src/components/devices'
 
 const GroupContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  @media ${device('tablet')} {
+    justify-content: flex-start;
+  }
 `
 
 const GroupItem = styled.span`
   margin-right: 0.5rem;
-  background: #33333380;
+  background: ${() =>
+    `rgba(${DARK_COLOR_RGB[0]}, ${DARK_COLOR_RGB[1]}, ${DARK_COLOR_RGB[2]}, 0.75)`};
   color: #fff;
   padding: calc(${GUTTER} / 10) ${GUTTER};
   border-radius: 10rem;
   font-family: Arial Black;
-  text-shadow: 0 1px 1px #333;
+  text-shadow: 0 1px 1px #000;
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
   font-weight: 700;
 `

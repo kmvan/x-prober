@@ -18,8 +18,9 @@ class Ping
             return $action;
         }
 
-        (new RestfulResponse(array(
+        $response = new RestfulResponse(array(
             'time' => \microtime(true) - \XPROBER_TIMER,
-        )))->dieJson();
+        ));
+        $response->dieJson();
     }
 }
