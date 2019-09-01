@@ -1,4 +1,4 @@
-[![X Prober preview](preview.png)](preview.png)
+[![X Prober preview](preview.jpg)](preview.jpg)
 
 # 😎 X 探針、劉海探針
 
@@ -26,7 +26,7 @@
 
 - 編譯環境：PHP 7.3+
 - 運作環境：PHP 5.3+
-- 瀏覽器兼容：<del>IE9</del>、Chrome、Firefox、Edge
+- 瀏覽器兼容：<del>IE9</del>、Chrome、Firefox、Edge、Android
 - 系統兼容：Linux、Windows（基礎功能）
 
 ## 開發指引
@@ -37,15 +37,15 @@
 - 監視腳本：`$ npm run dev`。
 - 安裝 composer：`$ composer install && composer dumpautoload -o`。
 - 編譯 **開發環境**：`$ php ./Make.php dev`。
-- 編譯 **生產環境**: `$ npm run build && php ./Make.php`。
+- 編譯 **生產環境**: `$ npm run build && php ./Make.php build`。
 - 通過瀏覽器訪問 `./dist/prober.php`。
 - 進行 Pull Request。
 
 ## 參與翻譯更多語言
 
 - **Fork** 項目。
-- 使用 [Poedit](https://poedit.net/) 通過 `./languages/language.pot` 語言模板來創建和翻譯您的語言。
-- 保存翻譯語言文件 _（例如：`en_US.po`)_ 到 `./languages` 目錄裏面。
+- 使用 [Poedit](https://poedit.net/) 通過 `./languages/js-language.pot` 語言模板來創建和翻譯您的語言。
+- 保存翻譯語言文件 _（例如：`js-en_US.po`)_ 到 `./languages` 目錄裏面。
 - 添加您的稱呼到貢獻者名單裏面。
 - 進行 Pull Request，十分感謝。😘
 
