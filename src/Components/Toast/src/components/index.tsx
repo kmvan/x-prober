@@ -9,7 +9,7 @@ import { gettext } from '~components/Language/src'
 const ToastContainer = styled.div`
   position: fixed;
   bottom: 4rem;
-  width: 20vw;
+  width: 20rem;
   max-width: 80vw;
   left: 50%;
   transform: translateX(-50%);
@@ -18,6 +18,8 @@ const ToastContainer = styled.div`
   border-radius: ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
   cursor: pointer;
+  word-break: normal;
+  text-align: center;
 `
 
 @observer

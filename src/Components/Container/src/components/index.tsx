@@ -7,7 +7,7 @@ const Div = styled.div`
   ${Object.entries(breakPoints).map(([id, px]) => {
     return css`
       @media ${device(id)} {
-        max-width: ${px};
+        /* max-width: ${px}; */
       }
     `
   })}
@@ -15,9 +15,9 @@ const Div = styled.div`
   margin-left:  auto;
   margin-right: auto;
   padding-left: calc(${GUTTER} / 2);
-  padding-right: calc (${GUTTER} / 2);
+  padding-right: calc(${GUTTER} / 2);
 
-  @media ${device('tablet')} {
+  @media ${device('desktopSm')} {
     padding-left: ${GUTTER};
     padding-right: ${GUTTER};
   }

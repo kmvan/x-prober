@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { GUTTER, DARK_COLOR } from '~components/Config/src'
+import { GUTTER, COLOR_DARK } from '~components/Config/src'
 
 interface IAlertContainer {
   isSuccess: boolean
@@ -17,7 +17,7 @@ const AlertContainer = styled.div<IAlertContainer>`
   min-width: 2em;
   color: #fff;
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
-  text-shadow: 0 1px 1px ${DARK_COLOR};
+  text-shadow: 0 1px 1px ${COLOR_DARK};
   padding: 0 0.5rem;
   white-space: nowrap;
   cursor: pointer;
