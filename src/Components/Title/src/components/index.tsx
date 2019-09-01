@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { BORDER_RADIUS, GUTTER, DARK_COLOR } from '~components/Config/src/index'
+import { BORDER_RADIUS, GUTTER, COLOR_DARK } from '~components/Config/src/index'
 import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
 import UpdaterLink from '~components/Updater/src/components/updater-link'
 
 export const TitleContainer = styled.h1`
-  background: ${DARK_COLOR};
+  background: ${COLOR_DARK};
   position: fixed;
   top: ${GUTTER};
   left: 50%;

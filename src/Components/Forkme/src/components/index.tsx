@@ -1,25 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DARK_COLOR, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
 
 const ForkmeLink = styled.a`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background: ${DARK_COLOR};
-  color: #fffc;
+  background: ${COLOR_DARK};
+  color: rgba(255, 255, 255, 0.85);
   font-family: Arial Black;
-  padding: calc(${GUTTER} / 3) calc(${GUTTER} * 2);
-  transform: rotate(-45deg) translate(-30%, -50%);
-  font-size: 0.7rem;
+  padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
+  transform: rotate(-45deg) translate(-28%, -70%);
+  font-size: calc(${GUTTER} * 0.7);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-
+  z-index: 2;
   @media ${device('tablet')} {
     font-size: 1rem;
-    transform: rotate(-45deg) translate(-30%, -10%);
+    transform: rotate(-45deg) translate(-28%, -50%);
+    top: calc(${GUTTER} / 2);
+    left: calc(${GUTTER} / 2);
   }
   ::after,
   ::before {
@@ -28,7 +30,12 @@ const ForkmeLink = styled.a`
     top: 1px;
     height: 0.5px;
     width: 100%;
-    background: linear-gradient(90deg, #fff0, #fff, #fff0);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      #fff,
+      rgba(255, 255, 255, 0)
+    );
     content: '';
   }
   ::after {

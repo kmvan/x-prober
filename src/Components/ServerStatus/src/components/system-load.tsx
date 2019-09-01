@@ -4,7 +4,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import { gettext } from '~components/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
-import { GUTTER, DARK_COLOR_RGB } from '~components/Config/src'
+import { GUTTER, COLOR_DARK_RGB } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
 const GroupContainer = styled.div`
@@ -19,7 +19,7 @@ const GroupContainer = styled.div`
 const GroupItem = styled.span`
   margin-right: 0.5rem;
   background: ${() =>
-    `rgba(${DARK_COLOR_RGB[0]}, ${DARK_COLOR_RGB[1]}, ${DARK_COLOR_RGB[2]}, 0.75)`};
+    `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
   color: #fff;
   padding: calc(${GUTTER} / 10) ${GUTTER};
   border-radius: 10rem;

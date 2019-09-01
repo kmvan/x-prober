@@ -4,12 +4,12 @@ import { gettext } from '~components/Language/src'
 import { template } from 'lodash-es'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import store from '../stores'
-import { DARK_COLOR, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import { device } from '~components/Style/src/components/devices'
 
 const Div = styled.div`
-  background: ${DARK_COLOR};
+  background: ${COLOR_DARK};
   color: #ccc;
   width: 100%;
   border-radius: 10rem;

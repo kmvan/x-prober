@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DARK_COLOR, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER } from '~components/Config/src'
 
 const A = styled.a`
   margin: 0 0.2rem 0.2rem 0;
@@ -9,7 +9,7 @@ const A = styled.a`
   border-radius: ${GUTTER};
   font-family: consolas;
   :hover {
-    background: ${DARK_COLOR};
+    background: ${COLOR_DARK};
     color: #fff;
     text-decoration: underline;
   }

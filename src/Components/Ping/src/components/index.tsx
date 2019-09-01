@@ -8,7 +8,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
-import { DARK_COLOR, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
 const PingBtn = styled.a`
@@ -19,7 +19,7 @@ const PingBtn = styled.a`
 const PingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  background: ${DARK_COLOR};
+  background: ${COLOR_DARK};
   color: #ccc;
   padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
@@ -85,12 +85,12 @@ interface IPingResult {
 const PingResult = styled.div<IPingResult>`
   display: flex;
   align-items: center;
-  background: ${DARK_COLOR};
+  background: ${COLOR_DARK};
   color: #ccc;
   border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
     ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  border-top: 1px dashed #ffffff1a;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
   flex-wrap: wrap;
   justify-content: space-between;
 `

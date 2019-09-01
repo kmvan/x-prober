@@ -23,42 +23,28 @@ import store from '../stores'
 import Forkme from '~components/Forkme/src/components'
 import Footer from '~components/Footer/src/components'
 import Toast from '~components/Toast/src/components'
-import { device } from '~components/Style/src/components/devices'
-import { GUTTER, DARK_COLOR } from '~components/Config/src'
+import { GUTTER, COLOR_DARK, COLOR_GRAY } from '~components/Config/src'
 
 const App = styled.div`
-  position: fixed;
-  top: ${GUTTER};
-  left: ${GUTTER};
-  right: ${GUTTER};
-  bottom: calc(${GUTTER} * 3);
-  border-radius: calc(${GUTTER} * 2);
-  background: #f8f8f8;
-  padding-top: calc(${GUTTER} * 3);
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
+  background: ${COLOR_GRAY};
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
-  will-change: transform;
 
-  @media ${device('desktopSm')} {
-    ::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-
-    ::-webkit-scrollbar {
-      width: ${GUTTER};
-      background-color: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: ${GUTTER} 0 0 ${GUTTER};
-      background-color: ${DARK_COLOR};
-      opacity: 0;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
+  /* notch right angle square */
+  ::before,
+  ::after {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: calc(${GUTTER} * 2);
+    border: ${GUTTER} solid ${COLOR_DARK};
+    pointer-events: none;
+    z-index: 1;
+    content: '';
+  }
+  ::after {
+    border-radius: calc(${GUTTER} * 3);
   }
 `
 const Bootstrap = () => (
