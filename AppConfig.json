@@ -16,6 +16,19 @@
   "LATEST_MYSQL_CLIENT_STABLE_VERSION": "50012",
   "BENCHMARKS": [
     {
+      "name": "RamNode/SSD/PHP7.3",
+      "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
+      "date": "2019-09-02",
+      "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
+      "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
+      "detail": {
+        "hash": 748,
+        "intLoop": 942,
+        "floatLoop": 942,
+        "ioLoop": 656
+      }
+    },
+    {
       "name": "SpartanHost/HDD/PHP7.3",
       "url": "https://billing.spartanhost.net/aff.php?aff=801",
       "date": "2019-03-09",
