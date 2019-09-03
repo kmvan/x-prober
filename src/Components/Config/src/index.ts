@@ -1,4 +1,4 @@
-import hexToRgb from '~components/Helper/src/components/hexToRgb'
+import hexToRgb from '~components/Helper/src/components/hex-to-rgb'
 
 export const BORDER_RADIUS = '2rem'
 export const COLOR_DARK = '#333333'

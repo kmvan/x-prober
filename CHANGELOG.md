@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.2 - 2019-08-03
+
+### Fix
+
+- Fix progress bar color error in old browser
+
 ## 3.1 - 2019-08-01
 
 ### Optimize
