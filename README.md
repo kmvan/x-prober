@@ -17,7 +17,7 @@
 
 > This is a prober program for **PHP environment**. It can show your server information and readable easily.
 
-And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR** !
+And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/11 Pro/11 Pro Max** !
 
 [![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
