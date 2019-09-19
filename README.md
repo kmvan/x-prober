@@ -53,6 +53,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 - Watch scripts: `$ npm run dev`.
 - Generate composer vendor: `$ composer install && composer dumpautoload -o`.
 - Compile **development**: `$ php ./Make.php dev`.
+- Generate languages: `$ npm run lang` or `node ./build-lang.js` to remake `./languages/lang.pot` language template.
 - Compile **production**: `$ npm run build && php ./Make.php build`.
 - Access `./dist/prober.php` from HTTP browser.
 - Enjoy it. 😄
@@ -62,8 +63,8 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 - **Fork** project.
 - Fetch your project.
-- Use [Poedit](https://poedit.net/) to create your language from `./languages/js-language.pot` language template file and translates it.
-- Save your language file _(like: `js-en_US.po`)_ into `./languages`.
+- Use [Poedit](https://poedit.net/) to create your language from `./languages/lang.pot` language template file and translates it.
+- Save your language file (like: `en_US.po`) into `./languages`.
 - Pull Request and thank you. 😘
 
 ## Note for participate in contribution

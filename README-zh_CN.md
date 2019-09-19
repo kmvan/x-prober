@@ -36,6 +36,7 @@
 - 安装 npm 模块：`$ npm install`。
 - 监听脚本：`$ npm run dev`。
 - 安装 composer：`$ composer install && composer dumpautoload -o`。
+- 生成多国语言：`$ npm run lang` 或 `$ node ./build-lang.js` 来重建 `./languages/lang.pot` 语言模板。
 - 编译 **开发环境**：`$ php ./Make.php dev`。
 - 编译 **生产环境**: `$ npm run build && php ./Make.php build`。
 - 通过浏览器访问 `./dist/prober.php`。
@@ -44,8 +45,8 @@
 ## 参与翻译更多语言
 
 - **Fork** 项目。
-- 使用 [Poedit](https://poedit.net/) 通过 `./languages/js-language.pot` 语言模板来创建和翻译您的语言。
-- 保存翻译语言文件 _（例如：`js-en_US.po`)_ 到 `./languages` 目录里面。
+- 使用 [Poedit](https://poedit.net/) 通过 `./languages/lang.pot` 语言模板来创建和翻译您的语言。
+- 保存翻译语言文件 _（例如：`en_US.po`)_ 到 `./languages` 目录里面。
 - 添加您的称呼到贡献者名单里面。
 - 进行 Pull Request，十分感谢。😘
 
@@ -54,9 +55,6 @@
 - 您的 PHP 代码需要兼容 PHP5.3+ 环境。
 
 ## 贡献者名单
-
-- Km.Van https://inn-studio.com
-- Jack Cherng https://github.com/jfcherng
 
 <a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
 
