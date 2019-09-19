@@ -1,0 +1,284 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2019-09-19 09:52+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language-Team: Km.Van <inn-studio.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: gettext\n"
+
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr ""
+"エラー：リモート設定データを取得できません。更新チェッカーが無効になっていま"
+"す。"
+
+msgid "Database"
+msgstr "データベース"
+
+msgid "DB"
+msgstr "DB"
+
+msgid "Fetch error, please refresh page."
+msgstr "取得エラー。ページを更新してください。"
+
+msgid ""
+"Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
+"time %>ms"
+msgstr ""
+"このページは <%= appName %> によって生成されます / 著者は <%= authorName "
+"%> / <%= memUsage %> / <%= time %> ミリ秒"
+
+msgid "STAR 🌟 ME"
+msgstr "星🌟印"
+
+msgid "My IP"
+msgstr "私のIP"
+
+msgid "My browser UA"
+msgstr "私のブラウザ UA"
+
+msgid "My browser languages (via JS)"
+msgstr "私のブラウザの言語（JS）"
+
+msgid "My browser languages (via PHP)"
+msgstr "私のブラウザの言語（PHP）"
+
+msgid "My location"
+msgstr "私の場所"
+
+msgid "In development"
+msgstr "開発中"
+
+msgid "My information"
+msgstr "私の情報"
+
+msgid "Mine"
+msgstr "私の"
+
+msgid "Network stats"
+msgstr "ネットワーク統計"
+
+msgid "Net"
+msgstr "ネット"
+
+msgid "Opcache enabled"
+msgstr "%s 有効"
+
+msgid "Loaded extensions"
+msgstr "ロードエクステンション"
+
+msgid "PHP extensions"
+msgstr "PHPエクステンション"
+
+msgid "Ext"
+msgstr "拡張"
+
+msgid "👆 Click for detail"
+msgstr "詳細はこちら"
+
+msgid "Version"
+msgstr "バージョン"
+
+msgid "SAPI interface"
+msgstr "SAPI インタフェース"
+
+msgid "Display errors"
+msgstr "エラー表示"
+
+msgid "Error reporting"
+msgstr "エラー報告"
+
+msgid "Max memory limit"
+msgstr "最大メモリ制限"
+
+msgid "Max POST size"
+msgstr "最大 POST サイズ"
+
+msgid "Max upload size"
+msgstr "最大アップロードサイズ"
+
+msgid "Max input variables"
+msgstr "最大入力変数"
+
+msgid "Max execution time"
+msgstr "最大実行時間"
+
+msgid "Timeout for socket"
+msgstr "ソケットのタイムアウト"
+
+msgid "Treatment URLs file"
+msgstr "Treatment URLs ファイル"
+
+msgid "SMTP support"
+msgstr "SMTP サポート"
+
+msgid "Disabled functions"
+msgstr "無効な機能"
+
+msgid "Disabled classes"
+msgstr "無効なクラス"
+
+msgid "Visit PHP.net Official website"
+msgstr "PHP.net 公式ウェブサイトにアクセス"
+
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr "（最新 <％= latestPhpVersion ％>）"
+
+msgid "PHP Information"
+msgstr "PHP情報"
+
+msgid "PHP"
+msgstr "PHP"
+
+msgid "Times: <%= times %>"
+msgstr "回: <%= times %>"
+
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小: <%= min %> / 最大: <%= max %> / 平均: <%= avg %>"
+
+msgid "⏸️ Stop ping"
+msgstr "⏸️ Pingを停止"
+
+msgid "👆 Start ping"
+msgstr "👆 Pingを開始"
+
+msgid "Network Ping"
+msgstr "ネットワークPing"
+
+msgid "Ping"
+msgstr "Ping"
+
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ テストしています。お待ちください..."
+
+msgid "Network error, please try again later."
+msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
+
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr "⏳ <%= seconds %>s 秒お待ちください"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "GitHubからマークデータを取得できません。"
+
+msgid "Visit prober page"
+msgstr "X-Prober ホームページへ"
+
+msgid "Download speed test"
+msgstr "ネットワーク速度テスト用のダウンロードファイル"
+
+msgid "Visit the official website"
+msgstr "公式ウェブサイトをご覧ください"
+
+msgid "My server"
+msgstr "私のサーバー"
+
+msgid "Server Benchmark"
+msgstr "サーバー基準"
+
+msgid "Becnhmark"
+msgstr "基準"
+
+msgid "Click to test"
+msgstr "👆クリックしてテスト"
+
+msgid "Unavailable"
+msgstr "利用不可"
+
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr "<%= days %> 日 <%= hours %> 時 <%= mins %> 分 <%= secs %> 秒"
+
+msgid "Server name"
+msgstr "サーバーの名前"
+
+msgid "Server time"
+msgstr "サーバー時間"
+
+msgid "Server uptime"
+msgstr "サーバーの稼働時間"
+
+msgid "Server IP"
+msgstr "サーバー IP"
+
+msgid "Server software"
+msgstr "サーバーソフトウェア"
+
+msgid "PHP version"
+msgstr "PHP バージョン"
+
+msgid "CPU model"
+msgstr "CPUモデル"
+
+msgid "Server OS"
+msgstr "サーバー OS"
+
+msgid "Script path"
+msgstr "スクリプトパス"
+
+msgid "Disk usage"
+msgstr "ディスクの使用状況"
+
+msgid "Server Information"
+msgstr "サーバー情報"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+msgid ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+
+msgid "Memory buffers"
+msgstr "メモリバッファ"
+
+msgid "Memory cached"
+msgstr "メモリキャッシュ"
+
+msgid "Memory real usage"
+msgstr "実メモリ使用量"
+
+msgid "Swap cached"
+msgstr "SWAP キャッシュ"
+
+msgid "Swap usage"
+msgstr "SWAP 使用量"
+
+msgid "System load"
+msgstr "システム負荷"
+
+msgid "Server Status"
+msgstr "サーバーの状態"
+
+msgid "Status"
+msgstr "状態"
+
+msgid "Click to close"
+msgstr "クリックして閉じる"
+
+msgid "Can not update file, please check the server permissions and space."
+msgstr ""
+"ファイルを更新できません。サーバーの権限とスペースを確認してください。"
+
+msgid "Click to update"
+msgstr "クリックして更新"
+
+msgid "⏳ Updating, please wait a second..."
+msgstr "⏳ 更新しています。しばらくお待ちください..."
+
+msgid "❌ Update error, click here to try again?"
+msgstr "❌ 更新エラー。ここをクリックして再試行しますか？"
+
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr ""
+"✨ アップデートが見た！バージョン <%= oldVersion %> → <%= newVersion %>"

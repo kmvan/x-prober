@@ -20,11 +20,6 @@ class ServerInfo extends Component {
       return gettext('Unavailable')
     }
 
-    // for poedit bug
-    gettext(
-      '<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs'
-    )
-
     return <ProgressBar value={value} max={max} isCapacity={true} />
   }
 

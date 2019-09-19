@@ -1,0 +1,282 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: X-Prober\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2019-09-19 09:48+0800\n"
+"Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
+"Language-Team: Km.Van <inn-studio.com>\n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Flags-xgettext: --add-comments\n"
+
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
+
+msgid "Database"
+msgstr "資料庫"
+
+msgid "DB"
+msgstr "資料庫"
+
+msgid "Fetch error, please refresh page."
+msgstr "獲取錯誤，請刷新頁面。"
+
+msgid ""
+"Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
+"time %>ms"
+msgstr ""
+"該頁面由 <%= appName %> 生成 / 作者爲 <%= authorName %> / <%= memUsage %> / "
+"<%= time %> 毫秒"
+
+msgid "STAR 🌟 ME"
+msgstr "星🌟標"
+
+msgid "My IP"
+msgstr "我的 IP"
+
+msgid "My browser UA"
+msgstr "我的瀏覽器"
+
+msgid "My browser languages (via JS)"
+msgstr "我的瀏覽器語言（JS）"
+
+msgid "My browser languages (via PHP)"
+msgstr "我的瀏覽器語言（PHP）"
+
+msgid "My location"
+msgstr "我的位置"
+
+msgid "In development"
+msgstr "開發中"
+
+msgid "My information"
+msgstr "我的訊息"
+
+msgid "Mine"
+msgstr "我的"
+
+msgid "Network stats"
+msgstr "流量統計"
+
+msgid "Net"
+msgstr "流量"
+
+msgid "Opcache enabled"
+msgstr "OPcache 已啓用"
+
+msgid "Loaded extensions"
+msgstr "載入的 PHP 擴展"
+
+msgid "PHP extensions"
+msgstr "PHP 擴展"
+
+msgid "Ext"
+msgstr "擴展"
+
+msgid "👆 Click for detail"
+msgstr "👆 查看詳細"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "SAPI interface"
+msgstr "SAPI 介面"
+
+msgid "Display errors"
+msgstr "顯示錯誤"
+
+msgid "Error reporting"
+msgstr "錯誤報告"
+
+msgid "Max memory limit"
+msgstr "執行記憶體限制"
+
+msgid "Max POST size"
+msgstr "POST 提交限制"
+
+msgid "Max upload size"
+msgstr "上傳檔案限制"
+
+msgid "Max input variables"
+msgstr "提交表單限制"
+
+msgid "Max execution time"
+msgstr "執行超時秒數"
+
+msgid "Timeout for socket"
+msgstr "Socket 超時秒數"
+
+msgid "Treatment URLs file"
+msgstr "檔案遠端打開"
+
+msgid "SMTP support"
+msgstr "SMTP 支援"
+
+msgid "Disabled functions"
+msgstr "禁用的函數"
+
+msgid "Disabled classes"
+msgstr "禁用的類"
+
+msgid "Visit PHP.net Official website"
+msgstr "訪問 PHP.net 官網"
+
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr "（最新 <%= latestPhpVersion %>）"
+
+msgid "PHP Information"
+msgstr "PHP 資訊"
+
+msgid "PHP"
+msgstr "PHP"
+
+msgid "Times: <%= times %>"
+msgstr "次數：<%= times %>"
+
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
+
+msgid "⏸️ Stop ping"
+msgstr "⏸️ 停止 Ping"
+
+msgid "👆 Start ping"
+msgstr "👆 開始 Ping"
+
+msgid "Network Ping"
+msgstr "網速 Ping"
+
+msgid "Ping"
+msgstr "Ping"
+
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ 跑分中，請稍等……"
+
+msgid "Network error, please try again later."
+msgstr "網路錯誤，請稍後重試。"
+
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr "⏳ 請等待 <%= seconds %> 秒"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "無法從 GitHub 中獲取跑分數據。"
+
+msgid "Visit prober page"
+msgstr "查閱探針頁面"
+
+msgid "Download speed test"
+msgstr "下載文件以測試網速"
+
+msgid "Visit the official website"
+msgstr "訪問官網"
+
+msgid "My server"
+msgstr "我的伺服器"
+
+msgid "Server Benchmark"
+msgstr "伺服器性能跑分"
+
+msgid "Becnhmark"
+msgstr "跑分"
+
+msgid "Click to test"
+msgstr "👆 點擊測試"
+
+msgid "Unavailable"
+msgstr "不可用"
+
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒"
+
+msgid "Server name"
+msgstr "伺服器名"
+
+msgid "Server time"
+msgstr "持續上線時間"
+
+msgid "Server uptime"
+msgstr "持續上線時間"
+
+msgid "Server IP"
+msgstr "伺服器 IP"
+
+msgid "Server software"
+msgstr "伺服器軟體"
+
+msgid "PHP version"
+msgstr "PHP 版本"
+
+msgid "CPU model"
+msgstr "CPU 型號"
+
+msgid "Server OS"
+msgstr "伺服器系統"
+
+msgid "Script path"
+msgstr "腳本路徑"
+
+msgid "Disk usage"
+msgstr "磁碟使用"
+
+msgid "Server Information"
+msgstr "伺服器訊息"
+
+msgid "Info"
+msgstr "訊息"
+
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+msgid ""
+"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr ""
+"空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
+
+msgid "Memory buffers"
+msgstr "記憶體緩衝"
+
+msgid "Memory cached"
+msgstr "記憶體快取"
+
+msgid "Memory real usage"
+msgstr "真實記憶體使用"
+
+msgid "Swap cached"
+msgstr "SWAP 快取"
+
+msgid "Swap usage"
+msgstr "SWAP 使用"
+
+msgid "System load"
+msgstr "系統負載"
+
+msgid "Server Status"
+msgstr "伺服器狀態"
+
+msgid "Status"
+msgstr "狀態"
+
+msgid "Click to close"
+msgstr "點擊關閉"
+
+msgid "Can not update file, please check the server permissions and space."
+msgstr "無法更新文件，請檢查伺服器權限和空間。"
+
+msgid "Click to update"
+msgstr "👆 點擊更新"
+
+msgid "⏳ Updating, please wait a second..."
+msgstr "⏳ 更新中，請稍等……"
+
+msgid "❌ Update error, click here to try again?"
+msgstr "❌ 更新錯誤，點擊此處再試一次？"
+
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"

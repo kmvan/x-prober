@@ -1,0 +1,274 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: gettext\n"
+
+msgid "Error: can not fetch remote config data, update checker is disabled."
+msgstr ""
+
+msgid "Database"
+msgstr ""
+
+msgid "DB"
+msgstr ""
+
+msgid "Fetch error, please refresh page."
+msgstr ""
+
+msgid "Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= time %>ms"
+msgstr ""
+
+msgid "STAR 🌟 ME"
+msgstr ""
+
+msgid "My IP"
+msgstr ""
+
+msgid "My browser UA"
+msgstr ""
+
+msgid "My browser languages (via JS)"
+msgstr ""
+
+msgid "My browser languages (via PHP)"
+msgstr ""
+
+msgid "My location"
+msgstr ""
+
+msgid "In development"
+msgstr ""
+
+msgid "My information"
+msgstr ""
+
+msgid "Mine"
+msgstr ""
+
+msgid "Network stats"
+msgstr ""
+
+msgid "Net"
+msgstr ""
+
+msgid "Opcache enabled"
+msgstr ""
+
+msgid "Loaded extensions"
+msgstr ""
+
+msgid "PHP extensions"
+msgstr ""
+
+msgid "Ext"
+msgstr ""
+
+msgid "👆 Click for detail"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+msgid "SAPI interface"
+msgstr ""
+
+msgid "Display errors"
+msgstr ""
+
+msgid "Error reporting"
+msgstr ""
+
+msgid "Max memory limit"
+msgstr ""
+
+msgid "Max POST size"
+msgstr ""
+
+msgid "Max upload size"
+msgstr ""
+
+msgid "Max input variables"
+msgstr ""
+
+msgid "Max execution time"
+msgstr ""
+
+msgid "Timeout for socket"
+msgstr ""
+
+msgid "Treatment URLs file"
+msgstr ""
+
+msgid "SMTP support"
+msgstr ""
+
+msgid "Disabled functions"
+msgstr ""
+
+msgid "Disabled classes"
+msgstr ""
+
+msgid "Visit PHP.net Official website"
+msgstr ""
+
+msgid "(Latest <%= latestPhpVersion %>)"
+msgstr ""
+
+msgid "PHP Information"
+msgstr ""
+
+msgid "PHP"
+msgstr ""
+
+msgid "Times: <%= times %>"
+msgstr ""
+
+msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
+msgstr ""
+
+msgid "⏸️ Stop ping"
+msgstr ""
+
+msgid "👆 Start ping"
+msgstr ""
+
+msgid "Network Ping"
+msgstr ""
+
+msgid "Ping"
+msgstr ""
+
+msgid "⏳ Testing, please wait..."
+msgstr ""
+
+msgid "Network error, please try again later."
+msgstr ""
+
+msgid "⏳ Please wait <%= seconds %>s"
+msgstr ""
+
+msgid "Can not fetch marks data from GitHub."
+msgstr ""
+
+msgid "Visit prober page"
+msgstr ""
+
+msgid "Download speed test"
+msgstr ""
+
+msgid "Visit the official website"
+msgstr ""
+
+msgid "My server"
+msgstr ""
+
+msgid "Server Benchmark"
+msgstr ""
+
+msgid "Becnhmark"
+msgstr ""
+
+msgid "Click to test"
+msgstr ""
+
+msgid "Unavailable"
+msgstr ""
+
+msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
+msgstr ""
+
+msgid "Server name"
+msgstr ""
+
+msgid "Server time"
+msgstr ""
+
+msgid "Server uptime"
+msgstr ""
+
+msgid "Server IP"
+msgstr ""
+
+msgid "Server software"
+msgstr ""
+
+msgid "PHP version"
+msgstr ""
+
+msgid "CPU model"
+msgstr ""
+
+msgid "Server OS"
+msgstr ""
+
+msgid "Script path"
+msgstr ""
+
+msgid "Disk usage"
+msgstr ""
+
+msgid "Server Information"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "CPU usage"
+msgstr ""
+
+msgid "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+msgstr ""
+
+msgid "Memory buffers"
+msgstr ""
+
+msgid "Memory cached"
+msgstr ""
+
+msgid "Memory real usage"
+msgstr ""
+
+msgid "Swap cached"
+msgstr ""
+
+msgid "Swap usage"
+msgstr ""
+
+msgid "System load"
+msgstr ""
+
+msgid "Server Status"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Click to close"
+msgstr ""
+
+msgid "Can not update file, please check the server permissions and space."
+msgstr ""
+
+msgid "Click to update"
+msgstr ""
+
+msgid "⏳ Updating, please wait a second..."
+msgstr ""
+
+msgid "❌ Update error, click here to try again?"
+msgstr ""
+
+msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
+msgstr ""

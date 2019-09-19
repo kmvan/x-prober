@@ -9,7 +9,7 @@ import UpdaterLink from '~components/Updater/src/components/updater-link'
 export const TitleContainer = styled.h1`
   background: ${COLOR_DARK};
   position: fixed;
-  top: ${GUTTER};
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   justify-content: center;
@@ -20,12 +20,12 @@ export const TitleContainer = styled.h1`
   font-size: ${GUTTER};
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADIUS} ${BORDER_RADIUS};
-  box-shadow: inset 0 -7px 20px -7px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3px 15px -5px rgba(0, 0, 0, 0.3);
   z-index: 10;
 `
 export const TitleLink = styled.a`
   display: block;
-  padding: 0 ${GUTTER} ${GUTTER};
+  padding: ${GUTTER};
   color: #fff;
   &:hover {
     color: #fff;
