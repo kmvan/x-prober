@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.3.0 - 2019-09-19
+
+### Optimize
+
+- Optimize notch position
+- Optimize languages generation tool
+
+###
+
+- Update Nginx version to 1.16.1
+
 ## 3.2 - 2019-08-03
 
 ### Fix
