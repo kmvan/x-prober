@@ -258,7 +258,12 @@ class HelperApi
         if ( ! @\is_readable($filePath)) {
             $cpu = array();
 
-            return $cpu;
+            return array(
+                'user' => 0,
+                'nice' => 0,
+                'sys'  => 0,
+                'idle' => 100,
+            );
         }
 
         $stat1 = \file($filePath);
