@@ -9,7 +9,7 @@ All Notable changes to `X-Prober` will be documented in this file
 - Optimize notch position
 - Optimize languages generation tool
 
-###
+### Update
 
 - Update Nginx version to 1.16.1
 
