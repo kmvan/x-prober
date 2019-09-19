@@ -77,7 +77,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-0": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@types/classnames": "^2.2.9",
     "@types/core-js": "^2.5.2",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^12.7.5",
