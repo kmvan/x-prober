@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.4.0 - 2019-10-21
+
+### Optimize
+
+- Rename components of styled-components
+
 ## 3.3.0 - 2019-09-19
 
 ### Optimize
