@@ -25,7 +25,7 @@ import Footer from '~components/Footer/src/components'
 import Toast from '~components/Toast/src/components'
 import { GUTTER, COLOR_DARK, COLOR_GRAY } from '~components/Config/src'
 
-const App = styled.div`
+const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
   background: ${COLOR_GRAY};
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
@@ -51,12 +51,12 @@ const Bootstrap = () => (
   <>
     <Normalize />
     <Title />
-    <App ref={c => store.setAppContainer(c)}>
+    <StyledApp ref={c => store.setAppContainer(c)}>
       <Container>
         <Cards />
         <Footer />
       </Container>
-    </App>
+    </StyledApp>
     <Nav />
     <Forkme />
     <Toast />

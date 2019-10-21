@@ -1,18 +1,10 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import { breakPoints, device } from '~components/Style/src/components/devices'
+import React, { HTMLAttributes } from 'react'
+import styled from 'styled-components'
+import { device } from '~components/Style/src/components/devices'
 import { GUTTER } from '~components/Config/src'
 
-const Div = styled.div`
-  ${Object.entries(breakPoints).map(([id, px]) => {
-    return css`
-      @media ${device(id)} {
-        /* max-width: ${px}; */
-      }
-    `
-  })}
-
-  margin-left:  auto;
+const StyledContainer = styled.div`
+  margin-left: auto;
   margin-right: auto;
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
@@ -22,9 +14,10 @@ const Div = styled.div`
     padding-right: ${GUTTER};
   }
 `
+interface IContainer extends HTMLAttributes<HTMLDivElement> {}
 
-const Container = props => {
-  return <Div {...props} />
+const Container = (props: IContainer) => {
+  return <StyledContainer {...props} />
 }
 
 export default Container

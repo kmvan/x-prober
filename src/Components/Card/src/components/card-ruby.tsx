@@ -10,7 +10,7 @@ export interface ICardRuby extends IRuby {
   rt: string
 }
 
-const Ruby = styled.ruby<IRuby>`
+const StyledRuby = styled.ruby<IRuby>`
   background: rgba(0, 0, 0, 0.05);
   rp {
   }
@@ -23,12 +23,12 @@ const Ruby = styled.ruby<IRuby>`
 
 const CardRuby = ({ ruby, rt, isResult = false }: ICardRuby) => {
   return (
-    <Ruby isResult={isResult}>
+    <StyledRuby isResult={isResult}>
       {ruby}
       <rp>(</rp>
       <rt>{rt}</rt>
       <rp>)</rp>
-    </Ruby>
+    </StyledRuby>
   )
 }
 

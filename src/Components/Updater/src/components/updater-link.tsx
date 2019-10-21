@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { TitleLink } from '~components/Title/src/components'
+import { StyledTitleLink } from '~components/Title/src/components'
 import store from '../stores'
 import {
   OK,
@@ -44,9 +44,12 @@ class UpdaterLink extends Component {
 
   public render() {
     return (
-      <TitleLink title={gettext('Click to update')} onClick={this.onClick}>
+      <StyledTitleLink
+        title={gettext('Click to update')}
+        onClick={this.onClick}
+      >
         {store.notiText}
-      </TitleLink>
+      </StyledTitleLink>
     )
   }
 }

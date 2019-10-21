@@ -9,7 +9,7 @@ export interface ICardGrid extends IGrid {
   children: ReactNode
 }
 
-const CardGroup = styled.div`
+const StyledCardGroup = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
@@ -18,15 +18,18 @@ const CardGroup = styled.div`
     background: linear-gradient(90deg, #0000, #0000000d, #0000);
   }
 `
-const CardTitle = styled.div`
+
+const StyledCardTitle = styled.div`
   word-break: normal;
   padding: calc(${GUTTER} / 2) ${GUTTER};
   flex: 0 0 8rem;
+
   @media ${device('tablet')} {
     flex: 0 0 12rem;
   }
 `
-const CardContent = styled.div`
+
+const StyledCardContent = styled.div`
   flex-grow: 1;
   padding: calc(${GUTTER} / 2) ${GUTTER} calc(${GUTTER} / 2) 0;
 `
@@ -34,10 +37,10 @@ const CardContent = styled.div`
 const CardGrid = ({ title = '', children, ...props }: ICardGrid) => {
   return (
     <Grid {...props}>
-      <CardGroup>
-        {title && <CardTitle>{title}</CardTitle>}
-        <CardContent>{children}</CardContent>
-      </CardGroup>
+      <StyledCardGroup>
+        {title && <StyledCardTitle>{title}</StyledCardTitle>}
+        <StyledCardContent>{children}</StyledCardContent>
+      </StyledCardGroup>
     </Grid>
   )
 }

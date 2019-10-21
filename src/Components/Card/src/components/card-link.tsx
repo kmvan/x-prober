@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const A = styled.a`
+const StyledCardLink = styled.a`
   ::before {
     content: '👆 ';
   }
@@ -9,9 +9,9 @@ const A = styled.a`
 
 const CardLink = ({ children, ...props }) => {
   return (
-    <A target='_blank' {...props}>
+    <StyledCardLink target='_blank' {...props}>
       {children}
-    </A>
+    </StyledCardLink>
   )
 }
 

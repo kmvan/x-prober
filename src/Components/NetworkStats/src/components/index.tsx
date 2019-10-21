@@ -8,29 +8,29 @@ import Grid from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { toJS } from 'mobx'
 
-const NetworkId = styled.div`
+const StyledNetworkId = styled.div`
   text-decoration: underline;
 `
 
-const NetworkIdRow = styled(Row)`
+const StyledNetworkIdRow = styled(Row)`
   align-items: center;
   justify-content: center;
   text-align: center;
 `
 
-const DataContainer = styled.div`
+const StyledDataContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 `
 
-const Data = styled.div`
+const StyledData = styled.div`
   flex: 0 0 50%;
 `
 
-const Total = styled.div``
-const Rate = styled.div`
+const StyledTotal = styled.div``
+const StyledRate = styled.div`
   font-family: 'Arial Black';
 
   ::before {
@@ -38,12 +38,12 @@ const Rate = styled.div`
   }
 `
 
-const RateRx = styled(Rate)`
+const StyledRateRx = styled(StyledRate)`
   ::before {
     content: '▼';
   }
 `
-const RateTx = styled(Rate)`
+const StyledRateTx = styled(StyledRate)`
   ::before {
     content: '▲';
   }
@@ -78,23 +78,27 @@ class NetworkStats extends Component {
               desktopMd={[1, 3]}
               desktopLg={[1, 4]}
             >
-              <NetworkIdRow>
+              <StyledNetworkIdRow>
                 <Grid mobileSm={[1, 3]}>
-                  <NetworkId>{id}</NetworkId>
+                  <StyledNetworkId>{id}</StyledNetworkId>
                 </Grid>
                 <Grid mobileSm={[2, 3]}>
-                  <DataContainer>
-                    <Data>
-                      <Total>{formatBytes(rx)}</Total>
-                      <RateRx>{formatBytes(rx - lastItems[id].rx)}/s</RateRx>
-                    </Data>
-                    <Data>
-                      <Total>{formatBytes(tx)}</Total>
-                      <RateTx>{formatBytes(tx - lastItems[id].tx)}/s</RateTx>
-                    </Data>
-                  </DataContainer>
+                  <StyledDataContainer>
+                    <StyledData>
+                      <StyledTotal>{formatBytes(rx)}</StyledTotal>
+                      <StyledRateRx>
+                        {formatBytes(rx - lastItems[id].rx)}/s
+                      </StyledRateRx>
+                    </StyledData>
+                    <StyledData>
+                      <StyledTotal>{formatBytes(tx)}</StyledTotal>
+                      <StyledRateTx>
+                        {formatBytes(tx - lastItems[id].tx)}/s
+                      </StyledRateTx>
+                    </StyledData>
+                  </StyledDataContainer>
                 </Grid>
-              </NetworkIdRow>
+              </StyledNetworkIdRow>
             </CardGrid>
           )
         })}

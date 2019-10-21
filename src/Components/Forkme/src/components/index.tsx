@@ -5,7 +5,7 @@ import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
 
-const ForkmeLink = styled.a`
+const StyledForkmeLink = styled.a`
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +17,7 @@ const ForkmeLink = styled.a`
   font-size: calc(${GUTTER} * 0.7);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   z-index: 2;
+
   @media ${device('tablet')} {
     font-size: 1rem;
     transform: rotate(-45deg) translate(-28%, -50%);
@@ -50,9 +51,9 @@ const ForkmeLink = styled.a`
 
 const Forkme = () => {
   return (
-    <ForkmeLink href={BootstrapStore.appUrl} target='_blank'>
+    <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank'>
       {gettext('STAR 🌟 ME')}
-    </ForkmeLink>
+    </StyledForkmeLink>
   )
 }
 
