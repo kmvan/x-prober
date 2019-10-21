@@ -7,7 +7,7 @@ namespace InnStudio\Prober\Components\Config;
 
 class ConfigApi
 {
-    public static $APP_VERSION                 = '3.3';
+    public static $APP_VERSION                 = '3.4';
     public static $APP_NAME                    = 'X Prober';
     public static $APP_URL                     = 'https://github.com/kmvan/x-prober';
     public static $APP_CONFIG_URL              = 'https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json';
