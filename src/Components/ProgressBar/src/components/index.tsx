@@ -11,11 +11,11 @@ export interface IProgressBar {
   isCapacity: boolean
 }
 
-const ProgressContainer = styled.div`
+const StyledProgressBar = styled.div`
   position: relative;
 `
 
-const ProgressOverview = styled.div`
+const StyledProgressOverview = styled.div`
   position: absolute;
   right: ${GUTTER};
   bottom: 0;
@@ -26,12 +26,12 @@ const ProgressOverview = styled.div`
   line-height: 2rem;
   font-family: 'Arial Black';
 `
-const ProgressPercent = styled(ProgressOverview)`
+const StyledProgressPercent = styled(StyledProgressOverview)`
   left: ${GUTTER};
   right: auto;
 `
 
-const ProgressShell = styled.div`
+const StyledProgressShell = styled.div`
   position: relative;
   display: flex;
   width: 100%;
@@ -87,13 +87,13 @@ const ProgressBar = ({ title = '', value, max, isCapacity }: IProgressBar) => {
     : `${value.toFixed(1)}% / ${max}%`
 
   return (
-    <ProgressContainer title={title}>
-      <ProgressPercent>{`${percent.toFixed(1)}%`}</ProgressPercent>
-      <ProgressOverview>{overview}</ProgressOverview>
-      <ProgressShell>
+    <StyledProgressBar title={title}>
+      <StyledProgressPercent>{`${percent.toFixed(1)}%`}</StyledProgressPercent>
+      <StyledProgressOverview>{overview}</StyledProgressOverview>
+      <StyledProgressShell>
         <ProgressValue percent={percent} />
-      </ProgressShell>
-    </ProgressContainer>
+      </StyledProgressShell>
+    </StyledProgressBar>
   )
 }
 

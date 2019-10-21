@@ -11,12 +11,12 @@ import { OK } from '~components/Restful/src/http-status'
 import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
-const PingBtn = styled.a`
+const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
 `
 
-const PingItemContainer = styled.ul`
+const StyledPingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   background: ${COLOR_DARK};
@@ -43,22 +43,24 @@ const PingItemContainer = styled.ul`
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 0;
 
-    &:hover {
+    :hover {
       opacity: 1;
     }
   }
 `
 
-const PingItem = styled.li`
+const StyledPingItem = styled.li`
   flex: 0 0 ${(1 / 3) * 100}%;
+
   @media ${device('tablet')} {
     flex: 0 0 25%;
   }
+
   @media ${device('desktopSm')} {
     flex: 0 0 20%;
   }
 `
-const PingItemNumber = styled.span`
+const StyledPingItemNumber = styled.span`
   opacity: 0.5;
   display: none;
 
@@ -66,7 +68,7 @@ const PingItemNumber = styled.span`
     display: inline;
   }
 `
-const PingItemLine = styled.span`
+const StyledPingItemLine = styled.span`
   opacity: 0.3;
   display: none;
 
@@ -74,7 +76,7 @@ const PingItemLine = styled.span`
     display: inline;
   }
 `
-const PingItemTime = styled.span`
+const StyledPingItemTime = styled.span`
   font-weight: bold;
 `
 
@@ -82,7 +84,7 @@ interface IPingResult {
   hasPing: boolean
 }
 
-const PingResult = styled.div<IPingResult>`
+const StyledPingResult = styled.div<IPingResult>`
   display: flex;
   align-items: center;
   background: ${COLOR_DARK};
@@ -94,8 +96,8 @@ const PingResult = styled.div<IPingResult>`
   flex-wrap: wrap;
   justify-content: space-between;
 `
-const PingResultTimes = styled.div``
-const PingResultAvg = styled.div``
+const StyledPingResultTimes = styled.div``
+const StyledPingResultAvg = styled.div``
 
 @observer
 class Ping extends Component {
@@ -160,18 +162,20 @@ class Ping extends Component {
 
     const items = pingItems.map(({ time }, i) => {
       return (
-        <PingItem key={i}>
-          <PingItemNumber>{i + 1 < 10 ? `0${i + 1}` : i + 1}</PingItemNumber>
-          <PingItemLine>{' ------------ '}</PingItemLine>
-          <PingItemTime>{`${time} ms`}</PingItemTime>
-        </PingItem>
+        <StyledPingItem key={i}>
+          <StyledPingItemNumber>
+            {i + 1 < 10 ? `0${i + 1}` : i + 1}
+          </StyledPingItemNumber>
+          <StyledPingItemLine>{' ------------ '}</StyledPingItemLine>
+          <StyledPingItemTime>{`${time} ms`}</StyledPingItemTime>
+        </StyledPingItem>
       )
     })
 
     return (
-      <PingItemContainer ref={c => setRef('itemContainer', c)}>
+      <StyledPingItemContainer ref={c => setRef('itemContainer', c)}>
         {items}
-      </PingItemContainer>
+      </StyledPingItemContainer>
     )
   }
 
@@ -189,24 +193,24 @@ class Ping extends Component {
       : 0
 
     return (
-      <PingResult hasPing={!!pingItemsCount}>
-        <PingResultTimes>
+      <StyledPingResult hasPing={!!pingItemsCount}>
+        <StyledPingResultTimes>
           {template(gettext('Times: <%= times %>'))({ times: pingItemsCount })}
-        </PingResultTimes>
-        <PingResultAvg>
+        </StyledPingResultTimes>
+        <StyledPingResultAvg>
           {template(
             gettext('Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>')
           )({ min, max, avg })}
-        </PingResultAvg>
-      </PingResult>
+        </StyledPingResultAvg>
+      </StyledPingResult>
     )
   }
 
   private pingBtn() {
     return (
-      <PingBtn onClick={this.onClickPing}>
+      <StyledPingBtn onClick={this.onClickPing}>
         {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
-      </PingBtn>
+      </StyledPingBtn>
     )
   }
 

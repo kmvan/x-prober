@@ -44,11 +44,11 @@ const createCss = (types: IBreakPoints) => {
   return style
 }
 
-export interface IGridContainer {
+export interface IStyledGrid {
   types: IBreakPoints
 }
 
-export const GridContainer = styled.div<IGridContainer>`
+export const StyledGrid = styled.div<IStyledGrid>`
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
   flex: 0 0 100%;
@@ -75,7 +75,7 @@ const Grid = ({
     desktopLg,
   }
 
-  return <GridContainer types={types}>{children}</GridContainer>
+  return <StyledGrid types={types}>{children}</StyledGrid>
 }
 
 export default Grid

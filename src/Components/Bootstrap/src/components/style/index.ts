@@ -27,11 +27,13 @@ const normalize = css`
     box-sizing: border-box;
     word-break: break-all;
   }
+
   html {
     font-size: 75%;
     background: ${COLOR_DARK};
     scroll-behavior: smooth;
   }
+
   body {
     background: ${COLOR_DARK};
     color: ${COLOR_DARK};
@@ -42,6 +44,7 @@ const normalize = css`
     line-height: 1.5;
     /* will-change: transform; */
   }
+
   a {
     cursor: pointer;
     color: ${COLOR_DARK};

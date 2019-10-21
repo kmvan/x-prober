@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { GUTTER } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 
-const ToastContainer = styled.div`
+const StyledToast = styled.div`
   position: fixed;
   bottom: 4rem;
   width: 20rem;
@@ -33,12 +33,9 @@ class Toast extends Component {
 
     return (
       <Portal>
-        <ToastContainer
-          title={gettext('Click to close')}
-          onClick={() => close()}
-        >
+        <StyledToast title={gettext('Click to close')} onClick={() => close()}>
           {msg}
-        </ToastContainer>
+        </StyledToast>
       </Portal>
     )
   }

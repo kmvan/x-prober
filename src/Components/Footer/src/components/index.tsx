@@ -8,7 +8,7 @@ import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import { device } from '~components/Style/src/components/devices'
 
-const Div = styled.div`
+const StyledFooter = styled.div`
   background: ${COLOR_DARK};
   color: #ccc;
   width: 100%;
@@ -31,8 +31,9 @@ class Footer extends Component {
   public render() {
     const { appName, appUrl, authorName, authorUrl } = BootstrapStore
     const { memUsage, time } = store.conf
+
     return (
-      <Div
+      <StyledFooter
         dangerouslySetInnerHTML={{
           __html: template(
             gettext(

@@ -6,7 +6,7 @@ import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
 import UpdaterLink from '~components/Updater/src/components/updater-link'
 
-export const TitleContainer = styled.h1`
+export const StyledTitle = styled.h1`
   background: ${COLOR_DARK};
   position: fixed;
   top: 0;
@@ -23,28 +23,31 @@ export const TitleContainer = styled.h1`
   box-shadow: inset 0 -3px 15px -5px rgba(0, 0, 0, 0.3);
   z-index: 10;
 `
-export const TitleLink = styled.a`
+
+export const StyledTitleLink = styled.a`
   display: block;
   padding: ${GUTTER};
   color: #fff;
-  &:hover {
+
+  :hover {
     color: #fff;
   }
 `
+
 @observer
 class Title extends Component {
   public render() {
     return (
       <>
-        <TitleContainer>
+        <StyledTitle>
           {UpdaterStore.newVersion ? (
             <UpdaterLink />
           ) : (
-            <TitleLink href={BootstrapStore.appUrl} target='_blank'>
+            <StyledTitleLink href={BootstrapStore.appUrl} target='_blank'>
               {`X Prober v${BootstrapStore.version}`}
-            </TitleLink>
+            </StyledTitleLink>
           )}
-        </TitleContainer>
+        </StyledTitle>
       </>
     )
   }

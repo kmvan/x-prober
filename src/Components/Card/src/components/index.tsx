@@ -4,7 +4,7 @@ import { observer } from 'mobx-react'
 import store from '../stores'
 import { COLOR_DARK, GUTTER } from '~components/Config/src'
 
-const Fieldset = styled.fieldset`
+const StyledFieldset = styled.fieldset`
   position: relative;
   border: 5px solid #eee;
   border-radius: calc(${GUTTER} * 1.5);
@@ -15,7 +15,7 @@ const Fieldset = styled.fieldset`
     inset 1px 1px 0 hsla(0, 0%, 100%, 0.5), inset -1px -1px 0 rgba(#000, 0.1);
 `
 
-const Legend = styled.legend`
+const StyledLegend = styled.legend`
   position: absolute;
   left: 50%;
   top: 0;
@@ -29,7 +29,7 @@ const Legend = styled.legend`
   white-space: nowrap;
 `
 
-const Body = styled.div``
+const StyledBody = styled.div``
 
 @observer
 class Cards extends Component {
@@ -44,12 +44,12 @@ class Cards extends Component {
       <>
         {sortedCards.map(({ id, title, component: Tag }) => {
           return (
-            <Fieldset key={id} id={id}>
-              <Legend>{title}</Legend>
-              <Body>
+            <StyledFieldset key={id} id={id}>
+              <StyledLegend>{title}</StyledLegend>
+              <StyledBody>
                 <Tag />
-              </Body>
-            </Fieldset>
+              </StyledBody>
+            </StyledFieldset>
           )
         })}
       </>

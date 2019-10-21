@@ -7,7 +7,7 @@ interface IAlertContainer {
   withIcon: boolean
 }
 
-const AlertContainer = styled.div<IAlertContainer>`
+const StyledAlert = styled.div<IAlertContainer>`
   display: inline-flex;
   border-radius: ${GUTTER};
   align-items: center;
@@ -22,10 +22,12 @@ const AlertContainer = styled.div<IAlertContainer>`
   white-space: nowrap;
   cursor: pointer;
   background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
+
   :active{
     transform: scale3d(.9,.9,1);
     background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
+
   ::before {
     content: '${({ isSuccess, withIcon }) => {
       if (!withIcon) {
@@ -43,9 +45,9 @@ export interface IAlert {
 
 const Alert = ({ isSuccess, msg = '' }: IAlert) => {
   return (
-    <AlertContainer isSuccess={isSuccess} withIcon={!msg}>
+    <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
       {msg}
-    </AlertContainer>
+    </StyledAlert>
   )
 }
 

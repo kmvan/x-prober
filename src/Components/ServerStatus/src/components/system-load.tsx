@@ -7,7 +7,7 @@ import store from '../stores'
 import { GUTTER, COLOR_DARK_RGB } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
-const GroupContainer = styled.div`
+const StyledGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ const GroupContainer = styled.div`
   }
 `
 
-const GroupItem = styled.span`
+const StyledGroupItem = styled.span`
   margin-right: 0.5rem;
   background: ${() =>
     `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
@@ -34,11 +34,11 @@ class SystemLoad extends Component {
   public render() {
     return (
       <CardGrid title={gettext('System load')} tablet={[1, 1]}>
-        <GroupContainer>
+        <StyledGroup>
           {store.sysLoad.map((load, i) => (
-            <GroupItem key={i}>{load.toFixed(2)}</GroupItem>
+            <StyledGroupItem key={i}>{load.toFixed(2)}</StyledGroupItem>
           ))}
-        </GroupContainer>
+        </StyledGroup>
       </CardGrid>
     )
   }
