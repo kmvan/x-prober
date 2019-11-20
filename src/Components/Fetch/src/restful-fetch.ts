@@ -1,3 +1,5 @@
+import BootstrapStore from '~components/Bootstrap/src/stores'
+
 const restfulFetch = (action: string, opts = {}) => {
   return new Promise(async (resolve, reject) => {
     opts = {
@@ -5,6 +7,7 @@ const restfulFetch = (action: string, opts = {}) => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: BootstrapStore.conf.authorization,
         },
         cache: 'no-cache',
         credentials: 'omit',

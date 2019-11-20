@@ -18,8 +18,7 @@
     ]
   },
   "require": {
-    "friendsofphp/php-cs-fixer": "^2.13",
-    "gettext/gettext": "dev-master"
+    "friendsofphp/php-cs-fixer": "^2.13"
   },
   "autoload": {
     "psr-4": {

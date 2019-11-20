@@ -23,6 +23,7 @@ class Conf extends BootstrapConstants
             'appConfigUrlDev' => ConfigApi::$APP_CONFIG_URL_DEV,
             'authorUrl'       => ConfigApi::$AUTHOR_URL,
             'authorName'      => ConfigApi::$AUTHOR_NAME,
+            'authorization'   => isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : '',
         );
 
         return $conf;
