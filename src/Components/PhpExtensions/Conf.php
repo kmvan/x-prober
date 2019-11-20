@@ -29,7 +29,7 @@ class Conf extends PhpExtensionsConstants
             'sockets'          => \extension_loaded('sockets') && \function_exists('\\socket_accept'),
             'mysqli'           => \extension_loaded('mysqli') && \class_exists('\\mysqli'),
             'zip'              => \extension_loaded('zip') && \class_exists('\\ZipArchive'),
-            'mb_substr'        => \extension_loaded('mb_substr') && \function_exists('\\mb_substr'),
+            'mbstring'         => \extension_loaded('mbstring') && \function_exists('\\mb_substr'),
             'phalcon'          => \extension_loaded('phalcon'),
             'xdebug'           => \extension_loaded('xdebug'),
             'zendOtimizer'     => \function_exists('\\zend_optimizer_version'),
