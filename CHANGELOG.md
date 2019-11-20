@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.5.0 - 2019-11-20
+
+### Add
+
+- Add http authorization
+
+### Update
+
+- Update SQLite3 version
+
 ## 3.4.0 - 2019-10-21
 
 ### Optimize
