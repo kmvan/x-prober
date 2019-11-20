@@ -41,18 +41,6 @@
       }
     },
     {
-      "name": "Monovm/PHP7.3",
-      "url": "https://monovm.com/affiliate/ref/528",
-      "date": "2019-02-20",
-      "proberUrl": "",
-      "detail": {
-        "hash": 778,
-        "intLoop": 942,
-        "floatLoop": 943,
-        "ioLoop": 725
-      }
-    },
-    {
       "name": "Vultr/PHP7.3",
       "url": "https://www.vultr.com/?ref=7826363-4F",
       "date": "2019-03-01",

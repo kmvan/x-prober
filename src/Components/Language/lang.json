@@ -2,7 +2,7 @@
   "Error: can not fetch remote config data, update checker is disabled.": {
     "zh_CN": "错误：无法获取远程配置数据，更新检测已禁用。",
     "ja": "エラー：リモート設定データを取得できません。更新チェッカーが無効になっています。",
-    "zh_TW": "錯誤：無法獲取配置數據，更新檢測已禁用。",
+    "zh_TW": "錯誤：無法獲取配備資料，更新檢測已禁用。",
     "zh_HK": "錯誤：無法獲取配置數據，更新檢測已禁用。"
   },
   "Database": {
@@ -20,13 +20,13 @@
   "Fetch error, please refresh page.": {
     "zh_CN": "获取信息错误，请刷新页面。",
     "ja": "取得エラー。ページを更新してください。",
-    "zh_TW": "獲取錯誤，請刷新頁面。",
+    "zh_TW": "獲取錯誤，請重新整理頁面。",
     "zh_HK": "獲取錯誤，請刷新頁面。"
   },
   "Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= time %>ms": {
     "zh_CN": "该页面由 <%= appName %> 生成 / 作者为 <%= authorName %> / <%= memUsage %> / <%= time %> 毫秒",
     "ja": "このページは <%= appName %> によって生成されます / 著者は <%= authorName %> / <%= memUsage %> / <%= time %> ミリ秒",
-    "zh_TW": "該頁面由 <%= appName %> 生成 / 作者爲 <%= authorName %> / <%= memUsage %> / <%= time %> 毫秒",
+    "zh_TW": "該頁面由 <%= appName %> 生成 / 作者為 <%= authorName %> / <%= memUsage %> / <%= time %> 毫秒",
     "zh_HK": "該頁面由 <%= appName %> 生成 / 作者爲 <%= authorName %> / <%= memUsage %> / <%= time %> 毫秒"
   },
   "STAR 🌟 ME": {
@@ -98,7 +98,7 @@
   "Opcache enabled": {
     "zh_CN": "OPcache 已启用",
     "ja": "%s 有効",
-    "zh_TW": "OPcache 已啓用",
+    "zh_TW": "OPcache 已啟用",
     "zh_HK": "OPcache 已啓用"
   },
   "Loaded extensions": {
@@ -176,13 +176,13 @@
   "Max execution time": {
     "zh_CN": "运行超时秒数",
     "ja": "最大実行時間",
-    "zh_TW": "執行超時秒數",
+    "zh_TW": "執行逾時秒數",
     "zh_HK": "執行超時秒數"
   },
   "Timeout for socket": {
     "zh_CN": "Socket 超时秒数",
     "ja": "ソケットのタイムアウト",
-    "zh_TW": "Socket 超時秒數",
+    "zh_TW": "Socket 逾時秒數",
     "zh_HK": "Socket 超時秒數"
   },
   "Treatment URLs file": {
@@ -206,13 +206,13 @@
   "Disabled classes": {
     "zh_CN": "已禁用的类",
     "ja": "無効なクラス",
-    "zh_TW": "禁用的類",
+    "zh_TW": "禁用的類別",
     "zh_HK": "禁用的類"
   },
   "Visit PHP.net Official website": {
     "zh_CN": "访问 PHP.net 官网",
     "ja": "PHP.net 公式ウェブサイトにアクセス",
-    "zh_TW": "訪問 PHP.net 官網",
+    "zh_TW": "瀏覽 PHP.net 官網",
     "zh_HK": "訪問 PHP.net 官網"
   },
   "(Latest <%= latestPhpVersion %>)": {
@@ -290,7 +290,7 @@
   "Can not fetch marks data from GitHub.": {
     "zh_CN": "无法从 GitHub 中获取跑分数据。",
     "ja": "GitHubからマークデータを取得できません。",
-    "zh_TW": "無法從 GitHub 中獲取跑分數據。",
+    "zh_TW": "無法從 GitHub 中獲取跑分資料。",
     "zh_HK": "無法從 GitHub 中獲取跑分數據。"
   },
   "Visit prober page": {
@@ -308,7 +308,7 @@
   "Visit the official website": {
     "zh_CN": "访问官网",
     "ja": "公式ウェブサイトをご覧ください",
-    "zh_TW": "訪問官網",
+    "zh_TW": "瀏覽官網",
     "zh_HK": "訪問官網"
   },
   "My server": {
@@ -428,7 +428,7 @@
   "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>": {
     "zh_CN": "空闲: <%= idle %> 亲和: <%= nice %> 系统: <%= sys %> 用户: <%= user %>",
     "ja": "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>",
-    "zh_TW": "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>",
+    "zh_TW": "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 使用者: <%= user %>",
     "zh_HK": "空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
   },
   "Memory buffers": {
@@ -488,7 +488,7 @@
   "Can not update file, please check the server permissions and space.": {
     "zh_CN": "无法更新文件，请检查服务器权限和空间。",
     "ja": "ファイルを更新できません。サーバーの権限とスペースを確認してください。",
-    "zh_TW": "無法更新文件，請檢查伺服器權限和空間。",
+    "zh_TW": "無法更新檔案，請檢查伺服器權限和空間。",
     "zh_HK": "無法更新文件，請檢查伺服器權限和空間。"
   },
   "Click to update": {

@@ -15,10 +15,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.2.1\n"
+"X-ZhConverter: 繁化姬 dict-b76338ce-r665 @ 2019/11/20 14:24:08 | https://zhconvert.org\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
-msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
+msgstr "錯誤：無法獲取配備資料，更新檢測已禁用。"
 
 msgid "Database"
 msgstr "資料庫"
@@ -27,13 +28,13 @@ msgid "DB"
 msgstr "資料庫"
 
 msgid "Fetch error, please refresh page."
-msgstr "獲取錯誤，請刷新頁面。"
+msgstr "獲取錯誤，請重新整理頁面。"
 
 msgid ""
 "Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
 "time %>ms"
 msgstr ""
-"該頁面由 <%= appName %> 生成 / 作者爲 <%= authorName %> / <%= memUsage %> / "
+"該頁面由 <%= appName %> 生成 / 作者為 <%= authorName %> / <%= memUsage %> / "
 "<%= time %> 毫秒"
 
 msgid "STAR 🌟 ME"
@@ -70,7 +71,7 @@ msgid "Net"
 msgstr "流量"
 
 msgid "Opcache enabled"
-msgstr "OPcache 已啓用"
+msgstr "OPcache 已啟用"
 
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
@@ -109,10 +110,10 @@ msgid "Max input variables"
 msgstr "提交表單限制"
 
 msgid "Max execution time"
-msgstr "執行超時秒數"
+msgstr "執行逾時秒數"
 
 msgid "Timeout for socket"
-msgstr "Socket 超時秒數"
+msgstr "Socket 逾時秒數"
 
 msgid "Treatment URLs file"
 msgstr "檔案遠端打開"
@@ -124,10 +125,10 @@ msgid "Disabled functions"
 msgstr "禁用的函數"
 
 msgid "Disabled classes"
-msgstr "禁用的類"
+msgstr "禁用的類別"
 
 msgid "Visit PHP.net Official website"
-msgstr "訪問 PHP.net 官網"
+msgstr "瀏覽 PHP.net 官網"
 
 msgid "(Latest <%= latestPhpVersion %>)"
 msgstr "（最新 <%= latestPhpVersion %>）"
@@ -166,7 +167,7 @@ msgid "⏳ Please wait <%= seconds %>s"
 msgstr "⏳ 請等待 <%= seconds %> 秒"
 
 msgid "Can not fetch marks data from GitHub."
-msgstr "無法從 GitHub 中獲取跑分數據。"
+msgstr "無法從 GitHub 中獲取跑分資料。"
 
 msgid "Visit prober page"
 msgstr "查閱探針頁面"
@@ -175,7 +176,7 @@ msgid "Download speed test"
 msgstr "下載文件以測試網速"
 
 msgid "Visit the official website"
-msgstr "訪問官網"
+msgstr "瀏覽官網"
 
 msgid "My server"
 msgstr "我的伺服器"
@@ -237,7 +238,7 @@ msgstr "CPU 使用率"
 msgid ""
 "idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
 msgstr ""
-"空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
+"空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 使用者: <%= user %>"
 
 msgid "Memory buffers"
 msgstr "記憶體緩衝"
@@ -267,7 +268,7 @@ msgid "Click to close"
 msgstr "點擊關閉"
 
 msgid "Can not update file, please check the server permissions and space."
-msgstr "無法更新文件，請檢查伺服器權限和空間。"
+msgstr "無法更新檔案，請檢查伺服器權限和空間。"
 
 msgid "Click to update"
 msgstr "👆 點擊更新"

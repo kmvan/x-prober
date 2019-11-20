@@ -29,7 +29,7 @@ class PhpExtensions extends Component {
       ['Sockets', conf.sockets],
       ['MySQLi', conf.mysqli],
       ['Zip', conf.zip],
-      ['Multibyte String', conf.mb_substr],
+      ['Multibyte String', conf.mbstring],
       ['Phalcon', conf.phalcon],
       ['Xdebug', conf.xdebug],
       ['Zend Otimizer', conf.zendOtimizer],
