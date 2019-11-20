@@ -2,7 +2,7 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
-## 3.5.0 - 2019-11-20
+## 3.6.0 - 2019-11-20
 
 ### Fix
 
