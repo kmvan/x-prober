@@ -4,6 +4,16 @@ All Notable changes to `X-Prober` will be documented in this file
 
 ## 3.5.0 - 2019-11-20
 
+### Fix
+
+- Fix mbstring extension detection
+
+### Update
+
+- Update translation: zh_TW
+
+## 3.5.0 - 2019-11-20
+
 ### Add
 
 - Add http authorization
