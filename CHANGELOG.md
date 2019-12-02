@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.7.0 - 2019-12-03
+
+### Add
+
+- Add multi update check sources
+
 ## 3.6.0 - 2019-11-20
 
 ### Fix
