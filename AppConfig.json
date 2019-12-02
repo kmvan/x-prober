@@ -7,7 +7,10 @@
     "https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php",
     "https://api.inn-studio.com/download/?id=xprober"
   ],
-  "APP_CONFIG_URL": "https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json",
+  "APP_CONFIG_URLS": [
+    "https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json",
+    "https://api.inn-studio.com/download/?id=xprober-config"
+  ],
   "APP_CONFIG_URL_DEV": "http://127.0.0.1/prober/AppConfig.json",
   "AUTHOR_NAME": "INN STUDIO",
   "LATEST_PHP_STABLE_VERSION": 7,

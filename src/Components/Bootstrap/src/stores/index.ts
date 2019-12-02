@@ -10,7 +10,7 @@ class BootstrapStore {
   public readonly ID = 'bootstrap'
   public readonly conf = get(conf, this.ID)
   public version: string = get(this.conf, 'version')
-  public appConfigUrl: string = get(this.conf, 'appConfigUrl')
+  public appConfigUrls: string[] = get(this.conf, 'appConfigUrls')
   public appConfigUrlDev: string = get(this.conf, 'appConfigUrlDev')
   public appName: string = get(this.conf, 'appName')
   public appUrl: string = get(this.conf, 'appUrl')

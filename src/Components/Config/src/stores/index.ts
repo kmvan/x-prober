@@ -2,6 +2,7 @@ import { observable, action, configure } from 'mobx'
 import ToastStore from '~components/Toast/src/stores'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
+import conf from '~components/Helper/src/components/conf'
 
 configure({
   enforceActions: 'observed',
@@ -35,20 +36,43 @@ class ConfigStore {
   }
 
   private fetch = async () => {
-    const { isDev, appConfigUrl, appConfigUrlDev } = BootstrapStore
+    const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapStore
+    let configStatus = false
 
-    await fetch(isDev ? appConfigUrlDev : appConfigUrl)
-      .then(res => res.json())
-      .then(res => {
-        this.setAppConfig(res)
-      })
-      .catch(e => {
-        ToastStore.open(
-          gettext(
-            'Error: can not fetch remote config data, update checker is disabled.'
-          )
+    // dev version
+    if (isDev) {
+      await fetch(appConfigUrlDev)
+        .then(res => res.json())
+        .then(res => {
+          this.setAppConfig(res)
+        })
+        .catch(e => {})
+
+      return
+    }
+
+    // online version
+    for (let i = 0; i < appConfigUrls.length; i++) {
+      await fetch(appConfigUrls[i])
+        .then(res => res.json())
+        .then(res => {
+          this.setAppConfig(res)
+          configStatus = true
+        })
+        .catch(e => {})
+
+      if (configStatus) {
+        break
+      }
+    }
+
+    if (!configStatus) {
+      ToastStore.open(
+        gettext(
+          'Error: can not fetch remote config data, update checker is disabled.'
         )
-      })
+      )
+    }
   }
 
   @action
