@@ -44,7 +44,7 @@ class ConfigGeneration
             'APP_VERSION'                 => $appVersion,
             'APP_NAME'                    => $appName,
             'APP_URL'                     => $appUrl,
-            'APP_CONFIG_URL'              => $appConfigUrl,
+            'APP_CONFIG_URLS'             => $appConfigUrls,
             'APP_CONFIG_URL_DEV'          => $appConfigUrlDev,
             'AUTHOR_URL'                  => $authorUrl,
             'UPDATE_PHP_URLS'             => $updatePhpUrls,
@@ -54,6 +54,7 @@ class ConfigGeneration
         ] = $config;
 
         $updatePhpUrls = \implode("', '", $updatePhpUrls);
+        $appConfigUrls = \implode("', '", $appConfigUrls);
 
         $configContent = <<<PHP
 <?php
@@ -68,7 +69,7 @@ class ConfigApi
     public static \$APP_VERSION                 = '{$appVersion}';
     public static \$APP_NAME                    = '{$appName}';
     public static \$APP_URL                     = '{$appUrl}';
-    public static \$APP_CONFIG_URL              = '{$appConfigUrl}';
+    public static \$APP_CONFIG_URLS              = array('{$appConfigUrls}');
     public static \$APP_CONFIG_URL_DEV          = '{$appConfigUrlDev}';
     public static \$AUTHOR_URL                  = '{$authorUrl}';
     public static \$UPDATE_PHP_URLS             = array('{$updatePhpUrls}');

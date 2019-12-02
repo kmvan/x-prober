@@ -19,7 +19,7 @@ class Conf extends BootstrapConstants
             'version'         => ConfigApi::$APP_VERSION,
             'appName'         => ConfigApi::$APP_NAME,
             'appUrl'          => ConfigApi::$APP_URL,
-            'appConfigUrl'    => ConfigApi::$APP_CONFIG_URL,
+            'appConfigUrls'   => ConfigApi::$APP_CONFIG_URLS,
             'appConfigUrlDev' => ConfigApi::$APP_CONFIG_URL_DEV,
             'authorUrl'       => ConfigApi::$AUTHOR_URL,
             'authorName'      => ConfigApi::$AUTHOR_NAME,
