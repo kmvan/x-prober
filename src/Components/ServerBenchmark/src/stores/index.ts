@@ -22,7 +22,7 @@ class ServerBenchmarkStore {
   @observable public marks: IMarks | null = null
 
   @computed
-  get servers(): IAppConfigBenchmark[] | null {
+  public get servers(): IAppConfigBenchmark[] | null {
     return get(ConfigStore, 'appConfig.BENCHMARKS') || null
   }
 

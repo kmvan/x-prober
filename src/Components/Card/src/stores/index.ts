@@ -23,12 +23,12 @@ class CardStore {
   }
 
   @computed
-  get cardsLength() {
+  public get cardsLength() {
     return this.cards.length
   }
 
   @computed
-  get sortedCards() {
+  public get sortedCards() {
     return orderBy(this.cards, ['priority'], ['asc'])
   }
 }

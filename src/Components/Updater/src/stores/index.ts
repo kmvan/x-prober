@@ -14,7 +14,7 @@ class UpdaterStore {
   @observable public isUpdateError: boolean = false
 
   @computed
-  get newVersion(): string {
+  public get newVersion(): string {
     const { appConfig } = ConfigStore
 
     if (!appConfig || !appConfig.APP_VERSION) {
@@ -37,7 +37,7 @@ class UpdaterStore {
   }
 
   @computed
-  get notiText(): string {
+  public get notiText(): string {
     if (this.isUpdating) {
       return gettext('⏳ Updating, please wait a second...')
     }
