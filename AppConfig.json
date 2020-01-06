@@ -1,5 +1,5 @@
 {
-  "APP_VERSION": "3.7",
+  "APP_VERSION": "3.8",
   "APP_NAME": "X Prober",
   "APP_URL": "https://github.com/kmvan/x-prober",
   "AUTHOR_URL": "https://inn-studio.com/prober",
@@ -29,6 +29,18 @@
         "intLoop": 942,
         "floatLoop": 942,
         "ioLoop": 656
+      }
+    },
+    {
+      "name": "Aliyun/HangZhou/PHP7.3",
+      "url": "https://www.aliyun.com/minisite/goods?userCode=0nry1oii",
+      "date": "2019-12-20",
+      "proberUrl": "http://47.96.81.53/x.php",
+      "detail": {
+        "hash": 800,
+        "intLoop": 945,
+        "floatLoop": 948,
+        "ioLoop": 827
       }
     },
     {

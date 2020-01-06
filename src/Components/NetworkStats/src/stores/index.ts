@@ -19,7 +19,7 @@ class NetworkStatsStore {
   public readonly conf = get(conf, this.ID)
 
   @computed
-  get items(): INetworkStatsItem | null {
+  public get items(): INetworkStatsItem | null {
     return (
       (FetchStore.isLoading
         ? get(this.conf, 'networks')

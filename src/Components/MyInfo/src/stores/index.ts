@@ -34,7 +34,7 @@ class MyInfoStore {
   }
 
   @computed
-  get pingItemsCount() {
+  public get pingItemsCount() {
     return this.pingItems.length
   }
 

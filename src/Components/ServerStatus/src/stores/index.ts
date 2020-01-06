@@ -30,14 +30,14 @@ class ServerStatus {
   @observable public swapCached: IServerStatusUsage = this.conf.swapCached
 
   @computed
-  get sysLoad(): number[] {
+  public get sysLoad(): number[] {
     return FetchStore.isLoading
       ? get(this.conf, 'sysLoad')
       : get(FetchStore.data, `${this.ID}.sysLoad`) || [0, 0, 0]
   }
 
   @computed
-  get cpuUsage(): IServerStatusCpuUsage {
+  public get cpuUsage(): IServerStatusCpuUsage {
     return FetchStore.isLoading
       ? {
           idle: 90,
