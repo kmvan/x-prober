@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.8.0 - 2020-01-06
+
+### Optimize
+
+- Optimize bootstrap code
+
+### Update
+
+- Update benchmarks
+- Update package
+
 ## 3.7.0 - 2019-12-03
 
 ### Add
