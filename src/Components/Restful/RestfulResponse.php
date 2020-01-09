@@ -39,6 +39,8 @@ class RestfulResponse
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
     }
 
     public function getStatus()
@@ -49,6 +51,8 @@ class RestfulResponse
     public function setData($data)
     {
         $this->data = $data;
+
+        return $this;
     }
 
     public function getData()
