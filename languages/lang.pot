@@ -255,6 +255,12 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+msgid "Temperature sensor"
+msgstr ""
+
+msgid "Temp."
+msgstr ""
+
 msgid "Click to close"
 msgstr ""
 

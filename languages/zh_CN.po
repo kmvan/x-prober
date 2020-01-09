@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2019-09-19 09:45+0800\n"
+"PO-Revision-Date: 2020-01-09 23:26+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
@@ -263,6 +263,12 @@ msgstr "服务器状态"
 msgid "Status"
 msgstr "状态"
 
+msgid "Temperature sensor"
+msgstr "温度传感器"
+
+msgid "Temp."
+msgstr "温度"
+
 msgid "Click to close"
 msgstr "点击关闭"
 
@@ -280,3 +286,6 @@ msgstr "❌ 更新错误，点击此处再试一次？"
 
 msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
 msgstr "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>"
+
+#~ msgid "No sensor data."
+#~ msgstr "无传感器"

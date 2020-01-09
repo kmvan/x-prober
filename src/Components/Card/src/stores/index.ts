@@ -1,6 +1,6 @@
 import { observable, action, configure, computed } from 'mobx'
 import { ComponentClass } from 'react'
-import { orderBy } from 'lodash-es'
+import { orderBy, findIndex } from 'lodash-es'
 
 configure({
   enforceActions: 'observed',
@@ -10,6 +10,7 @@ export interface ICard {
   id: string
   title: string
   tinyTitle: string
+  enabled?: boolean
   priority: number
   component: ComponentClass
 }
@@ -25,6 +26,17 @@ class CardStore {
   @computed
   public get cardsLength() {
     return this.cards.length
+  }
+
+  @action
+  public setCard = ({ id, ...card }: Partial<ICard>) => {
+    const i = findIndex(this.cards, { id })
+
+    if (i === -1) {
+      return
+    }
+
+    this.cards[i] = { ...this.cards[i], ...card }
   }
 
   @computed

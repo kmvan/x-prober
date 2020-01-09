@@ -42,7 +42,11 @@ class Cards extends Component {
 
     return (
       <>
-        {sortedCards.map(({ id, title, component: Tag }) => {
+        {sortedCards.map(({ id, title, enabled = true, component: Tag }) => {
+          if (!enabled) {
+            return null
+          }
+
           return (
             <StyledFieldset key={id} id={id}>
               <StyledLegend>{title}</StyledLegend>

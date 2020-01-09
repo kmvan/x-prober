@@ -41,20 +41,23 @@ class ConfigGeneration
         }
 
         [
-            'APP_VERSION'                 => $appVersion,
-            'APP_NAME'                    => $appName,
-            'APP_URL'                     => $appUrl,
-            'APP_CONFIG_URLS'             => $appConfigUrls,
-            'APP_CONFIG_URL_DEV'          => $appConfigUrlDev,
-            'AUTHOR_URL'                  => $authorUrl,
-            'UPDATE_PHP_URLS'             => $updatePhpUrls,
-            'AUTHOR_NAME'                 => $authorName,
-            'LATEST_PHP_STABLE_VERSION'   => $latestPhpStableVersion,
-            'LATEST_NGINX_STABLE_VERSION' => $latestNginxStableVersion,
+            'APP_VERSION'                  => $appVersion,
+            'APP_NAME'                     => $appName,
+            'APP_URL'                      => $appUrl,
+            'APP_CONFIG_URLS'              => $appConfigUrls,
+            'APP_CONFIG_URL_DEV'           => $appConfigUrlDev,
+            'APP_TEMPERATURE_SENSOR_URL'   => $appTemperatureSensorUrl,
+            'APP_TEMPERATURE_SENSOR_PORTS' => $appTemperatureSensorPorts,
+            'AUTHOR_URL'                   => $authorUrl,
+            'UPDATE_PHP_URLS'              => $updatePhpUrls,
+            'AUTHOR_NAME'                  => $authorName,
+            'LATEST_PHP_STABLE_VERSION'    => $latestPhpStableVersion,
+            'LATEST_NGINX_STABLE_VERSION'  => $latestNginxStableVersion,
         ] = $config;
 
-        $updatePhpUrls = \implode("', '", $updatePhpUrls);
-        $appConfigUrls = \implode("', '", $appConfigUrls);
+        $updatePhpUrls             = \implode("', '", $updatePhpUrls);
+        $appConfigUrls             = \implode("', '", $appConfigUrls);
+        $appTemperatureSensorPorts = \implode(', ', $appTemperatureSensorPorts);
 
         $configContent = <<<PHP
 <?php
@@ -66,16 +69,18 @@ namespace InnStudio\Prober\Components\Config;
 
 class ConfigApi
 {
-    public static \$APP_VERSION                 = '{$appVersion}';
-    public static \$APP_NAME                    = '{$appName}';
-    public static \$APP_URL                     = '{$appUrl}';
+    public static \$APP_VERSION                  = '{$appVersion}';
+    public static \$APP_NAME                     = '{$appName}';
+    public static \$APP_URL                      = '{$appUrl}';
     public static \$APP_CONFIG_URLS              = array('{$appConfigUrls}');
-    public static \$APP_CONFIG_URL_DEV          = '{$appConfigUrlDev}';
-    public static \$AUTHOR_URL                  = '{$authorUrl}';
-    public static \$UPDATE_PHP_URLS             = array('{$updatePhpUrls}');
-    public static \$AUTHOR_NAME                 = '{$authorName}';
-    public static \$LATEST_PHP_STABLE_VERSION   = '{$latestPhpStableVersion}';
-    public static \$LATEST_NGINX_STABLE_VERSION = '{$latestNginxStableVersion}';
+    public static \$APP_CONFIG_URL_DEV           = '{$appConfigUrlDev}';
+    public static \$APP_TEMPERATURE_SENSOR_URL   = '{$appTemperatureSensorUrl}';
+    public static \$APP_TEMPERATURE_SENSOR_PORTS = array({$appTemperatureSensorPorts});
+    public static \$AUTHOR_URL                   = '{$authorUrl}';
+    public static \$UPDATE_PHP_URLS              = array('{$updatePhpUrls}');
+    public static \$AUTHOR_NAME                  = '{$authorName}';
+    public static \$LATEST_PHP_STABLE_VERSION    = '{$latestPhpStableVersion}';
+    public static \$LATEST_NGINX_STABLE_VERSION  = '{$latestNginxStableVersion}';
 }
 
 PHP;
