@@ -117,7 +117,7 @@ const writeJsData = ({ langId, items }) => {
   })
 
   fs.writeFileSync(
-    path.resolve(__dirname, 'src/Components/Language/lang.json'),
+    path.resolve(__dirname, 'src/Components/Language/src/lang.json'),
     JSON.stringify(langs, null, 2),
     err => {
       if (err) {

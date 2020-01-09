@@ -16,9 +16,13 @@ const StyledNav = styled.div`
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 3rem;
   line-height: 3rem;
+  overflow-x: auto;
+  @media ${device('mobileMd')} {
+    justify-content: center;
+  }
 `
 
 const StyledNavLink = styled.a`

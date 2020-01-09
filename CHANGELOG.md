@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.9.0 - 2020-01-09
+
+### Add
+
+- Add Temperature sensor feature (#7)
+- Add Navbar scrollable on mobile view
+
+### Fix
+
+- Fix language json file path error (for dev)
+
 ## 3.8.0 - 2020-01-06
 
 ### Optimize
