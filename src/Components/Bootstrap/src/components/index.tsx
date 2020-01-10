@@ -25,11 +25,12 @@ import Forkme from '~components/Forkme/src/components'
 import Footer from '~components/Footer/src/components'
 import Toast from '~components/Toast/src/components'
 import { GUTTER, COLOR_DARK, COLOR_GRAY } from '~components/Config/src'
+import { rgba } from 'polished'
 
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
   background: ${COLOR_GRAY};
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 5px ${rgba(COLOR_DARK, 0.3)};
 
   /* notch right angle square */
   ::before,

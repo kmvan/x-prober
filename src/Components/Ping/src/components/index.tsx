@@ -10,6 +10,7 @@ import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
 import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
+import { rgba } from 'polished'
 
 const StyledPingBtn = styled.a`
   display: block;
@@ -26,7 +27,7 @@ const StyledPingItemContainer = styled.ul`
   max-height: 8rem;
   overflow-y: auto;
   border-radius: ${GUTTER} ${GUTTER} 0 0;
-  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 10px 10px ${rgba(COLOR_DARK, 0.1)};
   list-style-type: none;
 
   ::-webkit-scrollbar-track {
