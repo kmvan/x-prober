@@ -3,8 +3,9 @@ import { observer } from 'mobx-react'
 import Portal from '~components/Helper/src/components/portal'
 import store from '../stores'
 import styled from 'styled-components'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER, COLOR_DARK } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
+import { rgba } from 'polished'
 
 const StyledToast = styled.div`
   position: fixed;
@@ -13,7 +14,7 @@ const StyledToast = styled.div`
   max-width: 80vw;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.85);
+  background: ${rgba(COLOR_DARK, 0.85)};
   color: #fff;
   border-radius: ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};

@@ -4,6 +4,7 @@ import { COLOR_DARK, GUTTER } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
+import { rgba } from 'polished'
 
 const StyledForkmeLink = styled.a`
   position: fixed;
@@ -15,7 +16,7 @@ const StyledForkmeLink = styled.a`
   padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
   transform: rotate(-45deg) translate(-28%, -70%);
   font-size: calc(${GUTTER} * 0.7);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 5px ${rgba(COLOR_DARK, 0.3)};
   z-index: 2;
 
   @media ${device('tablet')} {

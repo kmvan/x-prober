@@ -5,6 +5,7 @@ import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
 import UpdaterLink from '~components/Updater/src/components/updater-link'
+import { rgba } from 'polished'
 
 export const StyledTitle = styled.h1`
   background: ${COLOR_DARK};
@@ -20,7 +21,7 @@ export const StyledTitle = styled.h1`
   font-size: ${GUTTER};
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADIUS} ${BORDER_RADIUS};
-  box-shadow: inset 0 -3px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -3px 15px -5px ${rgba(COLOR_DARK, 0.3)};
   z-index: 10;
 `
 

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { GUTTER, COLOR_DARK } from '~components/Config/src'
+import { rgba } from 'polished'
 
 interface IAlertContainer {
   isSuccess: boolean
@@ -16,7 +17,7 @@ const StyledAlert = styled.div<IAlertContainer>`
   font-weight: bolder;
   min-width: 2em;
   color: #fff;
-  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
   text-shadow: 0 1px 1px ${COLOR_DARK};
   padding: 0 0.5rem;
   white-space: nowrap;

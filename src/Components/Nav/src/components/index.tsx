@@ -3,8 +3,9 @@ import { observer } from 'mobx-react'
 import CardStore from '~components/Card/src/stores'
 import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
 import getElementOffsetTop from '~components/Helper/src/components/get-element-offset-top'
+import { rgba } from 'polished'
 
 const StyledNav = styled.div`
   position: fixed;
@@ -21,26 +22,34 @@ const StyledNav = styled.div`
   line-height: 3rem;
   overflow-x: auto;
   @media ${device('mobileMd')} {
+    overflow-x: unset;
     justify-content: center;
   }
 `
 
 const StyledNavLink = styled.a`
+  position: relative;
   white-space: nowrap;
-  color: #ccc;
-  padding: 0.3rem 0.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  color: ${COLOR_GRAY};
+  padding: 0 0.5rem;
+  border-right: 1px solid ${rgba(COLOR_GRAY, 0.05)};
 
   @media ${device('tablet')} {
-    padding: 0.3rem ${GUTTER};
+    padding: 0 ${GUTTER};
   }
 
   :hover {
-    background: #f8f8f8;
+    background: linear-gradient(${COLOR_GRAY}, #fff);
     color: ${COLOR_DARK};
     text-decoration: none;
-    box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.1),
-      0 -5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 -10px 10px ${rgba(COLOR_DARK, 0.1)},
+      0 -5px 30px ${rgba(COLOR_DARK, 0.3)};
+  }
+  :focus,
+  :active {
+    text-decoration: none;
+    color: ${COLOR_DARK};
+    background: ${rgba(COLOR_GRAY, 0.85)};
   }
 
   :last-child {
@@ -82,18 +91,24 @@ class Nav extends Component {
   public render() {
     return (
       <StyledNav>
-        {CardStore.sortedCards.map(({ id, title, tinyTitle }) => {
-          return (
-            <StyledNavLink
-              key={id}
-              onClick={e => this.onClick(e, id)}
-              href={`#${id}`}
-            >
-              <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
-              <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
-            </StyledNavLink>
-          )
-        })}
+        {CardStore.sortedCards.map(
+          ({ id, title, tinyTitle, enabled = true }) => {
+            if (!enabled) {
+              return null
+            }
+
+            return (
+              <StyledNavLink
+                key={id}
+                onClick={e => this.onClick(e, id)}
+                href={`#${id}`}
+              >
+                <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
+                <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
+              </StyledNavLink>
+            )
+          }
+        )}
       </StyledNav>
     )
   }

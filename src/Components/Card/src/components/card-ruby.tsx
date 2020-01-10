@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
+import { rgba } from 'polished'
+import { COLOR_DARK } from '~components/Config/src'
 
 interface IRuby {
   isResult?: boolean
@@ -11,7 +13,7 @@ export interface ICardRuby extends IRuby {
 }
 
 const StyledRuby = styled.ruby<IRuby>`
-  background: rgba(0, 0, 0, 0.05);
+  background: ${rgba(COLOR_DARK, 0.05)};
   rp {
   }
   rt {

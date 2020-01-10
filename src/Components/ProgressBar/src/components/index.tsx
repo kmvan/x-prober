@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import gradientColors from '~components/Helper/src/components/gradient'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER, COLOR_DARK } from '~components/Config/src'
+import { rgba } from 'polished'
 
 export interface IProgressBar {
   title?: string
@@ -36,10 +37,10 @@ const StyledProgressShell = styled.div`
   display: flex;
   width: 100%;
   height: 2rem;
-  background: #444;
+  background: ${COLOR_DARK};
   border-radius: ${GUTTER};
-  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
-  padding: 0.35rem;
+  box-shadow: inset 0 10px 20px ${rgba(COLOR_DARK, 0.3)};
+  padding: 0.3rem;
 `
 
 interface IProgressValue {
@@ -51,8 +52,8 @@ const ProgressValue = styled.div<IProgressValue>`
   transition: all 1s;
   border-radius: ${GUTTER};
   background: #0c0;
-  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.4),
-    0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 -5px 10px ${rgba(COLOR_DARK, 0.4)},
+    0 5px 10px 0 ${rgba(COLOR_DARK, 0.3)};
   overflow: hidden;
   background: #${({ percent }: IProgressValue) => gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]};
   width: ${({ percent }: IProgressValue) => percent}%;

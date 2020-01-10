@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.10.0 - 2020-01-10
+
+### Fix
+
+- Fix bottom nav item switch
+
+### Optimize
+
+- Adjust colors
+
 ## 3.9.0 - 2020-01-09
 
 ### Add
