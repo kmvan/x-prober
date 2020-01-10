@@ -121,6 +121,7 @@
     "eslint-config-prettier": "^6.9.0",
     "glob": "^7.1.6",
     "isomorphic-fetch": "^2.2.1",
+    "polished": "^3.4.2",
     "query-string": "^6.9.0",
     "styled-components": "^4.4.1",
     "typescript-plugin-styled-components": "^1.4.3"
