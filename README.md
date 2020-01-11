@@ -41,7 +41,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 - Compile environment: PHP 7.3+
 - Production environment: PHP 5.3+
-- Browser support: <del>IE9</del> / Chrome / Firefox / Edge / Android / 
+- Browser support: <del>IE9</del> / Chrome / Firefox / Edge / Android /
 - OS support: Linux / Windows(basic features)
 - Tested: ![debian][debian] ![ubuntu][ubuntu] ![arch][arch] ![windows][windows]
 
@@ -100,7 +100,7 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 
 ## TODO
 
-- [ ] Temperature sensor.
+- [x] Temperature sensor.
 - [x] More languages with Poedit.
 - [x] Detail benchmark result.
 - [ ] Add Email send testing.
