@@ -24,12 +24,22 @@ class TemperatureSensor
         $items    = $this->getItems();
 
         if ($items) {
-            $response->setData($items);
-        } else {
+            $response->setData($items)->dieJson();
+        }
+
+        $cpuTemp = $this->getCpuTemp();
+
+        if ( ! $cpuTemp) {
             $response->setStatus(HttpStatus::$NO_CONTENT);
         }
 
-        $response->dieJson();
+        $items[] = array(
+            'id'      => 'cpu',
+            'name'    => 'CPU',
+            'celsius' => \round((float) $cpuTemp / 1000, 2),
+        );
+
+        $response->setData($items)->dieJson();
     }
 
     private function curl($url)
@@ -73,5 +83,16 @@ class TemperatureSensor
         }
 
         return $items;
+    }
+
+    private function getCpuTemp()
+    {
+        try {
+            $path = '/sys/class/thermal/thermal_zone0/temp';
+
+            return \file_exists($path) ? (int) \file_get_contents($path) : 0;
+        } catch (\Exception $e) {
+            return 0;
+        }
     }
 }
