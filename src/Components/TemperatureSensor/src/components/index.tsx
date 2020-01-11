@@ -4,25 +4,8 @@ import store from '../stores'
 import Row from '~components/Grid/src/components/row'
 import { gettext } from '~components/Language/src'
 import CardGrid from '~components/Card/src/components/card-grid'
-import styled from 'styled-components'
-import { device } from '~components/Style/src/components/devices'
-
-const StyledTemperatureSensorName = styled.div`
-  text-align: center;
-`
-const StyledTemperatureSensorValue = styled.div`
-  font-family: 'Arial Black';
-`
-const StyledTemperatureSensorNumber = styled.span`
-  white-space: nowrap;
-`
-const StyledTemperatureSensorCelsius = styled.span`
-  display: none;
-
-  @media ${device('mobileMd')} {
-    display: inline;
-  }
-`
+import ProgressBar from '~components/ProgressBar/src/components'
+import { template } from 'lodash-es'
 
 @observer
 class TemperatureSensor extends Component {
@@ -38,20 +21,17 @@ class TemperatureSensor extends Component {
         {items.map(({ id, name, celsius }) => (
           <CardGrid
             key={id}
-            title={
-              <StyledTemperatureSensorName>{name}</StyledTemperatureSensorName>
-            }
-            tablet={[1, 4]}
-            mobileSm={[1, 2]}
+            title={template(gettext('<%= sensor %> temperature'))({
+              sensor: name,
+            })}
+            tablet={[1, itemsCount === 1 ? 1 : 2]}
           >
-            <StyledTemperatureSensorValue>
-              <StyledTemperatureSensorNumber>
-                {celsius}
-              </StyledTemperatureSensorNumber>
-              <StyledTemperatureSensorCelsius>
-                {'℃'}
-              </StyledTemperatureSensorCelsius>
-            </StyledTemperatureSensorValue>
+            <ProgressBar
+              value={celsius}
+              max={150}
+              isCapacity={false}
+              percentTag='℃'
+            />
           </CardGrid>
         ))}
       </Row>

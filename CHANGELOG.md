@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 3.11.0 - 2020-01-12
+
+### Add
+
+- Add `extensions` dir for future extensions
+
+### Optimize
+
+- Optimize temperature sensor display
+
 ## 3.10.0 - 2020-01-10
 
 ### Fix

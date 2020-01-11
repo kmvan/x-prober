@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-09 23:28+0800\n"
+"PO-Revision-Date: 2020-01-11 23:56+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_TW\n"
@@ -264,6 +264,9 @@ msgstr "伺服器狀態"
 
 msgid "Status"
 msgstr "狀態"
+
+msgid "<%= sensor %> temperature"
+msgstr ""
 
 msgid "Temperature sensor"
 msgstr "溫度傳感器"

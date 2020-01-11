@@ -21,13 +21,15 @@ const server = http.createServer((request, response) => {
     //defining document type then charset "utf-8"
     'Content-Type': 'application/json;charset="utf-8"',
     //CORS
-    'Access-Control-Allow-Origin': "*"
+    'Access-Control-Allow-Origin': '*',
   })
-  const items = [{
-    id: 'cpu',
-    name: 'CPU Temperature',
-    celsius: temp / 1000,
-  }]
+  const items = [
+    {
+      id: 'cpu',
+      name: 'CPU',
+      celsius: temp / 1000,
+    },
+  ]
   //transform object into string, and output with .end() method
   response.end(JSON.stringify(items))
 })

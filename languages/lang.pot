@@ -255,6 +255,9 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+msgid "<%= sensor %> temperature"
+msgstr ""
+
 msgid "Temperature sensor"
 msgstr ""
 

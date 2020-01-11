@@ -10,6 +10,7 @@ export interface IProgressBar {
   value: number
   max: number
   isCapacity: boolean
+  percentTag?: string
 }
 
 const StyledProgressBar = styled.div`
@@ -81,15 +82,23 @@ const ProgressValue = styled.div<IProgressValue>`
   }
 `
 
-const ProgressBar = ({ title = '', value, max, isCapacity }: IProgressBar) => {
+const ProgressBar = ({
+  title = '',
+  value,
+  max,
+  isCapacity,
+  percentTag = '%',
+}: IProgressBar) => {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`
-    : `${value.toFixed(1)}% / ${max}%`
+    : `${value.toFixed(1)}${percentTag} / ${max}${percentTag}`
 
   return (
     <StyledProgressBar title={title}>
-      <StyledProgressPercent>{`${percent.toFixed(1)}%`}</StyledProgressPercent>
+      <StyledProgressPercent>{`${percent.toFixed(
+        1
+      )}${percentTag}`}</StyledProgressPercent>
       <StyledProgressOverview>{overview}</StyledProgressOverview>
       <StyledProgressShell>
         <ProgressValue percent={percent} />
