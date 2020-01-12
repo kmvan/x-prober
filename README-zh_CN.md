@@ -1,4 +1,4 @@
-[![X Prober preview](preview.jpg)](preview.jpg)
+[![X Prober preview](screenshot.jpg)](screenshot.jpg)
 
 # 😎 X 探针、刘海探针
 
@@ -18,7 +18,7 @@
 
 ## 下载与使用
 
-- 点击 [https://api.inn-studio.com/download?id=xprober](https://api.inn-studio.com/download?id=xprober) 下载。
+- 点击 [INN 下载节点](https://api.inn-studio.com/download?id=xprober) 或 [GitHub 节点](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) 下载探針文件。
 - 您将会得到一个文件，命名为 `x.php` 并上传到您的服务器上。
 - 通过浏览器访问 `x.php` 即可。
 
@@ -28,6 +28,10 @@
 - 运行环境：PHP 5.3+
 - 浏览器兼容：<del>IE9</del>、Chrome、Firefox、Edge、Android
 - 系统兼容：Linux、Windows（基础功能）
+
+## 擴展
+
+- 正在編寫中……
 
 ## 开发指引
 
