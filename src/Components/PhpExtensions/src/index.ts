@@ -5,7 +5,7 @@ import store from './stores'
 
 CardStore.addCard({
   id: store.ID,
-  title: gettext('PHP extensions'),
+  title: gettext('PHP Extensions'),
   tinyTitle: gettext('Ext'),
   priority: 500,
   component,

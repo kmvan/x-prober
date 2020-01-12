@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-11 23:55+0800\n"
+"PO-Revision-Date: 2020-01-12 16:59+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
@@ -16,6 +16,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
+
+msgid "Move up"
+msgstr "上移"
+
+msgid "Move down"
+msgstr "下移"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
@@ -57,13 +63,13 @@ msgstr "我的位置"
 msgid "In development"
 msgstr "開發中"
 
-msgid "My information"
+msgid "My Information"
 msgstr "我的訊息"
 
 msgid "Mine"
 msgstr "我的"
 
-msgid "Network stats"
+msgid "Network Stats"
 msgstr "流量統計"
 
 msgid "Net"
@@ -75,7 +81,7 @@ msgstr "OPcache 已啓用"
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
-msgid "PHP extensions"
+msgid "PHP Extensions"
 msgstr "PHP 擴展"
 
 msgid "Ext"
@@ -266,7 +272,7 @@ msgstr "狀態"
 msgid "<%= sensor %> temperature"
 msgstr "<%= sensor %> 溫度"
 
-msgid "Temperature sensor"
+msgid "Temperature Sensor"
 msgstr "溫度傳感器"
 
 msgid "Temp."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-11 23:55+0800\n"
+"PO-Revision-Date: 2020-01-12 16:59+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
@@ -14,6 +14,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
+
+msgid "Move up"
+msgstr "上に移動"
+
+msgid "Move down"
+msgstr "下に移動"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
@@ -57,13 +63,13 @@ msgstr "私の場所"
 msgid "In development"
 msgstr "開発中"
 
-msgid "My information"
+msgid "My Information"
 msgstr "私の情報"
 
 msgid "Mine"
 msgstr "私の"
 
-msgid "Network stats"
+msgid "Network Stats"
 msgstr "ネットワーク統計"
 
 msgid "Net"
@@ -75,7 +81,7 @@ msgstr "%s 有効"
 msgid "Loaded extensions"
 msgstr "ロードエクステンション"
 
-msgid "PHP extensions"
+msgid "PHP Extensions"
 msgstr "PHPエクステンション"
 
 msgid "Ext"
@@ -266,7 +272,7 @@ msgstr "状態"
 msgid "<%= sensor %> temperature"
 msgstr "<%= sensor %> 温度"
 
-msgid "Temperature sensor"
+msgid "Temperature Sensor"
 msgstr "温度センサー"
 
 msgid "Temp."

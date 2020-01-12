@@ -15,6 +15,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
 
+msgid "Move up"
+msgstr ""
+
+msgid "Move down"
+msgstr ""
+
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
 
@@ -51,13 +57,13 @@ msgstr ""
 msgid "In development"
 msgstr ""
 
-msgid "My information"
+msgid "My Information"
 msgstr ""
 
 msgid "Mine"
 msgstr ""
 
-msgid "Network stats"
+msgid "Network Stats"
 msgstr ""
 
 msgid "Net"
@@ -69,7 +75,7 @@ msgstr ""
 msgid "Loaded extensions"
 msgstr ""
 
-msgid "PHP extensions"
+msgid "PHP Extensions"
 msgstr ""
 
 msgid "Ext"
@@ -258,7 +264,7 @@ msgstr ""
 msgid "<%= sensor %> temperature"
 msgstr ""
 
-msgid "Temperature sensor"
+msgid "Temperature Sensor"
 msgstr ""
 
 msgid "Temp."

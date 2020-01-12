@@ -1,5 +1,5 @@
+import { OK } from '~components/Restful/src/http-status'
 import CardStore from '~components/Card/src/stores'
-import { OK } from './../../../Restful/src/http-status'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { observable, action, computed, configure } from 'mobx'
 import { find } from 'lodash-es'
@@ -18,10 +18,6 @@ class TemperatureSensorStore {
   public readonly ID = 'temperatureSensor'
 
   @observable public items: ITemperatureSensorItem[] = []
-
-  constructor() {
-    this.fetch()
-  }
 
   @action
   public setItems = (items: ITemperatureSensorItem[]) => {
@@ -48,7 +44,7 @@ class TemperatureSensorStore {
   }
 
   @action
-  private fetch = async () => {
+  public fetch = async () => {
     await restfulFetch('temperature-sensor')
       .then(([{ status }, items]) => {
         if (status === OK) {

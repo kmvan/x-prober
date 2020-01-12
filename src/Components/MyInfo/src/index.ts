@@ -5,7 +5,7 @@ import store from './stores'
 
 CardStore.addCard({
   id: store.ID,
-  title: gettext('My information'),
+  title: gettext('My Information'),
   tinyTitle: gettext('Mine'),
   priority: 900,
   component,
