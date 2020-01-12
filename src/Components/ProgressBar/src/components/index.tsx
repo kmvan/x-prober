@@ -44,16 +44,20 @@ const StyledProgressShell = styled.div`
   padding: 0.3rem;
 `
 
-interface IProgressValue {
+interface IStyledProgressValue {
   percent: number
 }
 
-const ProgressValue = styled.div.attrs(({ percent }: IProgressValue) => ({
-  style: {
-    backgroundColor: `#${gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]}`,
-    width: `${percent}%`,
-  },
-}))<IProgressValue>`
+const StyledProgressValue = styled.div.attrs(
+  ({ percent }: IStyledProgressValue) => ({
+    style: {
+      backgroundColor: `#${
+        gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]
+      }`,
+      width: `${percent}%`,
+    },
+  })
+)<IStyledProgressValue>`
   position: relative;
   transition: all 1s;
   border-radius: ${GUTTER};
@@ -105,7 +109,7 @@ const ProgressBar = ({
       )}${percentTag}`}</StyledProgressPercent>
       <StyledProgressOverview>{overview}</StyledProgressOverview>
       <StyledProgressShell>
-        <ProgressValue percent={percent} />
+        <StyledProgressValue percent={percent} />
       </StyledProgressShell>
     </StyledProgressBar>
   )
