@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.0.0 - 2020-01-13
+
+### Add
+
+- New module sortability
+
+### Optimize
+
+- Optimize progress performance
+- Optimize text case
+
 ## 3.11.0 - 2020-01-12
 
 ### Add
