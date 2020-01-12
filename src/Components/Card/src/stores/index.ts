@@ -32,7 +32,6 @@ class CardStore {
     }
 
     this.cards.push(card)
-    // this.cards = orderBy(this.cards, ['priority'], ['asc'])
   }
 
   @computed
@@ -90,7 +89,6 @@ class CardStore {
       cards[i].priority,
     ]
 
-    // cards = orderBy(cards, ['priority'], ['asc'])
     this.setCardsPriority(cards)
     this.setStoragePriorityItems()
   }
@@ -98,18 +96,17 @@ class CardStore {
   @action
   public moveCardDown = (id: string) => {
     const cards = this.enabledCards
-    const i = findIndex(this.cards, { id })
+    const i = findIndex(cards, { id })
 
-    if (i === -1 || i === this.cardsLength - 1) {
+    if (i === -1 || i === cards.length - 1) {
       return
     }
 
-    ;[this.cards[i].priority, this.cards[i + 1].priority] = [
-      this.cards[i + 1].priority,
-      this.cards[i].priority,
+    ;[cards[i].priority, cards[i + 1].priority] = [
+      cards[i + 1].priority,
+      cards[i].priority,
     ]
 
-    // this.cards = orderBy(this.cards, ['priority'], ['asc'])
     this.setCardsPriority(cards)
     this.setStoragePriorityItems()
   }
