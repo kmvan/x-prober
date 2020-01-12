@@ -5,7 +5,7 @@ import store from './stores'
 
 CardStore.addCard({
   id: store.ID,
-  title: gettext('Temperature sensor'),
+  title: gettext('Temperature Sensor'),
   tinyTitle: gettext('Temp.'),
   enabled: false,
   priority: 240,
