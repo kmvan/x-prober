@@ -48,7 +48,12 @@ interface IProgressValue {
   percent: number
 }
 
-const ProgressValue = styled.div<IProgressValue>`
+const ProgressValue = styled.div.attrs(({ percent }: IProgressValue) => ({
+  style: {
+    backgroundColor: `#${gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]}`,
+    width: `${percent}%`,
+  },
+}))<IProgressValue>`
   position: relative;
   transition: all 1s;
   border-radius: ${GUTTER};
@@ -56,8 +61,7 @@ const ProgressValue = styled.div<IProgressValue>`
   box-shadow: inset 0 -5px 10px ${rgba(COLOR_DARK, 0.4)},
     0 5px 10px 0 ${rgba(COLOR_DARK, 0.3)};
   overflow: hidden;
-  background: #${({ percent }: IProgressValue) => gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]};
-  width: ${({ percent }: IProgressValue) => percent}%;
+
   ::after,
   ::before {
     position: absolute;
