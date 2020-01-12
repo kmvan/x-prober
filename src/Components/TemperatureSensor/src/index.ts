@@ -8,6 +8,6 @@ CardStore.addCard({
   title: gettext('Temperature sensor'),
   tinyTitle: gettext('Temp.'),
   enabled: false,
-  priority: 250,
+  priority: 240,
   component,
 })
