@@ -6,7 +6,7 @@
 [debian]: https://antergos.com/distro-logos/openlogo-nd-25.png 'debian'
 [windows]: http://www.likoton.pl/likoton-content/uploads/2013/07/Przycisk-Windows.png 'windows'
 
-[![X Prober preview](preview.jpg)](preview.jpg)
+[![X Prober preview](screenshot.jpg)](screenshot.jpg)
 
 - [Simplified Chinese | 简体中文](README-zh_CN.md)
 - [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
@@ -33,7 +33,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 ## Download and Usage
 
-- Click [https://api.inn-studio.com/download?id=xprober](https://api.inn-studio.com/download?id=xprober) to download.
+- Click [INN STUDIO mirror](https://api.inn-studio.com/download?id=xprober) or [GitHub mirror](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) to download the probe file.
 - You will get a single file of `x.php` and upload it to your server.
 - Access `x.php` via http browser.
 
@@ -41,9 +41,13 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 - Compile environment: PHP 7.3+
 - Production environment: PHP 5.3+
-- Browser support: <del>IE9</del> / Chrome / Firefox / Edge / Android /
+- Browser support: <del>IE9</del> / Chrome / Firefox / Edge / Android
 - OS support: Linux / Windows(basic features)
 - Tested: ![debian][debian] ![ubuntu][ubuntu] ![arch][arch] ![windows][windows]
+
+## Extensions
+
+- In preparation...
 
 ## For development
 
