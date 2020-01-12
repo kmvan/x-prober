@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import { gettext } from '~components/Language/src'
+
+interface IStyleArrow {
+  isHidden: boolean
+}
 
 const StyledFieldset = styled.fieldset`
   position: relative;
@@ -16,25 +21,45 @@ const StyledFieldset = styled.fieldset`
 `
 
 const StyledLegend = styled.legend`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
   background: ${COLOR_DARK};
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 5rem;
-  color: #fff;
+  color: ${COLOR_GRAY};
   margin: 0 auto;
   text-shadow: 0 1px 1px ${COLOR_DARK};
   white-space: nowrap;
 `
 
 const StyledBody = styled.div``
+const StyleArrow = styled.a<IStyleArrow>`
+  color: ${COLOR_GRAY};
+  padding: 0 0.5rem;
+  cursor: ${({ isHidden }) => (isHidden ? 'not-allowed' : 'pointer')};
+  opacity: ${({ isHidden }) => (isHidden ? '0.1' : '0.5')};
+  :hover {
+    text-decoration: none;
+    opacity: ${({ isHidden }) => (isHidden ? '0.1' : '1')};
+    color: ${COLOR_GRAY};
+  }
+`
 
 @observer
 class Cards extends Component {
   public render() {
-    const { cardsLength, sortedCards } = store
+    const {
+      cardsLength,
+      enabledCards,
+      enabledCardsLength,
+      moveCardDown,
+      moveCardUp,
+    } = store
 
     if (!cardsLength) {
       return null
@@ -42,14 +67,34 @@ class Cards extends Component {
 
     return (
       <>
-        {sortedCards.map(({ id, title, enabled = true, component: Tag }) => {
-          if (!enabled) {
-            return null
-          }
+        {enabledCards.map(({ id, title, component: Tag }, i) => {
+          const upArrow = (
+            <StyleArrow
+              title={gettext('Move up')}
+              isHidden={i === 0}
+              onClick={() => moveCardUp(id)}
+            >
+              ▲
+            </StyleArrow>
+          )
+
+          const downArrow = (
+            <StyleArrow
+              title={gettext('Move down')}
+              isHidden={i === enabledCardsLength - 1}
+              onClick={() => moveCardDown(id)}
+            >
+              ▼
+            </StyleArrow>
+          )
 
           return (
             <StyledFieldset key={id} id={id}>
-              <StyledLegend>{title}</StyledLegend>
+              <StyledLegend>
+                {upArrow}
+                {title}
+                {downArrow}
+              </StyledLegend>
               <StyledBody>
                 <Tag />
               </StyledBody>

@@ -91,24 +91,22 @@ class Nav extends Component {
   public render() {
     return (
       <StyledNav>
-        {CardStore.sortedCards.map(
-          ({ id, title, tinyTitle, enabled = true }) => {
-            if (!enabled) {
-              return null
-            }
-
-            return (
-              <StyledNavLink
-                key={id}
-                onClick={e => this.onClick(e, id)}
-                href={`#${id}`}
-              >
-                <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
-                <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
-              </StyledNavLink>
-            )
+        {CardStore.cards.map(({ id, title, tinyTitle, enabled = true }) => {
+          if (!enabled) {
+            return null
           }
-        )}
+
+          return (
+            <StyledNavLink
+              key={id}
+              onClick={e => this.onClick(e, id)}
+              href={`#${id}`}
+            >
+              <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
+              <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
+            </StyledNavLink>
+          )
+        })}
       </StyledNav>
     )
   }
