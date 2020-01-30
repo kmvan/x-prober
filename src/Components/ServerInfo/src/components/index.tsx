@@ -5,16 +5,25 @@ import { gettext } from '~components/Language/src'
 import store from '../stores'
 import CardGrid from '~components/Card/src/components/card-grid'
 import ProgressBar from '~components/ProgressBar/src/components'
-import { template } from 'lodash-es'
+import { template, get } from 'lodash-es'
+import FetchStore from '~components/Fetch/src/stores'
 
 @observer
 class ServerInfo extends Component {
   private diskUsage() {
-    const {
+    const { ID } = store
+    const { isLoading, data } = FetchStore
+
+    let {
       conf: {
         diskUsage: { value, max },
       },
     } = store
+
+    if (!isLoading) {
+      value = get(data, `${ID}.diskUsage.value`)
+      max = get(data, `${ID}.diskUsage.max`)
+    }
 
     if (!value || !max) {
       return gettext('Unavailable')
