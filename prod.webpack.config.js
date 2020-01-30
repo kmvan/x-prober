@@ -4,11 +4,11 @@ const webpack = require('webpack')
 const path = require('path')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ShakePlugin = require('webpack-common-shake')
+const TerserPlugin = require('terser-webpack-plugin')
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default
 const styledComponentsTransformer = createStyledComponentsTransformer()
-
-console.log(`Run in ${process.env.WEBPACK_ENV}`)
 
 // alias
 let alias = {
@@ -21,7 +21,7 @@ Object.entries(alias).map(item => {
 })
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: path.resolve(
       __dirname,
@@ -37,14 +37,36 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: alias || {},
   },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        cache: true,
+        terserOptions: {
+          output: {
+            ecma: 5,
+            comments: false,
+          },
+          compress: {
+            unsafe_comps: true,
+            unsafe_Function: true,
+            unsafe_math: true,
+            unsafe_methods: true,
+            unsafe_proto: true,
+            warnings: true,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
-      __DEV__: true,
+      __DEV__: false,
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-        WEBPACK_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('production'),
+        WEBPACK_ENV: JSON.stringify('production'),
       },
-      DEBUG: true,
+      DEBUG: false,
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['.tmp'],
@@ -54,6 +76,8 @@ module.exports = {
       collections: true,
       paths: true,
     }),
+    new ShakePlugin.Plugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   module: {
     rules: [
@@ -70,7 +94,6 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
       },
       {
@@ -87,15 +110,10 @@ module.exports = {
     ],
   },
   stats: {
-    modules: true,
+    modules: false,
     reasons: true,
     errorDetails: true,
-    timings: true,
+    timings: false,
   },
-  devtool: 'source-map',
-  watchOptions: {
-    poll: 1000,
-    aggregateTimeout: 1000,
-    ignored: /node_modules/,
-  },
+  devtool: 'hidden',
 }

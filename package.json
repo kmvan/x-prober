@@ -3,9 +3,8 @@
   "description": "A PHP prober",
   "scripts": {
     "lang": "node ./build-lang.js",
-    "dev": "cross-env WEBPACK_ENV=development webpack --display-error-details --progress --colors --watch",
-    "build": "cross-env WEBPACK_ENV=production webpack",
-    "test": "cross-env WEBPACK_ENV=test webpack"
+    "dev": "cross-env webpack --display-error-details --progress --colors --watch",
+    "build": "cross-env webpack --config=prod.webpack.config.js --display-error-details --progress --colors"
   },
   "browserslist": [
     "last 4 version"
