@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-12 16:59+0800\n"
+"PO-Revision-Date: 2020-01-30 15:49+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
@@ -259,6 +259,9 @@ msgstr "SWAP 快取"
 
 msgid "Swap usage"
 msgstr "SWAP 使用"
+
+msgid "<%= minute %> minute average"
+msgstr "<%= minute %> 分鐘平均負載"
 
 msgid "System load"
 msgstr "系統負載"

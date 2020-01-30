@@ -7,6 +7,7 @@ import store from '../stores'
 import { GUTTER, COLOR_DARK_RGB, COLOR_DARK } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
+import { template } from 'lodash-es'
 
 const StyledGroup = styled.div`
   display: flex;
@@ -37,11 +38,25 @@ const StyledGroupItem = styled.span`
 @observer
 class SystemLoad extends Component {
   public render() {
+    const { sysLoad } = store
+    const minutes = [1, 5, 15]
+    const loadHuman = sysLoad.map((load, i) => {
+      return {
+        id: `${minutes[i]}minAvg`,
+        load,
+        text: template(gettext('<%= minute %> minute average'))({
+          minute: minutes[i],
+        }),
+      }
+    })
+
     return (
       <CardGrid title={gettext('System load')} tablet={[1, 1]}>
         <StyledGroup>
-          {store.sysLoad.map((load, i) => (
-            <StyledGroupItem key={i}>{load.toFixed(2)}</StyledGroupItem>
+          {loadHuman.map(({ id, load, text }) => (
+            <StyledGroupItem key={id} title={text}>
+              {load.toFixed(2)}
+            </StyledGroupItem>
           ))}
         </StyledGroup>
       </CardGrid>

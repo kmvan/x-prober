@@ -252,6 +252,9 @@ msgstr ""
 msgid "Swap usage"
 msgstr ""
 
+msgid "<%= minute %> minute average"
+msgstr ""
+
 msgid "System load"
 msgstr ""
 
