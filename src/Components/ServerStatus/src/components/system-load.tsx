@@ -22,12 +22,16 @@ const StyledGroupItem = styled.span`
   background: ${() =>
     `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
   color: #fff;
-  padding: calc(${GUTTER} / 10) ${GUTTER};
+  padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
   font-family: Arial Black;
   text-shadow: 0 1px 1px #000;
   box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
   font-weight: 700;
+
+  @media ${device('tablet')} {
+    padding: calc(${GUTTER} / 10) ${GUTTER};
+  }
 `
 
 @observer
