@@ -1,14 +1,14 @@
-interface ILangItem {
+interface LangItemProps {
   [text: string]: {
     [langId: string]: string
   }
 }
 
-interface ILangs {
-  [langId: string]: ILangItem[]
+interface LangsProps {
+  [langId: string]: LangItemProps[]
 }
 
-const langs: ILangs = require('./lang.json')
+const langs: LangsProps = require('./lang.json')
 const langId = navigator.language.replace('-', '_')
 
 export const gettext = (text: string, context: string = ''): string => {

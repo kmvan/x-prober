@@ -6,8 +6,8 @@ const StyledCardError = styled.div`
   padding: ${GUTTER};
 `
 
-interface ICardError extends HTMLAttributes<HTMLDivElement> {}
+interface CardErrorProps extends HTMLAttributes<HTMLDivElement> {}
 
-const CardError = (props: ICardError) => <StyledCardError {...props} />
+const CardError = (props: CardErrorProps) => <StyledCardError {...props} />
 
 export default CardError

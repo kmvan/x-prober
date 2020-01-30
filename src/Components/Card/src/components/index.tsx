@@ -5,7 +5,7 @@ import store from '../stores'
 import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 
-interface IStyleArrow {
+interface StyleArrowProps {
   isHidden: boolean
 }
 
@@ -38,7 +38,7 @@ const StyledLegend = styled.legend`
 `
 
 const StyledBody = styled.div``
-const StyleArrow = styled.a<IStyleArrow>`
+const StyleArrow = styled.a<StyleArrowProps>`
   color: ${COLOR_GRAY};
   padding: 0 0.5rem;
   cursor: ${({ isHidden }) => (isHidden ? 'not-allowed' : 'pointer')};

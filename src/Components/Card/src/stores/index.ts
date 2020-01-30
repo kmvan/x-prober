@@ -6,12 +6,12 @@ configure({
   enforceActions: 'observed',
 })
 
-export interface IStoragePriorityItem {
+export interface StoragePriorityItemProps {
   id: string
   priority: number
 }
 
-export interface ICard {
+export interface CardProps {
   id: string
   title: string
   tinyTitle: string
@@ -21,10 +21,10 @@ export interface ICard {
 }
 
 class CardStore {
-  @observable public cards: ICard[] = []
+  @observable public cards: CardProps[] = []
 
   @action
-  public addCard = (card: ICard) => {
+  public addCard = (card: CardProps) => {
     const priority = this.getStoragePriority(card.id)
 
     if (priority) {
@@ -40,7 +40,7 @@ class CardStore {
   }
 
   @computed
-  public get enabledCards(): ICard[] {
+  public get enabledCards(): CardProps[] {
     return orderBy(
       this.cards.filter(({ enabled = true }) => enabled),
       ['priority'],
@@ -54,7 +54,7 @@ class CardStore {
   }
 
   @action
-  private setCardsPriority = (cards: ICard[]) => {
+  private setCardsPriority = (cards: CardProps[]) => {
     cards.map(({ id, priority }) => {
       const i = findIndex(this.cards, { id })
 
@@ -65,7 +65,7 @@ class CardStore {
   }
 
   @action
-  public setCard = ({ id, ...card }: Partial<ICard>) => {
+  public setCard = ({ id, ...card }: Partial<CardProps>) => {
     const i = findIndex(this.cards, { id })
 
     if (i === -1) {
@@ -111,14 +111,14 @@ class CardStore {
     this.setStoragePriorityItems()
   }
 
-  private getStoragePriorityItems = (): IStoragePriorityItem[] | null => {
+  private getStoragePriorityItems = (): StoragePriorityItemProps[] | null => {
     const items = localStorage.getItem('cardsPriority')
 
     if (!items) {
       return null
     }
 
-    return (JSON.parse(items) as IStoragePriorityItem[]) || null
+    return (JSON.parse(items) as StoragePriorityItemProps[]) || null
   }
 
   private setStoragePriorityItems = () => {

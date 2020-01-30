@@ -2,6 +2,18 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.1.0 - 2020-01-30
+
+### Add
+
+- Add disk real-time usage
+
+### Optimize
+
+- Optimize system load description
+- Remove babel
+- Adjust interface name rule
+
 ## 4.0.0 - 2020-01-13
 
 ### Add

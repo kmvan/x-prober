@@ -14,9 +14,9 @@ const StyledContainer = styled.div`
     padding-right: ${GUTTER};
   }
 `
-interface IContainer extends HTMLAttributes<HTMLDivElement> {}
+interface ContainerProps extends HTMLAttributes<HTMLDivElement> {}
 
-const Container = (props: IContainer) => {
+const Container = (props: ContainerProps) => {
   return <StyledContainer {...props} />
 }
 

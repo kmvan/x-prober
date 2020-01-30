@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
-import store, { INetworkStatsItem } from '../stores'
+import store, { NetworkStatsItemProps } from '../stores'
 import Grid from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { toJS } from 'mobx'
@@ -51,7 +51,7 @@ const StyledRateTx = styled(StyledRate)`
 
 @observer
 class NetworkStats extends Component {
-  private items: INetworkStatsItem = {}
+  private items: NetworkStatsItemProps = {}
 
   public render() {
     const { items } = store

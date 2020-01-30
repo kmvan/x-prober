@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import store, { IPingItem } from '../stores'
+import store, { PingItemProps } from '../stores'
 import { sumBy, maxBy, minBy, template } from 'lodash-es'
 import Row from '~components/Grid/src/components/row'
 import { gettext } from '~components/Language/src'
@@ -81,11 +81,11 @@ const StyledPingItemTime = styled.span`
   font-weight: bold;
 `
 
-interface IPingResult {
+interface StyledPingResultProps {
   hasPing: boolean
 }
 
-const StyledPingResult = styled.div<IPingResult>`
+const StyledPingResult = styled.div<StyledPingResultProps>`
   display: flex;
   align-items: center;
   background: ${COLOR_DARK};
@@ -187,10 +187,10 @@ class Ping extends Component {
       ? Math.floor(sumBy(pingItems, 'time') / pingItemsCount)
       : 0
     const max = pingItemsCount
-      ? Number((maxBy(pingItems, 'time') as IPingItem).time)
+      ? Number((maxBy(pingItems, 'time') as PingItemProps).time)
       : 0
     const min = pingItemsCount
-      ? Number((minBy(pingItems, 'time') as IPingItem).time)
+      ? Number((minBy(pingItems, 'time') as PingItemProps).time)
       : 0
 
     return (

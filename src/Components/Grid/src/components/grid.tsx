@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { device, breakPoints } from '~components/Style/src/components/devices'
 import { GUTTER } from '~components/Config/src'
 
-interface IBreakPoints {
+interface BreakPointsProps {
   mobileSm?: [number, number]
   mobileMd?: [number, number]
   mobileLg?: [number, number]
@@ -13,11 +13,11 @@ interface IBreakPoints {
   desktopLg?: [number, number]
 }
 
-export interface IGrid extends IBreakPoints {
+export interface GridProps extends BreakPointsProps {
   children: ReactNode
 }
 
-const createCss = (types: IBreakPoints) => {
+const createCss = (types: BreakPointsProps) => {
   const style = Object.entries(types).map(([id, sizes]) => {
     if (!breakPoints[id]) {
       return ''
@@ -44,11 +44,11 @@ const createCss = (types: IBreakPoints) => {
   return style
 }
 
-export interface IStyledGrid {
-  types: IBreakPoints
+export interface StyledGridProps {
+  types: BreakPointsProps
 }
 
-export const StyledGrid = styled.div<IStyledGrid>`
+export const StyledGrid = styled.div<StyledGridProps>`
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
   flex: 0 0 100%;
@@ -64,7 +64,7 @@ const Grid = ({
   desktopMd,
   desktopLg,
   children,
-}: IGrid) => {
+}: GridProps) => {
   const types = {
     mobileSm,
     mobileMd,

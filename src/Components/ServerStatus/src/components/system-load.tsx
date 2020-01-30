@@ -7,6 +7,7 @@ import store from '../stores'
 import { GUTTER, COLOR_DARK_RGB, COLOR_DARK } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
+import { template } from 'lodash-es'
 
 const StyledGroup = styled.div`
   display: flex;
@@ -22,22 +23,40 @@ const StyledGroupItem = styled.span`
   background: ${() =>
     `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
   color: #fff;
-  padding: calc(${GUTTER} / 10) ${GUTTER};
+  padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
   font-family: Arial Black;
   text-shadow: 0 1px 1px #000;
   box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
   font-weight: 700;
+
+  @media ${device('tablet')} {
+    padding: calc(${GUTTER} / 10) ${GUTTER};
+  }
 `
 
 @observer
 class SystemLoad extends Component {
   public render() {
+    const { sysLoad } = store
+    const minutes = [1, 5, 15]
+    const loadHuman = sysLoad.map((load, i) => {
+      return {
+        id: `${minutes[i]}minAvg`,
+        load,
+        text: template(gettext('<%= minute %> minute average'))({
+          minute: minutes[i],
+        }),
+      }
+    })
+
     return (
       <CardGrid title={gettext('System load')} tablet={[1, 1]}>
         <StyledGroup>
-          {store.sysLoad.map((load, i) => (
-            <StyledGroupItem key={i}>{load.toFixed(2)}</StyledGroupItem>
+          {loadHuman.map(({ id, load, text }) => (
+            <StyledGroupItem key={id} title={text}>
+              {load.toFixed(2)}
+            </StyledGroupItem>
           ))}
         </StyledGroup>
       </CardGrid>

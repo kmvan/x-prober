@@ -8,7 +8,7 @@ configure({
   enforceActions: 'observed',
 })
 
-export interface ITemperatureSensorItem {
+export interface TemperatureSensorItemProps {
   id: string
   name: string
   celsius: number
@@ -17,10 +17,10 @@ export interface ITemperatureSensorItem {
 class TemperatureSensorStore {
   public readonly ID = 'temperatureSensor'
 
-  @observable public items: ITemperatureSensorItem[] = []
+  @observable public items: TemperatureSensorItemProps[] = []
 
   @action
-  public setItems = (items: ITemperatureSensorItem[]) => {
+  public setItems = (items: TemperatureSensorItemProps[]) => {
     this.items = items
   }
 

@@ -7,7 +7,7 @@ configure({
   enforceActions: 'observed',
 })
 
-export interface INetworkStatsItem {
+export interface NetworkStatsItemProps {
   [networkCardid: string]: {
     rx: number
     tx: number
@@ -19,7 +19,7 @@ class NetworkStatsStore {
   public readonly conf = get(conf, this.ID)
 
   @computed
-  public get items(): INetworkStatsItem | null {
+  public get items(): NetworkStatsItemProps | null {
     return (
       (FetchStore.isLoading
         ? get(this.conf, 'networks')
