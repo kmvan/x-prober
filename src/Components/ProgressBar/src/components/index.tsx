@@ -5,7 +5,7 @@ import gradientColors from '~components/Helper/src/components/gradient'
 import { GUTTER, COLOR_DARK } from '~components/Config/src'
 import { rgba } from 'polished'
 
-export interface IProgressBar {
+export interface ProgressBarProps {
   title?: string
   value: number
   max: number
@@ -44,12 +44,12 @@ const StyledProgressShell = styled.div`
   padding: 0.3rem;
 `
 
-interface IStyledProgressValue {
+interface StyledProgressValueProps {
   percent: number
 }
 
 const StyledProgressValue = styled.div.attrs(
-  ({ percent }: IStyledProgressValue) => ({
+  ({ percent }: StyledProgressValueProps) => ({
     style: {
       backgroundColor: `#${
         gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]
@@ -57,7 +57,7 @@ const StyledProgressValue = styled.div.attrs(
       width: `${percent}%`,
     },
   })
-)<IStyledProgressValue>`
+)<StyledProgressValueProps>`
   position: relative;
   transition: all 1s;
   border-radius: ${GUTTER};
@@ -96,7 +96,7 @@ const ProgressBar = ({
   max,
   isCapacity,
   percentTag = '%',
-}: IProgressBar) => {
+}: ProgressBarProps) => {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`

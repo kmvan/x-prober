@@ -3,16 +3,16 @@ import styled from 'styled-components'
 import { rgba } from 'polished'
 import { COLOR_DARK } from '~components/Config/src'
 
-interface IRuby {
+interface StyledRubyProps {
   isResult?: boolean
 }
 
-export interface ICardRuby extends IRuby {
+export interface CardRubyProps extends StyledRubyProps {
   ruby: ReactNode
   rt: string
 }
 
-const StyledRuby = styled.ruby<IRuby>`
+const StyledRuby = styled.ruby<StyledRubyProps>`
   background: ${rgba(COLOR_DARK, 0.05)};
   rp {
   }
@@ -23,7 +23,7 @@ const StyledRuby = styled.ruby<IRuby>`
   font-weight: ${p => (p.isResult ? 'bold' : 'unset')};
 `
 
-const CardRuby = ({ ruby, rt, isResult = false }: ICardRuby) => {
+const CardRuby = ({ ruby, rt, isResult = false }: CardRubyProps) => {
   return (
     <StyledRuby isResult={isResult}>
       {ruby}

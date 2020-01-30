@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { GUTTER, COLOR_DARK } from '~components/Config/src'
 import { rgba } from 'polished'
 
-interface IAlertContainer {
+interface AlertContainerProps {
   isSuccess: boolean
   withIcon: boolean
 }
 
-const StyledAlert = styled.div<IAlertContainer>`
+const StyledAlert = styled.div<AlertContainerProps>`
   display: inline-flex;
   border-radius: ${GUTTER};
   align-items: center;
@@ -39,12 +39,12 @@ const StyledAlert = styled.div<IAlertContainer>`
   }
 `
 
-export interface IAlert {
+export interface AlertProps {
   isSuccess: boolean
   msg?: ReactNode
 }
 
-const Alert = ({ isSuccess, msg = '' }: IAlert) => {
+const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
   return (
     <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
       {msg}

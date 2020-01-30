@@ -2,13 +2,12 @@ import { observable, action, configure } from 'mobx'
 import ToastStore from '~components/Toast/src/stores'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
-import conf from '~components/Helper/src/components/conf'
 
 configure({
   enforceActions: 'observed',
 })
 
-export interface IAppConfigBenchmark {
+export interface AppConfigBenchmarkProps {
   name: string
   url: string
   date?: string
@@ -23,13 +22,13 @@ export interface IAppConfigBenchmark {
   }
 }
 
-interface IAppConfig {
+interface AppConfigProps {
   APP_VERSION: string
-  BENCHMARKS: IAppConfigBenchmark[]
+  BENCHMARKS: AppConfigBenchmarkProps[]
 }
 
 class ConfigStore {
-  @observable public appConfig: IAppConfig | null = null
+  @observable public appConfig: AppConfigProps | null = null
 
   constructor() {
     this.fetch()
@@ -76,7 +75,7 @@ class ConfigStore {
   }
 
   @action
-  public setAppConfig = (appConfig: IAppConfig) => {
+  public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }
 }

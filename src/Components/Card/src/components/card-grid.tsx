@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react'
-import Grid, { IGrid } from '~components/Grid/src/components/grid'
+import Grid, { GridProps } from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
 import { GUTTER } from '~components/Config/src'
 
-export interface ICardGrid extends IGrid {
+export interface CardGridProps extends GridProps {
   title?: ReactNode
   children: ReactNode
 }
@@ -34,7 +34,7 @@ const StyledCardContent = styled.div`
   padding: calc(${GUTTER} / 2) ${GUTTER} calc(${GUTTER} / 2) 0;
 `
 
-const CardGrid = ({ title = '', children, ...props }: ICardGrid) => {
+const CardGrid = ({ title = '', children, ...props }: CardGridProps) => {
   return (
     <Grid {...props}>
       <StyledCardGroup>

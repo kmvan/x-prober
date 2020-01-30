@@ -7,12 +7,12 @@ configure({
   enforceActions: 'observed',
 })
 
-interface IServerInfoDiskUsage {
+interface ServerInfoDiskUsageProps {
   max: number
   value: number
 }
 
-interface IUptime {
+interface UptimeProps {
   days: number
   hours: number
   mins: number
@@ -31,7 +31,7 @@ class ServerInfoStore {
   }
 
   @computed
-  public get serverUptime(): IUptime {
+  public get serverUptime(): UptimeProps {
     return FetchStore.isLoading
       ? get(this.conf, 'serverUptime')
       : get(FetchStore.data, `${this.ID}.serverUptime`)
@@ -45,7 +45,7 @@ class ServerInfoStore {
   }
 
   @computed
-  public get diskUsage(): IServerInfoDiskUsage {
+  public get diskUsage(): ServerInfoDiskUsageProps {
     return FetchStore.isLoading
       ? get(this.conf, 'diskUsage')
       : FetchStore.data[this.ID].diskUsage

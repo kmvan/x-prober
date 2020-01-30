@@ -4,7 +4,7 @@ configure({
   enforceActions: 'observed',
 })
 
-export interface IPingItem {
+export interface PingItemProps {
   time: number
 }
 
@@ -12,7 +12,7 @@ class PingStore {
   public readonly ID = 'ping'
 
   @observable public isPing: boolean = false
-  @observable public pingItems: IPingItem[] = []
+  @observable public pingItems: PingItemProps[] = []
   @observable public refs: {
     [id: string]: any
   } = {}
@@ -28,7 +28,7 @@ class PingStore {
   }
 
   @action
-  public setPingItems = (pingItems: IPingItem[]) => {
+  public setPingItems = (pingItems: PingItemProps[]) => {
     this.pingItems = pingItems
   }
 
@@ -38,7 +38,7 @@ class PingStore {
   }
 
   @action
-  public appendPingItem = (item: IPingItem) => {
+  public appendPingItem = (item: PingItemProps) => {
     this.pingItems.push(item)
   }
 }

@@ -7,12 +7,12 @@ configure({
   enforceActions: 'observed',
 })
 
-export interface IServerStatusUsage {
+export interface ServerStatusUsageProps {
   max: number
   value: number
 }
 
-export interface IServerStatusCpuUsage {
+export interface ServerStatusCpuUsageProps {
   idle: number
   nice: number
   sys: number
@@ -23,11 +23,12 @@ class ServerStatus {
   public readonly ID = 'serverStatus'
   public readonly conf = get(conf, this.ID)
 
-  @observable public memRealUsage: IServerStatusUsage = this.conf.memRealUsage
-  @observable public memBuffers: IServerStatusUsage = this.conf.memBuffers
-  @observable public memCached: IServerStatusUsage = this.conf.memCached
-  @observable public swapUsage: IServerStatusUsage = this.conf.swapUsage
-  @observable public swapCached: IServerStatusUsage = this.conf.swapCached
+  @observable public memRealUsage: ServerStatusUsageProps = this.conf
+    .memRealUsage
+  @observable public memBuffers: ServerStatusUsageProps = this.conf.memBuffers
+  @observable public memCached: ServerStatusUsageProps = this.conf.memCached
+  @observable public swapUsage: ServerStatusUsageProps = this.conf.swapUsage
+  @observable public swapCached: ServerStatusUsageProps = this.conf.swapCached
 
   @computed
   public get sysLoad(): number[] {
@@ -37,7 +38,7 @@ class ServerStatus {
   }
 
   @computed
-  public get cpuUsage(): IServerStatusCpuUsage {
+  public get cpuUsage(): ServerStatusCpuUsageProps {
     return FetchStore.isLoading
       ? {
           idle: 90,
@@ -49,27 +50,27 @@ class ServerStatus {
   }
 
   @action
-  public setMemRealUsage = (memRealUsage: IServerStatusUsage) => {
+  public setMemRealUsage = (memRealUsage: ServerStatusUsageProps) => {
     this.memRealUsage = memRealUsage
   }
 
   @action
-  public setMemBuffers = (memBuffers: IServerStatusUsage) => {
+  public setMemBuffers = (memBuffers: ServerStatusUsageProps) => {
     this.memBuffers = memBuffers
   }
 
   @action
-  public setMemCached = (memCached: IServerStatusUsage) => {
+  public setMemCached = (memCached: ServerStatusUsageProps) => {
     this.memCached = memCached
   }
 
   @action
-  public setSwapUsage = (swapUsage: IServerStatusUsage) => {
+  public setSwapUsage = (swapUsage: ServerStatusUsageProps) => {
     this.swapUsage = swapUsage
   }
 
   @action
-  public setSwapCached = (swapCached: IServerStatusUsage) => {
+  public setSwapCached = (swapCached: ServerStatusUsageProps) => {
     this.swapCached = swapCached
   }
 }
