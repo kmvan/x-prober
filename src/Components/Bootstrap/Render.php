@@ -11,7 +11,7 @@ class Render
     {
         $appName    = ConfigApi::$APP_NAME;
         $version    = ConfigApi::$APP_VERSION;
-        $scriptConf = \json_encode(EventsApi::emit('conf', []));
+        $scriptConf = \json_encode(EventsApi::emit('conf', array()));
         $scriptUrl  = \defined('\XPROBER_IS_DEV') && \XPROBER_IS_DEV ? '../.tmp/app.js' : "?action=script&amp;v={$version}";
 
         echo <<<HTML
