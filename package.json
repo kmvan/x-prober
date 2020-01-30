@@ -9,73 +9,7 @@
   "browserslist": [
     "last 4 version"
   ],
-  "babel": {
-    "plugins": [
-      "@babel/transform-runtime",
-      "@babel/plugin-transform-strict-mode",
-      "@babel/plugin-transform-arrow-functions",
-      [
-        "babel-plugin-styled-components",
-        {
-          "minify": true,
-          "pure": true,
-          "displayName": false,
-          "fileName": false,
-          "transpileTemplateLiterals": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-decorators",
-        {
-          "legacy": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/transform-async-to-generator",
-        {
-          "module": "bluebird",
-          "method": "coroutine"
-        }
-      ],
-      "lodash"
-    ],
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "include": [
-            "transform-arrow-functions",
-            "es6.map"
-          ],
-          "targets": {
-            "browsers": [
-              "last 4 version"
-            ]
-          }
-        }
-      ],
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ]
-  },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/plugin-transform-strict-mode": "^7.8.3",
-    "@babel/polyfill": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-react": "^7.8.3",
-    "@babel/preset-stage-0": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3",
     "@types/core-js": "^2.5.2",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "^13.5.2",
@@ -84,7 +18,6 @@
     "@types/react-dom": "^16.9.5",
     "babel-plugin-lodash": "^3.3.4",
     "babel-plugin-styled-components": "^1.10.7",
-    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.0",
     "eslint": "^6.8.0",
@@ -107,19 +40,14 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@babel/runtime": "^7.8.3",
     "@types/styled-components": "^4.4.2",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "babel-polyfill": "^6.26.0",
     "caniuse-lite": "^1.0.30001023",
     "es6-promise": "^4.2.8",
     "eslint-config-prettier": "^6.10.0",
     "glob": "^7.1.6",
-    "isomorphic-fetch": "^2.2.1",
     "polished": "^3.4.4",
     "query-string": "^6.10.1",
     "styled-components": "^5.0.0",
