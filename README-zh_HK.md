@@ -41,10 +41,14 @@
 - 監視腳本：`$ npm run dev`。
 - 安裝 composer：`$ composer install && composer dumpautoload -o`。
 - 生成多國語言：`$ npm run lang` 或 `$ node ./build-lang.js` 來重建 `./languages/lang.pot` 語言模板。
-- 編譯 **開發環境**：`$ php ./Make.php dev`。
-- 編譯 **生產環境**: `$ npm run build && php ./Make.php build`。
-- 通過瀏覽器訪問 `./dist/prober.php`。
+- 編譯：`$ php ./Make.php dev`。
+- 訪問`$ php -S localhost:8000 -t ./.tmp`.
 - 進行 Pull Request。
+
+## 編譯生產
+
+- 編譯：`$ npm run build; php ./Make.php build`.
+- 訪問：`$ php -S localhost:8000 ./dist/prober.php`.
 
 ## 參與翻譯更多語言
 

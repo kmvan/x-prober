@@ -14,12 +14,13 @@ class Compiler
         $this->ROOT              = $dir;
         $this->BASE_DIR          = "{$dir}/src";
         $this->COMPONENTS_DIR    = "{$this->BASE_DIR}/Components";
-        $this->COMPILE_FILE_PATH = "{$dir}/dist/prober.php";
+        $this->COMPILE_FILE_PATH = $this->isDev() ? "{$dir}/.tmp/index.php" : "{$dir}/dist/prober.php";
 
         // generate config
         new ConfigGeneration([
             'phpConfigPath' => "{$this->COMPONENTS_DIR}/Config/ConfigApi.php",
             'configPath'    => "{$this->ROOT}/AppConfig.json",
+            'configPathDev' => "{$this->ROOT}/.tmp/AppConfig.json",
         ]);
 
         echo "Compile starting...\n";
