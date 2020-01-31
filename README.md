@@ -49,19 +49,23 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 - In preparation...
 
-## For development
+## Development
 
 - Fork.
 - Fetch your project.
 - Install node modules: `$ npm install`.
 - Watch scripts: `$ npm run dev`.
-- Generate composer vendor: `$ composer install && composer dumpautoload -o`.
-- Compile **development**: `$ php ./Make.php dev`.
+- Generate composer vendor: `$ composer install; composer dumpautoload -o`.
+- Compile: `$ php ./Make.php dev`.
 - Generate languages: `$ npm run lang` or `node ./build-lang.js` to remake `./languages/lang.pot` language template.
-- Compile **production**: `$ npm run build && php ./Make.php build`.
-- Access `./dist/prober.php` from HTTP browser.
+- Access: `$ php -S localhost:8000 -t ./.tmp`.
 - Enjoy it. 😄
 - Pull Request.
+
+## Compile production
+
+- Compile: `$ npm run build; php ./Make.php build`.
+- Access: `$ php -S localhost:8000 ./dist/prober.php`.
 
 ## Help and translate more languages
 

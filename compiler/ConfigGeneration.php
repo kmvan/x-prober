@@ -6,13 +6,15 @@ class ConfigGeneration
 {
     private $phpConfigPath = '';
 
-    private $configPath = '';
+    private $configPath    = '';
+    private $configPathDev = '';
 
     public function __construct(array $args)
     {
         [
             'phpConfigPath' => $this->phpConfigPath,
             'configPath'    => $this->configPath,
+            'configPathDev' => $this->configPathDev,
         ] = $args;
 
         if ( ! \is_file($this->configPath)) {
@@ -23,7 +25,14 @@ class ConfigGeneration
             $this->die('Error: can not generate content to dist.');
         }
 
+        $this->copyConfigToTmp();
+
         $this->die('PHP config file generated successful.', false);
+    }
+
+    private function copyConfigToTmp(): bool
+    {
+        return \copy($this->configPathDev, $this->configPath);
     }
 
     private function genPhpConfig(): bool

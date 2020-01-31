@@ -5,3 +5,4 @@
 /.git
 /node_modules
 /.tmp
+/dist/app.js

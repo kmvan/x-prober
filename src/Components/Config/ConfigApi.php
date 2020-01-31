@@ -11,7 +11,7 @@ class ConfigApi
     public static $APP_NAME                     = 'X Prober';
     public static $APP_URL                      = 'https://github.com/kmvan/x-prober';
     public static $APP_CONFIG_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json', 'https://api.inn-studio.com/download/?id=xprober-config');
-    public static $APP_CONFIG_URL_DEV           = 'http://127.0.0.1/prober/AppConfig.json';
+    public static $APP_CONFIG_URL_DEV           = 'http://localhost:8000/AppConfig.json';
     public static $APP_TEMPERATURE_SENSOR_URL   = 'http://127.0.0.1';
     public static $APP_TEMPERATURE_SENSOR_PORTS = array(2048, 4096);
     public static $AUTHOR_URL                   = 'https://inn-studio.com/prober';

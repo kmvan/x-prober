@@ -11,7 +11,7 @@
     "https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json",
     "https://api.inn-studio.com/download/?id=xprober-config"
   ],
-  "APP_CONFIG_URL_DEV": "http://127.0.0.1/prober/AppConfig.json",
+  "APP_CONFIG_URL_DEV": "http://localhost:8000/AppConfig.json",
   "APP_TEMPERATURE_SENSOR_URL": "http://127.0.0.1",
   "APP_TEMPERATURE_SENSOR_PORTS": [2048, 4096],
   "AUTHOR_NAME": "INN STUDIO",
