@@ -1,8 +1,8 @@
 {
   "name": "kmvan/prober",
-  "description": "This is a prober program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iPhone X!",
+  "description": "This is a probe program for PHP environment. It can show your server information and readable easily. And the most important thing is that it's like iphone iPhone X/XS/XS Max/XR/11/11 Pro/11 Pro Max !",
   "type": "project",
-  "license": "GPL-V2",
+  "license": "GPL-2.0",
   "authors": [
     {
       "name": "Km.Van",
@@ -18,7 +18,7 @@
     ]
   },
   "require": {
-    "friendsofphp/php-cs-fixer": "^2.13"
+    "friendsofphp/php-cs-fixer": "^2.16"
   },
   "autoload": {
     "psr-4": {
@@ -30,7 +30,7 @@
   "scripts": {
     "fix": [
       "php-cs-fixer fix --config .php_cs53 --verbose",
-      "php-cs-fixer fix --config .php_cs72 --verbose"
+      "php-cs-fixer fix --config .php_cs73 --verbose"
     ]
   }
 }
