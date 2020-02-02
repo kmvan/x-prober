@@ -6,7 +6,8 @@ class ConfigGeneration
 {
     private $phpConfigPath = '';
 
-    private $configPath    = '';
+    private $configPath = '';
+
     private $configPathDev = '';
 
     public function __construct(array $args)
@@ -32,7 +33,7 @@ class ConfigGeneration
 
     private function copyConfigToTmp(): bool
     {
-        return \copy($this->configPathDev, $this->configPath);
+        return \copy($this->configPath, $this->configPathDev);
     }
 
     private function genPhpConfig(): bool
