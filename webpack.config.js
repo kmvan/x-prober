@@ -2,7 +2,6 @@
 
 const webpack = require('webpack')
 const path = require('path')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default
@@ -48,11 +47,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['.tmp'],
-    }),
-    new LodashModuleReplacementPlugin({
-      shorthands: true,
-      collections: true,
-      paths: true,
     }),
   ],
   module: {

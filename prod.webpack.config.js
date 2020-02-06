@@ -2,7 +2,6 @@
 
 const webpack = require('webpack')
 const path = require('path')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ShakePlugin = require('webpack-common-shake')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -71,31 +70,11 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ['.tmp'],
     }),
-    new LodashModuleReplacementPlugin({
-      shorthands: true,
-      collections: true,
-      paths: true,
-    }),
     new ShakePlugin.Plugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   module: {
     rules: [
-      {
-        test: /\.(ts|tsx)$/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-              getCustomTransformers: () => ({
-                before: [styledComponentsTransformer],
-              }),
-            },
-          },
-        ],
-        include: path.resolve(__dirname, 'src'),
-      },
       {
         test: /\.(png|jpg|gif)$/i,
         use: [
@@ -103,6 +82,17 @@ module.exports = {
             loader: 'url-loader',
             options: {
               // limit: 8192
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              include: path.resolve(__dirname, 'src'),
             },
           },
         ],

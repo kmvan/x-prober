@@ -2,6 +2,21 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.2.0 - 2020-02-06
+
+### Optimize
+
+- Reduce JS file size
+
+### Add
+
+- Add `php-dev.sh` for dev
+- Add babel loader for prod
+
+### Update
+
+- Update package
+
 ## 4.1.0 - 2020-01-30
 
 ### Add
