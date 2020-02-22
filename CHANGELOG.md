@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.3.0 - 2020-02-22
+
+### Add
+
+- Add memory usage description
+
+### Optimize
+
+- Optimize UI color
+- Optimize Ping button style
+
 ## 4.2.0 - 2020-02-06
 
 ### Optimize
