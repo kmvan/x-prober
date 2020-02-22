@@ -3,7 +3,12 @@ import { observer } from 'mobx-react'
 import CardStore from '~components/Card/src/stores'
 import styled from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
-import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import {
+  COLOR_DARK,
+  GUTTER,
+  COLOR_GRAY,
+  TEXT_SHADOW_WITH_DARK_BG,
+} from '~components/Config/src'
 import getElementOffsetTop from '~components/Helper/src/components/get-element-offset-top'
 import { rgba } from 'polished'
 
@@ -33,6 +38,7 @@ const StyledNavLink = styled.a`
   color: ${COLOR_GRAY};
   padding: 0 0.5rem;
   border-right: 1px solid ${rgba(COLOR_GRAY, 0.05)};
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
 
   @media ${device('tablet')} {
     padding: 0 ${GUTTER};

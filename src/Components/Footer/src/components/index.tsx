@@ -4,19 +4,25 @@ import { gettext } from '~components/Language/src'
 import { template } from 'lodash-es'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import store from '../stores'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import {
+  COLOR_DARK,
+  GUTTER,
+  TEXT_SHADOW_WITH_DARK_BG,
+  COLOR_GRAY,
+} from '~components/Config/src'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import { device } from '~components/Style/src/components/devices'
 
 const StyledFooter = styled.div`
   background: ${COLOR_DARK};
-  color: #ccc;
+  color: ${COLOR_GRAY};
   width: 100%;
   border-radius: 10rem;
   text-align: center;
   padding: calc(${GUTTER} / 2) ${GUTTER};
   margin: calc(${GUTTER} * 1.5) auto;
   word-break: normal;
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
 
   @media ${device('tablet')} {
     width: 60%;
@@ -24,6 +30,9 @@ const StyledFooter = styled.div`
 
   a {
     color: #fff;
+    :hover {
+      color: #fff;
+    }
   }
 `
 
