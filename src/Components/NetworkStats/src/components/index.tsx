@@ -25,8 +25,13 @@ const StyledDataContainer = styled.div`
   text-align: center;
 `
 
-const StyledData = styled.div`
+interface StyledDataProps {
+  isUpload: boolean
+}
+
+const StyledData = styled.div<StyledDataProps>`
   flex: 0 0 50%;
+  color: ${({ isUpload }) => (isUpload ? '#c24b00' : '#007400')};
 `
 
 const StyledTotal = styled.div``
@@ -84,13 +89,13 @@ class NetworkStats extends Component {
                 </Grid>
                 <Grid mobileSm={[2, 3]}>
                   <StyledDataContainer>
-                    <StyledData>
+                    <StyledData isUpload={false}>
                       <StyledTotal>{formatBytes(rx)}</StyledTotal>
                       <StyledRateRx>
                         {formatBytes(rx - lastItems[id].rx)}/s
                       </StyledRateRx>
                     </StyledData>
-                    <StyledData>
+                    <StyledData isUpload>
                       <StyledTotal>{formatBytes(tx)}</StyledTotal>
                       <StyledRateTx>
                         {formatBytes(tx - lastItems[id].tx)}/s

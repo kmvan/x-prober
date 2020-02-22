@@ -2,7 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import formatBytes from '~components/Helper/src/components/format-bytes'
 import gradientColors from '~components/Helper/src/components/gradient'
-import { GUTTER, COLOR_DARK } from '~components/Config/src'
+import {
+  GUTTER,
+  COLOR_DARK,
+  TEXT_SHADOW_WITH_DARK_BG,
+  COLOR_GRAY,
+} from '~components/Config/src'
 import { rgba } from 'polished'
 
 export interface ProgressBarProps {
@@ -23,8 +28,8 @@ const StyledProgressOverview = styled.div`
   bottom: 0;
   z-index: 1;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 0 1px 1px #000;
+  color: ${COLOR_GRAY};
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
   line-height: 2rem;
   font-family: 'Arial Black';
 `

@@ -4,7 +4,13 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import { gettext } from '~components/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
-import { GUTTER, COLOR_DARK_RGB, COLOR_DARK } from '~components/Config/src'
+import {
+  GUTTER,
+  COLOR_DARK_RGB,
+  COLOR_DARK,
+  TEXT_SHADOW_WITH_DARK_BG,
+  COLOR_GRAY,
+} from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 import { template } from 'lodash-es'
@@ -22,11 +28,11 @@ const StyledGroupItem = styled.span`
   margin-right: 0.5rem;
   background: ${() =>
     `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
-  color: #fff;
+  color: ${COLOR_GRAY};
   padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
   font-family: Arial Black;
-  text-shadow: 0 1px 1px #000;
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
   box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
   font-weight: 700;
 
@@ -51,7 +57,7 @@ class SystemLoad extends Component {
     })
 
     return (
-      <CardGrid title={gettext('System load')} tablet={[1, 1]}>
+      <CardGrid name={gettext('System load')} tablet={[1, 1]}>
         <StyledGroup>
           {loadHuman.map(({ id, load, text }) => (
             <StyledGroupItem key={id} title={text}>

@@ -11,7 +11,7 @@ class SwapUsage extends Component {
     const { max, value } = store.swapUsage
 
     return (
-      <CardGrid title={gettext('Swap usage')} tablet={[1, 1]}>
+      <CardGrid name={gettext('Swap usage')} tablet={[1, 1]}>
         <ProgressBar value={value} max={max} isCapacity={true} />
       </CardGrid>
     )

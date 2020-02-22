@@ -5,8 +5,9 @@ import { device } from '~components/Style/src/components/devices'
 import { GUTTER } from '~components/Config/src'
 
 export interface CardGridProps extends GridProps {
-  title?: ReactNode
+  name?: ReactNode
   children: ReactNode
+  title?: string
 }
 
 const StyledCardGroup = styled.div`
@@ -34,11 +35,16 @@ const StyledCardContent = styled.div`
   padding: calc(${GUTTER} / 2) ${GUTTER} calc(${GUTTER} / 2) 0;
 `
 
-const CardGrid = ({ title = '', children, ...props }: CardGridProps) => {
+const CardGrid = ({
+  name = '',
+  title = '',
+  children,
+  ...props
+}: CardGridProps) => {
   return (
     <Grid {...props}>
       <StyledCardGroup>
-        {title && <StyledCardTitle>{title}</StyledCardTitle>}
+        {name && <StyledCardTitle title={title}>{name}</StyledCardTitle>}
         <StyledCardContent>{children}</StyledCardContent>
       </StyledCardGroup>
     </Grid>

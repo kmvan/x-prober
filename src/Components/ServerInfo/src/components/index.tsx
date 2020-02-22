@@ -64,7 +64,7 @@ class ServerInfo extends Component {
           return (
             <CardGrid
               key={i}
-              title={title}
+              name={title}
               tablet={[1, 2]}
               desktopMd={[1, 4]}
               desktopLg={[1, 5]}
@@ -75,7 +75,7 @@ class ServerInfo extends Component {
         })}
         {longItems.map(([title, content], i) => {
           return (
-            <CardGrid key={i} title={title} tablet={[1, 1]}>
+            <CardGrid key={i} name={title} tablet={[1, 1]}>
               {content}
             </CardGrid>
           )

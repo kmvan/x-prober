@@ -12,7 +12,7 @@ class CpuUsage extends Component {
     const { idle } = store.cpuUsage
 
     return (
-      <CardGrid title={gettext('CPU usage')} tablet={[1, 1]}>
+      <CardGrid name={gettext('CPU usage')} tablet={[1, 1]}>
         <ProgressBar
           title={template(
             gettext(

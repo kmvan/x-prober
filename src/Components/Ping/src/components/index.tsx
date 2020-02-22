@@ -8,20 +8,42 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import {
+  COLOR_DARK,
+  GUTTER,
+  COLOR_GRAY,
+  BORDER_RADIUS,
+  TEXT_SHADOW_WITH_DARK_BG,
+} from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
+  color: ${COLOR_GRAY};
+  background: ${COLOR_DARK};
+  border-radius: ${BORDER_RADIUS};
+  padding: calc(${GUTTER} / 2) ${GUTTER};
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
+
+  :hover,
+  :active {
+    text-decoration: none;
+    color: ${COLOR_GRAY};
+    opacity: 0.9;
+  }
+  :active {
+    opacity: 1;
+    transform: scale3d(0.95, 0.95, 1);
+  }
 `
 
 const StyledPingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   background: ${COLOR_DARK};
-  color: #ccc;
+  color: ${COLOR_GRAY};
   padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
   max-height: 8rem;
@@ -29,6 +51,7 @@ const StyledPingItemContainer = styled.ul`
   border-radius: ${GUTTER} ${GUTTER} 0 0;
   box-shadow: inset 0 10px 10px ${rgba(COLOR_DARK, 0.1)};
   list-style-type: none;
+  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
 
   ::-webkit-scrollbar-track {
     background-color: transparent;
@@ -218,7 +241,7 @@ class Ping extends Component {
   public render() {
     return (
       <Row>
-        <CardGrid title={this.pingBtn()} tablet={[1, 1]}>
+        <CardGrid name={this.pingBtn()} tablet={[1, 1]}>
           {this.renderItems()}
           {this.renderResults()}
         </CardGrid>
