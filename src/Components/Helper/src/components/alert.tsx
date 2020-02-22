@@ -4,6 +4,7 @@ import {
   GUTTER,
   COLOR_DARK,
   TEXT_SHADOW_WITH_DARK_BG,
+  COLOR_GRAY,
 } from '~components/Config/src'
 import { rgba } from 'polished'
 
@@ -20,7 +21,7 @@ const StyledAlert = styled.div<AlertContainerProps>`
   font-family: Arial Black;
   font-weight: bolder;
   min-width: 2em;
-  color: #fff;
+  color:${COLOR_GRAY};
   box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
   text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
   padding: 0 0.5rem;

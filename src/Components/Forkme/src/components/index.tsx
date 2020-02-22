@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
@@ -45,7 +45,7 @@ const StyledForkmeLink = styled.a`
     bottom: 1px;
   }
   :hover {
-    color: #fff;
+    color: ${COLOR_GRAY};
     text-decoration: none;
   }
 `

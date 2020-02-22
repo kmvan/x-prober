@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { BORDER_RADIUS, GUTTER, COLOR_DARK } from '~components/Config/src/index'
+import {
+  BORDER_RADIUS,
+  GUTTER,
+  COLOR_DARK,
+  COLOR_GRAY,
+} from '~components/Config/src/index'
 import { observer } from 'mobx-react'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import UpdaterStore from '~components/Updater/src/stores'
@@ -29,10 +34,10 @@ export const StyledTitle = styled.h1`
 export const StyledTitleLink = styled.a`
   display: block;
   padding: ${GUTTER};
-  color: #fff;
+  color: ${COLOR_GRAY};
 
   :hover {
-    color: #fff;
+    color: ${COLOR_GRAY};
   }
 `
 

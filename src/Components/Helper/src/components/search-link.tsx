@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
 
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
@@ -11,7 +11,7 @@ const StyledSearchLink = styled.a`
 
   :hover {
     background: ${COLOR_DARK};
-    color: #fff;
+    color: ${COLOR_GRAY};
     text-decoration: underline;
   }
 `

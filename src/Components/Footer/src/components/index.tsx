@@ -29,9 +29,9 @@ const StyledFooter = styled.div`
   }
 
   a {
-    color: #fff;
+    color: ${COLOR_GRAY};
     :hover {
-      color: #fff;
+      color: ${COLOR_GRAY};
     }
   }
 `
