@@ -21,7 +21,7 @@ class MyInfo extends Component {
       <Row>
         {items.map(([name, content]: [string, string]) => {
           return (
-            <CardGrid key={name} title={name} desktopLg={[1, 2]}>
+            <CardGrid key={name} name={name} desktopLg={[1, 2]}>
               {content}
             </CardGrid>
           )

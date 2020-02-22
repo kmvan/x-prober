@@ -51,7 +51,7 @@ class PhpExtensions extends Component {
           return (
             <CardGrid
               key={name}
-              title={name}
+              name={name}
               mobileMd={[1, 2]}
               tablet={[1, 3]}
               desktopMd={[1, 4]}
@@ -61,7 +61,7 @@ class PhpExtensions extends Component {
             </CardGrid>
           )
         })}
-        <CardGrid title={gettext('Loaded extensions')} tablet={[1, 1]}>
+        <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
           <MultiItemContainer>
             {longItems.map(id => {
               return <SearchLink key={id} keyword={id} />

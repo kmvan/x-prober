@@ -72,7 +72,7 @@ class PhpInfo extends Component {
           return (
             <CardGrid
               key={title}
-              title={title}
+              name={title}
               tablet={[1, 3]}
               desktopMd={[1, 4]}
               desktopLg={[1, 5]}
@@ -85,7 +85,7 @@ class PhpInfo extends Component {
           return (
             <CardGrid
               key={title}
-              title={title}
+              name={title}
               mobileMd={[1, 2]}
               tablet={[1, 3]}
               desktopMd={[1, 4]}
@@ -97,7 +97,7 @@ class PhpInfo extends Component {
         })}
         {longItems.map(([title, content]) => {
           return (
-            <CardGrid key={title} title={title}>
+            <CardGrid key={title} name={title}>
               <MultiItemContainer>{content}</MultiItemContainer>
             </CardGrid>
           )

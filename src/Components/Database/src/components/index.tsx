@@ -29,7 +29,7 @@ class Database extends Component {
           return (
             <CardGrid
               key={name}
-              title={name}
+              name={name}
               mobileMd={[1, 2]}
               tablet={[1, 3]}
               desktopMd={[1, 4]}

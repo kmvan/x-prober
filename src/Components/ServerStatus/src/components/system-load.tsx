@@ -57,7 +57,7 @@ class SystemLoad extends Component {
     })
 
     return (
-      <CardGrid title={gettext('System load')} tablet={[1, 1]}>
+      <CardGrid name={gettext('System load')} tablet={[1, 1]}>
         <StyledGroup>
           {loadHuman.map(({ id, load, text }) => (
             <StyledGroupItem key={id} title={text}>

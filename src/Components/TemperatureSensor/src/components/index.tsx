@@ -21,7 +21,7 @@ class TemperatureSensor extends Component {
         {items.map(({ id, name, celsius }) => (
           <CardGrid
             key={id}
-            title={template(gettext('<%= sensor %> temperature'))({
+            name={template(gettext('<%= sensor %> temperature'))({
               sensor: name,
             })}
             tablet={[1, itemsCount === 1 ? 1 : 2]}

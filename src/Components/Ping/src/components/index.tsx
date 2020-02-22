@@ -241,7 +241,7 @@ class Ping extends Component {
   public render() {
     return (
       <Row>
-        <CardGrid title={this.pingBtn()} tablet={[1, 1]}>
+        <CardGrid name={this.pingBtn()} tablet={[1, 1]}>
           {this.renderItems()}
           {this.renderResults()}
         </CardGrid>

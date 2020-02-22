@@ -112,7 +112,7 @@ class ServerBenchmark extends Component {
       return (
         <CardGrid
           key={name}
-          title={title}
+          name={title}
           tablet={[1, 2]}
           desktopMd={[1, 3]}
           desktopLg={[1, 4]}
@@ -169,7 +169,7 @@ class ServerBenchmark extends Component {
 
     return (
       <CardGrid
-        title={gettext('My server')}
+        name={gettext('My server')}
         tablet={[1, 2]}
         desktopMd={[1, 3]}
         desktopLg={[1, 4]}
