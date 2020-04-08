@@ -43,7 +43,7 @@ module.exports = {
         cache: true,
         terserOptions: {
           output: {
-            ecma: 5,
+            ecma: 6,
             comments: false,
           },
           compress: {
