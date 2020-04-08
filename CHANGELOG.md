@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.4.0 - 2020-04-08
+
+### Update
+
+- Update package
+-
+
 ## 4.3.0 - 2020-02-22
 
 ### Add
