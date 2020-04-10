@@ -9,9 +9,9 @@ interface LangsProps {
 }
 
 const langs: LangsProps = require('./lang.json')
-const langId = navigator.language.replace('-', '_')
+const langId = navigator.language.replace('-', '_').toLowerCase()
 
 export const gettext = (text: string, context: string = ''): string => {
   const id = `${context || ''}${text}`
-  return (langs[id] && langs[id][langId]) || text
+  return langs?.[id]?.[langId] || text
 }
