@@ -113,7 +113,7 @@ const writeJsData = ({ langId, items }) => {
       langs[key] = {}
     }
 
-    langs[key][langId] = msgstr
+    langs[key][langId.toLowerCase()] = msgstr
   })
 
   fs.writeFileSync(
