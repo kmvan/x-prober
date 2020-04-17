@@ -58,11 +58,23 @@
       }
     },
     {
-      "name": "Vultr/PHP7.3",
+      "name": "Vultr/Tokyo/PHP7.4",
       "url": "https://www.vultr.com/?ref=7826363-4F",
+      "date": "2020-04-17",
+      "proberUrl": "https://x-prober-server-benchmark-vultr-tokyo.inn-studio.com/",
+      "binUrl": "https://hnd-jp-ping.vultr.com/vultr.com.100MB.bin",
+      "detail": {
+        "hash": 732,
+        "intLoop": 951,
+        "floatLoop": 951,
+        "ioLoop": 628
+      }
+    },
+    {
+      "name": "Vultr/Lax/PHP7.3",
+      "url": "https://www.vultr.com/?ref=7826363-4F",
+      "binUrl": "http://lax-ca-us-ping.vultr.com/vultr.com.100MB.bin",
       "date": "2019-03-01",
-      "proberUrl": "https://x-prober-server-benchmark-vultr-los-angeles.inn-studio.com/",
-      "binUrl": "https://x-prober-server-benchmark-vultr-los-angeles.inn-studio.com/512m.bin",
       "detail": {
         "hash": 822,
         "intLoop": 958,
