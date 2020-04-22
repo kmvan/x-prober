@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.6.0 - 2020-04-22
+
+### Fix
+
+- Fix large number error on 32bit OS
+
 ## 4.5.0 - 2020-04-10
 
 ### Optimize
