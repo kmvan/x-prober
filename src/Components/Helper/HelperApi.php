@@ -34,7 +34,7 @@ class HelperApi
                 $total += (int) $cpu->loadpercentage;
             }
 
-            $total         = (int) $total / \count($server);
+            $total         = (float) $total / \count($server);
             $usage['idle'] = 100 - $total;
             $usage['user'] = $total;
         // exec
@@ -79,8 +79,8 @@ class HelperApi
             $lineArr           = \explode(':', $line);
             $numberArr         = \explode(' ', \trim($lineArr[1]));
             $eths[$lineArr[0]] = array(
-                'rx' => (int) $numberArr[0],
-                'tx' => (int) $numberArr[8],
+                'rx' => (float) $numberArr[0],
+                'tx' => (float) $numberArr[8],
             );
         }
 
