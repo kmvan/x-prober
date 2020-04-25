@@ -1,6 +1,5 @@
-import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
-import { observable, configure, action, computed } from 'mobx'
+import { configure, computed } from 'mobx'
 import FetchStore from '~components/Fetch/src/stores'
 
 configure({
@@ -21,20 +20,18 @@ export interface ServerStatusCpuUsageProps {
 
 class ServerStatus {
   public readonly ID = 'serverStatus'
-  public readonly conf = get(conf, this.ID)
+  public readonly conf = conf?.[this.ID]
 
-  @observable public memRealUsage: ServerStatusUsageProps = this.conf
-    .memRealUsage
-  @observable public memBuffers: ServerStatusUsageProps = this.conf.memBuffers
-  @observable public memCached: ServerStatusUsageProps = this.conf.memCached
-  @observable public swapUsage: ServerStatusUsageProps = this.conf.swapUsage
-  @observable public swapCached: ServerStatusUsageProps = this.conf.swapCached
+  @computed
+  private get fetchData() {
+    return FetchStore.data?.[this.ID]
+  }
 
   @computed
   public get sysLoad(): number[] {
     return FetchStore.isLoading
-      ? get(this.conf, 'sysLoad')
-      : get(FetchStore.data, `${this.ID}.sysLoad`) || [0, 0, 0]
+      ? this.conf?.sysLoad
+      : this.fetchData?.sysLoad || [0, 0, 0]
   }
 
   @computed
@@ -46,32 +43,42 @@ class ServerStatus {
           sys: 5,
           user: 5,
         }
-      : get(FetchStore.data, `${this.ID}.cpuUsage`)
+      : this.fetchData?.cpuUsage
   }
 
-  @action
-  public setMemRealUsage = (memRealUsage: ServerStatusUsageProps) => {
-    this.memRealUsage = memRealUsage
+  @computed
+  public get memRealUsage(): ServerStatusUsageProps {
+    return FetchStore.isLoading
+      ? this.conf.memRealUsage
+      : this.fetchData?.memRealUsage
   }
 
-  @action
-  public setMemBuffers = (memBuffers: ServerStatusUsageProps) => {
-    this.memBuffers = memBuffers
+  @computed
+  public get memCached(): ServerStatusUsageProps {
+    return FetchStore.isLoading
+      ? this.conf.memCached
+      : this.fetchData?.memCached
   }
 
-  @action
-  public setMemCached = (memCached: ServerStatusUsageProps) => {
-    this.memCached = memCached
+  @computed
+  public get memBuffers(): ServerStatusUsageProps {
+    return FetchStore.isLoading
+      ? this.conf.memBuffers
+      : this.fetchData?.memBuffers
   }
 
-  @action
-  public setSwapUsage = (swapUsage: ServerStatusUsageProps) => {
-    this.swapUsage = swapUsage
+  @computed
+  public get swapUsage(): ServerStatusUsageProps {
+    return FetchStore.isLoading
+      ? this.conf.swapUsage
+      : this.fetchData?.swapUsage
   }
 
-  @action
-  public setSwapCached = (swapCached: ServerStatusUsageProps) => {
-    this.swapCached = swapCached
+  @computed
+  public get swapCached(): ServerStatusUsageProps {
+    return FetchStore.isLoading
+      ? this.conf.swapCached
+      : this.fetchData?.swapCached
   }
 }
 

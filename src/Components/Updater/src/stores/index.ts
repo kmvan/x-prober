@@ -1,9 +1,9 @@
 import { observable, action, computed, configure } from 'mobx'
-import { template } from 'lodash-es'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import ConfigStore from '~components/Config/src/stores'
 import versionCompare from '~components/Helper/src/components/version-compare'
+import template from '~components/Helper/src/components/template'
 
 configure({
   enforceActions: 'observed',
@@ -48,13 +48,12 @@ class UpdaterStore {
 
     if (this.newVersion) {
       return template(
-        gettext(
-          '✨ Found update! Version <%= oldVersion %> → <%= newVersion %>'
-        )
-      )({
-        oldVersion: BootstrapStore.version,
-        newVersion: this.newVersion,
-      })
+        gettext('✨ Found update! Version ${oldVersion} → ${newVersion}'),
+        {
+          oldVersion: BootstrapStore.version,
+          newVersion: this.newVersion,
+        }
+      )
     }
 
     return ''

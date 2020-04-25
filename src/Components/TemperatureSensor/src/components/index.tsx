@@ -5,7 +5,7 @@ import Row from '~components/Grid/src/components/row'
 import { gettext } from '~components/Language/src'
 import CardGrid from '~components/Card/src/components/card-grid'
 import ProgressBar from '~components/ProgressBar/src/components'
-import { template } from 'lodash-es'
+import template from '~components/Helper/src/components/template'
 
 @observer
 class TemperatureSensor extends Component {
@@ -21,7 +21,7 @@ class TemperatureSensor extends Component {
         {items.map(({ id, name, celsius }) => (
           <CardGrid
             key={id}
-            name={template(gettext('<%= sensor %> temperature'))({
+            name={template(gettext('${sensor} temperature'), {
               sensor: name,
             })}
             tablet={[1, itemsCount === 1 ? 1 : 2]}

@@ -1,6 +1,5 @@
 import { observable, action, configure, computed } from 'mobx'
 import { ComponentClass } from 'react'
-import { orderBy, findIndex, find } from 'lodash-es'
 
 configure({
   enforceActions: 'observed',
@@ -41,11 +40,9 @@ class CardStore {
 
   @computed
   public get enabledCards(): CardProps[] {
-    return orderBy(
-      this.cards.filter(({ enabled = true }) => enabled),
-      ['priority'],
-      ['asc']
-    )
+    return this.cards
+      .filter(({ enabled = true }) => enabled)
+      .sort((a, b) => a.priority - b.priority)
   }
 
   @computed
@@ -56,7 +53,7 @@ class CardStore {
   @action
   private setCardsPriority = (cards: CardProps[]) => {
     cards.map(({ id, priority }) => {
-      const i = findIndex(this.cards, { id })
+      const i = this.cards.findIndex(item => item.id === id)
 
       if (i !== -1 && this.cards[i].priority !== priority) {
         this.cards[i].priority = priority
@@ -66,7 +63,7 @@ class CardStore {
 
   @action
   public setCard = ({ id, ...card }: Partial<CardProps>) => {
-    const i = findIndex(this.cards, { id })
+    const i = this.cards.findIndex(item => item.id === id)
 
     if (i === -1) {
       return
@@ -78,7 +75,7 @@ class CardStore {
   @action
   public moveCardUp = (id: string) => {
     const cards = this.enabledCards
-    const i = findIndex(cards, { id })
+    const i = cards.findIndex(item => item.id === id)
 
     if (i <= 0) {
       return
@@ -96,7 +93,7 @@ class CardStore {
   @action
   public moveCardDown = (id: string) => {
     const cards = this.enabledCards
-    const i = findIndex(cards, { id })
+    const i = cards.findIndex(item => item.id === id)
 
     if (i === -1 || i === cards.length - 1) {
       return
@@ -137,7 +134,7 @@ class CardStore {
       return 0
     }
 
-    const item = find(items, { id: id })
+    const item = items.find(item => item.id === id)
 
     return item ? item.priority : 0
   }

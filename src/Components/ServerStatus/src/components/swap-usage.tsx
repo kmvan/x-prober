@@ -10,6 +10,10 @@ class SwapUsage extends Component {
   public render() {
     const { max, value } = store.swapUsage
 
+    if (!max) {
+      return null
+    }
+
     return (
       <CardGrid name={gettext('Swap usage')} tablet={[1, 1]}>
         <ProgressBar value={value} max={max} isCapacity={true} />

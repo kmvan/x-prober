@@ -2,6 +2,22 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.7.0 - 2020-04-25
+
+### Fix
+
+- Fix memory refresh error
+
+### Update
+
+- Update Nginx stable version
+- Update SQLite3 stable version
+- Update MySQLi client version
+
+### Optimize
+
+- Remove lodash lib, reduce js size
+
 ## 4.6.0 - 2020-04-22
 
 ### Fix

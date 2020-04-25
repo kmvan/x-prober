@@ -5,7 +5,7 @@ import { gettext } from '~components/Language/src'
 import store from '../stores'
 import CardGrid from '~components/Card/src/components/card-grid'
 import ProgressBar from '~components/ProgressBar/src/components'
-import { template, get } from 'lodash-es'
+import template from '~components/Helper/src/components/template'
 import FetchStore from '~components/Fetch/src/stores'
 
 @observer
@@ -21,8 +21,8 @@ class ServerInfo extends Component {
     } = store
 
     if (!isLoading) {
-      value = get(data, `${ID}.diskUsage.value`)
-      max = get(data, `${ID}.diskUsage.max`)
+      value = data?.[ID]?.diskUsage?.value
+      max = data?.[ID]?.diskUsage?.max
     }
 
     if (!value || !max) {
@@ -38,10 +38,9 @@ class ServerInfo extends Component {
       serverUptime: { days, hours, mins, secs },
     } = store
     const uptime = template(
-      gettext(
-        '<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs'
-      )
-    )({ days, hours, mins, secs })
+      gettext('${days} days ${hours} hours ${mins} mins ${secs} secs'),
+      { days, hours, mins, secs }
+    )
     const shortItems = [
       [gettext('Server name'), conf.serverName],
       [gettext('Server time'), store.serverTime],

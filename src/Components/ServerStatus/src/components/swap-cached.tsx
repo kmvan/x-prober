@@ -10,6 +10,10 @@ class SwapCached extends Component {
   public render() {
     const { max, value } = store.swapCached
 
+    if (!max) {
+      return null
+    }
+
     return (
       <CardGrid name={gettext('Swap cached')} tablet={[1, 1]}>
         <ProgressBar value={value} max={max} isCapacity={true} />
