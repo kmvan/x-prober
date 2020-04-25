@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import store, { PingItemProps } from '../stores'
-import { sumBy, maxBy, minBy, template } from 'lodash-es'
+import store from '../stores'
+import template from '~components/Helper/src/components/template'
 import Row from '~components/Grid/src/components/row'
 import { gettext } from '~components/Language/src'
 import CardGrid from '~components/Card/src/components/card-grid'
@@ -205,26 +205,24 @@ class Ping extends Component {
 
   private renderResults() {
     const { pingItemsCount, pingItems } = store
-
+    const timeItems = pingItems.map(({ time }) => time)
     const avg = pingItemsCount
-      ? Math.floor(sumBy(pingItems, 'time') / pingItemsCount)
+      ? Math.floor(timeItems.reduce((a, b) => a + b, 0) / pingItemsCount)
       : 0
-    const max = pingItemsCount
-      ? Number((maxBy(pingItems, 'time') as PingItemProps).time)
-      : 0
-    const min = pingItemsCount
-      ? Number((minBy(pingItems, 'time') as PingItemProps).time)
-      : 0
+    const max = pingItemsCount ? Number(Math.max(...timeItems)) : 0
+    const min = pingItemsCount ? Number(Math.min(...timeItems)) : 0
 
     return (
       <StyledPingResult hasPing={!!pingItemsCount}>
         <StyledPingResultTimes>
-          {template(gettext('Times: <%= times %>'))({ times: pingItemsCount })}
+          {template(gettext('Times:${times}'), { times: pingItemsCount })}
         </StyledPingResultTimes>
         <StyledPingResultAvg>
-          {template(
-            gettext('Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>')
-          )({ min, max, avg })}
+          {template(gettext('Min:${min} / Max:${max} / Avg:${avg}'), {
+            min,
+            max,
+            avg,
+          })}
         </StyledPingResultAvg>
       </StyledPingResult>
     )

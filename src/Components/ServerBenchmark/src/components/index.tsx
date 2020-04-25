@@ -6,7 +6,7 @@ import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK, TOO_MANY_REQUESTS } from '~components/Restful/src/http-status'
-import { template, sum, orderBy } from 'lodash-es'
+import template from '~components/Helper/src/components/template'
 import CardError from '~components/Card/src/components/error'
 import CardRuby from '~components/Card/src/components/card-ruby'
 import { toJS } from 'mobx'
@@ -33,9 +33,7 @@ class ServerBenchmark extends Component {
             setLinkText(gettext('Network error, please try again later.'))
           }
         } else if (status === TOO_MANY_REQUESTS) {
-          const secondsMsg = template(
-            gettext('⏳ Please wait <%= seconds %>s')
-          )({
+          const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
             seconds,
           })
           setLinkText(secondsMsg)
@@ -60,12 +58,14 @@ class ServerBenchmark extends Component {
     }
 
     let items = toJS(servers).map(item => {
-      item.total = item.detail ? sum(Object.values(item.detail)) : 0
+      item.total = item.detail
+        ? Object.values(item.detail).reduce((a, b) => a + b, 0)
+        : 0
 
       return item
     })
 
-    items = orderBy(items, ({ total }) => total).reverse()
+    items = items.sort((a, b) => Number(b.total) - Number(a.total))
 
     return items.map(({ name, url, date, proberUrl, binUrl, detail }) => {
       if (!detail) {

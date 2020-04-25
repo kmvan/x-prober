@@ -4,7 +4,7 @@ import store from '../stores'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
 import versionCompare from '~components/Helper/src/components/version-compare'
-import { template } from 'lodash-es'
+import template from '~components/Helper/src/components/template'
 import { gettext } from '~components/Language/src'
 import CardLink from '~components/Card/src/components/card-link'
 
@@ -39,7 +39,7 @@ class PhpInfoPhpVersion extends Component {
         {version}
         {compare === -1
           ? ' ' +
-            template(gettext('(Latest <%= latestPhpVersion %>)'))({
+            template(gettext('(Latest ${latestPhpVersion})'), {
               latestPhpVersion,
             })
           : ''}

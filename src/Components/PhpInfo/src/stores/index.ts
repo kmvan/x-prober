@@ -1,4 +1,3 @@
-import { get } from 'lodash-es'
 import conf from '~components/Helper/src/components/conf'
 import { observable, action, configure } from 'mobx'
 
@@ -8,7 +7,7 @@ configure({
 
 class PhpInfoStore {
   public readonly ID = 'phpInfo'
-  public readonly conf = get(conf, this.ID)
+  public readonly conf = conf?.[this.ID]
 
   @observable public latestPhpVersion: string = ''
   @observable public latestPhpDate: string = ''

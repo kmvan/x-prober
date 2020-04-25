@@ -3,7 +3,6 @@ import { gettext } from '~components/Language/src'
 import ConfigStore, {
   AppConfigBenchmarkProps,
 } from '~components/Config/src/stores'
-import { get } from 'lodash-es'
 
 configure({
   enforceActions: 'observed',
@@ -25,7 +24,7 @@ class ServerBenchmarkStore {
 
   @computed
   public get servers(): AppConfigBenchmarkProps[] | null {
-    return get(ConfigStore, 'appConfig.BENCHMARKS') || null
+    return ConfigStore?.appConfig?.BENCHMARKS || null
   }
 
   @action

@@ -2,7 +2,6 @@ import { OK } from '~components/Restful/src/http-status'
 import CardStore from '~components/Card/src/stores'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { observable, action, computed, configure } from 'mobx'
-import { find } from 'lodash-es'
 
 configure({
   enforceActions: 'observed',
@@ -27,7 +26,7 @@ class TemperatureSensorStore {
   @action
   private setEnabledCard = () => {
     const { setCard, cards } = CardStore
-    const item = find(cards, { id: this.ID })
+    const item = cards.find(({ id }) => id === this.ID)
 
     if (!item) {
       return

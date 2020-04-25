@@ -1,53 +1,72 @@
 import React, { Component } from 'react'
-import { observer } from 'mobx-react'
 import { gettext } from '~components/Language/src'
 import Row from '~components/Grid/src/components/row'
 import CardGrid from '~components/Card/src/components/card-grid'
 import store from '../stores'
 import Alert from '~components/Helper/src/components/alert'
-import { orderBy } from 'lodash-es'
 import SearchLink from '~components/Helper/src/components/search-link'
 import MultiItemContainer from '~components/Card/src/components/multi-item-container'
 
-@observer
+const { conf } = store
+const shortItems = [
+  ['Redis', conf.redis],
+  ['SQLite3', conf.sqlite3],
+  ['Memcache', conf.memcache],
+  ['Memcached', conf.memcached],
+  ['Opcache', conf.opcache],
+  [gettext('Opcache enabled'), conf.opcacheEnabled],
+  ['Swoole', conf.swoole],
+  ['Image Magick', conf.imagick],
+  ['Graphics Magick', conf.gmagick],
+  ['Exif', conf.exif],
+  ['Fileinfo', conf.fileinfo],
+  ['SimpleXML', conf.simplexml],
+  ['Sockets', conf.sockets],
+  ['MySQLi', conf.mysqli],
+  ['Zip', conf.zip],
+  ['Multibyte String', conf.mbstring],
+  ['Phalcon', conf.phalcon],
+  ['Xdebug', conf.xdebug],
+  ['Zend Otimizer', conf.zendOtimizer],
+  ['ionCube', conf.ionCube],
+  ['Source Guardian', conf.sourceGuardian],
+  ['LDAP', conf.ldap],
+  ['cURL', conf.curl],
+].sort((a, b) => {
+  const x = a[0].toLowerCase()
+  const y = b[0].toLowerCase()
+
+  if (x < y) {
+    return -1
+  }
+
+  if (x > y) {
+    return 1
+  }
+
+  return 0
+})
+
+const longItems: string[] = conf.loadedExtensions.sort((a, b) => {
+  const x = a.toLowerCase()
+  const y = b.toLowerCase()
+
+  if (x < y) {
+    return -1
+  }
+
+  if (x > y) {
+    return 1
+  }
+
+  return 0
+})
+
 class PhpExtensions extends Component {
   public render() {
-    const { conf } = store
-    let shortItems: any[] = [
-      ['Redis', conf.redis],
-      ['SQLite3', conf.sqlite3],
-      ['Memcache', conf.memcache],
-      ['Memcached', conf.memcached],
-      ['Opcache', conf.opcache],
-      [gettext('Opcache enabled'), conf.opcacheEnabled],
-      ['Swoole', conf.swoole],
-      ['Image Magick', conf.imagick],
-      ['Graphics Magick', conf.gmagick],
-      ['Exif', conf.exif],
-      ['Fileinfo', conf.fileinfo],
-      ['SimpleXML', conf.simplexml],
-      ['Sockets', conf.sockets],
-      ['MySQLi', conf.mysqli],
-      ['Zip', conf.zip],
-      ['Multibyte String', conf.mbstring],
-      ['Phalcon', conf.phalcon],
-      ['Xdebug', conf.xdebug],
-      ['Zend Otimizer', conf.zendOtimizer],
-      ['ionCube', conf.ionCube],
-      ['Source Guardian', conf.sourceGuardian],
-      ['LDAP', conf.ldap],
-      ['cURL', conf.curl],
-    ]
-
-    shortItems = orderBy(shortItems, (o: [string, boolean]) =>
-      o[0].toLowerCase()
-    )
-
-    const longItems: string[] = conf.loadedExtensions.sort()
-
     return (
       <Row>
-        {shortItems.map(([name, enabled]: [string, boolean]) => {
+        {shortItems.map(([name, enabled]) => {
           return (
             <CardGrid
               key={name}

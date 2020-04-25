@@ -13,7 +13,7 @@ import {
 } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
-import { template } from 'lodash-es'
+import template from '~components/Helper/src/components/template'
 
 const StyledGroup = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ class SystemLoad extends Component {
       return {
         id: `${minutes[i]}minAvg`,
         load,
-        text: template(gettext('<%= minute %> minute average'))({
+        text: template(gettext('${minute} minute average'), {
           minute: minutes[i],
         }),
       }
