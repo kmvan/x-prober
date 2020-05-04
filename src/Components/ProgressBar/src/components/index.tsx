@@ -8,7 +8,7 @@ import {
   TEXT_SHADOW_WITH_DARK_BG,
   COLOR_GRAY,
 } from '~components/Config/src'
-import { rgba } from 'polished'
+import { rgba, linearGradient } from 'polished'
 
 export interface ProgressBarProps {
   title?: string
@@ -79,16 +79,18 @@ const StyledProgressValue = styled.div.attrs(
     height: 50%;
     width: 100%;
     border-radius: 0 0 50% 50%;
-    background: linear-gradient(#fff, rgba(255, 255, 255, 0.3));
+    ${linearGradient({
+      colorStops: ['#fff', rgba('#fff', 0.3)],
+      fallback: 'transparent',
+    })};
     opacity: 0.3;
   }
   ::before {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.1)
-    );
+    ${linearGradient({
+      colorStops: [rgba('#fff', 0.1), rgba('#fff', 0.5), rgba('#fff', 0.1)],
+      toDirection: 'to top right',
+      fallback: 'transparent',
+    })};
     opacity: 1;
     height: 1px;
     border-radius: 0;
