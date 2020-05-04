@@ -2,6 +2,20 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.8.0 - 2020-05-04
+
+### Add
+
+- Add start up animation
+
+### Update
+
+- Update GPL2.0 to GPL3.0
+
+### Optimize
+
+- Micro style optimization
+
 ## 4.7.0 - 2020-04-25
 
 ### Fix
