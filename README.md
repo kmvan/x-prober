@@ -1,11 +1,3 @@
-[antergos]: https://antergos.com/distro-logos/logo-square26x26.png 'antergos'
-[arch]: https://antergos.com/distro-logos/archlogo26x26.png 'arch'
-[fedora]: https://antergos.com/distro-logos/fedora-logo.png 'fedora'
-[opensuse]: https://antergos.com/distro-logos/Geeko-button-bling7.png 'openSUSE'
-[ubuntu]: https://antergos.com/distro-logos/ubuntu_orange_hex.png 'ubuntu'
-[debian]: https://antergos.com/distro-logos/openlogo-nd-25.png 'debian'
-[windows]: http://www.likoton.pl/likoton-content/uploads/2013/07/Przycisk-Windows.png 'windows'
-
 [![X Prober preview](screenshot.jpg)](screenshot.jpg)
 
 - [Simplified Chinese | 简体中文](README-zh_CN.md)
@@ -24,7 +16,7 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 ## License
 
-- GPL-v2
+- GPL-3.0
 
 ## Online demo
 
@@ -39,11 +31,10 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 ## Required environment
 
-- Compile environment: PHP 7.3+
+- Compile environment: PHP 7.4+
 - Production environment: PHP 5.3+
-- Browser support: <del>IE9</del> / Chrome / Firefox / Edge / Android
+- Browser support: Chrome / Firefox / Edge / Android
 - OS support: Linux / Windows(basic features)
-- Tested: ![debian][debian] ![ubuntu][ubuntu] ![arch][arch] ![windows][windows]
 
 ## Extensions
 
