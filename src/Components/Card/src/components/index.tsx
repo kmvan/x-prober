@@ -1,23 +1,41 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import {
+  COLOR_DARK,
+  GUTTER,
+  COLOR_GRAY,
+  ANIMATION_DURATION_SC,
+} from '~components/Config/src'
 import { gettext } from '~components/Language/src'
+import { rgba } from 'polished'
 
 interface StyleArrowProps {
   isHidden: boolean
 }
-
+const fadeIn = keyframes`
+  from{
+    transform: translate3d(0, -10%, 0);
+    opacity: .5;
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`
 const StyledFieldset = styled.fieldset`
   position: relative;
   border: 5px solid #eee;
   border-radius: calc(${GUTTER} * 1.5);
-  background: linear-gradient(#fff, rgba(255, 255, 255, 0.5));
+  background: linear-gradient(#fff, ${rgba('#fff', 0.5)});
   margin-bottom: calc(${GUTTER} * 1.5);
   padding: calc(${GUTTER} * 1.5) 0 0;
-  box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1), 1px 1px 0 hsla(0, 0%, 100%, 0.5),
-    inset 1px 1px 0 hsla(0, 0%, 100%, 0.5), inset -1px -1px 0 rgba(#000, 0.1);
+  box-shadow: -1px -1px 0 ${rgba('#000', 0.1)}, 1px 1px 0 hsla(0, 0%, 100%, 0.5),
+    inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
+    inset -1px -1px 0 ${rgba('#000', 0.1)};
+  animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
+  animation-fill-mode: forwards;
 `
 
 const StyledLegend = styled.legend`
