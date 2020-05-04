@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import { rgba } from 'polished'
 
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
-  background: rgba(51, 51, 51, 0.05);
+  background: ${rgba(COLOR_DARK, 0.05)};
   padding: 0 0.3rem;
   border-radius: ${GUTTER};
   font-family: consolas;

@@ -7,6 +7,7 @@ import store, { NetworkStatsItemProps } from '../stores'
 import Grid from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { toJS } from 'mobx'
+import { COLOR_DOWNLOAD, COLOR_UPLOAD } from '~components/Config/src'
 
 const StyledNetworkId = styled.div`
   text-decoration: underline;
@@ -31,7 +32,7 @@ interface StyledDataProps {
 
 const StyledData = styled.div<StyledDataProps>`
   flex: 0 0 50%;
-  color: ${({ isUpload }) => (isUpload ? '#c24b00' : '#007400')};
+  color: ${({ isUpload }) => (isUpload ? COLOR_UPLOAD : COLOR_DOWNLOAD)};
 `
 
 const StyledTotal = styled.div``

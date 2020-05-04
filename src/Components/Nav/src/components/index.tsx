@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'
 import { observer } from 'mobx-react'
 import CardStore from '~components/Card/src/stores'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
 import {
   COLOR_DARK,
@@ -9,10 +9,19 @@ import {
   COLOR_GRAY,
   TEXT_SHADOW_WITH_DARK_BG,
   TEXT_SHADOW_WITH_LIGHT_BG,
+  ANIMATION_DURATION_SC,
 } from '~components/Config/src'
 import getElementOffsetTop from '~components/Helper/src/components/get-element-offset-top'
 import { rgba } from 'polished'
 
+const slideUp = keyframes`
+  from{
+    transform: translate3d(0, 100%, 0);
+  }
+  to{
+    transform: translate3d(0, 0, 0);
+  }
+`
 const StyledNav = styled.div`
   position: fixed;
   bottom: 0;
@@ -40,7 +49,8 @@ const StyledNavLink = styled.a`
   padding: 0 0.5rem;
   border-right: 1px solid ${rgba(COLOR_GRAY, 0.05)};
   text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
-
+  animation: ${slideUp} ${ANIMATION_DURATION_SC}s;
+  animation-fill-mode: forwards;
   @media ${device('tablet')} {
     padding: 0 ${GUTTER};
   }

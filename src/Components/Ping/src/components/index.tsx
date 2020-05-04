@@ -64,7 +64,7 @@ const StyledPingItemContainer = styled.ul`
 
   ::-webkit-scrollbar-thumb {
     border-radius: ${GUTTER} 0 0 ${GUTTER};
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: ${rgba(COLOR_GRAY, 0.5)};
     opacity: 0;
 
     :hover {
@@ -112,11 +112,11 @@ const StyledPingResult = styled.div<StyledPingResultProps>`
   display: flex;
   align-items: center;
   background: ${COLOR_DARK};
-  color: #ccc;
+  color: ${COLOR_GRAY};
   border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
     ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-top: 1px dashed ${rgba(COLOR_GRAY, 0.1)};
   flex-wrap: wrap;
   justify-content: space-between;
 `

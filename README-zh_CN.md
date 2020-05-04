@@ -9,7 +9,7 @@
 
 ## 开源协议
 
-- GPL-v2
+- GPL-3.0
 
 ## 线上演示
 
@@ -24,9 +24,9 @@
 
 ## 环境需求
 
-- 编译环境：PHP 7.3+
+- 编译环境：PHP 7.4+
 - 运行环境：PHP 5.3+
-- 浏览器兼容：<del>IE9</del>、Chrome、Firefox、Edge、Android
+- 浏览器兼容：Chrome、Firefox、Edge、Android
 - 系统兼容：Linux、Windows（基础功能）
 
 ## 擴展

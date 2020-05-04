@@ -1,27 +1,46 @@
 import React from 'react'
-import styled from 'styled-components'
-import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import styled, { keyframes } from 'styled-components'
+import {
+  COLOR_DARK,
+  GUTTER,
+  COLOR_GRAY,
+  ANIMATION_DURATION_SC,
+} from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 
+const slideIn = keyframes`
+  from{
+    transform: rotate(-45deg) translate3d(-28%, -270%, 0);
+    @media ${device('tablet')} {
+      transform: rotate(-45deg) translate3d(-28%, -250%, 0);
+    }
+  }
+  to{
+    transform: rotate(-45deg) translate3d(-28%, -70%, 0);
+    @media ${device('tablet')} {
+      transform: rotate(-45deg) translate3d(-28%, -50%, 0);
+    }
+  }
+`
 const StyledForkmeLink = styled.a`
   position: fixed;
   top: 0;
   left: 0;
   background: ${COLOR_DARK};
-  color: rgba(255, 255, 255, 0.85);
+  color: ${rgba(COLOR_GRAY, 0.85)};
   font-family: Arial Black;
   padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
-  transform: rotate(-45deg) translate(-28%, -70%);
   font-size: calc(${GUTTER} * 0.7);
   box-shadow: 0 3px 5px ${rgba(COLOR_DARK, 0.3)};
   z-index: 2;
+  animation: ${slideIn} ${ANIMATION_DURATION_SC}s;
+  animation-fill-mode: forwards;
 
   @media ${device('tablet')} {
     font-size: 1rem;
-    transform: rotate(-45deg) translate(-28%, -50%);
     top: calc(${GUTTER} / 2);
     left: calc(${GUTTER} / 2);
   }
@@ -34,9 +53,9 @@ const StyledForkmeLink = styled.a`
     width: 100%;
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0),
+      ${rgba(COLOR_GRAY, 0)},
       #fff,
-      rgba(255, 255, 255, 0)
+      ${rgba(COLOR_GRAY, 0)}
     );
     content: '';
   }
@@ -52,7 +71,7 @@ const StyledForkmeLink = styled.a`
 
 const Forkme = () => {
   return (
-    <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank'>
+    <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
       {gettext('STAR 🌟 ME')}
     </StyledForkmeLink>
   )
