@@ -77,6 +77,9 @@ class NetworkStats extends Component {
             return null
           }
 
+          const lastRx = lastItems?.[id]?.rx || 0
+          const lastTx = lastItems?.[id]?.tx || 0
+
           return (
             <CardGrid
               key={id}
@@ -92,15 +95,11 @@ class NetworkStats extends Component {
                   <StyledDataContainer>
                     <StyledData isUpload={false}>
                       <StyledTotal>{formatBytes(rx)}</StyledTotal>
-                      <StyledRateRx>
-                        {formatBytes(rx - lastItems[id].rx)}/s
-                      </StyledRateRx>
+                      <StyledRateRx>{formatBytes(rx - lastRx)}/s</StyledRateRx>
                     </StyledData>
                     <StyledData isUpload>
                       <StyledTotal>{formatBytes(tx)}</StyledTotal>
-                      <StyledRateTx>
-                        {formatBytes(tx - lastItems[id].tx)}/s
-                      </StyledRateTx>
+                      <StyledRateTx>{formatBytes(tx - lastTx)}/s</StyledRateTx>
                     </StyledData>
                   </StyledDataContainer>
                 </Grid>
