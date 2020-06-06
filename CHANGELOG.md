@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.9.0 - 2020-06-06
+
+### Optimize
+
+- Optimize network stat for some devices
+
 ## 4.8.0 - 2020-05-04
 
 ### Add
