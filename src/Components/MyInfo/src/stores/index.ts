@@ -1,4 +1,4 @@
-import { observable, action, computed, configure } from 'mobx'
+import { configure } from 'mobx'
 import conf from '~components/Helper/src/components/conf'
 
 configure({

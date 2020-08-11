@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { COLOR_DARK } from '~components/Config/src'
 
 interface StyledRubyProps {
   isResult?: boolean
@@ -13,7 +12,7 @@ export interface CardRubyProps extends StyledRubyProps {
 }
 
 const StyledRuby = styled.ruby<StyledRubyProps>`
-  background: ${rgba(COLOR_DARK, 0.05)};
+  background: ${({ theme }) => rgba(theme.colorDark, 0.05)};
   rp {
   }
   rt {

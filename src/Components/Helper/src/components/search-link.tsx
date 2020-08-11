@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLOR_DARK, GUTTER, COLOR_GRAY } from '~components/Config/src'
+import { GUTTER } from '~components/Config/src'
 import { rgba } from 'polished'
 
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
-  background: ${rgba(COLOR_DARK, 0.05)};
+  background: ${({ theme }) => rgba(theme.colorDark, 0.05)};
   padding: 0 0.3rem;
   border-radius: ${GUTTER};
   font-family: consolas;
 
   :hover {
-    background: ${COLOR_DARK};
-    color: ${COLOR_GRAY};
+    background: ${({ theme }) => theme.colorDark};
+    color: ${({ theme }) => theme.colorGray};
     text-decoration: underline;
   }
 `

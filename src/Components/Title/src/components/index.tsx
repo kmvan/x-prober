@@ -3,8 +3,6 @@ import styled, { keyframes } from 'styled-components'
 import {
   BORDER_RADIUS,
   GUTTER,
-  COLOR_DARK,
-  COLOR_GRAY,
   ANIMATION_DURATION_SC,
 } from '~components/Config/src/index'
 import { observer } from 'mobx-react'
@@ -22,7 +20,7 @@ const slideDown = keyframes`
   }
 `
 export const StyledTitle = styled.h1`
-  background: ${COLOR_DARK};
+  background: ${({ theme }) => theme.colorDark};
   position: fixed;
   top: 0;
   left: 50%;
@@ -34,8 +32,9 @@ export const StyledTitle = styled.h1`
   font-size: ${GUTTER};
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADIUS} ${BORDER_RADIUS};
-  box-shadow: inset 0 -3px 15px -5px ${rgba(COLOR_DARK, 0.3)},
-    0 5px 10px ${rgba(COLOR_DARK, 0.1)};
+  box-shadow: inset 0 -11px 10px -14px
+      ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)},
+    0 5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
   z-index: 10;
   animation: ${slideDown} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
@@ -43,10 +42,10 @@ export const StyledTitle = styled.h1`
 export const StyledTitleLink = styled.a`
   display: block;
   padding: ${GUTTER};
-  color: ${COLOR_GRAY};
+  color: ${({ theme }) => theme.colorGray};
 
   :hover {
-    color: ${COLOR_GRAY};
+    color: ${({ theme }) => theme.colorGray};
   }
 `
 
