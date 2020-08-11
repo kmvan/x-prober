@@ -1,10 +1,10 @@
 <?php
 
-namespace InnStudio\Prober\Components\Benchmark;
+namespace InnStudio\Prober\Components\ServerBenchmark;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 
-class FetchBefore extends BenchmarkApi
+class FetchBefore extends ServerBenchmarkApi
 {
     public function __construct()
     {

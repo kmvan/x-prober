@@ -2,6 +2,14 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 4.10.0 - 2020-08-11
+
+### Add
+
+- Add `xconfig.json` for probe config settings
+- Add disable features config settings
+- Add more script for development
+
 ## 4.9.0 - 2020-06-06
 
 ### Optimize

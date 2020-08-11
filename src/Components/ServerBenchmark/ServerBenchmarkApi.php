@@ -1,8 +1,8 @@
 <?php
 
-namespace InnStudio\Prober\Components\Benchmark;
+namespace InnStudio\Prober\Components\ServerBenchmark;
 
-class BenchmarkApi
+class ServerBenchmarkApi
 {
     private $EXPIRED = 60;
 

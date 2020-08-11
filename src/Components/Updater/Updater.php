@@ -44,7 +44,7 @@ class Updater
         }
 
         // prevent update file on dev mode
-        if (\XPROBER_IS_DEV) {
+        if (\defined('\\XPROBER_IS_DEV') && \XPROBER_IS_DEV) {
             $response->dieJson();
         }
 

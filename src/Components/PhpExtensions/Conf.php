@@ -3,6 +3,7 @@
 namespace InnStudio\Prober\Components\PhpExtensions;
 
 use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends PhpExtensionsConstants
 {
@@ -13,6 +14,10 @@ class Conf extends PhpExtensionsConstants
 
     public function conf(array $conf)
     {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $conf;
+        }
+
         $conf[$this->ID] = array(
             'redis'            => \extension_loaded('redis') && \class_exists('\\Redis'),
             'sqlite3'          => \extension_loaded('sqlite3') && \class_exists('\\Sqlite3'),
@@ -37,7 +42,7 @@ class Conf extends PhpExtensionsConstants
             'sourceGuardian'   => \extension_loaded('sourceguardian'),
             'ldap'             => \function_exists('\\ldap_connect'),
             'curl'             => \function_exists('\\curl_init'),
-            'loadedExtensions' => \get_loaded_extensions(),
+            'loadedExtensions' => XconfigApi::isDisabled('phpExtensionsLoaded') ? array() : \get_loaded_extensions(),
         );
 
         return $conf;

@@ -96,7 +96,7 @@ const formatItem = items => {
 const getItem = async filepath => {
   return new Promise(resolve => {
     PO.load(filepath, (err, data) => {
-      const langId = data.headers.Language
+      const langId = path.basename(filepath, '.po')
       const items = formatItem(data.items)
       resolve({
         items,
@@ -112,8 +112,8 @@ const writeJsData = ({ langId, items }) => {
     if (!langs[key]) {
       langs[key] = {}
     }
-
-    langs[key][langId.toLowerCase()] = msgstr
+    langId = langId.toLowerCase().replace('-', '').replace('_', '')
+    langs[key][langId] = msgstr
   })
 
   fs.writeFileSync(

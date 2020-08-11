@@ -4,6 +4,7 @@ namespace InnStudio\Prober\Components\ServerStatus;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Fetch extends ServerStatusConstants
 {
@@ -14,6 +15,10 @@ class Fetch extends ServerStatusConstants
 
     public function filter(array $items)
     {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $items;
+        }
+
         $items[$this->ID] = array(
             'sysLoad'      => HelperApi::getSysLoadAvg(),
             'cpuUsage'     => HelperApi::getCpuUsage(),

@@ -21,6 +21,7 @@ export interface ServerStatusCpuUsageProps {
 class ServerStatus {
   public readonly ID = 'serverStatus'
   public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 
   @computed
   private get fetchData() {

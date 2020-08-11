@@ -4,8 +4,9 @@ namespace InnStudio\Prober\Components\Ping;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Ping
+class Ping extends PingConstants
 {
     public function __construct()
     {
@@ -14,7 +15,11 @@ class Ping
 
     public function filter($action)
     {
-        if ('ping' !== $action) {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $action;
+        }
+
+        if ($this->ID !== $action) {
             return $action;
         }
 

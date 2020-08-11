@@ -16,7 +16,7 @@ class PhpInfo extends Component {
     const oneLineItems: Array<[string, ReactNode]> = [
       [
         'PHP info',
-        <a key='phpInfoDetail' href='?action=phpInfo' target='_blank'>
+        <a key='phpInfoDetail' href='?action=phpInfoDetail' target='_blank'>
           {gettext('👆 Click for detail')}
         </a>,
       ],

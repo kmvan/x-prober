@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, RefObject, createRef } from 'react'
 import { observer } from 'mobx-react'
 import store from '../stores'
 import template from '~components/Helper/src/components/template'
@@ -126,6 +126,13 @@ const StyledPingResultAvg = styled.div``
 @observer
 class Ping extends Component {
   private pingTimer: number = 0
+  private refItemContainer: RefObject<HTMLUListElement>
+
+  public constructor(props) {
+    super(props)
+
+    this.refItemContainer = createRef()
+  }
 
   private onClickPing = async () => {
     const { isPing, setIsPing } = store
@@ -149,10 +156,7 @@ class Ping extends Component {
   }
 
   private ping = async () => {
-    const {
-      refs: { itemContainer },
-      appendPingItem,
-    } = store
+    const { appendPingItem } = store
     const start = +new Date()
 
     await restfulFetch('ping')
@@ -165,11 +169,15 @@ class Ping extends Component {
           })
 
           setTimeout(() => {
-            if (
-              itemContainer &&
-              itemContainer.scrollTop < itemContainer.scrollHeight
-            ) {
-              itemContainer.scrollTop = itemContainer.scrollHeight
+            if (!this.refItemContainer.current) {
+              return
+            }
+
+            const st = this.refItemContainer.current.scrollTop
+            const sh = this.refItemContainer.current.scrollHeight
+
+            if (st < sh) {
+              this.refItemContainer.current.scrollTop = sh
             }
           }, 100)
         }
@@ -178,7 +186,7 @@ class Ping extends Component {
   }
 
   private renderItems() {
-    const { pingItemsCount, pingItems, setRef } = store
+    const { pingItemsCount, pingItems } = store
 
     if (!pingItemsCount) {
       return
@@ -197,7 +205,7 @@ class Ping extends Component {
     })
 
     return (
-      <StyledPingItemContainer ref={c => setRef('itemContainer', c)}>
+      <StyledPingItemContainer ref={this.refItemContainer}>
         {items}
       </StyledPingItemContainer>
     )

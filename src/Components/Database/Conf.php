@@ -3,6 +3,7 @@
 namespace InnStudio\Prober\Components\Database;
 
 use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends DatabaseConstants
 {
@@ -13,6 +14,10 @@ class Conf extends DatabaseConstants
 
     public function conf(array $conf)
     {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $conf;
+        }
+
         $sqlite3Version = \class_exists('\\SQLite3') ? \SQLite3::version() : false;
 
         $conf[$this->ID] = array(

@@ -13,7 +13,7 @@ import { toJS } from 'mobx'
 
 @observer
 class ServerBenchmark extends Component {
-  public onClick = async () => {
+  private onClick = async () => {
     const { isLoading, setIsLoading, setMarks, setLinkText } = store
 
     if (isLoading) {
@@ -184,7 +184,7 @@ class ServerBenchmark extends Component {
   public render() {
     return (
       <Row>
-        {this.renderTestBtn()}
+        {store.enabledMyServerBenchmark && this.renderTestBtn()}
         {this.renderItems()}
       </Row>
     )

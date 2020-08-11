@@ -4,6 +4,21 @@ namespace InnStudio\Prober\Components\Helper;
 
 class HelperApi
 {
+    public static function jsonDecode($json, $depth = 512, $options = 0)
+    {
+        // search and remove comments like /* */ and //
+        $json = \preg_replace("#(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|([\s\t]//.*)|(^//.*)#", '', $json);
+
+        if (\PHP_VERSION_ID >= 50400) {
+            return \json_decode($json, true, $depth, $options);
+        }
+        if (\PHP_VERSION_ID >= 50300) {
+            return \json_decode($json, true, $depth);
+        }
+
+        return \json_decode($json, true);
+    }
+
     public static function setFileCacheHeader()
     {
         // 1 year expired

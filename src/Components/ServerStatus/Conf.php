@@ -4,6 +4,7 @@ namespace InnStudio\Prober\Components\ServerStatus;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends ServerStatusConstants
 {
@@ -14,6 +15,10 @@ class Conf extends ServerStatusConstants
 
     public function conf(array $conf)
     {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $conf;
+        }
+
         $conf[$this->ID] = array(
             'sysLoad'      => HelperApi::getSysLoadAvg(),
             'memRealUsage' => array(

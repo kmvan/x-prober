@@ -1,21 +1,25 @@
 <?php
 
-namespace InnStudio\Prober\Components\Benchmark;
+namespace InnStudio\Prober\Components\ServerBenchmark;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Restful\HttpStatus;
 use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Benchmark extends BenchmarkApi
+class Init extends ServerBenchmarkApi
 {
     public function __construct()
     {
         EventsApi::on('init', array($this, 'filter'));
-        new FetchBefore();
     }
 
     public function filter($action)
     {
+        if (XconfigApi::isDisabled('myServerBenchmark')) {
+            return $action;
+        }
+
         if ('benchmark' !== $action) {
             return $action;
         }
@@ -23,7 +27,7 @@ class Benchmark extends BenchmarkApi
         $this->display();
     }
 
-    public function display()
+    private function display()
     {
         $remainingSeconds = $this->getRemainingSeconds();
         $response         = new RestfulResponse();

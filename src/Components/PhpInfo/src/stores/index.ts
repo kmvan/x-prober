@@ -8,6 +8,7 @@ configure({
 class PhpInfoStore {
   public readonly ID = 'phpInfo'
   public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 
   @observable public latestPhpVersion: string = ''
   @observable public latestPhpDate: string = ''

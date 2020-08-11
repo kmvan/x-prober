@@ -8,6 +8,7 @@ configure({
 class DatabaseStore {
   public readonly ID = 'database'
   public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 }
 
 export default new DatabaseStore()
