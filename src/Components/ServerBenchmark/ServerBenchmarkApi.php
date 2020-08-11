@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
-class ServerBenchmarkApi extends ServerBenchmarkConstants
+class ServerBenchmarkApi
 {
     private $EXPIRED = 60;
 

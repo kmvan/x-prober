@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
-class ServerBenchmark extends ServerBenchmarkApi
+class ServerBenchmark
 {
     public function __construct()
     {
