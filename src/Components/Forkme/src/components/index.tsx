@@ -1,11 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import {
-  COLOR_DARK,
-  GUTTER,
-  COLOR_GRAY,
-  ANIMATION_DURATION_SC,
-} from '~components/Config/src'
+import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import BootstrapStore from '~components/Bootstrap/src/stores'
 import { device } from '~components/Style/src/components/devices'
@@ -29,12 +24,12 @@ const StyledForkmeLink = styled.a`
   position: fixed;
   top: 0;
   left: 0;
-  background: ${COLOR_DARK};
-  color: ${rgba(COLOR_GRAY, 0.85)};
+  background: ${({ theme }) => theme.colorDark};
+  color: ${({ theme }) => rgba(theme.colorGray, 0.85)};
   font-family: Arial Black;
   padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
   font-size: calc(${GUTTER} * 0.7);
-  box-shadow: 0 3px 5px ${rgba(COLOR_DARK, 0.3)};
+  box-shadow: 0 3px 5px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   z-index: 2;
   animation: ${slideIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
@@ -53,9 +48,9 @@ const StyledForkmeLink = styled.a`
     width: 100%;
     background: linear-gradient(
       90deg,
-      ${rgba(COLOR_GRAY, 0)},
+      ${({ theme }) => rgba(theme.colorGray, 0)},
       #fff,
-      ${rgba(COLOR_GRAY, 0)}
+      ${({ theme }) => rgba(theme.colorGray, 0)}
     );
     content: '';
   }
@@ -64,7 +59,7 @@ const StyledForkmeLink = styled.a`
     bottom: 1px;
   }
   :hover {
-    color: ${COLOR_GRAY};
+    color: ${({ theme }) => theme.colorGray};
     text-decoration: none;
   }
 `

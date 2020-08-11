@@ -44,5 +44,6 @@
     "webpack",
     "jest",
     "src/setupTests.ts"
-  ]
+  ],
+  "includes": ["styled-components.d.ts"]
 }

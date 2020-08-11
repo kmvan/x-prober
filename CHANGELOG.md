@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 5.0.0 - 2020-08-11
+
+### Add
+
+- Add color schemes
+
 ## 4.10.0 - 2020-08-11
 
 ### Add

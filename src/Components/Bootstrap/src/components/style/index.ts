@@ -1,5 +1,5 @@
 import { css, createGlobalStyle } from 'styled-components'
-import { COLOR_DARK, GUTTER } from '~components/Config/src'
+import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 
 const normalize = css`
@@ -26,17 +26,18 @@ const normalize = css`
   * {
     box-sizing: border-box;
     word-break: break-all;
+    transition: background ${ANIMATION_DURATION_SC}s;
   }
 
   html {
     font-size: 75%;
-    background: ${COLOR_DARK};
+    background: ${({ theme }) => theme.colorDark};
     scroll-behavior: smooth;
   }
 
   body {
-    background: ${COLOR_DARK};
-    color: ${COLOR_DARK};
+    background: ${({ theme }) => theme.colorDark};
+    color: ${({ theme }) => theme.colorDark};
     font-family: 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, Verdana,
       Geneva, sans-serif;
     padding: ${GUTTER};
@@ -47,12 +48,12 @@ const normalize = css`
 
   a {
     cursor: pointer;
-    color: ${COLOR_DARK};
+    color: ${({ theme }) => theme.colorDark};
     text-decoration: none;
 
     :hover,
     :active {
-      color: ${COLOR_DARK};
+      color: ${({ theme }) => theme.colorDark};
       text-decoration: underline;
     }
   }

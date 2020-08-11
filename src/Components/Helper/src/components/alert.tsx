@@ -1,11 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import {
-  GUTTER,
-  COLOR_DARK,
-  TEXT_SHADOW_WITH_DARK_BG,
-  COLOR_GRAY,
-} from '~components/Config/src'
+import { GUTTER } from '~components/Config/src'
 import { rgba } from 'polished'
 
 interface AlertContainerProps {
@@ -21,9 +16,9 @@ const StyledAlert = styled.div<AlertContainerProps>`
   font-family: Arial Black;
   font-weight: bolder;
   min-width: 2em;
-  color:${COLOR_GRAY};
-  box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
-  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
+  color:${({ theme }) => theme.colorGray};
+  box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDark, 0.3)};
+  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   padding: 0 0.5rem;
   white-space: nowrap;
   cursor: pointer;

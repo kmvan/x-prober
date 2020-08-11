@@ -208,7 +208,7 @@ PHP;
                 $filePath = "{$dir}/{$file}";
 
                 if (\is_dir($filePath)) {
-                    foreach (self::yieldFiles($filePath) as $yieldFilepath) {
+                    foreach ($this->yieldFiles($filePath) as $yieldFilepath) {
                         yield $yieldFilepath;
                     }
                 } else {

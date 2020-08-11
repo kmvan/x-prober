@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { render } from 'react-dom'
 import ready from '~components/Helper/src/components/ready'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Title from '~components/Title/src/components'
 import Container from '~components/Container/src/components'
 import Cards from '~components/Card/src/components'
@@ -21,13 +21,16 @@ import store from '../stores'
 import Forkme from '~components/Forkme/src/components'
 import Footer from '~components/Footer/src/components'
 import Toast from '~components/Toast/src/components'
-import { GUTTER, COLOR_DARK, COLOR_GRAY } from '~components/Config/src'
+import ColorScheme from '~components/ColorScheme/src/components'
+import { GUTTER } from '~components/Config/src'
 import { rgba } from 'polished'
+import ColorSchemeStore from '~components/ColorScheme/src/stores'
+import { observer } from 'mobx-react'
 
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
-  background: ${COLOR_GRAY};
-  box-shadow: inset 0 0 5px ${rgba(COLOR_DARK, 0.3)};
+  background: ${({ theme }) => theme.colorGray};
+  box-shadow: inset 0 0 5px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
 
   /* notch right angle square */
   ::before,
@@ -37,7 +40,7 @@ const StyledApp = styled.div`
     top: 0;
     right: 0;
     bottom: calc(${GUTTER} * 2);
-    border: ${GUTTER} solid ${COLOR_DARK};
+    border: ${GUTTER} solid ${({ theme }) => theme.colorDark};
     pointer-events: none;
     z-index: 1;
     content: '';
@@ -46,21 +49,28 @@ const StyledApp = styled.div`
     border-radius: calc(${GUTTER} * 3);
   }
 `
-const Bootstrap = () => (
-  <>
-    <Normalize />
-    <Title />
-    <StyledApp ref={c => store.setAppContainer(c)}>
-      <Container>
-        <Cards />
-        <Footer />
-      </Container>
-    </StyledApp>
-    <Nav />
-    <Forkme />
-    <Toast />
-  </>
-)
+
+@observer
+class Bootstrap extends Component {
+  public render() {
+    return (
+      <ThemeProvider theme={ColorSchemeStore.scheme}>
+        <Normalize />
+        <Title />
+        <StyledApp ref={c => store.setAppContainer(c)}>
+          <Container>
+            <ColorScheme />
+            <Cards />
+            <Footer />
+          </Container>
+        </StyledApp>
+        <Nav />
+        <Forkme />
+        <Toast />
+      </ThemeProvider>
+    )
+  }
+}
 
 ready(() => {
   const c = document.createElement('div')

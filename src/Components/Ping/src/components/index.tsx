@@ -8,29 +8,23 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import styled from 'styled-components'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
-import {
-  COLOR_DARK,
-  GUTTER,
-  COLOR_GRAY,
-  BORDER_RADIUS,
-  TEXT_SHADOW_WITH_DARK_BG,
-} from '~components/Config/src'
+import { GUTTER, BORDER_RADIUS } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
-  color: ${COLOR_GRAY};
-  background: ${COLOR_DARK};
+  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => theme.colorDark};
   border-radius: ${BORDER_RADIUS};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
+  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
 
   :hover,
   :active {
     text-decoration: none;
-    color: ${COLOR_GRAY};
+    color: ${({ theme }) => theme.colorGray};
     opacity: 0.9;
   }
   :active {
@@ -42,16 +36,16 @@ const StyledPingBtn = styled.a`
 const StyledPingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  background: ${COLOR_DARK};
-  color: ${COLOR_GRAY};
+  background: ${({ theme }) => theme.colorDark};
+  color: ${({ theme }) => theme.colorGray};
   padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
   max-height: 8rem;
   overflow-y: auto;
   border-radius: ${GUTTER} ${GUTTER} 0 0;
-  box-shadow: inset 0 10px 10px ${rgba(COLOR_DARK, 0.1)};
+  box-shadow: inset 0 10px 10px ${({ theme }) => rgba(theme.colorDark, 0.1)};
   list-style-type: none;
-  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
+  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
 
   ::-webkit-scrollbar-track {
     background-color: transparent;
@@ -64,7 +58,7 @@ const StyledPingItemContainer = styled.ul`
 
   ::-webkit-scrollbar-thumb {
     border-radius: ${GUTTER} 0 0 ${GUTTER};
-    background-color: ${rgba(COLOR_GRAY, 0.5)};
+    background-color: ${({ theme }) => rgba(theme.colorGray, 0.5)};
     opacity: 0;
 
     :hover {
@@ -111,12 +105,12 @@ interface StyledPingResultProps {
 const StyledPingResult = styled.div<StyledPingResultProps>`
   display: flex;
   align-items: center;
-  background: ${COLOR_DARK};
-  color: ${COLOR_GRAY};
+  background: ${({ theme }) => theme.colorDark};
+  color: ${({ theme }) => theme.colorGray};
   border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
     ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  border-top: 1px dashed ${rgba(COLOR_GRAY, 0.1)};
+  border-top: 1px dashed ${({ theme }) => rgba(theme.colorGray, 0.1)};
   flex-wrap: wrap;
   justify-content: space-between;
 `

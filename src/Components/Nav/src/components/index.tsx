@@ -3,14 +3,7 @@ import { observer } from 'mobx-react'
 import CardStore from '~components/Card/src/stores'
 import styled, { keyframes } from 'styled-components'
 import { device } from '~components/Style/src/components/devices'
-import {
-  COLOR_DARK,
-  GUTTER,
-  COLOR_GRAY,
-  TEXT_SHADOW_WITH_DARK_BG,
-  TEXT_SHADOW_WITH_LIGHT_BG,
-  ANIMATION_DURATION_SC,
-} from '~components/Config/src'
+import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
 import getElementOffsetTop from '~components/Helper/src/components/get-element-offset-top'
 import { rgba } from 'polished'
 
@@ -25,7 +18,7 @@ const slideUp = keyframes`
 const StyledNav = styled.div`
   position: fixed;
   bottom: 0;
-  background: ${COLOR_DARK};
+  background: ${({ theme }) => theme.colorDark};
   padding: 0 ${GUTTER};
   left: 0;
   right: 0;
@@ -45,10 +38,10 @@ const StyledNav = styled.div`
 const StyledNavLink = styled.a`
   position: relative;
   white-space: nowrap;
-  color: ${COLOR_GRAY};
+  color: ${({ theme }) => theme.colorGray};
   padding: 0 0.5rem;
-  border-right: 1px solid ${rgba(COLOR_GRAY, 0.05)};
-  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
+  border-right: 1px solid ${({ theme }) => rgba(theme.colorGray, 0.05)};
+  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   animation: ${slideUp} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
   @media ${device('tablet')} {
@@ -56,19 +49,19 @@ const StyledNavLink = styled.a`
   }
 
   :hover {
-    background: linear-gradient(${COLOR_GRAY}, #fff);
-    color: ${COLOR_DARK};
+    background: linear-gradient(${({ theme }) => theme.colorGray}, #fff);
+    color: ${({ theme }) => theme.colorDark};
     text-decoration: none;
-    box-shadow: inset 0 -10px 10px ${rgba(COLOR_DARK, 0.1)},
-      0 -5px 30px ${rgba(COLOR_DARK, 0.3)};
-    text-shadow: ${TEXT_SHADOW_WITH_LIGHT_BG};
+    box-shadow: inset 0 -10px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)},
+      0 -5px 30px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+    text-shadow: ${({ theme }) => theme.textShadowWithLightBg};
   }
   :focus,
   :active {
     text-decoration: none;
-    color: ${COLOR_DARK};
-    background: ${rgba(COLOR_GRAY, 0.85)};
-    text-shadow: ${TEXT_SHADOW_WITH_LIGHT_BG};
+    color: ${({ theme }) => theme.colorDark};
+    background: ${({ theme }) => rgba(theme.colorGray, 0.85)};
+    text-shadow: ${({ theme }) => theme.textShadowWithLightBg};
   }
 
   :last-child {

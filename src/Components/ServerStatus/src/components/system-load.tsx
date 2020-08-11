@@ -4,13 +4,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import { gettext } from '~components/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
-import {
-  GUTTER,
-  COLOR_DARK_RGB,
-  COLOR_DARK,
-  TEXT_SHADOW_WITH_DARK_BG,
-  COLOR_GRAY,
-} from '~components/Config/src'
+import { GUTTER } from '~components/Config/src'
 import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 import template from '~components/Helper/src/components/template'
@@ -26,14 +20,13 @@ const StyledGroup = styled.div`
 
 const StyledGroupItem = styled.span`
   margin-right: 0.5rem;
-  background: ${() =>
-    `rgba(${COLOR_DARK_RGB[0]}, ${COLOR_DARK_RGB[1]}, ${COLOR_DARK_RGB[2]}, 0.75)`};
-  color: ${COLOR_GRAY};
+  background: ${({ theme }) => rgba(theme.colorDark, 0.75)};
+  color: ${({ theme }) => theme.colorGray};
   padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
   font-family: Arial Black;
-  text-shadow: ${TEXT_SHADOW_WITH_DARK_BG};
-  box-shadow: inset 0 5px 10px ${rgba(COLOR_DARK, 0.3)};
+  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
+  box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   font-weight: 700;
 
   @media ${device('tablet')} {

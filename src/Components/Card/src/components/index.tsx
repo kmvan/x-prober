@@ -2,12 +2,7 @@ import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import {
-  COLOR_DARK,
-  GUTTER,
-  COLOR_GRAY,
-  ANIMATION_DURATION_SC,
-} from '~components/Config/src'
+import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import { rgba } from 'polished'
 
@@ -31,9 +26,9 @@ const StyledFieldset = styled.fieldset`
   background: linear-gradient(#fff, ${rgba('#fff', 0.5)});
   margin-bottom: calc(${GUTTER} * 1.5);
   padding: calc(${GUTTER} * 1.5) 0 0;
-  box-shadow: -1px -1px 0 ${rgba('#000', 0.1)}, 1px 1px 0 hsla(0, 0%, 100%, 0.5),
-    inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
-    inset -1px -1px 0 ${rgba('#000', 0.1)};
+  box-shadow: -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)},
+    1px 1px 0 hsla(0, 0%, 100%, 0.5), inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
+    inset -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
   animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
 `
@@ -46,25 +41,25 @@ const StyledLegend = styled.legend`
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  background: ${COLOR_DARK};
+  background: ${({ theme }) => theme.colorDark};
   padding: 0.5rem 1rem;
   border-radius: 5rem;
-  color: ${COLOR_GRAY};
+  color: ${({ theme }) => theme.colorGray};
   margin: 0 auto;
-  text-shadow: 0 1px 1px ${COLOR_DARK};
+  text-shadow: 0 1px 1px ${({ theme }) => theme.colorDark};
   white-space: nowrap;
 `
 
 const StyledBody = styled.div``
 const StyleArrow = styled.a<StyleArrowProps>`
-  color: ${COLOR_GRAY};
+  color: ${({ theme }) => theme.colorGray};
   padding: 0 0.5rem;
   cursor: ${({ isHidden }) => (isHidden ? 'not-allowed' : 'pointer')};
   opacity: ${({ isHidden }) => (isHidden ? '0.1' : '0.5')};
   :hover {
     text-decoration: none;
     opacity: ${({ isHidden }) => (isHidden ? '0.1' : '1')};
-    color: ${COLOR_GRAY};
+    color: ${({ theme }) => theme.colorGray};
   }
 `
 
