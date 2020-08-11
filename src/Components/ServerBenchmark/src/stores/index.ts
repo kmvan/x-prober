@@ -3,6 +3,7 @@ import { gettext } from '~components/Language/src'
 import ConfigStore, {
   AppConfigBenchmarkProps,
 } from '~components/Config/src/stores'
+import conf from '~components/Helper/src/components/conf'
 
 configure({
   enforceActions: 'observed',
@@ -17,6 +18,9 @@ export interface MarksProps {
 
 class ServerBenchmarkStore {
   public readonly ID = 'serverBenchmark'
+  public readonly conf = conf?.[this.ID]
+  public readonly enabledMyServerBenchmark: boolean = !this.conf
+    ?.disabledMyServerBenchmark
 
   @observable public isLoading: boolean = false
   @observable public linkText: string = gettext('Click to test')

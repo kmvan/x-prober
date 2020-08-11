@@ -3,17 +3,22 @@
 namespace InnStudio\Prober\Components\PhpInfoDetail;
 
 use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class PhpInfoDetail
+class PhpInfoDetail extends PhpInfoDetailConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('init', [$this, 'filter']);
     }
 
     public function filter($action)
     {
-        if ('phpInfo' !== $action) {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $action;
+        }
+
+        if ($this->ID !== $action) {
             return $action;
         }
 

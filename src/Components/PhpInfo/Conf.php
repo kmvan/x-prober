@@ -3,17 +3,22 @@
 namespace InnStudio\Prober\Components\PhpInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', array($this, 'conf'));
+        EventsApi::on('conf', [$this, 'conf']);
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = array(
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $conf;
+        }
+
+        $conf[$this->ID] = [
             'version'              => \PHP_VERSION,
             'sapi'                 => \PHP_SAPI,
             'displayErrors'        => (bool) \ini_get('display_errors'),
@@ -26,9 +31,9 @@ class Conf extends PhpInfoConstants
             'defaultSocketTimeout' => (int) \ini_get('default_socket_timeout'),
             'allowUrlFopen'        => (bool) \ini_get('allow_url_fopen'),
             'smtp'                 => (bool) \ini_get('SMTP'),
-            'disableFunctions'     => \array_filter(\explode(',', (string) \ini_get('disable_functions'))),
-            'disableClasses'       => \array_filter(\explode(',', (string) \ini_get('disable_classes'))),
-        );
+            'disableFunctions'     => XconfigApi::isDisabled('phpDisabledFunctions') ? [] : \array_filter(\explode(',', (string) \ini_get('disable_functions'))),
+            'disableClasses'       => XconfigApi::isDisabled('phpDisabledClasses') ? [] : \array_filter(\explode(',', (string) \ini_get('disable_classes'))),
+        ];
 
         return $conf;
     }

@@ -21,6 +21,7 @@ interface UptimeProps {
 class ServerInfoStore {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 
   @computed
   public get serverTime(): string {

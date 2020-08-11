@@ -1,4 +1,5 @@
 import { observable, action, computed, configure } from 'mobx'
+import conf from '~components/Helper/src/components/conf'
 
 configure({
   enforceActions: 'observed',
@@ -10,6 +11,8 @@ export interface PingItemProps {
 
 class PingStore {
   public readonly ID = 'ping'
+  public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 
   @observable public isPing: boolean = false
   @observable public pingItems: PingItemProps[] = []

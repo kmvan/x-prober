@@ -4,17 +4,22 @@ namespace InnStudio\Prober\Components\ServerInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', array($this, 'conf'));
+        EventsApi::on('conf', [$this, 'conf']);
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = array(
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $conf;
+        }
+
+        $conf[$this->ID] = [
             'serverName'     => $this->getServerInfo('SERVER_NAME'),
             'serverUtcTime'  => HelperApi::getServerUtcTime(),
             'serverTime'     => HelperApi::getServerTime(),
@@ -25,11 +30,11 @@ class Conf extends ServerInfoConstants
             'cpuModel'       => HelperApi::getCpuModel(),
             'serverOs'       => \php_uname(),
             'scriptPath'     => __FILE__,
-            'diskUsage'      => array(
+            'diskUsage'      => [
                 'value' => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
                 'max'   => HelperApi::getDiskTotalSpace(),
-            ),
-        );
+            ],
+        ];
 
         return $conf;
     }

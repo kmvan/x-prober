@@ -3,10 +3,11 @@ import { gettext } from '~components/Language/src'
 import component from './components'
 import store from './stores'
 
-CardStore.addCard({
-  id: store.ID,
-  title: gettext('PHP Extensions'),
-  tinyTitle: gettext('Ext'),
-  priority: 500,
-  component,
-})
+store.enabled &&
+  CardStore.addCard({
+    id: store.ID,
+    title: gettext('PHP Extensions'),
+    tinyTitle: gettext('Ext'),
+    priority: 500,
+    component,
+  })

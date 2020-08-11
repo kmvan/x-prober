@@ -39,9 +39,10 @@ class Compiler
         }
 
         $preDefineCode = $this->preDefine([
-            $this->getTimerCode(),
-            $this->getDevMode(),
-            $this->getVendorCode(),
+            $this->genTimerCode(),
+            $this->genDevMode(),
+            $this->genDirPath(),
+            $this->genVendorCode(),
         ]);
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
@@ -126,7 +127,7 @@ namespace InnStudio\\Prober\\Components\\PreDefine;
 PHP;
     }
 
-    private function getDevMode(): string
+    private function genDevMode(): string
     {
         $isDev = $this->isDev() ? 'true' : 'false';
 
@@ -135,7 +136,14 @@ PHP;
 PHP;
     }
 
-    private function getTimerCode(): string
+    private function genDirPath(): string
+    {
+        return <<<PHP
+\\define('XPROBER_DIR', __DIR__);
+PHP;
+    }
+
+    private function genTimerCode(): string
     {
         return <<<'PHP'
 \define('XPROBER_TIMER', \microtime(true));
@@ -172,7 +180,7 @@ PHP;
         return \implode("\n", $files);
     }
 
-    private function getVendorCode(): string
+    private function genVendorCode(): string
     {
         if ( ! $this->isDev()) {
             return '';

@@ -11,7 +11,7 @@ class Updater
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('init', [$this, 'filter']);
     }
 
     public function filter($action)
@@ -44,7 +44,7 @@ class Updater
         }
 
         // prevent update file on dev mode
-        if (\XPROBER_IS_DEV) {
+        if (\defined('\\XPROBER_IS_DEV') && \XPROBER_IS_DEV) {
             $response->dieJson();
         }
 

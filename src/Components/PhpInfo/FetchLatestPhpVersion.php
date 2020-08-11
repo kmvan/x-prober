@@ -6,16 +6,21 @@ use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Restful\HttpStatus;
 use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class FetchLatestPhpVersion extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('init', [$this, 'filter']);
     }
 
     public function filter($action)
     {
+        if (XconfigApi::isDisabled($this->ID)) {
+            return $action;
+        }
+
         if ('latest-php-version' !== $action) {
             return $action;
         }
@@ -42,10 +47,10 @@ class FetchLatestPhpVersion extends PhpInfoConstants
             $response->dieJson();
         }
 
-        $response->setData(array(
+        $response->setData([
             'version' => $version,
             'date'    => $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['date'],
-        ));
+        ]);
         $response->dieJson();
     }
 }

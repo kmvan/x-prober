@@ -4,6 +4,21 @@ namespace InnStudio\Prober\Components\Helper;
 
 class HelperApi
 {
+    public static function jsonDecode($json, $depth = 512, $options = 0)
+    {
+        // search and remove comments like /* */ and //
+        $json = \preg_replace("#(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|([\s\t]//.*)|(^//.*)#", '', $json);
+
+        if (\PHP_VERSION_ID >= 50400) {
+            return \json_decode($json, true, $depth, $options);
+        }
+        if (\PHP_VERSION_ID >= 50300) {
+            return \json_decode($json, true, $depth);
+        }
+
+        return \json_decode($json, true);
+    }
+
     public static function setFileCacheHeader()
     {
         // 1 year expired
@@ -16,12 +31,12 @@ class HelperApi
 
     public static function getWinCpuUsage()
     {
-        $usage = array(
+        $usage = [
             'idle' => 100,
             'user' => 0,
             'sys'  => 0,
             'nice' => 0,
-        );
+        ];
 
         // com
         if (\class_exists('\\COM')) {
@@ -43,7 +58,7 @@ class HelperApi
                 return $usage;
             }
 
-            $p = array();
+            $p = [];
             \exec('wmic cpu get LoadPercentage', $p);
 
             if (isset($p[1])) {
@@ -72,16 +87,16 @@ class HelperApi
 
         $lines = \file($filePath);
         unset($lines[0], $lines[1]);
-        $eths = array();
+        $eths = [];
 
         foreach ($lines as $line) {
             $line              = \preg_replace('/\s+/', ' ', \trim($line));
             $lineArr           = \explode(':', $line);
             $numberArr         = \explode(' ', \trim($lineArr[1]));
-            $eths[$lineArr[0]] = array(
+            $eths[$lineArr[0]] = [
                 'rx' => (float) $numberArr[0],
                 'tx' => (float) $numberArr[8],
-            );
+            ];
         }
 
         return $eths;
@@ -152,12 +167,12 @@ class HelperApi
         $filePath = '/proc/uptime';
 
         if ( ! @\is_file($filePath)) {
-            return array(
+            return [
                 'days'  => 0,
                 'hours' => 0,
                 'mins'  => 0,
                 'secs'  => 0,
-            );
+            ];
         }
 
         $str   = \file_get_contents($filePath);
@@ -170,12 +185,12 @@ class HelperApi
         $num   = (int) ($num / 24);
         $days  = (int) $num;
 
-        return array(
+        return [
             'days'  => $days,
             'hours' => $hours,
             'mins'  => $mins,
             'secs'  => $secs,
-        );
+        ];
     }
 
     public static function getErrNameByCode($code)
@@ -184,7 +199,7 @@ class HelperApi
             return '';
         }
 
-        $levels = array(
+        $levels = [
             \E_ALL               => 'E_ALL',
             \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
             \E_DEPRECATED        => 'E_DEPRECATED',
@@ -201,7 +216,7 @@ class HelperApi
             \E_PARSE             => 'E_PARSE',
             \E_WARNING           => 'E_WARNING',
             \E_ERROR             => 'E_ERROR',
-        );
+        ];
 
         $result = '';
 
@@ -221,7 +236,7 @@ class HelperApi
 
     public static function getClientIp()
     {
-        $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
+        $keys = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
 
         foreach ($keys as $key) {
             if ( ! isset($_SERVER[$key])) {
@@ -256,14 +271,14 @@ class HelperApi
         $filePath = ('/proc/stat');
 
         if ( ! @\is_readable($filePath)) {
-            $cpu = array();
+            $cpu = [];
 
-            return array(
+            return [
                 'user' => 0,
                 'nice' => 0,
                 'sys'  => 0,
                 'idle' => 100,
-            );
+            ];
         }
 
         $stat1 = \file($filePath);
@@ -271,13 +286,13 @@ class HelperApi
         $stat2       = \file($filePath);
         $info1       = \explode(' ', \preg_replace('!cpu +!', '', $stat1[0]));
         $info2       = \explode(' ', \preg_replace('!cpu +!', '', $stat2[0]));
-        $dif         = array();
+        $dif         = [];
         $dif['user'] = $info2[0] - $info1[0];
         $dif['nice'] = $info2[1] - $info1[1];
         $dif['sys']  = $info2[2] - $info1[2];
         $dif['idle'] = $info2[3] - $info1[3];
         $total       = \array_sum($dif);
-        $cpu         = array();
+        $cpu         = [];
 
         foreach ($dif as $x => $y) {
             $cpu[$x] = \round($y / $total * 100, 1);
@@ -290,13 +305,13 @@ class HelperApi
     {
         $cpu = self::getCpuUsage();
 
-        return $cpu ?: array();
+        return $cpu ?: [];
     }
 
     public static function getSysLoadAvg()
     {
         if (self::isWin()) {
-            return array(0, 0, 0);
+            return [0, 0, 0];
         }
 
         return \array_map(function ($load) {
@@ -324,12 +339,12 @@ class HelperApi
             }
 
             $memInfo = \file_get_contents($memInfoFile);
-            $memInfo = \str_replace(array(
+            $memInfo = \str_replace([
                 ' kB',
                 '  ',
-            ), '', $memInfo);
+            ], '', $memInfo);
 
-            $lines = array();
+            $lines = [];
 
             foreach (\explode("\n", $memInfo) as $line) {
                 if ( ! $line) {
@@ -382,7 +397,7 @@ class HelperApi
         }
 
         $base     = \log($bytes, 1024);
-        $suffixes = array('', ' K', ' M', ' G', ' T');
+        $suffixes = ['', ' K', ' M', ' G', ' T'];
 
         return \round(\pow(1024, ($base - \floor($base))), $precision) . $suffixes[\floor($base)];
     }

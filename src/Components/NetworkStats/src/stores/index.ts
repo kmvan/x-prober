@@ -16,6 +16,7 @@ export interface NetworkStatsItemProps {
 class NetworkStatsStore {
   public readonly ID = 'networkStats'
   public readonly conf = conf?.[this.ID]
+  public readonly enabled: boolean = !!this.conf
 
   @computed
   public get items(): NetworkStatsItemProps | null {

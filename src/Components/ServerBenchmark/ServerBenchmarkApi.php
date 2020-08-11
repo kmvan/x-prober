@@ -1,8 +1,8 @@
 <?php
 
-namespace InnStudio\Prober\Components\Benchmark;
+namespace InnStudio\Prober\Components\ServerBenchmark;
 
-class BenchmarkApi
+class ServerBenchmarkApi extends ServerBenchmarkConstants
 {
     private $EXPIRED = 60;
 
@@ -18,16 +18,16 @@ class BenchmarkApi
 
     public function setExpired()
     {
-        return (bool) $this->setRecorder(array(
+        return (bool) $this->setRecorder([
             'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
-        ));
+        ]);
     }
 
     public function setIsRunning($isRunning)
     {
-        return (bool) $this->setRecorder(array(
+        return (bool) $this->setRecorder([
             'isRunning' => true === (bool) $isRunning ? 1 : 0,
-        ));
+        ]);
     }
 
     public function isRunning()
@@ -58,7 +58,7 @@ class BenchmarkApi
     public function getHashPoints()
     {
         $data  = 'inn-studio.com';
-        $hash  = array('md5', 'sha512', 'sha256', 'crc32');
+        $hash  = ['md5', 'sha512', 'sha256', 'crc32'];
         $count = \pow(10, 5);
         $start = \microtime(true);
 
@@ -119,21 +119,21 @@ class BenchmarkApi
 
     public function getPoints()
     {
-        return array(
+        return [
             'hash'      => $this->getHashPoints(),
             'intLoop'   => $this->getIntLoopPoints(),
             'floatLoop' => $this->getFloatLoopPoints(),
             'ioLoop'    => $this->getIoLoopPoints(),
-        );
+        ];
     }
 
     private function getRecorder()
     {
         $path     = $this->getTmpRecorderPath();
-        $defaults = array(
+        $defaults = [
             'expired' => 0,
             'running' => 0,
-        );
+        ];
 
         if ( ! @\is_readable($path)) {
             return $defaults;
