@@ -1,15 +1,9 @@
-interface LangItemProps {
-  [text: string]: {
-    [langId: string]: string
-  }
-}
+import langs from './lang.json'
 
-interface LangsProps {
-  [langId: string]: LangItemProps[]
-}
-
-const langs: LangsProps = require('./lang.json')
-const langId = navigator.language.replace('-', '_').toLowerCase()
+const langId = navigator.language
+  .replace('-', '')
+  .replace('_', '')
+  .toLowerCase()
 
 export const gettext = (text: string, context: string = ''): string => {
   const id = `${context || ''}${text}`
