@@ -18,16 +18,16 @@ class ServerBenchmarkApi
 
     public function setExpired()
     {
-        return (bool) $this->setRecorder([
+        return (bool) $this->setRecorder(array(
             'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
-        ]);
+        ));
     }
 
     public function setIsRunning($isRunning)
     {
-        return (bool) $this->setRecorder([
+        return (bool) $this->setRecorder(array(
             'isRunning' => true === (bool) $isRunning ? 1 : 0,
-        ]);
+        ));
     }
 
     public function isRunning()
@@ -58,7 +58,7 @@ class ServerBenchmarkApi
     public function getHashPoints()
     {
         $data  = 'inn-studio.com';
-        $hash  = ['md5', 'sha512', 'sha256', 'crc32'];
+        $hash  = array('md5', 'sha512', 'sha256', 'crc32');
         $count = \pow(10, 5);
         $start = \microtime(true);
 
@@ -119,21 +119,21 @@ class ServerBenchmarkApi
 
     public function getPoints()
     {
-        return [
+        return array(
             'hash'      => $this->getHashPoints(),
             'intLoop'   => $this->getIntLoopPoints(),
             'floatLoop' => $this->getFloatLoopPoints(),
             'ioLoop'    => $this->getIoLoopPoints(),
-        ];
+        );
     }
 
     private function getRecorder()
     {
         $path     = $this->getTmpRecorderPath();
-        $defaults = [
+        $defaults = array(
             'expired' => 0,
             'running' => 0,
-        ];
+        );
 
         if ( ! @\is_readable($path)) {
             return $defaults;

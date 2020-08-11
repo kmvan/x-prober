@@ -9,14 +9,14 @@ class Conf extends ServerBenchmarkConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
     {
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'disabledMyServerBenchmark' => XconfigApi::isDisabled('myServerBenchmark'),
-        ];
+        );
 
         return $conf;
     }

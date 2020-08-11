@@ -10,7 +10,7 @@ class Ping extends PingConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -23,9 +23,9 @@ class Ping extends PingConstants
             return $action;
         }
 
-        $response = new RestfulResponse([
+        $response = new RestfulResponse(array(
             'time' => \microtime(true) - \XPROBER_TIMER,
-        ]);
+        ));
         $response->dieJson();
     }
 }

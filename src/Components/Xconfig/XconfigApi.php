@@ -11,12 +11,12 @@ class XconfigApi
 
     public static function isDisabled($id)
     {
-        return \in_array($id, self::get('disabled') ?: [], true);
+        return \in_array($id, self::get('disabled') ?: array(), true);
     }
 
     public static function getNodes()
     {
-        return self::get('nodes') ?: [];
+        return self::get('nodes') ?: array();
     }
 
     public static function get($id = null)

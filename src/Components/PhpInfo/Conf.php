@@ -9,7 +9,7 @@ class Conf extends PhpInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -18,7 +18,7 @@ class Conf extends PhpInfoConstants
             return $conf;
         }
 
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'version'              => \PHP_VERSION,
             'sapi'                 => \PHP_SAPI,
             'displayErrors'        => (bool) \ini_get('display_errors'),
@@ -31,9 +31,9 @@ class Conf extends PhpInfoConstants
             'defaultSocketTimeout' => (int) \ini_get('default_socket_timeout'),
             'allowUrlFopen'        => (bool) \ini_get('allow_url_fopen'),
             'smtp'                 => (bool) \ini_get('SMTP'),
-            'disableFunctions'     => XconfigApi::isDisabled('phpDisabledFunctions') ? [] : \array_filter(\explode(',', (string) \ini_get('disable_functions'))),
-            'disableClasses'       => XconfigApi::isDisabled('phpDisabledClasses') ? [] : \array_filter(\explode(',', (string) \ini_get('disable_classes'))),
-        ];
+            'disableFunctions'     => XconfigApi::isDisabled('phpDisabledFunctions') ? array() : \array_filter(\explode(',', (string) \ini_get('disable_functions'))),
+            'disableClasses'       => XconfigApi::isDisabled('phpDisabledClasses') ? array() : \array_filter(\explode(',', (string) \ini_get('disable_classes'))),
+        );
 
         return $conf;
     }

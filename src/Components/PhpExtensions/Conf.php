@@ -9,7 +9,7 @@ class Conf extends PhpExtensionsConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -18,7 +18,7 @@ class Conf extends PhpExtensionsConstants
             return $conf;
         }
 
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'redis'            => \extension_loaded('redis') && \class_exists('\\Redis'),
             'sqlite3'          => \extension_loaded('sqlite3') && \class_exists('\\Sqlite3'),
             'memcache'         => \extension_loaded('memcache') && \class_exists('\\Memcache'),
@@ -42,8 +42,8 @@ class Conf extends PhpExtensionsConstants
             'sourceGuardian'   => \extension_loaded('sourceguardian'),
             'ldap'             => \function_exists('\\ldap_connect'),
             'curl'             => \function_exists('\\curl_init'),
-            'loadedExtensions' => XconfigApi::isDisabled('phpExtensionsLoaded') ? [] : \get_loaded_extensions(),
-        ];
+            'loadedExtensions' => XconfigApi::isDisabled('phpExtensionsLoaded') ? array() : \get_loaded_extensions(),
+        );
 
         return $conf;
     }

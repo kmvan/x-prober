@@ -11,7 +11,7 @@ class Init extends ServerBenchmarkApi
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -34,9 +34,9 @@ class Init extends ServerBenchmarkApi
 
         if ($remainingSeconds) {
             $response->setStatus(HttpStatus::$TOO_MANY_REQUESTS);
-            $response->setData([
+            $response->setData(array(
                 'seconds' => $remainingSeconds,
-            ]);
+            ));
             $response->dieJson();
         }
 
@@ -51,9 +51,9 @@ class Init extends ServerBenchmarkApi
 
         $this->setIsRunning(false);
 
-        $response->setData([
+        $response->setData(array(
             'marks' => $marks,
-        ]);
+        ));
         $response->dieJson();
     }
 }

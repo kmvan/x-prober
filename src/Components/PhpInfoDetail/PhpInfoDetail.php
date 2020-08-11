@@ -9,7 +9,7 @@ class PhpInfoDetail extends PhpInfoDetailConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)

@@ -10,7 +10,7 @@ class Conf extends NetworkStatsConstants
 {
     public function __construct()
     {
-        HelperApi::isWin() || EventsApi::on('conf', [$this, 'conf']);
+        HelperApi::isWin() || EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -19,9 +19,9 @@ class Conf extends NetworkStatsConstants
             return $conf;
         }
 
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'networks' => HelperApi::getNetworkStats(),
-        ];
+        );
 
         return $conf;
     }

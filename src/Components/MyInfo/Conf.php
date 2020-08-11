@@ -10,7 +10,7 @@ class Conf extends MyInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -19,10 +19,10 @@ class Conf extends MyInfoConstants
             return $conf;
         }
 
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'ip'          => HelperApi::getClientIp(),
             'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
-        ];
+        );
 
         return $conf;
     }

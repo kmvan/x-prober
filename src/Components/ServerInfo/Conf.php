@@ -10,7 +10,7 @@ class Conf extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -19,7 +19,7 @@ class Conf extends ServerInfoConstants
             return $conf;
         }
 
-        $conf[$this->ID] = [
+        $conf[$this->ID] = array(
             'serverName'     => $this->getServerInfo('SERVER_NAME'),
             'serverUtcTime'  => HelperApi::getServerUtcTime(),
             'serverTime'     => HelperApi::getServerTime(),
@@ -30,11 +30,11 @@ class Conf extends ServerInfoConstants
             'cpuModel'       => HelperApi::getCpuModel(),
             'serverOs'       => \php_uname(),
             'scriptPath'     => __FILE__,
-            'diskUsage'      => [
+            'diskUsage'      => array(
                 'value' => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
                 'max'   => HelperApi::getDiskTotalSpace(),
-            ],
-        ];
+            ),
+        );
 
         return $conf;
     }
