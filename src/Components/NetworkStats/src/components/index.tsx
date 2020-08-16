@@ -58,17 +58,22 @@ const StyledRateTx = styled(StyledRate)`
 @observer
 class NetworkStats extends Component {
   private items: NetworkStatsItemProps = {}
+  private timestamp: number = 0
 
   public render() {
-    const { items } = store
+    const { items, timestamp } = store
 
     if (!items) {
       return null
     }
 
+    let seconds = timestamp - this.timestamp
+    seconds = seconds < 1 ? 1 : seconds
+    const lastTimestamp = timestamp
     const lastItems = toJS(Object.keys(this.items).length ? this.items : items)
 
     this.items = items
+    this.timestamp = timestamp
 
     return (
       <Row>
@@ -95,11 +100,15 @@ class NetworkStats extends Component {
                   <StyledDataContainer>
                     <StyledData isUpload={false}>
                       <StyledTotal>{formatBytes(rx)}</StyledTotal>
-                      <StyledRateRx>{formatBytes(rx - lastRx)}/s</StyledRateRx>
+                      <StyledRateRx>
+                        {formatBytes((rx - lastRx) / seconds)}/s
+                      </StyledRateRx>
                     </StyledData>
                     <StyledData isUpload>
                       <StyledTotal>{formatBytes(tx)}</StyledTotal>
-                      <StyledRateTx>{formatBytes(tx - lastTx)}/s</StyledRateTx>
+                      <StyledRateTx>
+                        {formatBytes((tx - lastTx) / seconds)}/s
+                      </StyledRateTx>
                     </StyledData>
                   </StyledDataContainer>
                 </Grid>
