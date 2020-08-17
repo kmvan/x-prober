@@ -35,7 +35,7 @@ const StyledGroupItem = styled.span`
 `
 
 @observer
-class SystemLoad extends Component {
+export default class SystemLoad extends Component {
   public render() {
     const { sysLoad } = store
     const minutes = [1, 5, 15]
@@ -62,5 +62,3 @@ class SystemLoad extends Component {
     )
   }
 }
-
-export default SystemLoad

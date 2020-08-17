@@ -18,25 +18,25 @@ const StyledNetworkIdRow = styled(Row)`
   text-align: center;
 `
 
-const StyledDataContainer = styled.div`
+const StyledNetworkStatsDataContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 `
 
-interface StyledDataProps {
+interface StyledNetworkStatsDataProps {
   isUpload: boolean
 }
 
-const StyledData = styled.div<StyledDataProps>`
+const StyledNetworkStatsData = styled.div<StyledNetworkStatsDataProps>`
   flex: 0 0 50%;
   color: ${({ isUpload, theme }) =>
     isUpload ? theme.colorUpload : theme.colorDownload};
 `
 
-const StyledTotal = styled.div``
-const StyledRate = styled.div`
+const StyledNetworkStatsTotal = styled.div``
+const StyledNetworkStatsRate = styled.div`
   font-family: 'Arial Black';
 
   ::before {
@@ -44,19 +44,19 @@ const StyledRate = styled.div`
   }
 `
 
-const StyledRateRx = styled(StyledRate)`
+const StyledNetworkStatsRateRx = styled(StyledNetworkStatsRate)`
   ::before {
     content: '▼';
   }
 `
-const StyledRateTx = styled(StyledRate)`
+const StyledNetworkStatsRateTx = styled(StyledNetworkStatsRate)`
   ::before {
     content: '▲';
   }
 `
 
 @observer
-class NetworkStats extends Component {
+export default class NetworkStats extends Component {
   private items: NetworkStatsItemProps = {}
   private timestamp: number = 0
 
@@ -97,20 +97,24 @@ class NetworkStats extends Component {
                   <StyledNetworkId>{id}</StyledNetworkId>
                 </Grid>
                 <Grid mobileSm={[2, 3]}>
-                  <StyledDataContainer>
-                    <StyledData isUpload={false}>
-                      <StyledTotal>{formatBytes(rx)}</StyledTotal>
-                      <StyledRateRx>
+                  <StyledNetworkStatsDataContainer>
+                    <StyledNetworkStatsData isUpload={false}>
+                      <StyledNetworkStatsTotal>
+                        {formatBytes(rx)}
+                      </StyledNetworkStatsTotal>
+                      <StyledNetworkStatsRateRx>
                         {formatBytes((rx - lastRx) / seconds)}/s
-                      </StyledRateRx>
-                    </StyledData>
-                    <StyledData isUpload>
-                      <StyledTotal>{formatBytes(tx)}</StyledTotal>
-                      <StyledRateTx>
+                      </StyledNetworkStatsRateRx>
+                    </StyledNetworkStatsData>
+                    <StyledNetworkStatsData isUpload>
+                      <StyledNetworkStatsTotal>
+                        {formatBytes(tx)}
+                      </StyledNetworkStatsTotal>
+                      <StyledNetworkStatsRateTx>
                         {formatBytes((tx - lastTx) / seconds)}/s
-                      </StyledRateTx>
-                    </StyledData>
-                  </StyledDataContainer>
+                      </StyledNetworkStatsRateTx>
+                    </StyledNetworkStatsData>
+                  </StyledNetworkStatsDataContainer>
                 </Grid>
               </StyledNetworkIdRow>
             </CardGrid>
@@ -120,5 +124,3 @@ class NetworkStats extends Component {
     )
   }
 }
-
-export default NetworkStats

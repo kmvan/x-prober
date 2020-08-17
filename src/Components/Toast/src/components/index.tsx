@@ -24,7 +24,7 @@ const StyledToast = styled.div`
 `
 
 @observer
-class Toast extends Component {
+export default class Toast extends Component {
   public render() {
     const { isOpen, msg, close } = store
 
@@ -41,5 +41,3 @@ class Toast extends Component {
     )
   }
 }
-
-export default Toast

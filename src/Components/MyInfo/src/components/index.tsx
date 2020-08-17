@@ -6,7 +6,7 @@ import CardGrid from '~components/Card/src/components/card-grid'
 import store from '../stores'
 
 @observer
-class MyInfo extends Component {
+export default class MyInfo extends Component {
   public render() {
     const { conf } = store
     const items: any[] = [
@@ -30,5 +30,3 @@ class MyInfo extends Component {
     )
   }
 }
-
-export default MyInfo

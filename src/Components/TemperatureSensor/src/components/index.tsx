@@ -8,7 +8,7 @@ import ProgressBar from '~components/ProgressBar/src/components'
 import template from '~components/Helper/src/components/template'
 
 @observer
-class TemperatureSensor extends Component {
+export default class TemperatureSensor extends Component {
   public render() {
     const { itemsCount, items } = store
 
@@ -38,5 +38,3 @@ class TemperatureSensor extends Component {
     )
   }
 }
-
-export default TemperatureSensor

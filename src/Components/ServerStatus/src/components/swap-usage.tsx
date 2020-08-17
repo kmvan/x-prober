@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class SwapUsage extends Component {
+export default class SwapUsage extends Component {
   public render() {
     const { max, value } = store.swapUsage
 
@@ -21,5 +21,3 @@ class SwapUsage extends Component {
     )
   }
 }
-
-export default SwapUsage

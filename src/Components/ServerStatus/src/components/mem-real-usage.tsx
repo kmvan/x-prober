@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class MemRealUsage extends Component {
+export default class MemRealUsage extends Component {
   public render() {
     const { max, value } = store.memRealUsage
 
@@ -23,5 +23,3 @@ class MemRealUsage extends Component {
     )
   }
 }
-
-export default MemRealUsage

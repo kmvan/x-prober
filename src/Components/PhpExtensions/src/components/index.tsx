@@ -62,7 +62,7 @@ const longItems: string[] = conf.loadedExtensions.sort((a, b) => {
   return 0
 })
 
-class PhpExtensions extends Component {
+export default class PhpExtensions extends Component {
   public render() {
     return (
       <Row>
@@ -91,5 +91,3 @@ class PhpExtensions extends Component {
     )
   }
 }
-
-export default PhpExtensions

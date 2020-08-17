@@ -7,7 +7,7 @@ import ProgressBar from '~components/ProgressBar/src/components'
 import template from '~components/Helper/src/components/template'
 
 @observer
-class CpuUsage extends Component {
+export default class CpuUsage extends Component {
   public render() {
     const { idle } = store.cpuUsage
 
@@ -26,5 +26,3 @@ class CpuUsage extends Component {
     )
   }
 }
-
-export default CpuUsage

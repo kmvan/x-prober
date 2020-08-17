@@ -18,6 +18,16 @@ export interface ServerStatusCpuUsageProps {
   user: number
 }
 
+export interface ServerStatusDataProps {
+  sysLoad: number[]
+  cpuUsage: ServerStatusCpuUsageProps
+  memRealUsage: ServerStatusUsageProps
+  memBuffers: ServerStatusUsageProps
+  memCached: ServerStatusUsageProps
+  swapUsage: ServerStatusUsageProps
+  swapCached: ServerStatusUsageProps
+}
+
 class ServerStatus {
   public readonly ID = 'serverStatus'
   public readonly conf = conf?.[this.ID]

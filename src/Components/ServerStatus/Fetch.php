@@ -10,7 +10,8 @@ class Fetch extends ServerStatusConstants
 {
     public function __construct()
     {
-        EventsApi::on('fetch', array($this, 'filter'));
+        EventsApi::on('fetch', [$this, 'filter']);
+        EventsApi::on('nodes', [$this, 'filter']);
     }
 
     public function filter(array $items)
@@ -19,30 +20,30 @@ class Fetch extends ServerStatusConstants
             return $items;
         }
 
-        $items[$this->ID] = array(
+        $items[$this->ID] = [
             'sysLoad'      => HelperApi::getSysLoadAvg(),
             'cpuUsage'     => HelperApi::getCpuUsage(),
-            'memRealUsage' => array(
+            'memRealUsage' => [
                 'value' => HelperApi::getMemoryUsage('MemRealUsage'),
                 'max'   => HelperApi::getMemoryUsage('MemTotal'),
-            ),
-            'memBuffers' => array(
+            ],
+            'memBuffers' => [
                 'value' => HelperApi::getMemoryUsage('Buffers'),
                 'max'   => HelperApi::getMemoryUsage('MemUsage'),
-            ),
-            'memCached' => array(
+            ],
+            'memCached' => [
                 'value' => HelperApi::getMemoryUsage('Cached'),
                 'max'   => HelperApi::getMemoryUsage('MemUsage'),
-            ),
-            'swapUsage' => array(
+            ],
+            'swapUsage' => [
                 'value' => HelperApi::getMemoryUsage('SwapUsage'),
                 'max'   => HelperApi::getMemoryUsage('SwapTotal'),
-            ),
-            'swapCached' => array(
+            ],
+            'swapCached' => [
                 'value' => HelperApi::getMemoryUsage('SwapCached'),
                 'max'   => HelperApi::getMemoryUsage('SwapUsage'),
-            ),
-        );
+            ],
+        ];
 
         return $items;
     }

@@ -12,7 +12,7 @@ import CardRuby from '~components/Card/src/components/card-ruby'
 import { toJS } from 'mobx'
 
 @observer
-class ServerBenchmark extends Component {
+export default class ServerBenchmark extends Component {
   private onClick = async () => {
     const { isLoading, setIsLoading, setMarks, setLinkText } = store
 
@@ -190,5 +190,3 @@ class ServerBenchmark extends Component {
     )
   }
 }
-
-export default ServerBenchmark

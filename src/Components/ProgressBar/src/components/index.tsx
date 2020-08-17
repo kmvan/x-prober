@@ -59,7 +59,7 @@ const StyledProgressValue = styled.div.attrs(
   })
 )<StyledProgressValueProps>`
   position: relative;
-  transition: all 1s;
+  transition: width 0.5s;
   border-radius: ${GUTTER};
   background: #0c0;
   box-shadow: inset 0 -5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.4)},

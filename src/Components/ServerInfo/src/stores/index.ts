@@ -18,6 +18,13 @@ interface UptimeProps {
   secs: number
 }
 
+export interface ServerInfoDataProps {
+  serverTime: string
+  serverUptime: UptimeProps
+  serverUtcTime: string
+  diskUsage: ServerInfoDiskUsageProps
+}
+
 class ServerInfoStore {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]

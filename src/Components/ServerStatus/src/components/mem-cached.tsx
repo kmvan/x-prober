@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class MemCached extends Component {
+export default class MemCached extends Component {
   public render() {
     const { max, value } = store.memCached
 
@@ -23,5 +23,3 @@ class MemCached extends Component {
     )
   }
 }
-
-export default MemCached

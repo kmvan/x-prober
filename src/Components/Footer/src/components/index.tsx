@@ -31,7 +31,7 @@ const StyledFooter = styled.div`
   }
 `
 
-class Footer extends Component {
+export default class Footer extends Component {
   public render() {
     const { appName, appUrl, authorName, authorUrl } = BootstrapStore
     const { memUsage, time } = store.conf
@@ -55,5 +55,3 @@ class Footer extends Component {
     )
   }
 }
-
-export default Footer

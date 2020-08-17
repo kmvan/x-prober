@@ -9,7 +9,7 @@ import { gettext } from '~components/Language/src'
 import CardLink from '~components/Card/src/components/card-link'
 
 @observer
-class PhpInfoPhpVersion extends Component {
+export default class PhpInfoPhpVersion extends Component {
   public componentDidMount() {
     this.fetch()
   }
@@ -47,5 +47,3 @@ class PhpInfoPhpVersion extends Component {
     )
   }
 }
-
-export default PhpInfoPhpVersion

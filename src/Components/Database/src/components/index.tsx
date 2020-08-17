@@ -6,7 +6,7 @@ import store from '../stores'
 import Alert from '~components/Helper/src/components/alert'
 
 @observer
-class Database extends Component {
+export default class Database extends Component {
   public render() {
     const { conf } = store
     const shortItems: any[] = [
@@ -43,5 +43,3 @@ class Database extends Component {
     )
   }
 }
-
-export default Database

@@ -50,7 +50,7 @@ export const StyledTitleLink = styled.a`
 `
 
 @observer
-class Title extends Component {
+export default class Title extends Component {
   public render() {
     return (
       <StyledTitle>
@@ -65,5 +65,3 @@ class Title extends Component {
     )
   }
 }
-
-export default Title

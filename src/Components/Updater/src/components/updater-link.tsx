@@ -11,7 +11,7 @@ import { gettext } from '~components/Language/src'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 
 @observer
-class UpdaterLink extends Component {
+export default class UpdaterLink extends Component {
   private onClick = async () => {
     const { setIsUpdating, setIsUpdateError } = store
 
@@ -53,5 +53,3 @@ class UpdaterLink extends Component {
     )
   }
 }
-
-export default UpdaterLink
