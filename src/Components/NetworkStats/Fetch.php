@@ -10,7 +10,10 @@ class Fetch extends NetworkStatsConstants
 {
     public function __construct()
     {
-        HelperApi::isWin() || EventsApi::on('fetch', array($this, 'filter'));
+        if ( ! HelperApi::isWin()) {
+            EventsApi::on('fetch', array($this, 'filter'));
+            EventsApi::on('nodes', array($this, 'filter'));
+        }
     }
 
     public function filter(array $items)
@@ -20,7 +23,8 @@ class Fetch extends NetworkStatsConstants
         }
 
         $items[$this->ID] = array(
-            'networks' => HelperApi::getNetworkStats(),
+            'networks'  => HelperApi::getNetworkStats(),
+            'timestmap' => \time(),
         );
 
         return $items;
