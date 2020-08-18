@@ -5,7 +5,7 @@ configure({
   enforceActions: 'observed',
 })
 
-class BootstrapStore {
+class Store {
   public readonly ID = 'bootstrap'
   public readonly conf = conf?.[this.ID]
   public readonly version: string = this.conf?.version
@@ -25,4 +25,6 @@ class BootstrapStore {
   }
 }
 
-export default new BootstrapStore()
+const BootstrapStore = new Store()
+
+export default BootstrapStore
