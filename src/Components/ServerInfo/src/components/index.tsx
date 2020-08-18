@@ -29,7 +29,7 @@ export default class ServerInfo extends Component {
       return gettext('Unavailable')
     }
 
-    return <ProgressBar value={value} max={max} isCapacity={true} />
+    return <ProgressBar value={value} max={max} isCapacity />
   }
 
   public render() {

@@ -18,7 +18,7 @@ export default class MemBuffers extends Component {
         name={gettext('Memory buffers')}
         tablet={[1, 2]}
       >
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }

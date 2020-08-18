@@ -16,7 +16,7 @@ export default class SwapCached extends Component {
 
     return (
       <CardGrid name={gettext('Swap cached')} tablet={[1, 1]}>
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }

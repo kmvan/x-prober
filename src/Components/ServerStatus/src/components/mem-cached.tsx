@@ -18,7 +18,7 @@ export default class MemCached extends Component {
         name={gettext('Memory cached')}
         tablet={[1, 2]}
       >
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }

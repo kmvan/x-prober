@@ -16,7 +16,7 @@ export default class SwapUsage extends Component {
 
     return (
       <CardGrid name={gettext('Swap usage')} tablet={[1, 1]}>
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }

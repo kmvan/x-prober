@@ -18,7 +18,7 @@ export default class MemRealUsage extends Component {
         name={gettext('Memory real usage')}
         tablet={[1, 1]}
       >
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }
