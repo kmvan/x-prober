@@ -10,13 +10,15 @@ configure({
   enforceActions: 'observed',
 })
 
+export interface DataNetworkStatsProps {
+  networks: NetworkStatsItemProps[]
+  timestamp: number
+}
+
 export interface DataProps {
   serverInfo: ServerInfoDataProps
   serverStatus: ServerStatusDataProps
-  networkStats: {
-    networks: NetworkStatsItemProps
-    timestamp: number
-  }
+  networkStats: DataNetworkStatsProps
 }
 
 class FetchStore {
