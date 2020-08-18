@@ -5,6 +5,7 @@ import store from '../stores'
 import { GUTTER } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import { rgba } from 'polished'
+import { device } from '~components/Style/src/components/devices'
 
 interface StyleArrowProps {
   isHidden: boolean
@@ -38,7 +39,12 @@ const StyledLegend = styled.legend`
   white-space: nowrap;
 `
 
-const StyledBody = styled.div``
+const StyledBody = styled.div`
+  padding: 0 calc(${GUTTER} / 2);
+  @media ${device('tablet')} {
+    padding: 0 ${GUTTER};
+  }
+`
 const StyleArrow = styled.a<StyleArrowProps>`
   color: ${({ theme }) => theme.colorGray};
   padding: 0 0.5rem;
