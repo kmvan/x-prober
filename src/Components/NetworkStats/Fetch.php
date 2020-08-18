@@ -24,7 +24,7 @@ class Fetch extends NetworkStatsConstants
 
         $items[$this->ID] = array(
             'networks'  => HelperApi::getNetworkStats(),
-            'timestmap' => \time(),
+            'timestamp' => \time(),
         );
 
         return $items;

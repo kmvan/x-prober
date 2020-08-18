@@ -21,7 +21,7 @@ class Conf extends NetworkStatsConstants
 
         $conf[$this->ID] = array(
             'networks'  => HelperApi::getNetworkStats(),
-            'timestmap' => \time(),
+            'timestamp' => \time(),
         );
 
         return $conf;
