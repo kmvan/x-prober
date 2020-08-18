@@ -45,7 +45,11 @@ class XconfigApi
 
     private static function setConf()
     {
-        if (null !== self::$conf || ! \is_readable(self::getFilePath())) {
+        if (null !== self::$conf) {
+            return;
+        }
+
+        if ( ! \is_readable(self::getFilePath())) {
             self::$conf = null;
 
             return;
