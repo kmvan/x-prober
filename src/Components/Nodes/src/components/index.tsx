@@ -6,7 +6,7 @@ import Grid from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { OK } from '~components/Restful/src/http-status'
 import { gettext } from '~components/Language/src'
-import { DataProps, DataNetworkStatsProps } from '~components/Fetch/src/stores'
+import { DataNetworkStatsProps } from '~components/Fetch/src/stores'
 import { SysLoadGroup } from '~components/ServerStatus/src/components/system-load'
 import ProgressBar from '~components/ProgressBar/src/components'
 import template from '~components/Helper/src/components/template'
@@ -20,7 +20,7 @@ import { NetworkStatsItemProps } from '~components/NetworkStats/src/stores'
 import { rgba } from 'polished'
 import Alert from '~components/Helper/src/components/alert'
 import Loading from '~components/Helper/src/components/loading'
-import BootstrapStore from '~components/Bootstrap/src/stores'
+import restfulFetch from '~components/Fetch/src/restful-fetch'
 
 const StyledNodeGroupId = styled.a`
   display: block;
@@ -88,17 +88,9 @@ export default class Nodes extends Component {
   }) => {
     const { setItem } = store
 
-    await fetch(fetchUrl, {
-      cache: 'no-cache',
-      mode: 'cors',
-      headers: {
-        Authorization: BootstrapStore.conf.authorization,
-      },
-    })
-      .then(async res => {
-        if (res.status === OK) {
-          const item = (await res.json()) as DataProps
-
+    await restfulFetch(`node&nodeId=${id}`)
+      .then(([{ status }, item]) => {
+        if (status === OK) {
           if (!item) {
             return
           }
@@ -114,7 +106,7 @@ export default class Nodes extends Component {
             isLoading: false,
             isError: true,
             errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
-              code: res.status,
+              code: status,
             }),
           })
         }

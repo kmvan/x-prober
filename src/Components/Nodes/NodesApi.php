@@ -4,8 +4,10 @@ namespace InnStudio\Prober\Components\Nodes;
 
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class NodesApi extends NodesConstants
+class NodesApi
 {
+    public $ID = 'nodes';
+
     public function getNodes()
     {
         $items = XconfigApi::getNodes();

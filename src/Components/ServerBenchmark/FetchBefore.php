@@ -9,7 +9,8 @@ class FetchBefore extends ServerBenchmarkApi
     public function __construct()
     {
         EventsApi::on('fetchBefore', array($this, 'filter'));
-        EventsApi::on('nodeBefore', array($this, 'filter'));
+        EventsApi::on('fetchNodesBefore', array($this, 'filter'));
+        EventsApi::on('fetchNodeBefore', array($this, 'filter'));
     }
 
     public function filter()
