@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-01-30 15:49+0800\n"
+"PO-Revision-Date: 2020-08-19 23:14+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
 msgid "Move up"
@@ -22,6 +22,9 @@ msgstr "上移"
 
 msgid "Move down"
 msgstr "下移"
+
+msgid "X Prober"
+msgstr "X 探針"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
@@ -35,12 +38,9 @@ msgstr "資料庫"
 msgid "Fetch error, please refresh page."
 msgstr "獲取錯誤，請刷新頁面。"
 
-msgid ""
-"Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
-"time %>ms"
+msgid "Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms"
 msgstr ""
-"該頁面由 <%= appName %> 生成 / 作者爲 <%= authorName %> / <%= memUsage %> / "
-"<%= time %> 毫秒"
+"該頁面由 ${appName} 生成 / 作者爲 ${authorName} / ${memUsage} / ${time} 毫秒"
 
 msgid "STAR 🌟 ME"
 msgstr "星🌟標"
@@ -74,6 +74,36 @@ msgstr "流量統計"
 
 msgid "Net"
 msgstr "流量"
+
+msgid "Fetch failed. Node returns ${code}."
+msgstr "獲取失敗。節點返回了 ${code} 碼。"
+
+msgid "Fetch failed. Detail in Console."
+msgstr "獲取失敗。詳情在控制檯"
+
+msgid "Node [${nodeId}] fetch failed."
+msgstr "獲取節點 [${nodeId}] 失敗。"
+
+msgid "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+msgstr "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+msgid "Usage: ${percent}"
+msgstr "佔用：${percent}"
+
+msgid "Memory"
+msgstr "記憶體"
+
+msgid "Swap"
+msgstr "Swap"
+
+msgid "Fetching..."
+msgstr "獲取中……"
+
+msgid "Nodes"
+msgstr "節點"
 
 msgid "Opcache enabled"
 msgstr "OPcache 已啓用"
@@ -135,8 +165,8 @@ msgstr "禁用的類"
 msgid "Visit PHP.net Official website"
 msgstr "訪問 PHP.net 官網"
 
-msgid "(Latest <%= latestPhpVersion %>)"
-msgstr "（最新 <%= latestPhpVersion %>）"
+msgid "(Latest ${latestPhpVersion})"
+msgstr "（最新 ${latestPhpVersion}）"
 
 msgid "PHP Information"
 msgstr "PHP 資訊"
@@ -144,11 +174,11 @@ msgstr "PHP 資訊"
 msgid "PHP"
 msgstr "PHP"
 
-msgid "Times: <%= times %>"
-msgstr "次數：<%= times %>"
+msgid "Times:${times}"
+msgstr "次數：${times}"
 
-msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
-msgstr "最小：<%= min %> / 最大：<%= max %> / 平均：<%= avg %>"
+msgid "Min:${min} / Max:${max} / Avg:${avg}"
+msgstr "最小:${min} / 最大:${max} / 平均:${avg}"
 
 msgid "⏸️ Stop ping"
 msgstr "⏸️ 停止 Ping"
@@ -168,7 +198,7 @@ msgstr "⏳ 跑分中，請稍等……"
 msgid "Network error, please try again later."
 msgstr "網路錯誤，請稍後重試。"
 
-msgid "⏳ Please wait <%= seconds %>s"
+msgid "⏳ Please wait ${seconds}s"
 msgstr "⏳ 請等待 <%= seconds %> 秒"
 
 msgid "Can not fetch marks data from GitHub."
@@ -198,8 +228,8 @@ msgstr "👆 點擊測試"
 msgid "Unavailable"
 msgstr "不可用"
 
-msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
-msgstr "<%= days %> 天 <%= hours %> 小時 <%= mins %> 分 <%= secs %> 秒"
+msgid "${days} days ${hours} hours ${mins} mins ${secs} secs"
+msgstr "${days} 天 ${hours} 時 ${mins} 分 ${secs} 秒"
 
 msgid "Server name"
 msgstr "伺服器名"
@@ -237,19 +267,31 @@ msgstr "伺服器訊息"
 msgid "Info"
 msgstr "訊息"
 
-msgid "CPU usage"
-msgstr "CPU 使用率"
-
 msgid ""
-"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
+"Buffers are in-memory block I/O buffers. They are relatively short-lived. "
+"Prior to Linux kernel version 2.4, Linux had separate page and buffer "
+"caches. Since 2.4, the page and buffer cache are unified and Buffers is raw "
+"disk blocks not represented in the page cache—i.e., not file data."
 msgstr ""
-"空閒: <%= idle %>, 親和: <%= nice %>, 系統: <%= sys %>, 用戶: <%= user %>"
 
 msgid "Memory buffers"
 msgstr "記憶體緩衝"
 
+msgid ""
+"Cached memory is memory that Linux uses for disk caching. However, this doesn"
+"\\'t count as \"used\" memory, since it will be freed when applications "
+"require it. Hence you don\\'t have to worry if a large amount is being used."
+msgstr ""
+
 msgid "Memory cached"
 msgstr "記憶體快取"
+
+msgid ""
+"Linux comes with many commands to check memory usage. The \"free\" command "
+"usually displays the total amount of free and used physical and swap memory "
+"in the system, as well as the buffers used by the kernel. The \"top\" "
+"command provides a dynamic real-time view of a running system."
+msgstr ""
 
 msgid "Memory real usage"
 msgstr "真實記憶體使用"
@@ -260,8 +302,8 @@ msgstr "SWAP 快取"
 msgid "Swap usage"
 msgstr "SWAP 使用"
 
-msgid "<%= minute %> minute average"
-msgstr "<%= minute %> 分鐘平均負載"
+msgid "${minute} minute average"
+msgstr "${minute}  分鐘平均負載"
 
 msgid "System load"
 msgstr "系統負載"
@@ -272,8 +314,8 @@ msgstr "伺服器狀態"
 msgid "Status"
 msgstr "狀態"
 
-msgid "<%= sensor %> temperature"
-msgstr "<%= sensor %> 溫度"
+msgid "${sensor} temperature"
+msgstr "${sensor} 溫度"
 
 msgid "Temperature Sensor"
 msgstr "溫度傳感器"
@@ -296,5 +338,5 @@ msgstr "⏳ 更新中，請稍等……"
 msgid "❌ Update error, click here to try again?"
 msgstr "❌ 更新錯誤，點擊此處再試一次？"
 
-msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
-msgstr "✨ 發現更新！版本 <%= oldVersion %> → <%= newVersion %>"
+msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
+msgstr "✨ 發現更新！版本 ${oldVersion} → ${newVersion}"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-02-22 22:50+0800\n"
+"PO-Revision-Date: 2020-08-19 23:05+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
 msgid "Move up"
@@ -22,6 +22,9 @@ msgstr "上移"
 
 msgid "Move down"
 msgstr "下移"
+
+msgid "X Prober"
+msgstr "X 探针"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr "错误：无法获取远程配置数据，更新检测已禁用。"
@@ -35,12 +38,9 @@ msgstr "数据库"
 msgid "Fetch error, please refresh page."
 msgstr "获取信息错误，请刷新页面。"
 
-msgid ""
-"Generator <%= appName %> / Author <%= authorName %> / <%= memUsage %> / <%= "
-"time %>ms"
+msgid "Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms"
 msgstr ""
-"该页面由 <%= appName %> 生成 / 作者为 <%= authorName %> / <%= memUsage %> / <"
-"%= time %> 毫秒"
+"该页面由 ${appName} 生成 / 作者为 ${authorName} / ${memUsage} / ${time} 毫秒"
 
 msgid "STAR 🌟 ME"
 msgstr "星 🌟 标"
@@ -74,6 +74,36 @@ msgstr "流量统计"
 
 msgid "Net"
 msgstr "网络"
+
+msgid "Fetch failed. Node returns ${code}."
+msgstr "获取失败。节点返回了 ${code} 错误码。"
+
+msgid "Fetch failed. Detail in Console."
+msgstr "获取失败。详情请看控制台。"
+
+msgid "Node [${nodeId}] fetch failed."
+msgstr "获取节点 [${nodeId}] 失败。"
+
+msgid "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+msgstr "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+
+msgid "CPU usage"
+msgstr "CPU 占用"
+
+msgid "Usage: ${percent}"
+msgstr "使用：${percent}"
+
+msgid "Memory"
+msgstr "内存"
+
+msgid "Swap"
+msgstr "Swap"
+
+msgid "Fetching..."
+msgstr "获取中……"
+
+msgid "Nodes"
+msgstr "节点"
 
 msgid "Opcache enabled"
 msgstr "OPcache 已启用"
@@ -135,8 +165,8 @@ msgstr "已禁用的类"
 msgid "Visit PHP.net Official website"
 msgstr "访问 PHP.net 官网"
 
-msgid "(Latest <%= latestPhpVersion %>)"
-msgstr "（最新  <%= latestPhpVersion %>）"
+msgid "(Latest ${latestPhpVersion})"
+msgstr "（最新  ${latestPhpVersion}）"
 
 msgid "PHP Information"
 msgstr "PHP 信息"
@@ -144,11 +174,11 @@ msgstr "PHP 信息"
 msgid "PHP"
 msgstr "PHP"
 
-msgid "Times: <%= times %>"
-msgstr "次数：<%= times %>"
+msgid "Times:${times}"
+msgstr "次数：${times}"
 
-msgid "Min: <%= min %> / Max: <%= max %> / Avg: <%= avg %>"
-msgstr "最小: <%= min %> / 最大: <%= max %> / 平均: <%= avg %>"
+msgid "Min:${min} / Max:${max} / Avg:${avg}"
+msgstr "最小:${min} / 最大:${max} / 平均:${avg}"
 
 msgid "⏸️ Stop ping"
 msgstr "⏸️ 停止 Ping"
@@ -168,8 +198,8 @@ msgstr "⏳ 跑分中，请稍等……"
 msgid "Network error, please try again later."
 msgstr "网络错误，请稍候重试。"
 
-msgid "⏳ Please wait <%= seconds %>s"
-msgstr "⏳ 请等待 <%= seconds %> 秒"
+msgid "⏳ Please wait ${seconds}s"
+msgstr "⏳ 请等待 ${seconds}s"
 
 msgid "Can not fetch marks data from GitHub."
 msgstr "无法从 GitHub 中获取跑分数据。"
@@ -198,8 +228,8 @@ msgstr "👆 点击测试"
 msgid "Unavailable"
 msgstr "不可用"
 
-msgid "<%= days %> days <%= hours %> hours <%= mins %> mins <%= secs %> secs"
-msgstr "<%= days %> 天 <%= hours %> 小时 <%= mins %> 分 <%= secs %> 秒"
+msgid "${days} days ${hours} hours ${mins} mins ${secs} secs"
+msgstr "${days} 天 ${hours} 小时 ${mins} 分 ${secs} 秒"
 
 msgid "Server name"
 msgstr "服务器名"
@@ -236,13 +266,6 @@ msgstr "服务器信息"
 
 msgid "Info"
 msgstr "信息"
-
-msgid "CPU usage"
-msgstr "CPU 占用"
-
-msgid ""
-"idle: <%= idle %>, nice: <%= nice %>, sys: <%= sys %>, user: <%= user %>"
-msgstr "空闲: <%= idle %> 亲和: <%= nice %> 系统: <%= sys %> 用户: <%= user %>"
 
 msgid ""
 "Buffers are in-memory block I/O buffers. They are relatively short-lived. "
@@ -287,8 +310,8 @@ msgstr "SWAP 缓存"
 msgid "Swap usage"
 msgstr "SWAP 占用"
 
-msgid "<%= minute %> minute average"
-msgstr "<%= minute %> 分钟平均负载"
+msgid "${minute} minute average"
+msgstr "${minute} 分钟平均负载"
 
 msgid "System load"
 msgstr "系统负载"
@@ -299,8 +322,8 @@ msgstr "服务器状态"
 msgid "Status"
 msgstr "状态"
 
-msgid "<%= sensor %> temperature"
-msgstr "<%= sensor %> 温度"
+msgid "${sensor} temperature"
+msgstr "${sensor} 温度"
 
 msgid "Temperature Sensor"
 msgstr "温度传感器"
@@ -323,8 +346,8 @@ msgstr "⏳ 更新中，请稍等一会……"
 msgid "❌ Update error, click here to try again?"
 msgstr "❌ 更新错误，点击此处再试一次？"
 
-msgid "✨ Found update! Version <%= oldVersion %> → <%= newVersion %>"
-msgstr "✨ 发现更新！版本 <%= oldVersion %> → <%= newVersion %>"
+msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
+msgstr "✨ 发现更新！版本 ${oldVersion} → ${newVersion}"
 
 #~ msgid "No sensor data."
 #~ msgstr "无传感器"
