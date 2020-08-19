@@ -8,8 +8,6 @@ class Action
 {
     public function __construct()
     {
-        \header('Access-Control-Allow-Origin: *');
-
         EventsApi::emit('init', (string) \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING));
     }
 }

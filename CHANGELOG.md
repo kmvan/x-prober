@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+
+## 6.0.0 - 2020-08-19
+
+### Add
+
+- Add Nodes feature
+
 ## 5.0.0 - 2020-08-11
 
 ### Add
