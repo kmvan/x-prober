@@ -1,6 +1,6 @@
 import BootstrapStore from '~components/Bootstrap/src/stores'
 
-const restfulFetch = (action: string, opts = {}) => {
+const restfulFetch = (action: string, opts = {}): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     opts = {
       ...{
@@ -28,7 +28,7 @@ const restfulFetch = (action: string, opts = {}) => {
     } catch (e) {
       reject([res, {}])
     }
-  }) as any
+  })
 }
 
 export default restfulFetch

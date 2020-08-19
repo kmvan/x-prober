@@ -8,7 +8,7 @@ import SwapUsage from './swap-usage'
 import SwapCached from './swap-cached'
 import MemBuffers from './mem-buffers'
 
-class ServerStatus extends Component {
+export default class ServerStatus extends Component {
   public render() {
     return (
       <Row>
@@ -23,5 +23,3 @@ class ServerStatus extends Component {
     )
   }
 }
-
-export default ServerStatus

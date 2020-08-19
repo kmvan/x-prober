@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class MemRealUsage extends Component {
+export default class MemRealUsage extends Component {
   public render() {
     const { max, value } = store.memRealUsage
 
@@ -18,10 +18,8 @@ class MemRealUsage extends Component {
         name={gettext('Memory real usage')}
         tablet={[1, 1]}
       >
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }
 }
-
-export default MemRealUsage

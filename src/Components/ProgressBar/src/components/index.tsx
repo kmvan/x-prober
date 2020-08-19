@@ -11,6 +11,7 @@ export interface ProgressBarProps {
   max: number
   isCapacity: boolean
   percentTag?: string
+  left?: string
 }
 
 const StyledProgressBar = styled.div`
@@ -59,7 +60,7 @@ const StyledProgressValue = styled.div.attrs(
   })
 )<StyledProgressValueProps>`
   position: relative;
-  transition: all 1s;
+  transition: width 0.5s;
   border-radius: ${GUTTER};
   background: #0c0;
   box-shadow: inset 0 -5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.4)},
@@ -98,17 +99,17 @@ const ProgressBar = ({
   max,
   isCapacity,
   percentTag = '%',
+  left = '',
 }: ProgressBarProps) => {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`
     : `${value.toFixed(1)}${percentTag} / ${max}${percentTag}`
+  const overviewPercent = left ? left : `${percent.toFixed(1)}${percentTag}`
 
   return (
     <StyledProgressBar title={title}>
-      <StyledProgressPercent>{`${percent.toFixed(
-        1
-      )}${percentTag}`}</StyledProgressPercent>
+      <StyledProgressPercent>{overviewPercent}</StyledProgressPercent>
       <StyledProgressOverview>{overview}</StyledProgressOverview>
       <StyledProgressShell>
         <StyledProgressValue percent={percent} />

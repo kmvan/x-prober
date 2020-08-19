@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class SwapUsage extends Component {
+export default class SwapUsage extends Component {
   public render() {
     const { max, value } = store.swapUsage
 
@@ -16,10 +16,8 @@ class SwapUsage extends Component {
 
     return (
       <CardGrid name={gettext('Swap usage')} tablet={[1, 1]}>
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }
 }
-
-export default SwapUsage

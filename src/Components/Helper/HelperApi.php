@@ -90,12 +90,20 @@ class HelperApi
         $eths = array();
 
         foreach ($lines as $line) {
-            $line              = \preg_replace('/\s+/', ' ', \trim($line));
-            $lineArr           = \explode(':', $line);
-            $numberArr         = \explode(' ', \trim($lineArr[1]));
-            $eths[$lineArr[0]] = array(
-                'rx' => (float) $numberArr[0],
-                'tx' => (float) $numberArr[8],
+            $line      = \preg_replace('/\s+/', ' ', \trim($line));
+            $lineArr   = \explode(':', $line);
+            $numberArr = \explode(' ', \trim($lineArr[1]));
+            $rx        = (float) $numberArr[0];
+            $tx        = (float) $numberArr[8];
+
+            if ( ! $rx && ! $tx) {
+                continue;
+            }
+
+            $eths[] = array(
+                'id' => $lineArr[0],
+                'rx' => $rx,
+                'tx' => $tx,
             );
         }
 

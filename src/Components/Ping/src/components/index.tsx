@@ -118,7 +118,7 @@ const StyledPingResultTimes = styled.div``
 const StyledPingResultAvg = styled.div``
 
 @observer
-class Ping extends Component {
+export default class Ping extends Component {
   private pingTimer: number = 0
   private refItemContainer: RefObject<HTMLUListElement>
 
@@ -249,5 +249,3 @@ class Ping extends Component {
     )
   }
 }
-
-export default Ping

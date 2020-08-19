@@ -7,10 +7,9 @@ configure({
 })
 
 export interface NetworkStatsItemProps {
-  [networkCardid: string]: {
-    rx: number
-    tx: number
-  }
+  id: string
+  rx: number
+  tx: number
 }
 
 class NetworkStatsStore {
@@ -19,11 +18,35 @@ class NetworkStatsStore {
   public readonly enabled: boolean = !!this.conf
 
   @computed
-  public get items(): NetworkStatsItemProps | null {
+  public get items(): NetworkStatsItemProps[] {
     return (
       (FetchStore.isLoading
         ? this.conf?.networks
-        : FetchStore.data?.[this.ID]?.networks) || null
+        : FetchStore.data?.[this.ID]?.networks) || []
+    )
+  }
+
+  @computed
+  public get sortItems() {
+    return this.items
+      .slice()
+      .filter(({ tx }) => !!tx)
+      .sort((a, b) => a.tx - b.tx)
+  }
+
+  @computed
+  public get itemsCount() {
+    return this.sortItems.length
+  }
+
+  @computed
+  public get timestamp(): number {
+    return (
+      (FetchStore.isLoading
+        ? this.conf?.timestamp
+        : FetchStore.data?.[this.ID]?.timestamp) ||
+      this.conf?.timestamp ||
+      0
     )
   }
 }

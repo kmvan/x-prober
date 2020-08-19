@@ -9,7 +9,7 @@ import template from '~components/Helper/src/components/template'
 import FetchStore from '~components/Fetch/src/stores'
 
 @observer
-class ServerInfo extends Component {
+export default class ServerInfo extends Component {
   private diskUsage() {
     const { ID } = store
     const { isLoading, data } = FetchStore
@@ -29,7 +29,7 @@ class ServerInfo extends Component {
       return gettext('Unavailable')
     }
 
-    return <ProgressBar value={value} max={max} isCapacity={true} />
+    return <ProgressBar value={value} max={max} isCapacity />
   }
 
   public render() {
@@ -83,5 +83,3 @@ class ServerInfo extends Component {
     )
   }
 }
-
-export default ServerInfo

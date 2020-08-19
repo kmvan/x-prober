@@ -6,7 +6,7 @@ import store from '../stores'
 import ProgressBar from '~components/ProgressBar/src/components'
 
 @observer
-class MemBuffers extends Component {
+export default class MemBuffers extends Component {
   public render() {
     const { max, value } = store.memBuffers
 
@@ -18,10 +18,8 @@ class MemBuffers extends Component {
         name={gettext('Memory buffers')}
         tablet={[1, 2]}
       >
-        <ProgressBar value={value} max={max} isCapacity={true} />
+        <ProgressBar value={value} max={max} isCapacity />
       </CardGrid>
     )
   }
 }
-
-export default MemBuffers

@@ -5,7 +5,7 @@ interface PortalProps {
   target?: HTMLElement
 }
 
-class Portal extends Component<PortalProps, {}> {
+export default class Portal extends Component<PortalProps, {}> {
   private target: HTMLElement
 
   constructor(props) {
@@ -39,5 +39,3 @@ class Portal extends Component<PortalProps, {}> {
     return createPortal(this.props.children, this.target)
   }
 }
-
-export default Portal

@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
+import { GUTTER } from '~components/Config/src'
 import { gettext } from '~components/Language/src'
 import { rgba } from 'polished'
+import { device } from '~components/Style/src/components/devices'
 
 interface StyleArrowProps {
   isHidden: boolean
 }
-const fadeIn = keyframes`
-  from{
-    transform: translate3d(0, -10%, 0);
-    opacity: .5;
-  }
-  to{
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-`
 const StyledFieldset = styled.fieldset`
   position: relative;
   border: 5px solid #eee;
@@ -29,8 +20,6 @@ const StyledFieldset = styled.fieldset`
   box-shadow: -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)},
     1px 1px 0 hsla(0, 0%, 100%, 0.5), inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
     inset -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
-  animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
-  animation-fill-mode: forwards;
 `
 
 const StyledLegend = styled.legend`
@@ -50,7 +39,12 @@ const StyledLegend = styled.legend`
   white-space: nowrap;
 `
 
-const StyledBody = styled.div``
+const StyledBody = styled.div`
+  padding: 0 calc(${GUTTER} / 2);
+  @media ${device('tablet')} {
+    padding: 0 ${GUTTER};
+  }
+`
 const StyleArrow = styled.a<StyleArrowProps>`
   color: ${({ theme }) => theme.colorGray};
   padding: 0 0.5rem;
@@ -64,7 +58,7 @@ const StyleArrow = styled.a<StyleArrowProps>`
 `
 
 @observer
-class Cards extends Component {
+export default class Cards extends Component {
   public render() {
     const {
       cardsLength,
@@ -118,5 +112,3 @@ class Cards extends Component {
     )
   }
 }
-
-export default Cards

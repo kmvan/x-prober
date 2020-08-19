@@ -9,16 +9,20 @@ import { device } from '~components/Style/src/components/devices'
 import { rgba } from 'polished'
 import template from '~components/Helper/src/components/template'
 
-const StyledGroup = styled.div`
+interface StyledSysLoadGroupProps {
+  isCenter: boolean
+}
+
+export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
   display: flex;
   align-items: center;
   justify-content: center;
   @media ${device('tablet')} {
-    justify-content: flex-start;
+    justify-content: ${({ isCenter }) => (isCenter ? 'center' : 'flex-start')};
   }
 `
 
-const StyledGroupItem = styled.span`
+export const StyledSysLoadGroupItem = styled.span`
   margin-right: 0.5rem;
   background: ${({ theme }) => rgba(theme.colorDark, 0.75)};
   color: ${({ theme }) => theme.colorGray};
@@ -34,33 +38,52 @@ const StyledGroupItem = styled.span`
   }
 `
 
-@observer
-class SystemLoad extends Component {
-  public render() {
-    const { sysLoad } = store
-    const minutes = [1, 5, 15]
-    const loadHuman = sysLoad.map((load, i) => {
-      return {
-        id: `${minutes[i]}minAvg`,
-        load,
-        text: template(gettext('${minute} minute average'), {
-          minute: minutes[i],
-        }),
-      }
-    })
+interface SysLoadGroupProps {
+  sysLoad: number[]
+  isCenter: boolean
+}
 
+export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
+  const minutes = [1, 5, 15]
+  const loadHuman = sysLoad.map((load, i) => {
+    return {
+      id: `${minutes[i]}minAvg`,
+      load,
+      text: template(gettext('${minute} minute average'), {
+        minute: minutes[i],
+      }),
+    }
+  })
+
+  return (
+    <StyledSysLoadGroup isCenter={isCenter}>
+      {loadHuman.map(({ id, load, text }) => (
+        <StyledSysLoadGroupItem key={id} title={text}>
+          {load.toFixed(2)}
+        </StyledSysLoadGroupItem>
+      ))}
+    </StyledSysLoadGroup>
+  )
+}
+
+interface SystemLoadProps {
+  isCenter?: boolean
+}
+
+@observer
+export default class SystemLoad extends Component<SystemLoadProps> {
+  public static defaultProps = {
+    isCenter: false,
+  }
+
+  public render() {
     return (
       <CardGrid name={gettext('System load')} tablet={[1, 1]}>
-        <StyledGroup>
-          {loadHuman.map(({ id, load, text }) => (
-            <StyledGroupItem key={id} title={text}>
-              {load.toFixed(2)}
-            </StyledGroupItem>
-          ))}
-        </StyledGroup>
+        <SysLoadGroup
+          isCenter={!!this.props.isCenter}
+          sysLoad={store.sysLoad}
+        />
       </CardGrid>
     )
   }
 }
-
-export default SystemLoad

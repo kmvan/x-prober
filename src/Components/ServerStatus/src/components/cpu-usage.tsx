@@ -7,7 +7,7 @@ import ProgressBar from '~components/ProgressBar/src/components'
 import template from '~components/Helper/src/components/template'
 
 @observer
-class CpuUsage extends Component {
+export default class CpuUsage extends Component {
   public render() {
     const { idle } = store.cpuUsage
 
@@ -15,7 +15,9 @@ class CpuUsage extends Component {
       <CardGrid name={gettext('CPU usage')} tablet={[1, 1]}>
         <ProgressBar
           title={template(
-            gettext('idle: ${idle}, nice: ${nice}, sys: ${sys}, user: ${user}'),
+            gettext(
+              'idle: ${idle} \nnice: ${nice} \nsys: ${sys} \nuser: ${user}'
+            ),
             store.cpuUsage
           )}
           value={100 - idle}
@@ -26,5 +28,3 @@ class CpuUsage extends Component {
     )
   }
 }
-
-export default CpuUsage

@@ -22,7 +22,7 @@ const StyledCardGroup = styled.div`
 
 const StyledCardTitle = styled.div`
   word-break: normal;
-  padding: calc(${GUTTER} / 2) ${GUTTER};
+  padding: calc(${GUTTER} / 2) 0;
   flex: 0 0 8rem;
 
   @media ${device('tablet')} {
@@ -32,7 +32,7 @@ const StyledCardTitle = styled.div`
 
 const StyledCardContent = styled.div`
   flex-grow: 1;
-  padding: calc(${GUTTER} / 2) ${GUTTER} calc(${GUTTER} / 2) 0;
+  padding: calc(${GUTTER} / 2) 0;
 `
 
 const CardGrid = ({

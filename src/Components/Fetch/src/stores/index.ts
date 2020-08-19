@@ -2,10 +2,24 @@ import { observable, action, configure } from 'mobx'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
 import { OK } from '~components/Restful/src/http-status'
 import { gettext } from '~components/Language/src'
+import { ServerInfoDataProps } from '~components/ServerInfo/src/stores'
+import { ServerStatusDataProps } from '~components/ServerStatus/src/stores'
+import { NetworkStatsItemProps } from '~components/NetworkStats/src/stores'
 
 configure({
   enforceActions: 'observed',
 })
+
+export interface DataNetworkStatsProps {
+  networks: NetworkStatsItemProps[]
+  timestamp: number
+}
+
+export interface DataProps {
+  serverInfo: ServerInfoDataProps
+  serverStatus: ServerStatusDataProps
+  networkStats: DataNetworkStatsProps
+}
 
 class FetchStore {
   @observable public isLoading: boolean = true

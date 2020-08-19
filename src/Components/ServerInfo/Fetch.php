@@ -11,6 +11,7 @@ class Fetch extends ServerInfoConstants
     public function __construct()
     {
         EventsApi::on('fetch', array($this, 'filter'));
+        EventsApi::on('nodes', array($this, 'filter'));
     }
 
     public function filter(array $items)

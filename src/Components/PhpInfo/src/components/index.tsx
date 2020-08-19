@@ -10,7 +10,7 @@ import SearchLink from '~components/Helper/src/components/search-link'
 import PhpInfoPhpVersion from './php-version'
 
 @observer
-class PhpInfo extends Component {
+export default class PhpInfo extends Component {
   public render() {
     const { conf } = store
     const oneLineItems: Array<[string, ReactNode]> = [
@@ -106,5 +106,3 @@ class PhpInfo extends Component {
     )
   }
 }
-
-export default PhpInfo

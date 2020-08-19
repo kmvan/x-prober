@@ -8,16 +8,16 @@ export const breakPoints = {
   desktopLg: '2560px',
 }
 
-export const device = (
-  id:
-    | 'mobileSm'
-    | 'mobileMd'
-    | 'mobileLg'
-    | 'tablet'
-    | 'desktopSm'
-    | 'desktopMd'
-    | 'desktopLg'
-): string => {
+export type DeviceIdProps =
+  | 'mobileSm'
+  | 'mobileMd'
+  | 'mobileLg'
+  | 'tablet'
+  | 'desktopSm'
+  | 'desktopMd'
+  | 'desktopLg'
+
+export const device = (id: DeviceIdProps): string => {
   if (!breakPoints[id]) {
     return ''
   }

@@ -86,7 +86,7 @@ const StyledNavLinkTinyTitle = styled.span`
 `
 
 @observer
-class Nav extends Component {
+export default class Nav extends Component {
   private onClick = (e: MouseEvent, id: string) => {
     e.preventDefault()
 
@@ -123,5 +123,3 @@ class Nav extends Component {
     )
   }
 }
-
-export default Nav
