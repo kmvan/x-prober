@@ -2,6 +2,11 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.1.0 - 2020-08-20
+
+### Fix
+
+- Fix nodes networks speed error
 
 ## 6.0.0 - 2020-08-19
 
