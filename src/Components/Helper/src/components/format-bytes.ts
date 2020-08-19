@@ -5,9 +5,15 @@ const formatBytes = (bytes: number, decimals: number = 2): string => {
 
   const k = 1024
   const sizes = ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
-  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  let i = Math.floor(Math.log(bytes) / Math.log(k))
+  i = i < 0 ? 0 : i
+  const num = parseFloat((bytes / Math.pow(k, i)).toFixed(decimals))
 
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + ' ' + sizes[i]
+  if (!num) {
+    return '0'
+  }
+
+  return `${num} ${sizes[i]}`
 }
 
 export default formatBytes
