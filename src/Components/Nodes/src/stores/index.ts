@@ -36,6 +36,7 @@ class NodesStore {
       return {
         ...this.DEFAULT_ITEM,
         ...{
+          url,
           fetchUrl: `${url}?action=fetch`,
           ...props,
         },

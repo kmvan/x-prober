@@ -6,7 +6,6 @@ import Grid from '~components/Grid/src/components/grid'
 import styled from 'styled-components'
 import { OK } from '~components/Restful/src/http-status'
 import { gettext } from '~components/Language/src'
-import { DataNetworkStatsProps } from '~components/Fetch/src/stores'
 import { SysLoadGroup } from '~components/ServerStatus/src/components/system-load'
 import ProgressBar from '~components/ProgressBar/src/components'
 import template from '~components/Helper/src/components/template'
@@ -15,12 +14,12 @@ import {
   ServerStatusUsageProps,
 } from '~components/ServerStatus/src/stores'
 import { GUTTER, BORDER_RADIUS } from '~components/Config/src'
-import NetworksStatsItem from '~components/NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '~components/NetworkStats/src/stores'
 import { rgba } from 'polished'
 import Alert from '~components/Helper/src/components/alert'
 import Loading from '~components/Helper/src/components/loading'
 import restfulFetch from '~components/Fetch/src/restful-fetch'
+import NodeNetworks from './node-networks'
 
 const StyledNodeGroupId = styled.a`
   display: block;
@@ -38,7 +37,6 @@ const StyledNodeGroupMsg = styled(StyledNodeGroup)`
   display: flex;
   justify-content: center;
 `
-
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
   background: ${({ theme }) => rgba(theme.colorDark, 0.1)};
@@ -46,27 +44,9 @@ const StyledNodeGroupNetworks = styled.div`
   padding: ${GUTTER};
   margin-bottom: ${GUTTER};
 `
-const StyledNodeGroupNetwork = styled.div`
-  border-bottom: 1px dashed ${({ theme }) => rgba(theme.colorDark, 0.1)};
-  margin-bottom: calc(${GUTTER} / 2);
-  padding-bottom: calc(${GUTTER} / 2);
-  &:last-child {
-    margin-bottom: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-`
-
-interface NodesNetworks {
-  id: string
-  networks: NetworkStatsItemProps[]
-  timestamp: number
-}
 
 @observer
 export default class Nodes extends Component {
-  private prevNodesNetworks: NodesNetworks[] = []
-
   public componentDidMount() {
     const { items, itemsCount } = store
 
@@ -74,35 +54,29 @@ export default class Nodes extends Component {
       return
     }
 
-    for (const { id, fetchUrl } of items) {
-      this.fetch({ id, fetchUrl })
+    for (const { id } of items) {
+      this.fetch(id)
     }
   }
 
-  private fetch = async ({
-    id,
-    fetchUrl,
-  }: {
-    id: string
-    fetchUrl: string
-  }) => {
+  private fetch = async (nodeId: string) => {
     const { setItem } = store
 
-    await restfulFetch(`node&nodeId=${id}`)
+    await restfulFetch(`node&nodeId=${nodeId}`)
       .then(([{ status }, item]) => {
         if (status === OK) {
           if (!item) {
             return
           }
 
-          setItem({ id, isLoading: false, data: item })
+          setItem({ id: nodeId, isLoading: false, data: item })
           // fetch again
           setTimeout(() => {
-            this.fetch({ id, fetchUrl })
+            this.fetch(nodeId)
           }, 1000)
         } else {
           setItem({
-            id,
+            id: nodeId,
             isLoading: false,
             isError: true,
             errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
@@ -113,13 +87,13 @@ export default class Nodes extends Component {
       })
       .catch(e => {
         setItem({
-          id,
+          id: nodeId,
           isLoading: false,
           isError: true,
           errMsg: gettext('Fetch failed. Detail in Console.'),
         })
         console.log(
-          template(gettext('Node [${node}] fetch failed.'), { node: id }),
+          template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
           e
         )
       })
@@ -192,64 +166,8 @@ export default class Nodes extends Component {
     )
   }
 
-  private renderNetworks(
-    nodeId: string,
-    { networks, timestamp }: DataNetworkStatsProps
-  ) {
-    return networks.map(({ id, rx, tx }) => {
-      if (!networks?.length) {
-        return null
-      }
-
-      const prevNodeNetworks = this.prevNodesNetworks.find(
-        ({ id }) => id === nodeId
-      )
-      const prevNodeNetwork = prevNodeNetworks?.networks.find(
-        item => item.id === id
-      )
-      const prevRx = prevNodeNetwork?.rx || rx
-      const prevTx = prevNodeNetwork?.tx || tx
-      const prevTimestamp = prevNodeNetworks?.timestamp || timestamp
-      let seconds = timestamp - prevTimestamp
-      seconds = seconds < 1 ? 1 : seconds
-      const i = this.prevNodesNetworks.findIndex(({ id }) => id === nodeId)
-
-      if (i === -1) {
-        this.prevNodesNetworks.push({
-          id: nodeId,
-          networks,
-          timestamp,
-        })
-      } else {
-        this.prevNodesNetworks[i] = {
-          ...this.prevNodesNetworks[i],
-          ...{
-            networks,
-            timestamp,
-          },
-        }
-      }
-      // console.log(JSON.stringify(this.prevNodesNetworks))
-
-      return (
-        <StyledNodeGroupNetwork key={id}>
-          <NetworksStatsItem
-            id={id}
-            singleLine={false}
-            totalRx={rx}
-            rateRx={(rx - prevRx) / seconds}
-            totalTx={tx}
-            rateTx={(tx - prevTx) / seconds}
-          />
-        </StyledNodeGroupNetwork>
-      )
-    })
-  }
-
   private renderItems() {
-    const { items } = store
-
-    return items.map(({ id, url, isLoading, isError, errMsg, data }) => {
+    return store.items.map(({ id, url, isLoading, isError, errMsg, data }) => {
       const idLink = <StyledNodeGroupId href={url}>{id}</StyledNodeGroupId>
 
       switch (true) {
@@ -288,9 +206,10 @@ export default class Nodes extends Component {
           {this.renderCpu(serverStatus?.cpuUsage)}
           {this.renderMemory(serverStatus?.memRealUsage)}
           {this.renderSwap(serverStatus?.swapUsage)}
-          <StyledNodeGroupNetworks>
-            {this.renderNetworks(id, networkStats)}
-          </StyledNodeGroupNetworks>
+          <NodeNetworks
+            items={networkStats?.networks || []}
+            timestamp={networkStats?.timestamp || 0}
+          />
         </Grid>
       )
     })

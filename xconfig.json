@@ -4,9 +4,8 @@
   //
   // TODO: Nodes
   // You can set nodes for X-Prober
-  // "nodes": [
-  // ["node-1", "http://localhost:8000"],
-  // ["node-2", "http://localhost:8000"],
-  // ["node-3", "http://localhost/prober/.tmp"]
-  // ]
+  "nodes": [
+    ["node-1", "http://localhost/prober/.tmp/"],
+    ["node-3", "https://tz.inn-studio.com/"]
+  ]
 }
