@@ -35,27 +35,27 @@
 
 ## 開發指引
 
-- 星標和 Fork。
+- Fork 項目。
 - Fetch 您的倉庫。
 - 安裝 npm 模塊：`$ npm install`。
 - 監視腳本：`$ npm run dev`。
 - 安裝 composer：`$ composer install && composer dumpautoload -o`。
-- 生成多國語言：`$ npm run lang` 或 `$ node ./build-lang.js` 來重建 `./languages/lang.pot` 語言模板。
-- 編譯：`$ php ./Make.php dev`。
-- 訪問`$ php -S localhost:8000 -t ./.tmp`.
-- 進行 Pull Request。
+- 生成多國語言：`$ npm run lang` 來重建 `./languages/lang.pot` 語言模板。
+- 編譯 PHP：`$ npm run dev:php`。
+- 訪問：`http://localhost:3000` 或 `http://path/to/.tmp/index.php`。
 
 ## 編譯生產
 
-- 編譯：`$ npm run build; php ./Make.php build`.
-- 訪問：`$ php -S localhost:8000 ./dist/prober.php`.
+- 編譯 JS：`$ npm run build`.
+- 編譯 PHP：`$ npm run build:php`.
+- 訪問：`http://localhost:3000` 或 `http://path/to/dist/prober.php`。
 
 ## 參與翻譯更多語言
 
-- **Fork** 項目。
+- Fork 項目。
 - 使用 [Poedit](https://poedit.net/) 通過 `./languages/lang.pot` 語言模板來創建和翻譯您的語言。
 - 保存翻譯語言文件 （例如：`en_US.po`) 到 `./languages` 目錄裏面。
-- 添加您的稱呼到貢獻者名單裏面。
+- Push 您的修改。
 - 進行 Pull Request，十分感謝。😘
 
 ## 給予參與貢獻者的備註
