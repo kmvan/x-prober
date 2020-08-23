@@ -47,7 +47,8 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 - Install node modules: `$ npm install`.
 - Watch scripts: `$ npm run dev`.
 - Generate composer vendor: `$ composer install; composer dumpautoload -o`.
-- Compile PHP: `$ npm run dev:php` and access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
+- Compile PHP: `$ npm run dev:php`
+- Access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
 - Generate languages: `$ npm run lang` to remake `./languages/lang.pot` language template and build `*.po`.
 - Enjoy it. 😄
 
