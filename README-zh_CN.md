@@ -29,33 +29,33 @@
 - 浏览器兼容：Chrome、Firefox、Edge、Android
 - 系统兼容：Linux、Windows（基础功能）
 
-## 擴展
+## 扩展
 
-- 正在編寫中……
+- 正在编写中……
 
 ## 开发指引
 
-- 星标和 Fork。
+- Fork 项目。
 - Fetch 您的仓库。
 - 安装 npm 模块：`$ npm install`。
 - 监听脚本：`$ npm run dev`。
 - 安装 composer：`$ composer install && composer dumpautoload -o`。
-- 生成多国语言：`$ npm run lang` 或 `$ node ./build-lang.js` 来重建 `./languages/lang.pot` 语言模板。
-- 编译：`$ php ./Make.php dev`。
-- 访问：`$ php -S localhost:8000 -t ./.tmp`.
-- 进行 Pull Request。
+- 生成多国语言：`$ npm run lang` 来重建 `./languages/lang.pot` 语言模板。
+- 编译 PHP：`$ npm run dev:php`。
+- 访问：`http://localhost:3000` 或 `http://path/to/.tmp/index.php`。
 
 ## 编译生产
 
-- 编译：`$ npm run build; php ./Make.php build`.
-- 访问：`$ php -S localhost:8000 ./dist/prober.php`.
+- 编译 JS：`$ npm run build`.
+- 编译 PHP：`$ npm run build:php`.
+- 访问：`http://localhost:3000` 或 `http://path/to/dist/prober.php`。
 
 ## 参与翻译更多语言
 
-- **Fork** 项目。
+- Fork 项目。
 - 使用 [Poedit](https://poedit.net/) 通过 `./languages/lang.pot` 语言模板来创建和翻译您的语言。
 - 保存翻译语言文件 _（例如：`en_US.po`)_ 到 `./languages` 目录里面。
-- 添加您的称呼到贡献者名单里面。
+- Push 您的修改。
 - 进行 Pull Request，十分感谢。😘
 
 ## 给予参与贡献者的备注

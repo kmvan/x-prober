@@ -4,10 +4,10 @@
   "scripts": {
     "lang": "node ./build-lang.js",
     "dev": "cross-env webpack --display-error-details --progress --colors --watch",
-    "dev-php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
+    "dev:php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
     "build": "cross-env webpack --config=prod.webpack.config.js --display-error-details --progress --colors",
-    "build-php": "php ./Make.php build; php -S localhost:8000/prober.php -t dist",
-    "build-php-debug": "php ./Make.php build debug; php -S localhost:8000/prober.php -t dist",
+    "build:php": "php-cs-fixer fix ./src --config=.php_cs53; php ./Make.php build; php -S localhost:8000/prober.php -t dist",
+    "build:php-debug": "php ./Make.php build debug; php -S localhost:8000/prober.php -t dist",
     "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php_cs53"
   },
   "browserslist": [

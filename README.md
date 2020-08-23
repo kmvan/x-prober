@@ -42,28 +42,28 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 ## Development
 
-- Fork.
+- Fork project.
 - Fetch your project.
 - Install node modules: `$ npm install`.
 - Watch scripts: `$ npm run dev`.
 - Generate composer vendor: `$ composer install; composer dumpautoload -o`.
-- Compile: `$ php ./Make.php dev`.
-- Generate languages: `$ npm run lang` or `node ./build-lang.js` to remake `./languages/lang.pot` language template.
-- Access: `$ php -S localhost:8000 -t ./.tmp`.
+- Compile PHP: `$ npm run dev:php` and access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
+- Generate languages: `$ npm run lang` to remake `./languages/lang.pot` language template and build `*.po`.
 - Enjoy it. 😄
-- Pull Request.
 
 ## Compile production
 
-- Compile: `$ npm run build; php ./Make.php build`.
-- Access: `$ php -S localhost:8000 ./dist/prober.php`.
+- Compile JS: `$ npm run build`.
+- Compile PHP: `$ npm run build:php`.
+- Access: `http://localhost:8000` or `http://path/to/dist/prober.php`.
 
 ## Help and translate more languages
 
-- **Fork** project.
+- Fork project.
 - Fetch your project.
 - Use [Poedit](https://poedit.net/) to create your language from `./languages/lang.pot` language template file and translates it.
 - Save your language file (like: `en_US.po`) into `./languages`.
+- Push your changes.
 - Pull Request and thank you. 😘
 
 ## Note for participate in contribution
