@@ -7,7 +7,7 @@ const restfulFetch = (action: string, opts = {}): Promise<any> => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: BootstrapStore.conf.authorization,
+          Authorization: BootstrapStore.conf?.authorization,
         },
         cache: 'no-cache',
         credentials: 'omit',

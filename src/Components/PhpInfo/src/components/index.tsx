@@ -23,23 +23,23 @@ export default class PhpInfo extends Component {
       [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
     ]
     const shortItems = [
-      [gettext('SAPI interface'), conf.sapi],
+      [gettext('SAPI interface'), conf?.sapi],
       [
         gettext('Display errors'),
-        <Alert key='displayErrors' isSuccess={conf.displayErrors} />,
+        <Alert key='displayErrors' isSuccess={conf?.displayErrors} />,
       ],
-      [gettext('Error reporting'), conf.errorReporting],
-      [gettext('Max memory limit'), conf.memoryLimit],
-      [gettext('Max POST size'), conf.postMaxSize],
-      [gettext('Max upload size'), conf.uploadMaxFilesize],
-      [gettext('Max input variables'), conf.maxInputVars],
-      [gettext('Max execution time'), conf.maxExecutionTime],
-      [gettext('Timeout for socket'), conf.defaultSocketTimeout],
+      [gettext('Error reporting'), conf?.errorReporting],
+      [gettext('Max memory limit'), conf?.memoryLimit],
+      [gettext('Max POST size'), conf?.postMaxSize],
+      [gettext('Max upload size'), conf?.uploadMaxFilesize],
+      [gettext('Max input variables'), conf?.maxInputVars],
+      [gettext('Max execution time'), conf?.maxExecutionTime],
+      [gettext('Timeout for socket'), conf?.defaultSocketTimeout],
       [
         gettext('Treatment URLs file'),
-        <Alert key='allowUrlFopen' isSuccess={conf.allowUrlFopen} />,
+        <Alert key='allowUrlFopen' isSuccess={conf?.allowUrlFopen} />,
       ],
-      [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf.smtp} />],
+      [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
     ]
 
     const { disableFunctions, disableClasses } = conf

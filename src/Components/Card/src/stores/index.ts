@@ -41,6 +41,7 @@ class CardStore {
   @computed
   public get enabledCards(): CardProps[] {
     return this.cards
+      .slice()
       .filter(({ enabled = true }) => enabled)
       .sort((a, b) => a.priority - b.priority)
   }

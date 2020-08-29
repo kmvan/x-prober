@@ -10,10 +10,10 @@ export default class MyInfo extends Component {
   public render() {
     const { conf } = store
     const items: any[] = [
-      [gettext('My IP'), conf.ip],
+      [gettext('My IP'), conf?.ip],
       [gettext('My browser UA'), navigator.userAgent],
       [gettext('My browser languages (via JS)'), navigator.languages.join(',')],
-      [gettext('My browser languages (via PHP)'), conf.phpLanguage],
+      [gettext('My browser languages (via PHP)'), conf?.phpLanguage],
       [gettext('My location'), gettext('In development')],
     ]
 
