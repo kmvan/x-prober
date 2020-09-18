@@ -42,18 +42,18 @@ export default class ServerInfo extends Component {
       { days, hours, mins, secs }
     )
     const shortItems = [
-      [gettext('Server name'), conf.serverName],
+      [gettext('Server name'), conf?.serverName],
       [gettext('Server time'), store.serverTime],
       [gettext('Server uptime'), uptime],
-      [gettext('Server IP'), conf.serverIp],
-      [gettext('Server software'), conf.serverSoftware],
-      [gettext('PHP version'), conf.phpVersion],
+      [gettext('Server IP'), conf?.serverIp],
+      [gettext('Server software'), conf?.serverSoftware],
+      [gettext('PHP version'), conf?.phpVersion],
     ]
 
     const longItems = [
-      [gettext('CPU model'), conf.cpuModel || gettext('Unavailable')],
-      [gettext('Server OS'), conf.serverOs],
-      [gettext('Script path'), conf.scriptPath],
+      [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
+      [gettext('Server OS'), conf?.serverOs],
+      [gettext('Script path'), conf?.scriptPath],
       [gettext('Disk usage'), this.diskUsage()],
     ]
 

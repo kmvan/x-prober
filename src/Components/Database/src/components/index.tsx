@@ -9,23 +9,23 @@ import Alert from '~components/Helper/src/components/alert'
 export default class Database extends Component {
   public render() {
     const { conf } = store
-    const shortItems: any[] = [
-      ['SQLite3', conf.sqlite3],
-      ['SQLite', conf.sqliteLibversion],
-      ['MySQLi client', conf.mysqliClientVersion],
-      ['Mongo', conf.mongo],
-      ['MongoDB', conf.mongoDb],
-      ['PostgreSQL', conf.postgreSql],
-      ['Paradox', conf.paradox],
-      ['MS SQL', conf.msSql],
-      ['File Pro', conf.filePro],
-      ['MaxDB client', conf.maxDbClient],
-      ['MaxDB server', conf.maxDbServer],
+    const shortItems: [string, boolean | string][] = [
+      ['SQLite3', conf?.sqlite3],
+      ['SQLite', conf?.sqliteLibversion],
+      ['MySQLi client', conf?.mysqliClientVersion],
+      ['Mongo', conf?.mongo],
+      ['MongoDB', conf?.mongoDb],
+      ['PostgreSQL', conf?.postgreSql],
+      ['Paradox', conf?.paradox],
+      ['MS SQL', conf?.msSql],
+      ['File Pro', conf?.filePro],
+      ['MaxDB client', conf?.maxDbClient],
+      ['MaxDB server', conf?.maxDbServer],
     ]
 
     return (
       <Row>
-        {shortItems.map(([name, content]: [string, boolean | string]) => {
+        {shortItems.map(([name, content]) => {
           return (
             <CardGrid
               key={name}

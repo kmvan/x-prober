@@ -60,35 +60,35 @@ class ServerStatus {
   @computed
   public get memRealUsage(): ServerStatusUsageProps {
     return FetchStore.isLoading
-      ? this.conf.memRealUsage
+      ? this.conf?.memRealUsage
       : this.fetchData?.memRealUsage
   }
 
   @computed
   public get memCached(): ServerStatusUsageProps {
     return FetchStore.isLoading
-      ? this.conf.memCached
+      ? this.conf?.memCached
       : this.fetchData?.memCached
   }
 
   @computed
   public get memBuffers(): ServerStatusUsageProps {
     return FetchStore.isLoading
-      ? this.conf.memBuffers
+      ? this.conf?.memBuffers
       : this.fetchData?.memBuffers
   }
 
   @computed
   public get swapUsage(): ServerStatusUsageProps {
     return FetchStore.isLoading
-      ? this.conf.swapUsage
+      ? this.conf?.swapUsage
       : this.fetchData?.swapUsage
   }
 
   @computed
   public get swapCached(): ServerStatusUsageProps {
     return FetchStore.isLoading
-      ? this.conf.swapCached
+      ? this.conf?.swapCached
       : this.fetchData?.swapCached
   }
 }

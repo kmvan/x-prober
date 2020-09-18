@@ -57,7 +57,7 @@ export default class ServerBenchmark extends Component {
       )
     }
 
-    let items = toJS(servers).map(item => {
+    const items = toJS(servers).map(item => {
       item.total = item.detail
         ? Object.values(item.detail).reduce((a, b) => a + b, 0)
         : 0
@@ -65,7 +65,7 @@ export default class ServerBenchmark extends Component {
       return item
     })
 
-    items = items.sort((a, b) => Number(b.total) - Number(a.total))
+    items.sort((a, b) => Number(b.total) - Number(a.total))
 
     return items.map(({ name, url, date, proberUrl, binUrl, detail }) => {
       if (!detail) {

@@ -8,31 +8,32 @@ import SearchLink from '~components/Helper/src/components/search-link'
 import MultiItemContainer from '~components/Card/src/components/multi-item-container'
 
 const { conf } = store
-const shortItems = [
-  ['Redis', conf.redis],
-  ['SQLite3', conf.sqlite3],
-  ['Memcache', conf.memcache],
-  ['Memcached', conf.memcached],
-  ['Opcache', conf.opcache],
-  [gettext('Opcache enabled'), conf.opcacheEnabled],
-  ['Swoole', conf.swoole],
-  ['Image Magick', conf.imagick],
-  ['Graphics Magick', conf.gmagick],
-  ['Exif', conf.exif],
-  ['Fileinfo', conf.fileinfo],
-  ['SimpleXML', conf.simplexml],
-  ['Sockets', conf.sockets],
-  ['MySQLi', conf.mysqli],
-  ['Zip', conf.zip],
-  ['Multibyte String', conf.mbstring],
-  ['Phalcon', conf.phalcon],
-  ['Xdebug', conf.xdebug],
-  ['Zend Otimizer', conf.zendOtimizer],
-  ['ionCube', conf.ionCube],
-  ['Source Guardian', conf.sourceGuardian],
-  ['LDAP', conf.ldap],
-  ['cURL', conf.curl],
-].sort((a, b) => {
+const shortItems: [string, boolean][] = [
+  ['Redis', !!conf?.redis],
+  ['SQLite3', !!conf?.sqlite3],
+  ['Memcache', !!conf?.memcache],
+  ['Memcached', !!conf?.memcached],
+  ['Opcache', !!conf?.opcache],
+  [gettext('Opcache enabled'), !!conf?.opcacheEnabled],
+  ['Swoole', !!conf?.swoole],
+  ['Image Magick', !!conf?.imagick],
+  ['Graphics Magick', !!conf?.gmagick],
+  ['Exif', !!conf?.exif],
+  ['Fileinfo', !!conf?.fileinfo],
+  ['SimpleXML', !!conf?.simplexml],
+  ['Sockets', !!conf?.sockets],
+  ['MySQLi', !!conf?.mysqli],
+  ['Zip', !!conf?.zip],
+  ['Multibyte String', !!conf?.mbstring],
+  ['Phalcon', !!conf?.phalcon],
+  ['Xdebug', !!conf?.xdebug],
+  ['Zend Otimizer', !!conf?.zendOtimizer],
+  ['ionCube', !!conf?.ionCube],
+  ['Source Guardian', !!conf?.sourceGuardian],
+  ['LDAP', !!conf?.ldap],
+  ['cURL', !!conf?.curl],
+]
+shortItems.sort((a, b) => {
   const x = a[0].toLowerCase()
   const y = b[0].toLowerCase()
 
@@ -47,7 +48,8 @@ const shortItems = [
   return 0
 })
 
-const longItems: string[] = conf.loadedExtensions.sort((a, b) => {
+const longItems: string[] = conf?.loadedExtensions || []
+longItems.sort((a, b) => {
   const x = a.toLowerCase()
   const y = b.toLowerCase()
 
@@ -80,13 +82,15 @@ export default class PhpExtensions extends Component {
             </CardGrid>
           )
         })}
-        <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
-          <MultiItemContainer>
-            {longItems.map(id => {
-              return <SearchLink key={id} keyword={id} />
-            })}
-          </MultiItemContainer>
-        </CardGrid>
+        {!!longItems.length && (
+          <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
+            <MultiItemContainer>
+              {longItems.map(id => {
+                return <SearchLink key={id} keyword={id} />
+              })}
+            </MultiItemContainer>
+          </CardGrid>
+        )}
       </Row>
     )
   }

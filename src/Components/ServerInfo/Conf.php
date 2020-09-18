@@ -24,7 +24,7 @@ class Conf extends ServerInfoConstants
             'serverUtcTime'  => HelperApi::getServerUtcTime(),
             'serverTime'     => HelperApi::getServerTime(),
             'serverUptime'   => HelperApi::getServerUptime(),
-            'serverIp'       => $this->getServerInfo('SERVER_ADDR'),
+            'serverIp'       => XconfigApi::isDisabled('serverIp') ? '-' : $this->getServerInfo('SERVER_ADDR'),
             'serverSoftware' => $this->getServerInfo('SERVER_SOFTWARE'),
             'phpVersion'     => \PHP_VERSION,
             'cpuModel'       => HelperApi::getCpuModel(),
