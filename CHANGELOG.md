@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.2.0 - 2020-09-18
+
+### Add
+
+- Add server IP feature switch
+
+### Update
+
+- Update npm packages
+
 ## 6.1.0 - 2020-08-20
 
 ### Fix

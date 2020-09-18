@@ -1,11 +1,10 @@
 {
-  // You can disable listed features: serverStatus, networkStats, ping, serverInfo, phpInfo, phpInfoDetail, phpDisabledFunctions, phpDisabledClasses, phpExtensions, phpExtensionsLoaded, database, myServerBenchmark, myInfo
-  // "disabled": ["myServerBenchmark"]
+  // You can disable listed features: serverStatus, networkStats, ping, serverInfo, phpInfo, phpInfoDetail, phpDisabledFunctions, phpDisabledClasses, phpExtensions, phpExtensionsLoaded, database, myServerBenchmark, myInfo, serverIp
+  "disabled": ["serverIp", "phpInfoDetail"]
   //
-  // TODO: Nodes
   // You can set nodes for X-Prober
-  "nodes": [
-    ["node-1", "http://localhost/prober/.tmp/"],
-    ["node-3", "https://tz.inn-studio.com/"]
-  ]
+  // "nodes": [
+  //   ["node-1", "http://localhost/prober/.tmp/"],
+  //   ["node-3", "https://tz.inn-studio.com/"]
+  // ]
 }
