@@ -23,7 +23,7 @@ class Conf extends DatabaseConstants
         $conf[$this->ID] = array(
             'sqlite3'             => $sqlite3Version ? $sqlite3Version['versionString'] : false,
             'sqliteLibversion'    => \function_exists('\\sqlite_libversion') ? \sqlite_libversion() : false,
-            'mysqliClientVersion' => \function_exists('\\mysqli_get_client_version') ? \mysqli_get_client_version(null) : false,
+            'mysqliClientVersion' => \function_exists('\\mysqli_get_client_version') ? \mysqli_get_client_version() : false,
             'mongo'               => \class_exists('\\Mongo'),
             'mongoDb'             => \class_exists('\\MongoDB'),
             'postgreSql'          => \function_exists('\\pg_connect'),
