@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { gettext } from '~components/Language/src'
-import Row from '~components/Grid/src/components/row'
-import CardGrid from '~components/Card/src/components/card-grid'
+import { gettext } from '@/Language/src'
+import Row from '@/Grid/src/components/row'
+import CardGrid from '@/Card/src/components/card-grid'
 import store from '../stores'
 
 @observer

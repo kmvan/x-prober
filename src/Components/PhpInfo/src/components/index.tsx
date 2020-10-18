@@ -1,12 +1,12 @@
 import React, { Component, ReactNode } from 'react'
 import { observer } from 'mobx-react'
-import { gettext } from '~components/Language/src'
-import Row from '~components/Grid/src/components/row'
-import CardGrid from '~components/Card/src/components/card-grid'
+import { gettext } from '@/Language/src'
+import Row from '@/Grid/src/components/row'
+import CardGrid from '@/Card/src/components/card-grid'
 import store from '../stores'
-import Alert from '~components/Helper/src/components/alert'
-import MultiItemContainer from '~components/Card/src/components/multi-item-container'
-import SearchLink from '~components/Helper/src/components/search-link'
+import Alert from '@/Helper/src/components/alert'
+import MultiItemContainer from '@/Card/src/components/multi-item-container'
+import SearchLink from '@/Helper/src/components/search-link'
 import PhpInfoPhpVersion from './php-version'
 
 @observer

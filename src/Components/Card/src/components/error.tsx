@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER } from '@/Config/src'
 
 const StyledCardError = styled.div`
   padding: ${GUTTER};

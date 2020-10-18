@@ -1,7 +1,7 @@
 import { observable, action, configure } from 'mobx'
-import ToastStore from '~components/Toast/src/stores'
-import { gettext } from '~components/Language/src'
-import BootstrapStore from '~components/Bootstrap/src/stores'
+import ToastStore from '@/Toast/src/stores'
+import { gettext } from '@/Language/src'
+import BootstrapStore from '@/Bootstrap/src/stores'
 
 configure({
   enforceActions: 'observed',

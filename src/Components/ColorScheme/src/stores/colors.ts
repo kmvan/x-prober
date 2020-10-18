@@ -1,5 +1,5 @@
-import hexToRgb from '~components/Helper/src/components/hex-to-rgb'
-import { gettext } from '~components/Language/src'
+import hexToRgb from '@/Helper/src/components/hex-to-rgb'
+import { gettext } from '@/Language/src'
 
 const schemes = {
   default: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER } from '@/Config/src'
 import { rgba } from 'polished'
 
 const StyledSearchLink = styled.a`

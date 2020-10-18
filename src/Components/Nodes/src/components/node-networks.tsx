@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import styled from 'styled-components'
-import { GUTTER, BORDER_RADIUS } from '~components/Config/src'
-import NetworksStatsItem from '~components/NetworkStats/src/components/item'
-import { NetworkStatsItemProps } from '~components/NetworkStats/src/stores'
+import { GUTTER, BORDER_RADIUS } from '@/Config/src'
+import NetworksStatsItem from '@/NetworkStats/src/components/item'
+import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
 import { rgba } from 'polished'
-import { toJS } from 'mobx'
 
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};

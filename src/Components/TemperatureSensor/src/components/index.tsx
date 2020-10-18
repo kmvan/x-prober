@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import Row from '~components/Grid/src/components/row'
-import { gettext } from '~components/Language/src'
-import CardGrid from '~components/Card/src/components/card-grid'
-import ProgressBar from '~components/ProgressBar/src/components'
-import template from '~components/Helper/src/components/template'
+import Row from '@/Grid/src/components/row'
+import { gettext } from '@/Language/src'
+import CardGrid from '@/Card/src/components/card-grid'
+import ProgressBar from '@/ProgressBar/src/components'
+import template from '@/Helper/src/components/template'
 
 @observer
 export default class TemperatureSensor extends Component {

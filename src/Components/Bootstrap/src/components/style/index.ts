@@ -1,6 +1,6 @@
 import { css, createGlobalStyle } from 'styled-components'
-import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
-import { device } from '~components/Style/src/components/devices'
+import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
+import { device } from '@/Style/src/components/devices'
 
 const normalize = css`
   @media ${device('desktopSm')} {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import Portal from '~components/Helper/src/components/portal'
+import Portal from '@/Helper/src/components/portal'
 import store from '../stores'
 import styled from 'styled-components'
-import { GUTTER } from '~components/Config/src'
-import { gettext } from '~components/Language/src'
+import { GUTTER } from '@/Config/src'
+import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
 
 const StyledToast = styled.div`

@@ -4,11 +4,11 @@ import {
   BORDER_RADIUS,
   GUTTER,
   ANIMATION_DURATION_SC,
-} from '~components/Config/src/index'
+} from '@/Config/src/index'
 import { observer } from 'mobx-react'
-import BootstrapStore from '~components/Bootstrap/src/stores'
-import UpdaterStore from '~components/Updater/src/stores'
-import UpdaterLink from '~components/Updater/src/components/updater-link'
+import BootstrapStore from '@/Bootstrap/src/stores'
+import UpdaterStore from '@/Updater/src/stores'
+import UpdaterLink from '@/Updater/src/components/updater-link'
 import { rgba } from 'polished'
 
 const slideDown = keyframes`

@@ -1,10 +1,10 @@
 import React, { Component, MouseEvent } from 'react'
 import { observer } from 'mobx-react'
-import CardStore from '~components/Card/src/stores'
+import CardStore from '@/Card/src/stores'
 import styled, { keyframes } from 'styled-components'
-import { device } from '~components/Style/src/components/devices'
-import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
-import getElementOffsetTop from '~components/Helper/src/components/get-element-offset-top'
+import { device } from '@/Style/src/components/devices'
+import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
+import getElementOffsetTop from '@/Helper/src/components/get-element-offset-top'
 import { rgba } from 'polished'
 
 const slideUp = keyframes`

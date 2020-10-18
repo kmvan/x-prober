@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import formatBytes from '~components/Helper/src/components/format-bytes'
-import gradientColors from '~components/Helper/src/components/gradient'
-import { GUTTER } from '~components/Config/src'
+import formatBytes from '@/Helper/src/components/format-bytes'
+import gradientColors from '@/Helper/src/components/gradient'
+import { GUTTER } from '@/Config/src'
 import { rgba, linearGradient } from 'polished'
 
 export interface ProgressBarProps {

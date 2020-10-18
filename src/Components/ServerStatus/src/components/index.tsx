@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Row from '~components/Grid/src/components/row'
+import Row from '@/Grid/src/components/row'
 import SystemLoad from './system-load'
 import CpuUsage from './cpu-usage'
 import MemRealUsage from './mem-real-usage'

@@ -1,7 +1,7 @@
 import React from 'react'
-import formatBytes from '~components/Helper/src/components/format-bytes'
-import Row from '~components/Grid/src/components/row'
-import Grid from '~components/Grid/src/components/grid'
+import formatBytes from '@/Helper/src/components/format-bytes'
+import Row from '@/Grid/src/components/row'
+import Grid from '@/Grid/src/components/grid'
 import styled from 'styled-components'
 
 interface NetworksStatsItemProps {

@@ -4,8 +4,8 @@ import {
   device,
   breakPoints,
   DeviceIdProps,
-} from '~components/Style/src/components/devices'
-import { GUTTER } from '~components/Config/src'
+} from '@/Style/src/components/devices'
+import { GUTTER } from '@/Config/src'
 
 interface BreakPointsProps {
   mobileSm?: [number, number]

@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import styled, { keyframes } from 'styled-components'
-import {
-  GUTTER,
-  BORDER_RADIUS,
-  ANIMATION_DURATION_SC,
-} from '~components/Config/src'
+import { GUTTER, BORDER_RADIUS, ANIMATION_DURATION_SC } from '@/Config/src'
 import schemes from '../stores/colors'
 import { rgba } from 'polished'
 import store from '../stores'

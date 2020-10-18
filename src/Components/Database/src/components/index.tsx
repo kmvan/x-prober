@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import Row from '~components/Grid/src/components/row'
-import CardGrid from '~components/Card/src/components/card-grid'
+import Row from '@/Grid/src/components/row'
+import CardGrid from '@/Card/src/components/card-grid'
 import store from '../stores'
-import Alert from '~components/Helper/src/components/alert'
+import Alert from '@/Helper/src/components/alert'
 
 @observer
 export default class Database extends Component {

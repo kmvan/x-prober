@@ -1,5 +1,5 @@
-import CardStore from '~components/Card/src/stores'
-import { gettext } from '~components/Language/src'
+import CardStore from '@/Card/src/stores'
+import { gettext } from '@/Language/src'
 import component from './components'
 import store from './stores'
 
