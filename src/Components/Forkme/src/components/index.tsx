@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { GUTTER, ANIMATION_DURATION_SC } from '~components/Config/src'
-import { gettext } from '~components/Language/src'
-import BootstrapStore from '~components/Bootstrap/src/stores'
-import { device } from '~components/Style/src/components/devices'
+import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
+import { gettext } from '@/Language/src'
+import BootstrapStore from '@/Bootstrap/src/stores'
+import { device } from '@/Style/src/components/devices'
 import { rgba } from 'polished'
 
 const slideIn = keyframes`

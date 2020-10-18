@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import CardGrid from '~components/Card/src/components/card-grid'
-import { gettext } from '~components/Language/src'
+import CardGrid from '@/Card/src/components/card-grid'
+import { gettext } from '@/Language/src'
 import styled from 'styled-components'
 import store from '../stores'
-import { GUTTER } from '~components/Config/src'
-import { device } from '~components/Style/src/components/devices'
+import { GUTTER } from '@/Config/src'
+import { device } from '@/Style/src/components/devices'
 import { rgba } from 'polished'
-import template from '~components/Helper/src/components/template'
+import template from '@/Helper/src/components/template'
 
 interface StyledSysLoadGroupProps {
   isCenter: boolean

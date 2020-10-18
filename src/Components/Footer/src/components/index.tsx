@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { gettext } from '~components/Language/src'
-import BootstrapStore from '~components/Bootstrap/src/stores'
+import { gettext } from '@/Language/src'
+import BootstrapStore from '@/Bootstrap/src/stores'
 import store from '../stores'
-import { GUTTER } from '~components/Config/src'
-import formatBytes from '~components/Helper/src/components/format-bytes'
-import { device } from '~components/Style/src/components/devices'
-import template from '~components/Helper/src/components/template'
+import { GUTTER } from '@/Config/src'
+import formatBytes from '@/Helper/src/components/format-bytes'
+import { device } from '@/Style/src/components/devices'
+import template from '@/Helper/src/components/template'
 
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme.colorDark};

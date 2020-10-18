@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { device } from '~components/Style/src/components/devices'
-import { GUTTER } from '~components/Config/src'
+import { device } from '@/Style/src/components/devices'
+import { GUTTER } from '@/Config/src'
 
 const StyledContainer = styled.div`
   margin-left: auto;

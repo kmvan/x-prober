@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import { GUTTER } from '~components/Config/src'
-import { gettext } from '~components/Language/src'
+import { GUTTER } from '@/Config/src'
+import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
-import { device } from '~components/Style/src/components/devices'
+import { device } from '@/Style/src/components/devices'
 
 interface StyleArrowProps {
   isHidden: boolean

@@ -1,6 +1,7 @@
 'use strict'
 
 const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default
@@ -26,31 +27,39 @@ module.exports = {
       '@': path.resolve(__dirname, 'src/Components'),
     },
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          compress: true,
+          ecma: 2015,
+          keep_classnames: false,
+          keep_fnames: false,
+          module: false,
+          format: {
+            ascii_only: true,
+            comments: true,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
-      __DEV__: true,
+      __DEV__: false,
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
         WEBPACK_ENV: JSON.stringify('development'),
       },
-      DEBUG: true,
+      DEBUG: false,
     }),
   ],
   module: {
     rules: [
-      // {
-      //   test: /\.m?js$/,
-      //   type: 'javascript/auto',
-      //   resolve: {
-      //     fullySpecified: false,
-      //   },
-      // },
       {
         test: /\.(ts|tsx)$/,
-        // type: 'javascript/auto',
-        // resolve: {
-        //   fullySpecified: false,
-        // },
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
         use: [
@@ -78,16 +87,5 @@ module.exports = {
       },
     ],
   },
-  // stats: {
-  //   modules: true,
-  //   reasons: true,
-  //   errorDetails: true,
-  //   timings: true,
-  // },
-  devtool: 'source-map',
-  watchOptions: {
-    poll: 1000,
-    aggregateTimeout: 1000,
-    ignored: /node_modules/,
-  },
+  devtool: 'hidden-source-map',
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import store from '../stores'
-import restfulFetch from '~components/Fetch/src/restful-fetch'
-import { OK } from '~components/Restful/src/http-status'
-import versionCompare from '~components/Helper/src/components/version-compare'
-import template from '~components/Helper/src/components/template'
-import { gettext } from '~components/Language/src'
-import CardLink from '~components/Card/src/components/card-link'
+import restfulFetch from '@/Fetch/src/restful-fetch'
+import { OK } from '@/Restful/src/http-status'
+import versionCompare from '@/Helper/src/components/version-compare'
+import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
+import CardLink from '@/Card/src/components/card-link'
 
 @observer
 export default class PhpInfoPhpVersion extends Component {

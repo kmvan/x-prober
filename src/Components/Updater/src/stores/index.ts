@@ -1,9 +1,9 @@
 import { observable, action, computed, configure } from 'mobx'
-import { gettext } from '~components/Language/src'
-import BootstrapStore from '~components/Bootstrap/src/stores'
-import ConfigStore from '~components/Config/src/stores'
-import versionCompare from '~components/Helper/src/components/version-compare'
-import template from '~components/Helper/src/components/template'
+import { gettext } from '@/Language/src'
+import BootstrapStore from '@/Bootstrap/src/stores'
+import ConfigStore from '@/Config/src/stores'
+import versionCompare from '@/Helper/src/components/version-compare'
+import template from '@/Helper/src/components/template'
 
 configure({
   enforceActions: 'observed',

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '~components/Config/src'
+import { GUTTER } from '@/Config/src'
 import { rgba } from 'polished'
 
 interface AlertContainerProps {
@@ -12,11 +12,11 @@ const StyledAlert = styled.div<AlertContainerProps>`
   display: inline-flex;
   border-radius: ${GUTTER};
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   font-family: Arial Black;
   font-weight: bolder;
   min-width: 2em;
-  color:${({ theme }) => theme.colorGray};
+  color: ${({ theme }) => theme.colorGray};
   box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDark, 0.3)};
   text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   padding: 0 0.5rem;
@@ -24,8 +24,8 @@ const StyledAlert = styled.div<AlertContainerProps>`
   cursor: pointer;
   background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
 
-  :active{
-    transform: scale3d(.9,.9,1);
+  :active {
+    transform: scale3d(0.9, 0.9, 1);
     background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
 

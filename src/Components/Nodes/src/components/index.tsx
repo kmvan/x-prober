@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import Row from '~components/Grid/src/components/row'
+import Row from '@/Grid/src/components/row'
 import store from '../stores'
-import Grid from '~components/Grid/src/components/grid'
+import Grid from '@/Grid/src/components/grid'
 import styled from 'styled-components'
-import { OK } from '~components/Restful/src/http-status'
-import { gettext } from '~components/Language/src'
-import { SysLoadGroup } from '~components/ServerStatus/src/components/system-load'
-import ProgressBar from '~components/ProgressBar/src/components'
-import template from '~components/Helper/src/components/template'
+import { OK } from '@/Restful/src/http-status'
+import { gettext } from '@/Language/src'
+import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
+import ProgressBar from '@/ProgressBar/src/components'
+import template from '@/Helper/src/components/template'
 import {
   ServerStatusCpuUsageProps,
   ServerStatusUsageProps,
-} from '~components/ServerStatus/src/stores'
-import { GUTTER, BORDER_RADIUS } from '~components/Config/src'
-import { NetworkStatsItemProps } from '~components/NetworkStats/src/stores'
-import { rgba } from 'polished'
-import Alert from '~components/Helper/src/components/alert'
-import Loading from '~components/Helper/src/components/loading'
-import restfulFetch from '~components/Fetch/src/restful-fetch'
+} from '@/ServerStatus/src/stores'
+import { GUTTER } from '@/Config/src'
+import Alert from '@/Helper/src/components/alert'
+import Loading from '@/Helper/src/components/loading'
+import restfulFetch from '@/Fetch/src/restful-fetch'
 import NodeNetworks from './node-networks'
 
 const StyledNodeGroupId = styled.a`
@@ -36,13 +34,6 @@ const StyledNodeGroup = styled.div`
 const StyledNodeGroupMsg = styled(StyledNodeGroup)`
   display: flex;
   justify-content: center;
-`
-const StyledNodeGroupNetworks = styled.div`
-  border-radius: ${BORDER_RADIUS};
-  background: ${({ theme }) => rgba(theme.colorDark, 0.1)};
-  color: ${({ theme }) => theme.colorDark};
-  padding: ${GUTTER};
-  margin-bottom: ${GUTTER};
 `
 
 @observer

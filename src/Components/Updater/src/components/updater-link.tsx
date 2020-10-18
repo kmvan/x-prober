@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import { StyledTitleLink } from '~components/Title/src/components'
+import { StyledTitleLink } from '@/Title/src/components'
 import store from '../stores'
 import {
   OK,
   INSUFFICIENT_STORAGE,
   INTERNAL_SERVER_ERROR,
-} from '~components/Restful/src/http-status'
-import { gettext } from '~components/Language/src'
-import restfulFetch from '~components/Fetch/src/restful-fetch'
+} from '@/Restful/src/http-status'
+import { gettext } from '@/Language/src'
+import restfulFetch from '@/Fetch/src/restful-fetch'
 
 @observer
 export default class UpdaterLink extends Component {

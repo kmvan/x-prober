@@ -1,6 +1,6 @@
-import conf from '~components/Helper/src/components/conf'
+import conf from '@/Helper/src/components/conf'
 import { configure, computed } from 'mobx'
-import FetchStore from '~components/Fetch/src/stores'
+import FetchStore from '@/Fetch/src/stores'
 
 configure({
   enforceActions: 'observed',

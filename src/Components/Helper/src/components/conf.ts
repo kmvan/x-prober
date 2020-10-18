@@ -1,1 +1,3 @@
-export default (window as any).CONF
+const conf = (window as any)?.CONF
+
+export default conf

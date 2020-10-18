@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
-import Grid, { GridProps } from '~components/Grid/src/components/grid'
+import Grid, { GridProps } from '@/Grid/src/components/grid'
 import styled from 'styled-components'
-import { device } from '~components/Style/src/components/devices'
-import { GUTTER } from '~components/Config/src'
+import { device } from '@/Style/src/components/devices'
+import { GUTTER } from '@/Config/src'
 
 export interface CardGridProps extends GridProps {
   name?: ReactNode

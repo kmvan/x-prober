@@ -1,4 +1,4 @@
-import BootstrapStore from '~components/Bootstrap/src/stores'
+import BootstrapStore from '@/Bootstrap/src/stores'
 
 const restfulFetch = (action: string, opts = {}): Promise<any> => {
   return new Promise(async (resolve, reject) => {

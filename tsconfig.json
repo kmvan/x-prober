@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@/*":["src/Components/*"]
+    },
     "module": "esnext",
     "target": "es6",
     "lib": ["esnext", "dom"],
@@ -25,9 +28,6 @@
     "pretty": true,
     "strict": true,
     "alwaysStrict": true,
-    "paths": {
-      "~components/*": ["Components/*"]
-    },
     "typeRoots": ["../node_modules/@types"],
     "types": ["core-js"],
     "allowSyntheticDefaultImports": true,

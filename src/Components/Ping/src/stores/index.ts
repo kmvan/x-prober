@@ -1,5 +1,5 @@
 import { observable, action, computed, configure } from 'mobx'
-import conf from '~components/Helper/src/components/conf'
+import conf from '@/Helper/src/components/conf'
 
 configure({
   enforceActions: 'observed',

@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.3.0 - 2020-10-18
+
+### Update
+
+- Update webpack to 5.1 and re-configure
+- Update packages
+
+### Fix
+
+- Fix `mysqli_get_client_version()` should have no args in PHP 8 (Jack Cherng #104)
+
 ## 6.2.0 - 2020-09-18
 
 ### Add

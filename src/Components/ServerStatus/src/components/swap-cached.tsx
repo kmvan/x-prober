@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
-import CardGrid from '~components/Card/src/components/card-grid'
-import { gettext } from '~components/Language/src'
+import CardGrid from '@/Card/src/components/card-grid'
+import { gettext } from '@/Language/src'
 import store from '../stores'
-import ProgressBar from '~components/ProgressBar/src/components'
+import ProgressBar from '@/ProgressBar/src/components'
 
 @observer
 export default class SwapCached extends Component {

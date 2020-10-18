@@ -1,6 +1,6 @@
-import { OK } from '~components/Restful/src/http-status'
-import CardStore from '~components/Card/src/stores'
-import restfulFetch from '~components/Fetch/src/restful-fetch'
+import { OK } from '@/Restful/src/http-status'
+import CardStore from '@/Card/src/stores'
+import restfulFetch from '@/Fetch/src/restful-fetch'
 import { observable, action, computed, configure } from 'mobx'
 
 configure({
