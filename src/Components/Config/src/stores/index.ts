@@ -1,4 +1,4 @@
-import { observable, action, configure } from 'mobx'
+import { observable, action, configure, makeObservable } from 'mobx'
 import ToastStore from '@/Toast/src/stores'
 import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
@@ -31,6 +31,7 @@ class ConfigStore {
   @observable public appConfig: AppConfigProps | null = null
 
   constructor() {
+    makeObservable(this)
     this.fetch()
   }
 
