@@ -28,6 +28,8 @@ module.exports = {
     },
   },
   optimization: {
+    nodeEnv: 'production',
+    removeAvailableModules: true,
     minimize: true,
     minimizer: [
       new TerserPlugin({
@@ -51,8 +53,8 @@ module.exports = {
     new webpack.DefinePlugin({
       __DEV__: false,
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-        WEBPACK_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('production'),
+        WEBPACK_ENV: JSON.stringify('production'),
       },
       DEBUG: false,
     }),
