@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.5.0 - 2020-10-29
+
+### Update
+
+- Code with React hooks
+
 ## 6.3.0 - 2020-10-18
 
 ### Update
