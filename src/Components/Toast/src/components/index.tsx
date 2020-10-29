@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React from 'react'
 import Portal from '@/Helper/src/components/portal'
 import store from '../stores'
 import styled from 'styled-components'
 import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
+import { observer } from 'mobx-react-lite'
 
 const StyledToast = styled.div`
   position: fixed;
@@ -23,21 +23,20 @@ const StyledToast = styled.div`
   text-align: center;
 `
 
-@observer
-export default class Toast extends Component {
-  public render() {
-    const { isOpen, msg, close } = store
+const Toast = observer(() => {
+  const { isOpen, msg, close } = store
 
-    if (!isOpen) {
-      return null
-    }
-
-    return (
-      <Portal>
-        <StyledToast title={gettext('Click to close')} onClick={() => close()}>
-          {msg}
-        </StyledToast>
-      </Portal>
-    )
+  if (!isOpen) {
+    return null
   }
-}
+
+  return (
+    <Portal>
+      <StyledToast title={gettext('Click to close')} onClick={() => close()}>
+        {msg}
+      </StyledToast>
+    </Portal>
+  )
+})
+
+export default Toast

@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React from 'react'
 import CardGrid from '@/Card/src/components/card-grid'
 import { gettext } from '@/Language/src'
 import styled from 'styled-components'
@@ -70,20 +69,12 @@ interface SystemLoadProps {
   isCenter?: boolean
 }
 
-@observer
-export default class SystemLoad extends Component<SystemLoadProps> {
-  public static defaultProps = {
-    isCenter: false,
-  }
-
-  public render() {
-    return (
-      <CardGrid name={gettext('System load')} tablet={[1, 1]}>
-        <SysLoadGroup
-          isCenter={!!this.props.isCenter}
-          sysLoad={store.sysLoad}
-        />
-      </CardGrid>
-    )
-  }
+const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
+  return (
+    <CardGrid name={gettext('System load')} tablet={[1, 1]}>
+      <SysLoadGroup isCenter={isCenter} sysLoad={store.sysLoad} />
+    </CardGrid>
+  )
 }
+
+export default SystemLoad

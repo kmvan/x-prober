@@ -62,7 +62,7 @@ const StyledProgressValue = styled.div.attrs(
   position: relative;
   transition: width 0.5s;
   border-radius: ${GUTTER};
-  background: #0c0;
+  background: #00cc00;
   box-shadow: inset 0 -5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.4)},
     0 5px 10px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   overflow: hidden;
@@ -93,14 +93,14 @@ const StyledProgressValue = styled.div.attrs(
   }
 `
 
-const ProgressBar = ({
+export default function ProgressBar({
   title = '',
   value,
   max,
   isCapacity,
   percentTag = '%',
   left = '',
-}: ProgressBarProps) => {
+}: ProgressBarProps) {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`
@@ -117,5 +117,3 @@ const ProgressBar = ({
     </StyledProgressBar>
   )
 }
-
-export default ProgressBar

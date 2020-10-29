@@ -5,10 +5,12 @@ configure({
   enforceActions: 'observed',
 })
 
-class DatabaseStore {
+class Store {
   public readonly ID = 'database'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
 }
 
-export default new DatabaseStore()
+const DatabaseStore = new Store()
+
+export default DatabaseStore

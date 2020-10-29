@@ -1,5 +1,4 @@
-import React, { Component, RefObject, createRef } from 'react'
-import { observer } from 'mobx-react'
+import React, { useRef, useCallback } from 'react'
 import store from '../stores'
 import template from '@/Helper/src/components/template'
 import Row from '@/Grid/src/components/row'
@@ -10,7 +9,8 @@ import restfulFetch from '@/Fetch/src/restful-fetch'
 import { OK } from '@/Restful/src/http-status'
 import { GUTTER, BORDER_RADIUS } from '@/Config/src'
 import { device } from '@/Style/src/components/devices'
-import { rgba } from 'polished'
+import { lighten, rgba } from 'polished'
+import { observer } from 'mobx-react-lite'
 
 const StyledPingBtn = styled.a`
   display: block;
@@ -20,6 +20,7 @@ const StyledPingBtn = styled.a`
   border-radius: ${BORDER_RADIUS};
   padding: calc(${GUTTER} / 2) ${GUTTER};
   text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
+  margin-right: ${GUTTER};
 
   :hover,
   :active {
@@ -36,7 +37,7 @@ const StyledPingBtn = styled.a`
 const StyledPingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  background: ${({ theme }) => theme.colorDark};
+  background: ${({ theme }) => lighten(0.01, theme.colorDark)};
   color: ${({ theme }) => theme.colorGray};
   padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
@@ -110,46 +111,82 @@ const StyledPingResult = styled.div<StyledPingResultProps>`
   border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
     ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  border-top: 1px dashed ${({ theme }) => rgba(theme.colorGray, 0.1)};
+  border-top: 1px solid ${({ theme }) => rgba(theme.colorGray, 0.1)};
   flex-wrap: wrap;
   justify-content: space-between;
 `
 const StyledPingResultTimes = styled.div``
 const StyledPingResultAvg = styled.div``
 
-@observer
-export default class Ping extends Component {
-  private pingTimer: number = 0
-  private refItemContainer: RefObject<HTMLUListElement>
+const Items = observer(() => {
+  const { pingItems } = store
 
-  public constructor(props) {
-    super(props)
+  const items = pingItems.map(({ time }, i) => {
+    return (
+      <StyledPingItem key={i}>
+        <StyledPingItemNumber>
+          {i + 1 < 10 ? `0${i + 1}` : i + 1}
+        </StyledPingItemNumber>
+        <StyledPingItemLine>{' ------------ '}</StyledPingItemLine>
+        <StyledPingItemTime>{`${time} ms`}</StyledPingItemTime>
+      </StyledPingItem>
+    )
+  })
 
-    this.refItemContainer = createRef()
-  }
+  return <>{items}</>
+})
 
-  private onClickPing = async () => {
+const Results = observer(() => {
+  const { pingItemsCount, pingItems } = store
+  const timeItems = pingItems.map(({ time }) => time)
+  const avg = pingItemsCount
+    ? Math.floor(timeItems.reduce((a, b) => a + b, 0) / pingItemsCount)
+    : 0
+  const max = pingItemsCount ? Number(Math.max(...timeItems)) : 0
+  const min = pingItemsCount ? Number(Math.min(...timeItems)) : 0
+
+  return (
+    <StyledPingResult hasPing={!!pingItemsCount}>
+      <StyledPingResultTimes>
+        {template(gettext('Times:${times}'), { times: pingItemsCount })}
+      </StyledPingResultTimes>
+      <StyledPingResultAvg>
+        {template(gettext('Min:${min} / Max:${max} / Avg:${avg}'), {
+          min,
+          max,
+          avg,
+        })}
+      </StyledPingResultAvg>
+    </StyledPingResult>
+  )
+})
+
+const Ping = observer(() => {
+  const { pingItemsCount } = store
+  let pingTimer: number = 0
+  const refItemContainer = useRef<HTMLUListElement>(null)
+  const onClickPing = useCallback(async () => {
     const { isPing, setIsPing } = store
 
     if (isPing) {
       setIsPing(false)
-      clearTimeout(this.pingTimer)
+      clearTimeout(pingTimer)
 
       return
     }
 
     setIsPing(true)
-    await this.pingLoop()
-  }
+    await pingLoop()
+  }, [pingTimer])
 
-  private pingLoop = async () => {
-    await this.ping()
-    this.pingTimer = window.setTimeout(async () => {
-      await this.pingLoop()
+  const pingLoop = useCallback(async () => {
+    await ping()
+    pingTimer = window.setTimeout(async () => {
+      await pingLoop()
     }, 1000)
-  }
+  }, [pingTimer])
 
-  private ping = async () => {
+  const ping = async () => {
     const { appendPingItem } = store
     const start = +new Date()
 
@@ -163,15 +200,15 @@ export default class Ping extends Component {
           })
 
           setTimeout(() => {
-            if (!this.refItemContainer.current) {
+            if (!refItemContainer.current) {
               return
             }
 
-            const st = this.refItemContainer.current.scrollTop
-            const sh = this.refItemContainer.current.scrollHeight
+            const st = refItemContainer.current.scrollTop
+            const sh = refItemContainer.current.scrollHeight
 
             if (st < sh) {
-              this.refItemContainer.current.scrollTop = sh
+              refItemContainer.current.scrollTop = sh
             }
           }, 100)
         }
@@ -179,73 +216,25 @@ export default class Ping extends Component {
       .catch(err => {})
   }
 
-  private renderItems() {
-    const { pingItemsCount, pingItems } = store
+  return (
+    <Row>
+      <CardGrid
+        name={
+          <StyledPingBtn onClick={onClickPing}>
+            {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
+          </StyledPingBtn>
+        }
+        tablet={[1, 1]}
+      >
+        {!!pingItemsCount && (
+          <StyledPingItemContainer ref={refItemContainer}>
+            <Items />
+          </StyledPingItemContainer>
+        )}
+        <Results />
+      </CardGrid>
+    </Row>
+  )
+})
 
-    if (!pingItemsCount) {
-      return
-    }
-
-    const items = pingItems.map(({ time }, i) => {
-      return (
-        <StyledPingItem key={i}>
-          <StyledPingItemNumber>
-            {i + 1 < 10 ? `0${i + 1}` : i + 1}
-          </StyledPingItemNumber>
-          <StyledPingItemLine>{' ------------ '}</StyledPingItemLine>
-          <StyledPingItemTime>{`${time} ms`}</StyledPingItemTime>
-        </StyledPingItem>
-      )
-    })
-
-    return (
-      <StyledPingItemContainer ref={this.refItemContainer}>
-        {items}
-      </StyledPingItemContainer>
-    )
-  }
-
-  private renderResults() {
-    const { pingItemsCount, pingItems } = store
-    const timeItems = pingItems.map(({ time }) => time)
-    const avg = pingItemsCount
-      ? Math.floor(timeItems.reduce((a, b) => a + b, 0) / pingItemsCount)
-      : 0
-    const max = pingItemsCount ? Number(Math.max(...timeItems)) : 0
-    const min = pingItemsCount ? Number(Math.min(...timeItems)) : 0
-
-    return (
-      <StyledPingResult hasPing={!!pingItemsCount}>
-        <StyledPingResultTimes>
-          {template(gettext('Times:${times}'), { times: pingItemsCount })}
-        </StyledPingResultTimes>
-        <StyledPingResultAvg>
-          {template(gettext('Min:${min} / Max:${max} / Avg:${avg}'), {
-            min,
-            max,
-            avg,
-          })}
-        </StyledPingResultAvg>
-      </StyledPingResult>
-    )
-  }
-
-  private pingBtn() {
-    return (
-      <StyledPingBtn onClick={this.onClickPing}>
-        {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
-      </StyledPingBtn>
-    )
-  }
-
-  public render() {
-    return (
-      <Row>
-        <CardGrid name={this.pingBtn()} tablet={[1, 1]}>
-          {this.renderItems()}
-          {this.renderResults()}
-        </CardGrid>
-      </Row>
-    )
-  }
-}
+export default Ping

@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React, { useCallback } from 'react'
 import { StyledTitleLink } from '@/Title/src/components'
 import store from '../stores'
 import {
@@ -9,10 +8,10 @@ import {
 } from '@/Restful/src/http-status'
 import { gettext } from '@/Language/src'
 import restfulFetch from '@/Fetch/src/restful-fetch'
+import { observer } from 'mobx-react-lite'
 
-@observer
-export default class UpdaterLink extends Component {
-  private onClick = async () => {
+const UpdaterLink = observer(() => {
+  const onClick = useCallback(async () => {
     const { setIsUpdating, setIsUpdateError } = store
 
     setIsUpdating(true)
@@ -40,16 +39,13 @@ export default class UpdaterLink extends Component {
         setIsUpdating(false)
         setIsUpdateError(true)
       })
-  }
+  }, [])
 
-  public render() {
-    return (
-      <StyledTitleLink
-        title={gettext('Click to update')}
-        onClick={this.onClick}
-      >
-        {store.notiText}
-      </StyledTitleLink>
-    )
-  }
-}
+  return (
+    <StyledTitleLink title={gettext('Click to update')} onClick={onClick}>
+      {store.notiText}
+    </StyledTitleLink>
+  )
+})
+
+export default UpdaterLink

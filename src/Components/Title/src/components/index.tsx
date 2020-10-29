@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import {
   BORDER_RADIUS,
   GUTTER,
   ANIMATION_DURATION_SC,
 } from '@/Config/src/index'
-import { observer } from 'mobx-react'
 import BootstrapStore from '@/Bootstrap/src/stores'
 import UpdaterStore from '@/Updater/src/stores'
 import UpdaterLink from '@/Updater/src/components/updater-link'
 import { rgba } from 'polished'
+import { observer } from 'mobx-react-lite'
 
 const slideDown = keyframes`
   from{
@@ -49,19 +49,20 @@ export const StyledTitleLink = styled.a`
   }
 `
 
-@observer
-export default class Title extends Component {
-  public render() {
-    return (
-      <StyledTitle>
-        {UpdaterStore.newVersion ? (
-          <UpdaterLink />
-        ) : (
-          <StyledTitleLink href={BootstrapStore.appUrl} target='_blank'>
-            {`X Prober v${BootstrapStore.version}`}
-          </StyledTitleLink>
-        )}
-      </StyledTitle>
-    )
-  }
-}
+const Title = observer(() => {
+  const { appUrl, appName, version } = BootstrapStore
+
+  return (
+    <StyledTitle>
+      {UpdaterStore.newVersion ? (
+        <UpdaterLink />
+      ) : (
+        <StyledTitleLink href={appUrl} target='_blank'>
+          {`${appName} v${version}`}
+        </StyledTitleLink>
+      )}
+    </StyledTitle>
+  )
+})
+
+export default Title

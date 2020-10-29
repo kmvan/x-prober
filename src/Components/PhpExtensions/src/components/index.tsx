@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { gettext } from '@/Language/src'
 import Row from '@/Grid/src/components/row'
 import CardGrid from '@/Card/src/components/card-grid'
@@ -64,34 +64,32 @@ longItems.sort((a, b) => {
   return 0
 })
 
-export default class PhpExtensions extends Component {
-  public render() {
-    return (
-      <Row>
-        {shortItems.map(([name, enabled]) => {
-          return (
-            <CardGrid
-              key={name}
-              name={name}
-              mobileMd={[1, 2]}
-              tablet={[1, 3]}
-              desktopMd={[1, 4]}
-              desktopLg={[1, 5]}
-            >
-              <Alert isSuccess={enabled} />
-            </CardGrid>
-          )
-        })}
-        {!!longItems.length && (
-          <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
-            <MultiItemContainer>
-              {longItems.map(id => {
-                return <SearchLink key={id} keyword={id} />
-              })}
-            </MultiItemContainer>
+export default function PhpExtensions() {
+  return (
+    <Row>
+      {shortItems.map(([name, enabled]) => {
+        return (
+          <CardGrid
+            key={name}
+            name={name}
+            mobileMd={[1, 2]}
+            tablet={[1, 3]}
+            desktopMd={[1, 4]}
+            desktopLg={[1, 5]}
+          >
+            <Alert isSuccess={enabled} />
           </CardGrid>
-        )}
-      </Row>
-    )
-  }
+        )
+      })}
+      {!!longItems.length && (
+        <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
+          <MultiItemContainer>
+            {longItems.map(id => {
+              return <SearchLink key={id} keyword={id} />
+            })}
+          </MultiItemContainer>
+        </CardGrid>
+      )}
+    </Row>
+  )
 }

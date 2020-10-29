@@ -1,11 +1,11 @@
-import React, { Component, MouseEvent } from 'react'
-import { observer } from 'mobx-react'
+import React, { MouseEvent, useCallback } from 'react'
 import CardStore from '@/Card/src/stores'
 import styled, { keyframes } from 'styled-components'
 import { device } from '@/Style/src/components/devices'
 import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
 import getElementOffsetTop from '@/Helper/src/components/get-element-offset-top'
 import { rgba } from 'polished'
+import { observer } from 'mobx-react-lite'
 
 const slideUp = keyframes`
   from{
@@ -85,9 +85,8 @@ const StyledNavLinkTinyTitle = styled.span`
   }
 `
 
-@observer
-export default class Nav extends Component {
-  private onClick = (e: MouseEvent, id: string) => {
+const Nav = observer(() => {
+  const onClick = useCallback((e: MouseEvent, id: string) => {
     e.preventDefault()
 
     const target = document.querySelector(`#${id}`) as HTMLElement
@@ -98,28 +97,24 @@ export default class Nav extends Component {
 
     history.pushState(null, '', `#${id}`)
     window.scrollTo(0, getElementOffsetTop(target) - 50)
-  }
+  }, [])
 
-  public render() {
-    return (
-      <StyledNav>
-        {CardStore.cards.map(({ id, title, tinyTitle, enabled = true }) => {
-          if (!enabled) {
-            return null
-          }
+  return (
+    <StyledNav>
+      {CardStore.cards.map(({ id, title, tinyTitle, enabled = true }) => {
+        if (!enabled) {
+          return null
+        }
 
-          return (
-            <StyledNavLink
-              key={id}
-              onClick={e => this.onClick(e, id)}
-              href={`#${id}`}
-            >
-              <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
-              <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
-            </StyledNavLink>
-          )
-        })}
-      </StyledNav>
-    )
-  }
-}
+        return (
+          <StyledNavLink key={id} onClick={e => onClick(e, id)} href={`#${id}`}>
+            <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
+            <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
+          </StyledNavLink>
+        )
+      })}
+    </StyledNav>
+  )
+})
+
+export default Nav

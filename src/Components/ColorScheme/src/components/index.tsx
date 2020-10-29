@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { GUTTER, BORDER_RADIUS, ANIMATION_DURATION_SC } from '@/Config/src'
 import schemes from '../stores/colors'
 import { rgba } from 'polished'
 import store from '../stores'
+import { observer } from 'mobx-react-lite'
 
 const fadeIn = keyframes`
   from{
@@ -46,21 +46,20 @@ const StyledColorScheme = styled.div`
   animation-fill-mode: forwards;
 `
 
-@observer
-export default class ColorScheme extends Component {
-  public render() {
-    return (
-      <StyledColorScheme>
-        {Object.entries(schemes).map(([schemeId, { name, colorDark }]) => (
-          <StyledColorSchemeLink
-            isActive={schemeId === store.schemeId}
-            title={name}
-            key={schemeId}
-            style={{ backgroundColor: colorDark }}
-            onClick={() => store.setSchemeId(schemeId)}
-          />
-        ))}
-      </StyledColorScheme>
-    )
-  }
-}
+const ColorScheme = observer(() => {
+  return (
+    <StyledColorScheme>
+      {Object.entries(schemes).map(([schemeId, { name, colorDark }]) => (
+        <StyledColorSchemeLink
+          isActive={schemeId === store.schemeId}
+          title={name}
+          key={schemeId}
+          style={{ backgroundColor: colorDark }}
+          onClick={() => store.setSchemeId(schemeId)}
+        />
+      ))}
+    </StyledColorScheme>
+  )
+})
+
+export default ColorScheme

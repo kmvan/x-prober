@@ -1,4 +1,4 @@
-import { observable, action, configure } from 'mobx'
+import { observable, action, configure, makeObservable } from 'mobx'
 import restfulFetch from '@/Fetch/src/restful-fetch'
 import { OK } from '@/Restful/src/http-status'
 import { gettext } from '@/Language/src'
@@ -21,11 +21,12 @@ export interface DataProps {
   networkStats: DataNetworkStatsProps
 }
 
-class FetchStore {
+class Store {
   @observable public isLoading: boolean = true
   @observable public data = {}
 
   constructor() {
+    makeObservable(this)
     this.initFetch()
   }
 
@@ -51,9 +52,11 @@ class FetchStore {
   }
 
   @action
-  public setData = data => {
+  public setData = (data: any) => {
     this.data = data
   }
 }
 
-export default new FetchStore()
+const FetchStore = new Store()
+
+export default FetchStore

@@ -1,4 +1,4 @@
-import { observable, action, computed, configure } from 'mobx'
+import { observable, action, computed, configure, makeObservable } from 'mobx'
 import conf from '@/Helper/src/components/conf'
 
 configure({
@@ -9,7 +9,7 @@ export interface PingItemProps {
   time: number
 }
 
-class PingStore {
+class Store {
   public readonly ID = 'ping'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
@@ -19,6 +19,10 @@ class PingStore {
   @observable public refs: {
     [id: string]: any
   } = {}
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setRef = (id: string, c: any) => {
@@ -46,4 +50,6 @@ class PingStore {
   }
 }
 
-export default new PingStore()
+const PingStore = new Store()
+
+export default PingStore

@@ -1,4 +1,4 @@
-import { observable, action, configure } from 'mobx'
+import { observable, action, configure, makeObservable } from 'mobx'
 import conf from '@/Helper/src/components/conf'
 
 configure({
@@ -18,6 +18,10 @@ class Store {
   public readonly isDev: boolean = this.conf?.isDev
 
   @observable public appContainer: HTMLElement | null = null
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setAppContainer = (appContainer: HTMLElement | null) => {

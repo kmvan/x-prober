@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { render } from 'react-dom'
 import ready from '@/Helper/src/components/ready'
 import styled, { ThemeProvider } from 'styled-components'
@@ -26,7 +26,7 @@ import ColorScheme from '@/ColorScheme/src/components'
 import { GUTTER } from '@/Config/src'
 import { rgba } from 'polished'
 import ColorSchemeStore from '@/ColorScheme/src/stores'
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react-lite'
 
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
@@ -51,27 +51,24 @@ const StyledApp = styled.div`
   }
 `
 
-@observer
-class Bootstrap extends Component {
-  public render() {
-    return (
-      <ThemeProvider theme={ColorSchemeStore.scheme}>
-        <Normalize />
-        <Title />
-        <StyledApp ref={c => store.setAppContainer(c)}>
-          <Container>
-            <ColorScheme />
-            <Cards />
-            <Footer />
-          </Container>
-        </StyledApp>
-        <Nav />
-        <Forkme />
-        <Toast />
-      </ThemeProvider>
-    )
-  }
-}
+const Bootstrap = observer(() => {
+  return (
+    <ThemeProvider theme={ColorSchemeStore.scheme}>
+      <Normalize />
+      <Title />
+      <StyledApp ref={c => store.setAppContainer(c)}>
+        <Container>
+          <ColorScheme />
+          <Cards />
+          <Footer />
+        </Container>
+      </StyledApp>
+      <Nav />
+      <Forkme />
+      <Toast />
+    </ThemeProvider>
+  )
+})
 
 ready(() => {
   const c = document.createElement('div')

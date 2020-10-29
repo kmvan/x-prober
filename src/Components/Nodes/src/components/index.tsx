@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React, { useCallback, useEffect } from 'react'
 import Row from '@/Grid/src/components/row'
 import store from '../stores'
 import Grid from '@/Grid/src/components/grid'
@@ -18,6 +17,7 @@ import Alert from '@/Helper/src/components/alert'
 import Loading from '@/Helper/src/components/loading'
 import restfulFetch from '@/Fetch/src/restful-fetch'
 import NodeNetworks from './node-networks'
+import { observer } from 'mobx-react-lite'
 
 const StyledNodeGroupId = styled.a`
   display: block;
@@ -36,129 +36,88 @@ const StyledNodeGroupMsg = styled(StyledNodeGroup)`
   justify-content: center;
 `
 
-@observer
-export default class Nodes extends Component {
-  public componentDidMount() {
-    const { items, itemsCount } = store
-
-    if (!itemsCount) {
-      return
-    }
-
-    for (const { id } of items) {
-      this.fetch(id)
-    }
+const SysLoad = ({ sysLoad }: { sysLoad: number[] }) => {
+  if (!sysLoad?.length) {
+    return null
   }
 
-  private fetch = async (nodeId: string) => {
-    const { setItem } = store
+  return (
+    <StyledNodeGroup>
+      <SysLoadGroup isCenter sysLoad={sysLoad} />
+    </StyledNodeGroup>
+  )
+}
 
-    await restfulFetch(`node&nodeId=${nodeId}`)
-      .then(([{ status }, item]) => {
-        if (status === OK) {
-          if (!item) {
-            return
-          }
+const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
+  return (
+    <StyledNodeGroup>
+      <ProgressBar
+        title={template(
+          gettext(
+            'idle: ${idle} \nnice: ${nice} \nsys: ${sys} \nuser: ${user}'
+          ),
+          cpuUsage
+        )}
+        value={100 - cpuUsage.idle}
+        max={100}
+        isCapacity={false}
+        left={gettext('CPU usage')}
+      />
+    </StyledNodeGroup>
+  )
+}
 
-          setItem({ id: nodeId, isLoading: false, data: item })
-          // fetch again
-          setTimeout(() => {
-            this.fetch(nodeId)
-          }, 1000)
-        } else {
-          setItem({
-            id: nodeId,
-            isLoading: false,
-            isError: true,
-            errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
-              code: status,
-            }),
-          })
-        }
-      })
-      .catch(e => {
-        setItem({
-          id: nodeId,
-          isLoading: false,
-          isError: true,
-          errMsg: gettext('Fetch failed. Detail in Console.'),
-        })
-        console.log(
-          template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
-          e
-        )
-      })
+const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
+  const { value = 0, max = 0 } = memRealUsage
+
+  if (!max) {
+    return null
   }
 
-  private renderSysLoad(sysLoad: number[]) {
-    if (!sysLoad?.length) {
-      return null
-    }
+  const percent = Math.floor((value / max) * 10000) / 100
 
-    return (
-      <StyledNodeGroup>
-        <SysLoadGroup isCenter sysLoad={sysLoad} />
-      </StyledNodeGroup>
-    )
+  return (
+    <StyledNodeGroup>
+      <ProgressBar
+        title={template(gettext('Usage: ${percent}'), {
+          percent: `${percent.toFixed(1)}%`,
+        })}
+        value={value}
+        max={max}
+        isCapacity
+        left={gettext('Memory')}
+      />
+    </StyledNodeGroup>
+  )
+}
+
+const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
+  const { value = 0, max = 0 } = swapUsage
+
+  if (!max) {
+    return null
   }
 
-  private renderCpu(cpuUsage: ServerStatusCpuUsageProps) {
-    return (
-      <StyledNodeGroup>
-        <ProgressBar
-          title={template(
-            gettext(
-              'idle: ${idle} \nnice: ${nice} \nsys: ${sys} \nuser: ${user}'
-            ),
-            cpuUsage
-          )}
-          value={100 - cpuUsage.idle}
-          max={100}
-          isCapacity={false}
-          left={gettext('CPU usage')}
-        />
-      </StyledNodeGroup>
-    )
-  }
+  const percent = Math.floor((value / max) * 10000) / 100
 
-  private renderMemory({ value, max }: ServerStatusUsageProps) {
-    const percent = Math.floor((value / max) * 10000) / 100
+  return (
+    <StyledNodeGroup>
+      <ProgressBar
+        title={template(gettext('Usage: ${percent}'), {
+          percent: `${percent.toFixed(1)}%`,
+        })}
+        value={value}
+        max={max}
+        isCapacity
+        left={gettext('Swap')}
+      />
+    </StyledNodeGroup>
+  )
+}
 
-    return (
-      <StyledNodeGroup>
-        <ProgressBar
-          title={template(gettext('Usage: ${percent}'), {
-            percent: `${percent.toFixed(1)}%`,
-          })}
-          value={value}
-          max={max}
-          isCapacity
-          left={gettext('Memory')}
-        />
-      </StyledNodeGroup>
-    )
-  }
-
-  private renderSwap({ value, max }: ServerStatusUsageProps) {
-    const percent = Math.floor((value / max) * 10000) / 100
-
-    return (
-      <StyledNodeGroup>
-        <ProgressBar
-          title={template(gettext('Usage: ${percent}'), {
-            percent: `${percent.toFixed(1)}%`,
-          })}
-          value={value}
-          max={max}
-          isCapacity
-          left={gettext('Swap')}
-        />
-      </StyledNodeGroup>
-    )
-  }
-
-  private renderItems() {
-    return store.items.map(({ id, url, isLoading, isError, errMsg, data }) => {
+const Items = observer(() => {
+  const items = store.items.map(
+    ({ id, url, isLoading, isError, errMsg, data }) => {
       const idLink = <StyledNodeGroupId href={url}>{id}</StyledNodeGroupId>
 
       switch (true) {
@@ -193,20 +152,80 @@ export default class Nodes extends Component {
           desktopLg={[1, 6]}
         >
           {idLink}
-          {this.renderSysLoad(serverStatus.sysLoad)}
-          {this.renderCpu(serverStatus?.cpuUsage)}
-          {this.renderMemory(serverStatus?.memRealUsage)}
-          {this.renderSwap(serverStatus?.swapUsage)}
+          <SysLoad sysLoad={serverStatus.sysLoad} />
+          <Cpu cpuUsage={serverStatus?.cpuUsage} />
+          <Memory memRealUsage={serverStatus?.memRealUsage} />
+          <Swap swapUsage={serverStatus?.swapUsage} />
           <NodeNetworks
             items={networkStats?.networks || []}
             timestamp={networkStats?.timestamp || 0}
           />
         </Grid>
       )
-    })
-  }
+    }
+  )
 
-  public render() {
-    return <Row>{this.renderItems()}</Row>
-  }
-}
+  return <>{items}</>
+})
+
+const Nodes = observer(() => {
+  const { items, itemsCount } = store
+
+  const fetch = useCallback(async (nodeId: string) => {
+    const { setItem } = store
+
+    await restfulFetch(`node&nodeId=${nodeId}`)
+      .then(([{ status }, item]) => {
+        if (status === OK) {
+          if (!item) {
+            return
+          }
+
+          setItem({ id: nodeId, isLoading: false, data: item })
+          // fetch again
+          setTimeout(() => {
+            fetch(nodeId)
+          }, 1000)
+        } else {
+          setItem({
+            id: nodeId,
+            isLoading: false,
+            isError: true,
+            errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
+              code: status,
+            }),
+          })
+        }
+      })
+      .catch(e => {
+        setItem({
+          id: nodeId,
+          isLoading: false,
+          isError: true,
+          errMsg: gettext('Fetch failed. Detail in Console.'),
+        })
+        console.warn(
+          template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
+          e
+        )
+      })
+  }, [])
+
+  useEffect(() => {
+    if (!itemsCount) {
+      return
+    }
+
+    for (const { id } of items) {
+      fetch(id)
+    }
+  }, [])
+
+  return (
+    <Row>
+      <Items />
+    </Row>
+  )
+})
+
+export default Nodes

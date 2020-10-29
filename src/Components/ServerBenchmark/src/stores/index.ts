@@ -1,4 +1,4 @@
-import { observable, action, configure, computed } from 'mobx'
+import { observable, action, configure, computed, makeObservable } from 'mobx'
 import { gettext } from '@/Language/src'
 import ConfigStore, { AppConfigBenchmarkProps } from '@/Config/src/stores'
 import conf from '@/Helper/src/components/conf'
@@ -14,7 +14,7 @@ export interface MarksProps {
   ioLoop: number
 }
 
-class ServerBenchmarkStore {
+class Store {
   public readonly ID = 'serverBenchmark'
   public readonly conf = conf?.[this.ID]
   public readonly enabledMyServerBenchmark: boolean = !this.conf
@@ -23,6 +23,10 @@ class ServerBenchmarkStore {
   @observable public isLoading: boolean = false
   @observable public linkText: string = gettext('Click to test')
   @observable public marks: MarksProps | null = null
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @computed
   public get servers(): AppConfigBenchmarkProps[] | null {
@@ -45,4 +49,6 @@ class ServerBenchmarkStore {
   }
 }
 
-export default new ServerBenchmarkStore()
+const ServerBenchmarkStore = new Store()
+
+export default ServerBenchmarkStore

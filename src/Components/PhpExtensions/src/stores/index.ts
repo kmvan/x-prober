@@ -5,10 +5,12 @@ configure({
   enforceActions: 'observed',
 })
 
-class PhpExtensionsStore {
+class Store {
   public readonly ID = 'phpExtensions'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
 }
 
-export default new PhpExtensionsStore()
+const PhpExtensionsStore = new Store()
+
+export default PhpExtensionsStore

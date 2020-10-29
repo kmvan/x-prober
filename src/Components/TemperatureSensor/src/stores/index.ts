@@ -1,7 +1,7 @@
 import { OK } from '@/Restful/src/http-status'
 import CardStore from '@/Card/src/stores'
 import restfulFetch from '@/Fetch/src/restful-fetch'
-import { observable, action, computed, configure } from 'mobx'
+import { observable, action, computed, configure, makeObservable } from 'mobx'
 
 configure({
   enforceActions: 'observed',
@@ -13,10 +13,14 @@ export interface TemperatureSensorItemProps {
   celsius: number
 }
 
-class TemperatureSensorStore {
+class Store {
   public readonly ID = 'temperatureSensor'
 
   @observable public items: TemperatureSensorItemProps[] = []
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setItems = (items: TemperatureSensorItemProps[]) => {
@@ -63,4 +67,6 @@ class TemperatureSensorStore {
   }
 }
 
-export default new TemperatureSensorStore()
+const TemperatureSensorStore = new Store()
+
+export default TemperatureSensorStore

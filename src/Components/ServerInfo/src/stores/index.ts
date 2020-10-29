@@ -1,5 +1,5 @@
 import conf from '@/Helper/src/components/conf'
-import { configure, computed } from 'mobx'
+import { configure, computed, makeObservable } from 'mobx'
 import FetchStore from '@/Fetch/src/stores'
 
 configure({
@@ -25,10 +25,14 @@ export interface ServerInfoDataProps {
   diskUsage: ServerInfoDiskUsageProps
 }
 
-class ServerInfoStore {
+class Store {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @computed
   public get serverTime(): string {
@@ -59,4 +63,6 @@ class ServerInfoStore {
   }
 }
 
-export default new ServerInfoStore()
+const ServerInfoStore = new Store()
+
+export default ServerInfoStore

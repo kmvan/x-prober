@@ -1,5 +1,5 @@
-import { observable, action, configure, computed } from 'mobx'
-import { ComponentClass } from 'react'
+import { observable, action, configure, computed, makeObservable } from 'mobx'
+import { FunctionComponent } from 'react'
 
 configure({
   enforceActions: 'observed',
@@ -16,11 +16,15 @@ export interface CardProps {
   tinyTitle: string
   enabled?: boolean
   priority: number
-  component: ComponentClass
+  component: FunctionComponent
 }
 
-class CardStore {
+class Store {
   @observable public cards: CardProps[] = []
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public addCard = (card: CardProps) => {
@@ -141,4 +145,6 @@ class CardStore {
   }
 }
 
-export default new CardStore()
+const CardStore = new Store()
+
+export default CardStore

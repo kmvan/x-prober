@@ -5,9 +5,11 @@ configure({
   enforceActions: 'observed',
 })
 
-class FooterStore {
+class Store {
   public readonly ID = 'footer'
   public readonly conf = conf?.[this.ID]
 }
 
-export default new FooterStore()
+const FooterStore = new Store()
+
+export default FooterStore

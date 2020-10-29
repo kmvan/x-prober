@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { observer } from 'mobx-react'
 import store from '../stores'
 import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
 import { device } from '@/Style/src/components/devices'
+import { observer } from 'mobx-react-lite'
 
 interface StyleArrowProps {
   isHidden: boolean
@@ -57,58 +57,57 @@ const StyleArrow = styled.a<StyleArrowProps>`
   }
 `
 
-@observer
-export default class Cards extends Component {
-  public render() {
-    const {
-      cardsLength,
-      enabledCards,
-      enabledCardsLength,
-      moveCardDown,
-      moveCardUp,
-    } = store
+const Cards = observer(() => {
+  const {
+    cardsLength,
+    enabledCards,
+    enabledCardsLength,
+    moveCardDown,
+    moveCardUp,
+  } = store
 
-    if (!cardsLength) {
-      return null
-    }
-
-    return (
-      <>
-        {enabledCards.map(({ id, title, component: Tag }, i) => {
-          const upArrow = (
-            <StyleArrow
-              title={gettext('Move up')}
-              isHidden={i === 0}
-              onClick={() => moveCardUp(id)}
-            >
-              ▲
-            </StyleArrow>
-          )
-
-          const downArrow = (
-            <StyleArrow
-              title={gettext('Move down')}
-              isHidden={i === enabledCardsLength - 1}
-              onClick={() => moveCardDown(id)}
-            >
-              ▼
-            </StyleArrow>
-          )
-
-          return (
-            <StyledFieldset key={id} id={id}>
-              <StyledLegend>
-                {upArrow}
-                {title}
-                {downArrow}
-              </StyledLegend>
-              <StyledBody>
-                <Tag />
-              </StyledBody>
-            </StyledFieldset>
-          )
-        })}
-      </>
-    )
+  if (!cardsLength) {
+    return null
   }
-}
+
+  return (
+    <>
+      {enabledCards.map(({ id, title, component: Tag }, i) => {
+        const upArrow = (
+          <StyleArrow
+            title={gettext('Move up')}
+            isHidden={i === 0}
+            onClick={() => moveCardUp(id)}
+          >
+            ▲
+          </StyleArrow>
+        )
+
+        const downArrow = (
+          <StyleArrow
+            title={gettext('Move down')}
+            isHidden={i === enabledCardsLength - 1}
+            onClick={() => moveCardDown(id)}
+          >
+            ▼
+          </StyleArrow>
+        )
+
+        return (
+          <StyledFieldset key={id} id={id}>
+            <StyledLegend>
+              {upArrow}
+              {title}
+              {downArrow}
+            </StyledLegend>
+            <StyledBody>
+              <Tag />
+            </StyledBody>
+          </StyledFieldset>
+        )
+      })}
+    </>
+  )
+})
+
+export default Cards
