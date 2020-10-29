@@ -11,7 +11,7 @@ const rimraf = require('rimraf')
 rimraf('.tmp', {}, () => {})
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: './src/Components/Bootstrap/src/components/index.tsx',
   },
