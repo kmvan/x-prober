@@ -3,7 +3,7 @@
   "description": "A PHP probe",
   "scripts": {
     "lang": "node ./build-lang.js",
-    "dev": "cross-env webpack --config webpack.config.js --progress --watch",
+    "dev": "cross-env webpack --config webpack.config.js --progress",
     "dev:php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
     "build": "cross-env webpack --config webpack.config.prod.js --progress",
     "build:php": "php-cs-fixer fix ./src --config=.php_cs53; php ./Make.php build; php -S localhost:8000/prober.php -t dist",
@@ -51,6 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
+    "JSON2": "^0.1.0",
     "babel-loader": "^8.1.0",
     "caniuse-lite": "^1.0.30001151",
     "es6-promise": "^4.2.8",
