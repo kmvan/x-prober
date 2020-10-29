@@ -1,5 +1,4 @@
-import React, { Component, ReactNode } from 'react'
-import { observer } from 'mobx-react'
+import React, { ReactNode } from 'react'
 import { gettext } from '@/Language/src'
 import Row from '@/Grid/src/components/row'
 import CardGrid from '@/Card/src/components/card-grid'
@@ -8,101 +7,101 @@ import Alert from '@/Helper/src/components/alert'
 import MultiItemContainer from '@/Card/src/components/multi-item-container'
 import SearchLink from '@/Helper/src/components/search-link'
 import PhpInfoPhpVersion from './php-version'
+import { observer } from 'mobx-react-lite'
 
-@observer
-export default class PhpInfo extends Component {
-  public render() {
-    const { conf } = store
-    const oneLineItems: Array<[string, ReactNode]> = [
-      [
-        'PHP info',
-        <a key='phpInfoDetail' href='?action=phpInfoDetail' target='_blank'>
-          {gettext('👆 Click for detail')}
-        </a>,
-      ],
-      [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
-    ]
-    const shortItems = [
-      [gettext('SAPI interface'), conf?.sapi],
-      [
-        gettext('Display errors'),
-        <Alert key='displayErrors' isSuccess={conf?.displayErrors} />,
-      ],
-      [gettext('Error reporting'), conf?.errorReporting],
-      [gettext('Max memory limit'), conf?.memoryLimit],
-      [gettext('Max POST size'), conf?.postMaxSize],
-      [gettext('Max upload size'), conf?.uploadMaxFilesize],
-      [gettext('Max input variables'), conf?.maxInputVars],
-      [gettext('Max execution time'), conf?.maxExecutionTime],
-      [gettext('Timeout for socket'), conf?.defaultSocketTimeout],
-      [
-        gettext('Treatment URLs file'),
-        <Alert key='allowUrlFopen' isSuccess={conf?.allowUrlFopen} />,
-      ],
-      [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
-    ]
+const PhpInfo = observer(() => {
+  const { conf } = store
+  const oneLineItems: Array<[string, ReactNode]> = [
+    [
+      'PHP info',
+      <a key='phpInfoDetail' href='?action=phpInfoDetail' target='_blank'>
+        {gettext('👆 Click for detail')}
+      </a>,
+    ],
+    [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
+  ]
+  const shortItems = [
+    [gettext('SAPI interface'), conf?.sapi],
+    [
+      gettext('Display errors'),
+      <Alert key='displayErrors' isSuccess={conf?.displayErrors} />,
+    ],
+    [gettext('Error reporting'), conf?.errorReporting],
+    [gettext('Max memory limit'), conf?.memoryLimit],
+    [gettext('Max POST size'), conf?.postMaxSize],
+    [gettext('Max upload size'), conf?.uploadMaxFilesize],
+    [gettext('Max input variables'), conf?.maxInputVars],
+    [gettext('Max execution time'), conf?.maxExecutionTime],
+    [gettext('Timeout for socket'), conf?.defaultSocketTimeout],
+    [
+      gettext('Treatment URLs file'),
+      <Alert key='allowUrlFopen' isSuccess={conf?.allowUrlFopen} />,
+    ],
+    [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
+  ]
 
-    const { disableFunctions, disableClasses } = conf
+  const { disableFunctions, disableClasses } = conf
 
-    disableFunctions.sort()
-    disableClasses.sort()
+  disableFunctions.sort()
+  disableClasses.sort()
 
-    const longItems: Array<[string, ReactNode]> = [
-      [
-        gettext('Disabled functions'),
-        disableFunctions.length
-          ? disableFunctions.map((fn: string, i: number) => (
-              <SearchLink key={i} keyword={fn} />
-            ))
-          : '-',
-      ],
-      [
-        gettext('Disabled classes'),
-        disableClasses.length
-          ? disableClasses.map((fn: string, i: number) => (
-              <SearchLink key={i} keyword={fn} />
-            ))
-          : '-',
-      ],
-    ]
+  const longItems: Array<[string, ReactNode]> = [
+    [
+      gettext('Disabled functions'),
+      disableFunctions.length
+        ? disableFunctions.map((fn: string, i: number) => (
+            <SearchLink key={i} keyword={fn} />
+          ))
+        : '-',
+    ],
+    [
+      gettext('Disabled classes'),
+      disableClasses.length
+        ? disableClasses.map((fn: string, i: number) => (
+            <SearchLink key={i} keyword={fn} />
+          ))
+        : '-',
+    ],
+  ]
 
-    return (
-      <Row>
-        {oneLineItems.map(([title, content]) => {
-          return (
-            <CardGrid
-              key={title}
-              name={title}
-              tablet={[1, 3]}
-              desktopMd={[1, 4]}
-              desktopLg={[1, 5]}
-            >
-              {content}
-            </CardGrid>
-          )
-        })}
-        {shortItems.map(([title, content]) => {
-          return (
-            <CardGrid
-              key={title}
-              name={title}
-              mobileMd={[1, 2]}
-              tablet={[1, 3]}
-              desktopMd={[1, 4]}
-              desktopLg={[1, 5]}
-            >
-              {content}
-            </CardGrid>
-          )
-        })}
-        {longItems.map(([title, content]) => {
-          return (
-            <CardGrid key={title} name={title}>
-              <MultiItemContainer>{content}</MultiItemContainer>
-            </CardGrid>
-          )
-        })}
-      </Row>
-    )
-  }
-}
+  return (
+    <Row>
+      {oneLineItems.map(([title, content]) => {
+        return (
+          <CardGrid
+            key={title}
+            name={title}
+            tablet={[1, 3]}
+            desktopMd={[1, 4]}
+            desktopLg={[1, 5]}
+          >
+            {content}
+          </CardGrid>
+        )
+      })}
+      {shortItems.map(([title, content]) => {
+        return (
+          <CardGrid
+            key={title}
+            name={title}
+            mobileMd={[1, 2]}
+            tablet={[1, 3]}
+            desktopMd={[1, 4]}
+            desktopLg={[1, 5]}
+          >
+            {content}
+          </CardGrid>
+        )
+      })}
+      {longItems.map(([title, content]) => {
+        return (
+          <CardGrid key={title} name={title}>
+            <MultiItemContainer>{content}</MultiItemContainer>
+          </CardGrid>
+        )
+      })}
+    </Row>
+  )
+})
+
+export default PhpInfo

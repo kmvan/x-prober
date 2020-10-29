@@ -38,9 +38,10 @@ module.exports = {
           keep_classnames: false,
           keep_fnames: false,
           module: false,
+          sourceMap: false,
           format: {
             ascii_only: true,
-            comments: true,
+            comments: false,
           },
         },
       }),

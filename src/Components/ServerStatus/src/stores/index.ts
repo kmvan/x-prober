@@ -1,5 +1,5 @@
 import conf from '@/Helper/src/components/conf'
-import { configure, computed } from 'mobx'
+import { configure, computed, makeObservable } from 'mobx'
 import FetchStore from '@/Fetch/src/stores'
 
 configure({
@@ -28,10 +28,14 @@ export interface ServerStatusDataProps {
   swapCached: ServerStatusUsageProps
 }
 
-class ServerStatus {
+class Store {
   public readonly ID = 'serverStatus'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @computed
   private get fetchData() {
@@ -93,4 +97,6 @@ class ServerStatus {
   }
 }
 
-export default new ServerStatus()
+const ServerStatusStore = new Store()
+
+export default ServerStatusStore

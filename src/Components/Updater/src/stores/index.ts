@@ -1,4 +1,4 @@
-import { observable, action, computed, configure } from 'mobx'
+import { observable, action, computed, configure, makeObservable } from 'mobx'
 import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
 import ConfigStore from '@/Config/src/stores'
@@ -9,9 +9,13 @@ configure({
   enforceActions: 'observed',
 })
 
-class UpdaterStore {
+class Store {
   @observable public isUpdating: boolean = false
   @observable public isUpdateError: boolean = false
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @computed
   public get newVersion(): string {
@@ -60,4 +64,6 @@ class UpdaterStore {
   }
 }
 
-export default new UpdaterStore()
+const UpdaterStore = new Store()
+
+export default UpdaterStore

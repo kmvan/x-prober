@@ -1,5 +1,12 @@
 import conf from '@/Helper/src/components/conf'
-import { computed, configure, observable, action, toJS } from 'mobx'
+import {
+  computed,
+  configure,
+  observable,
+  action,
+  toJS,
+  makeObservable,
+} from 'mobx'
 import { DataProps } from '@/Fetch/src/stores'
 
 configure({
@@ -16,11 +23,10 @@ export interface NodesItemProps {
   data: DataProps
 }
 
-class NodesStore {
+class Store {
   public readonly ID = 'nodes'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
-
   public readonly DEFAULT_ITEM = {
     id: '',
     url: '',
@@ -32,6 +38,7 @@ class NodesStore {
   @observable public items: NodesItemProps[] = []
 
   public constructor() {
+    makeObservable(this)
     const items = (this.conf?.items || []).map(({ url, ...props }) => {
       return {
         ...this.DEFAULT_ITEM,
@@ -67,4 +74,6 @@ class NodesStore {
   }
 }
 
-export default new NodesStore()
+const NodesStore = new Store()
+
+export default NodesStore

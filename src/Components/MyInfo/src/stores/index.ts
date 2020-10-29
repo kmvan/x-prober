@@ -9,10 +9,12 @@ export interface PingItemProps {
   time: number
 }
 
-class MyInfoStore {
+class Store {
   public readonly ID = 'myInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
 }
 
-export default new MyInfoStore()
+const MyInfoStore = new Store()
+
+export default MyInfoStore

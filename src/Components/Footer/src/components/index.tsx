@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
@@ -7,6 +7,7 @@ import { GUTTER } from '@/Config/src'
 import formatBytes from '@/Helper/src/components/format-bytes'
 import { device } from '@/Style/src/components/devices'
 import template from '@/Helper/src/components/template'
+import { observer } from 'mobx-react-lite'
 
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme.colorDark};
@@ -31,27 +32,27 @@ const StyledFooter = styled.div`
   }
 `
 
-export default class Footer extends Component {
-  public render() {
-    const { appName, appUrl, authorName, authorUrl } = BootstrapStore
-    const { memUsage, time } = store.conf
+const Footer = observer(() => {
+  const { appName, appUrl, authorName, authorUrl } = BootstrapStore
+  const { memUsage, time } = store.conf
 
-    return (
-      <StyledFooter
-        dangerouslySetInnerHTML={{
-          __html: template(
-            gettext(
-              'Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms'
-            ),
-            {
-              appName: `<a href="${appUrl}" target="_blank">${appName}</a>`,
-              authorName: `<a href="${authorUrl}" target="_blank">${authorName}</a>`,
-              memUsage: formatBytes(memUsage),
-              time: (time * 1000).toFixed(2),
-            }
+  return (
+    <StyledFooter
+      dangerouslySetInnerHTML={{
+        __html: template(
+          gettext(
+            'Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms'
           ),
-        }}
-      />
-    )
-  }
-}
+          {
+            appName: `<a href="${appUrl}" target="_blank">${appName}</a>`,
+            authorName: `<a href="${authorUrl}" target="_blank">${authorName}</a>`,
+            memUsage: formatBytes(memUsage),
+            time: (time * 1000).toFixed(2),
+          }
+        ),
+      }}
+    />
+  )
+})
+
+export default Footer

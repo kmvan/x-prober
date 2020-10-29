@@ -1,5 +1,5 @@
 import conf from '@/Helper/src/components/conf'
-import { computed, configure } from 'mobx'
+import { computed, configure, makeObservable } from 'mobx'
 import FetchStore from '@/Fetch/src/stores'
 
 configure({
@@ -12,10 +12,14 @@ export interface NetworkStatsItemProps {
   tx: number
 }
 
-class NetworkStatsStore {
+class Store {
   public readonly ID = 'networkStats'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @computed
   public get items(): NetworkStatsItemProps[] {
@@ -51,4 +55,6 @@ class NetworkStatsStore {
   }
 }
 
-export default new NetworkStatsStore()
+const NetworkStatsStore = new Store()
+
+export default NetworkStatsStore

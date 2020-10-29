@@ -1,4 +1,4 @@
-import { configure, observable, action, computed } from 'mobx'
+import { configure, observable, action, computed, makeObservable } from 'mobx'
 import schemes from './colors'
 
 configure({
@@ -21,6 +21,10 @@ class Store {
   private readonly STORAGE_ID = 'schemeId'
 
   @observable public schemeId: string = this.getStorageSchemeId()
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setSchemeId = (schemeId: string) => {

@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
+import React, { MouseEvent, useCallback } from 'react'
 import store from '../stores'
 import { gettext } from '@/Language/src'
 import Row from '@/Grid/src/components/row'
@@ -10,64 +9,61 @@ import template from '@/Helper/src/components/template'
 import CardError from '@/Card/src/components/error'
 import CardRuby from '@/Card/src/components/card-ruby'
 import { toJS } from 'mobx'
+import { observer } from 'mobx-react-lite'
 
-@observer
-export default class ServerBenchmark extends Component {
-  private onClick = async () => {
-    const { isLoading, setIsLoading, setMarks, setLinkText } = store
+const Result = ({
+  hash,
+  intLoop,
+  floatLoop,
+  ioLoop,
+  date,
+}: {
+  hash: number
+  intLoop: number
+  floatLoop: number
+  ioLoop: number
+  date?: string
+}) => {
+  return (
+    <>
+      <CardRuby ruby={hash.toLocaleString()} rt='HASH' />
+      {' + '}
+      <CardRuby ruby={intLoop.toLocaleString()} rt='INT' />
+      {' + '}
+      <CardRuby ruby={floatLoop.toLocaleString()} rt='FLOAT' />
+      {' + '}
+      <CardRuby ruby={ioLoop.toLocaleString()} rt='IO' />
+      {' = '}
+      <CardRuby
+        isResult={true}
+        ruby={(hash + intLoop + floatLoop + ioLoop).toLocaleString()}
+        rt={date || ''}
+      />
+    </>
+  )
+}
 
-    if (isLoading) {
-      return false
-    }
+const Items = observer(() => {
+  const { servers } = store
 
-    setLinkText(gettext('⏳ Testing, please wait...'))
-    setIsLoading(true)
-
-    await restfulFetch('benchmark')
-      .then(([{ status }, { marks, seconds }]) => {
-        if (status === OK) {
-          if (marks) {
-            setMarks(marks)
-            setLinkText('')
-          } else {
-            setLinkText(gettext('Network error, please try again later.'))
-          }
-        } else if (status === TOO_MANY_REQUESTS) {
-          const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
-            seconds,
-          })
-          setLinkText(secondsMsg)
-        }
-      })
-      .catch(err => {
-        setLinkText(gettext('Network error, please try again later.'))
-      })
-
-    setIsLoading(false)
+  if (!servers) {
+    return (
+      <CardError>{gettext('Can not fetch marks data from GitHub.')}</CardError>
+    )
   }
 
-  private renderItems() {
-    const { servers } = store
+  const items = toJS(servers).map(item => {
+    item.total = item.detail
+      ? Object.values(item.detail).reduce((a, b) => a + b, 0)
+      : 0
 
-    if (!servers) {
-      return (
-        <CardError>
-          {gettext('Can not fetch marks data from GitHub.')}
-        </CardError>
-      )
-    }
+    return item
+  })
 
-    const items = toJS(servers).map(item => {
-      item.total = item.detail
-        ? Object.values(item.detail).reduce((a, b) => a + b, 0)
-        : 0
+  items.sort((a, b) => Number(b.total) - Number(a.total))
 
-      return item
-    })
-
-    items.sort((a, b) => Number(b.total) - Number(a.total))
-
-    return items.map(({ name, url, date, proberUrl, binUrl, detail }) => {
+  const results = items.map(
+    ({ name, url, date, proberUrl, binUrl, detail }) => {
       if (!detail) {
         return
       }
@@ -117,55 +113,29 @@ export default class ServerBenchmark extends Component {
           desktopMd={[1, 3]}
           desktopLg={[1, 4]}
         >
-          {this.renderResult({
-            hash,
-            intLoop,
-            floatLoop,
-            ioLoop,
-            date,
-          })}
+          <Result
+            {...{
+              hash,
+              intLoop,
+              floatLoop,
+              ioLoop,
+              date,
+            }}
+          />
           {proberLink}
           {binLink}
         </CardGrid>
       )
-    })
-  }
+    }
+  )
 
-  private renderResult({
-    hash,
-    intLoop,
-    floatLoop,
-    ioLoop,
-    date,
-  }: {
-    hash: number
-    intLoop: number
-    floatLoop: number
-    ioLoop: number
-    date?: string
-  }) {
-    return (
-      <>
-        <CardRuby ruby={hash.toLocaleString()} rt='HASH' />
-        {' + '}
-        <CardRuby ruby={intLoop.toLocaleString()} rt='INT' />
-        {' + '}
-        <CardRuby ruby={floatLoop.toLocaleString()} rt='FLOAT' />
-        {' + '}
-        <CardRuby ruby={ioLoop.toLocaleString()} rt='IO' />
-        {' = '}
-        <CardRuby
-          isResult={true}
-          ruby={(hash + intLoop + floatLoop + ioLoop).toLocaleString()}
-          rt={date || ''}
-        />
-      </>
-    )
-  }
+  return <>{results}</>
+})
 
-  private renderTestBtn() {
+const TestBtn = observer(
+  ({ onClick }: { onClick: (e: MouseEvent<HTMLAnchorElement>) => void }) => {
     const { marks, linkText } = store
-    const marksText = marks ? this.renderResult(marks) : ''
+    const marksText = marks ? <Result {...marks} /> : ''
 
     return (
       <CardGrid
@@ -174,19 +144,57 @@ export default class ServerBenchmark extends Component {
         desktopMd={[1, 3]}
         desktopLg={[1, 4]}
       >
-        <a onClick={this.onClick}>
-          {linkText} {marksText}
+        <a href='#' onClick={onClick}>
+          <div>{linkText}</div>
+          <div>{marksText}</div>
         </a>
       </CardGrid>
     )
   }
+)
 
-  public render() {
-    return (
-      <Row>
-        {store.enabledMyServerBenchmark && this.renderTestBtn()}
-        {this.renderItems()}
-      </Row>
-    )
-  }
-}
+const ServerBenchmark = observer(() => {
+  const onClick = useCallback(async (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+
+    const { isLoading, setIsLoading, setMarks, setLinkText } = store
+
+    if (isLoading) {
+      return false
+    }
+
+    setLinkText(gettext('⏳ Testing, please wait...'))
+    setIsLoading(true)
+
+    await restfulFetch('benchmark')
+      .then(([{ status }, { marks, seconds }]) => {
+        if (status === OK) {
+          if (marks) {
+            setMarks(marks)
+            setLinkText('')
+          } else {
+            setLinkText(gettext('Network error, please try again later.'))
+          }
+        } else if (status === TOO_MANY_REQUESTS) {
+          const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
+            seconds,
+          })
+          setLinkText(secondsMsg)
+        }
+      })
+      .catch(err => {
+        setLinkText(gettext('Network error, please try again later.'))
+      })
+
+    setIsLoading(false)
+  }, [])
+
+  return (
+    <Row>
+      {store.enabledMyServerBenchmark && <TestBtn onClick={onClick} />}
+      <Items />
+    </Row>
+  )
+})
+
+export default ServerBenchmark

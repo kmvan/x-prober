@@ -1,13 +1,23 @@
-import { observable, action, runInAction, configure } from 'mobx'
+import {
+  observable,
+  action,
+  runInAction,
+  configure,
+  makeObservable,
+} from 'mobx'
 import { ReactNode } from 'react'
 
 configure({
   enforceActions: 'observed',
 })
 
-class ToastStore {
+class Store {
   @observable public isOpen: boolean = false
   @observable public msg: ReactNode = ''
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setMsg = (msg: ReactNode) => {
@@ -30,4 +40,6 @@ class ToastStore {
   }
 }
 
-export default new ToastStore()
+const ToastStore = new Store()
+
+export default ToastStore

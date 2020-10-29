@@ -85,9 +85,9 @@ module.exports = {
   //   timings: true,
   // },
   devtool: 'source-map',
-  watchOptions: {
-    poll: 1000,
-    aggregateTimeout: 1000,
-    ignored: /node_modules/,
-  },
+  // watchOptions: {
+  //   poll: 1000,
+  //   aggregateTimeout: 1000,
+  //   ignored: /node_modules/,
+  // },
 }

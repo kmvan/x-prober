@@ -1,17 +1,21 @@
 import conf from '@/Helper/src/components/conf'
-import { observable, action, configure } from 'mobx'
+import { observable, action, configure, makeObservable } from 'mobx'
 
 configure({
   enforceActions: 'observed',
 })
 
-class PhpInfoStore {
+class Store {
   public readonly ID = 'phpInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
 
   @observable public latestPhpVersion: string = ''
   @observable public latestPhpDate: string = ''
+
+  public constructor() {
+    makeObservable(this)
+  }
 
   @action
   public setLatestPhpVersion = (latestPhpVersion: string) => {
@@ -24,4 +28,6 @@ class PhpInfoStore {
   }
 }
 
-export default new PhpInfoStore()
+const PhpInfoStore = new Store()
+
+export default PhpInfoStore
