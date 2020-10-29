@@ -85,6 +85,7 @@ module.exports = {
   //   timings: true,
   // },
   devtool: 'source-map',
+  watch: true,
   // watchOptions: {
   //   poll: 1000,
   //   aggregateTimeout: 1000,

@@ -11,6 +11,7 @@ const dirSrc = path.resolve(__dirname, 'src')
 const dirComponents = `${dirSrc}/Components`
 const langs = {}
 const poEntries = {}
+const JSON2 = require('JSON2')
 
 const parseFile = filePath => {
   const code = fs.readFileSync(filePath).toString()
@@ -30,8 +31,8 @@ const parseFile = filePath => {
       }
 
       poEntries[`${msgid}${msgctxt}`] = `
-${msgctxt ? `msgctxt ${JSON.stringify(msgctxt)}` : ''}
-msgid ${JSON.stringify(msgid)}
+${msgctxt ? `msgctxt ${JSON2.stringify(msgctxt)}` : ''}
+msgid ${JSON2.stringify(msgid)}
 msgstr ""
 `.trim()
     }
@@ -118,7 +119,7 @@ const writeJsData = ({ langId, items }) => {
 
   fs.writeFileSync(
     path.resolve(__dirname, 'src/Components/Language/src/lang.json'),
-    JSON.stringify(langs, null, 2),
+    JSON2.stringify(langs, null, 2),
     err => {
       if (err) {
         throw err

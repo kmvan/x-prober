@@ -1,730 +1,730 @@
 {
   "Move up": {
     "ja": "上に移動",
+    "zhtw": "上移",
     "zhhk": "上移",
     "zhcn": "上移",
-    "zhtw": "上移",
     "zh": "上移"
   },
   "Move down": {
     "ja": "下に移動",
+    "zhtw": "下移",
     "zhhk": "下移",
     "zhcn": "下移",
-    "zhtw": "下移",
     "zh": "下移"
   },
   "X Prober": {
     "ja": "",
+    "zhtw": "X 探針",
     "zhhk": "X 探針",
     "zhcn": "X 探针",
-    "zhtw": "X 探針",
     "zh": "X 探针"
   },
   "Error: can not fetch remote config data, update checker is disabled.": {
     "ja": "エラー：リモート設定データを取得できません。更新チェッカーが無効になっています。",
+    "zhtw": "錯誤：無法獲取配備資料，更新檢測已禁用。",
     "zhhk": "錯誤：無法獲取配置數據，更新檢測已禁用。",
     "zhcn": "错误：无法获取远程配置数据，更新检测已禁用。",
-    "zhtw": "錯誤：無法獲取配備資料，更新檢測已禁用。",
     "zh": "错误：无法获取远程配置数据，更新检测已禁用。"
   },
   "Database": {
     "ja": "データベース",
+    "zhtw": "資料庫",
     "zhhk": "資料庫",
     "zhcn": "数据库",
-    "zhtw": "資料庫",
     "zh": "数据库"
   },
   "DB": {
     "ja": "DB",
+    "zhtw": "資料庫",
     "zhhk": "資料庫",
     "zhcn": "数据库",
-    "zhtw": "資料庫",
     "zh": "数据库"
   },
   "Fetch error, please refresh page.": {
     "ja": "取得エラー。ページを更新してください。",
+    "zhtw": "獲取錯誤，請重新整理頁面。",
     "zhhk": "獲取錯誤，請刷新頁面。",
     "zhcn": "获取信息错误，请刷新页面。",
-    "zhtw": "獲取錯誤，請重新整理頁面。",
     "zh": "获取信息错误，请刷新页面。"
   },
   "Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms": {
     "ja": "このページは ${appName} によって生成されます / 著者は ${authorName} / ${memUsage} / ${time} ミリ秒",
+    "zhtw": "該頁面由 ${appName} 生成 / 作者為 ${authorName} / ${memUsage} / ${time} 毫秒",
     "zhhk": "該頁面由 ${appName} 生成 / 作者爲 ${authorName} / ${memUsage} / ${time} 毫秒",
     "zhcn": "该页面由 ${appName} 生成 / 作者为 ${authorName} / ${memUsage} / ${time} 毫秒",
-    "zhtw": "該頁面由 ${appName} 生成 / 作者為 ${authorName} / ${memUsage} / ${time} 毫秒",
     "zh": "该页面由 ${appName} 生成 / 作者为 ${authorName} / ${memUsage} / ${time} 毫秒"
   },
   "STAR 🌟 ME": {
     "ja": "星🌟印",
+    "zhtw": "星🌟標",
     "zhhk": "星🌟標",
     "zhcn": "星 🌟 标",
-    "zhtw": "星🌟標",
     "zh": "星 🌟 标"
   },
   "My IP": {
     "ja": "私のIP",
+    "zhtw": "我的 IP",
     "zhhk": "我的 IP",
     "zhcn": "我的 IP",
-    "zhtw": "我的 IP",
     "zh": "我的 IP"
   },
   "My browser UA": {
     "ja": "私のブラウザ UA",
+    "zhtw": "我的瀏覽器",
     "zhhk": "我的瀏覽器",
     "zhcn": "我的浏览器 UA",
-    "zhtw": "我的瀏覽器",
     "zh": "我的浏览器 UA"
   },
   "My browser languages (via JS)": {
     "ja": "私のブラウザの言語（JS）",
+    "zhtw": "我的瀏覽器語言（JS）",
     "zhhk": "我的瀏覽器語言（JS）",
     "zhcn": "我的浏览器语言（JS）",
-    "zhtw": "我的瀏覽器語言（JS）",
     "zh": "我的浏览器语言（JS）"
   },
   "My browser languages (via PHP)": {
     "ja": "私のブラウザの言語（PHP）",
+    "zhtw": "我的瀏覽器語言（PHP）",
     "zhhk": "我的瀏覽器語言（PHP）",
     "zhcn": "我的浏览器语言（PHP）",
-    "zhtw": "我的瀏覽器語言（PHP）",
     "zh": "我的浏览器语言（PHP）"
   },
   "My location": {
     "ja": "私の場所",
+    "zhtw": "我的位置",
     "zhhk": "我的位置",
     "zhcn": "我的位置",
-    "zhtw": "我的位置",
     "zh": "我的位置"
   },
   "In development": {
     "ja": "開発中",
+    "zhtw": "開發中",
     "zhhk": "開發中",
     "zhcn": "开发中",
-    "zhtw": "開發中",
     "zh": "开发中"
   },
   "My Information": {
     "ja": "私の情報",
+    "zhtw": "我的訊息",
     "zhhk": "我的訊息",
     "zhcn": "我的信息",
-    "zhtw": "我的訊息",
     "zh": "我的信息"
   },
   "Mine": {
     "ja": "私の",
+    "zhtw": "我的",
     "zhhk": "我的",
     "zhcn": "我的",
-    "zhtw": "我的",
     "zh": "我的"
   },
   "Network Stats": {
     "ja": "ネットワーク統計",
+    "zhtw": "流量統計",
     "zhhk": "流量統計",
     "zhcn": "流量统计",
-    "zhtw": "流量統計",
     "zh": "流量统计"
   },
   "Net": {
     "ja": "ネット",
+    "zhtw": "流量",
     "zhhk": "流量",
     "zhcn": "网络",
-    "zhtw": "流量",
     "zh": "网络"
   },
   "Fetch failed. Node returns ${code}.": {
     "ja": "フェッチに失敗しました。 ノードは ${code} を返します。",
+    "zhtw": "獲取失敗。節點返回了 ${code} 碼。",
     "zhhk": "獲取失敗。節點返回了 ${code} 碼。",
     "zhcn": "获取失败。节点返回了 ${code} 错误码。",
-    "zhtw": "獲取失敗。節點返回了 ${code} 碼。",
     "zh": "获取失败。节点返回了 ${code} 错误码。"
   },
   "Fetch failed. Detail in Console.": {
     "ja": "フェッチに失敗しました。 コンソールの詳細。",
+    "zhtw": "獲取失敗。詳情在控制檯",
     "zhhk": "獲取失敗。詳情在控制檯",
     "zhcn": "获取失败。详情请看控制台。",
-    "zhtw": "獲取失敗。詳情在控制檯",
     "zh": "获取失败。详情请看控制台。"
   },
   "Node [${nodeId}] fetch failed.": {
     "ja": "ノード [${nodeId}] のフェッチに失敗しました。",
+    "zhtw": "獲取節點 [${nodeId}] 失敗。",
     "zhhk": "獲取節點 [${nodeId}] 失敗。",
     "zhcn": "获取节点 [${nodeId}] 失败。",
-    "zhtw": "獲取節點 [${nodeId}] 失敗。",
     "zh": "获取节点 [${nodeId}] 失败。"
   },
   "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}": {
     "ja": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}",
+    "zhtw": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}",
     "zhhk": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}",
     "zhcn": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}",
-    "zhtw": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}",
     "zh": "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
   },
   "CPU usage": {
     "ja": "CPU 使用率",
+    "zhtw": "CPU 使用率",
     "zhhk": "CPU 使用率",
     "zhcn": "CPU 占用",
-    "zhtw": "CPU 使用率",
     "zh": "CPU 占用"
   },
   "Usage: ${percent}": {
     "ja": "佔用: ${percent}",
+    "zhtw": "佔用：${percent}",
     "zhhk": "佔用：${percent}",
     "zhcn": "使用：${percent}",
-    "zhtw": "佔用：${percent}",
     "zh": "使用：${percent}"
   },
   "Memory": {
     "ja": "RAM",
+    "zhtw": "記憶體",
     "zhhk": "記憶體",
     "zhcn": "内存",
-    "zhtw": "記憶體",
     "zh": "内存"
   },
   "Swap": {
     "ja": "Swap",
+    "zhtw": "Swap",
     "zhhk": "Swap",
     "zhcn": "Swap",
-    "zhtw": "Swap",
     "zh": "Swap"
   },
   "Fetching...": {
     "ja": "取得しています...",
+    "zhtw": "獲取中……",
     "zhhk": "獲取中……",
     "zhcn": "获取中……",
-    "zhtw": "獲取中……",
     "zh": "获取中……"
   },
   "Nodes": {
     "ja": "ノード",
+    "zhtw": "節點",
     "zhhk": "節點",
     "zhcn": "节点",
-    "zhtw": "節點",
     "zh": "节点"
   },
   "Opcache enabled": {
     "ja": "%s 有効",
+    "zhtw": "OPcache 已啟用",
     "zhhk": "OPcache 已啓用",
     "zhcn": "OPcache 已启用",
-    "zhtw": "OPcache 已啟用",
     "zh": "OPcache 已启用"
   },
   "Loaded extensions": {
     "ja": "ロードエクステンション",
+    "zhtw": "載入的 PHP 擴展",
     "zhhk": "載入的 PHP 擴展",
     "zhcn": "已加载的扩展",
-    "zhtw": "載入的 PHP 擴展",
     "zh": "已加载的扩展"
   },
   "PHP Extensions": {
     "ja": "PHPエクステンション",
+    "zhtw": "PHP 擴展",
     "zhhk": "PHP 擴展",
     "zhcn": "PHP 扩展",
-    "zhtw": "PHP 擴展",
     "zh": "PHP 扩展"
   },
   "Ext": {
     "ja": "拡張",
+    "zhtw": "擴展",
     "zhhk": "擴展",
     "zhcn": "扩展",
-    "zhtw": "擴展",
     "zh": "扩展"
   },
   "👆 Click for detail": {
     "ja": "詳細はこちら",
+    "zhtw": "👆 查看詳細",
     "zhhk": "👆 查看詳細",
     "zhcn": "👆 详细信息",
-    "zhtw": "👆 查看詳細",
     "zh": "👆 详细信息"
   },
   "Version": {
     "ja": "バージョン",
+    "zhtw": "版本",
     "zhhk": "版本",
     "zhcn": "版本",
-    "zhtw": "版本",
     "zh": "版本"
   },
   "SAPI interface": {
     "ja": "SAPI インタフェース",
+    "zhtw": "SAPI 介面",
     "zhhk": "SAPI 介面",
     "zhcn": "SAPI 接口",
-    "zhtw": "SAPI 介面",
     "zh": "SAPI 接口"
   },
   "Display errors": {
     "ja": "エラー表示",
+    "zhtw": "顯示錯誤",
     "zhhk": "顯示錯誤",
     "zhcn": "显示错误",
-    "zhtw": "顯示錯誤",
     "zh": "显示错误"
   },
   "Error reporting": {
     "ja": "エラー報告",
+    "zhtw": "錯誤報告",
     "zhhk": "錯誤報告",
     "zhcn": "错误报告",
-    "zhtw": "錯誤報告",
     "zh": "错误报告"
   },
   "Max memory limit": {
     "ja": "最大メモリ制限",
+    "zhtw": "執行記憶體限制",
     "zhhk": "執行記憶體限制",
     "zhcn": "运行内存限制",
-    "zhtw": "執行記憶體限制",
     "zh": "运行内存限制"
   },
   "Max POST size": {
     "ja": "最大 POST サイズ",
+    "zhtw": "POST 提交限制",
     "zhhk": "POST 提交限制",
     "zhcn": "POST 提交限制",
-    "zhtw": "POST 提交限制",
     "zh": "POST 提交限制"
   },
   "Max upload size": {
     "ja": "最大アップロードサイズ",
+    "zhtw": "上傳檔案限制",
     "zhhk": "上傳檔案限制",
     "zhcn": "上传文件限制",
-    "zhtw": "上傳檔案限制",
     "zh": "上传文件限制"
   },
   "Max input variables": {
     "ja": "最大入力変数",
+    "zhtw": "提交表單限制",
     "zhhk": "提交表單限制",
     "zhcn": "提交表单限制",
-    "zhtw": "提交表單限制",
     "zh": "提交表单限制"
   },
   "Max execution time": {
     "ja": "最大実行時間",
+    "zhtw": "執行逾時秒數",
     "zhhk": "執行超時秒數",
     "zhcn": "运行超时秒数",
-    "zhtw": "執行逾時秒數",
     "zh": "运行超时秒数"
   },
   "Timeout for socket": {
     "ja": "ソケットのタイムアウト",
+    "zhtw": "Socket 逾時秒數",
     "zhhk": "Socket 超時秒數",
     "zhcn": "Socket 超时秒数",
-    "zhtw": "Socket 逾時秒數",
     "zh": "Socket 超时秒数"
   },
   "Treatment URLs file": {
     "ja": "Treatment URLs ファイル",
+    "zhtw": "檔案遠端打開",
     "zhhk": "檔案遠端打開",
     "zhcn": "文件远端打开",
-    "zhtw": "檔案遠端打開",
     "zh": "文件远端打开"
   },
   "SMTP support": {
     "ja": "SMTP サポート",
+    "zhtw": "SMTP 支援",
     "zhhk": "SMTP 支援",
     "zhcn": "SMTP 支持",
-    "zhtw": "SMTP 支援",
     "zh": "SMTP 支持"
   },
   "Disabled functions": {
     "ja": "無効な機能",
+    "zhtw": "禁用的函數",
     "zhhk": "禁用的函數",
     "zhcn": "已禁用的函数",
-    "zhtw": "禁用的函數",
     "zh": "已禁用的函数"
   },
   "Disabled classes": {
     "ja": "無効なクラス",
+    "zhtw": "禁用的類別",
     "zhhk": "禁用的類",
     "zhcn": "已禁用的类",
-    "zhtw": "禁用的類別",
     "zh": "已禁用的类"
   },
   "Visit PHP.net Official website": {
     "ja": "PHP.net 公式ウェブサイトにアクセス",
+    "zhtw": "瀏覽 PHP.net 官網",
     "zhhk": "訪問 PHP.net 官網",
     "zhcn": "访问 PHP.net 官网",
-    "zhtw": "瀏覽 PHP.net 官網",
     "zh": "访问 PHP.net 官网"
   },
   "(Latest ${latestPhpVersion})": {
     "ja": "（最新 ${latestPhpVersion}）",
+    "zhtw": "（最新 ${latestPhpVersion}）",
     "zhhk": "（最新 ${latestPhpVersion}）",
     "zhcn": "（最新  ${latestPhpVersion}）",
-    "zhtw": "（最新 ${latestPhpVersion}）",
     "zh": "（最新  ${latestPhpVersion}）"
   },
   "PHP Information": {
     "ja": "PHP情報",
+    "zhtw": "PHP 資訊",
     "zhhk": "PHP 資訊",
     "zhcn": "PHP 信息",
-    "zhtw": "PHP 資訊",
     "zh": "PHP 信息"
   },
   "PHP": {
     "ja": "PHP",
+    "zhtw": "PHP",
     "zhhk": "PHP",
     "zhcn": "PHP",
-    "zhtw": "PHP",
     "zh": "PHP"
   },
   "Times:${times}": {
     "ja": "回: ${times}",
+    "zhtw": "次數：${times}",
     "zhhk": "次數：${times}",
     "zhcn": "次数：${times}",
-    "zhtw": "次數：${times}",
     "zh": "次数：${times}"
   },
   "Min:${min} / Max:${max} / Avg:${avg}": {
     "ja": "最小: ${min} / 最大: ${max} / 平均: ${avg}",
+    "zhtw": "最小:${min} / 最大:${max} / 平均:${avg}",
     "zhhk": "最小:${min} / 最大:${max} / 平均:${avg}",
     "zhcn": "最小:${min} / 最大:${max} / 平均:${avg}",
-    "zhtw": "最小:${min} / 最大:${max} / 平均:${avg}",
     "zh": "最小:${min} / 最大:${max} / 平均:${avg}"
   },
   "⏸️ Stop ping": {
     "ja": "⏸️ Pingを停止",
+    "zhtw": "⏸️ 停止 Ping",
     "zhhk": "⏸️ 停止 Ping",
     "zhcn": "⏸️ 停止 Ping",
-    "zhtw": "⏸️ 停止 Ping",
     "zh": "⏸️ 停止 Ping"
   },
   "👆 Start ping": {
     "ja": "👆 Pingを開始",
+    "zhtw": "👆 開始 Ping",
     "zhhk": "👆 開始 Ping",
     "zhcn": "👆 开始 Ping",
-    "zhtw": "👆 開始 Ping",
     "zh": "👆 开始 Ping"
   },
   "Network Ping": {
     "ja": "ネットワークPing",
+    "zhtw": "網速 Ping",
     "zhhk": "網速 Ping",
     "zhcn": "网络 Ping",
-    "zhtw": "網速 Ping",
     "zh": "网络 Ping"
   },
   "Ping": {
     "ja": "Ping",
+    "zhtw": "Ping",
     "zhhk": "Ping",
     "zhcn": "Ping",
-    "zhtw": "Ping",
     "zh": "Ping"
   },
   "⏳ Testing, please wait...": {
     "ja": "⏳ テストしています。お待ちください...",
+    "zhtw": "⏳ 跑分中，請稍等……",
     "zhhk": "⏳ 跑分中，請稍等……",
     "zhcn": "⏳ 跑分中，请稍等……",
-    "zhtw": "⏳ 跑分中，請稍等……",
     "zh": "⏳ 跑分中，请稍等……"
   },
   "Network error, please try again later.": {
     "ja": "ネットワークエラーです。しばらくしてからもう一度お試しください。",
+    "zhtw": "網路錯誤，請稍後重試。",
     "zhhk": "網路錯誤，請稍後重試。",
     "zhcn": "网络错误，请稍候重试。",
-    "zhtw": "網路錯誤，請稍後重試。",
     "zh": "网络错误，请稍候重试。"
   },
   "⏳ Please wait ${seconds}s": {
     "ja": "⏳ ${seconds} 秒お待ちください",
+    "zhtw": "⏳ 請等待 ${seconds} 秒",
     "zhhk": "⏳ 請等待 <%= seconds %> 秒",
     "zhcn": "⏳ 请等待 ${seconds}s",
-    "zhtw": "⏳ 請等待 ${seconds} 秒",
     "zh": "⏳ 请等待 ${seconds}s"
   },
   "Can not fetch marks data from GitHub.": {
     "ja": "GitHubからマークデータを取得できません。",
+    "zhtw": "無法從 GitHub 中獲取跑分資料。",
     "zhhk": "無法從 GitHub 中獲取跑分數據。",
     "zhcn": "无法从 GitHub 中获取跑分数据。",
-    "zhtw": "無法從 GitHub 中獲取跑分資料。",
     "zh": "无法从 GitHub 中获取跑分数据。"
   },
   "Visit prober page": {
     "ja": "X-Prober ホームページへ",
+    "zhtw": "查閱探針頁面",
     "zhhk": "查閱探針頁面",
     "zhcn": "查看探针页面",
-    "zhtw": "查閱探針頁面",
     "zh": "查看探针页面"
   },
   "Download speed test": {
     "ja": "ネットワーク速度テスト用のダウンロードファイル",
+    "zhtw": "下載文件以測試網速",
     "zhhk": "下載文件以測試網速",
     "zhcn": "下载速度测试",
-    "zhtw": "下載文件以測試網速",
     "zh": "下载速度测试"
   },
   "Visit the official website": {
     "ja": "公式ウェブサイトをご覧ください",
+    "zhtw": "瀏覽官網",
     "zhhk": "訪問官網",
     "zhcn": "访问官网",
-    "zhtw": "瀏覽官網",
     "zh": "访问官网"
   },
   "My server": {
     "ja": "私のサーバー",
+    "zhtw": "我的伺服器",
     "zhhk": "我的伺服器",
     "zhcn": "我的服务器",
-    "zhtw": "我的伺服器",
     "zh": "我的服务器"
   },
   "Server Benchmark": {
     "ja": "サーバー基準",
+    "zhtw": "伺服器性能跑分",
     "zhhk": "伺服器性能跑分",
     "zhcn": "服务器跑分",
-    "zhtw": "伺服器性能跑分",
     "zh": "服务器跑分"
   },
   "Becnhmark": {
     "ja": "基準",
+    "zhtw": "跑分",
     "zhhk": "跑分",
     "zhcn": "跑分",
-    "zhtw": "跑分",
     "zh": "跑分"
   },
   "Click to test": {
     "ja": "👆クリックしてテスト",
+    "zhtw": "👆 點擊測試",
     "zhhk": "👆 點擊測試",
     "zhcn": "👆 点击测试",
-    "zhtw": "👆 點擊測試",
     "zh": "👆 点击测试"
   },
   "Unavailable": {
     "ja": "利用不可",
+    "zhtw": "不可用",
     "zhhk": "不可用",
     "zhcn": "不可用",
-    "zhtw": "不可用",
     "zh": "不可用"
   },
   "${days} days ${hours} hours ${mins} mins ${secs} secs": {
     "ja": "${days} 日 ${hours} 時 ${mins} 分 ${secs} 秒",
+    "zhtw": "${days} 天 ${hours} 時 ${mins} 分 ${secs} 秒",
     "zhhk": "${days} 天 ${hours} 時 ${mins} 分 ${secs} 秒",
     "zhcn": "${days} 天 ${hours} 小时 ${mins} 分 ${secs} 秒",
-    "zhtw": "${days} 天 ${hours} 時 ${mins} 分 ${secs} 秒",
     "zh": "${days} 天 ${hours} 小时 ${mins} 分 ${secs} 秒"
   },
   "Server name": {
     "ja": "サーバーの名前",
+    "zhtw": "伺服器名",
     "zhhk": "伺服器名",
     "zhcn": "服务器名",
-    "zhtw": "伺服器名",
     "zh": "服务器名"
   },
   "Server time": {
     "ja": "サーバー時間",
+    "zhtw": "持續上線時間",
     "zhhk": "持續上線時間",
     "zhcn": "服务器时间",
-    "zhtw": "持續上線時間",
     "zh": "服务器时间"
   },
   "Server uptime": {
     "ja": "サーバーの稼働時間",
+    "zhtw": "持續上線時間",
     "zhhk": "持續上線時間",
     "zhcn": "持续运作时间",
-    "zhtw": "持續上線時間",
     "zh": "持续运作时间"
   },
   "Server IP": {
     "ja": "サーバー IP",
+    "zhtw": "伺服器 IP",
     "zhhk": "伺服器 IP",
     "zhcn": "服务器 IP",
-    "zhtw": "伺服器 IP",
     "zh": "服务器 IP"
   },
   "Server software": {
     "ja": "サーバーソフトウェア",
+    "zhtw": "伺服器軟體",
     "zhhk": "伺服器軟體",
     "zhcn": "服务器软件",
-    "zhtw": "伺服器軟體",
     "zh": "服务器软件"
   },
   "PHP version": {
     "ja": "PHP バージョン",
+    "zhtw": "PHP 版本",
     "zhhk": "PHP 版本",
     "zhcn": "PHP 版本",
-    "zhtw": "PHP 版本",
     "zh": "PHP 版本"
   },
   "CPU model": {
     "ja": "CPUモデル",
+    "zhtw": "CPU 型號",
     "zhhk": "CPU 型號",
     "zhcn": "CPU 型号",
-    "zhtw": "CPU 型號",
     "zh": "CPU 型号"
   },
   "Server OS": {
     "ja": "サーバー OS",
+    "zhtw": "伺服器系統",
     "zhhk": "伺服器系統",
     "zhcn": "服务器系统",
-    "zhtw": "伺服器系統",
     "zh": "服务器系统"
   },
   "Script path": {
     "ja": "スクリプトパス",
+    "zhtw": "腳本路徑",
     "zhhk": "腳本路徑",
     "zhcn": "脚本路径",
-    "zhtw": "腳本路徑",
     "zh": "脚本路径"
   },
   "Disk usage": {
     "ja": "ディスクの使用状況",
+    "zhtw": "磁碟使用",
     "zhhk": "磁碟使用",
     "zhcn": "磁盘使用量",
-    "zhtw": "磁碟使用",
     "zh": "磁盘使用量"
   },
   "Server Information": {
     "ja": "サーバー情報",
+    "zhtw": "伺服器訊息",
     "zhhk": "伺服器訊息",
     "zhcn": "服务器信息",
-    "zhtw": "伺服器訊息",
     "zh": "服务器信息"
   },
   "Info": {
     "ja": "情報",
+    "zhtw": "訊息",
     "zhhk": "訊息",
     "zhcn": "信息",
-    "zhtw": "訊息",
     "zh": "信息"
   },
   "Buffers are in-memory block I/O buffers. They are relatively short-lived. Prior to Linux kernel version 2.4, Linux had separate page and buffer caches. Since 2.4, the page and buffer cache are unified and Buffers is raw disk blocks not represented in the page cache—i.e., not file data.": {
     "ja": "",
+    "zhtw": "",
     "zhhk": "",
     "zhcn": "内存缓冲是指内存块的输入输出缓冲。它们是相对短暂存储的。 在 Linux 内核版本 2.4 之前，Linux 具有单独的页面和缓冲区高速缓存。 从 2.4 开始，页面和缓冲区高速缓存是统一的，而缓冲区是原始磁盘块，并不代表存在于页面缓存，即不是文件数据。",
-    "zhtw": "",
     "zh": "内存缓冲是指内存块的输入输出缓冲。它们是相对短暂存储的。 在 Linux 内核版本 2.4 之前，Linux 具有单独的页面和缓冲区高速缓存。 从 2.4 开始，页面和缓冲区高速缓存是统一的，而缓冲区是原始磁盘块，并不代表存在于页面缓存，即不是文件数据。"
   },
   "Memory buffers": {
     "ja": "メモリバッファ",
+    "zhtw": "記憶體緩衝",
     "zhhk": "記憶體緩衝",
     "zhcn": "内存缓冲",
-    "zhtw": "記憶體緩衝",
     "zh": "内存缓冲"
   },
   "Cached memory is memory that Linux uses for disk caching. However, this doesn\\'t count as \"used\" memory, since it will be freed when applications require it. Hence you don\\'t have to worry if a large amount is being used.": {
     "ja": "",
+    "zhtw": "",
     "zhhk": "",
     "zhcn": "内存缓存指 Linux 使用的磁盘缓存。不管怎样，这些都不算作“已用”内存，如果程序有需要的话，它们就会被释放并为其所用。所以您不需要担心缓存过大会造成什么问题。",
-    "zhtw": "",
     "zh": "内存缓存指 Linux 使用的磁盘缓存。不管怎样，这些都不算作“已用”内存，如果程序有需要的话，它们就会被释放并为其所用。所以您不需要担心缓存过大会造成什么问题。"
   },
   "Memory cached": {
     "ja": "メモリキャッシュ",
+    "zhtw": "記憶體快取",
     "zhhk": "記憶體快取",
     "zhcn": "内存缓存",
-    "zhtw": "記憶體快取",
     "zh": "内存缓存"
   },
   "Linux comes with many commands to check memory usage. The \"free\" command usually displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The \"top\" command provides a dynamic real-time view of a running system.": {
     "ja": "",
+    "zhtw": "",
     "zhhk": "",
     "zhcn": "Linux 有许多命令来查看内存使用量。命令“free”通常用于显示系统可用的物理内存和交换分区内存，以及内核所占用的缓存。“top”命令提供系统正在运行的实时视图。",
-    "zhtw": "",
     "zh": "Linux 有许多命令来查看内存使用量。命令“free”通常用于显示系统可用的物理内存和交换分区内存，以及内核所占用的缓存。“top”命令提供系统正在运行的实时视图。"
   },
   "Memory real usage": {
     "ja": "実メモリ使用量",
+    "zhtw": "真實記憶體使用",
     "zhhk": "真實記憶體使用",
     "zhcn": "真实内存占用",
-    "zhtw": "真實記憶體使用",
     "zh": "真实内存占用"
   },
   "Swap cached": {
     "ja": "SWAP キャッシュ",
+    "zhtw": "SWAP 快取",
     "zhhk": "SWAP 快取",
     "zhcn": "SWAP 缓存",
-    "zhtw": "SWAP 快取",
     "zh": "SWAP 缓存"
   },
   "Swap usage": {
     "ja": "SWAP 使用量",
+    "zhtw": "SWAP 使用",
     "zhhk": "SWAP 使用",
     "zhcn": "SWAP 占用",
-    "zhtw": "SWAP 使用",
     "zh": "SWAP 占用"
   },
   "${minute} minute average": {
     "ja": "${minute} 分ごとの平均負荷",
+    "zhtw": "${minute} 分鐘平均負載",
     "zhhk": "${minute}  分鐘平均負載",
     "zhcn": "${minute} 分钟平均负载",
-    "zhtw": "${minute} 分鐘平均負載",
     "zh": "${minute} 分钟平均负载"
   },
   "System load": {
     "ja": "システム負荷",
+    "zhtw": "系統負載",
     "zhhk": "系統負載",
     "zhcn": "系统负载",
-    "zhtw": "系統負載",
     "zh": "系统负载"
   },
   "Server Status": {
     "ja": "サーバーの状態",
+    "zhtw": "伺服器狀態",
     "zhhk": "伺服器狀態",
     "zhcn": "服务器状态",
-    "zhtw": "伺服器狀態",
     "zh": "服务器状态"
   },
   "Status": {
     "ja": "状態",
+    "zhtw": "狀態",
     "zhhk": "狀態",
     "zhcn": "状态",
-    "zhtw": "狀態",
     "zh": "状态"
   },
   "${sensor} temperature": {
     "ja": "${sensor} 温度",
+    "zhtw": "${sensor} 溫度",
     "zhhk": "${sensor} 溫度",
     "zhcn": "${sensor} 温度",
-    "zhtw": "${sensor} 溫度",
     "zh": "${sensor} 温度"
   },
   "Temperature Sensor": {
     "ja": "温度センサー",
+    "zhtw": "溫度傳感器",
     "zhhk": "溫度傳感器",
     "zhcn": "温度传感器",
-    "zhtw": "溫度傳感器",
     "zh": "温度传感器"
   },
   "Temp.": {
     "ja": "温度",
+    "zhtw": "溫度",
     "zhhk": "溫度",
     "zhcn": "温度",
-    "zhtw": "溫度",
     "zh": "温度"
   },
   "Click to close": {
     "ja": "クリックして閉じる",
+    "zhtw": "點擊關閉",
     "zhhk": "點擊關閉",
     "zhcn": "点击关闭",
-    "zhtw": "點擊關閉",
     "zh": "点击关闭"
   },
   "Can not update file, please check the server permissions and space.": {
     "ja": "ファイルを更新できません。サーバーの権限とスペースを確認してください。",
+    "zhtw": "無法更新檔案，請檢查伺服器權限和空間。",
     "zhhk": "無法更新文件，請檢查伺服器權限和空間。",
     "zhcn": "无法更新文件，请检查服务器权限和空间。",
-    "zhtw": "無法更新檔案，請檢查伺服器權限和空間。",
     "zh": "无法更新文件，请检查服务器权限和空间。"
   },
   "Click to update": {
     "ja": "クリックして更新",
+    "zhtw": "👆 點擊更新",
     "zhhk": "👆 點擊更新",
     "zhcn": "点击更新",
-    "zhtw": "👆 點擊更新",
     "zh": "点击更新"
   },
   "⏳ Updating, please wait a second...": {
     "ja": "⏳ 更新しています。しばらくお待ちください...",
+    "zhtw": "⏳ 更新中，請稍等……",
     "zhhk": "⏳ 更新中，請稍等……",
     "zhcn": "⏳ 更新中，请稍等一会……",
-    "zhtw": "⏳ 更新中，請稍等……",
     "zh": "⏳ 更新中，请稍等一会……"
   },
   "❌ Update error, click here to try again?": {
     "ja": "❌ 更新エラー。ここをクリックして再試行しますか？",
+    "zhtw": "❌ 更新錯誤，點擊此處再試一次？",
     "zhhk": "❌ 更新錯誤，點擊此處再試一次？",
     "zhcn": "❌ 更新错误，点击此处再试一次？",
-    "zhtw": "❌ 更新錯誤，點擊此處再試一次？",
     "zh": "❌ 更新错误，点击此处再试一次？"
   },
   "✨ Found update! Version ${oldVersion} → ${newVersion}": {
     "ja": "✨ アップデートが見た！バージョン ${oldVersion} → ${newVersion}",
+    "zhtw": "✨ 發現更新！版本 ${oldVersion} → ${newVersion}",
     "zhhk": "✨ 發現更新！版本 ${oldVersion} → ${newVersion}",
     "zhcn": "✨ 发现更新！版本 ${oldVersion} → ${newVersion}",
-    "zhtw": "✨ 發現更新！版本 ${oldVersion} → ${newVersion}",
     "zh": "✨ 发现更新！版本 ${oldVersion} → ${newVersion}"
   },
   "No sensor data.": {
