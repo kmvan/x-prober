@@ -72,15 +72,6 @@ msgstr ""
 msgid "Net"
 msgstr ""
 
-msgid "Fetch failed. Node returns ${code}."
-msgstr ""
-
-msgid "Fetch failed. Detail in Console."
-msgstr ""
-
-msgid "Node [${nodeId}] fetch failed."
-msgstr ""
-
 msgid "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
 msgstr ""
 
@@ -90,13 +81,22 @@ msgstr ""
 msgid "Usage: ${percent}"
 msgstr ""
 
-msgid "Ram"
+msgid "Memory"
 msgstr ""
 
 msgid "Swap"
 msgstr ""
 
 msgid "Fetching..."
+msgstr ""
+
+msgid "Fetch failed. Node returns ${code}."
+msgstr ""
+
+msgid "Fetch failed. Detail in Console."
+msgstr ""
+
+msgid "Node [${nodeId}] fetch failed."
 msgstr ""
 
 msgid "Nodes"
@@ -189,15 +189,6 @@ msgstr ""
 msgid "Ping"
 msgstr ""
 
-msgid "⏳ Testing, please wait..."
-msgstr ""
-
-msgid "Network error, please try again later."
-msgstr ""
-
-msgid "⏳ Please wait ${seconds}s"
-msgstr ""
-
 msgid "Can not fetch marks data from GitHub."
 msgstr ""
 
@@ -211,6 +202,15 @@ msgid "Visit the official website"
 msgstr ""
 
 msgid "My server"
+msgstr ""
+
+msgid "⏳ Testing, please wait..."
+msgstr ""
+
+msgid "Network error, please try again later."
+msgstr ""
+
+msgid "⏳ Please wait ${seconds}s"
 msgstr ""
 
 msgid "Server Benchmark"
