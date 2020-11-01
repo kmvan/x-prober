@@ -4,7 +4,6 @@ import { GUTTER, BORDER_RADIUS } from '@/Config/src'
 import NetworksStatsItem from '@/NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
 import { rgba } from 'polished'
-import update from 'immutability-helper'
 
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
@@ -36,20 +35,19 @@ const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
     return null
   }
 
-  const latestItems = update(items, {})
   const [data, setData] = useState({
-    curr: { items: latestItems, timestamp },
-    prev: { items: latestItems, timestamp },
+    curr: { items, timestamp },
+    prev: { items, timestamp },
   })
 
   useEffect(() => {
     setData(prevData => {
       return {
         curr: {
-          items: latestItems,
+          items,
           timestamp,
         },
-        prev: update(prevData.curr, {}),
+        prev: prevData.curr,
       }
     })
   }, [timestamp])

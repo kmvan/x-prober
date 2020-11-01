@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Row from '@/Grid/src/components/row'
 import CardGrid from '@/Card/src/components/card-grid'
 import store from '../stores'
 import NetworksStatsItem from './item'
 import { observer } from 'mobx-react-lite'
-import update from 'immutability-helper'
 
 const NetworkStats = observer(() => {
   const { sortItems, itemsCount, timestamp } = store
@@ -13,14 +12,13 @@ const NetworkStats = observer(() => {
     return null
   }
 
-  const latestItems = update(sortItems, {})
   const [data, setData] = useState({
     prev: {
-      items: latestItems,
+      items: sortItems,
       timestamp,
     },
     curr: {
-      items: latestItems,
+      items: sortItems,
       timestamp,
     },
   })
@@ -29,10 +27,10 @@ const NetworkStats = observer(() => {
     setData(prevData => {
       return {
         curr: {
-          items: latestItems,
+          items: sortItems,
           timestamp,
         },
-        prev: update(prevData.curr, {}),
+        prev: prevData.curr,
       }
     })
   }, [timestamp])
@@ -45,6 +43,7 @@ const NetworkStats = observer(() => {
         if (!rx && !tx) {
           return null
         }
+
         const prevItem = data.prev.items.find(item => item.id === id)
         const prevRx = prevItem?.rx || 0
         const prevTx = prevItem?.tx || 0
