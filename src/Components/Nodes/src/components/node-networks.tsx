@@ -52,7 +52,8 @@ const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
     })
   }, [timestamp])
 
-  const seconds = data.curr.timestamp - data.prev.timestamp
+  const { curr, prev } = data
+  const seconds = curr.timestamp - prev.timestamp
 
   return (
     <StyledNodeGroupNetworks>
@@ -61,7 +62,7 @@ const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
           return null
         }
 
-        const prevItem = data.prev.items.find(item => item.id === id)
+        const prevItem = prev.items.find(item => item.id === id)
         const prevRx = prevItem?.rx || 0
         const prevTx = prevItem?.tx || 0
 
