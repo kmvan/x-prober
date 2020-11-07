@@ -21,6 +21,19 @@
   "LATEST_MYSQL_CLIENT_STABLE_VERSION": "70404",
   "BENCHMARKS": [
     {
+      "name": "Olink/SSD/PHP7.4",
+      "url": "https://www.olink.cloud/clients/aff.php?aff=120",
+      "date": "2010-11-07",
+      "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
+      "binUrl": "https://speedtest.fishfish.date",
+      "detail": {
+        "hash": 870,
+        "intLoop": 971,
+        "floatLoop": 972,
+        "ioLoop": 761
+      }
+    },
+    {
       "name": "RamNode/SSD/PHP7.3",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
       "date": "2019-09-02",
