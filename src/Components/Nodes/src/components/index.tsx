@@ -212,12 +212,10 @@ const Nodes = observer(() => {
   }, [])
 
   useEffect(() => {
-    if (!itemsCount) {
-      return
-    }
-
-    for (const { id } of items) {
-      fetch(id)
+    if (itemsCount) {
+      for (const { id } of items) {
+        fetch(id)
+      }
     }
   }, [])
 
