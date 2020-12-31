@@ -21,6 +21,7 @@ const StyledToast = styled.div`
   cursor: pointer;
   word-break: normal;
   text-align: center;
+  backdrop-filter: blur(5px);
 `
 
 const Toast = observer(() => {
