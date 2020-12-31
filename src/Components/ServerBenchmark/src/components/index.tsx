@@ -3,7 +3,7 @@ import store from '../stores'
 import { gettext } from '@/Language/src'
 import Row from '@/Grid/src/components/row'
 import CardGrid from '@/Card/src/components/card-grid'
-import restfulFetch from '@/Fetch/src/restful-fetch'
+import serverFetch from '@/Fetch/src/server-fetch'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
 import template from '@/Helper/src/components/template'
 import CardError from '@/Card/src/components/error'
@@ -52,7 +52,7 @@ const Items = observer(() => {
     )
   }
 
-  const items = toJS(servers).map(item => {
+  const items = toJS(servers).map((item) => {
     item.total = item.detail
       ? Object.values(item.detail).reduce((a, b) => a + b, 0)
       : 0
@@ -79,8 +79,7 @@ const Items = observer(() => {
         <a
           href={proberUrl}
           target='_blank'
-          title={gettext('Visit prober page')}
-        >
+          title={gettext('Visit prober page')}>
           {' 🔗 '}
         </a>
       ) : (
@@ -99,8 +98,7 @@ const Items = observer(() => {
         <a
           href={url}
           target='_blank'
-          title={gettext('Visit the official website')}
-        >
+          title={gettext('Visit the official website')}>
           {name}
         </a>
       )
@@ -111,8 +109,7 @@ const Items = observer(() => {
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 3]}
-          desktopLg={[1, 4]}
-        >
+          desktopLg={[1, 4]}>
           <Result
             {...{
               hash,
@@ -142,8 +139,7 @@ const TestBtn = observer(
         name={gettext('My server')}
         tablet={[1, 2]}
         desktopMd={[1, 3]}
-        desktopLg={[1, 4]}
-      >
+        desktopLg={[1, 4]}>
         <a href='#' onClick={onClick}>
           <div>{linkText}</div>
           <div>{marksText}</div>
@@ -166,25 +162,24 @@ const ServerBenchmark = observer(() => {
     setLinkText(gettext('⏳ Testing, please wait...'))
     setIsLoading(true)
 
-    await restfulFetch('benchmark')
-      .then(([{ status }, { marks, seconds }]) => {
-        if (status === OK) {
-          if (marks) {
-            setMarks(marks)
-            setLinkText('')
-          } else {
-            setLinkText(gettext('Network error, please try again later.'))
-          }
-        } else if (status === TOO_MANY_REQUESTS) {
-          const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
-            seconds,
-          })
-          setLinkText(secondsMsg)
-        }
-      })
-      .catch(err => {
+    const { data = {}, status } = await serverFetch('benchmark')
+    const { marks, seconds } = data
+
+    if (status === OK) {
+      if (marks) {
+        setMarks(marks)
+        setLinkText('')
+      } else {
         setLinkText(gettext('Network error, please try again later.'))
+      }
+    } else if (status === TOO_MANY_REQUESTS) {
+      const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
+        seconds,
       })
+      setLinkText(secondsMsg)
+    } else {
+      setLinkText(gettext('Network error, please try again later.'))
+    }
 
     setIsLoading(false)
   }, [])

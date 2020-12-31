@@ -83,10 +83,10 @@ class RestfulResponse
         $json = $this->toJson();
 
         if ('' === $json) {
-            die;
+            exit;
         }
 
-        die($json);
+        exit($json);
     }
 
     private function httpResponseCode($code)

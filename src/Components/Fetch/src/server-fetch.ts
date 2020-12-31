@@ -1,6 +1,11 @@
 import BootstrapStore from '@/Bootstrap/src/stores'
+import fetch from 'isomorphic-unfetch'
 
-const restfulFetch = (action: string, opts = {}): Promise<any> => {
+interface serverFetchProps {
+  data?: any
+  status: number
+}
+const serverFetch = (action: string, opts = {}): Promise<serverFetchProps> => {
   return new Promise(async (resolve, reject) => {
     opts = {
       ...{
@@ -17,18 +22,12 @@ const restfulFetch = (action: string, opts = {}): Promise<any> => {
 
     const url = `${location.pathname}?action=${action}`
     const res = await fetch(url, opts)
-    const text = await res.text()
-
-    if (!text.length) {
-      resolve([res, {}])
-    }
-
     try {
-      resolve([res, JSON.parse(text)])
+      resolve({ status: res.status, data: await res.json() })
     } catch (e) {
-      reject([res, {}])
+      resolve({ status: res.status })
     }
   })
 }
 
-export default restfulFetch
+export default serverFetch

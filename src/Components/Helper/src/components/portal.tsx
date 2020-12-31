@@ -1,41 +1,18 @@
-import { Component } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-interface PortalProps {
-  target?: HTMLElement
+const Portal = ({ children }) => {
+  const [container] = useState(() => document.createElement('div'))
+
+  useEffect(() => {
+    document.body.appendChild(container)
+
+    return () => {
+      document.body.removeChild(container)
+    }
+  }, [])
+
+  return createPortal(children, container)
 }
 
-export default class Portal extends Component<PortalProps, {}> {
-  private target: HTMLElement
-
-  constructor(props) {
-    super(props)
-
-    const { target: propTarget } = this.props
-
-    if (propTarget) {
-      propTarget.innerHTML = ''
-      this.target = propTarget
-    } else {
-      this.target = document.createElement('div')
-    }
-  }
-
-  public componentDidMount() {
-    this.props.target || document.body.appendChild(this.target)
-  }
-
-  public componentWillUnmount() {
-    const target = this.target
-
-    if (target) {
-      const { parentNode } = target
-
-      parentNode && parentNode.removeChild(target)
-    }
-  }
-
-  public render() {
-    return createPortal(this.props.children, this.target)
-  }
-}
+export default Portal

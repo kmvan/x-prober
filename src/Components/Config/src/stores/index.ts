@@ -2,6 +2,7 @@ import { observable, action, configure, makeObservable } from 'mobx'
 import ToastStore from '@/Toast/src/stores'
 import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
+import fetch from 'isomorphic-unfetch'
 
 configure({
   enforceActions: 'observed',
@@ -42,11 +43,11 @@ class ConfigStore {
     // dev version
     if (isDev) {
       await fetch(appConfigUrlDev)
-        .then(res => res.json())
-        .then(res => {
+        .then((res) => res.json())
+        .then((res) => {
           this.setAppConfig(res)
         })
-        .catch(e => {})
+        .catch((e) => {})
 
       return
     }
@@ -54,12 +55,12 @@ class ConfigStore {
     // online version
     for (let i = 0; i < appConfigUrls.length; i++) {
       await fetch(appConfigUrls[i])
-        .then(res => res.json())
-        .then(res => {
+        .then((res) => res.json())
+        .then((res) => {
           this.setAppConfig(res)
           configStatus = true
         })
-        .catch(e => {})
+        .catch((e) => {})
 
       if (configStatus) {
         break

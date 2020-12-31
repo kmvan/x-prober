@@ -1,6 +1,6 @@
 import { OK } from '@/Restful/src/http-status'
 import CardStore from '@/Card/src/stores'
-import restfulFetch from '@/Fetch/src/restful-fetch'
+import serverFetch from '@/Fetch/src/server-fetch'
 import { observable, action, computed, configure, makeObservable } from 'mobx'
 
 configure({
@@ -48,17 +48,15 @@ class Store {
 
   @action
   public fetch = async () => {
-    await restfulFetch('temperature-sensor')
-      .then(([{ status }, items]) => {
-        if (status === OK) {
-          this.setItems(items)
-          this.setEnabledCard()
-          setTimeout(() => {
-            this.fetch()
-          }, 1000)
-        }
-      })
-      .catch(err => {})
+    const { data: items, status } = await serverFetch('temperature-sensor')
+
+    if (status === OK) {
+      this.setItems(items)
+      this.setEnabledCard()
+      setTimeout(() => {
+        this.fetch()
+      }, 1000)
+    }
   }
 
   @computed

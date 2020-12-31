@@ -1,5 +1,5 @@
 import { observable, action, configure, makeObservable } from 'mobx'
-import restfulFetch from '@/Fetch/src/restful-fetch'
+import serverFetch from '@/Fetch/src/server-fetch'
 import { OK } from '@/Restful/src/http-status'
 import { gettext } from '@/Language/src'
 import { ServerInfoDataProps } from '@/ServerInfo/src/stores'
@@ -31,19 +31,17 @@ class Store {
   }
 
   public initFetch = async () => {
-    await restfulFetch('fetch')
-      .then(([{ status }, data]) => {
-        if (status === OK) {
-          this.setData(data)
-          this.isLoading && this.setIsLoading(false)
-          setTimeout(async () => {
-            await this.initFetch()
-          }, 1000)
-        }
-      })
-      .catch(err => {
-        alert(gettext('Fetch error, please refresh page.'))
-      })
+    const { data, status } = await serverFetch('fetch')
+
+    if (data && status === OK) {
+      this.setData(data)
+      this.isLoading && this.setIsLoading(false)
+      setTimeout(async () => {
+        await this.initFetch()
+      }, 1000)
+    } else {
+      alert(gettext('Fetch error, please refresh page.'))
+    }
   }
 
   @action

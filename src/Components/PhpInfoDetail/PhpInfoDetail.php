@@ -24,6 +24,6 @@ class PhpInfoDetail extends PhpInfoDetailConstants
 
         \phpinfo();
 
-        die;
+        exit;
     }
 }
