@@ -8,6 +8,12 @@ class Action
 {
     public function __construct()
     {
-        EventsApi::emit('init', (string) \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING));
+        $action = (string) \filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING);
+        EventsApi::emit('init', $action);
+
+        if ($action) {
+            \http_response_code(400);
+            exit;
+        }
     }
 }

@@ -5,7 +5,7 @@ import Row from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
 import CardGrid from '@/Card/src/components/card-grid'
 import styled from 'styled-components'
-import restfulFetch from '@/Fetch/src/restful-fetch'
+import serverFetch from '@/Fetch/src/server-fetch'
 import { OK } from '@/Restful/src/http-status'
 import { GUTTER, BORDER_RADIUS } from '@/Config/src'
 import { device } from '@/Style/src/components/devices'
@@ -189,31 +189,29 @@ const Ping = observer(() => {
   const ping = async () => {
     const { appendPingItem } = store
     const start = +new Date()
+    const { data, status } = await serverFetch('ping')
 
-    await restfulFetch('ping')
-      .then(([{ status }, { time }]) => {
-        if (status === OK) {
-          const end = +new Date()
-          const serverTime = time * 1000
-          appendPingItem({
-            time: Math.floor(end - start - serverTime),
-          })
-
-          setTimeout(() => {
-            if (!refItemContainer.current) {
-              return
-            }
-
-            const st = refItemContainer.current.scrollTop
-            const sh = refItemContainer.current.scrollHeight
-
-            if (st < sh) {
-              refItemContainer.current.scrollTop = sh
-            }
-          }, 100)
-        }
+    if (status === OK) {
+      const { time } = data
+      const end = +new Date()
+      const serverTime = time * 1000
+      appendPingItem({
+        time: Math.floor(end - start - serverTime),
       })
-      .catch(err => {})
+
+      setTimeout(() => {
+        if (!refItemContainer.current) {
+          return
+        }
+
+        const st = refItemContainer.current.scrollTop
+        const sh = refItemContainer.current.scrollHeight
+
+        if (st < sh) {
+          refItemContainer.current.scrollTop = sh
+        }
+      }, 100)
+    }
   }
 
   return (
@@ -224,8 +222,7 @@ const Ping = observer(() => {
             {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
           </StyledPingBtn>
         }
-        tablet={[1, 1]}
-      >
+        tablet={[1, 1]}>
         {!!pingItemsCount && (
           <StyledPingItemContainer ref={refItemContainer}>
             <Items />

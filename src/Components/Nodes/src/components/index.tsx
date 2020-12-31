@@ -15,7 +15,7 @@ import {
 import { GUTTER } from '@/Config/src'
 import Alert from '@/Helper/src/components/alert'
 import Loading from '@/Helper/src/components/loading'
-import restfulFetch from '@/Fetch/src/restful-fetch'
+import serverFetch from '@/Fetch/src/server-fetch'
 import NodeNetworks from './node-networks'
 import { observer } from 'mobx-react-lite'
 
@@ -149,8 +149,7 @@ const Items = observer(() => {
           tablet={[1, 2]}
           desktopSm={[1, 3]}
           desktopMd={[1, 4]}
-          desktopLg={[1, 6]}
-        >
+          desktopLg={[1, 6]}>
           {idLink}
           <SysLoad sysLoad={serverStatus.sysLoad} />
           <Cpu cpuUsage={serverStatus?.cpuUsage} />
@@ -173,42 +172,38 @@ const Nodes = observer(() => {
 
   const fetch = useCallback(async (nodeId: string) => {
     const { setItem } = store
+    const { data: item, status } = await serverFetch(`node&nodeId=${nodeId}`)
 
-    await restfulFetch(`node&nodeId=${nodeId}`)
-      .then(([{ status }, item]) => {
-        if (status === OK) {
-          if (!item) {
-            return
-          }
+    if (status === OK) {
+      if (!item) {
+        return
+      }
 
-          setItem({ id: nodeId, isLoading: false, data: item })
-          // fetch again
-          setTimeout(() => {
-            fetch(nodeId)
-          }, 1000)
-        } else {
-          setItem({
-            id: nodeId,
-            isLoading: false,
-            isError: true,
-            errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
-              code: status,
-            }),
-          })
-        }
+      setItem({ id: nodeId, isLoading: false, data: item })
+      // fetch again
+      setTimeout(() => {
+        fetch(nodeId)
+      }, 1000)
+    } else {
+      setItem({
+        id: nodeId,
+        isLoading: false,
+        isError: true,
+        errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
+          code: status,
+        }),
       })
-      .catch(e => {
-        setItem({
-          id: nodeId,
-          isLoading: false,
-          isError: true,
-          errMsg: gettext('Fetch failed. Detail in Console.'),
-        })
-        console.warn(
-          template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
-          e
-        )
-      })
+    }
+    // setItem({
+    //   id: nodeId,
+    //   isLoading: false,
+    //   isError: true,
+    //   errMsg: gettext('Fetch failed. Detail in Console.'),
+    // })
+    // console.warn(
+    //   template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
+    //   e
+    // )
   }, [])
 
   useEffect(() => {

@@ -5,7 +5,6 @@ import {
   configure,
   makeObservable,
 } from 'mobx'
-import { ReactNode } from 'react'
 
 configure({
   enforceActions: 'observed',
@@ -13,14 +12,14 @@ configure({
 
 class Store {
   @observable public isOpen: boolean = false
-  @observable public msg: ReactNode = ''
+  @observable public msg: any = ''
 
   public constructor() {
     makeObservable(this)
   }
 
   @action
-  public setMsg = (msg: ReactNode) => {
+  public setMsg = (msg: any) => {
     this.msg = msg
   }
 
@@ -34,7 +33,7 @@ class Store {
   }
 
   @action
-  public open = (msg?: ReactNode) => {
+  public open = (msg?: any) => {
     this.msg = msg
     this.isOpen = true
   }
