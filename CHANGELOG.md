@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.6.0 - 2020-12-31
+
+### Update
+
+- Rewrite fetch action
+- Update PHP stable version
+
 ## 6.5.0 - 2020-10-29
 
 ### Update
