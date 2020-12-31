@@ -31,6 +31,6 @@ class Script
         echo <<<'HTML'
 {INN_SCRIPT}
 HTML;
-        die;
+        exit;
     }
 }
