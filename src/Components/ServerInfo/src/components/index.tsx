@@ -1,35 +1,29 @@
+import CardGrid from '@/Card/src/components/card-grid'
+import FetchStore from '@/Fetch/src/stores'
+import ProgressBar from '@/ProgressBar/src/components'
 import React from 'react'
 import Row from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
 import store from '../stores'
-import CardGrid from '@/Card/src/components/card-grid'
-import ProgressBar from '@/ProgressBar/src/components'
 import template from '@/Helper/src/components/template'
-import FetchStore from '@/Fetch/src/stores'
+import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-
 const DiskUsage = observer(() => {
   const { ID } = store
   const { isLoading, data } = FetchStore
-
   let {
     conf: {
       diskUsage: { value, max },
     },
   } = store
-
   if (!isLoading) {
     value = data?.[ID]?.diskUsage?.value
     max = data?.[ID]?.diskUsage?.max
   }
-
   if (!value || !max) {
     return <>{gettext('Unavailable')}</>
   }
-
   return <ProgressBar value={value} max={max} isCapacity />
 })
-
 const ServerInfo = observer(() => {
   const {
     conf,
@@ -47,14 +41,12 @@ const ServerInfo = observer(() => {
     [gettext('Server software'), conf?.serverSoftware],
     [gettext('PHP version'), conf?.phpVersion],
   ]
-
   const longItems = [
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
     [gettext('Server OS'), conf?.serverOs],
     [gettext('Script path'), conf?.scriptPath],
     [gettext('Disk usage'), <DiskUsage />],
   ]
-
   return (
     <Row>
       {shortItems.map(([title, content], i) => {
@@ -64,8 +56,7 @@ const ServerInfo = observer(() => {
             name={title}
             tablet={[1, 2]}
             desktopMd={[1, 4]}
-            desktopLg={[1, 5]}
-          >
+            desktopLg={[1, 5]}>
             {content}
           </CardGrid>
         )
@@ -80,5 +71,4 @@ const ServerInfo = observer(() => {
     </Row>
   )
 })
-
 export default ServerInfo

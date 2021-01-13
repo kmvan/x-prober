@@ -1,14 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
-import store from '../stores'
-import { GUTTER } from '@/Config/src'
 import formatBytes from '@/Helper/src/components/format-bytes'
-import { device } from '@/Style/src/components/devices'
+import React from 'react'
+import store from '../stores'
+import styled from 'styled-components'
 import template from '@/Helper/src/components/template'
+import { device } from '@/Style/src/components/devices'
+import { gettext } from '@/Language/src'
+import { GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
-
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme.colorDark};
   color: ${({ theme }) => theme.colorGray};
@@ -19,11 +18,9 @@ const StyledFooter = styled.div`
   margin: calc(${GUTTER} * 1.5) auto;
   word-break: normal;
   text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
-
   @media ${device('tablet')} {
     width: 60%;
   }
-
   a {
     color: ${({ theme }) => theme.colorGray};
     :hover {
@@ -31,11 +28,9 @@ const StyledFooter = styled.div`
     }
   }
 `
-
 const Footer = observer(() => {
   const { appName, appUrl, authorName, authorUrl } = BootstrapStore
   const { memUsage, time } = store.conf
-
   return (
     <StyledFooter
       dangerouslySetInnerHTML={{
@@ -54,5 +49,4 @@ const Footer = observer(() => {
     />
   )
 })
-
 export default Footer

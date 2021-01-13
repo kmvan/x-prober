@@ -1,11 +1,10 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import { GUTTER, BORDER_RADIUS, ANIMATION_DURATION_SC } from '@/Config/src'
 import schemes from '../stores/colors'
-import { rgba } from 'polished'
 import store from '../stores'
+import styled, { keyframes } from 'styled-components'
+import { ANIMATION_DURATION_SC, BORDER_RADIUS, GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
-
+import { rgba } from 'polished'
 const fadeIn = keyframes`
   from{
     transform: translate3d(0, -10%, 0);
@@ -45,7 +44,6 @@ const StyledColorScheme = styled.div`
   animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
 `
-
 const ColorScheme = observer(() => {
   return (
     <StyledColorScheme>
@@ -61,5 +59,4 @@ const ColorScheme = observer(() => {
     </StyledColorScheme>
   )
 })
-
 export default ColorScheme

@@ -1,6 +1,5 @@
 import hexToRgb from '@/Helper/src/components/hex-to-rgb'
 import { gettext } from '@/Language/src'
-
 const schemes = {
   default: {
     name: gettext('X Prober'),
@@ -58,5 +57,4 @@ const schemes = {
     colorDarkRgb: hexToRgb('#373C38'),
   },
 }
-
 export default schemes

@@ -1,13 +1,12 @@
+import CpuUsage from './cpu-usage'
+import MemBuffers from './mem-buffers'
+import MemCached from './mem-cached'
+import MemRealUsage from './mem-real-usage'
 import React from 'react'
 import Row from '@/Grid/src/components/row'
-import SystemLoad from './system-load'
-import CpuUsage from './cpu-usage'
-import MemRealUsage from './mem-real-usage'
-import MemCached from './mem-cached'
-import SwapUsage from './swap-usage'
 import SwapCached from './swap-cached'
-import MemBuffers from './mem-buffers'
-
+import SwapUsage from './swap-usage'
+import SystemLoad from './system-load'
 export default function ServerStatus() {
   return (
     <Row>

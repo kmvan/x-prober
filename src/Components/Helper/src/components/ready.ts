@@ -1,7 +1,6 @@
 export default (fn: () => void): void => {
   const ua: string = navigator.userAgent
   const eventName: string = 'attachEvent'
-
   switch (true) {
     case ua.indexOf('MSIE 8.0') > 0:
       window[eventName]('onreadystatechange', () => {

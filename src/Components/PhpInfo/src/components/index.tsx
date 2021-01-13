@@ -1,14 +1,13 @@
-import React, { ReactNode } from 'react'
-import { gettext } from '@/Language/src'
-import Row from '@/Grid/src/components/row'
-import CardGrid from '@/Card/src/components/card-grid'
-import store from '../stores'
 import Alert from '@/Helper/src/components/alert'
+import CardGrid from '@/Card/src/components/card-grid'
 import MultiItemContainer from '@/Card/src/components/multi-item-container'
-import SearchLink from '@/Helper/src/components/search-link'
 import PhpInfoPhpVersion from './php-version'
+import React, { ReactNode } from 'react'
+import Row from '@/Grid/src/components/row'
+import SearchLink from '@/Helper/src/components/search-link'
+import store from '../stores'
+import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-
 const PhpInfo = observer(() => {
   const { conf } = store
   const oneLineItems: Array<[string, ReactNode]> = [
@@ -39,12 +38,9 @@ const PhpInfo = observer(() => {
     ],
     [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
   ]
-
   const { disableFunctions, disableClasses } = conf
-
   disableFunctions.sort()
   disableClasses.sort()
-
   const longItems: Array<[string, ReactNode]> = [
     [
       gettext('Disabled functions'),
@@ -63,7 +59,6 @@ const PhpInfo = observer(() => {
         : '-',
     ],
   ]
-
   return (
     <Row>
       {oneLineItems.map(([title, content]) => {
@@ -73,8 +68,7 @@ const PhpInfo = observer(() => {
             name={title}
             tablet={[1, 3]}
             desktopMd={[1, 4]}
-            desktopLg={[1, 5]}
-          >
+            desktopLg={[1, 5]}>
             {content}
           </CardGrid>
         )
@@ -87,8 +81,7 @@ const PhpInfo = observer(() => {
             mobileMd={[1, 2]}
             tablet={[1, 3]}
             desktopMd={[1, 4]}
-            desktopLg={[1, 5]}
-          >
+            desktopLg={[1, 5]}>
             {content}
           </CardGrid>
         )
@@ -103,5 +96,4 @@ const PhpInfo = observer(() => {
     </Row>
   )
 })
-
 export default PhpInfo

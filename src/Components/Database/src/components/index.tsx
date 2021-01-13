@@ -1,10 +1,9 @@
+import Alert from '@/Helper/src/components/alert'
+import CardGrid from '@/Card/src/components/card-grid'
 import React from 'react'
 import Row from '@/Grid/src/components/row'
-import CardGrid from '@/Card/src/components/card-grid'
 import store from '../stores'
-import Alert from '@/Helper/src/components/alert'
 import { observer } from 'mobx-react-lite'
-
 const Database = observer(() => {
   const { conf } = store
   const shortItems: [string, boolean | string][] = [
@@ -20,7 +19,6 @@ const Database = observer(() => {
     ['MaxDB client', conf?.maxDbClient],
     ['MaxDB server', conf?.maxDbServer],
   ]
-
   return (
     <Row>
       {shortItems.map(([name, content]) => {
@@ -31,8 +29,7 @@ const Database = observer(() => {
             mobileMd={[1, 2]}
             tablet={[1, 3]}
             desktopMd={[1, 4]}
-            desktopLg={[1, 5]}
-          >
+            desktopLg={[1, 5]}>
             <Alert isSuccess={!!content} msg={content} />
           </CardGrid>
         )
@@ -40,5 +37,4 @@ const Database = observer(() => {
     </Row>
   )
 })
-
 export default Database

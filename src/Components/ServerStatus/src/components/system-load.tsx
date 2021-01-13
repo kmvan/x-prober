@@ -1,17 +1,15 @@
-import React from 'react'
 import CardGrid from '@/Card/src/components/card-grid'
-import { gettext } from '@/Language/src'
-import styled from 'styled-components'
+import React from 'react'
 import store from '../stores'
-import { GUTTER } from '@/Config/src'
-import { device } from '@/Style/src/components/devices'
-import { rgba } from 'polished'
+import styled from 'styled-components'
 import template from '@/Helper/src/components/template'
-
+import { device } from '@/Style/src/components/devices'
+import { gettext } from '@/Language/src'
+import { GUTTER } from '@/Config/src'
+import { rgba } from 'polished'
 interface StyledSysLoadGroupProps {
   isCenter: boolean
 }
-
 export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
   display: flex;
   align-items: center;
@@ -20,7 +18,6 @@ export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
     justify-content: ${({ isCenter }) => (isCenter ? 'center' : 'flex-start')};
   }
 `
-
 export const StyledSysLoadGroupItem = styled.span`
   margin-right: 0.5rem;
   background: ${({ theme }) => rgba(theme.colorDark, 0.75)};
@@ -31,17 +28,14 @@ export const StyledSysLoadGroupItem = styled.span`
   text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   font-weight: 700;
-
   @media ${device('tablet')} {
     padding: calc(${GUTTER} / 10) ${GUTTER};
   }
 `
-
 interface SysLoadGroupProps {
   sysLoad: number[]
   isCenter: boolean
 }
-
 export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
   const minutes = [1, 5, 15]
   const loadHuman = sysLoad.map((load, i) => {
@@ -53,7 +47,6 @@ export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
       }),
     }
   })
-
   return (
     <StyledSysLoadGroup isCenter={isCenter}>
       {loadHuman.map(({ id, load, text }) => (
@@ -64,11 +57,9 @@ export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
     </StyledSysLoadGroup>
   )
 }
-
 interface SystemLoadProps {
   isCenter?: boolean
 }
-
 const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
   return (
     <CardGrid name={gettext('System load')} tablet={[1, 1]}>
@@ -76,5 +67,4 @@ const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
     </CardGrid>
   )
 }
-
 export default SystemLoad

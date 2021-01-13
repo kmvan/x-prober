@@ -1,13 +1,16 @@
-import { observable, action, configure, makeObservable } from 'mobx'
-import ToastStore from '@/Toast/src/stores'
-import { gettext } from '@/Language/src'
 import BootstrapStore from '@/Bootstrap/src/stores'
 import fetch from 'isomorphic-unfetch'
-
+import ToastStore from '@/Toast/src/stores'
+import {
+  action,
+  configure,
+  makeObservable,
+  observable
+  } from 'mobx'
+import { gettext } from '@/Language/src'
 configure({
   enforceActions: 'observed',
 })
-
 export interface AppConfigBenchmarkProps {
   name: string
   url: string
@@ -22,24 +25,19 @@ export interface AppConfigBenchmarkProps {
     ioLoop: number
   }
 }
-
 interface AppConfigProps {
   APP_VERSION: string
   BENCHMARKS: AppConfigBenchmarkProps[]
 }
-
 class ConfigStore {
   @observable public appConfig: AppConfigProps | null = null
-
   constructor() {
     makeObservable(this)
     this.fetch()
   }
-
   private fetch = async () => {
     const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapStore
     let configStatus = false
-
     // dev version
     if (isDev) {
       await fetch(appConfigUrlDev)
@@ -48,10 +46,8 @@ class ConfigStore {
           this.setAppConfig(res)
         })
         .catch((e) => {})
-
       return
     }
-
     // online version
     for (let i = 0; i < appConfigUrls.length; i++) {
       await fetch(appConfigUrls[i])
@@ -61,12 +57,10 @@ class ConfigStore {
           configStatus = true
         })
         .catch((e) => {})
-
       if (configStatus) {
         break
       }
     }
-
     if (!configStatus) {
       ToastStore.open(
         gettext(
@@ -75,11 +69,9 @@ class ConfigStore {
       )
     }
   }
-
   @action
   public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }
 }
-
 export default new ConfigStore()
