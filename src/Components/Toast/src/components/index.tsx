@@ -1,12 +1,11 @@
-import React from 'react'
 import Portal from '@/Helper/src/components/portal'
+import React from 'react'
 import store from '../stores'
 import styled from 'styled-components'
-import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
-import { rgba } from 'polished'
+import { GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
-
+import { rgba } from 'polished'
 const StyledToast = styled.div`
   position: fixed;
   bottom: 4rem;
@@ -23,14 +22,11 @@ const StyledToast = styled.div`
   text-align: center;
   backdrop-filter: blur(5px);
 `
-
 const Toast = observer(() => {
   const { isOpen, msg, close } = store
-
   if (!isOpen) {
     return null
   }
-
   return (
     <Portal>
       <StyledToast title={gettext('Click to close')} onClick={() => close()}>
@@ -39,5 +35,4 @@ const Toast = observer(() => {
     </Portal>
   )
 })
-
 export default Toast

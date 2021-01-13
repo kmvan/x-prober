@@ -2,12 +2,10 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '@/Config/src'
 import { rgba } from 'polished'
-
 interface AlertContainerProps {
   isSuccess: boolean
   withIcon: boolean
 }
-
 const StyledAlert = styled.div<AlertContainerProps>`
   display: inline-flex;
   border-radius: ${GUTTER};
@@ -23,12 +21,10 @@ const StyledAlert = styled.div<AlertContainerProps>`
   white-space: nowrap;
   cursor: pointer;
   background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
-
   :active {
     transform: scale3d(0.9, 0.9, 1);
     background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
-
   ::before {
     content: '${({ isSuccess, withIcon }) => {
       if (!withIcon) {
@@ -38,12 +34,10 @@ const StyledAlert = styled.div<AlertContainerProps>`
     }}';
   }
 `
-
 export interface AlertProps {
   isSuccess: boolean
   msg?: ReactNode
 }
-
 const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
   return (
     <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
@@ -51,5 +45,4 @@ const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
     </StyledAlert>
   )
 }
-
 export default Alert

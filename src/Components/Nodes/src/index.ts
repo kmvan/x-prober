@@ -1,8 +1,7 @@
 import CardStore from '@/Card/src/stores'
-import { gettext } from '@/Language/src'
 import component from './components'
 import store from './stores'
-
+import { gettext } from '@/Language/src'
 store.enabled &&
   store.itemsCount &&
   CardStore.addCard({

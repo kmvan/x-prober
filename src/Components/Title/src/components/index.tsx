@@ -1,16 +1,15 @@
+import BootstrapStore from '@/Bootstrap/src/stores'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import UpdaterLink from '@/Updater/src/components/updater-link'
+import UpdaterStore from '@/Updater/src/stores'
+import { observer } from 'mobx-react-lite'
+import { rgba } from 'polished'
 import {
   BORDER_RADIUS,
   GUTTER,
   ANIMATION_DURATION_SC,
 } from '@/Config/src/index'
-import BootstrapStore from '@/Bootstrap/src/stores'
-import UpdaterStore from '@/Updater/src/stores'
-import UpdaterLink from '@/Updater/src/components/updater-link'
-import { rgba } from 'polished'
-import { observer } from 'mobx-react-lite'
-
 const slideDown = keyframes`
   from{
     transform: translate3d(-50%, -100%, 0);
@@ -43,15 +42,12 @@ export const StyledTitleLink = styled.a`
   display: block;
   padding: ${GUTTER};
   color: ${({ theme }) => theme.colorGray};
-
   :hover {
     color: ${({ theme }) => theme.colorGray};
   }
 `
-
 const Title = observer(() => {
   const { appUrl, appName, version } = BootstrapStore
-
   return (
     <StyledTitle>
       {UpdaterStore.newVersion ? (
@@ -64,5 +60,4 @@ const Title = observer(() => {
     </StyledTitle>
   )
 })
-
 export default Title

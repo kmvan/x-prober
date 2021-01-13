@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react'
 import styled, { css } from 'styled-components'
+import { GUTTER } from '@/Config/src'
 import {
   device,
   breakPoints,
   DeviceIdProps,
 } from '@/Style/src/components/devices'
-import { GUTTER } from '@/Config/src'
-
 interface BreakPointsProps {
   mobileSm?: [number, number]
   mobileMd?: [number, number]
@@ -16,24 +15,19 @@ interface BreakPointsProps {
   desktopMd?: [number, number]
   desktopLg?: [number, number]
 }
-
 export interface GridProps extends BreakPointsProps {
   children: ReactNode
 }
-
 const createCss = (types: BreakPointsProps) => {
   const style = Object.entries(types).map(
     ([id, sizes]: [DeviceIdProps, [number, number]]) => {
       if (!breakPoints[id]) {
         return ''
       }
-
       if (!sizes || !sizes.length) {
         return ''
       }
-
       const [span, col] = sizes
-
       return css`
         @media ${device(id)} {
           flex: ${() => {
@@ -46,21 +40,17 @@ const createCss = (types: BreakPointsProps) => {
       `
     }
   )
-
   return style
 }
-
 export interface StyledGridProps {
   types: BreakPointsProps
 }
-
 export const StyledGrid = styled.div<StyledGridProps>`
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
   flex: 0 0 100%;
-  ${props => createCss(props.types)}
+  ${(props) => createCss(props.types)}
 `
-
 const Grid = ({
   mobileSm,
   mobileMd,
@@ -80,8 +70,6 @@ const Grid = ({
     desktopMd,
     desktopLg,
   }
-
   return <StyledGrid types={types}>{children}</StyledGrid>
 }
-
 export default Grid

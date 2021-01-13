@@ -3,8 +3,6 @@ const template = (str: string, placeholders: { [id: string]: any }) => {
     const reg = new RegExp(`\\$\\{${k}\\}`, 'g')
     str = str.replace(reg, String(v))
   }
-
   return str
 }
-
 export default template

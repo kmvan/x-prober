@@ -1,12 +1,11 @@
-import React, { MouseEvent, useCallback } from 'react'
 import CardStore from '@/Card/src/stores'
-import styled, { keyframes } from 'styled-components'
-import { device } from '@/Style/src/components/devices'
-import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
 import getElementOffsetTop from '@/Helper/src/components/get-element-offset-top'
-import { rgba } from 'polished'
+import React, { MouseEvent, useCallback } from 'react'
+import styled, { keyframes } from 'styled-components'
+import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
+import { device } from '@/Style/src/components/devices'
 import { observer } from 'mobx-react-lite'
-
+import { rgba } from 'polished'
 const slideUp = keyframes`
   from{
     transform: translate3d(0, 100%, 0);
@@ -34,7 +33,6 @@ const StyledNav = styled.div`
     justify-content: center;
   }
 `
-
 const StyledNavLink = styled.a`
   position: relative;
   white-space: nowrap;
@@ -47,7 +45,6 @@ const StyledNavLink = styled.a`
   @media ${device('tablet')} {
     padding: 0 ${GUTTER};
   }
-
   :hover {
     background: linear-gradient(${({ theme }) => theme.colorGray}, #fff);
     color: ${({ theme }) => theme.colorDark};
@@ -63,51 +60,43 @@ const StyledNavLink = styled.a`
     background: ${({ theme }) => rgba(theme.colorGray, 0.85)};
     text-shadow: ${({ theme }) => theme.textShadowWithLightBg};
   }
-
   :last-child {
     border-right: 0;
   }
 `
-
 const StyledNavLinkTitle = styled.span`
   display: none;
-
   @media ${device('desktopSm')} {
     display: block;
   }
 `
-
 const StyledNavLinkTinyTitle = styled.span`
   display: block;
-
   @media ${device('desktopSm')} {
     display: none;
   }
 `
-
 const Nav = observer(() => {
   const onClick = useCallback((e: MouseEvent, id: string) => {
     e.preventDefault()
-
     const target = document.querySelector(`#${id}`) as HTMLElement
-
     if (!target) {
       return
     }
-
     history.pushState(null, '', `#${id}`)
     window.scrollTo(0, getElementOffsetTop(target) - 50)
   }, [])
-
   return (
     <StyledNav>
       {CardStore.cards.map(({ id, title, tinyTitle, enabled = true }) => {
         if (!enabled) {
           return null
         }
-
         return (
-          <StyledNavLink key={id} onClick={e => onClick(e, id)} href={`#${id}`}>
+          <StyledNavLink
+            key={id}
+            onClick={(e) => onClick(e, id)}
+            href={`#${id}`}>
             <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
             <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
           </StyledNavLink>
@@ -116,5 +105,4 @@ const Nav = observer(() => {
     </StyledNav>
   )
 })
-
 export default Nav

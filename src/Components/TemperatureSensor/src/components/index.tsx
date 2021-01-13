@@ -1,19 +1,16 @@
-import React from 'react'
-import store from '../stores'
-import Row from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
 import CardGrid from '@/Card/src/components/card-grid'
 import ProgressBar from '@/ProgressBar/src/components'
+import React from 'react'
+import Row from '@/Grid/src/components/row'
+import store from '../stores'
 import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-
 const TemperatureSensor = observer(() => {
   const { itemsCount, items } = store
-
   if (!itemsCount) {
     return null
   }
-
   return (
     <Row>
       {items.map(({ id, name, celsius }) => (
@@ -22,8 +19,7 @@ const TemperatureSensor = observer(() => {
           name={template(gettext('${sensor} temperature'), {
             sensor: name,
           })}
-          tablet={[1, itemsCount === 1 ? 1 : 2]}
-        >
+          tablet={[1, itemsCount === 1 ? 1 : 2]}>
           <ProgressBar
             value={celsius}
             max={150}
@@ -35,5 +31,4 @@ const TemperatureSensor = observer(() => {
     </Row>
   )
 })
-
 export default TemperatureSensor

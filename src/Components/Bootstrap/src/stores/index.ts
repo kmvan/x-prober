@@ -1,10 +1,13 @@
-import { observable, action, configure, makeObservable } from 'mobx'
 import conf from '@/Helper/src/components/conf'
-
+import {
+  action,
+  configure,
+  makeObservable,
+  observable
+  } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
-
 class Store {
   public readonly ID = 'bootstrap'
   public readonly conf = conf?.[this.ID]
@@ -16,19 +19,14 @@ class Store {
   public readonly authorUrl: string = this.conf?.authorUrl
   public readonly authorName: string = this.conf?.authorName
   public readonly isDev: boolean = this.conf?.isDev
-
   @observable public appContainer: HTMLElement | null = null
-
   public constructor() {
     makeObservable(this)
   }
-
   @action
   public setAppContainer = (appContainer: HTMLElement | null) => {
     this.appContainer = appContainer
   }
 }
-
 const BootstrapStore = new Store()
-
 export default BootstrapStore

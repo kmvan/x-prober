@@ -1,11 +1,10 @@
+import BootstrapStore from '@/Bootstrap/src/stores'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { GUTTER, ANIMATION_DURATION_SC } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import BootstrapStore from '@/Bootstrap/src/stores'
+import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
 import { device } from '@/Style/src/components/devices'
+import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
-
 const slideIn = keyframes`
   from{
     transform: rotate(-45deg) translate3d(-28%, -270%, 0);
@@ -33,7 +32,6 @@ const StyledForkmeLink = styled.a`
   z-index: 2;
   animation: ${slideIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
-
   @media ${device('tablet')} {
     font-size: 1rem;
     top: calc(${GUTTER} / 2);
@@ -63,7 +61,6 @@ const StyledForkmeLink = styled.a`
     text-decoration: none;
   }
 `
-
 const Forkme = () => {
   return (
     <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
@@ -71,5 +68,4 @@ const Forkme = () => {
     </StyledForkmeLink>
   )
 }
-
 export default Forkme

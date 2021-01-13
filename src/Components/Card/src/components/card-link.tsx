@@ -1,12 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-
 const StyledCardLink = styled.a`
   ::before {
     content: '👆 ';
   }
 `
-
 const CardLink = ({ children, ...props }) => {
   return (
     <StyledCardLink target='_blank' {...props}>
@@ -14,5 +12,4 @@ const CardLink = ({ children, ...props }) => {
     </StyledCardLink>
   )
 }
-
 export default CardLink

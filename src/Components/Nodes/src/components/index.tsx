@@ -1,24 +1,23 @@
+import Alert from '@/Helper/src/components/alert'
+import Grid from '@/Grid/src/components/grid'
+import Loading from '@/Helper/src/components/loading'
+import NodeNetworks from './node-networks'
+import ProgressBar from '@/ProgressBar/src/components'
 import React, { useCallback, useEffect } from 'react'
 import Row from '@/Grid/src/components/row'
+import serverFetch from '@/Fetch/src/server-fetch'
 import store from '../stores'
-import Grid from '@/Grid/src/components/grid'
 import styled from 'styled-components'
-import { OK } from '@/Restful/src/http-status'
-import { gettext } from '@/Language/src'
-import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
-import ProgressBar from '@/ProgressBar/src/components'
 import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
+import { GUTTER } from '@/Config/src'
+import { observer } from 'mobx-react-lite'
+import { OK } from '@/Restful/src/http-status'
+import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
 import {
   ServerStatusCpuUsageProps,
   ServerStatusUsageProps,
 } from '@/ServerStatus/src/stores'
-import { GUTTER } from '@/Config/src'
-import Alert from '@/Helper/src/components/alert'
-import Loading from '@/Helper/src/components/loading'
-import serverFetch from '@/Fetch/src/server-fetch'
-import NodeNetworks from './node-networks'
-import { observer } from 'mobx-react-lite'
-
 const StyledNodeGroupId = styled.a`
   display: block;
   text-decoration: underline;
@@ -35,19 +34,16 @@ const StyledNodeGroupMsg = styled(StyledNodeGroup)`
   display: flex;
   justify-content: center;
 `
-
 const SysLoad = ({ sysLoad }: { sysLoad: number[] }) => {
   if (!sysLoad?.length) {
     return null
   }
-
   return (
     <StyledNodeGroup>
       <SysLoadGroup isCenter sysLoad={sysLoad} />
     </StyledNodeGroup>
   )
 }
-
 const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
   return (
     <StyledNodeGroup>
@@ -66,16 +62,12 @@ const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-
 const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
   const { value = 0, max = 0 } = memRealUsage
-
   if (!max) {
     return null
   }
-
   const percent = Math.floor((value / max) * 10000) / 100
-
   return (
     <StyledNodeGroup>
       <ProgressBar
@@ -90,16 +82,12 @@ const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-
 const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
   const { value = 0, max = 0 } = swapUsage
-
   if (!max) {
     return null
   }
-
   const percent = Math.floor((value / max) * 10000) / 100
-
   return (
     <StyledNodeGroup>
       <ProgressBar
@@ -114,12 +102,10 @@ const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-
 const Items = observer(() => {
   const items = store.items.map(
     ({ id, url, isLoading, isError, errMsg, data }) => {
       const idLink = <StyledNodeGroupId href={url}>{id}</StyledNodeGroupId>
-
       switch (true) {
         case isLoading:
           return (
@@ -140,9 +126,7 @@ const Items = observer(() => {
             </Grid>
           )
       }
-
       const { serverStatus, networkStats } = data
-
       return (
         <Grid
           key={id}
@@ -163,22 +147,17 @@ const Items = observer(() => {
       )
     }
   )
-
   return <>{items}</>
 })
-
 const Nodes = observer(() => {
   const { items, itemsCount } = store
-
   const fetch = useCallback(async (nodeId: string) => {
     const { setItem } = store
     const { data: item, status } = await serverFetch(`node&nodeId=${nodeId}`)
-
     if (status === OK) {
       if (!item) {
         return
       }
-
       setItem({ id: nodeId, isLoading: false, data: item })
       // fetch again
       setTimeout(() => {
@@ -205,7 +184,6 @@ const Nodes = observer(() => {
     //   e
     // )
   }, [])
-
   useEffect(() => {
     if (itemsCount) {
       for (const { id } of items) {
@@ -213,12 +191,10 @@ const Nodes = observer(() => {
       }
     }
   }, [])
-
   return (
     <Row>
       <Items />
     </Row>
   )
 })
-
 export default Nodes

@@ -1,6 +1,5 @@
-import rgbaToHex from './rgba-to-hex'
 import hexToRgb from './hex-to-rgb'
-
+import rgbaToHex from './rgba-to-hex'
 const gradientColors = (
   startColor: string,
   endColor: string,
@@ -11,9 +10,7 @@ const gradientColors = (
   const rStep = (eColor[0] - sColor[0]) / step
   const gStep = (eColor[1] - sColor[1]) / step
   const bStep = (eColor[2] - sColor[2]) / step
-
   const colors: string[] = []
-
   for (let i = 0; i < step; i++) {
     colors.push(
       rgbaToHex(
@@ -23,8 +20,6 @@ const gradientColors = (
       )
     )
   }
-
   return colors
 }
-
 export default gradientColors

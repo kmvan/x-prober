@@ -1,9 +1,8 @@
-import React from 'react'
 import formatBytes from '@/Helper/src/components/format-bytes'
-import Row from '@/Grid/src/components/row'
 import Grid from '@/Grid/src/components/grid'
+import React from 'react'
+import Row from '@/Grid/src/components/row'
 import styled from 'styled-components'
-
 interface NetworksStatsItemProps {
   id: string
   singleLine?: boolean
@@ -12,43 +11,35 @@ interface NetworksStatsItemProps {
   totalTx: number
   rateTx: number
 }
-
 const StyledNetworkId = styled.div`
   text-decoration: underline;
 `
-
 const StyledNetworkIdRow = styled(Row)`
   align-items: center;
   justify-content: center;
   text-align: center;
 `
-
 const StyledNetworkStatsDataContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 `
-
 interface StyledNetworkStatsDataProps {
   isUpload: boolean
 }
-
 const StyledNetworkStatsData = styled.div<StyledNetworkStatsDataProps>`
   flex: 0 0 50%;
   color: ${({ isUpload, theme }) =>
     isUpload ? theme.colorUpload : theme.colorDownload};
 `
-
 const StyledNetworkStatsTotal = styled.div``
 const StyledNetworkStatsRate = styled.div`
   font-family: 'Arial Black';
-
   ::before {
     margin-right: 0.5rem;
   }
 `
-
 const StyledNetworkStatsRateRx = styled(StyledNetworkStatsRate)`
   ::before {
     content: '▼';
@@ -59,7 +50,6 @@ const StyledNetworkStatsRateTx = styled(StyledNetworkStatsRate)`
     content: '▲';
   }
 `
-
 export const NetworksStatsItem = ({
   id,
   singleLine = true,
@@ -71,7 +61,6 @@ export const NetworksStatsItem = ({
   if (!id) {
     return null
   }
-
   return (
     <StyledNetworkIdRow>
       <Grid mobileSm={singleLine ? [1, 3] : [1, 1]}>
@@ -100,5 +89,4 @@ export const NetworksStatsItem = ({
     </StyledNetworkIdRow>
   )
 }
-
 export default NetworksStatsItem

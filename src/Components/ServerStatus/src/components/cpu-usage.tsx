@@ -1,15 +1,13 @@
-import React from 'react'
 import CardGrid from '@/Card/src/components/card-grid'
-import { gettext } from '@/Language/src'
-import store from '../stores'
 import ProgressBar from '@/ProgressBar/src/components'
+import React from 'react'
+import store from '../stores'
 import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-
 const CpuUsage = observer(() => {
   const { cpuUsage } = store
   const { idle } = cpuUsage
-
   return (
     <CardGrid name={gettext('CPU usage')} tablet={[1, 1]}>
       <ProgressBar
@@ -26,5 +24,4 @@ const CpuUsage = observer(() => {
     </CardGrid>
   )
 })
-
 export default CpuUsage

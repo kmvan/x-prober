@@ -1,12 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import store from '../stores'
-import { GUTTER } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import { rgba } from 'polished'
+import styled from 'styled-components'
 import { device } from '@/Style/src/components/devices'
+import { gettext } from '@/Language/src'
+import { GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
-
+import { rgba } from 'polished'
 interface StyleArrowProps {
   isHidden: boolean
 }
@@ -21,7 +20,6 @@ const StyledFieldset = styled.fieldset`
     1px 1px 0 hsla(0, 0%, 100%, 0.5), inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
     inset -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
 `
-
 const StyledLegend = styled.legend`
   display: flex;
   justify-content: center;
@@ -38,7 +36,6 @@ const StyledLegend = styled.legend`
   text-shadow: 0 1px 1px ${({ theme }) => theme.colorDark};
   white-space: nowrap;
 `
-
 const StyledBody = styled.div`
   padding: 0 calc(${GUTTER} / 2);
   @media ${device('tablet')} {
@@ -56,7 +53,6 @@ const StyleArrow = styled.a<StyleArrowProps>`
     color: ${({ theme }) => theme.colorGray};
   }
 `
-
 const Cards = observer(() => {
   const {
     cardsLength,
@@ -65,11 +61,9 @@ const Cards = observer(() => {
     moveCardDown,
     moveCardUp,
   } = store
-
   if (!cardsLength) {
     return null
   }
-
   return (
     <>
       {enabledCards.map(({ id, title, component: Tag }, i) => {
@@ -77,22 +71,18 @@ const Cards = observer(() => {
           <StyleArrow
             title={gettext('Move up')}
             isHidden={i === 0}
-            onClick={() => moveCardUp(id)}
-          >
+            onClick={() => moveCardUp(id)}>
             ▲
           </StyleArrow>
         )
-
         const downArrow = (
           <StyleArrow
             title={gettext('Move down')}
             isHidden={i === enabledCardsLength - 1}
-            onClick={() => moveCardDown(id)}
-          >
+            onClick={() => moveCardDown(id)}>
             ▼
           </StyleArrow>
         )
-
         return (
           <StyledFieldset key={id} id={id}>
             <StyledLegend>
@@ -109,5 +99,4 @@ const Cards = observer(() => {
     </>
   )
 })
-
 export default Cards

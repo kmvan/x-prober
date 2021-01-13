@@ -1,10 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
 import formatBytes from '@/Helper/src/components/format-bytes'
 import gradientColors from '@/Helper/src/components/gradient'
+import React from 'react'
+import styled from 'styled-components'
 import { GUTTER } from '@/Config/src'
-import { rgba, linearGradient } from 'polished'
-
+import { linearGradient, rgba } from 'polished'
 export interface ProgressBarProps {
   title?: string
   value: number
@@ -13,11 +12,9 @@ export interface ProgressBarProps {
   percentTag?: string
   left?: string
 }
-
 const StyledProgressBar = styled.div`
   position: relative;
 `
-
 const StyledProgressOverview = styled.div`
   position: absolute;
   right: ${GUTTER};
@@ -33,7 +30,6 @@ const StyledProgressPercent = styled(StyledProgressOverview)`
   left: ${GUTTER};
   right: auto;
 `
-
 const StyledProgressShell = styled.div`
   position: relative;
   display: flex;
@@ -44,11 +40,9 @@ const StyledProgressShell = styled.div`
   box-shadow: inset 0 10px 20px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   padding: 0.3rem;
 `
-
 interface StyledProgressValueProps {
   percent: number
 }
-
 const StyledProgressValue = styled.div.attrs(
   ({ percent }: StyledProgressValueProps) => ({
     style: {
@@ -66,7 +60,6 @@ const StyledProgressValue = styled.div.attrs(
   box-shadow: inset 0 -5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.4)},
     0 5px 10px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   overflow: hidden;
-
   ::after,
   ::before {
     position: absolute;
@@ -92,7 +85,6 @@ const StyledProgressValue = styled.div.attrs(
     border-radius: 0;
   }
 `
-
 export default function ProgressBar({
   title = '',
   value,
@@ -106,7 +98,6 @@ export default function ProgressBar({
     ? `${formatBytes(value)} / ${formatBytes(max)}`
     : `${value.toFixed(1)}${percentTag} / ${max}${percentTag}`
   const overviewPercent = left ? left : `${percent.toFixed(1)}${percentTag}`
-
   return (
     <StyledProgressBar title={title}>
       <StyledProgressPercent>{overviewPercent}</StyledProgressPercent>

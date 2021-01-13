@@ -1,4 +1,5 @@
 import conf from '@/Helper/src/components/conf'
+import { DataProps } from '@/Fetch/src/stores'
 import {
   computed,
   configure,
@@ -7,12 +8,9 @@ import {
   toJS,
   makeObservable,
 } from 'mobx'
-import { DataProps } from '@/Fetch/src/stores'
-
 configure({
   enforceActions: 'observed',
 })
-
 export interface NodesItemProps {
   id: string
   url: string
@@ -22,7 +20,6 @@ export interface NodesItemProps {
   errMsg: string
   data: DataProps
 }
-
 class Store {
   public readonly ID = 'nodes'
   public readonly conf = conf?.[this.ID]
@@ -34,9 +31,7 @@ class Store {
     isError: false,
     fetchUrl: '',
   }
-
   @observable public items: NodesItemProps[] = []
-
   public constructor() {
     makeObservable(this)
     const items = (this.conf?.items || []).map(({ url, ...props }) => {
@@ -51,29 +46,22 @@ class Store {
     })
     this.setItems(items)
   }
-
   @action
   public setItems = (items: NodesItemProps[]) => {
     this.items = items
   }
-
   @action
   public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
-    const i = this.items.findIndex(item => item.id === id)
-
+    const i = this.items.findIndex((item) => item.id === id)
     if (i === -1) {
       return
     }
-
     this.items[i] = { ...toJS(this.items[i]), ...props }
   }
-
   @computed
   public get itemsCount() {
     return this.items.length
   }
 }
-
 const NodesStore = new Store()
-
 export default NodesStore

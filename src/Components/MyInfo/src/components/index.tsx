@@ -1,10 +1,9 @@
-import React from 'react'
-import { gettext } from '@/Language/src'
-import Row from '@/Grid/src/components/row'
 import CardGrid from '@/Card/src/components/card-grid'
+import React from 'react'
+import Row from '@/Grid/src/components/row'
 import store from '../stores'
+import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-
 const MyInfo = observer(() => {
   const { conf } = store
   const items: any[] = [
@@ -14,7 +13,6 @@ const MyInfo = observer(() => {
     [gettext('My browser languages (via PHP)'), conf?.phpLanguage],
     [gettext('My location'), gettext('In development')],
   ]
-
   return (
     <Row>
       {items.map(([name, content]: [string, string]) => {
@@ -27,5 +25,4 @@ const MyInfo = observer(() => {
     </Row>
   )
 })
-
 export default MyInfo

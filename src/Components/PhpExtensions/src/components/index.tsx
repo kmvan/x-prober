@@ -1,12 +1,11 @@
-import React from 'react'
-import { gettext } from '@/Language/src'
-import Row from '@/Grid/src/components/row'
-import CardGrid from '@/Card/src/components/card-grid'
-import store from '../stores'
 import Alert from '@/Helper/src/components/alert'
-import SearchLink from '@/Helper/src/components/search-link'
+import CardGrid from '@/Card/src/components/card-grid'
 import MultiItemContainer from '@/Card/src/components/multi-item-container'
-
+import React from 'react'
+import Row from '@/Grid/src/components/row'
+import SearchLink from '@/Helper/src/components/search-link'
+import store from '../stores'
+import { gettext } from '@/Language/src'
 const { conf } = store
 const shortItems: [string, boolean][] = [
   ['Redis', !!conf?.redis],
@@ -36,34 +35,26 @@ const shortItems: [string, boolean][] = [
 shortItems.sort((a, b) => {
   const x = a[0].toLowerCase()
   const y = b[0].toLowerCase()
-
   if (x < y) {
     return -1
   }
-
   if (x > y) {
     return 1
   }
-
   return 0
 })
-
 const longItems: string[] = conf?.loadedExtensions || []
 longItems.sort((a, b) => {
   const x = a.toLowerCase()
   const y = b.toLowerCase()
-
   if (x < y) {
     return -1
   }
-
   if (x > y) {
     return 1
   }
-
   return 0
 })
-
 export default function PhpExtensions() {
   return (
     <Row>
@@ -75,8 +66,7 @@ export default function PhpExtensions() {
             mobileMd={[1, 2]}
             tablet={[1, 3]}
             desktopMd={[1, 4]}
-            desktopLg={[1, 5]}
-          >
+            desktopLg={[1, 5]}>
             <Alert isSuccess={enabled} />
           </CardGrid>
         )
@@ -84,7 +74,7 @@ export default function PhpExtensions() {
       {!!longItems.length && (
         <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
           <MultiItemContainer>
-            {longItems.map(id => {
+            {longItems.map((id) => {
               return <SearchLink key={id} keyword={id} />
             })}
           </MultiItemContainer>
