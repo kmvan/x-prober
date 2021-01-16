@@ -85,7 +85,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
 
-- Thanks [VPSPlayer.com]](https://vpsplayer.com/aff.php?aff=50) - 2020-01-16 - 199 RMB
+- Thanks [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - 2020-01-16 - 199 RMB
 - Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 Dollars
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
