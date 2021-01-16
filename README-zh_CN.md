@@ -76,6 +76,9 @@
 
 成为赞助商支持这个项目。 您的徽标将显示在此处，其中包含指向您网站的链接。[[成为赞助商](https://opencollective.com/x-prober#sponsor)]
 
+- 感谢 [VPSPlayer.com]](https://vpsplayer.com/aff.php?aff=50) - 2020-01-16 - 199 人民币
+- 感谢 [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 美元
+
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/2/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/2/avatar.svg"></a>
