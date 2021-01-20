@@ -51,7 +51,7 @@
       "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
       "binUrl": "https://speedtest.fishfish.date",
       "detail": {
-        "hash": 886,
+        "hash": 883,
         "intLoop": 971,
         "floatLoop": 971,
         "ioLoop": 772
