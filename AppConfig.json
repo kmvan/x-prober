@@ -19,7 +19,7 @@
   "LATEST_NGINX_STABLE_VERSION": "1.18.0",
   "BENCHMARKS": [
     {
-      "name": "VPSPlayer/AMD-3950X/PHP8.0",
+      "name": "VPSPlayer/AMD-3950X/PHP80",
       "url": "https://vpsplayer.com/aff.php?aff=50",
       "date": "2021-01-20",
       "proberUrl": "http://23.225.121.61/x.php",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "name": "VPSPlayer/E5-2690v2/PHP8.0",
+      "name": "VPSPlayer/E5-2690v2/PHP80",
       "url": "https://vpsplayer.com/aff.php?aff=50",
       "date": "2021-01-17",
       "proberUrl": "http://103.44.238.36/x.php",
@@ -45,20 +45,20 @@
       }
     },
     {
-      "name": "Olink/AMD/PHP7.4",
+      "name": "Olink/AMD-3700X/PHP80",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
-      "date": "2020-11-07",
+      "date": "2021-01-20",
       "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
       "binUrl": "https://speedtest.fishfish.date",
       "detail": {
-        "hash": 870,
+        "hash": 886,
         "intLoop": 971,
-        "floatLoop": 972,
-        "ioLoop": 761
+        "floatLoop": 971,
+        "ioLoop": 772
       }
     },
     {
-      "name": "RamNode/PHP7.3",
+      "name": "RamNode/PHP73",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
       "date": "2019-09-02",
       "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
@@ -71,7 +71,7 @@
       }
     },
     {
-      "name": "Aliyun/HangZhou/PHP7.3",
+      "name": "Aliyun/HangZhou/PHP73",
       "url": "https://www.aliyun.com/minisite/goods?userCode=0nry1oii",
       "date": "2019-12-20",
       "proberUrl": "http://47.96.81.53/x.php",
@@ -83,7 +83,7 @@
       }
     },
     {
-      "name": "SpartanHost/HDD/PHP7.3",
+      "name": "SpartanHost/HDD/PHP73",
       "url": "https://billing.spartanhost.net/aff.php?aff=801",
       "date": "2019-03-09",
       "proberUrl": "https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "name": "Vultr/Tokyo/PHP7.4",
+      "name": "Vultr/Tokyo/PHP74",
       "url": "https://www.vultr.com/?ref=7826363-4F",
       "date": "2020-04-17",
       "proberUrl": "https://x-prober-server-benchmark-vultr-tokyo.inn-studio.com/",
@@ -108,7 +108,7 @@
       }
     },
     {
-      "name": "Vultr/Lax/PHP7.3",
+      "name": "Vultr/Lax/PHP73",
       "url": "https://www.vultr.com/?ref=7826363-4F",
       "binUrl": "http://lax-ca-us-ping.vultr.com/vultr.com.100MB.bin",
       "date": "2019-03-01",
@@ -120,7 +120,7 @@
       }
     },
     {
-      "name": "BandwagonHOST/KVM/PHP7.2",
+      "name": "BandwagonHOST/KVM/PHP72",
       "url": "https://bandwagonhost.com/aff.php?aff=34116",
       "proberUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/",
       "binUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/512m.bin",
