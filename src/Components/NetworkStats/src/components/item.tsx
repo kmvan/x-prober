@@ -1,7 +1,7 @@
-import formatBytes from '@/Helper/src/components/format-bytes'
 import Grid from '@/Grid/src/components/grid'
-import React from 'react'
 import Row from '@/Grid/src/components/row'
+import formatBytes from '@/Helper/src/components/format-bytes'
+import React from 'react'
 import styled from 'styled-components'
 interface NetworksStatsItemProps {
   id: string
@@ -14,7 +14,7 @@ interface NetworksStatsItemProps {
 const StyledNetworkId = styled.div`
   text-decoration: underline;
 `
-const StyledNetworkIdRow = styled(Row)`
+export const StyledNetworkIdRow = styled(Row)`
   align-items: center;
   justify-content: center;
   text-align: center;

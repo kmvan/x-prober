@@ -1,11 +1,11 @@
-import React from 'react'
-import store from '../stores'
-import styled from 'styled-components'
-import { device } from '@/Style/src/components/devices'
-import { gettext } from '@/Language/src'
 import { GUTTER } from '@/Config/src'
+import { gettext } from '@/Language/src'
+import { device } from '@/Style/src/components/devices'
 import { observer } from 'mobx-react-lite'
 import { rgba } from 'polished'
+import React from 'react'
+import styled from 'styled-components'
+import store from '../stores'
 interface StyleArrowProps {
   isHidden: boolean
 }
@@ -13,7 +13,7 @@ const StyledFieldset = styled.fieldset`
   position: relative;
   border: 5px solid #eee;
   border-radius: calc(${GUTTER} * 1.5);
-  background: linear-gradient(#fff, ${rgba('#fff', 0.5)});
+  background: linear-gradient(${rgba('#000', 0.01)}, #fff);
   margin-bottom: calc(${GUTTER} * 1.5);
   padding: calc(${GUTTER} * 1.5) 0 0;
   box-shadow: -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)},
@@ -47,6 +47,7 @@ const StyleArrow = styled.a<StyleArrowProps>`
   padding: 0 0.5rem;
   cursor: ${({ isHidden }) => (isHidden ? 'not-allowed' : 'pointer')};
   opacity: ${({ isHidden }) => (isHidden ? '0.1' : '0.5')};
+  :active,
   :hover {
     text-decoration: none;
     opacity: ${({ isHidden }) => (isHidden ? '0.1' : '1')};
@@ -71,7 +72,8 @@ const Cards = observer(() => {
           <StyleArrow
             title={gettext('Move up')}
             isHidden={i === 0}
-            onClick={() => moveCardUp(id)}>
+            onClick={(e) => moveCardUp(e, id)}
+            href='#'>
             ▲
           </StyleArrow>
         )
@@ -79,7 +81,8 @@ const Cards = observer(() => {
           <StyleArrow
             title={gettext('Move down')}
             isHidden={i === enabledCardsLength - 1}
-            onClick={() => moveCardDown(id)}>
+            onClick={(e) => moveCardDown(e, id)}
+            href='#'>
             ▼
           </StyleArrow>
         )

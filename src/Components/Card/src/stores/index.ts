@@ -1,11 +1,5 @@
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
-import { FunctionComponent } from 'react'
+import { action, computed, configure, makeObservable, observable } from 'mobx'
+import { FunctionComponent, MouseEvent } from 'react'
 configure({
   enforceActions: 'observed',
 })
@@ -67,7 +61,8 @@ class Store {
     this.cards[i] = { ...this.cards[i], ...card }
   }
   @action
-  public moveCardUp = (id: string) => {
+  public moveCardUp = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
     if (i <= 0) {
@@ -81,7 +76,8 @@ class Store {
     this.setStoragePriorityItems()
   }
   @action
-  public moveCardDown = (id: string) => {
+  public moveCardDown = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
     if (i === -1 || i === cards.length - 1) {
