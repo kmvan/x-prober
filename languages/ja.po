@@ -2,18 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-08-19 23:20+0800\n"
+"PO-Revision-Date: 2021-01-28 16:20+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
+
+msgid "Copy marks"
+msgstr "コピーマーク"
 
 msgid "Move up"
 msgstr "上に移動"
@@ -38,10 +41,11 @@ msgstr "DB"
 msgid "Fetch error, please refresh page."
 msgstr "取得エラー。ページを更新してください。"
 
-msgid "Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms"
+msgid ""
+"Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms"
 msgstr ""
-"このページは ${appName} によって生成されます / 著者は ${authorName} / "
-"${memUsage} / ${time} ミリ秒"
+"このページは {{appName}} によって生成されます / 著者は {{authorName}} / "
+"{{memUsage}} / {{time}} ミリ秒"
 
 msgid "STAR 🌟 ME"
 msgstr "星🌟印"
@@ -76,23 +80,14 @@ msgstr "ネットワーク統計"
 msgid "Net"
 msgstr "ネット"
 
-msgid "Fetch failed. Node returns ${code}."
-msgstr "フェッチに失敗しました。 ノードは ${code} を返します。"
-
-msgid "Fetch failed. Detail in Console."
-msgstr "フェッチに失敗しました。 コンソールの詳細。"
-
-msgid "Node [${nodeId}] fetch failed."
-msgstr "ノード [${nodeId}] のフェッチに失敗しました。"
-
-msgid "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
-msgstr "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgstr "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
 
 msgid "CPU usage"
 msgstr "CPU 使用率"
 
-msgid "Usage: ${percent}"
-msgstr "佔用: ${percent}"
+msgid "Usage: {{percent}}"
+msgstr "佔用: {{percent}}"
 
 msgid "Memory"
 msgstr "RAM"
@@ -102,6 +97,9 @@ msgstr "Swap"
 
 msgid "Fetching..."
 msgstr "取得しています..."
+
+msgid "Fetch failed. Node returns {{code}}."
+msgstr "フェッチに失敗しました。 ノードは {{code}} を返します。"
 
 msgid "Nodes"
 msgstr "ノード"
@@ -166,8 +164,8 @@ msgstr "無効なクラス"
 msgid "Visit PHP.net Official website"
 msgstr "PHP.net 公式ウェブサイトにアクセス"
 
-msgid "(Latest ${latestPhpVersion})"
-msgstr "（最新 ${latestPhpVersion}）"
+msgid "(Latest {{latestPhpVersion}})"
+msgstr "（最新 {{latestPhpVersion}}）"
 
 msgid "PHP Information"
 msgstr "PHP情報"
@@ -175,11 +173,11 @@ msgstr "PHP情報"
 msgid "PHP"
 msgstr "PHP"
 
-msgid "Times:${times}"
-msgstr "回: ${times}"
+msgid "Times:{{times}}"
+msgstr "回: {{times}}"
 
-msgid "Min:${min} / Max:${max} / Avg:${avg}"
-msgstr "最小: ${min} / 最大: ${max} / 平均: ${avg}"
+msgid "Min:{{min}} / Max:{{max}} / Avg:{{avg}}"
+msgstr "最小: {{min}} / 最大: {{max}} / 平均: {{avg}}"
 
 msgid "⏸️ Stop ping"
 msgstr "⏸️ Pingを停止"
@@ -192,15 +190,6 @@ msgstr "ネットワークPing"
 
 msgid "Ping"
 msgstr "Ping"
-
-msgid "⏳ Testing, please wait..."
-msgstr "⏳ テストしています。お待ちください..."
-
-msgid "Network error, please try again later."
-msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
-
-msgid "⏳ Please wait ${seconds}s"
-msgstr "⏳ ${seconds} 秒お待ちください"
 
 msgid "Can not fetch marks data from GitHub."
 msgstr "GitHubからマークデータを取得できません。"
@@ -217,20 +206,29 @@ msgstr "公式ウェブサイトをご覧ください"
 msgid "My server"
 msgstr "私のサーバー"
 
+msgid "⏳ Testing, please wait..."
+msgstr "⏳ テストしています。お待ちください..."
+
+msgid "Click to test"
+msgstr "👆クリックしてテスト"
+
+msgid "Network error, please try again later."
+msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
+
+msgid "⏳ Please wait {{seconds}}s"
+msgstr "⏳ {{seconds}} 秒お待ちください"
+
 msgid "Server Benchmark"
 msgstr "サーバー基準"
 
 msgid "Becnhmark"
 msgstr "基準"
 
-msgid "Click to test"
-msgstr "👆クリックしてテスト"
-
 msgid "Unavailable"
 msgstr "利用不可"
 
-msgid "${days} days ${hours} hours ${mins} mins ${secs} secs"
-msgstr "${days} 日 ${hours} 時 ${mins} 分 ${secs} 秒"
+msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
+msgstr "{{days}} 日 {{hours}} 時 {{mins}} 分 {{secs}} 秒"
 
 msgid "Server name"
 msgstr "サーバーの名前"
@@ -303,8 +301,8 @@ msgstr "SWAP キャッシュ"
 msgid "Swap usage"
 msgstr "SWAP 使用量"
 
-msgid "${minute} minute average"
-msgstr "${minute} 分ごとの平均負荷"
+msgid "{{minute}} minute average"
+msgstr "{{minute}} 分ごとの平均負荷"
 
 msgid "System load"
 msgstr "システム負荷"
@@ -315,8 +313,8 @@ msgstr "サーバーの状態"
 msgid "Status"
 msgstr "状態"
 
-msgid "${sensor} temperature"
-msgstr "${sensor} 温度"
+msgid "{{sensor}} temperature"
+msgstr "{{sensor}} 温度"
 
 msgid "Temperature Sensor"
 msgstr "温度センサー"
@@ -341,3 +339,9 @@ msgstr "❌ 更新エラー。ここをクリックして再試行しますか�
 
 msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
 msgstr "✨ アップデートが見た！バージョン ${oldVersion} → ${newVersion}"
+
+#~ msgid "Fetch failed. Detail in Console."
+#~ msgstr "フェッチに失敗しました。 コンソールの詳細。"
+
+#~ msgid "Node [${nodeId}] fetch failed."
+#~ msgstr "ノード [${nodeId}] のフェッチに失敗しました。"
