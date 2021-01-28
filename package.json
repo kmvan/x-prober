@@ -45,6 +45,7 @@
     "JSON2": "^0.1.0",
     "caniuse-lite": "^1.0.30001180",
     "copy-to-clipboard": "^3.3.1",
+    "deep-sort-object": "^1.0.2",
     "es6-promise": "^4.2.8",
     "eslint-config-prettier": "^7.2.0",
     "glob": "^7.1.6",
