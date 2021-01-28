@@ -7,10 +7,17 @@ import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
 import copyToClipboard from 'copy-to-clipboard'
-import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
 import React, { MouseEvent, useCallback } from 'react'
+import styled from 'styled-components'
 import store from '../stores'
+const StyledTextBtn = styled.a`
+  display: block;
+`
+const StyledResult = styled.div``
+const StyledAff = styled.a`
+  word-break: normal;
+`
 const Result = ({
   hash,
   intLoop,
@@ -36,7 +43,7 @@ const Result = ({
     }
   )
   return (
-    <>
+    <StyledResult>
       <CardRuby
         ruby={hash.toLocaleString()}
         rt='HASH2'
@@ -67,7 +74,7 @@ const Result = ({
         rt={date || ''}
         onClick={() => copyToClipboard(totalText)}
       />
-    </>
+    </StyledResult>
   )
 }
 const Items = observer(() => {
@@ -77,7 +84,7 @@ const Items = observer(() => {
       <CardError>{gettext('Can not fetch marks data from GitHub.')}</CardError>
     )
   }
-  const items = toJS(servers).map((item) => {
+  const items = servers.map((item) => {
     item.total = item.detail
       ? Object.values(item.detail).reduce((a, b) => a + b, 0)
       : 0
@@ -108,12 +115,12 @@ const Items = observer(() => {
         ''
       )
       const title = (
-        <a
+        <StyledAff
           href={url}
           target='_blank'
           title={gettext('Visit the official website')}>
           {name}
-        </a>
+        </StyledAff>
       )
       return (
         <CardGrid
@@ -153,7 +160,7 @@ const TestBtn = observer(
         tablet={[1, 2]}
         desktopMd={[1, 3]}
         desktopLg={[1, 4]}>
-        <a onClick={onClick}>{linkText}</a>
+        <StyledTextBtn onClick={onClick}>{linkText}</StyledTextBtn>
         <TestResults />
       </CardGrid>
     )
@@ -173,15 +180,16 @@ const ServerBenchmark = observer(() => {
     if (status === OK) {
       if (marks) {
         setMarks(marks)
-        setLinkText('')
+        setLinkText(gettext('Click to test'))
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }
     } else if (status === TOO_MANY_REQUESTS) {
-      const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
-        seconds,
-      })
-      setLinkText(secondsMsg)
+      setLinkText(
+        template(gettext('⏳ Please wait {{seconds}}s'), {
+          seconds,
+        })
+      )
     } else {
       setLinkText(gettext('Network error, please try again later.'))
     }

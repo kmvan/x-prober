@@ -1,13 +1,7 @@
-import conf from '@/Helper/src/components/conf'
 import ConfigStore, { AppConfigBenchmarkProps } from '@/Config/src/stores'
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
+import conf from '@/Helper/src/components/conf'
 import { gettext } from '@/Language/src'
+import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
@@ -24,7 +18,12 @@ class Store {
     ?.disabledMyServerBenchmark
   @observable public isLoading: boolean = false
   @observable public linkText: string = gettext('Click to test')
-  @observable public marks: MarksProps | null = null
+  @observable public marks: MarksProps = {
+    hash: 0,
+    intLoop: 0,
+    floatLoop: 0,
+    ioLoop: 0,
+  }
   public constructor() {
     makeObservable(this)
   }
