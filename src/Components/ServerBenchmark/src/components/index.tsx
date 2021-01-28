@@ -1,15 +1,16 @@
-import CardError from '@/Card/src/components/error'
 import CardGrid from '@/Card/src/components/card-grid'
 import CardRuby from '@/Card/src/components/card-ruby'
-import React, { MouseEvent, useCallback } from 'react'
-import Row from '@/Grid/src/components/row'
+import CardError from '@/Card/src/components/error'
 import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
+import Row from '@/Grid/src/components/row'
 import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
-import { observer } from 'mobx-react-lite'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
+import copyToClipboard from 'copy-to-clipboard'
 import { toJS } from 'mobx'
+import { observer } from 'mobx-react-lite'
+import React, { MouseEvent, useCallback } from 'react'
+import store from '../stores'
 const Result = ({
   hash,
   intLoop,
@@ -23,20 +24,48 @@ const Result = ({
   ioLoop: number
   date?: string
 }) => {
+  const total = hash + intLoop + floatLoop + ioLoop
+  const totalText = template(
+    '{{hash}} (HASH) + {{intLoop}} (INT) + {{floatLoop}} (FLOAT) + {{ioLoop}} (IO) = {{total}}',
+    {
+      hash: hash.toLocaleString(),
+      intLoop: intLoop.toLocaleString(),
+      floatLoop: floatLoop.toLocaleString(),
+      ioLoop: ioLoop.toLocaleString(),
+      total: total.toLocaleString(),
+    }
+  )
   return (
     <>
-      <CardRuby ruby={hash.toLocaleString()} rt='HASH' />
+      <CardRuby
+        ruby={hash.toLocaleString()}
+        rt='HASH2'
+        onClick={() => copyToClipboard(`HASH: ${hash.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={intLoop.toLocaleString()} rt='INT' />
+      <CardRuby
+        ruby={intLoop.toLocaleString()}
+        rt='INT'
+        onClick={() => copyToClipboard(`INT: ${intLoop.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={floatLoop.toLocaleString()} rt='FLOAT' />
+      <CardRuby
+        ruby={floatLoop.toLocaleString()}
+        rt='FLOAT'
+        onClick={() => copyToClipboard(`FLOAT: ${floatLoop.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={ioLoop.toLocaleString()} rt='IO' />
+      <CardRuby
+        ruby={ioLoop.toLocaleString()}
+        rt='IO'
+        onClick={() => copyToClipboard(`IO: ${ioLoop.toLocaleString()}`)}
+      />
       {' = '}
       <CardRuby
         isResult={true}
-        ruby={(hash + intLoop + floatLoop + ioLoop).toLocaleString()}
+        ruby={total.toLocaleString()}
         rt={date || ''}
+        onClick={() => copyToClipboard(totalText)}
       />
     </>
   )
@@ -60,12 +89,7 @@ const Items = observer(() => {
       if (!detail) {
         return
       }
-      const { hash, intLoop, floatLoop, ioLoop } = detail || {
-        hash: 0,
-        intLoop: 0,
-        floatLoop: 0,
-        ioLoop: 0,
-      }
+      const { hash = 0, intLoop = 0, floatLoop = 0, ioLoop = 0 } = detail
       const proberLink = proberUrl ? (
         <a
           href={proberUrl}
@@ -99,13 +123,11 @@ const Items = observer(() => {
           desktopMd={[1, 3]}
           desktopLg={[1, 4]}>
           <Result
-            {...{
-              hash,
-              intLoop,
-              floatLoop,
-              ioLoop,
-              date,
-            }}
+            hash={hash}
+            intLoop={intLoop}
+            floatLoop={floatLoop}
+            ioLoop={ioLoop}
+            date={date}
           />
           {proberLink}
           {binLink}
@@ -115,20 +137,24 @@ const Items = observer(() => {
   )
   return <>{results}</>
 })
+const TestResults = observer(() => {
+  const { marks } = store
+  if (!marks) {
+    return null
+  }
+  return <Result {...marks} />
+})
 const TestBtn = observer(
   ({ onClick }: { onClick: (e: MouseEvent<HTMLAnchorElement>) => void }) => {
-    const { marks, linkText } = store
-    const marksText = marks ? <Result {...marks} /> : ''
+    const { linkText } = store
     return (
       <CardGrid
         name={gettext('My server')}
         tablet={[1, 2]}
         desktopMd={[1, 3]}
         desktopLg={[1, 4]}>
-        <a href='#' onClick={onClick}>
-          <div>{linkText}</div>
-          <div>{marksText}</div>
-        </a>
+        <a onClick={onClick}>{linkText}</a>
+        <TestResults />
       </CardGrid>
     )
   }
