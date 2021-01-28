@@ -1,8 +1,9 @@
+import { GUTTER } from '@/Config/src'
 import Grid, { GridProps } from '@/Grid/src/components/grid'
+import { device } from '@/Style/src/components/devices'
+import { rgba } from 'polished'
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { device } from '@/Style/src/components/devices'
-import { GUTTER } from '@/Config/src'
 export interface CardGridProps extends GridProps {
   name?: ReactNode
   children: ReactNode
@@ -14,7 +15,12 @@ const StyledCardGroup = styled.div`
   align-items: center;
   border-bottom: 1px solid #eee;
   :hover {
-    background: linear-gradient(90deg, #0000, #0000000d, #0000);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      ${rgba('#000', 0.1)},
+      transparent
+    );
   }
 `
 const StyledCardTitle = styled.div`
@@ -38,7 +44,7 @@ const CardGrid = ({
   return (
     <Grid {...props}>
       <StyledCardGroup>
-        {name && <StyledCardTitle title={title}>{name}</StyledCardTitle>}
+        {!!name && <StyledCardTitle title={title}>{name}</StyledCardTitle>}
         <StyledCardContent>{children}</StyledCardContent>
       </StyledCardGroup>
     </Grid>

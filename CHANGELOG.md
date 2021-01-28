@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 6.7.0 - 2021-01-28
+
+### Add
+
+- Add server benchmarks copy feature
+
+### Optimize
+
+- Optimize style color
+- Optimize HTML structure
+
 ## 6.6.0 - 2020-12-31
 
 ### Update

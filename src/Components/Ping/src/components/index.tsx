@@ -1,16 +1,16 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import React, { useCallback, useRef } from 'react'
-import Row from '@/Grid/src/components/row'
-import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
-import styled from 'styled-components'
-import template from '@/Helper/src/components/template'
 import { BORDER_RADIUS, GUTTER } from '@/Config/src'
-import { device } from '@/Style/src/components/devices'
+import serverFetch from '@/Fetch/src/server-fetch'
+import Row from '@/Grid/src/components/row'
+import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
-import { lighten, rgba } from 'polished'
-import { observer } from 'mobx-react-lite'
 import { OK } from '@/Restful/src/http-status'
+import { device } from '@/Style/src/components/devices'
+import { observer } from 'mobx-react-lite'
+import { lighten, rgba } from 'polished'
+import React, { useCallback, useRef } from 'react'
+import styled from 'styled-components'
+import store from '../stores'
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
@@ -129,10 +129,10 @@ const Results = observer(() => {
   return (
     <StyledPingResult hasPing={!!pingItemsCount}>
       <StyledPingResultTimes>
-        {template(gettext('Times:${times}'), { times: pingItemsCount })}
+        {template(gettext('Times:{{times}}'), { times: pingItemsCount })}
       </StyledPingResultTimes>
       <StyledPingResultAvg>
-        {template(gettext('Min:${min} / Max:${max} / Avg:${avg}'), {
+        {template(gettext('Min:{{min}} / Max:{{max}} / Avg:{{avg}}'), {
           min,
           max,
           avg,

@@ -1,23 +1,23 @@
-import Alert from '@/Helper/src/components/alert'
-import Grid from '@/Grid/src/components/grid'
-import Loading from '@/Helper/src/components/loading'
-import NodeNetworks from './node-networks'
-import ProgressBar from '@/ProgressBar/src/components'
-import React, { useCallback, useEffect } from 'react'
-import Row from '@/Grid/src/components/row'
+import { GUTTER } from '@/Config/src'
 import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
-import styled from 'styled-components'
+import Grid from '@/Grid/src/components/grid'
+import Row from '@/Grid/src/components/row'
+import Alert from '@/Helper/src/components/alert'
+import Loading from '@/Helper/src/components/loading'
 import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
-import { GUTTER } from '@/Config/src'
-import { observer } from 'mobx-react-lite'
+import ProgressBar from '@/ProgressBar/src/components'
 import { OK } from '@/Restful/src/http-status'
 import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
 import {
   ServerStatusCpuUsageProps,
   ServerStatusUsageProps,
 } from '@/ServerStatus/src/stores'
+import { observer } from 'mobx-react-lite'
+import React, { useCallback, useEffect } from 'react'
+import styled from 'styled-components'
+import store from '../stores'
+import NodeNetworks from './node-networks'
 const StyledNodeGroupId = styled.a`
   display: block;
   text-decoration: underline;
@@ -50,7 +50,7 @@ const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
       <ProgressBar
         title={template(
           gettext(
-            'idle: ${idle} \nnice: ${nice} \nsys: ${sys} \nuser: ${user}'
+            'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
           ),
           cpuUsage
         )}
@@ -71,7 +71,7 @@ const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
   return (
     <StyledNodeGroup>
       <ProgressBar
-        title={template(gettext('Usage: ${percent}'), {
+        title={template(gettext('Usage: {{percent}}'), {
           percent: `${percent.toFixed(1)}%`,
         })}
         value={value}
@@ -91,7 +91,7 @@ const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
   return (
     <StyledNodeGroup>
       <ProgressBar
-        title={template(gettext('Usage: ${percent}'), {
+        title={template(gettext('Usage: {{percent}}'), {
           percent: `${percent.toFixed(1)}%`,
         })}
         value={value}
@@ -168,21 +168,11 @@ const Nodes = observer(() => {
         id: nodeId,
         isLoading: false,
         isError: true,
-        errMsg: template(gettext('Fetch failed. Node returns ${code}.'), {
+        errMsg: template(gettext('Fetch failed. Node returns {{code}}.'), {
           code: status,
         }),
       })
     }
-    // setItem({
-    //   id: nodeId,
-    //   isLoading: false,
-    //   isError: true,
-    //   errMsg: gettext('Fetch failed. Detail in Console.'),
-    // })
-    // console.warn(
-    //   template(gettext('Node [${nodeId}] fetch failed.'), { nodeId }),
-    //   e
-    // )
   }, [])
   useEffect(() => {
     if (itemsCount) {

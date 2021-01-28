@@ -1,9 +1,11 @@
-import NetworksStatsItem from '@/NetworkStats/src/components/item'
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { BORDER_RADIUS, GUTTER } from '@/Config/src'
+import NetworksStatsItem, {
+  StyledNetworkIdRow,
+} from '@/NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
 import { rgba } from 'polished'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
   background: ${({ theme }) => rgba(theme.colorDark, 0.1)};
@@ -19,6 +21,16 @@ const StyledNodeGroupNetwork = styled.div`
     margin-bottom: 0;
     border-bottom: 0;
     padding-bottom: 0;
+  }
+  ${StyledNetworkIdRow} {
+    :hover {
+      background: linear-gradient(
+        to right,
+        transparent,
+        ${rgba('#fff', 0.9)},
+        transparent
+      );
+    }
   }
 `
 interface NodeNetworksProps {

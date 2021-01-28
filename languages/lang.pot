@@ -15,6 +15,9 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
 
+msgid "Copy marks"
+msgstr ""
+
 msgid "Move up"
 msgstr ""
 
@@ -36,7 +39,7 @@ msgstr ""
 msgid "Fetch error, please refresh page."
 msgstr ""
 
-msgid "Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms"
+msgid "Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms"
 msgstr ""
 
 msgid "STAR 🌟 ME"
@@ -72,13 +75,13 @@ msgstr ""
 msgid "Net"
 msgstr ""
 
-msgid "idle: ${idle} \\nnice: ${nice} \\nsys: ${sys} \\nuser: ${user}"
+msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
 msgstr ""
 
 msgid "CPU usage"
 msgstr ""
 
-msgid "Usage: ${percent}"
+msgid "Usage: {{percent}}"
 msgstr ""
 
 msgid "Memory"
@@ -90,13 +93,7 @@ msgstr ""
 msgid "Fetching..."
 msgstr ""
 
-msgid "Fetch failed. Node returns ${code}."
-msgstr ""
-
-msgid "Fetch failed. Detail in Console."
-msgstr ""
-
-msgid "Node [${nodeId}] fetch failed."
+msgid "Fetch failed. Node returns {{code}}."
 msgstr ""
 
 msgid "Nodes"
@@ -162,7 +159,7 @@ msgstr ""
 msgid "Visit PHP.net Official website"
 msgstr ""
 
-msgid "(Latest ${latestPhpVersion})"
+msgid "(Latest {{latestPhpVersion}})"
 msgstr ""
 
 msgid "PHP Information"
@@ -171,10 +168,10 @@ msgstr ""
 msgid "PHP"
 msgstr ""
 
-msgid "Times:${times}"
+msgid "Times:{{times}}"
 msgstr ""
 
-msgid "Min:${min} / Max:${max} / Avg:${avg}"
+msgid "Min:{{min}} / Max:{{max}} / Avg:{{avg}}"
 msgstr ""
 
 msgid "⏸️ Stop ping"
@@ -207,10 +204,13 @@ msgstr ""
 msgid "⏳ Testing, please wait..."
 msgstr ""
 
+msgid "Click to test"
+msgstr ""
+
 msgid "Network error, please try again later."
 msgstr ""
 
-msgid "⏳ Please wait ${seconds}s"
+msgid "⏳ Please wait {{seconds}}s"
 msgstr ""
 
 msgid "Server Benchmark"
@@ -219,13 +219,10 @@ msgstr ""
 msgid "Becnhmark"
 msgstr ""
 
-msgid "Click to test"
-msgstr ""
-
 msgid "Unavailable"
 msgstr ""
 
-msgid "${days} days ${hours} hours ${mins} mins ${secs} secs"
+msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
 msgstr ""
 
 msgid "Server name"
@@ -288,7 +285,7 @@ msgstr ""
 msgid "Swap usage"
 msgstr ""
 
-msgid "${minute} minute average"
+msgid "{{minute}} minute average"
 msgstr ""
 
 msgid "System load"
@@ -300,7 +297,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-msgid "${sensor} temperature"
+msgid "{{sensor}} temperature"
 msgstr ""
 
 msgid "Temperature Sensor"

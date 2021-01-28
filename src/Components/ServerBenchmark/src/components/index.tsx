@@ -1,15 +1,23 @@
-import CardError from '@/Card/src/components/error'
 import CardGrid from '@/Card/src/components/card-grid'
 import CardRuby from '@/Card/src/components/card-ruby'
-import React, { MouseEvent, useCallback } from 'react'
-import Row from '@/Grid/src/components/row'
+import CardError from '@/Card/src/components/error'
 import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
+import Row from '@/Grid/src/components/row'
 import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
-import { observer } from 'mobx-react-lite'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
-import { toJS } from 'mobx'
+import copyToClipboard from 'copy-to-clipboard'
+import { observer } from 'mobx-react-lite'
+import React, { MouseEvent, useCallback } from 'react'
+import styled from 'styled-components'
+import store from '../stores'
+const StyledTextBtn = styled.a`
+  display: block;
+`
+const StyledResult = styled.div``
+const StyledAff = styled.a`
+  word-break: normal;
+`
 const Result = ({
   hash,
   intLoop,
@@ -23,22 +31,50 @@ const Result = ({
   ioLoop: number
   date?: string
 }) => {
+  const total = hash + intLoop + floatLoop + ioLoop
+  const totalText = template(
+    '{{hash}} (HASH) + {{intLoop}} (INT) + {{floatLoop}} (FLOAT) + {{ioLoop}} (IO) = {{total}}',
+    {
+      hash: hash.toLocaleString(),
+      intLoop: intLoop.toLocaleString(),
+      floatLoop: floatLoop.toLocaleString(),
+      ioLoop: ioLoop.toLocaleString(),
+      total: total.toLocaleString(),
+    }
+  )
   return (
-    <>
-      <CardRuby ruby={hash.toLocaleString()} rt='HASH' />
+    <StyledResult>
+      <CardRuby
+        ruby={hash.toLocaleString()}
+        rt='HASH2'
+        onClick={() => copyToClipboard(`HASH: ${hash.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={intLoop.toLocaleString()} rt='INT' />
+      <CardRuby
+        ruby={intLoop.toLocaleString()}
+        rt='INT'
+        onClick={() => copyToClipboard(`INT: ${intLoop.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={floatLoop.toLocaleString()} rt='FLOAT' />
+      <CardRuby
+        ruby={floatLoop.toLocaleString()}
+        rt='FLOAT'
+        onClick={() => copyToClipboard(`FLOAT: ${floatLoop.toLocaleString()}`)}
+      />
       {' + '}
-      <CardRuby ruby={ioLoop.toLocaleString()} rt='IO' />
+      <CardRuby
+        ruby={ioLoop.toLocaleString()}
+        rt='IO'
+        onClick={() => copyToClipboard(`IO: ${ioLoop.toLocaleString()}`)}
+      />
       {' = '}
       <CardRuby
         isResult={true}
-        ruby={(hash + intLoop + floatLoop + ioLoop).toLocaleString()}
+        ruby={total.toLocaleString()}
         rt={date || ''}
+        onClick={() => copyToClipboard(totalText)}
       />
-    </>
+    </StyledResult>
   )
 }
 const Items = observer(() => {
@@ -48,7 +84,7 @@ const Items = observer(() => {
       <CardError>{gettext('Can not fetch marks data from GitHub.')}</CardError>
     )
   }
-  const items = toJS(servers).map((item) => {
+  const items = servers.map((item) => {
     item.total = item.detail
       ? Object.values(item.detail).reduce((a, b) => a + b, 0)
       : 0
@@ -60,12 +96,7 @@ const Items = observer(() => {
       if (!detail) {
         return
       }
-      const { hash, intLoop, floatLoop, ioLoop } = detail || {
-        hash: 0,
-        intLoop: 0,
-        floatLoop: 0,
-        ioLoop: 0,
-      }
+      const { hash = 0, intLoop = 0, floatLoop = 0, ioLoop = 0 } = detail
       const proberLink = proberUrl ? (
         <a
           href={proberUrl}
@@ -84,12 +115,12 @@ const Items = observer(() => {
         ''
       )
       const title = (
-        <a
+        <StyledAff
           href={url}
           target='_blank'
           title={gettext('Visit the official website')}>
           {name}
-        </a>
+        </StyledAff>
       )
       return (
         <CardGrid
@@ -99,13 +130,11 @@ const Items = observer(() => {
           desktopMd={[1, 3]}
           desktopLg={[1, 4]}>
           <Result
-            {...{
-              hash,
-              intLoop,
-              floatLoop,
-              ioLoop,
-              date,
-            }}
+            hash={hash}
+            intLoop={intLoop}
+            floatLoop={floatLoop}
+            ioLoop={ioLoop}
+            date={date}
           />
           {proberLink}
           {binLink}
@@ -115,20 +144,24 @@ const Items = observer(() => {
   )
   return <>{results}</>
 })
+const TestResults = observer(() => {
+  const { marks } = store
+  if (!marks) {
+    return null
+  }
+  return <Result {...marks} />
+})
 const TestBtn = observer(
   ({ onClick }: { onClick: (e: MouseEvent<HTMLAnchorElement>) => void }) => {
-    const { marks, linkText } = store
-    const marksText = marks ? <Result {...marks} /> : ''
+    const { linkText } = store
     return (
       <CardGrid
         name={gettext('My server')}
         tablet={[1, 2]}
         desktopMd={[1, 3]}
         desktopLg={[1, 4]}>
-        <a href='#' onClick={onClick}>
-          <div>{linkText}</div>
-          <div>{marksText}</div>
-        </a>
+        <StyledTextBtn onClick={onClick}>{linkText}</StyledTextBtn>
+        <TestResults />
       </CardGrid>
     )
   }
@@ -147,15 +180,16 @@ const ServerBenchmark = observer(() => {
     if (status === OK) {
       if (marks) {
         setMarks(marks)
-        setLinkText('')
+        setLinkText(gettext('Click to test'))
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }
     } else if (status === TOO_MANY_REQUESTS) {
-      const secondsMsg = template(gettext('⏳ Please wait ${seconds}s'), {
-        seconds,
-      })
-      setLinkText(secondsMsg)
+      setLinkText(
+        template(gettext('⏳ Please wait {{seconds}}s'), {
+          seconds,
+        })
+      )
     } else {
       setLinkText(gettext('Network error, please try again later.'))
     }

@@ -1,13 +1,13 @@
 import BootstrapStore from '@/Bootstrap/src/stores'
-import formatBytes from '@/Helper/src/components/format-bytes'
-import React from 'react'
-import store from '../stores'
-import styled from 'styled-components'
-import template from '@/Helper/src/components/template'
-import { device } from '@/Style/src/components/devices'
-import { gettext } from '@/Language/src'
 import { GUTTER } from '@/Config/src'
+import formatBytes from '@/Helper/src/components/format-bytes'
+import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
+import { device } from '@/Style/src/components/devices'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import styled from 'styled-components'
+import store from '../stores'
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme.colorDark};
   color: ${({ theme }) => theme.colorGray};
@@ -36,7 +36,7 @@ const Footer = observer(() => {
       dangerouslySetInnerHTML={{
         __html: template(
           gettext(
-            'Generator ${appName} / Author ${authorName} / ${memUsage} / ${time}ms'
+            'Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms'
           ),
           {
             appName: `<a href="${appUrl}" target="_blank">${appName}</a>`,
