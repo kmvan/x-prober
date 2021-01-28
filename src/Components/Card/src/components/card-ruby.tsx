@@ -1,3 +1,4 @@
+import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
 import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from 'styled-components'
@@ -24,7 +25,7 @@ const StyledRuby = styled.ruby<StyledRubyProps>`
 `
 const CardRuby = ({ ruby, rt, isResult = false, ...props }: CardRubyProps) => {
   return (
-    <StyledRuby isResult={isResult} {...props}>
+    <StyledRuby isResult={isResult} {...props} title={gettext('Copy marks')}>
       {ruby}
       <rp>(</rp>
       <rt>{rt}</rt>
