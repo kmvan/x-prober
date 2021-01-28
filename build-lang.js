@@ -12,8 +12,8 @@ const dirComponents = `${dirSrc}/Components`
 const langs = {}
 const poEntries = {}
 const JSON2 = require('JSON2')
-
-const parseFile = filePath => {
+const deepSort = require('deep-sort-object')
+const parseFile = (filePath) => {
   const code = fs.readFileSync(filePath).toString()
   const reg = new RegExp(
     `gettext\\s*\\(\\s*('.+?')\\s*,*\\s*('.+?')*\\s*\\)`,
@@ -39,9 +39,9 @@ msgstr ""
   }
 }
 
-const fetchDirOrFile = filePathOrDir => {
+const fetchDirOrFile = (filePathOrDir) => {
   if (fs.lstatSync(filePathOrDir).isDirectory()) {
-    fs.readdirSync(filePathOrDir).map(p =>
+    fs.readdirSync(filePathOrDir).map((p) =>
       fetchDirOrFile(`${filePathOrDir}/${p}`)
     )
   } else {
@@ -84,7 +84,7 @@ fetchDirOrFile(dirComponents)
 // create pot
 createPot()
 
-const formatItem = items => {
+const formatItem = (items) => {
   return items.map(({ msgctxt, msgid, msgstr }) => {
     return {
       msgctxt,
@@ -94,8 +94,8 @@ const formatItem = items => {
   })
 }
 
-const getItem = async filepath => {
-  return new Promise(resolve => {
+const getItem = async (filepath) => {
+  return new Promise((resolve) => {
     PO.load(filepath, (err, data) => {
       const langId = path.basename(filepath, '.po')
       const items = formatItem(data.items)
@@ -119,8 +119,8 @@ const writeJsData = ({ langId, items }) => {
 
   fs.writeFileSync(
     path.resolve(__dirname, 'src/Components/Language/src/lang.json'),
-    JSON2.stringify(langs, null, 2),
-    err => {
+    JSON2.stringify(deepSort(langs), null, 2),
+    (err) => {
       if (err) {
         throw err
       }
@@ -128,6 +128,6 @@ const writeJsData = ({ langId, items }) => {
   )
 }
 
-glob.sync(path.resolve(__dirname, 'languages/*.po')).map(async filepath => {
+glob.sync(path.resolve(__dirname, 'languages/*.po')).map(async (filepath) => {
   writeJsData(await getItem(filepath))
 })
