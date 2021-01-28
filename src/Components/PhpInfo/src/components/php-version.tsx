@@ -1,12 +1,12 @@
 import CardLink from '@/Card/src/components/card-link'
-import React, { useCallback, useEffect } from 'react'
 import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
 import template from '@/Helper/src/components/template'
 import versionCompare from '@/Helper/src/components/version-compare'
 import { gettext } from '@/Language/src'
-import { observer } from 'mobx-react-lite'
 import { OK } from '@/Restful/src/http-status'
+import { observer } from 'mobx-react-lite'
+import React, { useCallback, useEffect } from 'react'
+import store from '../stores'
 const PhpInfoPhpVersion = observer(() => {
   const fetch = useCallback(async () => {
     const { data, status } = await serverFetch('latest-php-version')
@@ -31,7 +31,7 @@ const PhpInfoPhpVersion = observer(() => {
       {version}
       {compare === -1
         ? ' ' +
-          template(gettext('(Latest ${latestPhpVersion})'), {
+          template(gettext('(Latest {{latestPhpVersion}})'), {
             latestPhpVersion,
           })
         : ''}

@@ -1,12 +1,12 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import React from 'react'
-import store from '../stores'
-import styled from 'styled-components'
-import template from '@/Helper/src/components/template'
-import { device } from '@/Style/src/components/devices'
-import { gettext } from '@/Language/src'
 import { GUTTER } from '@/Config/src'
+import template from '@/Helper/src/components/template'
+import { gettext } from '@/Language/src'
+import { device } from '@/Style/src/components/devices'
 import { rgba } from 'polished'
+import React from 'react'
+import styled from 'styled-components'
+import store from '../stores'
 interface StyledSysLoadGroupProps {
   isCenter: boolean
 }
@@ -42,7 +42,7 @@ export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
     return {
       id: `${minutes[i]}minAvg`,
       load,
-      text: template(gettext('${minute} minute average'), {
+      text: template(gettext('{{minute}} minute average'), {
         minute: minutes[i],
       }),
     }

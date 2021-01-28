@@ -1,12 +1,12 @@
 import CardGrid from '@/Card/src/components/card-grid'
 import FetchStore from '@/Fetch/src/stores'
-import ProgressBar from '@/ProgressBar/src/components'
-import React from 'react'
 import Row from '@/Grid/src/components/row'
-import store from '../stores'
 import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
+import ProgressBar from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import store from '../stores'
 const DiskUsage = observer(() => {
   const { ID } = store
   const { isLoading, data } = FetchStore
@@ -30,7 +30,7 @@ const ServerInfo = observer(() => {
     serverUptime: { days, hours, mins, secs },
   } = store
   const uptime = template(
-    gettext('${days} days ${hours} hours ${mins} mins ${secs} secs'),
+    gettext('{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs'),
     { days, hours, mins, secs }
   )
   const shortItems = [

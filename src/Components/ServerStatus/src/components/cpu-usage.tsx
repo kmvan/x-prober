@@ -1,10 +1,10 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import ProgressBar from '@/ProgressBar/src/components'
-import React from 'react'
-import store from '../stores'
 import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
+import ProgressBar from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import store from '../stores'
 const CpuUsage = observer(() => {
   const { cpuUsage } = store
   const { idle } = cpuUsage
@@ -13,7 +13,7 @@ const CpuUsage = observer(() => {
       <ProgressBar
         title={template(
           gettext(
-            'idle: ${idle} \nnice: ${nice} \nsys: ${sys} \nuser: ${user}'
+            'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
           ),
           cpuUsage
         )}
