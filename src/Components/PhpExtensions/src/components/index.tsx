@@ -1,11 +1,11 @@
-import Alert from '@/Helper/src/components/alert'
 import CardGrid from '@/Card/src/components/card-grid'
 import MultiItemContainer from '@/Card/src/components/multi-item-container'
-import React from 'react'
 import Row from '@/Grid/src/components/row'
-import SearchLink from '@/Helper/src/components/search-link'
-import store from '../stores'
 import { gettext } from '@/Language/src'
+import Alert from '@/Utils/src/components/alert'
+import SearchLink from '@/Utils/src/components/search-link'
+import React from 'react'
+import store from '../stores'
 const { conf } = store
 const shortItems: [string, boolean][] = [
   ['Redis', !!conf?.redis],

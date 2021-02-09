@@ -1,9 +1,9 @@
-import Alert from '@/Helper/src/components/alert'
 import CardGrid from '@/Card/src/components/card-grid'
-import React from 'react'
 import Row from '@/Grid/src/components/row'
-import store from '../stores'
+import Alert from '@/Utils/src/components/alert'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import store from '../stores'
 const Database = observer(() => {
   const { conf } = store
   const shortItems: [string, boolean | string][] = [

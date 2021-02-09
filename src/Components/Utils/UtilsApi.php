@@ -1,8 +1,8 @@
 <?php
 
-namespace InnStudio\Prober\Components\Helper;
+namespace InnStudio\Prober\Components\Utils;
 
-class HelperApi
+class UtilsApi
 {
     public static function jsonDecode($json, $depth = 512, $options = 0)
     {

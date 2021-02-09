@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Xconfig;
 
-use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Utils\UtilsApi;
 
 class XconfigApi
 {
@@ -55,7 +55,7 @@ class XconfigApi
             return;
         }
 
-        $conf = HelperApi::jsonDecode(\file_get_contents(self::getFilePath()));
+        $conf = UtilsApi::jsonDecode(\file_get_contents(self::getFilePath()));
 
         if ( ! $conf) {
             self::$conf = null;

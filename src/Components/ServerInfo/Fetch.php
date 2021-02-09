@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\ServerInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Utils\UtilsApi;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Fetch extends ServerInfoConstants
@@ -21,12 +21,12 @@ class Fetch extends ServerInfoConstants
         }
 
         $items[$this->ID] = array(
-            'serverTime'    => HelperApi::getServerTime(),
-            'serverUptime'  => HelperApi::getServerUptime(),
-            'serverUtcTime' => HelperApi::getServerUtcTime(),
+            'serverTime'    => UtilsApi::getServerTime(),
+            'serverUptime'  => UtilsApi::getServerUptime(),
+            'serverUtcTime' => UtilsApi::getServerUtcTime(),
             'diskUsage'     => array(
-                'value' => HelperApi::getDiskTotalSpace() - HelperApi::getDiskFreeSpace(),
-                'max'   => HelperApi::getDiskTotalSpace(),
+                'value' => UtilsApi::getDiskTotalSpace() - UtilsApi::getDiskFreeSpace(),
+                'max'   => UtilsApi::getDiskTotalSpace(),
             ),
         );
 

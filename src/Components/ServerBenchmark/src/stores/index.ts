@@ -1,6 +1,6 @@
 import ConfigStore, { AppConfigBenchmarkProps } from '@/Config/src/stores'
-import conf from '@/Helper/src/components/conf'
 import { gettext } from '@/Language/src'
+import conf from '@/Utils/src/components/conf'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',

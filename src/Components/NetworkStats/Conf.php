@@ -3,14 +3,14 @@
 namespace InnStudio\Prober\Components\NetworkStats;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Utils\UtilsApi;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends NetworkStatsConstants
 {
     public function __construct()
     {
-        HelperApi::isWin() || EventsApi::on('conf', array($this, 'conf'));
+        UtilsApi::isWin() || EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -20,7 +20,7 @@ class Conf extends NetworkStatsConstants
         }
 
         $conf[$this->ID] = array(
-            'networks'  => HelperApi::getNetworkStats(),
+            'networks'  => UtilsApi::getNetworkStats(),
             'timestamp' => \time(),
         );
 

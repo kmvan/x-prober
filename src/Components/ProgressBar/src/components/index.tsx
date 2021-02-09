@@ -1,9 +1,9 @@
-import formatBytes from '@/Helper/src/components/format-bytes'
-import gradientColors from '@/Helper/src/components/gradient'
+import { GUTTER } from '@/Config/src'
+import formatBytes from '@/Utils/src/components/format-bytes'
+import gradientColors from '@/Utils/src/components/gradient'
+import { linearGradient, rgba } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '@/Config/src'
-import { linearGradient, rgba } from 'polished'
 export interface ProgressBarProps {
   title?: string
   value: number

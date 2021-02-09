@@ -1,5 +1,5 @@
-import hexToRgb from '@/Helper/src/components/hex-to-rgb'
 import { gettext } from '@/Language/src'
+import hexToRgb from '@/Utils/src/components/hex-to-rgb'
 const schemes = {
   default: {
     name: gettext('X Prober'),

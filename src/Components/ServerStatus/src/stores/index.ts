@@ -1,5 +1,5 @@
-import conf from '@/Helper/src/components/conf'
 import FetchStore from '@/Fetch/src/stores'
+import conf from '@/Utils/src/components/conf'
 import { computed, configure, makeObservable } from 'mobx'
 configure({
   enforceActions: 'observed',
