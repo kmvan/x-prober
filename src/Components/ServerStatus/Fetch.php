@@ -3,7 +3,8 @@
 namespace InnStudio\Prober\Components\ServerStatus;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Utils\UtilsApi;
+use InnStudio\Prober\Components\Utils\UtilsCpu;
+use InnStudio\Prober\Components\Utils\UtilsMemory;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Fetch extends ServerStatusConstants
@@ -21,27 +22,27 @@ class Fetch extends ServerStatusConstants
         }
 
         $items[$this->ID] = array(
-            'sysLoad'      => UtilsApi::getSysLoadAvg(),
-            'cpuUsage'     => UtilsApi::getCpuUsage(),
+            'sysLoad'      => UtilsCpu::getLoadAvg(),
+            'cpuUsage'     => UtilsCpu::getUsage(),
             'memRealUsage' => array(
-                'value' => UtilsApi::getMemoryUsage('MemRealUsage'),
-                'max'   => UtilsApi::getMemoryUsage('MemTotal'),
+                'value' => UtilsMemory::getMemoryUsage('MemRealUsage'),
+                'max'   => UtilsMemory::getMemoryUsage('MemTotal'),
             ),
             'memBuffers' => array(
-                'value' => UtilsApi::getMemoryUsage('Buffers'),
-                'max'   => UtilsApi::getMemoryUsage('MemUsage'),
+                'value' => UtilsMemory::getMemoryUsage('Buffers'),
+                'max'   => UtilsMemory::getMemoryUsage('MemUsage'),
             ),
             'memCached' => array(
-                'value' => UtilsApi::getMemoryUsage('Cached'),
-                'max'   => UtilsApi::getMemoryUsage('MemUsage'),
+                'value' => UtilsMemory::getMemoryUsage('Cached'),
+                'max'   => UtilsMemory::getMemoryUsage('MemUsage'),
             ),
             'swapUsage' => array(
-                'value' => UtilsApi::getMemoryUsage('SwapUsage'),
-                'max'   => UtilsApi::getMemoryUsage('SwapTotal'),
+                'value' => UtilsMemory::getMemoryUsage('SwapUsage'),
+                'max'   => UtilsMemory::getMemoryUsage('SwapTotal'),
             ),
             'swapCached' => array(
-                'value' => UtilsApi::getMemoryUsage('SwapCached'),
-                'max'   => UtilsApi::getMemoryUsage('SwapUsage'),
+                'value' => UtilsMemory::getMemoryUsage('SwapCached'),
+                'max'   => UtilsMemory::getMemoryUsage('SwapUsage'),
             ),
         );
 

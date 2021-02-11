@@ -4,6 +4,7 @@ namespace InnStudio\Prober\Components\NetworkStats;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Utils\UtilsApi;
+use InnStudio\Prober\Components\Utils\UtilsNetwork;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends NetworkStatsConstants
@@ -20,7 +21,7 @@ class Conf extends NetworkStatsConstants
         }
 
         $conf[$this->ID] = array(
-            'networks'  => UtilsApi::getNetworkStats(),
+            'networks'  => UtilsNetwork::getStats(),
             'timestamp' => \time(),
         );
 
