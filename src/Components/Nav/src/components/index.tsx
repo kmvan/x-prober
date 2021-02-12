@@ -88,20 +88,22 @@ const Nav = observer(() => {
   }, [])
   return (
     <StyledNav>
-      {CardStore.cards.map(({ id, title, tinyTitle, enabled = true }) => {
-        if (!enabled) {
-          return null
+      {CardStore.enabledCards.map(
+        ({ id, title, tinyTitle, enabled = true }) => {
+          if (!enabled) {
+            return null
+          }
+          return (
+            <StyledNavLink
+              key={id}
+              onClick={(e) => onClick(e, id)}
+              href={`#${id}`}>
+              <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
+              <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
+            </StyledNavLink>
+          )
         }
-        return (
-          <StyledNavLink
-            key={id}
-            onClick={(e) => onClick(e, id)}
-            href={`#${id}`}>
-            <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
-            <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
-          </StyledNavLink>
-        )
-      })}
+      )}
     </StyledNav>
   )
 })
