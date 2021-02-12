@@ -3,11 +3,13 @@
 namespace InnStudio\Prober\Components\ServerInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\Restful\HttpStatus;
 use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Utils\UtilsLocation;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class ServerInitIpv4 extends ServerInfoConstants
+class ServerLocationIpv4 extends ServerInfoConstants
 {
     public function __construct()
     {
@@ -16,7 +18,7 @@ class ServerInitIpv4 extends ServerInfoConstants
 
     public function filter($action)
     {
-        if ('serverIpv4' !== $action) {
+        if ('serverLocationIpv4' !== $action) {
             return $action;
         }
 
@@ -29,8 +31,12 @@ class ServerInitIpv4 extends ServerInfoConstants
         }
 
         $response = new RestfulResponse();
-        $response->setData([
-            'ip' => UtilsServerIp::getV4(),
-        ])->dieJson();
+        $ip       = UtilsServerIp::getV4();
+
+        if ( ! $ip) {
+            $response->setStatus(HttpStatus::$BAD_REQUEST)->dieJson();
+        }
+
+        $response->setData(UtilsLocation::getLocation($ip))->dieJson();
     }
 }

@@ -23,16 +23,26 @@ export interface ServerInfoDataProps {
   serverUtcTime: string
   diskUsage: ServerInfoDiskUsageProps
 }
+export interface locationProps {
+  country: string
+  region: string
+  city: string
+  flag: string
+}
 class Store {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
   @observable public serverIpv4: string = gettext('Loading...')
   @observable public serverIpv6: string = gettext('Loading...')
+  @observable public serverLocation: locationProps | null = null
   public constructor() {
     makeObservable(this)
     this.fetchServerIpv4()
     this.fetchServerIpv6()
+  }
+  @action public setServerLocation = (serverLocation: serverLocationProps) => {
+    this.serverLocation = serverLocation
   }
   @action public fetchServerIpv4 = async () => {
     const { data, status } = await serverFetch(`serverIpv4`)

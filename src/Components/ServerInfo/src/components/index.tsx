@@ -6,6 +6,7 @@ import { observer } from 'mobx-react-lite'
 import React from 'react'
 import store from '../stores'
 import ServerDiskUsage from './disk-usage'
+import ServerLocation from './server-location'
 const ServerInfo = observer(() => {
   const {
     conf,
@@ -24,6 +25,7 @@ const ServerInfo = observer(() => {
     [gettext('Server software'), conf?.serverSoftware],
   ]
   const longItems = [
+    [gettext('Server location (IPv4)'), <ServerLocation />],
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
     [gettext('Server OS'), conf?.serverOs],
     [gettext('Script path'), conf?.scriptPath],
