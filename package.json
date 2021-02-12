@@ -6,8 +6,8 @@
     "dev": "cross-env webpack --config webpack.config.js --progress",
     "dev:php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
     "build": "cross-env webpack --config webpack.config.prod.js --progress",
-    "build:php": "php-cs-fixer fix ./src --config=.php_cs53; php ./Make.php build; php -S localhost:8000/prober.php -t dist",
-    "build:php-debug": "php ./Make.php build debug; php -S localhost:8000/prober.php -t dist",
+    "build:php": "php-cs-fixer fix ./src --config=.php_cs53; php ./Make.php build; php -S localhost:8001 -t dist",
+    "build:php-debug": "php ./Make.php build debug; php -S localhost:8001 -t dist",
     "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php_cs53"
   },
   "browserslist": [
