@@ -23,5 +23,4 @@ const useIp = (type: 4 | 6): useIpProps => {
   }, [])
   return data
 }
-
 export default useIp
