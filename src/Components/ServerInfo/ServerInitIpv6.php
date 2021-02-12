@@ -11,7 +11,7 @@ class ServerInitIpv6 extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -29,8 +29,8 @@ class ServerInitIpv6 extends ServerInfoConstants
         }
 
         $response = new RestfulResponse();
-        $response->setData([
+        $response->setData(array(
             'ip' => UtilsServerIp::getV6(),
-        ])->dieJson();
+        ))->dieJson();
     }
 }

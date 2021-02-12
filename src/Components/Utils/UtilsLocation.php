@@ -22,10 +22,10 @@ class UtilsLocation
 
         if (\function_exists('\curl_init')) {
             $ch = \curl_init();
-            \curl_setopt_array($ch, [
+            \curl_setopt_array($ch, array(
                 \CURLOPT_URL            => $url,
                 \CURLOPT_RETURNTRANSFER => true,
-            ]);
+            ));
             $content = \curl_exec($ch);
             \curl_close($ch);
         } else {
@@ -38,11 +38,11 @@ class UtilsLocation
             return null;
         }
 
-        return [
+        return array(
             'country' => $item['country_name'] ?? '',
             'region'  => $item['region_name'] ?? '',
             'city'    => $item['city'] ?? '',
             'flag'    => $item['location']['country_flag_emoji'] ?? '',
-        ];
+        );
     }
 }

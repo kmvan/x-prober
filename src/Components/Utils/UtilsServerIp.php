@@ -18,18 +18,18 @@ class UtilsServerIp
     {
         $content = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
 
-        return \filter_var($content, \FILTER_VALIDATE_IP, [
+        return \filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
-        ]) ?: '';
+        )) ?: '';
     }
 
     private static function getV6Local()
     {
         $content = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
 
-        return \filter_var($content, \FILTER_VALIDATE_IP, [
+        return \filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV6,
-        ]) ?: '';
+        )) ?: '';
     }
 
     private static function getV4ViaInnStudioCom()
@@ -58,18 +58,18 @@ class UtilsServerIp
 
         if (\function_exists('\curl_init')) {
             $ch = \curl_init();
-            \curl_setopt_array($ch, [
+            \curl_setopt_array($ch, array(
                 \CURLOPT_URL            => $url,
                 \CURLOPT_RETURNTRANSFER => true,
-            ]);
+            ));
             $content = \curl_exec($ch);
             \curl_close($ch);
         } else {
             $content = \file_get_contents($url);
         }
 
-        return (string) \filter_var($content, \FILTER_VALIDATE_IP, [
+        return (string) \filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => 6 === $type ? \FILTER_FLAG_IPV6 : \FILTER_FLAG_IPV4,
-        ]) ?: '';
+        )) ?: '';
     }
 }

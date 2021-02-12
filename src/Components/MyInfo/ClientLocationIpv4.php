@@ -12,7 +12,7 @@ class ClientLocationIpv4 extends MyInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', [$this, 'filter']);
+        EventsApi::on('init', array($this, 'filter'));
     }
 
     public function filter($action)
@@ -26,9 +26,9 @@ class ClientLocationIpv4 extends MyInfoConstants
         }
 
         $response = new RestfulResponse();
-        $ip       = \filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, [
+        $ip       = \filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
-        ]);
+        ));
 
         if ( ! $ip) {
             $response->setStatus(HttpStatus::$BAD_REQUEST)->dieJson();
