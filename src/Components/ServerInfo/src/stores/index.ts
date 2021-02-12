@@ -1,6 +1,9 @@
+import serverFetch from '@/Fetch/src/server-fetch'
 import FetchStore from '@/Fetch/src/stores'
+import { gettext } from '@/Language/src'
+import { OK } from '@/Restful/src/http-status'
 import conf from '@/Utils/src/components/conf'
-import { computed, configure, makeObservable } from 'mobx'
+import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
@@ -24,8 +27,28 @@ class Store {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
+  @observable public serverIpv4: string = gettext('Loading...')
+  @observable public serverIpv6: string = gettext('Loading...')
   public constructor() {
     makeObservable(this)
+    this.fetchServerIpv4()
+    this.fetchServerIpv6()
+  }
+  @action public fetchServerIpv4 = async () => {
+    const { data, status } = await serverFetch(`serverIpv4`)
+    if (data?.ip && status === OK) {
+      this.serverIpv4 = data.ip
+    } else {
+      this.serverIpv4 = '-'
+    }
+  }
+  @action public fetchServerIpv6 = async () => {
+    const { data, status } = await serverFetch(`serverIpv6`)
+    if (data?.ip && status === OK) {
+      this.serverIpv6 = data.ip
+    } else {
+      this.serverIpv6 = '-'
+    }
   }
   @computed
   public get serverTime(): string {

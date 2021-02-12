@@ -1,29 +1,11 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import FetchStore from '@/Fetch/src/stores'
 import Row from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
-import ProgressBar from '@/ProgressBar/src/components'
 import template from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import store from '../stores'
-const DiskUsage = observer(() => {
-  const { ID } = store
-  const { isLoading, data } = FetchStore
-  let {
-    conf: {
-      diskUsage: { value, max },
-    },
-  } = store
-  if (!isLoading) {
-    value = data?.[ID]?.diskUsage?.value
-    max = data?.[ID]?.diskUsage?.max
-  }
-  if (!value || !max) {
-    return <>{gettext('Unavailable')}</>
-  }
-  return <ProgressBar value={value} max={max} isCapacity />
-})
+import ServerDiskUsage from './disk-usage'
 const ServerInfo = observer(() => {
   const {
     conf,
@@ -37,7 +19,8 @@ const ServerInfo = observer(() => {
     [gettext('Server name'), conf?.serverName],
     [gettext('Server time'), store.serverTime],
     [gettext('Server uptime'), uptime],
-    [gettext('Server IP'), conf?.serverIp],
+    [gettext('Server IPv4'), store.serverIpv4],
+    [gettext('Server IPv6'), store.serverIpv6],
     [gettext('Server software'), conf?.serverSoftware],
     [gettext('PHP version'), conf?.phpVersion],
   ]
@@ -45,7 +28,7 @@ const ServerInfo = observer(() => {
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
     [gettext('Server OS'), conf?.serverOs],
     [gettext('Script path'), conf?.scriptPath],
-    [gettext('Disk usage'), <DiskUsage />],
+    [gettext('Disk usage'), <ServerDiskUsage />],
   ]
   return (
     <Row>
