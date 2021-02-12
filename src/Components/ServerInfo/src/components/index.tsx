@@ -22,7 +22,6 @@ const ServerInfo = observer(() => {
     [gettext('Server IPv4'), store.serverIpv4],
     [gettext('Server IPv6'), store.serverIpv6],
     [gettext('Server software'), conf?.serverSoftware],
-    [gettext('PHP version'), conf?.phpVersion],
   ]
   const longItems = [
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
