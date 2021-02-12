@@ -41,23 +41,29 @@ class Store {
     this.fetchServerIpv4()
     this.fetchServerIpv6()
   }
-  @action public setServerLocation = (serverLocation: serverLocationProps) => {
+  @action public setServerLocation = (serverLocation: locationProps) => {
     this.serverLocation = serverLocation
   }
-  @action public fetchServerIpv4 = async () => {
+  @action public setServerIpv4 = (serverIpv4: string) => {
+    this.serverIpv4 = serverIpv4
+  }
+  @action public setServerIpv6 = (serverIpv6: string) => {
+    this.serverIpv6 = serverIpv6
+  }
+  public fetchServerIpv4 = async () => {
     const { data, status } = await serverFetch(`serverIpv4`)
     if (data?.ip && status === OK) {
-      this.serverIpv4 = data.ip
+      this.setServerIpv4(data.ip)
     } else {
-      this.serverIpv4 = '-'
+      this.setServerIpv4('-')
     }
   }
-  @action public fetchServerIpv6 = async () => {
+  public fetchServerIpv6 = async () => {
     const { data, status } = await serverFetch(`serverIpv6`)
     if (data?.ip && status === OK) {
-      this.serverIpv6 = data.ip
+      this.setServerIpv6(data.ip)
     } else {
-      this.serverIpv6 = '-'
+      this.setServerIpv6('-')
     }
   }
   @computed

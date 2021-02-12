@@ -3,14 +3,13 @@
 namespace InnStudio\Prober\Components\MyInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Utils\UtilsClientIp;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends MyInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', array($this, 'conf'));
+        EventsApi::on('conf', [$this, 'conf']);
     }
 
     public function conf(array $conf)
@@ -19,10 +18,9 @@ class Conf extends MyInfoConstants
             return $conf;
         }
 
-        $conf[$this->ID] = array(
-            'ip'          => UtilsClientIp::getClientIp(),
+        $conf[$this->ID] = [
             'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
-        );
+        ];
 
         return $conf;
     }

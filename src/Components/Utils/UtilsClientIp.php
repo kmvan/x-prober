@@ -4,9 +4,9 @@ namespace InnStudio\Prober\Components\Utils;
 
 class UtilsClientIp
 {
-    public static function getClientIp()
+    public static function getV4()
     {
-        $keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
+        $keys = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
 
         foreach ($keys as $key) {
             if ( ! isset($_SERVER[$key])) {

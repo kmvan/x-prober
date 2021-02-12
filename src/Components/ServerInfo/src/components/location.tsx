@@ -5,30 +5,30 @@ import ToastStore from '@/Toast/src/stores'
 import { observer } from 'mobx-react-lite'
 import React, { MouseEvent, useCallback, useState } from 'react'
 import styled from 'styled-components'
-import store, { locationProps } from '../stores'
-const StyledServerLocation = styled.a``
-const ServerLocation = observer(() => {
-  const { serverIpv4 } = store
+import { locationProps } from '../stores'
+interface ServerLocationProps {
+  action: string
+}
+const StyledLocation = styled.a``
+const Location = observer(({ action }: ServerLocationProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [location, setLocation] = useState<locationProps | null>(null)
   const onClick = useCallback(
-    (e: MouseEvent<HTMLAnchorElement>) => {
-      ;(async () => {
-        e.preventDefault()
-        if (isLoading) {
-          return
-        }
-        setIsLoading(true)
-        const { data, status } = await serverFetch('serverLocationIpv4')
-        setIsLoading(false)
-        if (data && status === OK) {
-          setLocation(data)
-        } else {
-          ToastStore.open(gettext('Can not fetch location.'))
-        }
-      })()
+    async (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault()
+      if (isLoading) {
+        return
+      }
+      setIsLoading(true)
+      const { data, status } = await serverFetch(action)
+      setIsLoading(false)
+      if (data && status === OK) {
+        setLocation(data)
+      } else {
+        ToastStore.open(gettext('Can not fetch location.'))
+      }
     },
-    [serverIpv4, isLoading]
+    [isLoading]
   )
   const loadingText = isLoading ? gettext('Loading...') : ''
   let clickText = ''
@@ -38,14 +38,14 @@ const ServerLocation = observer(() => {
       : gettext('👆 Click to fetch')
   }
   return (
-    <StyledServerLocation
+    <StyledLocation
       onClick={onClick}
       title={gettext(
         'The author only has 10,000 API requests per month, please do not abuse it.'
       )}>
       {loadingText}
       {clickText}
-    </StyledServerLocation>
+    </StyledLocation>
   )
 })
-export default ServerLocation
+export default Location
