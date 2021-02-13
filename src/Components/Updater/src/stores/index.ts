@@ -41,7 +41,7 @@ class Store {
     }
     if (this.newVersion) {
       return template(
-        gettext('✨ Found update! Version ${oldVersion} → ${newVersion}'),
+        gettext('✨ Found update! Version {{oldVersion}} → {{newVersion}}'),
         {
           oldVersion: BootstrapStore.version,
           newVersion: this.newVersion,
