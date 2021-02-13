@@ -3,7 +3,6 @@ import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { device } from '@/Style/src/components/devices'
 import template from '@/Utils/src/components/template'
-import { rgba } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
 import store from '../stores'
@@ -20,13 +19,11 @@ export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
 `
 export const StyledSysLoadGroupItem = styled.span`
   margin-right: 0.5rem;
-  background: ${({ theme }) => rgba(theme.colorDark, 0.75)};
-  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => theme['sysLoad.bg']};
+  color: ${({ theme }) => theme['sysLoad.fg']};
   padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
-  font-family: Arial Black;
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
-  box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+  font-family: 'Arial Black';
   font-weight: 700;
   @media ${device('tablet')} {
     padding: calc(${GUTTER} / 10) ${GUTTER};

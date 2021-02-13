@@ -31,7 +31,7 @@ interface StyledNetworkStatsDataProps {
 const StyledNetworkStatsData = styled.div<StyledNetworkStatsDataProps>`
   flex: 0 0 50%;
   color: ${({ isUpload, theme }) =>
-    isUpload ? theme.colorUpload : theme.colorDownload};
+    isUpload ? theme['network.stats.upload'] : theme['network.stats.download']};
 `
 const StyledNetworkStatsTotal = styled.div``
 const StyledNetworkStatsRate = styled.div`

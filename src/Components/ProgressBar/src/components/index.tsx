@@ -1,7 +1,7 @@
 import { GUTTER } from '@/Config/src'
 import formatBytes from '@/Utils/src/components/format-bytes'
 import gradientColors from '@/Utils/src/components/gradient'
-import { linearGradient, rgba } from 'polished'
+import { rgba } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
 export interface ProgressBarProps {
@@ -21,10 +21,10 @@ const StyledProgressOverview = styled.div`
   bottom: 0;
   z-index: 1;
   font-weight: 700;
-  color: ${({ theme }) => theme.colorGray};
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
+  color: ${({ theme }) => theme['progress.fg']};
   line-height: 2rem;
   font-family: 'Arial Black';
+  text-shadow: 0 1px 1px #000;
 `
 const StyledProgressPercent = styled(StyledProgressOverview)`
   left: ${GUTTER};
@@ -35,9 +35,8 @@ const StyledProgressShell = styled.div`
   display: flex;
   width: 100%;
   height: 2rem;
-  background: ${({ theme }) => theme.colorDark};
+  background: ${({ theme }) => theme['progress.bg']};
   border-radius: ${GUTTER};
-  box-shadow: inset 0 10px 20px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
   padding: 0.3rem;
 `
 interface StyledProgressValueProps {
@@ -56,10 +55,10 @@ const StyledProgressValue = styled.div.attrs(
   position: relative;
   transition: width 0.5s;
   border-radius: ${GUTTER};
-  background: #00cc00;
-  box-shadow: inset 0 -5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.4)},
-    0 5px 10px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+  background-color: ${({ theme }) => theme['progress.value.bg']};
   overflow: hidden;
+  box-shadow: ${({ theme }) =>
+    theme.isDark ? `inset 0 0 0 10px ${rgba('#000', 0.75)}` : 'unset'};
   ::after,
   ::before {
     position: absolute;
@@ -68,18 +67,11 @@ const StyledProgressValue = styled.div.attrs(
     height: 50%;
     width: 100%;
     border-radius: 0 0 50% 50%;
-    ${linearGradient({
-      colorStops: ['#fff', rgba('#fff', 0.3)],
-      fallback: 'transparent',
-    })};
+    background: ${({ theme }) => theme['progress.value.after.bg']};
     opacity: 0.3;
   }
   ::before {
-    ${linearGradient({
-      colorStops: [rgba('#fff', 0.1), rgba('#fff', 0.5), rgba('#fff', 0.1)],
-      toDirection: 'to top right',
-      fallback: 'transparent',
-    })};
+    background: ${({ theme }) => theme['progress.value.before.bg']};
     opacity: 1;
     height: 1px;
     border-radius: 0;

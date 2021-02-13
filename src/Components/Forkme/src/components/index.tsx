@@ -1,10 +1,10 @@
 import BootstrapStore from '@/Bootstrap/src/stores'
+import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
+import { gettext } from '@/Language/src'
+import { device } from '@/Style/src/components/devices'
+import { rgba } from 'polished'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
-import { device } from '@/Style/src/components/devices'
-import { gettext } from '@/Language/src'
-import { rgba } from 'polished'
 const slideIn = keyframes`
   from{
     transform: rotate(-45deg) translate3d(-28%, -270%, 0);
@@ -23,12 +23,12 @@ const StyledForkmeLink = styled.a`
   position: fixed;
   top: 0;
   left: 0;
-  background: ${({ theme }) => theme.colorDark};
-  color: ${({ theme }) => rgba(theme.colorGray, 0.85)};
+  background: ${({ theme }) => theme['starMe.bg']};
+  color: ${({ theme }) => theme['starMe.fg']};
   font-family: Arial Black;
   padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
   font-size: calc(${GUTTER} * 0.7);
-  box-shadow: 0 3px 5px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+  box-shadow: 0 3px 5px ${({ theme }) => rgba(theme['starMe.bg'], 0.5)};
   z-index: 2;
   animation: ${slideIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
@@ -36,6 +36,11 @@ const StyledForkmeLink = styled.a`
     font-size: 1rem;
     top: calc(${GUTTER} / 2);
     left: calc(${GUTTER} / 2);
+  }
+  :hover {
+    color: ${({ theme }) => theme['starMe.hover.fg']};
+    background: ${({ theme }) => theme['starMe.hover.bg']};
+    text-decoration: none;
   }
   ::after,
   ::before {
@@ -46,19 +51,15 @@ const StyledForkmeLink = styled.a`
     width: 100%;
     background: linear-gradient(
       90deg,
-      ${({ theme }) => rgba(theme.colorGray, 0)},
-      #fff,
-      ${({ theme }) => rgba(theme.colorGray, 0)}
+      ${({ theme }) => rgba(theme['starMe.bg'], 0)},
+      ${({ theme }) => theme['starMe.fg']},
+      ${({ theme }) => rgba(theme['starMe.bg'], 0)}
     );
     content: '';
   }
   ::after {
     top: auto;
     bottom: 1px;
-  }
-  :hover {
-    color: ${({ theme }) => theme.colorGray};
-    text-decoration: none;
   }
 `
 const Forkme = () => {

@@ -1,7 +1,6 @@
 import { GUTTER } from '@/Config/src'
 import Grid, { GridProps } from '@/Grid/src/components/grid'
 import { device } from '@/Style/src/components/devices'
-import { rgba } from 'polished'
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 export interface CardGridProps extends GridProps {
@@ -13,14 +12,9 @@ const StyledCardGroup = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px dashed ${({ theme }) => theme['card.border']};
   :hover {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      ${rgba('#000', 0.1)},
-      transparent
-    );
+    background: ${({ theme }) => theme['card.hover.bg']};
   }
 `
 const StyledCardTitle = styled.div`

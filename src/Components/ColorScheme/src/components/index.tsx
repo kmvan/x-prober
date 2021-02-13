@@ -1,10 +1,9 @@
-import React from 'react'
-import schemes from '../stores/colors'
-import store from '../stores'
-import styled, { keyframes } from 'styled-components'
 import { ANIMATION_DURATION_SC, BORDER_RADIUS, GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
-import { rgba } from 'polished'
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+import store from '../stores'
+import colorSchemes from '../stores/color-schemes'
 const fadeIn = keyframes`
   from{
     transform: translate3d(0, -10%, 0);
@@ -22,15 +21,17 @@ const StyledColorSchemeLink = styled.a<StyledColorSchemeLinkProps>`
   position: relative;
   flex: 0 0 calc(${GUTTER} * 2);
   height: ${GUTTER};
-  margin-right: 1px;
-  box-shadow: inset 0 14px 5px -8px ${rgba('#000', 0.1)};
   transition: ${ANIMATION_DURATION_SC}s;
   :first-child {
-    border-radius: ${BORDER_RADIUS} 0 0 ${BORDER_RADIUS};
+    border-top-left-radius: ${BORDER_RADIUS};
+    border-bottom-left-radius: ${BORDER_RADIUS};
   }
   :last-child {
-    border-radius: 0 ${BORDER_RADIUS} ${BORDER_RADIUS} 0;
-    margin-right: 0;
+    border-top-right-radius: ${BORDER_RADIUS};
+    border-bottom-right-radius: ${BORDER_RADIUS};
+  }
+  & + & {
+    margin-left: 1px;
   }
   :hover {
     transform: scale3d(1.5, 1.5, 1);
@@ -47,12 +48,12 @@ const StyledColorScheme = styled.div`
 const ColorScheme = observer(() => {
   return (
     <StyledColorScheme>
-      {Object.entries(schemes).map(([schemeId, { name, colorDark }]) => (
+      {Object.entries(colorSchemes).map(([schemeId, { name, color }]) => (
         <StyledColorSchemeLink
           isActive={schemeId === store.schemeId}
           title={name}
           key={schemeId}
-          style={{ backgroundColor: colorDark }}
+          style={{ background: color }}
           onClick={() => store.setSchemeId(schemeId)}
         />
       ))}

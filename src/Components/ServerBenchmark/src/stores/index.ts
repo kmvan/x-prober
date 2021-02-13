@@ -17,7 +17,7 @@ class Store {
   public readonly enabledMyServerBenchmark: boolean = !this.conf
     ?.disabledMyServerBenchmark
   @observable public isLoading: boolean = false
-  @observable public linkText: string = gettext('Click to test')
+  @observable public linkText: string = gettext('👆 Click to test')
   @observable public marks: MarksProps = {
     hash: 0,
     intLoop: 0,

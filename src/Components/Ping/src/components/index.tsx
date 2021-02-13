@@ -14,16 +14,15 @@ import store from '../stores'
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
-  color: ${({ theme }) => theme.colorGray};
-  background: ${({ theme }) => theme.colorDark};
+  color: ${({ theme }) => theme['ping.button.fg']};
+  background: ${({ theme }) => theme['ping.button.bg']};
   border-radius: ${BORDER_RADIUS};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   margin-right: ${GUTTER};
   :hover,
   :active {
     text-decoration: none;
-    color: ${({ theme }) => theme.colorGray};
+    color: ${({ theme }) => theme['ping.button.fg']};
     opacity: 0.9;
   }
   :active {
@@ -34,16 +33,14 @@ const StyledPingBtn = styled.a`
 const StyledPingItemContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  background: ${({ theme }) => lighten(0.01, theme.colorDark)};
-  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => lighten(0.01, theme['ping.result.bg'])};
+  color: ${({ theme }) => theme['ping.result.fg']};
   padding: 0.5rem ${GUTTER};
   margin: 0.5rem 0 0;
   max-height: 8rem;
   overflow-y: auto;
   border-radius: ${GUTTER} ${GUTTER} 0 0;
-  box-shadow: inset 0 10px 10px ${({ theme }) => rgba(theme.colorDark, 0.1)};
   list-style-type: none;
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   ::-webkit-scrollbar-track {
     background-color: transparent;
   }
@@ -53,7 +50,7 @@ const StyledPingItemContainer = styled.ul`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: ${GUTTER} 0 0 ${GUTTER};
-    background-color: ${({ theme }) => rgba(theme.colorGray, 0.5)};
+    background-color: ${({ theme }) => rgba(theme['ping.result.bg'], 0.5)};
     opacity: 0;
     :hover {
       opacity: 1;
@@ -92,12 +89,12 @@ interface StyledPingResultProps {
 const StyledPingResult = styled.div<StyledPingResultProps>`
   display: flex;
   align-items: center;
-  background: ${({ theme }) => theme.colorDark};
-  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => theme['ping.result.bg']};
+  color: ${({ theme }) => theme['ping.result.fg']};
   border-radius: ${({ hasPing }) => (hasPing ? 0 : GUTTER)}
     ${({ hasPing }) => (hasPing ? 0 : GUTTER)} ${GUTTER} ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
-  border-top: 1px solid ${({ theme }) => rgba(theme.colorGray, 0.1)};
+  border-top: 1px solid ${({ theme }) => rgba(theme['ping.result.fg'], 0.1)};
   flex-wrap: wrap;
   justify-content: space-between;
 `

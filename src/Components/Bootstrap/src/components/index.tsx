@@ -21,7 +21,6 @@ import Title from '@/Title/src/components'
 import Toast from '@/Toast/src/components'
 import ready from '@/Utils/src/components/ready'
 import { observer } from 'mobx-react-lite'
-import { rgba } from 'polished'
 import React from 'react'
 import { render } from 'react-dom'
 import styled, { ThemeProvider } from 'styled-components'
@@ -29,8 +28,7 @@ import store from '../stores'
 import Normalize from './style'
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
-  background: ${({ theme }) => theme.colorGray};
-  box-shadow: inset 0 0 5px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+  background: ${({ theme }) => theme['app.bg']};
   /* notch right angle square */
   ::before,
   ::after {
@@ -39,7 +37,7 @@ const StyledApp = styled.div`
     top: 0;
     right: 0;
     bottom: calc(${GUTTER} * 2);
-    border: ${GUTTER} solid ${({ theme }) => theme.colorDark};
+    border: ${GUTTER} solid ${({ theme }) => theme['app.border']};
     pointer-events: none;
     z-index: 1;
     content: '';

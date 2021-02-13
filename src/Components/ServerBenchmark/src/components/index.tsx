@@ -180,7 +180,7 @@ const ServerBenchmark = observer(() => {
     if (status === OK) {
       if (marks) {
         setMarks(marks)
-        setLinkText(gettext('Click to test'))
+        setLinkText(gettext('👆 Click to test'))
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }

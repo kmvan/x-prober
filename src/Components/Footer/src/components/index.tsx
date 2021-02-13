@@ -9,22 +9,21 @@ import React from 'react'
 import styled from 'styled-components'
 import store from '../stores'
 const StyledFooter = styled.div`
-  background: ${({ theme }) => theme.colorDark};
-  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => theme['footer.bg']};
+  color: ${({ theme }) => theme['footer.fg']};
   width: 100%;
   border-radius: 10rem;
   text-align: center;
   padding: calc(${GUTTER} / 2) ${GUTTER};
   margin: calc(${GUTTER} * 1.5) auto;
   word-break: normal;
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   @media ${device('tablet')} {
     width: 60%;
   }
   a {
-    color: ${({ theme }) => theme.colorGray};
+    color: ${({ theme }) => theme['footer.fg']};
     :hover {
-      color: ${({ theme }) => theme.colorGray};
+      color: ${({ theme }) => theme['footer.fg']};
     }
   }
 `

@@ -2,7 +2,6 @@ import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { device } from '@/Style/src/components/devices'
 import { observer } from 'mobx-react-lite'
-import { rgba } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
 import store from '../stores'
@@ -11,14 +10,11 @@ interface StyleArrowProps {
 }
 const StyledFieldset = styled.fieldset`
   position: relative;
-  border: 5px solid #eee;
+  border: 5px solid ${({ theme }) => theme['card.border']};
   border-radius: calc(${GUTTER} * 1.5);
-  background: linear-gradient(${rgba('#000', 0.01)}, #fff);
+  background: ${({ theme }) => theme['card.bg']};
   margin-bottom: calc(${GUTTER} * 1.5);
   padding: calc(${GUTTER} * 1.5) 0 0;
-  box-shadow: -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)},
-    1px 1px 0 hsla(0, 0%, 100%, 0.5), inset 1px 1px 0 hsla(0, 0%, 100%, 0.5),
-    inset -1px -1px 0 ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
 `
 const StyledLegend = styled.legend`
   display: flex;
@@ -28,12 +24,11 @@ const StyledLegend = styled.legend`
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  background: ${({ theme }) => theme.colorDark};
+  background: ${({ theme }) => theme['card.legend.bg']};
   padding: 0.5rem 1rem;
   border-radius: 5rem;
-  color: ${({ theme }) => theme.colorGray};
+  color: ${({ theme }) => theme['card.legend.fg']};
   margin: 0 auto;
-  text-shadow: 0 1px 1px ${({ theme }) => theme.colorDark};
   white-space: nowrap;
 `
 const StyledBody = styled.div`
@@ -43,7 +38,7 @@ const StyledBody = styled.div`
   }
 `
 const StyleArrow = styled.a<StyleArrowProps>`
-  color: ${({ theme }) => theme.colorGray};
+  color: ${({ theme }) => theme['card.legend.fg']};
   padding: 0 0.5rem;
   cursor: ${({ isHidden }) => (isHidden ? 'not-allowed' : 'pointer')};
   opacity: ${({ isHidden }) => (isHidden ? '0.1' : '0.5')};
@@ -51,7 +46,7 @@ const StyleArrow = styled.a<StyleArrowProps>`
   :hover {
     text-decoration: none;
     opacity: ${({ isHidden }) => (isHidden ? '0.1' : '1')};
-    color: ${({ theme }) => theme.colorGray};
+    color: ${({ theme }) => theme['card.legend.fg']};
   }
 `
 const Cards = observer(() => {
