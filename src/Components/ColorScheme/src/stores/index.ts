@@ -1,24 +1,8 @@
-import schemes from './colors'
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
+import { action, computed, configure, makeObservable, observable } from 'mobx'
+import colorSchemes from './color-schemes'
 configure({
   enforceActions: 'observed',
 })
-export interface ColorSchemeProps {
-  colorDark: string
-  colorDarkDeep: string
-  colorGray: string
-  colorDownload: string
-  colorUpload: string
-  textShadowWithDarkBg: string
-  textShadowWithLightBg: string
-  colorDarkRgb: string
-}
 class Store {
   public readonly ID = 'colorScheme'
   private readonly STORAGE_ID = 'schemeId'
@@ -32,8 +16,8 @@ class Store {
     this.setStorageSchemeId(schemeId)
   }
   @computed
-  public get scheme(): ColorSchemeProps {
-    return schemes?.[this.schemeId] || schemes.default
+  public get scheme() {
+    return colorSchemes?.[this.schemeId] ?? colorSchemes.default
   }
   private getStorageSchemeId(): string {
     return localStorage.getItem(this.STORAGE_ID) || 'default'

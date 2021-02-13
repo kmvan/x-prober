@@ -1,6 +1,6 @@
 import ConfigStore, { AppConfigBenchmarkProps } from '@/Config/src/stores'
-import conf from '@/Helper/src/components/conf'
 import { gettext } from '@/Language/src'
+import conf from '@/Utils/src/components/conf'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
@@ -17,7 +17,7 @@ class Store {
   public readonly enabledMyServerBenchmark: boolean = !this.conf
     ?.disabledMyServerBenchmark
   @observable public isLoading: boolean = false
-  @observable public linkText: string = gettext('Click to test')
+  @observable public linkText: string = gettext('👆 Click to test')
   @observable public marks: MarksProps = {
     hash: 0,
     intLoop: 0,

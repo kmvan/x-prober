@@ -3,14 +3,15 @@
 namespace InnStudio\Prober\Components\NetworkStats;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Utils\UtilsApi;
+use InnStudio\Prober\Components\Utils\UtilsNetwork;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Fetch extends NetworkStatsConstants
 {
     public function __construct()
     {
-        if ( ! HelperApi::isWin()) {
+        if ( ! UtilsApi::isWin()) {
             EventsApi::on('fetch', array($this, 'filter'));
             EventsApi::on('nodes', array($this, 'filter'));
         }
@@ -23,7 +24,7 @@ class Fetch extends NetworkStatsConstants
         }
 
         $items[$this->ID] = array(
-            'networks'  => HelperApi::getNetworkStats(),
+            'networks'  => UtilsNetwork::getStats(),
             'timestamp' => \time(),
         );
 

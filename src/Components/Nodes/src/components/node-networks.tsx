@@ -3,18 +3,17 @@ import NetworksStatsItem, {
   StyledNetworkIdRow,
 } from '@/NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
-import { rgba } from 'polished'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
-  background: ${({ theme }) => rgba(theme.colorDark, 0.1)};
-  color: ${({ theme }) => theme.colorDark};
+  background: ${({ theme }) => theme['network.node.bg']};
+  color: ${({ theme }) => theme['network.node.fg']};
   padding: ${GUTTER};
   margin-bottom: ${GUTTER};
 `
 const StyledNodeGroupNetwork = styled.div`
-  border-bottom: 1px dashed ${({ theme }) => rgba(theme.colorDark, 0.1)};
+  border-bottom: 1px dashed ${({ theme }) => theme['network.node.border']};
   margin-bottom: calc(${GUTTER} / 2);
   padding-bottom: calc(${GUTTER} / 2);
   &:last-child {
@@ -24,12 +23,7 @@ const StyledNodeGroupNetwork = styled.div`
   }
   ${StyledNetworkIdRow} {
     :hover {
-      background: linear-gradient(
-        to right,
-        transparent,
-        ${rgba('#fff', 0.9)},
-        transparent
-      );
+      background: ${({ theme }) => theme['network.node.row.bg']};
     }
   }
 `

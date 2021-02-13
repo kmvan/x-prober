@@ -1,11 +1,10 @@
-import Portal from '@/Helper/src/components/portal'
-import React from 'react'
-import store from '../stores'
-import styled from 'styled-components'
-import { gettext } from '@/Language/src'
 import { GUTTER } from '@/Config/src'
+import { gettext } from '@/Language/src'
+import Portal from '@/Utils/src/components/portal'
 import { observer } from 'mobx-react-lite'
-import { rgba } from 'polished'
+import React from 'react'
+import styled from 'styled-components'
+import store from '../stores'
 const StyledToast = styled.div`
   position: fixed;
   bottom: 4rem;
@@ -13,8 +12,8 @@ const StyledToast = styled.div`
   max-width: 80vw;
   left: 50%;
   transform: translateX(-50%);
-  background: ${({ theme }) => rgba(theme.colorDark, 0.85)};
-  color: ${({ theme }) => theme.colorGray};
+  background: ${({ theme }) => theme['toast.bg']};
+  color: ${({ theme }) => theme['toast.fg']};
   border-radius: ${GUTTER};
   padding: calc(${GUTTER} / 2) ${GUTTER};
   cursor: pointer;

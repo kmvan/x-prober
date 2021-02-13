@@ -2,6 +2,20 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.0.0 - 2021-02-13
+
+### Add
+
+- Add dark mode
+- Add server IPv4/IPv6 information
+- Add server IPv4 location information
+- Add my IPv4/IPv6 information
+- Add my IPv4 location information
+
+### Adjust
+
+- Adjust color schemes
+
 ## 6.7.0 - 2021-01-28
 
 ### Add

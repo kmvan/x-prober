@@ -1,17 +1,16 @@
+import { GUTTER } from '@/Config/src'
 import React from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '@/Config/src'
-import { rgba } from 'polished'
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
-  background: ${({ theme }) => rgba(theme.colorDark, 0.05)};
+  background: ${({ theme }) => theme['search.bg']};
+  color: ${({ theme }) => theme['search.fg']};
   padding: 0 0.3rem;
   border-radius: ${GUTTER};
   font-family: consolas;
   :hover {
-    background: ${({ theme }) => theme.colorDark};
-    color: ${({ theme }) => theme.colorGray};
     text-decoration: underline;
+    background: ${({ theme }) => theme['search.hover.bg']};
   }
 `
 const SearchLink = ({ keyword }: { keyword: string }) => {

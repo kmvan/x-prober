@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\Script;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
+use InnStudio\Prober\Components\Utils\UtilsApi;
 
 class Script
 {
@@ -25,7 +25,7 @@ class Script
 
     private function output()
     {
-        HelperApi::setFileCacheHeader();
+        UtilsApi::setFileCacheHeader();
 
         \header('Content-type: application/javascript');
         echo <<<'HTML'

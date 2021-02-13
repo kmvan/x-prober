@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-28 16:20+0800\n"
+"PO-Revision-Date: 2021-02-13 23:06+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
@@ -24,8 +24,11 @@ msgstr "上に移動"
 msgid "Move down"
 msgstr "下に移動"
 
-msgid "X Prober"
-msgstr ""
+msgid "Dark"
+msgstr "闇"
+
+msgid "Default"
+msgstr "デフォルト"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr ""
@@ -50,8 +53,20 @@ msgstr ""
 msgid "STAR 🌟 ME"
 msgstr "星🌟印"
 
-msgid "My IP"
-msgstr "私のIP"
+msgid "Loading..."
+msgstr "⏳ロード中..."
+
+msgid "Can not fetch IP."
+msgstr "IPを取得できません。"
+
+msgid "My IPv4"
+msgstr "私のIPv4"
+
+msgid "My IPv6"
+msgstr "私のIPv6"
+
+msgid "My location (IPv4)"
+msgstr "私の場所 (IPv4)"
 
 msgid "My browser UA"
 msgstr "私のブラウザ UA"
@@ -62,11 +77,16 @@ msgstr "私のブラウザの言語（JS）"
 msgid "My browser languages (via PHP)"
 msgstr "私のブラウザの言語（PHP）"
 
-msgid "My location"
-msgstr "私の場所"
+msgid "Can not fetch location."
+msgstr "場所を取得できません。"
 
-msgid "In development"
-msgstr "開発中"
+msgid "👆 Click to fetch"
+msgstr "👆 クリックしてフェッチ"
+
+msgid ""
+"The author only has 10,000 API requests per month, please do not abuse it."
+msgstr ""
+"作成者は月に10,000のAPIリクエストしか持っていません。乱用しないでください。"
 
 msgid "My Information"
 msgstr "私の情報"
@@ -209,8 +229,8 @@ msgstr "私のサーバー"
 msgid "⏳ Testing, please wait..."
 msgstr "⏳ テストしています。お待ちください..."
 
-msgid "Click to test"
-msgstr "👆クリックしてテスト"
+msgid "👆 Click to test"
+msgstr "👆 クリックしてテスト"
 
 msgid "Network error, please try again later."
 msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
@@ -239,14 +259,17 @@ msgstr "サーバー時間"
 msgid "Server uptime"
 msgstr "サーバーの稼働時間"
 
-msgid "Server IP"
-msgstr "サーバー IP"
+msgid "Server IPv4"
+msgstr "サーバー IPv4"
+
+msgid "Server IPv6"
+msgstr "サーバー IPv6"
 
 msgid "Server software"
 msgstr "サーバーソフトウェア"
 
-msgid "PHP version"
-msgstr "PHP バージョン"
+msgid "Server location (IPv4)"
+msgstr "サーバーの場所 (IPv4)"
 
 msgid "CPU model"
 msgstr "CPUモデル"
@@ -339,6 +362,12 @@ msgstr "❌ 更新エラー。ここをクリックして再試行しますか�
 
 msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
 msgstr "✨ アップデートが見た！バージョン ${oldVersion} → ${newVersion}"
+
+#~ msgid "In development"
+#~ msgstr "開発中"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP バージョン"
 
 #~ msgid "Fetch failed. Detail in Console."
 #~ msgstr "フェッチに失敗しました。 コンソールの詳細。"

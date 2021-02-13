@@ -10,7 +10,7 @@ export interface CardRubyProps extends StyledRubyProps {
   rt: string
 }
 const StyledRuby = styled.ruby<StyledRubyProps>`
-  background: ${({ theme }) => rgba(theme.colorDark, 0.05)};
+  background: ${({ theme }) => rgba(theme['benchmark.ruby.bg'], 0.05)};
   cursor: pointer;
   :hover {
     text-decoration: underline;

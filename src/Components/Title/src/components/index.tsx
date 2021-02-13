@@ -1,15 +1,14 @@
 import BootstrapStore from '@/Bootstrap/src/stores'
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import {
+  ANIMATION_DURATION_SC,
+  BORDER_RADIUS,
+  GUTTER,
+} from '@/Config/src/index'
 import UpdaterLink from '@/Updater/src/components/updater-link'
 import UpdaterStore from '@/Updater/src/stores'
 import { observer } from 'mobx-react-lite'
-import { rgba } from 'polished'
-import {
-  BORDER_RADIUS,
-  GUTTER,
-  ANIMATION_DURATION_SC,
-} from '@/Config/src/index'
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 const slideDown = keyframes`
   from{
     transform: translate3d(-50%, -100%, 0);
@@ -19,7 +18,7 @@ const slideDown = keyframes`
   }
 `
 export const StyledTitle = styled.h1`
-  background: ${({ theme }) => theme.colorDark};
+  background: ${({ theme }) => theme['title.bg']};
   position: fixed;
   top: 0;
   left: 50%;
@@ -31,9 +30,6 @@ export const StyledTitle = styled.h1`
   font-size: ${GUTTER};
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADIUS} ${BORDER_RADIUS};
-  box-shadow: inset 0 -11px 10px -14px
-      ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)},
-    0 5px 10px ${({ theme }) => rgba(theme.colorDarkDeep, 0.1)};
   z-index: 10;
   animation: ${slideDown} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
@@ -41,9 +37,9 @@ export const StyledTitle = styled.h1`
 export const StyledTitleLink = styled.a`
   display: block;
   padding: ${GUTTER};
-  color: ${({ theme }) => theme.colorGray};
+  color: ${({ theme }) => theme['title.fg']};
   :hover {
-    color: ${({ theme }) => theme.colorGray};
+    color: ${({ theme }) => theme['title.fg']};
   }
 `
 const Title = observer(() => {

@@ -1,7 +1,7 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
 import ProgressBar from '@/ProgressBar/src/components'
+import template from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import store from '../stores'

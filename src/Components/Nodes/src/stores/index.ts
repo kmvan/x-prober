@@ -1,12 +1,12 @@
-import conf from '@/Helper/src/components/conf'
 import { DataProps } from '@/Fetch/src/stores'
+import conf from '@/Utils/src/components/conf'
 import {
+  action,
   computed,
   configure,
-  observable,
-  action,
-  toJS,
   makeObservable,
+  observable,
+  toJS,
 } from 'mobx'
 configure({
   enforceActions: 'observed',

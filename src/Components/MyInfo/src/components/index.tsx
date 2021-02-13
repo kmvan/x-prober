@@ -1,17 +1,22 @@
 import CardGrid from '@/Card/src/components/card-grid'
-import React from 'react'
 import Row from '@/Grid/src/components/row'
-import store from '../stores'
+import useIp from '@/Hooks/src/useIp'
 import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
+import store from '../stores'
+import ClientLocation from './location'
 const MyInfo = observer(() => {
   const { conf } = store
+  const { ip: ipv4, msg: ipv4Msg } = useIp(4)
+  const { ip: ipv6, msg: ipv6Msg } = useIp(6)
   const items: any[] = [
-    [gettext('My IP'), conf?.ip],
+    [gettext('My IPv4'), `${ipv4Msg}${ipv4}`],
+    [gettext('My IPv6'), `${ipv6Msg}${ipv6}`],
+    [gettext('My location (IPv4)'), <ClientLocation ip={ipv4} />],
     [gettext('My browser UA'), navigator.userAgent],
     [gettext('My browser languages (via JS)'), navigator.languages.join(',')],
     [gettext('My browser languages (via PHP)'), conf?.phpLanguage],
-    [gettext('My location'), gettext('In development')],
   ]
   return (
     <Row>

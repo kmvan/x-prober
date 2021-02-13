@@ -1,36 +1,34 @@
 import Cards from '@/Card/src/components'
 import ColorScheme from '@/ColorScheme/src/components'
 import ColorSchemeStore from '@/ColorScheme/src/stores'
+import { GUTTER } from '@/Config/src'
 import Container from '@/Container/src/components'
+import '@/Database/src'
 import Footer from '@/Footer/src/components'
 import Forkme from '@/Forkme/src/components'
+import '@/MyInfo/src'
 import Nav from '@/Nav/src/components'
-import Normalize from './style'
-import React from 'react'
-import ready from '@/Helper/src/components/ready'
-import store from '../stores'
-import styled, { ThemeProvider } from 'styled-components'
+import '@/NetworkStats/src'
+import '@/Nodes/src'
+import '@/PhpExtensions/src'
+import '@/PhpInfo/src'
+import '@/Ping/src'
+import '@/ServerBenchmark/src'
+import '@/ServerInfo/src'
+import '@/ServerStatus/src'
+import '@/TemperatureSensor/src'
 import Title from '@/Title/src/components'
 import Toast from '@/Toast/src/components'
-import { GUTTER } from '@/Config/src'
+import ready from '@/Utils/src/components/ready'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
 import { render } from 'react-dom'
-import { rgba } from 'polished'
-import '@/Nodes/src'
-import '@/ServerStatus/src'
-import '@/NetworkStats/src'
-import '@/TemperatureSensor/src'
-import '@/Ping/src'
-import '@/ServerInfo/src'
-import '@/PhpInfo/src'
-import '@/PhpExtensions/src'
-import '@/Database/src'
-import '@/MyInfo/src'
-import '@/ServerBenchmark/src'
+import styled, { ThemeProvider } from 'styled-components'
+import store from '../stores'
+import Normalize from './style'
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
-  background: ${({ theme }) => theme.colorGray};
-  box-shadow: inset 0 0 5px ${({ theme }) => rgba(theme.colorDarkDeep, 0.3)};
+  background: ${({ theme }) => theme['app.bg']};
   /* notch right angle square */
   ::before,
   ::after {
@@ -39,7 +37,7 @@ const StyledApp = styled.div`
     top: 0;
     right: 0;
     bottom: calc(${GUTTER} * 2);
-    border: ${GUTTER} solid ${({ theme }) => theme.colorDark};
+    border: ${GUTTER} solid ${({ theme }) => theme['app.border']};
     pointer-events: none;
     z-index: 1;
     content: '';

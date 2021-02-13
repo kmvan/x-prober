@@ -1,7 +1,6 @@
+import { GUTTER } from '@/Config/src'
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '@/Config/src'
-import { rgba } from 'polished'
 interface AlertContainerProps {
   isSuccess: boolean
   withIcon: boolean
@@ -14,16 +13,16 @@ const StyledAlert = styled.div<AlertContainerProps>`
   font-family: Arial Black;
   font-weight: bolder;
   min-width: 2em;
-  color: ${({ theme }) => theme.colorGray};
-  box-shadow: inset 0 5px 10px ${({ theme }) => rgba(theme.colorDark, 0.3)};
-  text-shadow: ${({ theme }) => theme.textShadowWithDarkBg};
   padding: 0 0.5rem;
   white-space: nowrap;
   cursor: pointer;
-  background: ${({ isSuccess }) => (isSuccess ? '#00e800' : '#c1c1c1')};
+  text-shadow: 0 1px 1px #000;
+  background: ${({ isSuccess, theme }) =>
+    isSuccess ? theme['status.success.bg'] : theme['status.error.bg']};
+  color: ${({ isSuccess, theme }) =>
+    isSuccess ? theme['status.success.fg'] : theme['status.error.fg']};
   :active {
     transform: scale3d(0.9, 0.9, 1);
-    background: ${({ isSuccess }) => (isSuccess ? '#0bbfc3' : '#ff4747')};
   }
   ::before {
     content: '${({ isSuccess, withIcon }) => {

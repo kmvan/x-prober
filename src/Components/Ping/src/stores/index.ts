@@ -1,11 +1,5 @@
-import conf from '@/Helper/src/components/conf'
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
+import conf from '@/Utils/src/components/conf'
+import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })

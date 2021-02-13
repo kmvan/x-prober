@@ -1,4 +1,4 @@
-import conf from '@/Helper/src/components/conf'
+import conf from '@/Utils/src/components/conf'
 import { configure } from 'mobx'
 configure({
   enforceActions: 'observed',

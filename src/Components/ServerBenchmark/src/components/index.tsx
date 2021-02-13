@@ -3,9 +3,9 @@ import CardRuby from '@/Card/src/components/card-ruby'
 import CardError from '@/Card/src/components/error'
 import serverFetch from '@/Fetch/src/server-fetch'
 import Row from '@/Grid/src/components/row'
-import template from '@/Helper/src/components/template'
 import { gettext } from '@/Language/src'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
+import template from '@/Utils/src/components/template'
 import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
 import React, { MouseEvent, useCallback } from 'react'
@@ -180,7 +180,7 @@ const ServerBenchmark = observer(() => {
     if (status === OK) {
       if (marks) {
         setMarks(marks)
-        setLinkText(gettext('Click to test'))
+        setLinkText(gettext('👆 Click to test'))
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }

@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react'
-import styled, { css } from 'styled-components'
 import { GUTTER } from '@/Config/src'
 import {
-  device,
   breakPoints,
+  device,
   DeviceIdProps,
 } from '@/Style/src/components/devices'
+import React, { ReactNode } from 'react'
+import styled, { css } from 'styled-components'
 interface BreakPointsProps {
   mobileSm?: [number, number]
   mobileMd?: [number, number]
@@ -19,27 +19,25 @@ export interface GridProps extends BreakPointsProps {
   children: ReactNode
 }
 const createCss = (types: BreakPointsProps) => {
-  const style = Object.entries(types).map(
-    ([id, sizes]: [DeviceIdProps, [number, number]]) => {
-      if (!breakPoints[id]) {
-        return ''
-      }
-      if (!sizes || !sizes.length) {
-        return ''
-      }
-      const [span, col] = sizes
-      return css`
-        @media ${device(id)} {
-          flex: ${() => {
-            // wtf safari flex bug
-            return /constructor/i.test((window as any).HTMLElement)
-              ? `0 0 calc(${(span / col) * 100}% - 0.5px);`
-              : `0 0 ${(span / col) * 100}%;`
-          }};
-        }
-      `
+  const style = Object.entries(types).map(([id, sizes]) => {
+    if (!breakPoints[id]) {
+      return ''
     }
-  )
+    if (!sizes || !sizes.length) {
+      return ''
+    }
+    const [span, col] = sizes
+    return css`
+      @media ${device(id as DeviceIdProps)} {
+        flex: ${() => {
+          // wtf safari flex bug
+          return /constructor/i.test((window as any).HTMLElement)
+            ? `0 0 calc(${(span / col) * 100}% - 0.5px);`
+            : `0 0 ${(span / col) * 100}%;`
+        }};
+      }
+    `
+  })
   return style
 }
 export interface StyledGridProps {

@@ -3,7 +3,6 @@
 namespace InnStudio\Prober\Components\MyInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Helper\HelperApi;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Conf extends MyInfoConstants
@@ -20,7 +19,6 @@ class Conf extends MyInfoConstants
         }
 
         $conf[$this->ID] = array(
-            'ip'          => HelperApi::getClientIp(),
             'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
         );
 

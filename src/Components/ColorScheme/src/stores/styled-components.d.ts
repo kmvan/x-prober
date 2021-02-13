@@ -1,4 +1,4 @@
-import { ColorSchemeProps } from '.'
+import { colorSchemeProps } from '../typings'
 declare module 'styled-components' {
-  export interface DefaultTheme extends ColorSchemeProps {}
+  export interface DefaultTheme extends colorSchemeProps {}
 }

@@ -8,5 +8,8 @@ class ServerInfo
     {
         new Conf();
         new Fetch();
+        new ServerInitIpv4();
+        new ServerInitIpv6();
+        new ServerLocationIpv4();
     }
 }
