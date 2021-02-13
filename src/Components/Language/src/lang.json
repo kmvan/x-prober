@@ -55,12 +55,12 @@
     "zhhk": "⏸️ 停止 Ping",
     "zhtw": "⏸️ 停止 Ping"
   },
-  "✨ Found update! Version ${oldVersion} → ${newVersion}": {
-    "ja": "✨ アップデートが見た！バージョン ${oldVersion} → ${newVersion}",
-    "zh": "✨ 发现更新！版本 ${oldVersion} → ${newVersion}",
-    "zhcn": "✨ 发现更新！版本 ${oldVersion} → ${newVersion}",
-    "zhhk": "✨ 發現更新！版本 ${oldVersion} → ${newVersion}",
-    "zhtw": "✨ 發現更新！版本 ${oldVersion} → ${newVersion}"
+  "✨ Found update! Version {{oldVersion}} → {{newVersion}}": {
+    "ja": "✨ アップデートが見た！バージョン {{oldVersion}} → {{newVersion}}",
+    "zh": "✨ 发现更新！版本 {{oldVersion}} → {{newVersion}}",
+    "zhcn": "✨ 发现更新！版本 {{oldVersion}} → {{newVersion}}",
+    "zhhk": "✨ 發現更新！版本 {{oldVersion}} → {{newVersion}}",
+    "zhtw": "✨ 發現更新！版本 {{oldVersion}} → {{newVersion}}"
   },
   "❌ Update error, click here to try again?": {
     "ja": "❌ 更新エラー。ここをクリックして再試行しますか？",

@@ -342,5 +342,5 @@ msgstr ""
 msgid "❌ Update error, click here to try again?"
 msgstr ""
 
-msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
+msgid "✨ Found update! Version {{oldVersion}} → {{newVersion}}"
 msgstr ""
