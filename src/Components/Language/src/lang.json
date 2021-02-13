@@ -10,21 +10,21 @@
     "ja": "{{days}} 日 {{hours}} 時 {{mins}} 分 {{secs}} 秒",
     "zh": "{{days}} 天 {{hours}} 小时 {{mins}} 分 {{secs}} 秒",
     "zhcn": "{{days}} 天 {{hours}} 小时 {{mins}} 分 {{secs}} 秒",
-    "zhhk": "${days} 天 ${hours} 時 ${mins} 分 ${secs} 秒",
+    "zhhk": "{{days}} 天 {{hours}} 時 {{mins}} 分 {{secs}} 秒",
     "zhtw": "{{days}} 天 {{hours}} 時 {{mins}} 分 {{secs}} 秒"
   },
   "{{minute}} minute average": {
     "ja": "{{minute}} 分ごとの平均負荷",
     "zh": "{{minute}} 分钟平均负载",
     "zhcn": "{{minute}} 分钟平均负载",
-    "zhhk": "${minute}  分鐘平均負載",
+    "zhhk": "{{minute}} 分鐘平均負載",
     "zhtw": "{{minute}} 分鐘平均負載"
   },
   "{{sensor}} temperature": {
     "ja": "{{sensor}} 温度",
     "zh": "{{sensor}} 温度",
     "zhcn": "{{sensor}} 温度",
-    "zhhk": "${sensor} 溫度",
+    "zhhk": "{{sensor}} 溫度",
     "zhtw": "{{sensor}} 溫度"
   },
   "⏳ Please wait {{seconds}}s": {
@@ -76,6 +76,20 @@
     "zhhk": "👆 查看詳細",
     "zhtw": "👆 查看詳細"
   },
+  "👆 Click to fetch": {
+    "ja": "👆 クリックしてフェッチ",
+    "zh": "👆 点击获取",
+    "zhcn": "👆 点击获取",
+    "zhhk": "👆 點擊獲取",
+    "zhtw": "👆 點擊獲取"
+  },
+  "👆 Click to test": {
+    "ja": "👆 クリックしてテスト",
+    "zh": "👆 点击跑分",
+    "zhcn": "👆 点击跑分",
+    "zhhk": "👆 點擊跑分",
+    "zhtw": "👆 點擊跑分"
+  },
   "👆 Start ping": {
     "ja": "👆 Pingを開始",
     "zh": "👆 开始 Ping",
@@ -104,6 +118,20 @@
     "zhhk": "",
     "zhtw": ""
   },
+  "Can not fetch IP.": {
+    "ja": "IPを取得できません。",
+    "zh": "无法获取 IP。",
+    "zhcn": "无法获取 IP。",
+    "zhhk": "無法獲取 IP。",
+    "zhtw": "無法獲取 IP 地址。"
+  },
+  "Can not fetch location.": {
+    "ja": "場所を取得できません。",
+    "zh": "无法获取地理位置。",
+    "zhcn": "无法获取地理位置。",
+    "zhhk": "無法獲取地理位置。",
+    "zhtw": "無法獲取地理信息。"
+  },
   "Can not fetch marks data from GitHub.": {
     "ja": "GitHubからマークデータを取得できません。",
     "zh": "无法从 GitHub 中获取跑分数据。",
@@ -124,13 +152,6 @@
     "zhcn": "点击关闭",
     "zhhk": "點擊關閉",
     "zhtw": "點擊關閉"
-  },
-  "Click to test": {
-    "ja": "👆クリックしてテスト",
-    "zh": "👆 点击测试",
-    "zhcn": "👆 点击测试",
-    "zhhk": "👆 點擊測試",
-    "zhtw": "👆 點擊測試"
   },
   "Click to update": {
     "ja": "クリックして更新",
@@ -160,6 +181,13 @@
     "zhhk": "CPU 使用率",
     "zhtw": "CPU 使用率"
   },
+  "Dark": {
+    "ja": "闇",
+    "zh": "暗黑",
+    "zhcn": "暗黑",
+    "zhhk": "暗黑",
+    "zhtw": "暗黑"
+  },
   "Database": {
     "ja": "データベース",
     "zh": "数据库",
@@ -173,6 +201,13 @@
     "zhcn": "数据库",
     "zhhk": "資料庫",
     "zhtw": "資料庫"
+  },
+  "Default": {
+    "ja": "デフォルト",
+    "zh": "默认",
+    "zhcn": "默认",
+    "zhhk": "默認",
+    "zhtw": "默認"
   },
   "Disabled classes": {
     "ja": "無効なクラス",
@@ -300,6 +335,13 @@
     "zhhk": "載入的 PHP 擴展",
     "zhtw": "載入的 PHP 擴展"
   },
+  "Loading...": {
+    "ja": "⏳ロード中...",
+    "zh": "加载中……",
+    "zhcn": "加载中……",
+    "zhhk": "載入中……",
+    "zhtw": "載入中……"
+  },
   "Max execution time": {
     "ja": "最大実行時間",
     "zh": "运行超时秒数",
@@ -419,19 +461,26 @@
     "zhhk": "我的訊息",
     "zhtw": "我的訊息"
   },
-  "My IP": {
-    "ja": "私のIP",
-    "zh": "我的 IP",
-    "zhcn": "我的 IP",
-    "zhhk": "我的 IP",
-    "zhtw": "我的 IP"
+  "My IPv4": {
+    "ja": "私のIPv4",
+    "zh": "我的 IPv4",
+    "zhcn": "我的 IPv4",
+    "zhhk": "我的 IPv4",
+    "zhtw": "我的 IPv4"
   },
-  "My location": {
-    "ja": "私の場所",
-    "zh": "我的位置",
-    "zhcn": "我的位置",
-    "zhhk": "我的位置",
-    "zhtw": "我的位置"
+  "My IPv6": {
+    "ja": "私のIPv6",
+    "zh": "我的 IPv6",
+    "zhcn": "我的 IPv6",
+    "zhhk": "我的 IPv6",
+    "zhtw": "我的 IPv6"
+  },
+  "My location (IPv4)": {
+    "ja": "私の場所 (IPv4)",
+    "zh": "我的位置（IPv4）",
+    "zhcn": "我的位置（IPv4）",
+    "zhhk": "我的位置（IPv4）",
+    "zhtw": "我的位置（IPv4）"
   },
   "My server": {
     "ja": "私のサーバー",
@@ -556,12 +605,26 @@
     "zhhk": "伺服器訊息",
     "zhtw": "伺服器訊息"
   },
-  "Server IP": {
-    "ja": "サーバー IP",
-    "zh": "服务器 IP",
-    "zhcn": "服务器 IP",
-    "zhhk": "伺服器 IP",
-    "zhtw": "伺服器 IP"
+  "Server IPv4": {
+    "ja": "サーバー IPv4",
+    "zh": "服务器 IPv4",
+    "zhcn": "服务器 IPv4",
+    "zhhk": "伺服器 IPv4",
+    "zhtw": "伺服器 IPv4"
+  },
+  "Server IPv6": {
+    "ja": "サーバー IPv6",
+    "zh": "服务器 IPv6",
+    "zhcn": "服务器 IPv6",
+    "zhhk": "伺服器 IPv6",
+    "zhtw": "伺服器 IPv6"
+  },
+  "Server location (IPv4)": {
+    "ja": "サーバーの場所 (IPv4)",
+    "zh": "服务器地理位置（IPv4）",
+    "zhcn": "服务器地理位置（IPv4）",
+    "zhhk": "伺服器位置（IPv4）",
+    "zhtw": "伺服器位置（IPv4）"
   },
   "Server name": {
     "ja": "サーバーの名前",
@@ -668,6 +731,13 @@
     "zhhk": "溫度傳感器",
     "zhtw": "溫度傳感器"
   },
+  "The author only has 10,000 API requests per month, please do not abuse it.": {
+    "ja": "作成者は月に10,000のAPIリクエストしか持っていません。乱用しないでください。",
+    "zh": "作者只有每月 10,000 次 API 请求，且用且珍惜。",
+    "zhcn": "作者只有每月 10,000 次 API 请求，且用且珍惜。",
+    "zhhk": "作者每月只有 10,000 次 API 請求，且用且珍惜。",
+    "zhtw": "作者每月只有10,000 次 API 請求，且用且珍惜"
+  },
   "Timeout for socket": {
     "ja": "ソケットのタイムアウト",
     "zh": "Socket 超时秒数",
@@ -732,7 +802,6 @@
     "zhtw": "瀏覽官網"
   },
   "X Prober": {
-    "ja": "",
     "zh": "X 探针",
     "zhcn": "X 探针",
     "zhhk": "X 探針",

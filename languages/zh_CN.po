@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-01-28 16:16+0800\n"
+"PO-Revision-Date: 2021-02-13 22:58+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -26,8 +26,11 @@ msgstr "上移"
 msgid "Move down"
 msgstr "下移"
 
-msgid "X Prober"
-msgstr "X 探针"
+msgid "Dark"
+msgstr "暗黑"
+
+msgid "Default"
+msgstr "默认"
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
 msgstr "错误：无法获取远程配置数据，更新检测已禁用。"
@@ -50,8 +53,20 @@ msgstr ""
 msgid "STAR 🌟 ME"
 msgstr "星 🌟 标"
 
-msgid "My IP"
-msgstr "我的 IP"
+msgid "Loading..."
+msgstr "加载中……"
+
+msgid "Can not fetch IP."
+msgstr "无法获取 IP。"
+
+msgid "My IPv4"
+msgstr "我的 IPv4"
+
+msgid "My IPv6"
+msgstr "我的 IPv6"
+
+msgid "My location (IPv4)"
+msgstr "我的位置（IPv4）"
 
 msgid "My browser UA"
 msgstr "我的浏览器 UA"
@@ -62,11 +77,15 @@ msgstr "我的浏览器语言（JS）"
 msgid "My browser languages (via PHP)"
 msgstr "我的浏览器语言（PHP）"
 
-msgid "My location"
-msgstr "我的位置"
+msgid "Can not fetch location."
+msgstr "无法获取地理位置。"
 
-msgid "In development"
-msgstr "开发中"
+msgid "👆 Click to fetch"
+msgstr "👆 点击获取"
+
+msgid ""
+"The author only has 10,000 API requests per month, please do not abuse it."
+msgstr "作者只有每月 10,000 次 API 请求，且用且珍惜。"
 
 msgid "My Information"
 msgstr "我的信息"
@@ -209,8 +228,8 @@ msgstr "我的服务器"
 msgid "⏳ Testing, please wait..."
 msgstr "⏳ 跑分中，请稍等……"
 
-msgid "Click to test"
-msgstr "👆 点击测试"
+msgid "👆 Click to test"
+msgstr "👆 点击跑分"
 
 msgid "Network error, please try again later."
 msgstr "网络错误，请稍候重试。"
@@ -239,14 +258,17 @@ msgstr "服务器时间"
 msgid "Server uptime"
 msgstr "持续运作时间"
 
-msgid "Server IP"
-msgstr "服务器 IP"
+msgid "Server IPv4"
+msgstr "服务器 IPv4"
+
+msgid "Server IPv6"
+msgstr "服务器 IPv6"
 
 msgid "Server software"
 msgstr "服务器软件"
 
-msgid "PHP version"
-msgstr "PHP 版本"
+msgid "Server location (IPv4)"
+msgstr "服务器地理位置（IPv4）"
 
 msgid "CPU model"
 msgstr "CPU 型号"
@@ -347,6 +369,15 @@ msgstr "❌ 更新错误，点击此处再试一次？"
 
 msgid "✨ Found update! Version ${oldVersion} → ${newVersion}"
 msgstr "✨ 发现更新！版本 ${oldVersion} → ${newVersion}"
+
+#~ msgid "X Prober"
+#~ msgstr "X 探针"
+
+#~ msgid "In development"
+#~ msgstr "开发中"
+
+#~ msgid "PHP version"
+#~ msgstr "PHP 版本"
 
 #~ msgid "Fetch failed. Detail in Console."
 #~ msgstr "获取失败。详情请看控制台。"

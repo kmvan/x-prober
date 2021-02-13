@@ -24,7 +24,10 @@ msgstr ""
 msgid "Move down"
 msgstr ""
 
-msgid "X Prober"
+msgid "Dark"
+msgstr ""
+
+msgid "Default"
 msgstr ""
 
 msgid "Error: can not fetch remote config data, update checker is disabled."
@@ -45,7 +48,19 @@ msgstr ""
 msgid "STAR 🌟 ME"
 msgstr ""
 
-msgid "My IP"
+msgid "Loading..."
+msgstr ""
+
+msgid "Can not fetch IP."
+msgstr ""
+
+msgid "My IPv4"
+msgstr ""
+
+msgid "My IPv6"
+msgstr ""
+
+msgid "My location (IPv4)"
 msgstr ""
 
 msgid "My browser UA"
@@ -57,10 +72,13 @@ msgstr ""
 msgid "My browser languages (via PHP)"
 msgstr ""
 
-msgid "My location"
+msgid "Can not fetch location."
 msgstr ""
 
-msgid "In development"
+msgid "👆 Click to fetch"
+msgstr ""
+
+msgid "The author only has 10,000 API requests per month, please do not abuse it."
 msgstr ""
 
 msgid "My Information"
@@ -204,7 +222,7 @@ msgstr ""
 msgid "⏳ Testing, please wait..."
 msgstr ""
 
-msgid "Click to test"
+msgid "👆 Click to test"
 msgstr ""
 
 msgid "Network error, please try again later."
@@ -234,13 +252,16 @@ msgstr ""
 msgid "Server uptime"
 msgstr ""
 
-msgid "Server IP"
+msgid "Server IPv4"
+msgstr ""
+
+msgid "Server IPv6"
 msgstr ""
 
 msgid "Server software"
 msgstr ""
 
-msgid "PHP version"
+msgid "Server location (IPv4)"
 msgstr ""
 
 msgid "CPU model"
