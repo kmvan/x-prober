@@ -1,4 +1,5 @@
-[![X Prober preview](screenshot.jpg)](screenshot.jpg)
+[![X Prober preview](screenshots/default.webp)](screenshots/default.webp)
+[![X Prober dark preview](screenshots/dark.webp)](screenshots/dark.webp)
 
 # 😎 X 探針、劉海探針
 
@@ -77,6 +78,7 @@
 成為贊助商支援這個項目。 您的徽標將顯示在此處，其中包含指向您網站的鏈接。[[成為贊助商](https://opencollective.com/x-prober#sponsor)]
 
 - 感謝 [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - 2021-01-16 - 199 人民幣
+- 感謝 1529\*\*\*576 - 2019-04-04 – 150 人民幣
 - 感謝 [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 美元
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
