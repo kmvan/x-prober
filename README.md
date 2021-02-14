@@ -1,4 +1,5 @@
-[![X Prober preview](screenshot.jpg)](screenshot.jpg)
+[![X Prober preview](screenshots/default.webp)](screenshots/default.webp)
+[![X Prober dark preview](screenshots/dark.webp)](screenshots/dark.webp)
 
 - [Simplified Chinese | 简体中文](README-zh_CN.md)
 - [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
@@ -86,6 +87,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
 
 - Thanks [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - 2021-01-16 - 199 RMB
+- Thanks 1529\*\*\*576 - 2019-04-04 – 150 RMB
 - Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 Dollars
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
