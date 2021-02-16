@@ -10,4 +10,4 @@ assignees: ''
 - OS:
 - PHP version: 
 
-*** Your content ***
+<!-- Your content -->

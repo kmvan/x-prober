@@ -26,7 +26,7 @@ const shortItems: [string, boolean][] = [
   ['Multibyte String', !!conf?.mbstring],
   ['Phalcon', !!conf?.phalcon],
   ['Xdebug', !!conf?.xdebug],
-  ['Zend Otimizer', !!conf?.zendOtimizer],
+  ['Zend Optimizer', !!conf?.zendOptimizer],
   ['ionCube', !!conf?.ionCube],
   ['Source Guardian', !!conf?.sourceGuardian],
   ['LDAP', !!conf?.ldap],
