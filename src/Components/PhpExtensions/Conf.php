@@ -37,7 +37,7 @@ class Conf extends PhpExtensionsConstants
             'mbstring'         => \extension_loaded('mbstring') && \function_exists('\\mb_substr'),
             'phalcon'          => \extension_loaded('phalcon'),
             'xdebug'           => \extension_loaded('xdebug'),
-            'zendOtimizer'     => \function_exists('\\zend_optimizer_version'),
+            'zendOptimizer'    => \function_exists('\\zend_optimizer_version'),
             'ionCube'          => \extension_loaded('ioncube loader'),
             'sourceGuardian'   => \extension_loaded('sourceguardian'),
             'ldap'             => \function_exists('\\ldap_connect'),
