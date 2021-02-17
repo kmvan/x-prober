@@ -38,23 +38,25 @@ const colorSchemeDark: colorSchemeProps = {
   'progress.bg': topDarkBottomLight,
   'progress.value.fg': light,
   'progress.value.bg': '#0c0',
-  'progress.value.after.bg': `linear-gradient(${rgba('#fff', 0.5)}, ${rgba(
-    '#fff',
-    0.1
-  )})`,
-  'progress.value.before.bg': `linear-gradient(to right, ${rgba(
-    '#fff',
-    0.1
-  )}, ${rgba('#fff', 0.3)}, ${rgba('#fff', 0.1)})`,
+  'progress.value.after.bg': `linear-gradient(${[
+    rgba('#fff', 0.2),
+    'transparent',
+  ].join(',')})`,
+  'progress.value.before.bg': `linear-gradient(to right, ${[
+    rgba('#fff', 0.1),
+    rgba('#fff', 0.2),
+    rgba('#fff', 0.1),
+  ].join(',')})`,
   'network.stats.upload': lighten(0.2, '#c24b00'),
   'network.stats.download': lighten(0.2, '#007400'),
   'network.node.fg': light,
   'network.node.bg': '#252525',
   'network.node.border': dark,
-  'network.node.row.bg': `linear-gradient(to right, transparent, ${rgba(
-    '#000',
-    0.5
-  )}, transparent)`,
+  'network.node.row.bg': `linear-gradient(to right, ${[
+    'transparent',
+    rgba('#000', 0.5),
+    'transparent',
+  ].join(',')})`,
   'ping.button.fg': light,
   'ping.button.bg': dark,
   'ping.result.fg': light,

@@ -58,17 +58,21 @@ const StyledProgressValue = styled.div.attrs(
   background-color: ${({ theme }) => theme['progress.value.bg']};
   overflow: hidden;
   box-shadow: ${({ theme }) =>
-    theme.isDark ? `inset 0 0 0 10px ${rgba('#000', 0.75)}` : 'unset'};
+    [
+      theme.isDark ? `inset 0 0 0 10px ${rgba('#000', 0.75)}` : '',
+      '0 0 1px 1px #000',
+    ]
+      .filter((n) => n)
+      .join(',')};
   ::after,
   ::before {
     position: absolute;
     content: '';
     top: 0;
-    height: 50%;
+    height: 61.8%;
     width: 100%;
     border-radius: 0 0 50% 50%;
     background: ${({ theme }) => theme['progress.value.after.bg']};
-    opacity: 0.3;
   }
   ::before {
     background: ${({ theme }) => theme['progress.value.before.bg']};
