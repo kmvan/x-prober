@@ -7,7 +7,7 @@ const topDarkBottomLight = `linear-gradient(#000, #111)`
 const colorSchemeDark: colorSchemeProps = {
   name: gettext('Dark'),
   isDark: true,
-  color: dark,
+  color: `linear-gradient(${rgba(light, 0.3)}, ${rgba(dark, 0.9)})`,
   fg: dark,
   bg: light,
   'selection.fg': light,
@@ -30,8 +30,10 @@ const colorSchemeDark: colorSchemeProps = {
     '#000',
     0.5
   )}, transparent)`,
+  'card.boxShadow': `inset 0 0 0 1px #000`,
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
+  'card.title.fg': light,
   'progress.fg': light,
   'progress.bg': topDarkBottomLight,
   'progress.value.fg': light,

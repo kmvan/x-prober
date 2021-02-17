@@ -15,6 +15,7 @@ const StyledFieldset = styled.fieldset`
   background: ${({ theme }) => theme['card.bg']};
   margin-bottom: calc(${GUTTER} * 1.5);
   padding: calc(${GUTTER} * 1.5) 0 0;
+  box-shadow: ${({ theme }) => theme['card.boxShadow']};
 `
 const StyledLegend = styled.legend`
   display: flex;
