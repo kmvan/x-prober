@@ -27,7 +27,7 @@ const StyledNav = styled.div`
   height: 3rem;
   line-height: 3rem;
   overflow-x: auto;
-  @media ${device('mobileMd')} {
+  @media ${device('mobileLg')} {
     overflow-x: unset;
     justify-content: center;
   }
