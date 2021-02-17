@@ -118,12 +118,12 @@
     "zhhk": "",
     "zhtw": ""
   },
-  "Can not fetch IP.": {
-    "ja": "IPを取得できません。",
-    "zh": "无法获取 IP。",
-    "zhcn": "无法获取 IP。",
-    "zhhk": "無法獲取 IP。",
-    "zhtw": "無法獲取 IP 地址。"
+  "Can not fetch IP": {
+    "ja": "IPを取得できません",
+    "zh": "无法获取 IP",
+    "zhcn": "无法获取 IP",
+    "zhhk": "無法獲取 IP",
+    "zhtw": "無法獲取 IP 地址"
   },
   "Can not fetch location.": {
     "ja": "場所を取得できません。",
@@ -534,6 +534,13 @@
     "zhcn": "节点",
     "zhhk": "節點",
     "zhtw": "節點"
+  },
+  "Not support": {
+    "ja": "サポートしません",
+    "zh": "不支持",
+    "zhcn": "不支持",
+    "zhhk": "不支援",
+    "zhtw": "不支援"
   },
   "Opcache enabled": {
     "ja": "%s 有効",

@@ -51,7 +51,10 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-msgid "Can not fetch IP."
+msgid "Can not fetch IP"
+msgstr ""
+
+msgid "Not support"
 msgstr ""
 
 msgid "My IPv4"
