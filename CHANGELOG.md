@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.1.0 - 2021-02-17
+
+### Fix
+
+- Fix Zend "Optimizer" typo (by Jack Cherng)
+
+### Optimize
+
+- Optimize default color scheme, make it more refined
+- Optimize dark color scheme, make it more dark
+
 ## 7.0.0 - 2021-02-13
 
 ### Add
