@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.2.0 - 2021-02-18
+
+### Optimize
+
+- Optimize IPv4/v6 text description
+- Optimize nav style
+- Optimize title style
+- Optimize progress bar style
+- Adjust js to ES2016 scheme
+
 ## 7.1.0 - 2021-02-17
 
 ### Fix

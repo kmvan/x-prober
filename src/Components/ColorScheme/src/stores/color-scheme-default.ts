@@ -1,9 +1,9 @@
 import { gettext } from '@/Language/src'
-import { darken, rgba } from 'polished'
+import { darken, lighten, rgba } from 'polished'
 import { colorSchemeProps } from '../typings'
 const light = '#f8f8f8'
 const dark = '#333'
-const topDarkBottomLight = `linear-gradient(#282828, ${dark})`
+const topDarkBottomLight = `linear-gradient(#282828, ${lighten(0.05, dark)})`
 const colorSchemeDefault: colorSchemeProps = {
   name: gettext('Default'),
   isDark: false,
@@ -20,7 +20,8 @@ const colorSchemeDefault: colorSchemeProps = {
   'app.fg': dark,
   'app.bg': light,
   'title.fg': light,
-  'title.bg': 'linear-gradient(#333, #282828)',
+  'title.bg': dark,
+  'title.boxShadow': `0 1px 0 #000`,
   'sysLoad.fg': light,
   'sysLoad.bg': dark,
   'card.border': rgba(dark, 0.1),
@@ -43,9 +44,15 @@ const colorSchemeDefault: colorSchemeProps = {
   'progress.bg': topDarkBottomLight,
   'progress.value.fg': light,
   'progress.value.bg': '#0c0',
-  'progress.value.after.bg': 'linear-gradient(#fff, #ffffff4d)',
-  'progress.value.before.bg':
-    'linear-gradient(to right top, transparent, #ffffff80, transparent)',
+  'progress.value.after.bg': `linear-gradient(${[
+    rgba('#fff', 0.45),
+    'transparent',
+  ].join(',')})`,
+  'progress.value.before.bg': `linear-gradient(to right, ${[
+    rgba('#fff', 0.1),
+    rgba('#fff', 0.95),
+    rgba('#fff', 0.1),
+  ].join(',')})`,
   'network.stats.upload': '#c24b00',
   'network.stats.download': '#007400',
   'network.node.fg': dark,

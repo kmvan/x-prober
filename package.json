@@ -51,9 +51,9 @@
     "immutability-helper": "^3.1.1",
     "isomorphic-unfetch": "^3.1.0",
     "JSON2": "^0.1.0",
-    "mobx": "^6.1.6",
+    "mobx": "^6.1.7",
     "mobx-react-lite": "^3.2.0",
-    "polished": "^4.1.0",
+    "polished": "^4.1.1",
     "query-string": "^6.14.0",
     "react-use": "^17.1.1",
     "styled-components": "^5.2.1"

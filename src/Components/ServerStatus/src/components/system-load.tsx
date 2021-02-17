@@ -18,7 +18,6 @@ export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
   }
 `
 export const StyledSysLoadGroupItem = styled.span`
-  margin-right: 0.5rem;
   background: ${({ theme }) => theme['sysLoad.bg']};
   color: ${({ theme }) => theme['sysLoad.fg']};
   padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
@@ -27,6 +26,9 @@ export const StyledSysLoadGroupItem = styled.span`
   font-weight: 700;
   @media ${device('tablet')} {
     padding: calc(${GUTTER} / 10) ${GUTTER};
+  }
+  & + & {
+    margin-left: 0.5rem;
   }
 `
 interface SysLoadGroupProps {

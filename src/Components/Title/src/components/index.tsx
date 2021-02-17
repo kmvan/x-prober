@@ -31,6 +31,7 @@ export const StyledTitle = styled.h1`
   line-height: 1;
   border-radius: 0 0 ${BORDER_RADIUS} ${BORDER_RADIUS};
   z-index: 10;
+  box-shadow: ${({ theme }) => theme['title.boxShadow']};
   animation: ${slideDown} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
 `

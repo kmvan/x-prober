@@ -36,7 +36,7 @@ module.exports = {
         parallel: true,
         terserOptions: {
           compress: true,
-          ecma: 2015,
+          ecma: 2016,
           keep_classnames: false,
           keep_fnames: false,
           module: false,

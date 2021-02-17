@@ -12,12 +12,16 @@ const useIp = (type: 4 | 6): useIpProps => {
   })
   useEffect(() => {
     ;(async () => {
-      const res = await fetch(`https://ipv${type}.inn-studio.com/ip/`)
-      const ip = await res.text()
-      if (ip && res.status === OK) {
-        setData({ ip, msg: '' })
-      } else {
-        setData({ ip: '', msg: gettext('Can not fetch IP.') })
+      try {
+        const res = await fetch(`https://ipv${type}.inn-studio.com/ip/?json`)
+        const data = await res.json()
+        if (data?.ip && res.status === OK) {
+          setData({ ip: data.ip, msg: '' })
+        } else {
+          setData({ ip: '', msg: gettext('Can not fetch IP') })
+        }
+      } catch (err) {
+        setData({ ip: '', msg: gettext('Not support') })
       }
     })()
   }, [])
