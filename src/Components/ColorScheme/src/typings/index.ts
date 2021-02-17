@@ -15,6 +15,7 @@ export interface colorSchemeProps {
   'app.bg': string
   'title.fg': string
   'title.bg': string
+  'title.boxShadow': string
   'sysLoad.fg': string
   'sysLoad.bg': string
   'card.border': string

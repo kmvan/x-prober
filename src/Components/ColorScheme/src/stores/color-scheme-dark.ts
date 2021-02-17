@@ -21,6 +21,7 @@ const colorSchemeDark: colorSchemeProps = {
   'app.bg': '#222',
   'title.fg': light,
   'title.bg': dark,
+  'title.boxShadow': `0 1px 0 ${rgba(light, 0.1)}`,
   'sysLoad.fg': light,
   'sysLoad.bg': dark,
   'card.border': rgba('#000', 0.5),
