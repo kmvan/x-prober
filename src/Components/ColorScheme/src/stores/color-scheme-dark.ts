@@ -82,8 +82,11 @@ const colorSchemeDark: colorSchemeProps = {
   'footer.bg': dark,
   'nav.fg': light,
   'nav.bg': dark,
-  'nav.hover.fg': dark,
-  'nav.hover.bg': `linear-gradient(${light}, ${darken(0.15, light)})`,
+  'nav.hover.fg': light,
+  'nav.hover.bg': `linear-gradient(${[
+    lighten(0.3, dark),
+    lighten(0.1, dark),
+  ].join(',')})`,
   'nav.border': rgba(light, 0.1),
   'starMe.fg': darken(0.1, light),
   'starMe.bg': dark,
