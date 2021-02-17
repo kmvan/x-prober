@@ -21,6 +21,7 @@ const StyledCardTitle = styled.div`
   word-break: normal;
   padding: calc(${GUTTER} / 2) 0;
   flex: 0 0 8rem;
+  color: ${({ theme }) => theme['card.title.fg']};
   @media ${device('tablet')} {
     flex: 0 0 12rem;
   }

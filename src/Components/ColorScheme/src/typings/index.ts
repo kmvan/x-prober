@@ -1,6 +1,6 @@
 export interface colorSchemeProps {
   name: string
-  isDark:boolean
+  isDark: boolean
   color: string
   fg: string
   bg: string
@@ -21,8 +21,10 @@ export interface colorSchemeProps {
   'card.fg': string
   'card.bg': string
   'card.hover.bg': string
+  'card.boxShadow': string
   'card.legend.fg': string
   'card.legend.bg': string
+  'card.title.fg': string
   'progress.fg': string
   'progress.bg': string
   'progress.value.fg': string

@@ -7,7 +7,7 @@ const topDarkBottomLight = `linear-gradient(#282828, ${dark})`
 const colorSchemeDefault: colorSchemeProps = {
   name: gettext('Default'),
   isDark: false,
-  color: `linear-gradient(${darken(0.2, light)}, ${darken(0.1, light)})`,
+  color: `linear-gradient(${rgba(dark, 0.9)}, ${rgba(light, 0.5)})`,
   fg: dark,
   bg: light,
   'selection.fg': light,
@@ -23,15 +23,22 @@ const colorSchemeDefault: colorSchemeProps = {
   'title.bg': 'linear-gradient(#333, #282828)',
   'sysLoad.fg': light,
   'sysLoad.bg': dark,
-  'card.border': rgba('#000', 0.1),
+  'card.border': rgba(dark, 0.1),
   'card.fg': dark,
-  'card.bg': `linear-gradient(${rgba('#000', 0.05)}, #fff)`,
+  'card.bg': rgba(dark, 0.03),
   'card.hover.bg': `linear-gradient(to right, transparent, ${rgba(
     '#000',
     0.1
   )}, transparent)`,
+  'card.boxShadow': [
+    `0 -1px 0 ${rgba(dark, 0.3)}`,
+    `inset 0 1px 0 #fff`,
+    `inset 0 -1px 0 ${rgba(dark, 0.3)}`,
+    `0 1px 0 #fff`,
+  ].join(','),
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
+  'card.title.fg': dark,
   'progress.fg': light,
   'progress.bg': topDarkBottomLight,
   'progress.value.fg': light,
