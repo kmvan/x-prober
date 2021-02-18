@@ -1,5 +1,4 @@
-[![X Prober preview](screenshots/default.webp)](screenshots/default.webp)
-[![X Prober dark preview](screenshots/dark.webp)](screenshots/dark.webp)
+[![X Prober preview](screenshots/preview.webp)](screenshots/preview.webp)
 
 # 😎 X 探針、劉海探針
 

@@ -7,47 +7,45 @@
 
 # 😎 X Prober
 
-> This is a probe program for **PHP environment**. It can show your server information and readable easily.
+> これは **PHP 環境** のプローブプログラムです。 サーバー情報を表示し、簡単に読み取ることができます。
 
-And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/11 Pro/11 Pro Max** !
+[![オープンコレクティブの支持者](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
+[![オープンコレクティブのスポンサー](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
 
-[![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
-
-## License
+## ライセンス
 
 - GPL-3.0
 
-## Online demo
+## オンラインデモ
 
 - [https://prober.inn-studio.com](https://prober.inn-studio.com)
-- [https://tz.inn-studio.com](https://tz.inn-studio.com) (same)
+- [https://tz.inn-studio.com](https://tz.inn-studio.com) (同じ)
 
-## Download and Usage
+## ダウンロードと使用法
 
 - Click [INN STUDIO mirror](https://api.inn-studio.com/download?id=xprober) or [GitHub mirror](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) to download the probe file.
 - You will get a single file of `x.php` and upload it to your server.
 - Access `x.php` via http browser.
 
-## Required environment
+## 必要な環境
 
-- Compile environment: PHP 7.4+
-- Production environment: PHP 5.3+
-- Browser support: Chrome / Firefox / Edge / Android
-- OS support: Linux / Windows(basic features)
+- 開発環境: PHP 7.4+
+- 生産環境: PHP 5.3+
+- ブラウザのサポート: Chrome / Firefox / Edge / Android
+- OS サポート: Linux / Windows(basic features)
 
-## Extensions
+## 拡張機能
 
-- In preparation...
+- 準備中...
 
-## Development
+## 開発
 
-- Fork project.
-- Fetch your project.
-- Install node modules: `$ npm install`.
-- Watch scripts: `$ npm run dev`.
-- Generate composer vendor: `$ composer install; composer dumpautoload -o`.
-- Compile PHP: `$ npm run dev:php`
+- フォークプロジェクト。
+- プロジェクトを取得します。
+- npm モジュールをインストールします：`$ npm install`。
+- 監視スクリプト：`$ npm run dev`。
+- Composer をインストールします：`$ composer install; composer dumpautoload -o`。
+- PHP をコンパイル: `$ npm run dev:php`
 - Access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
 - Generate languages: `$ npm run lang` to remake `./languages/lang.pot` language template and build `*.po`.
 - Enjoy it. 😄
