@@ -10,7 +10,7 @@ class Conf extends MyInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('conf', [$this, 'conf']);
+        EventsApi::on('conf', array($this, 'conf'));
     }
 
     public function conf(array $conf)
@@ -20,17 +20,17 @@ class Conf extends MyInfoConstants
         }
 
         $ip   = UtilsClientIp::getV4();
-        $ipv4 = \filter_var($ip, \FILTER_VALIDATE_IP, [
+        $ipv4 = \filter_var($ip, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
-        ]) ?: '';
-        $ipv6 = \filter_var($ip, \FILTER_VALIDATE_IP, [
+        )) ?: '';
+        $ipv6 = \filter_var($ip, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV6,
-        ]) ?: '';
-        $conf[$this->ID] = [
+        )) ?: '';
+        $conf[$this->ID] = array(
             'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
             'ipv4'        => $ipv4,
             'ipv6'        => $ipv6,
-        ];
+        );
 
         return $conf;
     }
