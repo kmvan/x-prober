@@ -1,10 +1,12 @@
 import CardStore from '@/Card/src/stores'
 import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
 import { device } from '@/Style/src/components/devices'
+import { ElevatorNav } from '@/Utils/src/components/elevator-nav'
 import getElementOffsetTop from '@/Utils/src/components/get-element-offset-top'
 import { observer } from 'mobx-react-lite'
-import React, { MouseEvent, useCallback } from 'react'
+import React, { MouseEvent, ReactElement, useCallback } from 'react'
 import styled, { keyframes } from 'styled-components'
+import NavStore from '../stores'
 const slideUp = keyframes`
   from{
     transform: translate3d(0, 100%, 0);
@@ -43,11 +45,14 @@ const StyledNavLink = styled.a`
   @media ${device('tablet')} {
     padding: 0 ${GUTTER};
   }
-  :hover,
-  :focus,
-  :active {
+  :hover {
     background: ${({ theme }) => theme['nav.hover.bg']};
     color: ${({ theme }) => theme['nav.hover.fg']};
+    text-decoration: none;
+  }
+  &.active {
+    background: ${({ theme }) => theme['nav.active.bg']};
+    color: ${({ theme }) => theme['nav.active.fg']};
     text-decoration: none;
   }
   :last-child {
@@ -79,24 +84,22 @@ const Nav = observer(() => {
     },
     []
   )
+  const items = CardStore.enabledCards
+    .map(({ id, title, tinyTitle, enabled = true }) => {
+      if (!enabled) {
+        return null
+      }
+      return (
+        <StyledNavLink key={id} onClick={(e) => onClick(e, id)} href={`#${id}`}>
+          <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
+          <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
+        </StyledNavLink>
+      )
+    })
+    .filter((n) => n) as ReactElement[]
   return (
     <StyledNav>
-      {CardStore.enabledCards.map(
-        ({ id, title, tinyTitle, enabled = true }) => {
-          if (!enabled) {
-            return null
-          }
-          return (
-            <StyledNavLink
-              key={id}
-              onClick={(e) => onClick(e, id)}
-              href={`#${id}`}>
-              <StyledNavLinkTitle>{title}</StyledNavLinkTitle>
-              <StyledNavLinkTinyTitle>{tinyTitle}</StyledNavLinkTinyTitle>
-            </StyledNavLink>
-          )
-        }
-      )}
+      <ElevatorNav activeIndex={NavStore.activeIndex}>{items}</ElevatorNav>
     </StyledNav>
   )
 })
