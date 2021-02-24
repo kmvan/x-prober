@@ -39,10 +39,10 @@ class UtilsLocation
         }
 
         return array(
-            'country' => $item['country_name'] ?? '',
-            'region'  => $item['region_name'] ?? '',
-            'city'    => $item['city'] ?? '',
-            'flag'    => $item['location']['country_flag_emoji'] ?? '',
+            'country' => isset($item['country_name']) ? $item['country_name'] : '',
+            'region'  => isset($item['region_name']) ? $item['region_name'] : '',
+            'city'    => isset($item['city']) ? $item['city'] : '',
+            'flag'    => isset($item['location']['country_flag_emoji']) ? $item['location']['country_flag_emoji'] : '',
         );
     }
 }
