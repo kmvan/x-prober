@@ -5,7 +5,6 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
-
 interface ElevatorNavProps {
   activeIndex: number
   children: ReactElement[]
@@ -42,8 +41,8 @@ export const ElevatorNavBody = ({
   const position = useRef<[start: number, end: number][]>([[0, 0]])
   const timer = useRef<number>(0)
   const onScroll = useCallback(() => {
-    timer.current && clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
+    timer.current && window.clearTimeout(timer.current)
+    timer.current = window.setTimeout(() => {
       const y = Math.round(window.pageYOffset) + topOffset
       position.current.map(([start, end], i) => {
         if (y >= start && y < start + end) {
