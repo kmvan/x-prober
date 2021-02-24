@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 interface useIpProps {
   ip: string
   msg: string
+  isLoading: boolean
 }
 const useIp = (type: 4 | 6): useIpProps => {
   const [data, setData] = useState<useIpProps>({
     ip: '',
     msg: gettext('Loading...'),
+    isLoading: true,
   })
   useEffect(() => {
     ;(async () => {
@@ -16,12 +18,16 @@ const useIp = (type: 4 | 6): useIpProps => {
         const res = await fetch(`https://ipv${type}.inn-studio.com/ip/?json`)
         const data = await res.json()
         if (data?.ip && res.status === OK) {
-          setData({ ip: data.ip, msg: '' })
+          setData({ ip: data.ip, msg: '', isLoading: false })
         } else {
-          setData({ ip: '', msg: gettext('Can not fetch IP') })
+          setData({
+            ip: '',
+            msg: gettext('Can not fetch IP'),
+            isLoading: false,
+          })
         }
       } catch (err) {
-        setData({ ip: '', msg: gettext('Not support') })
+        setData({ ip: '', msg: gettext('Not support'), isLoading: false })
       }
     })()
   }, [])

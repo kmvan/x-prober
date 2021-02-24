@@ -58,6 +58,8 @@ export interface colorSchemeProps {
   'nav.bg': string
   'nav.hover.fg': string
   'nav.hover.bg': string
+  'nav.active.fg': string
+  'nav.active.bg': string
   'nav.border': string
   'starMe.fg': string
   'starMe.bg': string

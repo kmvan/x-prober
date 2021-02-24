@@ -1,6 +1,8 @@
 import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
+import NavStore from '@/Nav/src/stores'
 import { device } from '@/Style/src/components/devices'
+import { ElevatorNavBody } from '@/Utils/src/components/elevator-nav'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import styled from 'styled-components'
@@ -62,7 +64,7 @@ const Cards = observer(() => {
     return null
   }
   return (
-    <>
+    <ElevatorNavBody id='innCard' setActiveIndex={NavStore.setActiveIndex}>
       {enabledCards.map(({ id, title, component: Tag }, i) => {
         const upArrow = (
           <StyleArrow
@@ -95,7 +97,7 @@ const Cards = observer(() => {
           </StyledFieldset>
         )
       })}
-    </>
+    </ElevatorNavBody>
   )
 })
 export default Cards

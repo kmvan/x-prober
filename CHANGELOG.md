@@ -2,6 +2,19 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.3.0 - 2021-02-24
+
+### Fix
+
+- Fix null coalescing operator in PHP5
+
+### Optimize
+
+- Optimize nav module
+- Optimize IP text display
+- Optimize location text display
+- Use PNPM instead of npm
+
 ## 7.2.0 - 2021-02-18
 
 ### Optimize

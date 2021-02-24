@@ -34,7 +34,9 @@ const ClientLocation = observer(({ ip }: ClientLocationProps) => {
   let clickText = ''
   if (!isLoading) {
     clickText = location
-      ? `${location.flag} ${location.country}, ${location.region}, ${location.city}`
+      ? [location.flag, location.country, location.region, location.city]
+          .filter((n) => !!n)
+          .join(', ')
       : gettext('👆 Click to fetch')
   }
   if (!ip) {

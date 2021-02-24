@@ -8,12 +8,32 @@ import store from '../stores'
 import ClientLocation from './location'
 const MyInfo = observer(() => {
   const { conf } = store
-  const { ip: ipv4, msg: ipv4Msg } = useIp(4)
-  const { ip: ipv6, msg: ipv6Msg } = useIp(6)
+  const { ip: ipv4, msg: ipv4Msg, isLoading: ipv4IsLoading } = useIp(4)
+  const { ip: ipv6, msg: ipv6Msg, isLoading: ipv6IsLoading } = useIp(6)
+  let myIpv4: string = ''
+  let myIpv6: string = ''
+  if (ipv4IsLoading) {
+    myIpv4 = ipv4Msg
+  } else if (ipv4) {
+    myIpv4 = ipv4
+  } else if (conf?.ipv4) {
+    myIpv4 = conf.ipv4
+  } else {
+    myIpv4 = ipv4Msg
+  }
+  if (ipv6IsLoading) {
+    myIpv6 = ipv6Msg
+  } else if (ipv6) {
+    myIpv6 = ipv6
+  } else if (conf?.ipv6) {
+    myIpv6 = conf.ipv6
+  } else {
+    myIpv6 = ipv6Msg
+  }
   const items: any[] = [
-    [gettext('My IPv4'), `${ipv4Msg}${ipv4}`],
-    [gettext('My IPv6'), `${ipv6Msg}${ipv6}`],
-    [gettext('My location (IPv4)'), <ClientLocation ip={ipv4} />],
+    [gettext('My IPv4'), myIpv4],
+    [gettext('My IPv6'), myIpv6],
+    [gettext('My location (IPv4)'), <ClientLocation ip={ipv4 || conf?.ipv4} />],
     [gettext('My browser UA'), navigator.userAgent],
     [gettext('My browser languages (via JS)'), navigator.languages.join(',')],
     [gettext('My browser languages (via PHP)'), conf?.phpLanguage],
