@@ -123,6 +123,9 @@ msgstr ""
 msgid "Opcache enabled"
 msgstr ""
 
+msgid "Opcache JIT enabled"
+msgstr ""
+
 msgid "Loaded extensions"
 msgstr ""
 
