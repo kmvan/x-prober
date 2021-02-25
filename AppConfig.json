@@ -45,16 +45,16 @@
       }
     },
     {
-      "name": "Olink / AMD-3700X / PHP80",
+      "name": "Olink / AMD-3700X / PHP80 JIT",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
-      "date": "2021-01-20",
+      "date": "2021-02-25",
       "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
       "binUrl": "https://speedtest.fishfish.date",
       "detail": {
-        "hash": 883,
-        "intLoop": 971,
-        "floatLoop": 971,
-        "ioLoop": 772
+        "hash": 885,
+        "intLoop": 997,
+        "floatLoop": 997,
+        "ioLoop": 778
       }
     },
     {
