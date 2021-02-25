@@ -14,6 +14,7 @@ const shortItems: [string, boolean][] = [
   ['Memcached', !!conf?.memcached],
   ['Opcache', !!conf?.opcache],
   [gettext('Opcache enabled'), !!conf?.opcacheEnabled],
+  [gettext('Opcache JIT enabled'), !!conf?.opcacheJitEnabled],
   ['Swoole', !!conf?.swoole],
   ['Image Magick', !!conf?.imagick],
   ['Graphics Magick', !!conf?.gmagick],
