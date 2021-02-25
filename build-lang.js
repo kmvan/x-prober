@@ -2,7 +2,6 @@
  * @version 1.0.5
  */
 
-const trim = require('lodash/trim')
 const glob = require('glob')
 const fs = require('fs')
 const PO = require('pofile')
@@ -24,8 +23,8 @@ const parseFile = (filePath) => {
 
   if (matches) {
     for (const match of matches) {
-      const msgid = trim(match[1], "'")
-      const msgctxt = trim(match[2] || '', "'")
+      const msgid = match[1].slice(1, -1)
+      const msgctxt = (match[2] || '').slice(1, -1)
       if (poEntries[`${msgid}${msgctxt}`]) {
         continue
       }
