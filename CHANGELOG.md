@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.4.0 - 2021-02-25
+
+### Add
+
+- Add PHP8 Opcache JIT detector
+
+### Fix
+
+- Fix `build-lang.js` script lodash error
+- Fix Japanese translation errors
+
 ## 7.3.0 - 2021-02-24
 
 ### Fix
