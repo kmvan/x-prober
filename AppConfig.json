@@ -19,16 +19,16 @@
   "LATEST_NGINX_STABLE_VERSION": "1.18.0",
   "BENCHMARKS": [
     {
-      "name": "VPSPlayer / AMD-3950X / PHP80",
+      "name": "VPSPlayer / AMD-3950X / PHP80 JIT",
       "url": "https://vpsplayer.com/aff.php?aff=50",
-      "date": "2021-01-20",
+      "date": "2021-02-25",
       "proberUrl": "http://23.225.121.61/x.php",
       "binUrl": "http://23.225.121.61/64m.bin",
       "detail": {
-        "hash": 880,
-        "intLoop": 972,
-        "floatLoop": 972,
-        "ioLoop": 888
+        "hash": 878,
+        "intLoop": 997,
+        "floatLoop": 997,
+        "ioLoop": 875
       }
     },
     {
