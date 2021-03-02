@@ -83,15 +83,15 @@
       }
     },
     {
-      "name": "SpartanHost / HDD / PHP73",
+      "name": "SpartanHost / HDD / PHP74",
       "url": "https://billing.spartanhost.net/aff.php?aff=801",
-      "date": "2019-03-09",
+      "date": "2021-03-02",
       "proberUrl": "https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com",
       "detail": {
-        "hash": 830,
-        "intLoop": 958,
-        "floatLoop": 957,
-        "ioLoop": 582
+        "hash": 789,
+        "intLoop": 966,
+        "floatLoop": 956,
+        "ioLoop": 665
       }
     },
     {
