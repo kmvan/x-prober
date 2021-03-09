@@ -1,6 +1,6 @@
-import { createPortal } from 'react-dom'
 import { useEffect, useState } from 'react'
-const Portal = ({ children }) => {
+import { createPortal } from 'react-dom'
+export const Portal = ({ children }) => {
   const [container] = useState(() => document.createElement('div'))
   useEffect(() => {
     document.body.appendChild(container)
@@ -10,4 +10,3 @@ const Portal = ({ children }) => {
   }, [])
   return createPortal(children, container)
 }
-export default Portal

@@ -49,7 +49,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
   flex: 0 0 100%;
   ${(props) => createCss(props.types)}
 `
-const Grid = ({
+export const Grid = ({
   mobileSm,
   mobileMd,
   mobileLg,
@@ -70,4 +70,3 @@ const Grid = ({
   }
   return <StyledGrid types={types}>{children}</StyledGrid>
 }
-export default Grid

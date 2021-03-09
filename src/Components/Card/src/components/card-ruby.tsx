@@ -23,7 +23,12 @@ const StyledRuby = styled.ruby<StyledRubyProps>`
   }
   font-weight: ${(p) => (p.isResult ? 'bold' : 'unset')};
 `
-const CardRuby = ({ ruby, rt, isResult = false, ...props }: CardRubyProps) => {
+export const CardRuby = ({
+  ruby,
+  rt,
+  isResult = false,
+  ...props
+}: CardRubyProps) => {
   return (
     <StyledRuby isResult={isResult} {...props} title={gettext('Copy marks')}>
       {ruby}
@@ -33,4 +38,3 @@ const CardRuby = ({ ruby, rt, isResult = false, ...props }: CardRubyProps) => {
     </StyledRuby>
   )
 }
-export default CardRuby

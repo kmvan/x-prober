@@ -2,8 +2,8 @@ import { ANIMATION_DURATION_SC, BORDER_RADIUS, GUTTER } from '@/Config/src'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import store from '../stores'
-import colorSchemes from '../stores/color-schemes'
+import { ColorSchemeStore } from '../stores'
+import { colorSchemes } from '../stores/color-schemes'
 const fadeIn = keyframes`
   from{
     transform: translate3d(0, -10%, 0);
@@ -45,19 +45,18 @@ const StyledColorScheme = styled.div`
   animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
 `
-const ColorScheme = observer(() => {
+export const ColorScheme = observer(() => {
   return (
     <StyledColorScheme>
       {Object.entries(colorSchemes).map(([schemeId, { name, color }]) => (
         <StyledColorSchemeLink
-          isActive={schemeId === store.schemeId}
+          isActive={schemeId === ColorSchemeStore.schemeId}
           title={name}
           key={schemeId}
           style={{ background: color }}
-          onClick={() => store.setSchemeId(schemeId)}
+          onClick={() => ColorSchemeStore.setSchemeId(schemeId)}
         />
       ))}
     </StyledColorScheme>
   )
 })
-export default ColorScheme

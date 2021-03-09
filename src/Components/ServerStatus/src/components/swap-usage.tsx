@@ -1,11 +1,11 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import ProgressBar from '@/ProgressBar/src/components'
-import React from 'react'
-import store from '../stores'
+import { CardGrid } from '@/Card/src/components/card-grid'
 import { gettext } from '@/Language/src'
+import { ProgressBar } from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
-const SwapUsage = observer(() => {
-  const { max, value } = store.swapUsage
+import React from 'react'
+import { ServerStatusStore } from '../stores'
+export const SwapUsage = observer(() => {
+  const { max, value } = ServerStatusStore.swapUsage
   if (!max) {
     return null
   }
@@ -15,4 +15,3 @@ const SwapUsage = observer(() => {
     </CardGrid>
   )
 })
-export default SwapUsage

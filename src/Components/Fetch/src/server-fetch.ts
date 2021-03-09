@@ -1,10 +1,13 @@
-import BootstrapStore from '@/Bootstrap/src/stores'
+import { BootstrapStore } from '@/Bootstrap/src/stores'
 import fetch from 'isomorphic-unfetch'
 interface serverFetchProps {
   data?: any
   status: number
 }
-const serverFetch = (action: string, opts = {}): Promise<serverFetchProps> => {
+export const serverFetch = (
+  action: string,
+  opts = {}
+): Promise<serverFetchProps> => {
   return new Promise(async (resolve, reject) => {
     opts = {
       ...{
@@ -27,4 +30,3 @@ const serverFetch = (action: string, opts = {}): Promise<serverFetchProps> => {
     }
   })
 }
-export default serverFetch

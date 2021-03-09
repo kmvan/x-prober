@@ -1,23 +1,23 @@
 import { GUTTER } from '@/Config/src'
-import serverFetch from '@/Fetch/src/server-fetch'
-import Grid from '@/Grid/src/components/grid'
-import Row from '@/Grid/src/components/row'
+import { serverFetch } from '@/Fetch/src/server-fetch'
+import { Grid } from '@/Grid/src/components/grid'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
-import ProgressBar from '@/ProgressBar/src/components'
+import { ProgressBar } from '@/ProgressBar/src/components'
 import { OK } from '@/Restful/src/http-status'
 import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
 import {
   ServerStatusCpuUsageProps,
   ServerStatusUsageProps,
 } from '@/ServerStatus/src/stores'
-import Alert from '@/Utils/src/components/alert'
-import Loading from '@/Utils/src/components/loading'
-import template from '@/Utils/src/components/template'
+import { Alert } from '@/Utils/src/components/alert'
+import { Loading } from '@/Utils/src/components/loading'
+import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
-import store from '../stores'
-import NodeNetworks from './node-networks'
+import { NodesStore } from '../stores'
+import { NodeNetworks } from './node-networks'
 const StyledNodeGroupId = styled.a`
   display: block;
   text-decoration: underline;
@@ -103,7 +103,7 @@ const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
   )
 }
 const Items = observer(() => {
-  const items = store.items.map(
+  const items = NodesStore.items.map(
     ({ id, url, isLoading, isError, errMsg, data }) => {
       const idLink = <StyledNodeGroupId href={url}>{id}</StyledNodeGroupId>
       switch (true) {
@@ -149,10 +149,10 @@ const Items = observer(() => {
   )
   return <>{items}</>
 })
-const Nodes = observer(() => {
-  const { items, itemsCount } = store
+export const Nodes = observer(() => {
+  const { items, itemsCount } = NodesStore
   const fetch = useCallback(async (nodeId: string) => {
-    const { setItem } = store
+    const { setItem } = NodesStore
     const { data: item, status } = await serverFetch(`node&nodeId=${nodeId}`)
     if (status === OK) {
       if (!item) {
@@ -187,4 +187,3 @@ const Nodes = observer(() => {
     </Row>
   )
 })
-export default Nodes

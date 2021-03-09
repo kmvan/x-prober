@@ -1,7 +1,7 @@
-import serverFetch from '@/Fetch/src/server-fetch'
+import { serverFetch } from '@/Fetch/src/server-fetch'
 import { gettext } from '@/Language/src'
 import { OK } from '@/Restful/src/http-status'
-import ToastStore from '@/Toast/src/stores'
+import { ToastStore } from '@/Toast/src/stores'
 import { observer } from 'mobx-react-lite'
 import React, { MouseEvent, useCallback, useState } from 'react'
 import styled from 'styled-components'
@@ -10,7 +10,7 @@ interface ServerLocationProps {
   action: string
 }
 const StyledLocation = styled.a``
-const Location = observer(({ action }: ServerLocationProps) => {
+export const Location = observer(({ action }: ServerLocationProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [location, setLocation] = useState<locationProps | null>(null)
   const onClick = useCallback(
@@ -50,4 +50,3 @@ const Location = observer(({ action }: ServerLocationProps) => {
     </StyledLocation>
   )
 })
-export default Location

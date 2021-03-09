@@ -4,7 +4,7 @@ import { colorSchemeProps } from '../typings'
 const light = '#f8f8f8'
 const dark = '#333'
 const topDarkBottomLight = `linear-gradient(#282828, ${lighten(0.05, dark)})`
-const colorSchemeDefault: colorSchemeProps = {
+export const colorSchemeDefault: colorSchemeProps = {
   name: gettext('Default'),
   isDark: false,
   color: `linear-gradient(${rgba(dark, 0.9)}, ${rgba(light, 0.5)})`,
@@ -90,4 +90,3 @@ const colorSchemeDefault: colorSchemeProps = {
   'toast.fg': light,
   'toast.bg': dark,
 }
-export default colorSchemeDefault

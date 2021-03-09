@@ -1,27 +1,30 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import Row from '@/Grid/src/components/row'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
-import template from '@/Utils/src/components/template'
+import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
-import store from '../stores'
-import ServerDiskUsage from './disk-usage'
-import Location from './location'
-const ServerInfo = observer(() => {
+import { ServerInfoStore } from '../stores'
+import { ServerDiskUsage } from './disk-usage'
+import { Location } from './location'
+export const ServerInfo = observer(() => {
   const {
     conf,
     serverUptime: { days, hours, mins, secs },
-  } = store
+    serverTime,
+    serverIpv4,
+    serverIpv6,
+  } = ServerInfoStore
   const uptime = template(
     gettext('{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs'),
     { days, hours, mins, secs }
   )
   const shortItems = [
     [gettext('Server name'), conf?.serverName],
-    [gettext('Server time'), store.serverTime],
+    [gettext('Server time'), serverTime],
     [gettext('Server uptime'), uptime],
-    [gettext('Server IPv4'), store.serverIpv4],
-    [gettext('Server IPv6'), store.serverIpv6],
+    [gettext('Server IPv4'), serverIpv4],
+    [gettext('Server IPv6'), serverIpv6],
     [gettext('Server software'), conf?.serverSoftware],
   ]
   const longItems = [
@@ -58,4 +61,3 @@ const ServerInfo = observer(() => {
     </Row>
   )
 })
-export default ServerInfo

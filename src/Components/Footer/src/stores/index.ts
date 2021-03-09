@@ -1,11 +1,10 @@
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import { configure } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
-class Store {
+class Main {
   public readonly ID = 'footer'
   public readonly conf = conf?.[this.ID]
 }
-const FooterStore = new Store()
-export default FooterStore
+export const FooterStore = new Main()

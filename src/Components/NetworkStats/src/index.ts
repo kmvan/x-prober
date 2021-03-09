@@ -1,10 +1,10 @@
-import CardStore from '@/Card/src/stores'
-import component from './components'
-import store from './stores'
+import { CardStore } from '@/Card/src/stores'
 import { gettext } from '@/Language/src'
-store.enabled &&
+import { NetworkStats as component } from './components'
+import { NetworkStatsStore } from './stores'
+NetworkStatsStore.enabled &&
   CardStore.addCard({
-    id: store.ID,
+    id: NetworkStatsStore.ID,
     title: gettext('Network Stats'),
     tinyTitle: gettext('Net'),
     priority: 200,

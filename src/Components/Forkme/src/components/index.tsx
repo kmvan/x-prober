@@ -1,4 +1,4 @@
-import BootstrapStore from '@/Bootstrap/src/stores'
+import { BootstrapStore } from '@/Bootstrap/src/stores'
 import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { device } from '@/Style/src/components/devices'
@@ -62,11 +62,10 @@ const StyledForkmeLink = styled.a`
     bottom: 1px;
   }
 `
-const Forkme = () => {
+export const Forkme = () => {
   return (
     <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
       {gettext('STAR 🌟 ME')}
     </StyledForkmeLink>
   )
 }
-export default Forkme

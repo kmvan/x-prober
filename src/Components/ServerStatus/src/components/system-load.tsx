@@ -1,11 +1,11 @@
-import CardGrid from '@/Card/src/components/card-grid'
+import { CardGrid } from '@/Card/src/components/card-grid'
 import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { device } from '@/Style/src/components/devices'
-import template from '@/Utils/src/components/template'
+import { template } from '@/Utils/src/components/template'
 import React from 'react'
 import styled from 'styled-components'
-import store from '../stores'
+import { ServerStatusStore } from '../stores'
 interface StyledSysLoadGroupProps {
   isCenter: boolean
 }
@@ -59,11 +59,10 @@ export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
 interface SystemLoadProps {
   isCenter?: boolean
 }
-const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
+export const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
   return (
     <CardGrid name={gettext('System load')} tablet={[1, 1]}>
-      <SysLoadGroup isCenter={isCenter} sysLoad={store.sysLoad} />
+      <SysLoadGroup isCenter={isCenter} sysLoad={ServerStatusStore.sysLoad} />
     </CardGrid>
   )
 }
-export default SystemLoad

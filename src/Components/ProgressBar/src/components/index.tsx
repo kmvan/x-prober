@@ -1,6 +1,6 @@
 import { GUTTER } from '@/Config/src'
-import formatBytes from '@/Utils/src/components/format-bytes'
-import gradientColors from '@/Utils/src/components/gradient'
+import { formatBytes } from '@/Utils/src/components/format-bytes'
+import { gradientColors } from '@/Utils/src/components/gradient'
 import { rgba } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
@@ -81,7 +81,7 @@ const StyledProgressValue = styled.div.attrs(
     border-radius: 0;
   }
 `
-export default function ProgressBar({
+export function ProgressBar({
   title = '',
   value,
   max,

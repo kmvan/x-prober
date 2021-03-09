@@ -6,7 +6,7 @@ interface useIpProps {
   msg: string
   isLoading: boolean
 }
-const useIp = (type: 4 | 6): useIpProps => {
+export const useIp = (type: 4 | 6): useIpProps => {
   const [data, setData] = useState<useIpProps>({
     ip: '',
     msg: gettext('Loading...'),
@@ -33,4 +33,3 @@ const useIp = (type: 4 | 6): useIpProps => {
   }, [])
   return data
 }
-export default useIp

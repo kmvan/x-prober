@@ -1,4 +1,4 @@
-export default (fn: () => void): void => {
+export const ready = (fn: () => void): void => {
   const ua: string = navigator.userAgent
   const eventName: string = 'attachEvent'
   switch (true) {

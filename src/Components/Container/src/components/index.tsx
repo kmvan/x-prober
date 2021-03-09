@@ -1,7 +1,7 @@
+import { GUTTER } from '@/Config/src'
+import { device } from '@/Style/src/components/devices'
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { device } from '@/Style/src/components/devices'
-import { GUTTER } from '@/Config/src'
 const StyledContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
@@ -13,7 +13,6 @@ const StyledContainer = styled.div`
   }
 `
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {}
-const Container = (props: ContainerProps) => {
+export const Container = (props: ContainerProps) => {
   return <StyledContainer {...props} />
 }
-export default Container

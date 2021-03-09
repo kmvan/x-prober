@@ -1,8 +1,8 @@
-import serverFetch from '@/Fetch/src/server-fetch'
-import FetchStore from '@/Fetch/src/stores'
+import { serverFetch } from '@/Fetch/src/server-fetch'
+import { FetchStore } from '@/Fetch/src/stores'
 import { gettext } from '@/Language/src'
 import { OK } from '@/Restful/src/http-status'
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
@@ -29,7 +29,7 @@ export interface locationProps {
   city: string
   flag: string
 }
-class Store {
+class Main {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
@@ -66,30 +66,25 @@ class Store {
       this.setServerIpv6('-')
     }
   }
-  @computed
-  public get serverTime(): string {
+  @computed public get serverTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverTime
       : FetchStore.data?.[this.ID]?.serverTime
   }
-  @computed
-  public get serverUptime(): UptimeProps {
+  @computed public get serverUptime(): UptimeProps {
     return FetchStore.isLoading
       ? this.conf?.serverUptime
       : FetchStore.data?.[this.ID]?.serverUptime
   }
-  @computed
-  public get serverUtcTime(): string {
+  @computed public get serverUtcTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverUtcTime
       : FetchStore.data?.[this.ID]?.serverUtcTime
   }
-  @computed
-  public get diskUsage(): ServerInfoDiskUsageProps {
+  @computed public get diskUsage(): ServerInfoDiskUsageProps {
     return FetchStore.isLoading
       ? this.conf?.diskUsage
       : FetchStore.data?.[this.ID]?.diskUsage
   }
 }
-const ServerInfoStore = new Store()
-export default ServerInfoStore
+export const ServerInfoStore = new Main()

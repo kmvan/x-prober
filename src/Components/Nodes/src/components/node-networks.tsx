@@ -1,5 +1,6 @@
 import { BORDER_RADIUS, GUTTER } from '@/Config/src'
-import NetworksStatsItem, {
+import {
+  NetworksStatsItem,
   StyledNetworkIdRow,
 } from '@/NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
@@ -31,7 +32,7 @@ interface NodeNetworksProps {
   items: NetworkStatsItemProps[]
   timestamp: number
 }
-const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
+export const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
   const itemsCount = items.length
   if (!itemsCount) {
     return null
@@ -78,4 +79,3 @@ const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
     </StyledNodeGroupNetworks>
   )
 }
-export default NodeNetworks

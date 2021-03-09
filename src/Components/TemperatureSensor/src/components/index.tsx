@@ -1,13 +1,13 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import Row from '@/Grid/src/components/row'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
-import ProgressBar from '@/ProgressBar/src/components'
-import template from '@/Utils/src/components/template'
+import { ProgressBar } from '@/ProgressBar/src/components'
+import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
-import store from '../stores'
-const TemperatureSensor = observer(() => {
-  const { itemsCount, items } = store
+import { TemperatureSensorStore } from '../stores'
+export const TemperatureSensor = observer(() => {
+  const { itemsCount, items } = TemperatureSensorStore
   if (!itemsCount) {
     return null
   }
@@ -31,4 +31,3 @@ const TemperatureSensor = observer(() => {
     </Row>
   )
 })
-export default TemperatureSensor

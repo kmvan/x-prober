@@ -1,12 +1,11 @@
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import { configure } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
-class Store {
+class Main {
   public readonly ID = 'database'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
 }
-const DatabaseStore = new Store()
-export default DatabaseStore
+export const DatabaseStore = new Main()

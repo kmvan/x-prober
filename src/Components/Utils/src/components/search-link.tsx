@@ -13,7 +13,7 @@ const StyledSearchLink = styled.a`
     background: ${({ theme }) => theme['search.hover.bg']};
   }
 `
-const SearchLink = ({ keyword }: { keyword: string }) => {
+export const SearchLink = ({ keyword }: { keyword: string }) => {
   return (
     <StyledSearchLink
       href={`https://www.google.com/search?q=php+${encodeURIComponent(
@@ -25,4 +25,3 @@ const SearchLink = ({ keyword }: { keyword: string }) => {
     </StyledSearchLink>
   )
 }
-export default SearchLink

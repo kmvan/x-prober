@@ -5,11 +5,10 @@ const StyledCardLink = styled.a`
     content: '👆 ';
   }
 `
-const CardLink = ({ children, ...props }) => {
+export const CardLink = ({ children, ...props }) => {
   return (
     <StyledCardLink target='_blank' {...props}>
       {children}
     </StyledCardLink>
   )
 }
-export default CardLink

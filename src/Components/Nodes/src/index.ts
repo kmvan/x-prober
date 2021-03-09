@@ -1,11 +1,11 @@
-import CardStore from '@/Card/src/stores'
-import component from './components'
-import store from './stores'
+import { CardStore } from '@/Card/src/stores'
 import { gettext } from '@/Language/src'
-store.enabled &&
-  store.itemsCount &&
+import { Nodes as component } from './components'
+import { NodesStore } from './stores'
+NodesStore.enabled &&
+  NodesStore.itemsCount &&
   CardStore.addCard({
-    id: store.ID,
+    id: NodesStore.ID,
     title: gettext('Nodes'),
     tinyTitle: gettext('Nodes'),
     priority: 50,
