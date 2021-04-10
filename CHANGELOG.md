@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.5.0 - 2021-04-10
+
+### Fix
+
+- Fix system load update error
+
 ## 7.4.0 - 2021-02-25
 
 ### Add
