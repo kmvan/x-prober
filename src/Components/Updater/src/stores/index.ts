@@ -1,20 +1,19 @@
-import BootstrapStore from '@/Bootstrap/src/stores'
-import ConfigStore from '@/Config/src/stores'
+import { BootstrapStore } from '@/Bootstrap/src/stores'
+import { ConfigStore } from '@/Config/src/stores'
 import { gettext } from '@/Language/src'
-import template from '@/Utils/src/components/template'
-import versionCompare from '@/Utils/src/components/version-compare'
+import { template } from '@/Utils/src/components/template'
+import { versionCompare } from '@/Utils/src/components/version-compare'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
-class Store {
+class Main {
   @observable public isUpdating: boolean = false
   @observable public isUpdateError: boolean = false
   public constructor() {
     makeObservable(this)
   }
-  @computed
-  public get newVersion(): string {
+  @computed public get newVersion(): string {
     const { appConfig } = ConfigStore
     if (!appConfig || !appConfig.APP_VERSION) {
       return ''
@@ -23,16 +22,13 @@ class Store {
       ? appConfig.APP_VERSION
       : ''
   }
-  @action
-  public setIsUpdating = (isUpdating: boolean) => {
+  @action public setIsUpdating = (isUpdating: boolean) => {
     this.isUpdating = isUpdating
   }
-  @action
-  public setIsUpdateError = (isUpdateError: boolean) => {
+  @action public setIsUpdateError = (isUpdateError: boolean) => {
     this.isUpdateError = isUpdateError
   }
-  @computed
-  public get notiText(): string {
+  @computed public get notiText(): string {
     if (this.isUpdating) {
       return gettext('⏳ Updating, please wait a second...')
     }
@@ -51,5 +47,4 @@ class Store {
     return ''
   }
 }
-const UpdaterStore = new Store()
-export default UpdaterStore
+export const UpdaterStore = new Main()

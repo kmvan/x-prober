@@ -1,12 +1,12 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import NetworksStatsItem from './item'
-import React from 'react'
-import Row from '@/Grid/src/components/row'
-import store from '../stores'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { Row } from '@/Grid/src/components/row'
 import { observer } from 'mobx-react-lite'
+import React from 'react'
 import { usePrevious } from 'react-use'
-const NetworkStats = observer(() => {
-  const { sortItems, itemsCount, timestamp } = store
+import { NetworkStatsStore } from '../stores'
+import { NetworksStatsItem } from './item'
+export const NetworkStats = observer(() => {
+  const { sortItems, itemsCount, timestamp } = NetworkStatsStore
   if (!itemsCount) {
     return null
   }
@@ -45,4 +45,3 @@ const NetworkStats = observer(() => {
     </Row>
   )
 })
-export default NetworkStats

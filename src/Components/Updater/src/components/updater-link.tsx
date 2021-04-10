@@ -1,17 +1,17 @@
-import React, { useCallback } from 'react'
-import serverFetch from '@/Fetch/src/server-fetch'
-import store from '../stores'
+import { serverFetch } from '@/Fetch/src/server-fetch'
 import { gettext } from '@/Language/src'
-import { observer } from 'mobx-react-lite'
-import { StyledTitleLink } from '@/Title/src/components'
 import {
-  OK,
   INSUFFICIENT_STORAGE,
   INTERNAL_SERVER_ERROR,
+  OK,
 } from '@/Restful/src/http-status'
-const UpdaterLink = observer(() => {
+import { StyledTitleLink } from '@/Title/src/components'
+import { observer } from 'mobx-react-lite'
+import React, { useCallback } from 'react'
+import { UpdaterStore } from '../stores'
+export const UpdaterLink = observer(() => {
   const onClick = useCallback(async () => {
-    const { setIsUpdating, setIsUpdateError } = store
+    const { setIsUpdating, setIsUpdateError } = UpdaterStore
     setIsUpdating(true)
     const { status } = await serverFetch('update')
     switch (status) {
@@ -35,8 +35,7 @@ const UpdaterLink = observer(() => {
   }, [])
   return (
     <StyledTitleLink title={gettext('Click to update')} onClick={onClick}>
-      {store.notiText}
+      {UpdaterStore.notiText}
     </StyledTitleLink>
   )
 })
-export default UpdaterLink

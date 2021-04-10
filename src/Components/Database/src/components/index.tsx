@@ -1,11 +1,11 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import Row from '@/Grid/src/components/row'
-import Alert from '@/Utils/src/components/alert'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { Row } from '@/Grid/src/components/row'
+import { Alert } from '@/Utils/src/components/alert'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
-import store from '../stores'
-const Database = observer(() => {
-  const { conf } = store
+import { DatabaseStore } from '../stores'
+export const Database = observer(() => {
+  const { conf } = DatabaseStore
   const shortItems: [string, boolean | string][] = [
     ['SQLite3', conf?.sqlite3],
     ['SQLite', conf?.sqliteLibversion],
@@ -37,4 +37,3 @@ const Database = observer(() => {
     </Row>
   )
 })
-export default Database

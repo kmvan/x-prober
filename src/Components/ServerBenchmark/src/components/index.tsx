@@ -1,16 +1,16 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import CardRuby from '@/Card/src/components/card-ruby'
-import CardError from '@/Card/src/components/error'
-import serverFetch from '@/Fetch/src/server-fetch'
-import Row from '@/Grid/src/components/row'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { CardRuby } from '@/Card/src/components/card-ruby'
+import { CardError } from '@/Card/src/components/error'
+import { serverFetch } from '@/Fetch/src/server-fetch'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
 import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
-import template from '@/Utils/src/components/template'
+import { template } from '@/Utils/src/components/template'
 import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
 import React, { MouseEvent, useCallback } from 'react'
 import styled from 'styled-components'
-import store from '../stores'
+import { ServerBenchmarkStore } from '../stores'
 const StyledTextBtn = styled.a`
   display: block;
 `
@@ -78,7 +78,7 @@ const Result = ({
   )
 }
 const Items = observer(() => {
-  const { servers } = store
+  const { servers } = ServerBenchmarkStore
   if (!servers) {
     return (
       <CardError>{gettext('Can not fetch marks data from GitHub.')}</CardError>
@@ -145,7 +145,7 @@ const Items = observer(() => {
   return <>{results}</>
 })
 const TestResults = observer(() => {
-  const { marks } = store
+  const { marks } = ServerBenchmarkStore
   if (!marks) {
     return null
   }
@@ -153,7 +153,7 @@ const TestResults = observer(() => {
 })
 const TestBtn = observer(
   ({ onClick }: { onClick: (e: MouseEvent<HTMLAnchorElement>) => void }) => {
-    const { linkText } = store
+    const { linkText } = ServerBenchmarkStore
     return (
       <CardGrid
         name={gettext('My server')}
@@ -166,10 +166,15 @@ const TestBtn = observer(
     )
   }
 )
-const ServerBenchmark = observer(() => {
+export const ServerBenchmark = observer(() => {
   const onClick = useCallback(async (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    const { isLoading, setIsLoading, setMarks, setLinkText } = store
+    const {
+      isLoading,
+      setIsLoading,
+      setMarks,
+      setLinkText,
+    } = ServerBenchmarkStore
     if (isLoading) {
       return false
     }
@@ -197,9 +202,10 @@ const ServerBenchmark = observer(() => {
   }, [])
   return (
     <Row>
-      {store.enabledMyServerBenchmark && <TestBtn onClick={onClick} />}
+      {ServerBenchmarkStore.enabledMyServerBenchmark && (
+        <TestBtn onClick={onClick} />
+      )}
       <Items />
     </Row>
   )
 })
-export default ServerBenchmark

@@ -1,5 +1,5 @@
 import { DataProps } from '@/Fetch/src/stores'
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import {
   action,
   computed,
@@ -20,7 +20,7 @@ export interface NodesItemProps {
   errMsg: string
   data: DataProps
 }
-class Store {
+class Main {
   public readonly ID = 'nodes'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
@@ -46,22 +46,18 @@ class Store {
     })
     this.setItems(items)
   }
-  @action
-  public setItems = (items: NodesItemProps[]) => {
+  @action public setItems = (items: NodesItemProps[]) => {
     this.items = items
   }
-  @action
-  public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
+  @action public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
     const i = this.items.findIndex((item) => item.id === id)
     if (i === -1) {
       return
     }
     this.items[i] = { ...toJS(this.items[i]), ...props }
   }
-  @computed
-  public get itemsCount() {
+  @computed public get itemsCount() {
     return this.items.length
   }
 }
-const NodesStore = new Store()
-export default NodesStore
+export const NodesStore = new Main()

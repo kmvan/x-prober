@@ -1,6 +1,6 @@
-import hexToRgb from './hex-to-rgb'
-import rgbaToHex from './rgba-to-hex'
-const gradientColors = (
+import { hexToRgb } from './hex-to-rgb'
+import { rgbaToHex } from './rgba-to-hex'
+export const gradientColors = (
   startColor: string,
   endColor: string,
   step: number = 100
@@ -22,4 +22,3 @@ const gradientColors = (
   }
   return colors
 }
-export default gradientColors

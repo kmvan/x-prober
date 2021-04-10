@@ -1,11 +1,11 @@
-import BootstrapStore from '@/Bootstrap/src/stores'
+import { BootstrapStore } from '@/Bootstrap/src/stores'
 import {
   ANIMATION_DURATION_SC,
   BORDER_RADIUS,
   GUTTER,
 } from '@/Config/src/index'
-import UpdaterLink from '@/Updater/src/components/updater-link'
-import UpdaterStore from '@/Updater/src/stores'
+import { UpdaterLink } from '@/Updater/src/components/updater-link'
+import { UpdaterStore } from '@/Updater/src/stores'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
@@ -43,7 +43,7 @@ export const StyledTitleLink = styled.a`
     color: ${({ theme }) => theme['title.fg']};
   }
 `
-const Title = observer(() => {
+export const Title = observer(() => {
   const { appUrl, appName, version } = BootstrapStore
   return (
     <StyledTitle>
@@ -57,4 +57,3 @@ const Title = observer(() => {
     </StyledTitle>
   )
 })
-export default Title

@@ -1,4 +1,7 @@
-const versionCompare = (left: string, right: string): boolean | number => {
+export const versionCompare = (
+  left: string,
+  right: string
+): boolean | number => {
   if (typeof left + typeof right !== 'stringstring') {
     return false
   }
@@ -14,4 +17,3 @@ const versionCompare = (left: string, right: string): boolean | number => {
   }
   return 0
 }
-export default versionCompare

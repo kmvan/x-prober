@@ -15,36 +15,31 @@ export interface CardProps {
   priority: number
   component: FunctionComponent
 }
-class Store {
+class Main {
   @observable public cards: CardProps[] = []
   public constructor() {
     makeObservable(this)
   }
-  @action
-  public addCard = (card: CardProps) => {
+  @action public addCard = (card: CardProps) => {
     const priority = this.getStoragePriority(card.id)
     if (priority) {
       card.priority = priority
     }
     this.cards.push(card)
   }
-  @computed
-  public get cardsLength() {
+  @computed public get cardsLength() {
     return this.cards.length
   }
-  @computed
-  public get enabledCards(): CardProps[] {
+  @computed public get enabledCards(): CardProps[] {
     return this.cards
       .slice()
       .filter(({ enabled = true }) => enabled)
       .sort((a, b) => a.priority - b.priority)
   }
-  @computed
-  public get enabledCardsLength(): number {
+  @computed public get enabledCardsLength(): number {
     return this.enabledCards.length
   }
-  @action
-  private setCardsPriority = (cards: CardProps[]) => {
+  @action private setCardsPriority = (cards: CardProps[]) => {
     cards.map(({ id, priority }) => {
       const i = this.cards.findIndex((item) => item.id === id)
       if (i !== -1 && this.cards[i].priority !== priority) {
@@ -52,16 +47,17 @@ class Store {
       }
     })
   }
-  @action
-  public setCard = ({ id, ...card }: Partial<CardProps>) => {
+  @action public setCard = ({ id, ...card }: Partial<CardProps>) => {
     const i = this.cards.findIndex((item) => item.id === id)
     if (i === -1) {
       return
     }
     this.cards[i] = { ...this.cards[i], ...card }
   }
-  @action
-  public moveCardUp = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+  @action public moveCardUp = (
+    e: MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
@@ -75,8 +71,10 @@ class Store {
     this.setCardsPriority(cards)
     this.setStoragePriorityItems()
   }
-  @action
-  public moveCardDown = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+  @action public moveCardDown = (
+    e: MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
@@ -114,5 +112,4 @@ class Store {
     return item ? item.priority : 0
   }
 }
-const CardStore = new Store()
-export default CardStore
+export const CardStore = new Main()

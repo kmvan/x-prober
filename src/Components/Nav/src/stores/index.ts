@@ -11,5 +11,4 @@ class Main {
     this.activeIndex = activeIndex
   }
 }
-const NavStore = new Main()
-export default NavStore
+export const NavStore = new Main()

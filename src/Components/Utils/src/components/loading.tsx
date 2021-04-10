@@ -81,7 +81,7 @@ const LoadingIcon = () => {
     </svg>
   )
 }
-const Loading = ({ children }: LoadingProps) => {
+export const Loading = ({ children }: LoadingProps) => {
   return (
     <StyledLoading>
       <LoadingIcon />
@@ -89,4 +89,3 @@ const Loading = ({ children }: LoadingProps) => {
     </StyledLoading>
   )
 }
-export default Loading

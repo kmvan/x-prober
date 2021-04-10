@@ -1,15 +1,10 @@
-import serverFetch from '@/Fetch/src/server-fetch'
-import {
-  action,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
+import { serverFetch } from '@/Fetch/src/server-fetch'
 import { gettext } from '@/Language/src'
 import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
 import { OK } from '@/Restful/src/http-status'
 import { ServerInfoDataProps } from '@/ServerInfo/src/stores'
 import { ServerStatusDataProps } from '@/ServerStatus/src/stores'
+import { action, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
@@ -22,7 +17,7 @@ export interface DataProps {
   serverStatus: ServerStatusDataProps
   networkStats: DataNetworkStatsProps
 }
-class Store {
+class Main {
   @observable public isLoading: boolean = true
   @observable public data = {}
   constructor() {
@@ -41,14 +36,11 @@ class Store {
       alert(gettext('Fetch error, please refresh page.'))
     }
   }
-  @action
-  public setIsLoading = (isLoading: boolean) => {
+  @action public setIsLoading = (isLoading: boolean) => {
     this.isLoading = isLoading
   }
-  @action
-  public setData = (data: any) => {
+  @action public setData = (data: any) => {
     this.data = data
   }
 }
-const FetchStore = new Store()
-export default FetchStore
+export const FetchStore = new Main()

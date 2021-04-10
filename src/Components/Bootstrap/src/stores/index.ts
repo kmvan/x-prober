@@ -1,9 +1,9 @@
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import { action, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
-class Store {
+class Main {
   public readonly ID = 'bootstrap'
   public readonly conf = conf?.[this.ID]
   public readonly version: string = this.conf?.version
@@ -18,10 +18,8 @@ class Store {
   public constructor() {
     makeObservable(this)
   }
-  @action
-  public setAppContainer = (appContainer: HTMLElement | null) => {
+  @action public setAppContainer = (appContainer: HTMLElement | null) => {
     this.appContainer = appContainer
   }
 }
-const BootstrapStore = new Store()
-export default BootstrapStore
+export const BootstrapStore = new Main()

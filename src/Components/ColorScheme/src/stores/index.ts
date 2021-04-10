@@ -1,22 +1,20 @@
 import { action, computed, configure, makeObservable, observable } from 'mobx'
-import colorSchemes from './color-schemes'
+import { colorSchemes } from './color-schemes'
 configure({
   enforceActions: 'observed',
 })
-class Store {
+class Main {
   public readonly ID = 'colorScheme'
   private readonly STORAGE_ID = 'schemeId'
   @observable public schemeId: string = this.getStorageSchemeId()
   public constructor() {
     makeObservable(this)
   }
-  @action
-  public setSchemeId = (schemeId: string) => {
+  @action public setSchemeId = (schemeId: string) => {
     this.schemeId = schemeId
     this.setStorageSchemeId(schemeId)
   }
-  @computed
-  public get scheme() {
+  @computed public get scheme() {
     return colorSchemes?.[this.schemeId] ?? colorSchemes.default
   }
   private getStorageSchemeId(): string {
@@ -26,5 +24,4 @@ class Store {
     localStorage.setItem(this.STORAGE_ID, schemeId)
   }
 }
-const ColorSchemeStore = new Store()
-export default ColorSchemeStore
+export const ColorSchemeStore = new Main()

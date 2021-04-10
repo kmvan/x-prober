@@ -1,4 +1,4 @@
-const formatBytes = (bytes: number, decimals: number = 2): string => {
+export const formatBytes = (bytes: number, decimals: number = 2): string => {
   if (bytes === 0) {
     return '0'
   }
@@ -12,4 +12,3 @@ const formatBytes = (bytes: number, decimals: number = 2): string => {
   }
   return `${num} ${sizes[i]}`
 }
-export default formatBytes

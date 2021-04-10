@@ -1,6 +1,6 @@
-import ConfigStore, { AppConfigBenchmarkProps } from '@/Config/src/stores'
+import { AppConfigBenchmarkProps, ConfigStore } from '@/Config/src/stores'
 import { gettext } from '@/Language/src'
-import conf from '@/Utils/src/components/conf'
+import { conf } from '@/Utils/src/components/conf'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
@@ -11,7 +11,7 @@ export interface MarksProps {
   intLoop: number
   ioLoop: number
 }
-class Store {
+class Main {
   public readonly ID = 'serverBenchmark'
   public readonly conf = conf?.[this.ID]
   public readonly enabledMyServerBenchmark: boolean = !this.conf
@@ -27,22 +27,17 @@ class Store {
   public constructor() {
     makeObservable(this)
   }
-  @computed
-  public get servers(): AppConfigBenchmarkProps[] | null {
+  @computed public get servers(): AppConfigBenchmarkProps[] | null {
     return ConfigStore?.appConfig?.BENCHMARKS || null
   }
-  @action
-  public setMarks = (marks: MarksProps) => {
+  @action public setMarks = (marks: MarksProps) => {
     this.marks = marks
   }
-  @action
-  public setIsLoading = (isLoading: boolean) => {
+  @action public setIsLoading = (isLoading: boolean) => {
     this.isLoading = isLoading
   }
-  @action
-  public setLinkText = (linkText: string) => {
+  @action public setLinkText = (linkText: string) => {
     this.linkText = linkText
   }
 }
-const ServerBenchmarkStore = new Store()
-export default ServerBenchmarkStore
+export const ServerBenchmarkStore = new Main()

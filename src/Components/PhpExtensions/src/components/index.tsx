@@ -1,12 +1,12 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import MultiItemContainer from '@/Card/src/components/multi-item-container'
-import Row from '@/Grid/src/components/row'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { MultiItemContainer } from '@/Card/src/components/multi-item-container'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
-import Alert from '@/Utils/src/components/alert'
-import SearchLink from '@/Utils/src/components/search-link'
+import { Alert } from '@/Utils/src/components/alert'
+import { SearchLink } from '@/Utils/src/components/search-link'
 import React from 'react'
-import store from '../stores'
-const { conf } = store
+import { PhpExtensionsStore } from '../stores'
+const { conf } = PhpExtensionsStore
 const shortItems: [string, boolean][] = [
   ['Redis', !!conf?.redis],
   ['SQLite3', !!conf?.sqlite3],
@@ -56,7 +56,7 @@ longItems.sort((a, b) => {
   }
   return 0
 })
-export default function PhpExtensions() {
+export function PhpExtensions() {
   return (
     <Row>
       {shortItems.map(([name, enabled]) => {

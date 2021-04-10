@@ -37,11 +37,10 @@ export interface AlertProps {
   isSuccess: boolean
   msg?: ReactNode
 }
-const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
+export const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
   return (
     <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
       {msg}
     </StyledAlert>
   )
 }
-export default Alert

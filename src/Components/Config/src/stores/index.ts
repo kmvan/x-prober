@@ -1,13 +1,8 @@
-import BootstrapStore from '@/Bootstrap/src/stores'
-import fetch from 'isomorphic-unfetch'
-import ToastStore from '@/Toast/src/stores'
-import {
-  action,
-  configure,
-  makeObservable,
-  observable
-  } from 'mobx'
+import { BootstrapStore } from '@/Bootstrap/src/stores'
 import { gettext } from '@/Language/src'
+import { ToastStore } from '@/Toast/src/stores'
+import fetch from 'isomorphic-unfetch'
+import { action, configure, makeObservable, observable } from 'mobx'
 configure({
   enforceActions: 'observed',
 })
@@ -29,7 +24,7 @@ interface AppConfigProps {
   APP_VERSION: string
   BENCHMARKS: AppConfigBenchmarkProps[]
 }
-class ConfigStore {
+class Main {
   @observable public appConfig: AppConfigProps | null = null
   constructor() {
     makeObservable(this)
@@ -69,9 +64,8 @@ class ConfigStore {
       )
     }
   }
-  @action
-  public setAppConfig = (appConfig: AppConfigProps) => {
+  @action public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }
 }
-export default new ConfigStore()
+export const ConfigStore = new Main()

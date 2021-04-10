@@ -1,5 +1,5 @@
-import FetchStore from '@/Fetch/src/stores'
-import conf from '@/Utils/src/components/conf'
+import { FetchStore } from '@/Fetch/src/stores'
+import { conf } from '@/Utils/src/components/conf'
 import { computed, configure, makeObservable } from 'mobx'
 configure({
   enforceActions: 'observed',
@@ -23,25 +23,22 @@ export interface ServerStatusDataProps {
   swapUsage: ServerStatusUsageProps
   swapCached: ServerStatusUsageProps
 }
-class Store {
+class Main {
   public readonly ID = 'serverStatus'
   public readonly conf = conf?.[this.ID]
   public readonly enabled: boolean = !!this.conf
   public constructor() {
     makeObservable(this)
   }
-  @computed
-  private get fetchData() {
+  @computed private get fetchData() {
     return FetchStore.data?.[this.ID]
   }
-  @computed
-  public get sysLoad(): number[] {
+  @computed public get sysLoad(): number[] {
     return FetchStore.isLoading
       ? this.conf?.sysLoad
       : this.fetchData?.sysLoad || [0, 0, 0]
   }
-  @computed
-  public get cpuUsage(): ServerStatusCpuUsageProps {
+  @computed public get cpuUsage(): ServerStatusCpuUsageProps {
     return FetchStore.isLoading
       ? {
           idle: 90,
@@ -51,36 +48,30 @@ class Store {
         }
       : this.fetchData?.cpuUsage
   }
-  @computed
-  public get memRealUsage(): ServerStatusUsageProps {
+  @computed public get memRealUsage(): ServerStatusUsageProps {
     return FetchStore.isLoading
       ? this.conf?.memRealUsage
       : this.fetchData?.memRealUsage
   }
-  @computed
-  public get memCached(): ServerStatusUsageProps {
+  @computed public get memCached(): ServerStatusUsageProps {
     return FetchStore.isLoading
       ? this.conf?.memCached
       : this.fetchData?.memCached
   }
-  @computed
-  public get memBuffers(): ServerStatusUsageProps {
+  @computed public get memBuffers(): ServerStatusUsageProps {
     return FetchStore.isLoading
       ? this.conf?.memBuffers
       : this.fetchData?.memBuffers
   }
-  @computed
-  public get swapUsage(): ServerStatusUsageProps {
+  @computed public get swapUsage(): ServerStatusUsageProps {
     return FetchStore.isLoading
       ? this.conf?.swapUsage
       : this.fetchData?.swapUsage
   }
-  @computed
-  public get swapCached(): ServerStatusUsageProps {
+  @computed public get swapCached(): ServerStatusUsageProps {
     return FetchStore.isLoading
       ? this.conf?.swapCached
       : this.fetchData?.swapCached
   }
 }
-const ServerStatusStore = new Store()
-export default ServerStatusStore
+export const ServerStatusStore = new Main()

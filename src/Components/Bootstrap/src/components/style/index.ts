@@ -53,5 +53,4 @@ const normalize = css`
     }
   }
 `
-const Normalize = createGlobalStyle`${normalize}`
-export default Normalize
+export const Normalize = createGlobalStyle`${normalize}`

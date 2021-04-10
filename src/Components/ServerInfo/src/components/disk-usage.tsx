@@ -1,17 +1,15 @@
-import FetchStore from '@/Fetch/src/stores'
+import { FetchStore } from '@/Fetch/src/stores'
 import { gettext } from '@/Language/src'
-import ProgressBar from '@/ProgressBar/src/components'
+import { ProgressBar } from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
-import store from '../stores'
-const ServerDiskUsage = observer(() => {
-  const { ID } = store
+import { ServerInfoStore } from '../stores'
+export const ServerDiskUsage = observer(() => {
+  const { ID, conf } = ServerInfoStore
   const { isLoading, data } = FetchStore
   let {
-    conf: {
-      diskUsage: { value, max },
-    },
-  } = store
+    diskUsage: { value, max },
+  } = conf
   if (!isLoading) {
     value = data?.[ID]?.diskUsage?.value
     max = data?.[ID]?.diskUsage?.max
@@ -21,4 +19,3 @@ const ServerDiskUsage = observer(() => {
   }
   return <ProgressBar value={value} max={max} isCapacity />
 })
-export default ServerDiskUsage

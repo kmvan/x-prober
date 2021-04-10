@@ -1,13 +1,13 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import Row from '@/Grid/src/components/row'
-import useIp from '@/Hooks/src/useIp'
+import { CardGrid } from '@/Card/src/components/card-grid'
+import { Row } from '@/Grid/src/components/row'
+import { useIp } from '@/Hooks/src/useIp'
 import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
 import React from 'react'
-import store from '../stores'
-import ClientLocation from './location'
-const MyInfo = observer(() => {
-  const { conf } = store
+import { MyInfoStore } from '../stores'
+import { ClientLocation } from './location'
+export const MyInfo = observer(() => {
+  const { conf } = MyInfoStore
   const { ip: ipv4, msg: ipv4Msg, isLoading: ipv4IsLoading } = useIp(4)
   const { ip: ipv6, msg: ipv6Msg, isLoading: ipv6IsLoading } = useIp(6)
   let myIpv4: string = ''
@@ -50,4 +50,3 @@ const MyInfo = observer(() => {
     </Row>
   )
 })
-export default MyInfo

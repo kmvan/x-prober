@@ -1,4 +1,4 @@
-const rgbaToHex = (
+export const rgbaToHex = (
   red: number,
   green: number,
   blue: number,
@@ -11,4 +11,3 @@ const rgbaToHex = (
     alpha === 1 ? '' : ((alpha * 255) | (1 << 8)).toString(16).slice(1)
   return `${hex}${colorAlpha}`
 }
-export default rgbaToHex

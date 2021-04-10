@@ -1,16 +1,16 @@
-import CardGrid from '@/Card/src/components/card-grid'
+import { CardGrid } from '@/Card/src/components/card-grid'
 import { BORDER_RADIUS, GUTTER } from '@/Config/src'
-import serverFetch from '@/Fetch/src/server-fetch'
-import Row from '@/Grid/src/components/row'
+import { serverFetch } from '@/Fetch/src/server-fetch'
+import { Row } from '@/Grid/src/components/row'
 import { gettext } from '@/Language/src'
 import { OK } from '@/Restful/src/http-status'
 import { device } from '@/Style/src/components/devices'
-import template from '@/Utils/src/components/template'
+import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import { lighten, rgba } from 'polished'
 import React, { useCallback, useRef } from 'react'
 import styled from 'styled-components'
-import store from '../stores'
+import { PingStore } from '../stores'
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
@@ -101,7 +101,7 @@ const StyledPingResult = styled.div<StyledPingResultProps>`
 const StyledPingResultTimes = styled.div``
 const StyledPingResultAvg = styled.div``
 const Items = observer(() => {
-  const { pingItems } = store
+  const { pingItems } = PingStore
   const items = pingItems.map(({ time }, i) => {
     return (
       <StyledPingItem key={i}>
@@ -116,7 +116,7 @@ const Items = observer(() => {
   return <>{items}</>
 })
 const Results = observer(() => {
-  const { pingItemsCount, pingItems } = store
+  const { pingItemsCount, pingItems } = PingStore
   const timeItems = pingItems.map(({ time }) => time)
   const avg = pingItemsCount
     ? Math.floor(timeItems.reduce((a, b) => a + b, 0) / pingItemsCount)
@@ -138,12 +138,12 @@ const Results = observer(() => {
     </StyledPingResult>
   )
 })
-const Ping = observer(() => {
-  const { pingItemsCount } = store
+export const Ping = observer(() => {
+  const { pingItemsCount } = PingStore
   let pingTimer: number = 0
   const refItemContainer = useRef<HTMLUListElement>(null)
   const onClickPing = useCallback(async () => {
-    const { isPing, setIsPing } = store
+    const { isPing, setIsPing } = PingStore
     if (isPing) {
       setIsPing(false)
       clearTimeout(pingTimer)
@@ -159,7 +159,7 @@ const Ping = observer(() => {
     }, 1000)
   }, [pingTimer])
   const ping = async () => {
-    const { appendPingItem } = store
+    const { appendPingItem } = PingStore
     const start = +new Date()
     const { data, status } = await serverFetch('ping')
     if (status === OK) {
@@ -186,7 +186,9 @@ const Ping = observer(() => {
       <CardGrid
         name={
           <StyledPingBtn onClick={onClickPing}>
-            {store.isPing ? gettext('⏸️ Stop ping') : gettext('👆 Start ping')}
+            {PingStore.isPing
+              ? gettext('⏸️ Stop ping')
+              : gettext('👆 Start ping')}
           </StyledPingBtn>
         }
         tablet={[1, 1]}>
@@ -200,4 +202,3 @@ const Ping = observer(() => {
     </Row>
   )
 })
-export default Ping

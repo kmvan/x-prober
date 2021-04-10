@@ -1,5 +1,5 @@
 import { GUTTER } from '@/Config/src'
-import Grid, { GridProps } from '@/Grid/src/components/grid'
+import { Grid, GridProps } from '@/Grid/src/components/grid'
 import { device } from '@/Style/src/components/devices'
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
@@ -30,7 +30,7 @@ const StyledCardContent = styled.div`
   flex-grow: 1;
   padding: calc(${GUTTER} / 2) 0;
 `
-const CardGrid = ({
+export const CardGrid = ({
   name = '',
   title = '',
   children,
@@ -45,4 +45,3 @@ const CardGrid = ({
     </Grid>
   )
 }
-export default CardGrid

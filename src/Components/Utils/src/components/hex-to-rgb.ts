@@ -1,4 +1,4 @@
-const hexToRgb = (hex: string): number[] => {
+export const hexToRgb = (hex: string): number[] => {
   hex = hex.replace('#', '')
   const arrBuff = new ArrayBuffer(4)
   const vw = new DataView(arrBuff)
@@ -6,4 +6,3 @@ const hexToRgb = (hex: string): number[] => {
   const arrByte = new Uint8Array(arrBuff)
   return [arrByte[1], arrByte[2], arrByte[3]]
 }
-export default hexToRgb

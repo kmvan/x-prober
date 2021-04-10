@@ -1,6 +1,6 @@
-import Grid from '@/Grid/src/components/grid'
-import Row from '@/Grid/src/components/row'
-import formatBytes from '@/Utils/src/components/format-bytes'
+import { Grid } from '@/Grid/src/components/grid'
+import { Row } from '@/Grid/src/components/row'
+import { formatBytes } from '@/Utils/src/components/format-bytes'
 import React from 'react'
 import styled from 'styled-components'
 interface NetworksStatsItemProps {
@@ -89,4 +89,3 @@ export const NetworksStatsItem = ({
     </StyledNetworkIdRow>
   )
 }
-export default NetworksStatsItem

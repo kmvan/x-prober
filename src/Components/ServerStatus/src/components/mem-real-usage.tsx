@@ -1,11 +1,11 @@
-import CardGrid from '@/Card/src/components/card-grid'
-import ProgressBar from '@/ProgressBar/src/components'
-import React from 'react'
-import store from '../stores'
+import { CardGrid } from '@/Card/src/components/card-grid'
 import { gettext } from '@/Language/src'
+import { ProgressBar } from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
-const MemRealUsage = observer(() => {
-  const { max, value } = store.memRealUsage
+import React from 'react'
+import { ServerStatusStore } from '../stores'
+export const MemRealUsage = observer(() => {
+  const { max, value } = ServerStatusStore.memRealUsage
   return (
     <CardGrid
       title={gettext(
@@ -17,4 +17,3 @@ const MemRealUsage = observer(() => {
     </CardGrid>
   )
 })
-export default MemRealUsage
