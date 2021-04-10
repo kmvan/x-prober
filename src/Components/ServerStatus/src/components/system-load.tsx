@@ -3,6 +3,7 @@ import { GUTTER } from '@/Config/src'
 import { gettext } from '@/Language/src'
 import { device } from '@/Style/src/components/devices'
 import { template } from '@/Utils/src/components/template'
+import { observer } from 'mobx-react-lite'
 import React from 'react'
 import styled from 'styled-components'
 import { ServerStatusStore } from '../stores'
@@ -59,10 +60,10 @@ export const SysLoadGroup = ({ sysLoad, isCenter }: SysLoadGroupProps) => {
 interface SystemLoadProps {
   isCenter?: boolean
 }
-export const SystemLoad = ({ isCenter = false }: SystemLoadProps) => {
+export const SystemLoad = observer(({ isCenter = false }: SystemLoadProps) => {
   return (
     <CardGrid name={gettext('System load')} tablet={[1, 1]}>
       <SysLoadGroup isCenter={isCenter} sysLoad={ServerStatusStore.sysLoad} />
     </CardGrid>
   )
-}
+})
