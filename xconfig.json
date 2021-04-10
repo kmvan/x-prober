@@ -1,6 +1,6 @@
 {
   // You can disable listed features: serverStatus, networkStats, ping, serverInfo, phpInfo, phpInfoDetail, phpDisabledFunctions, phpDisabledClasses, phpExtensions, phpExtensionsLoaded, database, myServerBenchmark, myInfo, serverIp
-  "disabled": ["serverIp", "phpInfoDetail"],
+  // "disabled": ["serverIp", "phpInfoDetail"],
   //
   // You can set nodes for X-Prober
   "nodes": [
