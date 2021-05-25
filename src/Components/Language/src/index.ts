@@ -5,5 +5,5 @@ const langId = navigator.language
   .toLowerCase()
 export const gettext = (text: string, context: string = ''): string => {
   const id = `${context || ''}${text}`
-  return langs?.[id]?.[langId] || text
+  return langs?.[id]?.[langId] ?? text
 }
