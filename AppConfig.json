@@ -21,14 +21,14 @@
     {
       "name": "VPSPlayer / AMD-3950X / PHP80 JIT",
       "url": "https://vpsplayer.com/aff.php?aff=50",
-      "date": "2021-02-25",
-      "proberUrl": "http://23.225.121.61/x.php",
-      "binUrl": "http://23.225.121.61/64m.bin",
+      "date": "2021-06-24",
+      "proberUrl": "http://23.225.191.31/x.php",
+      "binUrl": "http://23.225.191.31/64m.bin",
       "detail": {
-        "hash": 878,
+        "hash": 835,
         "intLoop": 997,
         "floatLoop": 997,
-        "ioLoop": 875
+        "ioLoop": 811
       }
     },
     {
