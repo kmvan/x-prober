@@ -16,19 +16,19 @@
   "APP_TEMPERATURE_SENSOR_PORTS": [2048, 4096],
   "AUTHOR_NAME": "INN STUDIO",
   "LATEST_PHP_STABLE_VERSION": "8",
-  "LATEST_NGINX_STABLE_VERSION": "1.18.0",
+  "LATEST_NGINX_STABLE_VERSION": "1.20.0",
   "BENCHMARKS": [
     {
-      "name": "VPSPlayer / AMD-3950X / PHP80 JIT",
+      "name": "VPSPlayer / AMD-3950X / PHP80 JIT / Unlimit",
       "url": "https://vpsplayer.com/aff.php?aff=50",
-      "date": "2021-06-24",
+      "date": "2021-06-25",
       "proberUrl": "http://23.225.191.31/x.php",
       "binUrl": "http://23.225.191.31/64m.bin",
       "detail": {
-        "hash": 835,
+        "hash": 860,
         "intLoop": 997,
         "floatLoop": 997,
-        "ioLoop": 811
+        "ioLoop": 862
       }
     },
     {
