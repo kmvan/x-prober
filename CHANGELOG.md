@@ -2,6 +2,14 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.6.0 - 2021-06-28
+
+### Optimize
+
+- Optimize server info view performance
+- Update packages
+- Update eslint
+
 ## 7.5.0 - 2021-04-10
 
 ### Fix
