@@ -3,9 +3,11 @@
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const path = require('path')
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
-  .default
-const styledComponentsTransformer = createStyledComponentsTransformer()
+const createStyledComponentsTransformer =
+  require('typescript-plugin-styled-components').default
+const styledComponentsTransformer = createStyledComponentsTransformer({
+  minify: true,
+})
 const rimraf = require('rimraf')
 
 rimraf('.tmp', {}, () => {})
