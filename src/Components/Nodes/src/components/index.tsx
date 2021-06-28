@@ -1,21 +1,21 @@
-import { GUTTER } from '@/Config/src'
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { Grid } from '@/Grid/src/components/grid'
-import { Row } from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
-import { ProgressBar } from '@/ProgressBar/src/components'
-import { OK } from '@/Restful/src/http-status'
-import { SysLoadGroup } from '@/ServerStatus/src/components/system-load'
+import { observer } from 'mobx-react-lite'
+import React, { FC, useCallback, useEffect } from 'react'
+import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { Grid } from '../../../Grid/src/components/grid'
+import { Row } from '../../../Grid/src/components/row'
+import { gettext } from '../../../Language/src'
+import { ProgressBar } from '../../../ProgressBar/src/components'
+import { OK } from '../../../Restful/src/http-status'
+import { SysLoadGroup } from '../../../ServerStatus/src/components/system-load'
 import {
   ServerStatusCpuUsageProps,
   ServerStatusUsageProps,
-} from '@/ServerStatus/src/stores'
-import { Alert } from '@/Utils/src/components/alert'
-import { Loading } from '@/Utils/src/components/loading'
-import { template } from '@/Utils/src/components/template'
-import { observer } from 'mobx-react-lite'
-import React, { useCallback, useEffect } from 'react'
-import styled from 'styled-components'
+} from '../../../ServerStatus/src/stores'
+import { Alert } from '../../../Utils/src/components/alert'
+import { Loading } from '../../../Utils/src/components/loading'
+import { template } from '../../../Utils/src/components/template'
 import { NodesStore } from '../stores'
 import { NodeNetworks } from './node-networks'
 const StyledNodeGroupId = styled.a`
@@ -34,7 +34,7 @@ const StyledNodeGroupMsg = styled(StyledNodeGroup)`
   display: flex;
   justify-content: center;
 `
-const SysLoad = ({ sysLoad }: { sysLoad: number[] }) => {
+const SysLoad: FC<{ sysLoad: number[] }> = ({ sysLoad }) => {
   if (!sysLoad?.length) {
     return null
   }
@@ -44,7 +44,7 @@ const SysLoad = ({ sysLoad }: { sysLoad: number[] }) => {
     </StyledNodeGroup>
   )
 }
-const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
+const Cpu: FC<{ cpuUsage: ServerStatusCpuUsageProps }> = ({ cpuUsage }) => {
   return (
     <StyledNodeGroup>
       <ProgressBar
@@ -52,7 +52,7 @@ const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
           gettext(
             'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
           ),
-          cpuUsage
+          cpuUsage as any
         )}
         value={100 - cpuUsage.idle}
         max={100}
@@ -62,7 +62,9 @@ const Cpu = ({ cpuUsage }: { cpuUsage: ServerStatusCpuUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
+const Memory: FC<{ memRealUsage: ServerStatusUsageProps }> = ({
+  memRealUsage,
+}) => {
   const { value = 0, max = 0 } = memRealUsage
   if (!max) {
     return null
@@ -82,7 +84,7 @@ const Memory = ({ memRealUsage }: { memRealUsage: ServerStatusUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
+const Swap: FC<{ swapUsage: ServerStatusUsageProps }> = ({ swapUsage }) => {
   const { value = 0, max = 0 } = swapUsage
   if (!max) {
     return null
@@ -102,7 +104,7 @@ const Swap = ({ swapUsage }: { swapUsage: ServerStatusUsageProps }) => {
     </StyledNodeGroup>
   )
 }
-const Items = observer(() => {
+const Items: FC = observer(() => {
   const items = NodesStore.items.map(
     ({ id, url, isLoading, isError, errMsg, data }) => {
       const idLink = <StyledNodeGroupId href={url}>{id}</StyledNodeGroupId>
@@ -149,7 +151,7 @@ const Items = observer(() => {
   )
   return <>{items}</>
 })
-export const Nodes = observer(() => {
+export const Nodes: FC = observer(() => {
   const { items, itemsCount } = NodesStore
   const fetch = useCallback(async (nodeId: string) => {
     const { setItem } = NodesStore

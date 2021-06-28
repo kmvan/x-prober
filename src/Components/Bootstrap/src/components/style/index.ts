@@ -1,6 +1,6 @@
-import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
-import { device } from '@/Style/src/components/devices'
 import { createGlobalStyle, css } from 'styled-components'
+import { ANIMATION_DURATION_SC, GUTTER } from '../../../../Config/src'
+import { device } from '../../../../Style/src/components/devices'
 const normalize = css`
   @media ${device('desktopSm')} {
     ::-webkit-scrollbar-track {

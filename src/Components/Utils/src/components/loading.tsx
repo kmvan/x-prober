@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 const StyledLoading = styled.div`
   display: flex;
@@ -7,9 +7,6 @@ const StyledLoading = styled.div`
 const StyledLoadingText = styled.div`
   margin-left: 0.5em;
 `
-interface LoadingProps {
-  children: ReactNode
-}
 const LoadingIcon = () => {
   return (
     <svg
@@ -81,11 +78,11 @@ const LoadingIcon = () => {
     </svg>
   )
 }
-export const Loading = ({ children }: LoadingProps) => {
+export const Loading: FC = (props) => {
   return (
     <StyledLoading>
       <LoadingIcon />
-      <StyledLoadingText>{children}</StyledLoadingText>
+      <StyledLoadingText {...props} />
     </StyledLoading>
   )
 }

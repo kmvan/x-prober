@@ -1,13 +1,13 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { Row } from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
-import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { Row } from '../../../Grid/src/components/row'
+import { gettext } from '../../../Language/src'
+import { template } from '../../../Utils/src/components/template'
 import { ServerInfoStore } from '../stores'
 import { ServerDiskUsage } from './disk-usage'
 import { Location } from './location'
-export const ServerInfo = observer(() => {
+export const ServerInfo: FC = observer(() => {
   const {
     conf,
     serverUptime: { days, hours, mins, secs },

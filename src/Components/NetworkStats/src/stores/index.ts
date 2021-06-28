@@ -1,6 +1,6 @@
-import { FetchStore } from '@/Fetch/src/stores'
-import { conf } from '@/Utils/src/components/conf'
 import { computed, configure, makeObservable } from 'mobx'
+import { FetchStore } from '../../../Fetch/src/stores'
+import { conf } from '../../../Utils/src/components/conf'
 configure({
   enforceActions: 'observed',
 })
@@ -16,6 +16,7 @@ class Main {
   public constructor() {
     makeObservable(this)
   }
+
   @computed public get items(): NetworkStatsItemProps[] {
     return (
       (FetchStore.isLoading
@@ -23,15 +24,18 @@ class Main {
         : FetchStore.data?.[this.ID]?.networks) || []
     )
   }
+
   @computed public get sortItems() {
     return this.items
       .slice()
       .filter(({ tx }) => !!tx)
       .sort((a, b) => a.tx - b.tx)
   }
+
   @computed public get itemsCount() {
     return this.sortItems.length
   }
+
   @computed public get timestamp(): number {
     return (
       (FetchStore.isLoading

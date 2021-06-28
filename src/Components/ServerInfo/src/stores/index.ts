@@ -1,9 +1,9 @@
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { FetchStore } from '@/Fetch/src/stores'
-import { gettext } from '@/Language/src'
-import { OK } from '@/Restful/src/http-status'
-import { conf } from '@/Utils/src/components/conf'
 import { action, computed, configure, makeObservable, observable } from 'mobx'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { FetchStore } from '../../../Fetch/src/stores'
+import { gettext } from '../../../Language/src'
+import { OK } from '../../../Restful/src/http-status'
+import { conf } from '../../../Utils/src/components/conf'
 configure({
   enforceActions: 'observed',
 })
@@ -41,15 +41,19 @@ class Main {
     this.fetchServerIpv4()
     this.fetchServerIpv6()
   }
+
   @action public setServerLocation = (serverLocation: locationProps) => {
     this.serverLocation = serverLocation
   }
+
   @action public setServerIpv4 = (serverIpv4: string) => {
     this.serverIpv4 = serverIpv4
   }
+
   @action public setServerIpv6 = (serverIpv6: string) => {
     this.serverIpv6 = serverIpv6
   }
+
   public fetchServerIpv4 = async () => {
     const { data, status } = await serverFetch(`serverIpv4`)
     if (data?.ip && status === OK) {
@@ -58,6 +62,7 @@ class Main {
       this.setServerIpv4('-')
     }
   }
+
   public fetchServerIpv6 = async () => {
     const { data, status } = await serverFetch(`serverIpv6`)
     if (data?.ip && status === OK) {
@@ -66,21 +71,25 @@ class Main {
       this.setServerIpv6('-')
     }
   }
+
   @computed public get serverTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverTime
       : FetchStore.data?.[this.ID]?.serverTime
   }
+
   @computed public get serverUptime(): UptimeProps {
     return FetchStore.isLoading
       ? this.conf?.serverUptime
       : FetchStore.data?.[this.ID]?.serverUptime
   }
+
   @computed public get serverUtcTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverUtcTime
       : FetchStore.data?.[this.ID]?.serverUtcTime
   }
+
   @computed public get diskUsage(): ServerInfoDiskUsageProps {
     return FetchStore.isLoading
       ? this.conf?.diskUsage

@@ -1,10 +1,10 @@
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { gettext } from '@/Language/src'
-import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
-import { OK } from '@/Restful/src/http-status'
-import { ServerInfoDataProps } from '@/ServerInfo/src/stores'
-import { ServerStatusDataProps } from '@/ServerStatus/src/stores'
 import { action, configure, makeObservable, observable } from 'mobx'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { gettext } from '../../../Language/src'
+import { NetworkStatsItemProps } from '../../../NetworkStats/src/stores'
+import { OK } from '../../../Restful/src/http-status'
+import { ServerInfoDataProps } from '../../../ServerInfo/src/stores'
+import { ServerStatusDataProps } from '../../../ServerStatus/src/stores'
 configure({
   enforceActions: 'observed',
 })
@@ -18,12 +18,13 @@ export interface DataProps {
   networkStats: DataNetworkStatsProps
 }
 class Main {
-  @observable public isLoading: boolean = true
+  @observable public isLoading = true
   @observable public data = {}
   constructor() {
     makeObservable(this)
     this.initFetch()
   }
+
   public initFetch = async () => {
     const { data, status } = await serverFetch('fetch')
     if (data && status === OK) {
@@ -36,9 +37,11 @@ class Main {
       alert(gettext('Fetch error, please refresh page.'))
     }
   }
+
   @action public setIsLoading = (isLoading: boolean) => {
     this.isLoading = isLoading
   }
+
   @action public setData = (data: any) => {
     this.data = data
   }

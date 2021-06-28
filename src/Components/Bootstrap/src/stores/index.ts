@@ -1,5 +1,5 @@
-import { conf } from '@/Utils/src/components/conf'
 import { action, configure, makeObservable, observable } from 'mobx'
+import { conf } from '../../../Utils/src/components/conf'
 configure({
   enforceActions: 'observed',
 })
@@ -18,6 +18,7 @@ class Main {
   public constructor() {
     makeObservable(this)
   }
+
   @action public setAppContainer = (appContainer: HTMLElement | null) => {
     this.appContainer = appContainer
   }

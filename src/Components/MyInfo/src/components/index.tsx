@@ -1,17 +1,17 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { Row } from '@/Grid/src/components/row'
-import { useIp } from '@/Hooks/src/useIp'
-import { gettext } from '@/Language/src'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { Row } from '../../../Grid/src/components/row'
+import { useIp } from '../../../Hooks/src/use-ip'
+import { gettext } from '../../../Language/src'
 import { MyInfoStore } from '../stores'
 import { ClientLocation } from './location'
-export const MyInfo = observer(() => {
+export const MyInfo: FC = observer(() => {
   const { conf } = MyInfoStore
   const { ip: ipv4, msg: ipv4Msg, isLoading: ipv4IsLoading } = useIp(4)
   const { ip: ipv6, msg: ipv6Msg, isLoading: ipv6IsLoading } = useIp(6)
-  let myIpv4: string = ''
-  let myIpv6: string = ''
+  let myIpv4 = ''
+  let myIpv6 = ''
   if (ipv4IsLoading) {
     myIpv4 = ipv4Msg
   } else if (ipv4) {

@@ -1,11 +1,11 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { Row } from '@/Grid/src/components/row'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
 import { usePrevious } from 'react-use'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { Row } from '../../../Grid/src/components/row'
 import { NetworkStatsStore } from '../stores'
 import { NetworksStatsItem } from './item'
-export const NetworkStats = observer(() => {
+export const NetworkStats: FC = observer(() => {
   const { sortItems, itemsCount, timestamp } = NetworkStatsStore
   if (!itemsCount) {
     return null

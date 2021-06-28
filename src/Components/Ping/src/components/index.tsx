@@ -1,15 +1,15 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { BORDER_RADIUS, GUTTER } from '@/Config/src'
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { Row } from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
-import { OK } from '@/Restful/src/http-status'
-import { device } from '@/Style/src/components/devices'
-import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
 import { lighten, rgba } from 'polished'
-import React, { useCallback, useRef } from 'react'
+import React, { FC, useCallback, useRef } from 'react'
 import styled from 'styled-components'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { BORDER_RADIUS, GUTTER } from '../../../Config/src'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { Row } from '../../../Grid/src/components/row'
+import { gettext } from '../../../Language/src'
+import { OK } from '../../../Restful/src/http-status'
+import { device } from '../../../Style/src/components/devices'
+import { template } from '../../../Utils/src/components/template'
 import { PingStore } from '../stores'
 const StyledPingBtn = styled.a`
   display: block;
@@ -100,7 +100,7 @@ const StyledPingResult = styled.div<StyledPingResultProps>`
 `
 const StyledPingResultTimes = styled.div``
 const StyledPingResultAvg = styled.div``
-const Items = observer(() => {
+const Items: FC = observer(() => {
   const { pingItems } = PingStore
   const items = pingItems.map(({ time }, i) => {
     return (
@@ -115,7 +115,7 @@ const Items = observer(() => {
   })
   return <>{items}</>
 })
-const Results = observer(() => {
+const Results: FC = observer(() => {
   const { pingItemsCount, pingItems } = PingStore
   const timeItems = pingItems.map(({ time }) => time)
   const avg = pingItemsCount
@@ -138,9 +138,9 @@ const Results = observer(() => {
     </StyledPingResult>
   )
 })
-export const Ping = observer(() => {
+export const Ping: FC = observer(() => {
   const { pingItemsCount } = PingStore
-  let pingTimer: number = 0
+  let pingTimer = 0
   const refItemContainer = useRef<HTMLUListElement>(null)
   const onClickPing = useCallback(async () => {
     const { isPing, setIsPing } = PingStore
@@ -152,13 +152,13 @@ export const Ping = observer(() => {
     setIsPing(true)
     await pingLoop()
   }, [pingTimer])
-  const pingLoop = useCallback(async () => {
+  const pingLoop = useCallback(async (): Promise<void> => {
     await ping()
     pingTimer = window.setTimeout(async () => {
       await pingLoop()
     }, 1000)
   }, [pingTimer])
-  const ping = async () => {
+  const ping = async (): Promise<void> => {
     const { appendPingItem } = PingStore
     const start = +new Date()
     const { data, status } = await serverFetch('ping')

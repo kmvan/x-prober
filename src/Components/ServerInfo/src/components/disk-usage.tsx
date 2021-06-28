@@ -1,10 +1,10 @@
-import { FetchStore } from '@/Fetch/src/stores'
-import { gettext } from '@/Language/src'
-import { ProgressBar } from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
+import { FetchStore } from '../../../Fetch/src/stores'
+import { gettext } from '../../../Language/src'
+import { ProgressBar } from '../../../ProgressBar/src/components'
 import { ServerInfoStore } from '../stores'
-export const ServerDiskUsage = observer(() => {
+export const ServerDiskUsage: FC = observer(() => {
   const { ID, conf } = ServerInfoStore
   const { isLoading, data } = FetchStore
   let {

@@ -10,16 +10,20 @@ class Main {
   public constructor() {
     makeObservable(this)
   }
+
   @action public setSchemeId = (schemeId: string) => {
     this.schemeId = schemeId
     this.setStorageSchemeId(schemeId)
   }
+
   @computed public get scheme() {
     return colorSchemes?.[this.schemeId] ?? colorSchemes.default
   }
+
   private getStorageSchemeId(): string {
     return localStorage.getItem(this.STORAGE_ID) || 'default'
   }
+
   private setStorageSchemeId = (schemeId: string) => {
     localStorage.setItem(this.STORAGE_ID, schemeId)
   }

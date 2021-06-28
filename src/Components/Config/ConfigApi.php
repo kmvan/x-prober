@@ -18,5 +18,5 @@ class ConfigApi
     public static $UPDATE_PHP_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php', 'https://api.inn-studio.com/download/?id=xprober');
     public static $AUTHOR_NAME                  = 'INN STUDIO';
     public static $LATEST_PHP_STABLE_VERSION    = '8';
-    public static $LATEST_NGINX_STABLE_VERSION  = '1.18.0';
+    public static $LATEST_NGINX_STABLE_VERSION  = '1.20.0';
 }

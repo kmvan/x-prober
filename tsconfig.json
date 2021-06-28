@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/Components/*"]
-    },
+    "baseUrl": "src",
+    "paths": {},
     "module": "esnext",
     "target": "es6",
     "lib": ["esnext", "dom"],
@@ -14,7 +12,7 @@
     "resolveJsonModule": true,
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": false,
+    "noImplicitReturns": true,
     "noImplicitThis": false,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -37,7 +35,7 @@
   },
   "plugins": [
     {
-      "transform": "typescript-plugin-styled-components",
+      "transform": "typescript-styled-plugin",
       "type": "config",
       "minify": true,
       "ssr": false

@@ -1,8 +1,8 @@
-import { BootstrapStore } from '@/Bootstrap/src/stores'
-import { gettext } from '@/Language/src'
-import { ToastStore } from '@/Toast/src/stores'
 import fetch from 'isomorphic-unfetch'
 import { action, configure, makeObservable, observable } from 'mobx'
+import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { gettext } from '../../../Language/src'
+import { ToastStore } from '../../../Toast/src/stores'
 configure({
   enforceActions: 'observed',
 })
@@ -30,6 +30,7 @@ class Main {
     makeObservable(this)
     this.fetch()
   }
+
   private fetch = async () => {
     const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapStore
     let configStatus = false
@@ -40,7 +41,9 @@ class Main {
         .then((res) => {
           this.setAppConfig(res)
         })
-        .catch((e) => {})
+        .catch((e) => {
+          console.error(e)
+        })
       return
     }
     // online version
@@ -51,7 +54,9 @@ class Main {
           this.setAppConfig(res)
           configStatus = true
         })
-        .catch((e) => {})
+        .catch((e) => {
+          console.error(e)
+        })
       if (configStatus) {
         break
       }
@@ -64,6 +69,7 @@ class Main {
       )
     }
   }
+
   @action public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }

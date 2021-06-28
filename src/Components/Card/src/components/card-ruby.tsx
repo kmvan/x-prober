@@ -1,7 +1,7 @@
-import { gettext } from '@/Language/src'
 import { rgba } from 'polished'
-import React, { HTMLAttributes, ReactNode } from 'react'
+import React, { FC, HTMLAttributes, ReactNode } from 'react'
 import styled from 'styled-components'
+import { gettext } from '../../../Language/src'
 interface StyledRubyProps extends HTMLAttributes<HTMLElement> {
   isResult?: boolean
 }
@@ -23,12 +23,12 @@ const StyledRuby = styled.ruby<StyledRubyProps>`
   }
   font-weight: ${(p) => (p.isResult ? 'bold' : 'unset')};
 `
-export const CardRuby = ({
+export const CardRuby: FC<CardRubyProps> = ({
   ruby,
   rt,
   isResult = false,
   ...props
-}: CardRubyProps) => {
+}) => {
   return (
     <StyledRuby isResult={isResult} {...props} title={gettext('Copy marks')}>
       {ruby}

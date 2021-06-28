@@ -1,6 +1,6 @@
-import { GUTTER } from '@/Config/src'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
   background: ${({ theme }) => theme['search.bg']};
@@ -13,7 +13,10 @@ const StyledSearchLink = styled.a`
     background: ${({ theme }) => theme['search.hover.bg']};
   }
 `
-export const SearchLink = ({ keyword }: { keyword: string }) => {
+interface SearchLinkProps {
+  keyword: string
+}
+export const SearchLink: FC<SearchLinkProps> = ({ keyword }) => {
   return (
     <StyledSearchLink
       href={`https://www.google.com/search?q=php+${encodeURIComponent(

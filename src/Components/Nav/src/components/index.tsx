@@ -1,11 +1,11 @@
-import { CardStore } from '@/Card/src/stores'
-import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
-import { device } from '@/Style/src/components/devices'
-import { ElevatorNav } from '@/Utils/src/components/elevator-nav'
-import { getElementOffsetTop } from '@/Utils/src/components/get-element-offset-top'
 import { observer } from 'mobx-react-lite'
-import React, { MouseEvent, ReactElement, useCallback } from 'react'
+import React, { FC, MouseEvent, ReactElement, useCallback } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { CardStore } from '../../../Card/src/stores'
+import { ANIMATION_DURATION_SC, GUTTER } from '../../../Config/src'
+import { device } from '../../../Style/src/components/devices'
+import { ElevatorNav } from '../../../Utils/src/components/elevator-nav'
+import { getElementOffsetTop } from '../../../Utils/src/components/get-element-offset-top'
 import { NavStore } from '../stores'
 const slideUp = keyframes`
   from{
@@ -71,7 +71,7 @@ const StyledNavLinkTinyTitle = styled.span`
     display: none;
   }
 `
-export const Nav = observer(() => {
+export const Nav: FC = observer(() => {
   const onClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>, id: string) => {
       e.preventDefault()

@@ -1,11 +1,11 @@
-import { GUTTER } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import { NavStore } from '@/Nav/src/stores'
-import { device } from '@/Style/src/components/devices'
-import { ElevatorNavBody } from '@/Utils/src/components/elevator-nav'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
+import { gettext } from '../../../Language/src'
+import { NavStore } from '../../../Nav/src/stores'
+import { device } from '../../../Style/src/components/devices'
+import { ElevatorNavBody } from '../../../Utils/src/components/elevator-nav'
 import { CardStore } from '../stores'
 interface StyleArrowProps {
   isHidden: boolean
@@ -52,7 +52,7 @@ const StyleArrow = styled.a<StyleArrowProps>`
     color: ${({ theme }) => theme['card.legend.fg']};
   }
 `
-export const Cards = observer(() => {
+export const Cards: FC = observer(() => {
   const {
     cardsLength,
     enabledCards,
