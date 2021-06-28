@@ -1,11 +1,11 @@
-import { GUTTER } from '@/Config/src'
+import React, { FC, ReactNode } from 'react'
+import styled, { css } from 'styled-components'
+import { GUTTER } from '../../../Config/src'
 import {
   breakPoints,
   device,
   DeviceIdProps,
-} from '@/Style/src/components/devices'
-import React, { ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+} from '../../../Style/src/components/devices'
 interface BreakPointsProps {
   mobileSm?: [number, number]
   mobileMd?: [number, number]
@@ -49,7 +49,7 @@ export const StyledGrid = styled.div<StyledGridProps>`
   flex: 0 0 100%;
   ${(props) => createCss(props.types)}
 `
-export const Grid = ({
+export const Grid: FC<GridProps> = ({
   mobileSm,
   mobileMd,
   mobileLg,
@@ -58,7 +58,7 @@ export const Grid = ({
   desktopMd,
   desktopLg,
   children,
-}: GridProps) => {
+}) => {
   const types = {
     mobileSm,
     mobileMd,

@@ -1,16 +1,16 @@
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { gettext } from '@/Language/src'
-import { OK } from '@/Restful/src/http-status'
-import { locationProps } from '@/ServerInfo/src/stores'
-import { ToastStore } from '@/Toast/src/stores'
 import { observer } from 'mobx-react-lite'
-import React, { MouseEvent, useCallback, useState } from 'react'
+import React, { FC, MouseEvent, useCallback, useState } from 'react'
 import styled from 'styled-components'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { gettext } from '../../../Language/src'
+import { OK } from '../../../Restful/src/http-status'
+import { locationProps } from '../../../ServerInfo/src/stores'
+import { ToastStore } from '../../../Toast/src/stores'
 interface ClientLocationProps {
   ip: string
 }
 const StyledLocation = styled.a``
-export const ClientLocation = observer(({ ip }: ClientLocationProps) => {
+export const ClientLocation: FC<ClientLocationProps> = observer(({ ip }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [location, setLocation] = useState<locationProps | null>(null)
   const onClick = useCallback(

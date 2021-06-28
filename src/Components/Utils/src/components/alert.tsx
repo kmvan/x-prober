@@ -1,6 +1,6 @@
-import { GUTTER } from '@/Config/src'
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
 interface AlertContainerProps {
   isSuccess: boolean
   withIcon: boolean
@@ -37,7 +37,7 @@ export interface AlertProps {
   isSuccess: boolean
   msg?: ReactNode
 }
-export const Alert = ({ isSuccess, msg = '' }: AlertProps) => {
+export const Alert: FC<AlertProps> = ({ isSuccess, msg = '' }) => {
   return (
     <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
       {msg}

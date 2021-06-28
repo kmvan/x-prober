@@ -1,9 +1,9 @@
-import { GUTTER } from '@/Config/src'
-import { formatBytes } from '@/Utils/src/components/format-bytes'
-import { gradientColors } from '@/Utils/src/components/gradient'
 import { rgba } from 'polished'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
+import { formatBytes } from '../../../Utils/src/components/format-bytes'
+import { gradientColors } from '../../../Utils/src/components/gradient'
 export interface ProgressBarProps {
   title?: string
   value: number
@@ -81,19 +81,19 @@ const StyledProgressValue = styled.div.attrs(
     border-radius: 0;
   }
 `
-export function ProgressBar({
+export const ProgressBar: FC<ProgressBarProps> = ({
   title = '',
   value,
   max,
   isCapacity,
   percentTag = '%',
   left = '',
-}: ProgressBarProps) {
+}) => {
   const percent = max === 0 || value === 0 ? 0 : (value / max) * 100
   const overview = isCapacity
     ? `${formatBytes(value)} / ${formatBytes(max)}`
     : `${value.toFixed(1)}${percentTag} / ${max}${percentTag}`
-  const overviewPercent = left ? left : `${percent.toFixed(1)}${percentTag}`
+  const overviewPercent = left || `${percent.toFixed(1)}${percentTag}`
   return (
     <StyledProgressBar title={title}>
       <StyledProgressPercent>{overviewPercent}</StyledProgressPercent>

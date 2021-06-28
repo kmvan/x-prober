@@ -1,10 +1,10 @@
-import { BootstrapStore } from '@/Bootstrap/src/stores'
-import { ANIMATION_DURATION_SC, GUTTER } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import { device } from '@/Style/src/components/devices'
 import { rgba } from 'polished'
-import React from 'react'
+import React, { FC } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { ANIMATION_DURATION_SC, GUTTER } from '../../../Config/src'
+import { gettext } from '../../../Language/src'
+import { device } from '../../../Style/src/components/devices'
 const slideIn = keyframes`
   from{
     transform: rotate(-45deg) translate3d(-28%, -270%, 0);
@@ -62,7 +62,7 @@ const StyledForkmeLink = styled.a`
     bottom: 1px;
   }
 `
-export const Forkme = () => {
+export const Forkme: FC = () => {
   return (
     <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
       {gettext('STAR 🌟 ME')}

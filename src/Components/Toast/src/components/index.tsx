@@ -1,9 +1,9 @@
-import { GUTTER } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import { Portal } from '@/Utils/src/components/portal'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
+import { gettext } from '../../../Language/src'
+import { Portal } from '../../../Utils/src/components/portal'
 import { ToastStore } from '../stores'
 const StyledToast = styled.div`
   position: fixed;
@@ -21,7 +21,7 @@ const StyledToast = styled.div`
   text-align: center;
   backdrop-filter: blur(5px);
 `
-export const Toast = observer(() => {
+export const Toast: FC = observer(() => {
   const { isOpen, msg, close } = ToastStore
   if (!isOpen) {
     return null

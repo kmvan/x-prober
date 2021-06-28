@@ -1,5 +1,5 @@
-import { gettext } from '@/Language/src'
 import { darken, lighten, rgba } from 'polished'
+import { gettext } from '../../../Language/src'
 import { colorSchemeProps } from '../typings'
 const light = '#f8f8f8'
 const dark = '#333'

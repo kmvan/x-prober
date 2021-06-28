@@ -1,11 +1,11 @@
-import { BORDER_RADIUS, GUTTER } from '@/Config/src'
+import React, { FC, useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { BORDER_RADIUS, GUTTER } from '../../../Config/src'
 import {
   NetworksStatsItem,
   StyledNetworkIdRow,
-} from '@/NetworkStats/src/components/item'
-import { NetworkStatsItemProps } from '@/NetworkStats/src/stores'
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+} from '../../../NetworkStats/src/components/item'
+import { NetworkStatsItemProps } from '../../../NetworkStats/src/stores'
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
   background: ${({ theme }) => theme['network.node.bg']};
@@ -32,7 +32,7 @@ interface NodeNetworksProps {
   items: NetworkStatsItemProps[]
   timestamp: number
 }
-export const NodeNetworks = ({ items, timestamp }: NodeNetworksProps) => {
+export const NodeNetworks: FC<NodeNetworksProps> = ({ items, timestamp }) => {
   const itemsCount = items.length
   if (!itemsCount) {
     return null

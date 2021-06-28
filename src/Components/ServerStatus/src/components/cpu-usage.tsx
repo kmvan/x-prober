@@ -1,11 +1,11 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { gettext } from '@/Language/src'
-import { ProgressBar } from '@/ProgressBar/src/components'
-import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { gettext } from '../../../Language/src'
+import { ProgressBar } from '../../../ProgressBar/src/components'
+import { template } from '../../../Utils/src/components/template'
 import { ServerStatusStore } from '../stores'
-export const CpuUsage = observer(() => {
+export const CpuUsage: FC = observer(() => {
   const { cpuUsage } = ServerStatusStore
   const { idle } = cpuUsage
   return (
@@ -15,7 +15,7 @@ export const CpuUsage = observer(() => {
           gettext(
             'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
           ),
-          cpuUsage
+          cpuUsage as any
         )}
         value={100 - idle}
         max={100}

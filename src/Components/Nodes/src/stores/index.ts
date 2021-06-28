@@ -1,5 +1,3 @@
-import { DataProps } from '@/Fetch/src/stores'
-import { conf } from '@/Utils/src/components/conf'
 import {
   action,
   computed,
@@ -8,6 +6,8 @@ import {
   observable,
   toJS,
 } from 'mobx'
+import { DataProps } from '../../../Fetch/src/stores'
+import { conf } from '../../../Utils/src/components/conf'
 configure({
   enforceActions: 'observed',
 })
@@ -31,6 +31,7 @@ class Main {
     isError: false,
     fetchUrl: '',
   }
+
   @observable public items: NodesItemProps[] = []
   public constructor() {
     makeObservable(this)
@@ -46,9 +47,11 @@ class Main {
     })
     this.setItems(items)
   }
+
   @action public setItems = (items: NodesItemProps[]) => {
     this.items = items
   }
+
   @action public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
     const i = this.items.findIndex((item) => item.id === id)
     if (i === -1) {
@@ -56,6 +59,7 @@ class Main {
     }
     this.items[i] = { ...toJS(this.items[i]), ...props }
   }
+
   @computed public get itemsCount() {
     return this.items.length
   }

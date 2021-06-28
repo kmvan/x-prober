@@ -1,13 +1,13 @@
-import { GUTTER } from '@/Config/src'
-import React, { HTMLAttributes } from 'react'
+import React, { FC, HTMLAttributes } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
 const StyledRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: calc(-${GUTTER} / 2);
   margin-right: calc(-${GUTTER} / 2);
 `
-interface RowProps extends HTMLAttributes<HTMLDivElement> {}
-export const Row = (props: RowProps) => {
+type RowProps = HTMLAttributes<HTMLDivElement>
+export const Row: FC<RowProps> = (props) => {
   return <StyledRow {...props} />
 }

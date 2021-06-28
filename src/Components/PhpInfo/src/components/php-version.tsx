@@ -1,13 +1,13 @@
-import { CardLink } from '@/Card/src/components/card-link'
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { gettext } from '@/Language/src'
-import { OK } from '@/Restful/src/http-status'
-import { template } from '@/Utils/src/components/template'
-import { versionCompare } from '@/Utils/src/components/version-compare'
 import { observer } from 'mobx-react-lite'
-import React, { useCallback, useEffect } from 'react'
+import React, { FC, useCallback, useEffect } from 'react'
+import { CardLink } from '../../../Card/src/components/card-link'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { gettext } from '../../../Language/src'
+import { OK } from '../../../Restful/src/http-status'
+import { template } from '../../../Utils/src/components/template'
+import { versionCompare } from '../../../Utils/src/components/version-compare'
 import { PhpInfoStore } from '../stores'
-export const PhpInfoPhpVersion = observer(() => {
+export const PhpInfoPhpVersion: FC = observer(() => {
   const {
     setLatestPhpVersion,
     setLatestPhpDate,

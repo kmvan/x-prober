@@ -1,15 +1,15 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { CardRuby } from '@/Card/src/components/card-ruby'
-import { CardError } from '@/Card/src/components/error'
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { Row } from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
-import { OK, TOO_MANY_REQUESTS } from '@/Restful/src/http-status'
-import { template } from '@/Utils/src/components/template'
 import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
-import React, { MouseEvent, useCallback } from 'react'
+import React, { FC, MouseEvent, useCallback } from 'react'
 import styled from 'styled-components'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { CardRuby } from '../../../Card/src/components/card-ruby'
+import { CardError } from '../../../Card/src/components/error'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { Row } from '../../../Grid/src/components/row'
+import { gettext } from '../../../Language/src'
+import { OK, TOO_MANY_REQUESTS } from '../../../Restful/src/http-status'
+import { template } from '../../../Utils/src/components/template'
 import { ServerBenchmarkStore } from '../stores'
 const StyledTextBtn = styled.a`
   display: block;
@@ -77,7 +77,7 @@ const Result = ({
     </StyledResult>
   )
 }
-const Items = observer(() => {
+const Items: FC = observer(() => {
   const { servers } = ServerBenchmarkStore
   if (!servers) {
     return (
@@ -94,7 +94,7 @@ const Items = observer(() => {
   const results = items.map(
     ({ name, url, date, proberUrl, binUrl, detail }) => {
       if (!detail) {
-        return
+        return null
       }
       const { hash = 0, intLoop = 0, floatLoop = 0, ioLoop = 0 } = detail
       const proberLink = proberUrl ? (
@@ -144,15 +144,15 @@ const Items = observer(() => {
   )
   return <>{results}</>
 })
-const TestResults = observer(() => {
+const TestResults: FC = observer(() => {
   const { marks } = ServerBenchmarkStore
   if (!marks) {
     return null
   }
   return <Result {...marks} />
 })
-const TestBtn = observer(
-  ({ onClick }: { onClick: (e: MouseEvent<HTMLAnchorElement>) => void }) => {
+const TestBtn: FC<{ onClick: (e: MouseEvent<HTMLAnchorElement>) => void }> =
+  observer(({ onClick }) => {
     const { linkText } = ServerBenchmarkStore
     return (
       <CardGrid
@@ -164,42 +164,40 @@ const TestBtn = observer(
         <TestResults />
       </CardGrid>
     )
-  }
-)
-export const ServerBenchmark = observer(() => {
-  const onClick = useCallback(async (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    const {
-      isLoading,
-      setIsLoading,
-      setMarks,
-      setLinkText,
-    } = ServerBenchmarkStore
-    if (isLoading) {
-      return false
-    }
-    setLinkText(gettext('⏳ Testing, please wait...'))
-    setIsLoading(true)
-    const { data = {}, status } = await serverFetch('benchmark')
-    const { marks, seconds } = data
-    if (status === OK) {
-      if (marks) {
-        setMarks(marks)
-        setLinkText(gettext('👆 Click to test'))
+  })
+export const ServerBenchmark: FC = observer(() => {
+  const onClick = useCallback(
+    async (e: MouseEvent<HTMLAnchorElement>): Promise<void> => {
+      e.preventDefault()
+      const { isLoading, setIsLoading, setMarks, setLinkText } =
+        ServerBenchmarkStore
+      if (isLoading) {
+        return
+      }
+      setLinkText(gettext('⏳ Testing, please wait...'))
+      setIsLoading(true)
+      const { data = {}, status } = await serverFetch('benchmark')
+      const { marks, seconds } = data
+      if (status === OK) {
+        if (marks) {
+          setMarks(marks)
+          setLinkText(gettext('👆 Click to test'))
+        } else {
+          setLinkText(gettext('Network error, please try again later.'))
+        }
+      } else if (status === TOO_MANY_REQUESTS) {
+        setLinkText(
+          template(gettext('⏳ Please wait {{seconds}}s'), {
+            seconds,
+          })
+        )
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }
-    } else if (status === TOO_MANY_REQUESTS) {
-      setLinkText(
-        template(gettext('⏳ Please wait {{seconds}}s'), {
-          seconds,
-        })
-      )
-    } else {
-      setLinkText(gettext('Network error, please try again later.'))
-    }
-    setIsLoading(false)
-  }, [])
+      setIsLoading(false)
+    },
+    []
+  )
   return (
     <Row>
       {ServerBenchmarkStore.enabledMyServerBenchmark && (

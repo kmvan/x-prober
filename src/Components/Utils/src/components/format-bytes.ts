@@ -1,4 +1,4 @@
-export const formatBytes = (bytes: number, decimals: number = 2): string => {
+export const formatBytes = (bytes: number, decimals = 2): string => {
   if (bytes === 0) {
     return '0'
   }

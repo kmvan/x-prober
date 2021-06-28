@@ -1,8 +1,8 @@
-import { Grid } from '@/Grid/src/components/grid'
-import { Row } from '@/Grid/src/components/row'
-import { formatBytes } from '@/Utils/src/components/format-bytes'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { Grid } from '../../../Grid/src/components/grid'
+import { Row } from '../../../Grid/src/components/row'
+import { formatBytes } from '../../../Utils/src/components/format-bytes'
 interface NetworksStatsItemProps {
   id: string
   singleLine?: boolean
@@ -50,14 +50,14 @@ const StyledNetworkStatsRateTx = styled(StyledNetworkStatsRate)`
     content: '▲';
   }
 `
-export const NetworksStatsItem = ({
+export const NetworksStatsItem: FC<NetworksStatsItemProps> = ({
   id,
   singleLine = true,
   totalRx = 0,
   rateRx = 0,
   totalTx = 0,
   rateTx = 0,
-}: NetworksStatsItemProps) => {
+}) => {
   if (!id) {
     return null
   }

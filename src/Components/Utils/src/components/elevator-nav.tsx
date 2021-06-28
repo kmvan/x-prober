@@ -1,5 +1,6 @@
 import React, {
   Children,
+  FC,
   ReactElement,
   useCallback,
   useEffect,
@@ -9,7 +10,10 @@ interface ElevatorNavProps {
   activeIndex: number
   children: ReactElement[]
 }
-export const ElevatorNav = ({ activeIndex, children }: ElevatorNavProps) => {
+export const ElevatorNav: FC<ElevatorNavProps> = ({
+  activeIndex,
+  children,
+}) => {
   return (
     <>
       {Children.map(children, (child, i) => {
@@ -31,20 +35,20 @@ interface ElevatorNavBodyProps {
   topOffset?: number
   children: ReactElement[]
 }
-export const ElevatorNavBody = ({
+export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
   id,
   setActiveIndex,
   threshold = 50,
   topOffset = 50,
   children,
-}: ElevatorNavBodyProps) => {
+}) => {
   const position = useRef<[start: number, end: number][]>([[0, 0]])
   const timer = useRef<number>(0)
   const onScroll = useCallback(() => {
     timer.current && window.clearTimeout(timer.current)
     timer.current = window.setTimeout(() => {
       const y = Math.round(window.pageYOffset) + topOffset
-      position.current.map(([start, end], i) => {
+      position.current.forEach(([start, end], i) => {
         if (y >= start && y < start + end) {
           setActiveIndex(i)
         }
@@ -52,7 +56,7 @@ export const ElevatorNavBody = ({
     }, threshold)
   }, [])
   useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
+    const resizeObserver = new ResizeObserver(() => {
       const count = Children.count(children)
       position.current = children.map((child, i) => {
         const element: HTMLElement | null = document.querySelector(

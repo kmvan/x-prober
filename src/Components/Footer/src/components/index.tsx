@@ -1,12 +1,12 @@
-import { BootstrapStore } from '@/Bootstrap/src/stores'
-import { GUTTER } from '@/Config/src'
-import { gettext } from '@/Language/src'
-import { device } from '@/Style/src/components/devices'
-import { formatBytes } from '@/Utils/src/components/format-bytes'
-import { template } from '@/Utils/src/components/template'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
+import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { GUTTER } from '../../../Config/src'
+import { gettext } from '../../../Language/src'
+import { device } from '../../../Style/src/components/devices'
+import { formatBytes } from '../../../Utils/src/components/format-bytes'
+import { template } from '../../../Utils/src/components/template'
 import { FooterStore } from '../stores'
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme['footer.bg']};
@@ -27,7 +27,7 @@ const StyledFooter = styled.div`
     }
   }
 `
-export const Footer = observer(() => {
+export const Footer: FC = observer(() => {
   const { appName, appUrl, authorName, authorUrl } = BootstrapStore
   const { memUsage, time } = FooterStore.conf
   return (

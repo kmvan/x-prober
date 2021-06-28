@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
-export const Portal = ({ children }) => {
-  const [container] = useState(() => document.createElement('div'))
-  useEffect(() => {
-    document.body.appendChild(container)
-    return () => {
-      document.body.removeChild(container)
-    }
-  }, [])
-  return createPortal(children, container)
+import { FC, ReactNode } from 'react'
+import ReactDOM from 'react-dom'
+import { usePortal } from '../../../Hooks/src/use-portal'
+interface PortalProps {
+  children: ReactNode
+}
+export const Portal: FC<PortalProps> = ({ children }) => {
+  const target = usePortal()
+  return ReactDOM.createPortal(children, target)
 }

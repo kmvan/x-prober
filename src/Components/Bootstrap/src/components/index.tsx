@@ -1,31 +1,42 @@
-import { Cards } from '@/Card/src/components'
-import { ColorScheme } from '@/ColorScheme/src/components'
-import { ColorSchemeStore } from '@/ColorScheme/src/stores'
-import { GUTTER } from '@/Config/src'
-import { Container } from '@/Container/src/components'
-import '@/Database/src'
-import { Footer } from '@/Footer/src/components'
-import { Forkme } from '@/Forkme/src/components'
-import '@/MyInfo/src'
-import { Nav } from '@/Nav/src/components'
-import '@/NetworkStats/src'
-import '@/Nodes/src'
-import '@/PhpExtensions/src'
-import '@/PhpInfo/src'
-import '@/Ping/src'
-import '@/ServerBenchmark/src'
-import '@/ServerInfo/src'
-import '@/ServerStatus/src'
-import '@/TemperatureSensor/src'
-import { Title } from '@/Title/src/components'
-import { Toast } from '@/Toast/src/components'
-import { ready } from '@/Utils/src/components/ready'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
 import { render } from 'react-dom'
 import styled, { ThemeProvider } from 'styled-components'
+import { Cards } from '../../../Card/src/components'
+import { ColorScheme } from '../../../ColorScheme/src/components'
+import { ColorSchemeStore } from '../../../ColorScheme/src/stores'
+import { GUTTER } from '../../../Config/src'
+import { Container } from '../../../Container/src/components'
+import { DatabaseBootstrap } from '../../../Database/src/bootstrap'
+import { Footer } from '../../../Footer/src/components'
+import { Forkme } from '../../../Forkme/src/components'
+import { MyInfoBootstrap } from '../../../MyInfo/src/bootstrap'
+import { Nav } from '../../../Nav/src/components'
+import { NetworkStatsBoostrap } from '../../../NetworkStats/src/bootstrap'
+import { NodesBoostrap } from '../../../Nodes/src/bootstrap'
+import { PhpExtensionsBootstrap } from '../../../PhpExtensions/src/bootstrap'
+import { PhpInfoBootstrap } from '../../../PhpInfo/src/bootstrap'
+import { PingBootstrap } from '../../../Ping/src/bootstrap'
+import { ServerBenchmarkBoostrap } from '../../../ServerBenchmark/src/bootstrap'
+import { ServerInfoBoostrap } from '../../../ServerInfo/src/bootstrap'
+import { ServerStatusBoostrap } from '../../../ServerStatus/src/bootstrap'
+import { TemperatureSensorBoostrap } from '../../../TemperatureSensor/src/bootstrap'
+import { Title } from '../../../Title/src/components'
+import { Toast } from '../../../Toast/src/components'
+import { ready } from '../../../Utils/src/components/ready'
 import { BootstrapStore } from '../stores'
 import { Normalize } from './style'
+DatabaseBootstrap()
+MyInfoBootstrap()
+NetworkStatsBoostrap()
+NodesBoostrap()
+PhpExtensionsBootstrap()
+PhpInfoBootstrap()
+PingBootstrap()
+ServerBenchmarkBoostrap()
+ServerInfoBoostrap()
+ServerStatusBoostrap()
+TemperatureSensorBoostrap()
 const StyledApp = styled.div`
   padding: calc(${GUTTER} * 3.5) 0 calc(${GUTTER} * 2);
   background: ${({ theme }) => theme['app.bg']};
@@ -46,7 +57,7 @@ const StyledApp = styled.div`
     border-radius: calc(${GUTTER} * 3);
   }
 `
-const Bootstrap = observer(() => {
+const Bootstrap: FC = observer(() => {
   return (
     <ThemeProvider theme={ColorSchemeStore.scheme}>
       <Normalize />

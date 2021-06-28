@@ -1,15 +1,15 @@
-import { serverFetch } from '@/Fetch/src/server-fetch'
-import { gettext } from '@/Language/src'
+import { observer } from 'mobx-react-lite'
+import React, { FC, useCallback } from 'react'
+import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { gettext } from '../../../Language/src'
 import {
   INSUFFICIENT_STORAGE,
   INTERNAL_SERVER_ERROR,
   OK,
-} from '@/Restful/src/http-status'
-import { StyledTitleLink } from '@/Title/src/components'
-import { observer } from 'mobx-react-lite'
-import React, { useCallback } from 'react'
+} from '../../../Restful/src/http-status'
+import { StyledTitleLink } from '../../../Title/src/components'
 import { UpdaterStore } from '../stores'
-export const UpdaterLink = observer(() => {
+export const UpdaterLink: FC = observer(() => {
   const onClick = useCallback(async () => {
     const { setIsUpdating, setIsUpdateError } = UpdaterStore
     setIsUpdating(true)

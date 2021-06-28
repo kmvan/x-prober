@@ -1,10 +1,10 @@
-import { GUTTER } from '@/Config/src'
-import React, { HTMLAttributes } from 'react'
+import React, { FC, HTMLAttributes } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
 const StyledCardError = styled.div`
   padding: ${GUTTER};
 `
-interface CardErrorProps extends HTMLAttributes<HTMLDivElement> {}
-export const CardError = (props: CardErrorProps) => (
+type CardErrorProps = HTMLAttributes<HTMLDivElement>
+export const CardError: FC<CardErrorProps> = (props) => (
   <StyledCardError {...props} />
 )

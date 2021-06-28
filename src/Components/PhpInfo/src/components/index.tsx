@@ -1,14 +1,14 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { MultiItemContainer } from '@/Card/src/components/multi-item-container'
-import { Row } from '@/Grid/src/components/row'
-import { gettext } from '@/Language/src'
-import { Alert } from '@/Utils/src/components/alert'
-import { SearchLink } from '@/Utils/src/components/search-link'
 import { observer } from 'mobx-react-lite'
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { MultiItemContainer } from '../../../Card/src/components/multi-item-container'
+import { Row } from '../../../Grid/src/components/row'
+import { gettext } from '../../../Language/src'
+import { Alert } from '../../../Utils/src/components/alert'
+import { SearchLink } from '../../../Utils/src/components/search-link'
 import { PhpInfoStore } from '../stores'
 import { PhpInfoPhpVersion } from './php-version'
-export const PhpInfo = observer(() => {
+export const PhpInfo: FC = observer(() => {
   const { conf } = PhpInfoStore
   const oneLineItems: Array<[string, ReactNode]> = [
     [

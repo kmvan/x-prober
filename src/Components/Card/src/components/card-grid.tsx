@@ -1,8 +1,8 @@
-import { GUTTER } from '@/Config/src'
-import { Grid, GridProps } from '@/Grid/src/components/grid'
-import { device } from '@/Style/src/components/devices'
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
+import { GUTTER } from '../../../Config/src'
+import { Grid, GridProps } from '../../../Grid/src/components/grid'
+import { device } from '../../../Style/src/components/devices'
 export interface CardGridProps extends GridProps {
   name?: ReactNode
   children: ReactNode
@@ -30,12 +30,12 @@ const StyledCardContent = styled.div`
   flex-grow: 1;
   padding: calc(${GUTTER} / 2) 0;
 `
-export const CardGrid = ({
+export const CardGrid: FC<CardGridProps> = ({
   name = '',
   title = '',
   children,
   ...props
-}: CardGridProps) => {
+}) => {
   return (
     <Grid {...props}>
       <StyledCardGroup>

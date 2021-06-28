@@ -1,10 +1,10 @@
-import { CardGrid } from '@/Card/src/components/card-grid'
-import { gettext } from '@/Language/src'
-import { ProgressBar } from '@/ProgressBar/src/components'
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { FC } from 'react'
+import { CardGrid } from '../../../Card/src/components/card-grid'
+import { gettext } from '../../../Language/src'
+import { ProgressBar } from '../../../ProgressBar/src/components'
 import { ServerStatusStore } from '../stores'
-export const MemRealUsage = observer(() => {
+export const MemRealUsage: FC = observer(() => {
   const { max, value } = ServerStatusStore.memRealUsage
   return (
     <CardGrid
