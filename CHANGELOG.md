@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 7.7.0 - 2021-06-30
+
+### Fix
+
+- Fix duplicate IPv4/IPv6 items
+
 ## 7.6.0 - 2021-06-28
 
 ### Optimize
