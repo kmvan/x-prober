@@ -37,12 +37,7 @@ const ServerInfoTime: FC = observer(() => {
 })
 export const ServerInfo: FC = observer(() => {
   const { conf, serverIpv4, serverIpv6 } = ServerInfoStore
-  const shortItems1 = [
-    [gettext('Server name'), conf?.serverName],
-    [gettext('Server IPv4'), serverIpv4],
-    [gettext('Server IPv6'), serverIpv6],
-    [gettext('Server software'), conf?.serverSoftware],
-  ]
+  const shortItems1 = [[gettext('Server name'), conf?.serverName]]
   const shortItems2 = [
     [gettext('Server IPv4'), serverIpv4],
     [gettext('Server IPv6'), serverIpv6],
