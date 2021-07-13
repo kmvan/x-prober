@@ -34,6 +34,8 @@ export const colorSchemeDark: colorSchemeProps = {
   'card.boxShadow': `inset 0 0 0 1px #000`,
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
+  'card.des.fg': light,
+  'card.des.bg': rgba('#000', 0.3),
   'card.title.fg': light,
   'progress.fg': light,
   'progress.bg': topDarkBottomLight,
