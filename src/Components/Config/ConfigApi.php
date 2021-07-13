@@ -7,7 +7,7 @@ namespace InnStudio\Prober\Components\Config;
 
 class ConfigApi
 {
-    public static $APP_VERSION                  = '7.7';
+    public static $APP_VERSION                  = '8.0';
     public static $APP_NAME                     = 'X Prober';
     public static $APP_URL                      = 'https://github.com/kmvan/x-prober';
     public static $APP_CONFIG_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json', 'https://api.inn-studio.com/download/?id=xprober-config');
@@ -18,5 +18,5 @@ class ConfigApi
     public static $UPDATE_PHP_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php', 'https://api.inn-studio.com/download/?id=xprober');
     public static $AUTHOR_NAME                  = 'INN STUDIO';
     public static $LATEST_PHP_STABLE_VERSION    = '8';
-    public static $LATEST_NGINX_STABLE_VERSION  = '1.20.0';
+    public static $LATEST_NGINX_STABLE_VERSION  = '1.20.1';
 }

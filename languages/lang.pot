@@ -57,6 +57,12 @@ msgstr ""
 msgid "Not support"
 msgstr ""
 
+msgid "My Information"
+msgstr ""
+
+msgid "Mine"
+msgstr ""
+
 msgid "My IPv4"
 msgstr ""
 
@@ -84,16 +90,13 @@ msgstr ""
 msgid "The author only has 10,000 API requests per month, please do not abuse it."
 msgstr ""
 
-msgid "My Information"
-msgstr ""
-
-msgid "Mine"
-msgstr ""
-
 msgid "Network Stats"
 msgstr ""
 
 msgid "Net"
+msgstr ""
+
+msgid "Nodes"
 msgstr ""
 
 msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
@@ -117,7 +120,10 @@ msgstr ""
 msgid "Fetch failed. Node returns {{code}}."
 msgstr ""
 
-msgid "Nodes"
+msgid "PHP Extensions"
+msgstr ""
+
+msgid "Ext"
 msgstr ""
 
 msgid "Opcache enabled"
@@ -129,10 +135,10 @@ msgstr ""
 msgid "Loaded extensions"
 msgstr ""
 
-msgid "PHP Extensions"
+msgid "PHP Information"
 msgstr ""
 
-msgid "Ext"
+msgid "PHP"
 msgstr ""
 
 msgid "👆 Click for detail"
@@ -186,10 +192,10 @@ msgstr ""
 msgid "(Latest {{latestPhpVersion}})"
 msgstr ""
 
-msgid "PHP Information"
+msgid "Network Ping"
 msgstr ""
 
-msgid "PHP"
+msgid "Ping"
 msgstr ""
 
 msgid "Times:{{times}}"
@@ -204,10 +210,16 @@ msgstr ""
 msgid "👆 Start ping"
 msgstr ""
 
-msgid "Network Ping"
+msgid "Server Benchmark"
 msgstr ""
 
-msgid "Ping"
+msgid "Becnhmark"
+msgstr ""
+
+msgid "Read"
+msgstr ""
+
+msgid "Write"
 msgstr ""
 
 msgid "Can not fetch marks data from GitHub."
@@ -237,10 +249,13 @@ msgstr ""
 msgid "⏳ Please wait {{seconds}}s"
 msgstr ""
 
-msgid "Server Benchmark"
+msgid "⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference."
 msgstr ""
 
-msgid "Becnhmark"
+msgid "Server Information"
+msgstr ""
+
+msgid "Info"
 msgstr ""
 
 msgid "Unavailable"
@@ -249,13 +264,13 @@ msgstr ""
 msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
 msgstr ""
 
-msgid "Server name"
-msgstr ""
-
 msgid "Server time"
 msgstr ""
 
 msgid "Server uptime"
+msgstr ""
+
+msgid "Server name"
 msgstr ""
 
 msgid "Server IPv4"
@@ -282,10 +297,10 @@ msgstr ""
 msgid "Disk usage"
 msgstr ""
 
-msgid "Server Information"
+msgid "Server Status"
 msgstr ""
 
-msgid "Info"
+msgid "Status"
 msgstr ""
 
 msgid "Buffers are in-memory block I/O buffers. They are relatively short-lived. Prior to Linux kernel version 2.4, Linux had separate page and buffer caches. Since 2.4, the page and buffer cache are unified and Buffers is raw disk blocks not represented in the page cache—i.e., not file data."
@@ -318,19 +333,13 @@ msgstr ""
 msgid "System load"
 msgstr ""
 
-msgid "Server Status"
-msgstr ""
-
-msgid "Status"
-msgstr ""
-
-msgid "{{sensor}} temperature"
-msgstr ""
-
 msgid "Temperature Sensor"
 msgstr ""
 
 msgid "Temp."
+msgstr ""
+
+msgid "{{sensor}} temperature"
 msgstr ""
 
 msgid "Click to close"

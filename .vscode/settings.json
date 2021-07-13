@@ -1,9 +1,5 @@
 {
-  "php-cs-fixer.config": ".php_cs73",
+  "php-cs-fixer.config": ".php-cs-fixer53.php",
   "php-cs-fixer.allowRisky": true,
-  "php-cs-fixer.documentFormattingProvider": true,
-  "php-cs-fixer.exclude": ["/dist", "/.tmp", "/vendor"],
-  "php-cs-fixer.onsave": true,
-  "php.suggest.basic": false,
-  "php-cs-fixer.rules": "@PSR2"
+  "php.suggest.basic": false
 }

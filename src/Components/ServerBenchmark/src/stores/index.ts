@@ -1,19 +1,12 @@
 import { action, computed, configure, makeObservable, observable } from 'mobx'
-import {
-  AppConfigBenchmarkProps,
-  ConfigStore,
-} from '../../../Config/src/stores'
+import { ConfigStore } from '../../../Config/src/stores'
+import { AppConfigBenchmarkProps } from '../../../Config/src/typings'
 import { gettext } from '../../../Language/src'
 import { conf } from '../../../Utils/src/components/conf'
+import type { ServerBenchmarkMarksProps } from '../typings'
 configure({
   enforceActions: 'observed',
 })
-export interface MarksProps {
-  floatLoop: number
-  hash: number
-  intLoop: number
-  ioLoop: number
-}
 class Main {
   public readonly ID = 'serverBenchmark'
   public readonly conf = conf?.[this.ID]
@@ -22,11 +15,10 @@ class Main {
 
   @observable public isLoading = false
   @observable public linkText: string = gettext('👆 Click to test')
-  @observable public marks: MarksProps = {
-    hash: 0,
-    intLoop: 0,
-    floatLoop: 0,
-    ioLoop: 0,
+  @observable public marks: ServerBenchmarkMarksProps = {
+    cpu: 0,
+    read: 0,
+    write: 0,
   }
 
   public constructor() {
@@ -37,7 +29,7 @@ class Main {
     return ConfigStore?.appConfig?.BENCHMARKS || null
   }
 
-  @action public setMarks = (marks: MarksProps) => {
+  @action public setMarks = (marks: ServerBenchmarkMarksProps) => {
     this.marks = marks
   }
 

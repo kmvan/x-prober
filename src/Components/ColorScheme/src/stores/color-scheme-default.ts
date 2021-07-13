@@ -39,6 +39,8 @@ export const colorSchemeDefault: colorSchemeProps = {
   ].join(','),
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
+  'card.des.fg': dark,
+  'card.des.bg': rgba(dark, 0.1),
   'card.title.fg': dark,
   'progress.fg': light,
   'progress.bg': topDarkBottomLight,

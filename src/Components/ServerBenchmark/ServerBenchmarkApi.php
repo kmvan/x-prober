@@ -8,12 +8,12 @@ class ServerBenchmarkApi
 
     public function getTmpRecorderPath()
     {
-        return \sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
+        return sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
     }
 
     public function setRecorder(array $data)
     {
-        return (bool) \file_put_contents($this->getTmpRecorderPath(), \json_encode(\array_merge($this->getRecorder(), $data)));
+        return (bool) file_put_contents($this->getTmpRecorderPath(), json_encode(array_merge($this->getRecorder(), $data)));
     }
 
     public function setExpired()
@@ -52,78 +52,91 @@ class ServerBenchmarkApi
 
     public function getPointsByTime($time)
     {
-        return \pow(10, 3) - (int) ($time * \pow(10, 3));
+        return 10 ** 3 - (int) ($time * 10 ** 3);
     }
 
-    public function getHashPoints()
+    public function getCpuPoints()
     {
         $data  = 'inn-studio.com';
         $hash  = array('md5', 'sha512', 'sha256', 'crc32');
-        $count = \pow(10, 5);
-        $start = \microtime(true);
+        $start = microtime(true);
+        $i     = 0;
 
-        for ($i = 0; $i < $count; ++$i) {
+        while (microtime(true) - $start < .5) {
             foreach ($hash as $v) {
-                \hash($v, $data);
+                hash($v, $data);
             }
+            ++$i;
         }
 
-        return $this->getPointsByTime(\microtime(true) - $start);
+        return $i;
     }
 
-    public function getIntLoopPoints()
+    public function getWritePoints()
     {
-        $j     = 0;
-        $count = \pow(10, 7);
-        $start = \microtime(true);
+        $tmpDir = sys_get_temp_dir();
 
-        for ($i = 0; $i < $count; ++$i) {
-            ++$j;
-        }
-
-        return $this->getPointsByTime(\microtime(true) - $start);
-    }
-
-    public function getFloatLoopPoints()
-    {
-        $j     = 1 / 3;
-        $count = \pow(10, 7);
-        $start = \microtime(true);
-
-        for ($i = 0; $i < $count; ++$i) {
-            ++$j;
-        }
-
-        return $this->getPointsByTime(\microtime(true) - $start);
-    }
-
-    public function getIoLoopPoints()
-    {
-        $tmpDir = \sys_get_temp_dir();
-
-        if ( ! \is_writable($tmpDir)) {
+        if ( ! is_writable($tmpDir)) {
             return 0;
         }
 
-        $count = \pow(10, 4);
-        $start = \microtime(true);
+        $i     = 0;
+        $start = microtime(true);
 
-        for ($i = 0; $i < $count; ++$i) {
-            $filePath = "{$tmpDir}/innStudioIoBenchmark:{$i}";
-            \file_put_contents($filePath, $filePath);
-            \unlink($filePath);
+        while (microtime(true) - $start < .5) {
+            $filePath = "{$tmpDir}/innStudioWriteBenchmark:{$i}";
+            clearstatcache(true, $filePath);
+            file_put_contents($filePath, $filePath);
+            unlink($filePath);
+            ++$i;
         }
 
-        return $this->getPointsByTime(\microtime(true) - $start);
+        return $i;
+    }
+
+    public function getReadPoints()
+    {
+        $tmpDir = sys_get_temp_dir();
+
+        if ( ! is_readable($tmpDir)) {
+            return 0;
+        }
+
+        $i        = 0;
+        $start    = microtime(true);
+        $filePath = "{$tmpDir}/innStudioIoBenchmark";
+
+        if ( ! file_exists($filePath)) {
+            file_put_contents($filePath, 'innStudioReadBenchmark');
+        }
+
+        while (microtime(true) - $start < .5) {
+            clearstatcache(true, $filePath);
+            file_get_contents($filePath);
+            ++$i;
+        }
+
+        return $i;
     }
 
     public function getPoints()
     {
         return array(
-            'hash'      => $this->getHashPoints(),
-            'intLoop'   => $this->getIntLoopPoints(),
-            'floatLoop' => $this->getFloatLoopPoints(),
-            'ioLoop'    => $this->getIoLoopPoints(),
+            'cpu' => $this->getMedian(array(
+                $this->getCpuPoints(),
+                $this->getCpuPoints(),
+                $this->getCpuPoints(),
+            )),
+            'write' => $this->getMedian(array(
+                $this->getWritePoints(),
+                $this->getWritePoints(),
+                $this->getWritePoints(),
+            )),
+            'read' => $this->getMedian(array(
+                $this->getReadPoints(),
+                $this->getReadPoints(),
+                $this->getReadPoints(),
+            )),
         );
     }
 
@@ -135,22 +148,31 @@ class ServerBenchmarkApi
             'running' => 0,
         );
 
-        if ( ! @\is_readable($path)) {
+        if ( ! @is_readable($path)) {
             return $defaults;
         }
 
-        $data = (string) \file_get_contents($path);
+        $data = (string) file_get_contents($path);
 
         if ( ! $data) {
             return $defaults;
         }
 
-        $data = \json_decode($data, true);
+        $data = json_decode($data, true);
 
         if ( ! $data) {
             return $defaults;
         }
 
-        return \array_merge($defaults, $data);
+        return array_merge($defaults, $data);
+    }
+
+    private function getMedian(array $arr)
+    {
+        $count = \count($arr);
+        sort($arr);
+        $mid = floor(($count - 1) / 2);
+
+        return ($arr[$mid] + $arr[$mid + 1 - $count % 2]) / 2;
     }
 }

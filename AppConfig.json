@@ -1,5 +1,5 @@
 {
-  "APP_VERSION": "7.7",
+  "APP_VERSION": "8.0",
   "APP_NAME": "X Prober",
   "APP_URL": "https://github.com/kmvan/x-prober",
   "AUTHOR_URL": "https://inn-studio.com/prober",
@@ -16,7 +16,7 @@
   "APP_TEMPERATURE_SENSOR_PORTS": [2048, 4096],
   "AUTHOR_NAME": "INN STUDIO",
   "LATEST_PHP_STABLE_VERSION": "8",
-  "LATEST_NGINX_STABLE_VERSION": "1.20.0",
+  "LATEST_NGINX_STABLE_VERSION": "1.20.1",
   "BENCHMARKS": [
     {
       "name": "VPSPlayer / AMD-3950X / PHP80 JIT / Unlimit",

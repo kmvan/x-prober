@@ -55,6 +55,12 @@
     "zhhk": "⏸️ 停止 Ping",
     "zhtw": "⏸️ 停止 Ping"
   },
+  "⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference.": {
+    "zh": "⚔️ 不同版本的不能比较，不同的时间服务器存在不同的负载，仅作参考。",
+    "zhcn": "⚔️ 不同版本的不能比较，不同的时间服务器存在不同的负载，仅作参考。",
+    "zhhk": "不同的版本有不同的分數，不同的時間伺服器有不同的負載，僅供參考。",
+    "zhtw": "⚔️ 不同版本無法比較，不同時間的伺服器具有不同的負載，僅供參考。"
+  },
   "✨ Found update! Version {{oldVersion}} → {{newVersion}}": {
     "ja": "✨ アップデートが見た！バージョン {{oldVersion}} → {{newVersion}}",
     "zh": "✨ 发现更新！版本 {{oldVersion}} → {{newVersion}}",
@@ -543,11 +549,18 @@
     "zhtw": "不支援"
   },
   "Opcache enabled": {
-    "ja": "%s 有効",
+    "ja": "Opcache 有効",
     "zh": "OPcache 已启用",
     "zhcn": "OPcache 已启用",
     "zhhk": "OPcache 已啓用",
     "zhtw": "OPcache 已啟用"
+  },
+  "Opcache JIT enabled": {
+    "ja": "Opcache JIT 有効",
+    "zh": "OPcache JIT 已启用",
+    "zhcn": "OPcache JIT 已启用",
+    "zhhk": "OPcache JIT 已啓用",
+    "zhtw": "OPcache JIT 已啟用"
   },
   "PHP": {
     "ja": "PHP",
@@ -583,6 +596,12 @@
     "zhcn": "Ping",
     "zhhk": "Ping",
     "zhtw": "Ping"
+  },
+  "Read": {
+    "zh": "读",
+    "zhcn": "读",
+    "zhhk": "讀",
+    "zhtw": "讀"
   },
   "SAPI interface": {
     "ja": "SAPI インタフェース",
@@ -807,6 +826,12 @@
     "zhcn": "访问官网",
     "zhhk": "訪問官網",
     "zhtw": "瀏覽官網"
+  },
+  "Write": {
+    "zh": "写",
+    "zhcn": "写",
+    "zhhk": "寫",
+    "zhtw": "寫"
   },
   "X Prober": {
     "zh": "X 探针",
