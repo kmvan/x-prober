@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-02-25 22:33+0800\n"
+"PO-Revision-Date: 2021-07-13 12:17+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
 msgid "Copy marks"
@@ -62,6 +62,12 @@ msgstr "無法獲取 IP"
 msgid "Not support"
 msgstr "不支援"
 
+msgid "My Information"
+msgstr "我的訊息"
+
+msgid "Mine"
+msgstr "我的"
+
 msgid "My IPv4"
 msgstr "我的 IPv4"
 
@@ -90,17 +96,14 @@ msgid ""
 "The author only has 10,000 API requests per month, please do not abuse it."
 msgstr "作者每月只有 10,000 次 API 請求，且用且珍惜。"
 
-msgid "My Information"
-msgstr "我的訊息"
-
-msgid "Mine"
-msgstr "我的"
-
 msgid "Network Stats"
 msgstr "流量統計"
 
 msgid "Net"
 msgstr "流量"
+
+msgid "Nodes"
+msgstr "節點"
 
 msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
 msgstr "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
@@ -123,8 +126,11 @@ msgstr "獲取中……"
 msgid "Fetch failed. Node returns {{code}}."
 msgstr "獲取失敗。節點返回了 {{code}} 碼。"
 
-msgid "Nodes"
-msgstr "節點"
+msgid "PHP Extensions"
+msgstr "PHP 擴展"
+
+msgid "Ext"
+msgstr "擴展"
 
 msgid "Opcache enabled"
 msgstr "OPcache 已啓用"
@@ -135,11 +141,11 @@ msgstr "OPcache JIT 已啓用"
 msgid "Loaded extensions"
 msgstr "載入的 PHP 擴展"
 
-msgid "PHP Extensions"
-msgstr "PHP 擴展"
+msgid "PHP Information"
+msgstr "PHP 資訊"
 
-msgid "Ext"
-msgstr "擴展"
+msgid "PHP"
+msgstr "PHP"
 
 msgid "👆 Click for detail"
 msgstr "👆 查看詳細"
@@ -192,11 +198,11 @@ msgstr "訪問 PHP.net 官網"
 msgid "(Latest {{latestPhpVersion}})"
 msgstr "（最新 {{latestPhpVersion}}）"
 
-msgid "PHP Information"
-msgstr "PHP 資訊"
+msgid "Network Ping"
+msgstr "網速 Ping"
 
-msgid "PHP"
-msgstr "PHP"
+msgid "Ping"
+msgstr "Ping"
 
 msgid "Times:{{times}}"
 msgstr "次數：{{times}}"
@@ -210,11 +216,17 @@ msgstr "⏸️ 停止 Ping"
 msgid "👆 Start ping"
 msgstr "👆 開始 Ping"
 
-msgid "Network Ping"
-msgstr "網速 Ping"
+msgid "Server Benchmark"
+msgstr "伺服器性能跑分"
 
-msgid "Ping"
-msgstr "Ping"
+msgid "Becnhmark"
+msgstr "跑分"
+
+msgid "Read"
+msgstr "讀"
+
+msgid "Write"
+msgstr "寫"
 
 msgid "Can not fetch marks data from GitHub."
 msgstr "無法從 GitHub 中獲取跑分數據。"
@@ -243,11 +255,16 @@ msgstr "網路錯誤，請稍後重試。"
 msgid "⏳ Please wait {{seconds}}s"
 msgstr "⏳ 請等待 {{seconds}} 秒"
 
-msgid "Server Benchmark"
-msgstr "伺服器性能跑分"
+msgid ""
+"⚔️ Different versions cannot be compared, and different time servers have "
+"different loads, just for reference."
+msgstr "不同的版本有不同的分數，不同的時間伺服器有不同的負載，僅供參考。"
 
-msgid "Becnhmark"
-msgstr "跑分"
+msgid "Server Information"
+msgstr "伺服器訊息"
+
+msgid "Info"
+msgstr "訊息"
 
 msgid "Unavailable"
 msgstr "不可用"
@@ -255,14 +272,14 @@ msgstr "不可用"
 msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
 msgstr "{{days}} 天 {{hours}} 時 {{mins}} 分 {{secs}} 秒"
 
-msgid "Server name"
-msgstr "伺服器名"
-
 msgid "Server time"
 msgstr "持續上線時間"
 
 msgid "Server uptime"
 msgstr "持續上線時間"
+
+msgid "Server name"
+msgstr "伺服器名"
 
 msgid "Server IPv4"
 msgstr "伺服器 IPv4"
@@ -288,11 +305,11 @@ msgstr "腳本路徑"
 msgid "Disk usage"
 msgstr "磁碟使用"
 
-msgid "Server Information"
-msgstr "伺服器訊息"
+msgid "Server Status"
+msgstr "伺服器狀態"
 
-msgid "Info"
-msgstr "訊息"
+msgid "Status"
+msgstr "狀態"
 
 msgid ""
 "Buffers are in-memory block I/O buffers. They are relatively short-lived. "
@@ -335,20 +352,14 @@ msgstr "{{minute}} 分鐘平均負載"
 msgid "System load"
 msgstr "系統負載"
 
-msgid "Server Status"
-msgstr "伺服器狀態"
-
-msgid "Status"
-msgstr "狀態"
-
-msgid "{{sensor}} temperature"
-msgstr "{{sensor}} 溫度"
-
 msgid "Temperature Sensor"
 msgstr "溫度傳感器"
 
 msgid "Temp."
 msgstr "溫度"
+
+msgid "{{sensor}} temperature"
+msgstr "{{sensor}} 溫度"
 
 msgid "Click to close"
 msgstr "點擊關閉"

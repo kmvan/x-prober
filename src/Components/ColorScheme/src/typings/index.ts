@@ -25,6 +25,8 @@ export interface colorSchemeProps {
   'card.boxShadow': string
   'card.legend.fg': string
   'card.legend.bg': string
+  'card.des.fg': string
+  'card.des.bg': string
   'card.title.fg': string
   'progress.fg': string
   'progress.bg': string

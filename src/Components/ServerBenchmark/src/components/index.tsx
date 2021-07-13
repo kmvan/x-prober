@@ -2,6 +2,7 @@ import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
 import React, { FC, MouseEvent, useCallback } from 'react'
 import styled from 'styled-components'
+import { CardDes } from '../../../Card/src/components/card-des'
 import { CardGrid } from '../../../Card/src/components/card-grid'
 import { CardRuby } from '../../../Card/src/components/card-ruby'
 import { CardError } from '../../../Card/src/components/error'
@@ -19,58 +20,53 @@ const StyledAff = styled.a`
   word-break: normal;
 `
 const Result = ({
-  hash,
-  intLoop,
-  floatLoop,
-  ioLoop,
+  cpu,
+  read,
+  write,
   date,
 }: {
-  hash: number
-  intLoop: number
-  floatLoop: number
-  ioLoop: number
+  cpu: number
+  read: number
+  write: number
   date?: string
 }) => {
-  const total = hash + intLoop + floatLoop + ioLoop
+  const total = cpu + read + write
+  const cpuString = cpu.toLocaleString()
+  const readString = read.toLocaleString()
+  const writeString = write.toLocaleString()
+  const totalString = total.toLocaleString()
   const totalText = template(
-    '{{hash}} (HASH) + {{intLoop}} (INT) + {{floatLoop}} (FLOAT) + {{ioLoop}} (IO) = {{total}}',
+    '{{cpu}} (CPU) + {{read}} (Read) + {{write}} (Write) = {{total}}',
     {
-      hash: hash.toLocaleString(),
-      intLoop: intLoop.toLocaleString(),
-      floatLoop: floatLoop.toLocaleString(),
-      ioLoop: ioLoop.toLocaleString(),
-      total: total.toLocaleString(),
+      cpu: cpuString,
+      read: readString,
+      write: writeString,
+      total: totalString,
     }
   )
   return (
     <StyledResult>
       <CardRuby
-        ruby={hash.toLocaleString()}
-        rt='HASH2'
-        onClick={() => copyToClipboard(`HASH: ${hash.toLocaleString()}`)}
+        ruby={cpuString}
+        rt='CPU'
+        onClick={() => copyToClipboard(`CPU: ${cpuString}`)}
       />
       {' + '}
       <CardRuby
-        ruby={intLoop.toLocaleString()}
-        rt='INT'
-        onClick={() => copyToClipboard(`INT: ${intLoop.toLocaleString()}`)}
+        ruby={readString}
+        rt={gettext('Read')}
+        onClick={() => copyToClipboard(`Read: ${readString}`)}
       />
       {' + '}
       <CardRuby
-        ruby={floatLoop.toLocaleString()}
-        rt='FLOAT'
-        onClick={() => copyToClipboard(`FLOAT: ${floatLoop.toLocaleString()}`)}
-      />
-      {' + '}
-      <CardRuby
-        ruby={ioLoop.toLocaleString()}
-        rt='IO'
-        onClick={() => copyToClipboard(`IO: ${ioLoop.toLocaleString()}`)}
+        ruby={writeString}
+        rt={gettext('Write')}
+        onClick={() => copyToClipboard(`Write: ${writeString}`)}
       />
       {' = '}
       <CardRuby
         isResult={true}
-        ruby={total.toLocaleString()}
+        ruby={totalString}
         rt={date || ''}
         onClick={() => copyToClipboard(totalText)}
       />
@@ -96,7 +92,7 @@ const Items: FC = observer(() => {
       if (!detail) {
         return null
       }
-      const { hash = 0, intLoop = 0, floatLoop = 0, ioLoop = 0 } = detail
+      const { cpu = 0, read = 0, write = 0 } = detail
       const proberLink = proberUrl ? (
         <a
           href={proberUrl}
@@ -129,13 +125,7 @@ const Items: FC = observer(() => {
           tablet={[1, 2]}
           desktopMd={[1, 3]}
           desktopLg={[1, 4]}>
-          <Result
-            hash={hash}
-            intLoop={intLoop}
-            floatLoop={floatLoop}
-            ioLoop={ioLoop}
-            date={date}
-          />
+          <Result cpu={cpu} read={read} write={write} date={date} />
           {proberLink}
           {binLink}
         </CardGrid>
@@ -199,11 +189,18 @@ export const ServerBenchmark: FC = observer(() => {
     []
   )
   return (
-    <Row>
-      {ServerBenchmarkStore.enabledMyServerBenchmark && (
-        <TestBtn onClick={onClick} />
-      )}
-      <Items />
-    </Row>
+    <>
+      <CardDes>
+        {gettext(
+          '⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference.'
+        )}
+      </CardDes>
+      <Row>
+        {ServerBenchmarkStore.enabledMyServerBenchmark && (
+          <TestBtn onClick={onClick} />
+        )}
+        <Items />
+      </Row>
+    </>
   )
 })

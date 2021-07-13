@@ -3,27 +3,10 @@ import { action, configure, makeObservable, observable } from 'mobx'
 import { BootstrapStore } from '../../../Bootstrap/src/stores'
 import { gettext } from '../../../Language/src'
 import { ToastStore } from '../../../Toast/src/stores'
+import { AppConfigProps } from '../typings'
 configure({
   enforceActions: 'observed',
 })
-export interface AppConfigBenchmarkProps {
-  name: string
-  url: string
-  date?: string
-  proberUrl?: string
-  binUrl?: string
-  total?: number
-  detail: {
-    hash: number
-    intLoop: number
-    floatLoop: number
-    ioLoop: number
-  }
-}
-interface AppConfigProps {
-  APP_VERSION: string
-  BENCHMARKS: AppConfigBenchmarkProps[]
-}
 class Main {
   @observable public appConfig: AppConfigProps | null = null
   constructor() {
