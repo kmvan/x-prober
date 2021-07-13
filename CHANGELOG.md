@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.0.0 - 2021-07-13
+
+### Add
+
+- New server benchmarks
+
 ## 7.7.0 - 2021-06-30
 
 ### Fix
