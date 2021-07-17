@@ -31,15 +31,15 @@
       }
     },
     {
-      "name": "VPSPlayer / E5-2690v2 / PHP80",
+      "name": "VPSPlayer / E5-2690v2 / PHP80 JIT",
       "url": "https://vpsplayer.com/aff.php?aff=50",
       "date": "2021-07-13",
       "proberUrl": "http://103.44.238.36/x.php",
       "binUrl": "http://103.44.238.36/64m.bin",
       "detail": {
-        "cpu": 39764,
-        "read": 5828,
-        "write": 1358
+        "cpu": 41581,
+        "read": 5700,
+        "write": 1269
       }
     },
     {
@@ -60,7 +60,7 @@
       "date": "2021-07-17",
       "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
       "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
-      "detail":
+      "detail": {
         "cpu": 199626,
         "read": 67379,
         "write": 12453
