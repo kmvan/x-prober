@@ -55,50 +55,50 @@
       }
     },
     {
-      "name": "RamNode / PHP73",
+      "name": "RamNode / PHP80 JIT",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
-      "date": "2021-07-13",
+      "date": "2021-07-17",
       "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
       "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
-      "detail": {
-        "cpu": 181613,
-        "read": 80302,
-        "write": 13339
+      "detail":
+        "cpu": 199626,
+        "read": 67379,
+        "write": 12453
       }
     },
     {
-      "name": "SpartanHost / HDD / PHP74",
+      "name": "SpartanHost / HDD / PHP80 JIT",
       "url": "https://billing.spartanhost.net/aff.php?aff=801",
-      "date": "2021-07-13",
+      "date": "2021-07-17",
       "proberUrl": "https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com",
       "detail": {
-        "cpu": 274745,
-        "read": 59142,
-        "write": 16935
+        "cpu": 280903,
+        "read": 65551,
+        "write": 16238
       }
     },
     {
-      "name": "Vultr / Tokyo / PHP74",
+      "name": "Vultr / Tokyo / PHP80 JIT",
       "url": "https://www.vultr.com/?ref=7826363-4F",
-      "date": "2021-07-13",
+      "date": "2021-07-17",
       "proberUrl": "https://x-prober-server-benchmark-vultr-tokyo.inn-studio.com/",
       "binUrl": "https://hnd-jp-ping.vultr.com/vultr.com.100MB.bin",
       "detail": {
-        "cpu": 195114,
-        "read": 71554,
-        "write": 15545
+        "cpu": 229400,
+        "read": 65474,
+        "write": 15558
       }
     },
     {
-      "name": "BandwagonHOST / KVM / PHP72",
+      "name": "BandwagonHOST / KVM / PHP80 JIT",
       "url": "https://bandwagonhost.com/aff.php?aff=34116",
       "proberUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/",
       "binUrl": "https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/512m.bin",
-      "date": "2021-07-13",
+      "date": "2021-07-17",
       "detail": {
-        "cpu": 156369,
-        "read": 13681,
-        "write": 3630
+        "cpu": 185491,
+        "read": 13616,
+        "write": 4529
       }
     }
   ]
