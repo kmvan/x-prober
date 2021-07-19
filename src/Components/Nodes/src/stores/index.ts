@@ -8,6 +8,7 @@ import {
 } from 'mobx'
 import { DataProps } from '../../../Fetch/src/stores'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
@@ -23,7 +24,7 @@ export interface NodesItemProps {
 class Main {
   public readonly ID = 'nodes'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   public readonly DEFAULT_ITEM = {
     id: '',
     url: '',

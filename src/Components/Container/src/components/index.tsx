@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
 import { device } from '../../../Style/src/components/devices'
+
 const StyledContainer = styled.div`
   margin-left: auto;
   margin-right: auto;

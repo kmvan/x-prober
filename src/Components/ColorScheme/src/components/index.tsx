@@ -8,6 +8,7 @@ import {
 } from '../../../Config/src'
 import { ColorSchemeStore } from '../stores'
 import { colorSchemes } from '../stores/color-schemes'
+
 const fadeIn = keyframes`
   from{
     transform: translate3d(0, -10%, 0);

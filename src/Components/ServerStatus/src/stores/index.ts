@@ -1,6 +1,7 @@
 import { computed, configure, makeObservable } from 'mobx'
 import { FetchStore } from '../../../Fetch/src/stores'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
@@ -26,7 +27,7 @@ export interface ServerStatusDataProps {
 class Main {
   public readonly ID = 'serverStatus'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   public constructor() {
     makeObservable(this)
   }

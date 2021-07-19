@@ -1,6 +1,7 @@
 import { computed, configure, makeObservable } from 'mobx'
 import { FetchStore } from '../../../Fetch/src/stores'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
@@ -12,7 +13,7 @@ export interface NetworkStatsItemProps {
 class Main {
   public readonly ID = 'networkStats'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   public constructor() {
     makeObservable(this)
   }
@@ -28,7 +29,7 @@ class Main {
   @computed public get sortItems() {
     return this.items
       .slice()
-      .filter(({ tx }) => !!tx)
+      .filter(({ tx }) => Boolean(tx))
       .sort((a, b) => a.tx - b.tx)
   }
 

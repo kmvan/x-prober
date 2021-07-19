@@ -1,6 +1,7 @@
 import React, { FC, HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
+
 const StyledRow = styled.div`
   display: flex;
   flex-wrap: wrap;

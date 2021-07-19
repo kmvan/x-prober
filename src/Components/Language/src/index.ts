@@ -1,4 +1,5 @@
 import langs from './lang.json'
+
 const langId = navigator.language
   .replace('-', '')
   .replace('_', '')

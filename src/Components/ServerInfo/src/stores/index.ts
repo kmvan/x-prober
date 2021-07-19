@@ -4,6 +4,7 @@ import { FetchStore } from '../../../Fetch/src/stores'
 import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
@@ -32,7 +33,7 @@ export interface locationProps {
 class Main {
   public readonly ID = 'serverInfo'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   @observable public serverIpv4: string = gettext('Loading...')
   @observable public serverIpv6: string = gettext('Loading...')
   @observable public serverLocation: locationProps | null = null

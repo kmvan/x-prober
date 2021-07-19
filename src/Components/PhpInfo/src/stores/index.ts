@@ -1,12 +1,13 @@
 import { action, configure, makeObservable, observable } from 'mobx'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
 class Main {
   public readonly ID = 'phpInfo'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   @observable public latestPhpVersion = ''
   @observable public latestPhpDate = ''
   public constructor() {

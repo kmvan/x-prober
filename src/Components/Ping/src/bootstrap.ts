@@ -2,6 +2,7 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { Ping as component } from './components'
 import { PingStore } from './stores'
+
 export const PingBootstrap = (): void => {
   CardStore.addCard({
     id: PingStore.ID,

@@ -7,6 +7,7 @@ import { device } from '../../../Style/src/components/devices'
 import { ElevatorNav } from '../../../Utils/src/components/elevator-nav'
 import { getElementOffsetTop } from '../../../Utils/src/components/get-element-offset-top'
 import { NavStore } from '../stores'
+
 const slideUp = keyframes`
   from{
     transform: translate3d(0, 100%, 0);

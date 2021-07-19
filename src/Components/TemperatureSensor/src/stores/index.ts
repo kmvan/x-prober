@@ -2,6 +2,7 @@ import { action, computed, configure, makeObservable, observable } from 'mobx'
 import { CardStore } from '../../../Card/src/stores'
 import { serverFetch } from '../../../Fetch/src/server-fetch'
 import { OK } from '../../../Restful/src/http-status'
+
 configure({
   enforceActions: 'observed',
 })

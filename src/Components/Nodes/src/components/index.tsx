@@ -18,6 +18,7 @@ import { Loading } from '../../../Utils/src/components/loading'
 import { template } from '../../../Utils/src/components/template'
 import { NodesStore } from '../stores'
 import { NodeNetworks } from './node-networks'
+
 const StyledNodeGroupId = styled.a`
   display: block;
   text-decoration: underline;

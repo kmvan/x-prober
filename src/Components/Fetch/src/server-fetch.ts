@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import { BootstrapStore } from '../../Bootstrap/src/stores'
+
 interface serverFetchProps {
   data?: any
   status: number

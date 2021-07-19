@@ -5,6 +5,7 @@ import {
   observable,
   runInAction,
 } from 'mobx'
+
 configure({
   enforceActions: 'observed',
 })

@@ -6,32 +6,33 @@ import { gettext } from '../../../Language/src'
 import { Alert } from '../../../Utils/src/components/alert'
 import { SearchLink } from '../../../Utils/src/components/search-link'
 import { PhpExtensionsStore } from '../stores'
+
 const { conf } = PhpExtensionsStore
 const shortItems: [string, boolean][] = [
-  ['Redis', !!conf?.redis],
-  ['SQLite3', !!conf?.sqlite3],
-  ['Memcache', !!conf?.memcache],
-  ['Memcached', !!conf?.memcached],
-  ['Opcache', !!conf?.opcache],
-  [gettext('Opcache enabled'), !!conf?.opcacheEnabled],
-  [gettext('Opcache JIT enabled'), !!conf?.opcacheJitEnabled],
-  ['Swoole', !!conf?.swoole],
-  ['Image Magick', !!conf?.imagick],
-  ['Graphics Magick', !!conf?.gmagick],
-  ['Exif', !!conf?.exif],
-  ['Fileinfo', !!conf?.fileinfo],
-  ['SimpleXML', !!conf?.simplexml],
-  ['Sockets', !!conf?.sockets],
-  ['MySQLi', !!conf?.mysqli],
-  ['Zip', !!conf?.zip],
-  ['Multibyte String', !!conf?.mbstring],
-  ['Phalcon', !!conf?.phalcon],
-  ['Xdebug', !!conf?.xdebug],
-  ['Zend Optimizer', !!conf?.zendOptimizer],
-  ['ionCube', !!conf?.ionCube],
-  ['Source Guardian', !!conf?.sourceGuardian],
-  ['LDAP', !!conf?.ldap],
-  ['cURL', !!conf?.curl],
+  ['Redis', Boolean(conf?.redis)],
+  ['SQLite3', Boolean(conf?.sqlite3)],
+  ['Memcache', Boolean(conf?.memcache)],
+  ['Memcached', Boolean(conf?.memcached)],
+  ['Opcache', Boolean(conf?.opcache)],
+  [gettext('Opcache enabled'), Boolean(conf?.opcacheEnabled)],
+  [gettext('Opcache JIT enabled'), Boolean(conf?.opcacheJitEnabled)],
+  ['Swoole', Boolean(conf?.swoole)],
+  ['Image Magick', Boolean(conf?.imagick)],
+  ['Graphics Magick', Boolean(conf?.gmagick)],
+  ['Exif', Boolean(conf?.exif)],
+  ['Fileinfo', Boolean(conf?.fileinfo)],
+  ['SimpleXML', Boolean(conf?.simplexml)],
+  ['Sockets', Boolean(conf?.sockets)],
+  ['MySQLi', Boolean(conf?.mysqli)],
+  ['Zip', Boolean(conf?.zip)],
+  ['Multibyte String', Boolean(conf?.mbstring)],
+  ['Phalcon', Boolean(conf?.phalcon)],
+  ['Xdebug', Boolean(conf?.xdebug)],
+  ['Zend Optimizer', Boolean(conf?.zendOptimizer)],
+  ['ionCube', Boolean(conf?.ionCube)],
+  ['Source Guardian', Boolean(conf?.sourceGuardian)],
+  ['LDAP', Boolean(conf?.ldap)],
+  ['cURL', Boolean(conf?.curl)],
 ]
 shortItems.sort((a, b) => {
   const x = a[0].toLowerCase()
@@ -72,7 +73,7 @@ export const PhpExtensions: FC = () => {
           </CardGrid>
         )
       })}
-      {!!longItems.length && (
+      {Boolean(longItems.length) && (
         <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
           <MultiItemContainer>
             {longItems.map((id) => {

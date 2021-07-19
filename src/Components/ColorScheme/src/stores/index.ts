@@ -1,5 +1,6 @@
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 import { colorSchemes } from './color-schemes'
+
 configure({
   enforceActions: 'observed',
 })

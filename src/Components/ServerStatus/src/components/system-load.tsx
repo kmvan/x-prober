@@ -7,6 +7,7 @@ import { gettext } from '../../../Language/src'
 import { device } from '../../../Style/src/components/devices'
 import { template } from '../../../Utils/src/components/template'
 import { ServerStatusStore } from '../stores'
+
 interface StyledSysLoadGroupProps {
   isCenter: boolean
 }

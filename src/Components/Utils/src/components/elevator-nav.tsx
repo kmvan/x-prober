@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useRef,
 } from 'react'
+
 interface ElevatorNavProps {
   activeIndex: number
   children: ReactElement[]

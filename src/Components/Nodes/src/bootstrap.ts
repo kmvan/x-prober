@@ -2,6 +2,7 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { Nodes as component } from './components'
 import { NodesStore } from './stores'
+
 export const NodesBoostrap = (): void => {
   NodesStore.enabled &&
     NodesStore.itemsCount &&

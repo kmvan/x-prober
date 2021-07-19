@@ -12,6 +12,7 @@ import { gettext } from '../../../Language/src'
 import { OK, TOO_MANY_REQUESTS } from '../../../Restful/src/http-status'
 import { template } from '../../../Utils/src/components/template'
 import { ServerBenchmarkStore } from '../stores'
+
 const StyledTextBtn = styled.a`
   display: block;
 `

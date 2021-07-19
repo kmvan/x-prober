@@ -7,6 +7,7 @@ import { NavStore } from '../../../Nav/src/stores'
 import { device } from '../../../Style/src/components/devices'
 import { ElevatorNavBody } from '../../../Utils/src/components/elevator-nav'
 import { CardStore } from '../stores'
+
 interface StyleArrowProps {
   isHidden: boolean
 }

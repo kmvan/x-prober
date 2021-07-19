@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+
 const StyledMultiItemContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

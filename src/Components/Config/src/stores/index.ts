@@ -4,6 +4,7 @@ import { BootstrapStore } from '../../../Bootstrap/src/stores'
 import { gettext } from '../../../Language/src'
 import { ToastStore } from '../../../Toast/src/stores'
 import { AppConfigProps } from '../typings'
+
 configure({
   enforceActions: 'observed',
 })

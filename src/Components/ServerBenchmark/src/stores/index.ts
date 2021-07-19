@@ -4,6 +4,7 @@ import { AppConfigBenchmarkProps } from '../../../Config/src/typings'
 import { gettext } from '../../../Language/src'
 import { conf } from '../../../Utils/src/components/conf'
 import type { ServerBenchmarkMarksProps } from '../typings'
+
 configure({
   enforceActions: 'observed',
 })
