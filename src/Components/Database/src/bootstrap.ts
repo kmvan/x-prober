@@ -2,6 +2,7 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { Database as component } from './components'
 import { DatabaseStore } from './stores'
+
 export const DatabaseBootstrap = (): void => {
   DatabaseStore.enabled &&
     CardStore.addCard({

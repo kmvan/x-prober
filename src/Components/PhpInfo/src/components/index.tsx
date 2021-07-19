@@ -8,6 +8,7 @@ import { Alert } from '../../../Utils/src/components/alert'
 import { SearchLink } from '../../../Utils/src/components/search-link'
 import { PhpInfoStore } from '../stores'
 import { PhpInfoPhpVersion } from './php-version'
+
 export const PhpInfo: FC = observer(() => {
   const { conf } = PhpInfoStore
   const oneLineItems: Array<[string, ReactNode]> = [

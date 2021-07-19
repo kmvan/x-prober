@@ -2,6 +2,7 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { NetworkStats as component } from './components'
 import { NetworkStatsStore } from './stores'
+
 export const NetworkStatsBoostrap = (): void => {
   NetworkStatsStore.enabled &&
     CardStore.addCard({

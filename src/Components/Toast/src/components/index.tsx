@@ -5,6 +5,7 @@ import { GUTTER } from '../../../Config/src'
 import { gettext } from '../../../Language/src'
 import { Portal } from '../../../Utils/src/components/portal'
 import { ToastStore } from '../stores'
+
 const StyledToast = styled.div`
   position: fixed;
   bottom: 4rem;

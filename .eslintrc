@@ -28,12 +28,17 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    // "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "semi": ["error", "never"],
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "curly": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "eqeqeq": ["error", "always"],
+    "no-else-return": "error",
+    "no-implicit-coercion": "error"
   }
 }

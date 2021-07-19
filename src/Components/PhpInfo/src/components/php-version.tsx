@@ -7,6 +7,7 @@ import { OK } from '../../../Restful/src/http-status'
 import { template } from '../../../Utils/src/components/template'
 import { versionCompare } from '../../../Utils/src/components/version-compare'
 import { PhpInfoStore } from '../stores'
+
 export const PhpInfoPhpVersion: FC = observer(() => {
   const {
     setLatestPhpVersion,

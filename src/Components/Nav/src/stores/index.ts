@@ -1,4 +1,5 @@
 import { action, configure, makeAutoObservable, observable } from 'mobx'
+
 configure({
   enforceActions: 'observed',
 })

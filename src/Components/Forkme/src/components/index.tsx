@@ -5,6 +5,7 @@ import { BootstrapStore } from '../../../Bootstrap/src/stores'
 import { ANIMATION_DURATION_SC, GUTTER } from '../../../Config/src'
 import { gettext } from '../../../Language/src'
 import { device } from '../../../Style/src/components/devices'
+
 const slideIn = keyframes`
   from{
     transform: rotate(-45deg) translate3d(-28%, -270%, 0);

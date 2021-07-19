@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
 import { Grid, GridProps } from '../../../Grid/src/components/grid'
 import { device } from '../../../Style/src/components/devices'
+
 export interface CardGridProps extends GridProps {
   name?: ReactNode
   children: ReactNode
@@ -39,7 +40,9 @@ export const CardGrid: FC<CardGridProps> = ({
   return (
     <Grid {...props}>
       <StyledCardGroup>
-        {!!name && <StyledCardTitle title={title}>{name}</StyledCardTitle>}
+        {Boolean(name) && (
+          <StyledCardTitle title={title}>{name}</StyledCardTitle>
+        )}
         <StyledCardContent>{children}</StyledCardContent>
       </StyledCardGroup>
     </Grid>

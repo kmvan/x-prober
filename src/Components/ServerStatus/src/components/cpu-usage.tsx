@@ -5,6 +5,7 @@ import { gettext } from '../../../Language/src'
 import { ProgressBar } from '../../../ProgressBar/src/components'
 import { template } from '../../../Utils/src/components/template'
 import { ServerStatusStore } from '../stores'
+
 export const CpuUsage: FC = observer(() => {
   const { cpuUsage } = ServerStatusStore
   const { idle } = cpuUsage

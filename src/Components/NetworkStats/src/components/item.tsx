@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Grid } from '../../../Grid/src/components/grid'
 import { Row } from '../../../Grid/src/components/row'
 import { formatBytes } from '../../../Utils/src/components/format-bytes'
+
 interface NetworksStatsItemProps {
   id: string
   singleLine?: boolean

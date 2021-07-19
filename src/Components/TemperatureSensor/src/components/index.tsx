@@ -6,6 +6,7 @@ import { gettext } from '../../../Language/src'
 import { ProgressBar } from '../../../ProgressBar/src/components'
 import { template } from '../../../Utils/src/components/template'
 import { TemperatureSensorStore } from '../stores'
+
 export const TemperatureSensor: FC = observer(() => {
   const { itemsCount, items } = TemperatureSensorStore
   if (!itemsCount) {

@@ -1,5 +1,6 @@
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 import { FunctionComponent, MouseEvent } from 'react'
+
 configure({
   enforceActions: 'observed',
 })

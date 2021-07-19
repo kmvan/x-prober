@@ -11,6 +11,7 @@ import { OK } from '../../../Restful/src/http-status'
 import { device } from '../../../Style/src/components/devices'
 import { template } from '../../../Utils/src/components/template'
 import { PingStore } from '../stores'
+
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;
@@ -124,7 +125,7 @@ const Results: FC = observer(() => {
   const max = pingItemsCount ? Number(Math.max(...timeItems)) : 0
   const min = pingItemsCount ? Number(Math.min(...timeItems)) : 0
   return (
-    <StyledPingResult hasPing={!!pingItemsCount}>
+    <StyledPingResult hasPing={Boolean(pingItemsCount)}>
       <StyledPingResultTimes>
         {template(gettext('Times:{{times}}'), { times: pingItemsCount })}
       </StyledPingResultTimes>
@@ -160,11 +161,11 @@ export const Ping: FC = observer(() => {
   }, [pingTimer])
   const ping = async (): Promise<void> => {
     const { appendPingItem } = PingStore
-    const start = +new Date()
+    const start = Number(new Date())
     const { data, status } = await serverFetch('ping')
     if (status === OK) {
       const { time } = data
-      const end = +new Date()
+      const end = Number(new Date())
       const serverTime = time * 1000
       appendPingItem({
         time: Math.floor(end - start - serverTime),
@@ -192,7 +193,7 @@ export const Ping: FC = observer(() => {
           </StyledPingBtn>
         }
         tablet={[1, 1]}>
-        {!!pingItemsCount && (
+        {Boolean(pingItemsCount) && (
           <StyledPingItemContainer ref={refItemContainer}>
             <Items />
           </StyledPingItemContainer>

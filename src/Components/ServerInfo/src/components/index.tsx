@@ -7,6 +7,7 @@ import { template } from '../../../Utils/src/components/template'
 import { ServerInfoStore } from '../stores'
 import { ServerDiskUsage } from './disk-usage'
 import { Location } from './location'
+
 const ServerInfoTime: FC = observer(() => {
   const {
     serverUptime: { days, hours, mins, secs },

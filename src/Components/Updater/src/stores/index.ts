@@ -4,6 +4,7 @@ import { ConfigStore } from '../../../Config/src/stores'
 import { gettext } from '../../../Language/src'
 import { template } from '../../../Utils/src/components/template'
 import { versionCompare } from '../../../Utils/src/components/version-compare'
+
 configure({
   enforceActions: 'observed',
 })

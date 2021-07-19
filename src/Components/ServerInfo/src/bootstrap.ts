@@ -2,6 +2,7 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { ServerInfo as component } from './components'
 import { ServerInfoStore } from './stores'
+
 export const ServerInfoBoostrap = (): void => {
   ServerInfoStore.enabled &&
     CardStore.addCard({

@@ -1,5 +1,6 @@
 import { action, computed, configure, makeObservable, observable } from 'mobx'
 import { conf } from '../../../Utils/src/components/conf'
+
 configure({
   enforceActions: 'observed',
 })
@@ -9,7 +10,7 @@ export interface PingItemProps {
 class Main {
   public readonly ID = 'ping'
   public readonly conf = conf?.[this.ID]
-  public readonly enabled: boolean = !!this.conf
+  public readonly enabled: boolean = Boolean(this.conf)
   @observable public isPing = false
   @observable public pingItems: PingItemProps[] = []
   @observable public refs: {

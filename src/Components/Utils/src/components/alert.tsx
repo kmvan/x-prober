@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
+
 interface AlertContainerProps {
   isSuccess: boolean
   withIcon: boolean

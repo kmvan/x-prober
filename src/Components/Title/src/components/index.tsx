@@ -9,6 +9,7 @@ import {
 } from '../../../Config/src/index'
 import { UpdaterLink } from '../../../Updater/src/components/updater-link'
 import { UpdaterStore } from '../../../Updater/src/stores'
+
 const slideDown = keyframes`
   from{
     transform: translate3d(-50%, -100%, 0);

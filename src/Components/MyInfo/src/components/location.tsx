@@ -6,6 +6,7 @@ import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { locationProps } from '../../../ServerInfo/src/stores'
 import { ToastStore } from '../../../Toast/src/stores'
+
 interface ClientLocationProps {
   ip: string
 }
@@ -35,7 +36,7 @@ export const ClientLocation: FC<ClientLocationProps> = observer(({ ip }) => {
   if (!isLoading) {
     clickText = location
       ? [location.flag, location.country, location.region, location.city]
-          .filter((n) => !!n)
+          .filter((n) => Boolean(n))
           .join(', ')
       : gettext('👆 Click to fetch')
   }
