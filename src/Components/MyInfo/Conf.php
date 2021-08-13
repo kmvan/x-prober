@@ -20,10 +20,10 @@ class Conf extends MyInfoConstants
         }
 
         $ip   = UtilsClientIp::getV4();
-        $ipv4 = \filter_var($ip, \FILTER_VALIDATE_IP, array(
+        $ipv4 = filter_var($ip, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
         )) ?: '';
-        $ipv6 = \filter_var($ip, \FILTER_VALIDATE_IP, array(
+        $ipv6 = filter_var($ip, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV6,
         )) ?: '';
         $conf[$this->ID] = array(

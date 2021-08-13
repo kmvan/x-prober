@@ -15,7 +15,7 @@ class Conf extends BootstrapConstants
     public function conf(array $conf)
     {
         $conf[$this->ID] = array(
-            'isDev'           => \XPROBER_IS_DEV,
+            'isDev'           => XPROBER_IS_DEV,
             'version'         => ConfigApi::$APP_VERSION,
             'appName'         => ConfigApi::$APP_NAME,
             'appUrl'          => ConfigApi::$APP_URL,

@@ -40,7 +40,7 @@ class Init extends ServerBenchmarkApi
             $response->dieJson();
         }
 
-        \set_time_limit(0);
+        set_time_limit(0);
 
         $this->setExpired();
         $this->setIsRunning(true);

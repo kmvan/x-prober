@@ -16,7 +16,7 @@ class FetchBefore extends ServerBenchmarkApi
     public function filter()
     {
         while ($this->isRunning()) {
-            \sleep(2);
+            sleep(2);
         }
     }
 }

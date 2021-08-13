@@ -68,17 +68,17 @@ class RestfulResponse
             return '';
         }
 
-        return \json_encode($data);
+        return json_encode($data);
     }
 
     public function dieJson()
     {
         $this->httpResponseCode($this->status);
-        \header('Content-Type: application/json');
-        \header('Expires: 0');
-        \header('Last-Modified: ' . \gmdate('D, d M Y H:i:s') . ' GMT');
-        \header('Cache-Control: no-store, no-cache, must-revalidate');
-        \header('Pragma: no-cache');
+        header('Content-Type: application/json');
+        header('Expires: 0');
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+        header('Cache-Control: no-store, no-cache, must-revalidate');
+        header('Pragma: no-cache');
 
         $json = $this->toJson();
 
@@ -92,7 +92,7 @@ class RestfulResponse
     private function httpResponseCode($code)
     {
         if (\function_exists('http_response_code')) {
-            return \http_response_code($code);
+            return http_response_code($code);
         }
 
         $statusCode = array(
@@ -174,6 +174,6 @@ class RestfulResponse
         $msg      = isset($statusCode[$code]) ? $statusCode[$code] : 'Unknow error';
         $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
 
-        \header("{$protocol} {$code} {$msg}");
+        header("{$protocol} {$code} {$msg}");
     }
 }

@@ -22,7 +22,7 @@ class PhpInfoDetail extends PhpInfoDetailConstants
             return $action;
         }
 
-        \phpinfo();
+        phpinfo();
 
         exit;
     }

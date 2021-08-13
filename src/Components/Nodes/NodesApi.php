@@ -16,9 +16,9 @@ class NodesApi
             return array();
         }
 
-        return \array_filter(\array_map(function ($item) {
+        return array_filter(array_map(function ($item) {
             if (2 !== \count($item)) {
-                return null;
+                return;
             }
 
             return array(

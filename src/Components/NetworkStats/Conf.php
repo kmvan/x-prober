@@ -22,7 +22,7 @@ class Conf extends NetworkStatsConstants
 
         $conf[$this->ID] = array(
             'networks'  => UtilsNetwork::getStats(),
-            'timestamp' => \time(),
+            'timestamp' => time(),
         );
 
         return $conf;
