@@ -26,7 +26,6 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
-    "node-libs-browser": "^2.2.1",
     "pofile": "^1.1.1",
     "terser-webpack-plugin": "^5.1.4",
     "ts-loader": "^9.2.5",
