@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { GUTTER } from '../../../Config/src'
+import { GUTTER, MAX_WIDTH } from '../../../Config/src'
 import { device } from '../../../Style/src/components/devices'
 
 const StyledContainer = styled.div`
@@ -8,6 +8,7 @@ const StyledContainer = styled.div`
   margin-right: auto;
   padding-left: calc(${GUTTER} / 2);
   padding-right: calc(${GUTTER} / 2);
+  max-width: ${MAX_WIDTH};
   @media ${device('desktopSm')} {
     padding-left: ${GUTTER};
     padding-right: ${GUTTER};
