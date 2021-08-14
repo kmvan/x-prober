@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.2.0 - 2021-08-14
+
+### Fix
+
+- Fix progress bar color error
+
 ## 8.1.0 - 2021-08-14
 
 ### Optimize
