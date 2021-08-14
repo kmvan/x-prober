@@ -1,6 +1,8 @@
 {
   "name": "x-prober",
   "description": "A PHP probe",
+  "license": "GPL-3",
+  "homepage": "https://github.com/kmvan/x-prober",
   "scripts": {
     "lang": "node ./build-lang.js",
     "dev": "webpack --config webpack.config.js --progress",
