@@ -1,4 +1,4 @@
-export interface colorSchemeProps {
+export interface ColorSchemeProps {
   name: string
   isDark: boolean
   color: string
@@ -70,6 +70,6 @@ export interface colorSchemeProps {
   'toast.fg': string
   'toast.bg': string
 }
-export interface colorSchemesProps {
-  [name: string]: colorSchemeProps
+export interface ColorSchemesProps {
+  [name: string]: ColorSchemeProps
 }

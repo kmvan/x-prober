@@ -13,8 +13,8 @@ class Timezone
 
     public function filter($action)
     {
-        if ( ! \ini_get('date.timezone')) {
-            \date_default_timezone_set('GMT');
+        if ( ! ini_get('date.timezone')) {
+            date_default_timezone_set('GMT');
         }
 
         return $action;

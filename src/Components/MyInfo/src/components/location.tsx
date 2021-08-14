@@ -41,7 +41,7 @@ export const ClientLocation: FC<ClientLocationProps> = observer(({ ip }) => {
       : gettext('👆 Click to fetch')
   }
   if (!ip) {
-    return <>{'-'}</>
+    return <>-</>
   }
   return (
     <StyledLocation

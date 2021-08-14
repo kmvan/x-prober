@@ -18,6 +18,7 @@ export interface CardProps {
 }
 class Main {
   @observable public cards: CardProps[] = []
+
   public constructor() {
     makeObservable(this)
   }

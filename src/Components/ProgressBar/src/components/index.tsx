@@ -47,7 +47,7 @@ const StyledProgressValue = styled.div.attrs(
   ({ percent }: StyledProgressValueProps) => ({
     style: {
       backgroundColor: `#${
-        gradientColors('#00cc00', '#ef2d2d')[~~percent - 1]
+        gradientColors('#00cc00', '#ef2d2d')[Number(percent) - 1]
       }`,
       width: `${percent}%`,
     },

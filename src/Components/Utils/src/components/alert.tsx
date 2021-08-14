@@ -38,10 +38,8 @@ export interface AlertProps {
   isSuccess: boolean
   msg?: ReactNode
 }
-export const Alert: FC<AlertProps> = ({ isSuccess, msg = '' }) => {
-  return (
-    <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
-      {msg}
-    </StyledAlert>
-  )
-}
+export const Alert: FC<AlertProps> = ({ isSuccess, msg = '' }) => (
+  <StyledAlert isSuccess={isSuccess} withIcon={!msg}>
+    {msg}
+  </StyledAlert>
+)

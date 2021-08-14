@@ -10,7 +10,6 @@ const dirSrc = path.resolve(__dirname, 'src')
 const dirComponents = `${dirSrc}/Components`
 const langs = {}
 const poEntries = {}
-const JSON2 = require('JSON2')
 const deepSort = require('deep-sort-object')
 const parseFile = (filePath) => {
   const code = fs.readFileSync(filePath).toString()
@@ -30,8 +29,8 @@ const parseFile = (filePath) => {
       }
 
       poEntries[`${msgid}${msgctxt}`] = `
-${msgctxt ? `msgctxt ${JSON2.stringify(msgctxt)}` : ''}
-msgid ${JSON2.stringify(msgid)}
+${msgctxt ? `msgctxt ${JSON.stringify(msgctxt)}` : ''}
+msgid ${JSON.stringify(msgid)}
 msgstr ""
 `.trim()
     }
@@ -118,7 +117,7 @@ const writeJsData = ({ langId, items }) => {
 
   fs.writeFileSync(
     path.resolve(__dirname, 'src/Components/Language/src/lang.json'),
-    JSON2.stringify(deepSort(langs), null, 2),
+    JSON.stringify(deepSort(langs), null, 2),
     (err) => {
       if (err) {
         throw err

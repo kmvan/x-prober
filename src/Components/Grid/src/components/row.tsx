@@ -9,6 +9,4 @@ const StyledRow = styled.div`
   margin-right: calc(-${GUTTER} / 2);
 `
 type RowProps = HTMLAttributes<HTMLDivElement>
-export const Row: FC<RowProps> = (props) => {
-  return <StyledRow {...props} />
-}
+export const Row: FC<RowProps> = (props) => <StyledRow {...props} />

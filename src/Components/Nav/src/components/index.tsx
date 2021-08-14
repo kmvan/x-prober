@@ -80,7 +80,7 @@ export const Nav: FC = observer(() => {
       if (!target) {
         return
       }
-      history.pushState(null, '', `#${id}`)
+      window.history.pushState(null, '', `#${id}`)
       window.scrollTo(0, getElementOffsetTop(target) - 50)
     },
     []

@@ -58,24 +58,22 @@ const StyledApp = styled.div`
     border-radius: calc(${GUTTER} * 3);
   }
 `
-const Bootstrap: FC = observer(() => {
-  return (
-    <ThemeProvider theme={ColorSchemeStore.scheme}>
-      <Normalize />
-      <Title />
-      <StyledApp ref={(c) => BootstrapStore.setAppContainer(c)}>
-        <Container>
-          <ColorScheme />
-          <Cards />
-          <Footer />
-        </Container>
-      </StyledApp>
-      <Nav />
-      <Forkme />
-      <Toast />
-    </ThemeProvider>
-  )
-})
+const Bootstrap: FC = observer(() => (
+  <ThemeProvider theme={ColorSchemeStore.scheme}>
+    <Normalize />
+    <Title />
+    <StyledApp ref={(c) => BootstrapStore.setAppContainer(c)}>
+      <Container>
+        <ColorScheme />
+        <Cards />
+        <Footer />
+      </Container>
+    </StyledApp>
+    <Nav />
+    <Forkme />
+    <Toast />
+  </ThemeProvider>
+))
 ready(() => {
   const c = document.createElement('div')
   document.body.innerHTML = ''

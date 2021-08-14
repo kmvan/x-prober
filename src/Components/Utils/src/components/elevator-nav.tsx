@@ -14,21 +14,19 @@ interface ElevatorNavProps {
 export const ElevatorNav: FC<ElevatorNavProps> = ({
   activeIndex,
   children,
-}) => {
-  return (
-    <>
-      {Children.map(children, (child, i) => {
-        const isActive = activeIndex === i
-        const { type: Component, props } = child
-        const { className = '', ...p } = props
-        const activeClassName = isActive
-          ? `${className} active`.trim()
-          : className
-        return <Component className={activeClassName} {...p} />
-      })}
-    </>
-  )
-}
+}) => (
+  <>
+    {Children.map(children, (child, i) => {
+      const isActive = activeIndex === i
+      const { type: Component, props } = child as ReactElement
+      const { className = '', ...p } = props
+      const activeClassName = isActive
+        ? `${className} active`.trim()
+        : className
+      return <Component className={activeClassName} {...p} />
+    })}
+  </>
+)
 interface ElevatorNavBodyProps {
   id: string
   setActiveIndex: (activeIndex: number) => void
@@ -40,22 +38,25 @@ export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
   id,
   setActiveIndex,
   threshold = 50,
-  topOffset = 50,
+  topOffset = 1,
   children,
 }) => {
   const position = useRef<[start: number, end: number][]>([[0, 0]])
   const timer = useRef<number>(0)
   const onScroll = useCallback(() => {
-    timer.current && window.clearTimeout(timer.current)
+    if (timer.current) {
+      window.clearTimeout(timer.current)
+    }
     timer.current = window.setTimeout(() => {
       const y = Math.round(window.pageYOffset) + topOffset
-      position.current.forEach(([start, end], i) => {
+      position.current.map(([start, end], i) => {
         if (y >= start && y < start + end) {
-          setActiveIndex(i)
+          return setActiveIndex(i)
         }
+        return null
       })
     }, threshold)
-  }, [])
+  }, [setActiveIndex, threshold, topOffset])
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
       const count = Children.count(children)
@@ -84,18 +85,19 @@ export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
     })
     resizeObserver.observe(document.body)
     return () => resizeObserver.unobserve(document.body)
-  }, [])
+  }, [children, id])
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
-  }, [])
+  }, [onScroll])
   return (
     <>
-      {Children.map(children, ({ type: Component, props }, i) => (
-        <Component {...props} data-elevator={`${id}-${i}`} />
-      ))}
+      {Children.map(children, (child, i) => {
+        const { type: Component, props } = child as ReactElement
+        return <Component {...props} data-elevator={`${id}-${i}`} />
+      })}
     </>
   )
 }

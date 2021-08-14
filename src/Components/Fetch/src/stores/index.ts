@@ -1,5 +1,5 @@
 import { action, configure, makeObservable, observable } from 'mobx'
-import { serverFetch } from '../../../Fetch/src/server-fetch'
+import { serverFetch } from '../server-fetch'
 import { gettext } from '../../../Language/src'
 import { NetworkStatsItemProps } from '../../../NetworkStats/src/stores'
 import { OK } from '../../../Restful/src/http-status'
@@ -20,7 +20,9 @@ export interface DataProps {
 }
 class Main {
   @observable public isLoading = true
+
   @observable public data = {}
+
   constructor() {
     makeObservable(this)
     this.initFetch()

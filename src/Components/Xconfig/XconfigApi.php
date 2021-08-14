@@ -6,7 +6,8 @@ use InnStudio\Prober\Components\Utils\UtilsApi;
 
 class XconfigApi
 {
-    private static $conf     = null;
+    private static $conf = null;
+
     private static $filename = 'xconfig.json';
 
     public static function isDisabled($id)
@@ -36,11 +37,11 @@ class XconfigApi
             return '';
         }
 
-        if (\defined('\\XPROBER_IS_DEV') && \XPROBER_IS_DEV) {
-            return \dirname(\XPROBER_DIR) . '/' . self::$filename;
+        if (\defined('\\XPROBER_IS_DEV') && XPROBER_IS_DEV) {
+            return \dirname(XPROBER_DIR) . '/' . self::$filename;
         }
 
-        return \XPROBER_DIR . '/' . self::$filename;
+        return XPROBER_DIR . '/' . self::$filename;
     }
 
     private static function setConf()
@@ -49,13 +50,13 @@ class XconfigApi
             return;
         }
 
-        if ( ! \is_readable(self::getFilePath())) {
+        if ( ! is_readable(self::getFilePath())) {
             self::$conf = null;
 
             return;
         }
 
-        $conf = UtilsApi::jsonDecode(\file_get_contents(self::getFilePath()));
+        $conf = UtilsApi::jsonDecode(file_get_contents(self::getFilePath()));
 
         if ( ! $conf) {
             self::$conf = null;

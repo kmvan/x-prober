@@ -8,8 +8,8 @@ class UtilsNetwork
     {
         $filePath = '/proc/net/dev';
 
-        if ( ! @\is_readable($filePath)) {
-            return null;
+        if ( ! @is_readable($filePath)) {
+            return;
         }
 
         static $eths = null;
@@ -18,14 +18,14 @@ class UtilsNetwork
             return $eths;
         }
 
-        $lines = \file($filePath);
+        $lines = file($filePath);
         unset($lines[0], $lines[1]);
         $eths = array();
 
         foreach ($lines as $line) {
-            $line      = \preg_replace('/\s+/', ' ', \trim($line));
-            $lineArr   = \explode(':', $line);
-            $numberArr = \explode(' ', \trim($lineArr[1]));
+            $line      = preg_replace('/\\s+/', ' ', trim($line));
+            $lineArr   = explode(':', $line);
+            $numberArr = explode(' ', trim($lineArr[1]));
             $rx        = (float) $numberArr[0];
             $tx        = (float) $numberArr[8];
 

@@ -10,12 +10,16 @@ configure({
 })
 class Main {
   public readonly ID = 'serverBenchmark'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabledMyServerBenchmark: boolean =
     !this.conf?.disabledMyServerBenchmark
 
   @observable public isLoading = false
+
   @observable public linkText: string = gettext('👆 Click to test')
+
   @observable public marks: ServerBenchmarkMarksProps = {
     cpu: 0,
     read: 0,

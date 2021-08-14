@@ -26,7 +26,7 @@ class ClientLocationIpv4 extends MyInfoConstants
         }
 
         $response = new RestfulResponse();
-        $ip       = \filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, array(
+        $ip       = filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
         ));
 

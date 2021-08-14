@@ -27,10 +27,11 @@ class Script
     {
         UtilsApi::setFileCacheHeader();
 
-        \header('Content-type: application/javascript');
+        header('Content-type: application/javascript');
         echo <<<'HTML'
 {INN_SCRIPT}
 HTML;
+
         exit;
     }
 }

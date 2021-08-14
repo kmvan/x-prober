@@ -10,7 +10,9 @@ configure({
 })
 class Main {
   @observable public isUpdating = false
+
   @observable public isUpdateError = false
+
   public constructor() {
     makeObservable(this)
   }

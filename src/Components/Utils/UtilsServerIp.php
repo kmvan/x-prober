@@ -18,7 +18,7 @@ class UtilsServerIp
     {
         $content = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
 
-        return \filter_var($content, \FILTER_VALIDATE_IP, array(
+        return filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
         )) ?: '';
     }
@@ -27,7 +27,7 @@ class UtilsServerIp
     {
         $content = isset($_SERVER['SERVER_ADDR']) ? $_SERVER['SERVER_ADDR'] : '';
 
-        return \filter_var($content, \FILTER_VALIDATE_IP, array(
+        return filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV6,
         )) ?: '';
     }
@@ -56,19 +56,19 @@ class UtilsServerIp
     {
         $content = '';
 
-        if (\function_exists('\curl_init')) {
-            $ch = \curl_init();
-            \curl_setopt_array($ch, array(
+        if (\function_exists('\\curl_init')) {
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
                 \CURLOPT_URL            => $url,
                 \CURLOPT_RETURNTRANSFER => true,
             ));
-            $content = \curl_exec($ch);
-            \curl_close($ch);
+            $content = curl_exec($ch);
+            curl_close($ch);
         } else {
-            $content = \file_get_contents($url);
+            $content = file_get_contents($url);
         }
 
-        return (string) \filter_var($content, \FILTER_VALIDATE_IP, array(
+        return (string) filter_var($content, \FILTER_VALIDATE_IP, array(
             'flags' => 6 === $type ? \FILTER_FLAG_IPV6 : \FILTER_FLAG_IPV4,
         )) ?: '';
     }

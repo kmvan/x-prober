@@ -13,7 +13,9 @@ export const usePortal = (id?: string): HTMLDivElement => {
     } else {
       document.body.appendChild(rootElemRef.current)
     }
+    // eslint-disable-next-line consistent-return
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       rootElemRef.current.remove()
     }
   }, [id])

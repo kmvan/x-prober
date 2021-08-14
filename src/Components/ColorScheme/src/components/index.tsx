@@ -50,18 +50,16 @@ const StyledColorScheme = styled.div`
   animation: ${fadeIn} ${ANIMATION_DURATION_SC}s;
   animation-fill-mode: forwards;
 `
-export const ColorScheme: FC = observer(() => {
-  return (
-    <StyledColorScheme>
-      {Object.entries(colorSchemes).map(([schemeId, { name, color }]) => (
-        <StyledColorSchemeLink
-          isActive={schemeId === ColorSchemeStore.schemeId}
-          title={name}
-          key={schemeId}
-          style={{ background: color }}
-          onClick={() => ColorSchemeStore.setSchemeId(schemeId)}
-        />
-      ))}
-    </StyledColorScheme>
-  )
-})
+export const ColorScheme: FC = observer(() => (
+  <StyledColorScheme>
+    {Object.entries(colorSchemes).map(([schemeId, { name, color }]) => (
+      <StyledColorSchemeLink
+        isActive={schemeId === ColorSchemeStore.schemeId}
+        title={name}
+        key={schemeId}
+        style={{ background: color }}
+        onClick={() => ColorSchemeStore.setSchemeId(schemeId)}
+      />
+    ))}
+  </StyledColorScheme>
+))

@@ -8,10 +8,11 @@ export const versionCompare = (
   const a = left.split('.')
   const b = right.split('.')
   const len = Math.max(a.length, b.length)
-  for (let i = 0; i < len; i++) {
-    if ((a[i] && !b[i] && ~~a[i] > 0) || ~~a[i] > ~~b[i]) {
+  for (let i = 0; i < len; i += 1) {
+    if ((a[i] && !b[i] && Number(a[i]) > 0) || Number(a[i]) > Number(b[i])) {
       return 1
-    } else if ((b[i] && !a[i] && ~~b[i] > 0) || ~~a[i] < ~~b[i]) {
+    }
+    if ((b[i] && !a[i] && Number(b[i]) > 0) || Number(a[i]) < Number(b[i])) {
       return -1
     }
   }

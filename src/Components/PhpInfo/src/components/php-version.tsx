@@ -22,10 +22,10 @@ export const PhpInfoPhpVersion: FC = observer(() => {
       setLatestPhpVersion(version)
       setLatestPhpDate(date)
     }
-  }, [])
+  }, [setLatestPhpDate, setLatestPhpVersion])
   useEffect(() => {
     fetch()
-  }, [])
+  }, [fetch])
   const compare = versionCompare(version, latestPhpVersion)
   return (
     <CardLink
@@ -33,10 +33,9 @@ export const PhpInfoPhpVersion: FC = observer(() => {
       title={gettext('Visit PHP.net Official website')}>
       {version}
       {compare === -1
-        ? ' ' +
-          template(gettext('(Latest {{latestPhpVersion}})'), {
+        ? ` ${template(gettext('(Latest {{latestPhpVersion}})'), {
             latestPhpVersion,
-          })
+          })}`
         : ''}
     </CardLink>
   )

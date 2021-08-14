@@ -6,8 +6,11 @@ configure({
 })
 class Main {
   public readonly ID = 'colorScheme'
+
   private readonly STORAGE_ID = 'schemeId'
+
   @observable public schemeId: string = this.getStorageSchemeId()
+
   public constructor() {
     makeObservable(this)
   }

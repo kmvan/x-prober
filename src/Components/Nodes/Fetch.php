@@ -23,7 +23,7 @@ class Fetch extends NodesApi
                 // no break
             case 'node':
                 EventsApi::emit('fetchNodeBefore');
-                $nodeId   = \filter_input(\INPUT_GET, 'nodeId', \FILTER_SANITIZE_STRING);
+                $nodeId   = filter_input(\INPUT_GET, 'nodeId', \FILTER_SANITIZE_STRING);
                 $response = new RestfulResponse();
 
                 if ( ! $nodeId) {
@@ -51,26 +51,24 @@ class Fetch extends NodesApi
 
             return $this->getRemoteContent("{$item['url']}?action=fetch");
         }
-
-        return null;
     }
 
     private function getRemoteContent($url)
     {
         $content = '';
 
-        if (\function_exists('\curl_init')) {
-            $ch = \curl_init();
-            \curl_setopt_array($ch, array(
+        if (\function_exists('\\curl_init')) {
+            $ch = curl_init();
+            curl_setopt_array($ch, array(
                 \CURLOPT_URL            => $url,
                 \CURLOPT_RETURNTRANSFER => true,
             ));
-            $content = \curl_exec($ch);
-            \curl_close($ch);
+            $content = curl_exec($ch);
+            curl_close($ch);
 
-            return \json_decode($content, true) ?: null;
+            return json_decode($content, true) ?: null;
         }
 
-        return \json_decode(\file_get_contents($url), true) ?: null;
+        return json_decode(file_get_contents($url), true) ?: null;
     }
 }

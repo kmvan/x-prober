@@ -29,13 +29,11 @@ export const CardRuby: FC<CardRubyProps> = ({
   rt,
   isResult = false,
   ...props
-}) => {
-  return (
-    <StyledRuby isResult={isResult} {...props} title={gettext('Copy marks')}>
-      {ruby}
-      <rp>(</rp>
-      <rt>{rt}</rt>
-      <rp>)</rp>
-    </StyledRuby>
-  )
-}
+}) => (
+  <StyledRuby isResult={isResult} {...props} title={gettext('Copy marks')}>
+    {ruby}
+    <rp>(</rp>
+    <rt>{rt}</rt>
+    <rp>)</rp>
+  </StyledRuby>
+)

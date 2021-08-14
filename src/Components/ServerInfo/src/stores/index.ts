@@ -24,7 +24,7 @@ export interface ServerInfoDataProps {
   serverUtcTime: string
   diskUsage: ServerInfoDiskUsageProps
 }
-export interface locationProps {
+export interface LocationProps {
   country: string
   region: string
   city: string
@@ -32,18 +32,24 @@ export interface locationProps {
 }
 class Main {
   public readonly ID = 'serverInfo'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
+
   @observable public serverIpv4: string = gettext('Loading...')
+
   @observable public serverIpv6: string = gettext('Loading...')
-  @observable public serverLocation: locationProps | null = null
+
+  @observable public serverLocation: LocationProps | null = null
+
   public constructor() {
     makeObservable(this)
     this.fetchServerIpv4()
     this.fetchServerIpv6()
   }
 
-  @action public setServerLocation = (serverLocation: locationProps) => {
+  @action public setServerLocation = (serverLocation: LocationProps) => {
     this.serverLocation = serverLocation
   }
 

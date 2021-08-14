@@ -17,15 +17,11 @@ const StyledSearchLink = styled.a`
 interface SearchLinkProps {
   keyword: string
 }
-export const SearchLink: FC<SearchLinkProps> = ({ keyword }) => {
-  return (
-    <StyledSearchLink
-      href={`https://www.google.com/search?q=php+${encodeURIComponent(
-        keyword
-      )}`}
-      target='_blank'
-      rel='nofollow'>
-      {keyword}
-    </StyledSearchLink>
-  )
-}
+export const SearchLink: FC<SearchLinkProps> = ({ keyword }) => (
+  <StyledSearchLink
+    href={`https://www.google.com/search?q=php+${encodeURIComponent(keyword)}`}
+    target='_blank'
+    rel='nofollow'>
+    {keyword}
+  </StyledSearchLink>
+)

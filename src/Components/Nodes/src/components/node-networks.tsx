@@ -35,24 +35,22 @@ interface NodeNetworksProps {
 }
 export const NodeNetworks: FC<NodeNetworksProps> = ({ items, timestamp }) => {
   const itemsCount = items.length
-  if (!itemsCount) {
-    return null
-  }
   const [data, setData] = useState({
     curr: { items, timestamp },
     prev: { items, timestamp },
   })
   useEffect(() => {
-    setData((prevData) => {
-      return {
-        curr: {
-          items,
-          timestamp,
-        },
-        prev: prevData.curr,
-      }
-    })
-  }, [timestamp])
+    setData((prevData) => ({
+      curr: {
+        items,
+        timestamp,
+      },
+      prev: prevData.curr,
+    }))
+  }, [items, timestamp])
+  if (!itemsCount) {
+    return null
+  }
   const { curr, prev } = data
   const seconds = curr.timestamp - prev.timestamp
   return (

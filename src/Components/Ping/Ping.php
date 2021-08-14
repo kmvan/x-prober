@@ -24,7 +24,7 @@ class Ping extends PingConstants
         }
 
         $response = new RestfulResponse(array(
-            'time' => \microtime(true) - \XPROBER_TIMER,
+            'time' => microtime(true) - XPROBER_TIMER,
         ));
         $response->dieJson();
     }

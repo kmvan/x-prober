@@ -17,7 +17,7 @@ export const UpdaterLink: FC = observer(() => {
     const { status } = await serverFetch('update')
     switch (status) {
       case OK:
-        location.reload()
+        window.location.reload()
         return
       case INSUFFICIENT_STORAGE:
       case INTERNAL_SERVER_ERROR:
@@ -29,6 +29,7 @@ export const UpdaterLink: FC = observer(() => {
         setIsUpdating(false)
         setIsUpdateError(true)
         return
+      default:
     }
     alert(gettext('Network error, please try again later.'))
     setIsUpdating(false)

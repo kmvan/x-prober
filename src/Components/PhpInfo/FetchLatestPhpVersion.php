@@ -26,14 +26,14 @@ class FetchLatestPhpVersion extends PhpInfoConstants
         }
 
         $response = new RestfulResponse();
-        $content  = \file_get_contents('https://www.php.net/releases/?json');
+        $content  = file_get_contents('https://www.php.net/releases/?json');
 
         if ( ! $content) {
             $response->setStatus(HttpStatus::$NOT_FOUND);
             $response->dieJson();
         }
 
-        $versions = \json_decode($content, true);
+        $versions = json_decode($content, true);
 
         if ( ! $versions) {
             $response->setStatus(HttpStatus::$NOT_FOUND);

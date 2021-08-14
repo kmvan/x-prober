@@ -6,7 +6,7 @@ class UtilsMemory
 {
     public static function getMemoryUsage($key)
     {
-        $key = \ucfirst($key);
+        $key = ucfirst($key);
 
         if (UtilsApi::isWin()) {
             return 0;
@@ -17,26 +17,26 @@ class UtilsMemory
         if (null === $memInfo) {
             $memInfoFile = '/proc/meminfo';
 
-            if ( ! @\is_readable($memInfoFile)) {
+            if ( ! @is_readable($memInfoFile)) {
                 $memInfo = 0;
 
                 return 0;
             }
 
-            $memInfo = \file_get_contents($memInfoFile);
-            $memInfo = \str_replace(array(
+            $memInfo = file_get_contents($memInfoFile);
+            $memInfo = str_replace(array(
                 ' kB',
                 '  ',
             ), '', $memInfo);
 
             $lines = array();
 
-            foreach (\explode("\n", $memInfo) as $line) {
+            foreach (explode("\n", $memInfo) as $line) {
                 if ( ! $line) {
                     continue;
                 }
 
-                $line            = \explode(':', $line);
+                $line            = explode(':', $line);
                 $lines[$line[0]] = (float) $line[1] * 1024;
             }
 
@@ -62,8 +62,10 @@ class UtilsMemory
             }
 
             return 0;
+
         case 'MemUsage':
             return isset($memInfo['MemFree']) ? $memInfo['MemTotal'] - $memInfo['MemFree'] : 0;
+
         case 'SwapUsage':
             if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree'])) {
                 return 0;

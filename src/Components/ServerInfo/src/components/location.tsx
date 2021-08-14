@@ -5,7 +5,7 @@ import { serverFetch } from '../../../Fetch/src/server-fetch'
 import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { ToastStore } from '../../../Toast/src/stores'
-import { locationProps } from '../stores'
+import { LocationProps } from '../stores'
 
 interface ServerLocationProps {
   action: string
@@ -13,7 +13,7 @@ interface ServerLocationProps {
 const StyledLocation = styled.a``
 export const Location: FC<ServerLocationProps> = observer(({ action }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [location, setLocation] = useState<locationProps | null>(null)
+  const [location, setLocation] = useState<LocationProps | null>(null)
   const onClick = useCallback(
     async (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
@@ -29,7 +29,7 @@ export const Location: FC<ServerLocationProps> = observer(({ action }) => {
         ToastStore.open(gettext('Can not fetch location.'))
       }
     },
-    [isLoading]
+    [action, isLoading]
   )
   const loadingText = isLoading ? gettext('Loading...') : ''
   let clickText = ''

@@ -30,7 +30,7 @@ class Conf extends ServerInfoConstants
             'serverSoftware' => $this->getServerInfo('SERVER_SOFTWARE'),
             'phpVersion'     => \PHP_VERSION,
             'cpuModel'       => UtilsCpu::getModel(),
-            'serverOs'       => \php_uname(),
+            'serverOs'       => php_uname(),
             'scriptPath'     => __FILE__,
             'diskUsage'      => array(
                 'value' => UtilsDisk::getTotal() - UtilsDisk::getFree(),

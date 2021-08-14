@@ -36,15 +36,11 @@ export const CardGrid: FC<CardGridProps> = ({
   title = '',
   children,
   ...props
-}) => {
-  return (
-    <Grid {...props}>
-      <StyledCardGroup>
-        {Boolean(name) && (
-          <StyledCardTitle title={title}>{name}</StyledCardTitle>
-        )}
-        <StyledCardContent>{children}</StyledCardContent>
-      </StyledCardGroup>
-    </Grid>
-  )
-}
+}) => (
+  <Grid {...props}>
+    <StyledCardGroup>
+      {Boolean(name) && <StyledCardTitle title={title}>{name}</StyledCardTitle>}
+      <StyledCardContent>{children}</StyledCardContent>
+    </StyledCardGroup>
+  </Grid>
+)

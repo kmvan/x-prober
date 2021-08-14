@@ -9,6 +9,4 @@ const StyledCardDes = styled.div`
   border-radius: ${BORDER_RADIUS};
   margin-bottom: ${GUTTER};
 `
-export const CardDes: FC = (props) => {
-  return <StyledCardDes {...props} />
-}
+export const CardDes: FC = (props) => <StyledCardDes {...props} />

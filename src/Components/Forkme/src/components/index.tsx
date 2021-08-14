@@ -63,10 +63,8 @@ const StyledForkmeLink = styled.a`
     bottom: 1px;
   }
 `
-export const Forkme: FC = () => {
-  return (
-    <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
-      {gettext('STAR 🌟 ME')}
-    </StyledForkmeLink>
-  )
-}
+export const Forkme: FC = () => (
+  <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
+    {gettext('STAR 🌟 ME')}
+  </StyledForkmeLink>
+)

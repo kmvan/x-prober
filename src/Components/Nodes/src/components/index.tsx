@@ -45,24 +45,22 @@ const SysLoad: FC<{ sysLoad: number[] }> = ({ sysLoad }) => {
     </StyledNodeGroup>
   )
 }
-const Cpu: FC<{ cpuUsage: ServerStatusCpuUsageProps }> = ({ cpuUsage }) => {
-  return (
-    <StyledNodeGroup>
-      <ProgressBar
-        title={template(
-          gettext(
-            'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
-          ),
-          cpuUsage as any
-        )}
-        value={100 - cpuUsage.idle}
-        max={100}
-        isCapacity={false}
-        left={gettext('CPU usage')}
-      />
-    </StyledNodeGroup>
-  )
-}
+const Cpu: FC<{ cpuUsage: ServerStatusCpuUsageProps }> = ({ cpuUsage }) => (
+  <StyledNodeGroup>
+    <ProgressBar
+      title={template(
+        gettext(
+          'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
+        ),
+        cpuUsage as any
+      )}
+      value={100 - cpuUsage.idle}
+      max={100}
+      isCapacity={false}
+      left={gettext('CPU usage')}
+    />
+  </StyledNodeGroup>
+)
 const Memory: FC<{ memRealUsage: ServerStatusUsageProps }> = ({
   memRealUsage,
 }) => {
@@ -128,6 +126,7 @@ const Items: FC = observer(() => {
               </StyledNodeGroupMsg>
             </Grid>
           )
+        default:
       }
       const { serverStatus, networkStats } = data
       return (
@@ -183,7 +182,7 @@ export const Nodes: FC = observer(() => {
         fetch(id)
       }
     }
-  }, [])
+  }, [fetch, items, itemsCount])
   return (
     <Row>
       <Items />

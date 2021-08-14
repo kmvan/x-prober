@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.1.0 - 2021-08-14
+
+### Optimize
+
+- Optimize page max width
+- ESlint fix
+
 ## 8.0.0 - 2021-07-13
 
 ### Add

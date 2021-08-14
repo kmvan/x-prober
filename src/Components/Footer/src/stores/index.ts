@@ -6,6 +6,7 @@ configure({
 })
 class Main {
   public readonly ID = 'footer'
+
   public readonly conf = conf?.[this.ID]
 }
 export const FooterStore = new Main()

@@ -39,15 +39,13 @@ interface SysLoadGroupProps {
 }
 export const SysLoadGroup: FC<SysLoadGroupProps> = ({ sysLoad, isCenter }) => {
   const minutes = [1, 5, 15]
-  const loadHuman = sysLoad.map((load, i) => {
-    return {
-      id: `${minutes[i]}minAvg`,
-      load,
-      text: template(gettext('{{minute}} minute average'), {
-        minute: minutes[i],
-      }),
-    }
-  })
+  const loadHuman = sysLoad.map((load, i) => ({
+    id: `${minutes[i]}minAvg`,
+    load,
+    text: template(gettext('{{minute}} minute average'), {
+      minute: minutes[i],
+    }),
+  }))
   return (
     <StyledSysLoadGroup isCenter={isCenter}>
       {loadHuman.map(({ id, load, text }) => (
@@ -62,11 +60,9 @@ interface SystemLoadProps {
   isCenter?: boolean
 }
 export const SystemLoad: FC<SystemLoadProps> = observer(
-  ({ isCenter = false }) => {
-    return (
-      <CardGrid name={gettext('System load')} tablet={[1, 1]}>
-        <SysLoadGroup isCenter={isCenter} sysLoad={ServerStatusStore.sysLoad} />
-      </CardGrid>
-    )
-  }
+  ({ isCenter = false }) => (
+    <CardGrid name={gettext('System load')} tablet={[1, 1]}>
+      <SysLoadGroup isCenter={isCenter} sysLoad={ServerStatusStore.sysLoad} />
+    </CardGrid>
+  )
 )
