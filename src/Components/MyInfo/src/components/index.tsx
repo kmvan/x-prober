@@ -41,13 +41,11 @@ export const MyInfo: FC = observer(() => {
   ]
   return (
     <Row>
-      {items.map(([name, content]: [string, string]) => {
-        return (
-          <CardGrid key={name} name={name} desktopLg={[1, 2]}>
-            {content}
-          </CardGrid>
-        )
-      })}
+      {items.map(([name, content]: [string, string]) => (
+        <CardGrid key={name} name={name} desktopLg={[1, 2]}>
+          {content}
+        </CardGrid>
+      ))}
     </Row>
   )
 })

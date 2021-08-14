@@ -5,6 +5,7 @@ configure({
 })
 class Main {
   @observable public activeIndex = 0
+
   public constructor() {
     makeAutoObservable(this)
   }

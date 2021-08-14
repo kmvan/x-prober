@@ -12,8 +12,11 @@ export interface NetworkStatsItemProps {
 }
 class Main {
   public readonly ID = 'networkStats'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
+
   public constructor() {
     makeObservable(this)
   }

@@ -5,40 +5,62 @@
     "es2021": true,
     "node": true
   },
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "standard",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 2021,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["prettier", "@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "airbnb-typescript",
+    "prettier",
+    "airbnb/hooks"
+  ],
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "semi": ["error", "never"],
+    "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "no-use-before-define": "off",
+    "@typescript-eslint/no-shadow": "off",
     "import/newline-after-import": ["error", { "count": 1 }],
     "curly": "error",
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "eqeqeq": ["error", "always"],
     "no-else-return": "error",
-    "no-implicit-coercion": "error"
+    "no-implicit-coercion": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/no-danger": "off",
+    "no-await-in-loop": "off",
+    "no-continue": "off",
+    "no-alert": "off",
+    "no-restricted-syntax": "off",
+    "no-param-reassign": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "no-underscore-dangle": "off",
+    "no-console": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-cycle": "off"
   }
 }

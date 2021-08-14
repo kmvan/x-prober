@@ -57,31 +57,27 @@ longItems.sort((a, b) => {
   }
   return 0
 })
-export const PhpExtensions: FC = () => {
-  return (
-    <Row>
-      {shortItems.map(([name, enabled]) => {
-        return (
-          <CardGrid
-            key={name}
-            name={name}
-            mobileMd={[1, 2]}
-            tablet={[1, 3]}
-            desktopMd={[1, 4]}
-            desktopLg={[1, 5]}>
-            <Alert isSuccess={enabled} />
-          </CardGrid>
-        )
-      })}
-      {Boolean(longItems.length) && (
-        <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
-          <MultiItemContainer>
-            {longItems.map((id) => {
-              return <SearchLink key={id} keyword={id} />
-            })}
-          </MultiItemContainer>
-        </CardGrid>
-      )}
-    </Row>
-  )
-}
+export const PhpExtensions: FC = () => (
+  <Row>
+    {shortItems.map(([name, enabled]) => (
+      <CardGrid
+        key={name}
+        name={name}
+        mobileMd={[1, 2]}
+        tablet={[1, 3]}
+        desktopMd={[1, 4]}
+        desktopLg={[1, 5]}>
+        <Alert isSuccess={enabled} />
+      </CardGrid>
+    ))}
+    {Boolean(longItems.length) && (
+      <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
+        <MultiItemContainer>
+          {longItems.map((id) => (
+            <SearchLink key={id} keyword={id} />
+          ))}
+        </MultiItemContainer>
+      </CardGrid>
+    )}
+  </Row>
+)

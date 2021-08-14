@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 export const rgbaToHex = (
   red: number,
   green: number,

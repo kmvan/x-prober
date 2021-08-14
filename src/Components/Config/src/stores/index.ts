@@ -10,6 +10,7 @@ configure({
 })
 class Main {
   @observable public appConfig: AppConfigProps | null = null
+
   constructor() {
     makeObservable(this)
     this.fetch()
@@ -31,9 +32,10 @@ class Main {
       return
     }
     // online version
-    for (let i = 0; i < appConfigUrls.length; i++) {
+    for (let i = 0; i < appConfigUrls.length; i += 1) {
       await fetch(appConfigUrls[i])
         .then((res) => res.json())
+        // eslint-disable-next-line @typescript-eslint/no-loop-func
         .then((res) => {
           this.setAppConfig(res)
           configStatus = true

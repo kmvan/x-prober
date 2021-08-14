@@ -8,16 +8,14 @@ import { SwapCached } from './swap-cached'
 import { SwapUsage } from './swap-usage'
 import { SystemLoad } from './system-load'
 
-export const ServerStatus: FC = () => {
-  return (
-    <Row>
-      <SystemLoad />
-      <CpuUsage />
-      <MemRealUsage />
-      <MemCached />
-      <MemBuffers />
-      <SwapUsage />
-      <SwapCached />
-    </Row>
-  )
-}
+export const ServerStatus: FC = () => (
+  <Row>
+    <SystemLoad />
+    <CpuUsage />
+    <MemRealUsage />
+    <MemCached />
+    <MemBuffers />
+    <SwapUsage />
+    <SwapCached />
+  </Row>
+)

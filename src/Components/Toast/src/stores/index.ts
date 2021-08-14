@@ -11,7 +11,9 @@ configure({
 })
 class Main {
   @observable public isOpen = false
+
   @observable public msg: any = ''
+
   public constructor() {
     makeObservable(this)
   }

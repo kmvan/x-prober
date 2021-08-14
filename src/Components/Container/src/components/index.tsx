@@ -13,6 +13,4 @@ const StyledContainer = styled.div`
     padding-right: ${GUTTER};
   }
 `
-export const Container: FC = (props) => {
-  return <StyledContainer {...props} />
-}
+export const Container: FC = (props) => <StyledContainer {...props} />

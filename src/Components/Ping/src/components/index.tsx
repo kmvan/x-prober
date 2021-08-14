@@ -103,17 +103,15 @@ const StyledPingResultTimes = styled.div``
 const StyledPingResultAvg = styled.div``
 const Items: FC = observer(() => {
   const { pingItems } = PingStore
-  const items = pingItems.map(({ time }, i) => {
-    return (
-      <StyledPingItem key={i}>
-        <StyledPingItemNumber>
-          {i + 1 < 10 ? `0${i + 1}` : i + 1}
-        </StyledPingItemNumber>
-        <StyledPingItemLine>{' ------------ '}</StyledPingItemLine>
-        <StyledPingItemTime>{`${time} ms`}</StyledPingItemTime>
-      </StyledPingItem>
-    )
-  })
+  const items = pingItems.map(({ time }, i) => (
+    <StyledPingItem key={String(i)}>
+      <StyledPingItemNumber>
+        {i + 1 < 10 ? `0${i + 1}` : i + 1}
+      </StyledPingItemNumber>
+      <StyledPingItemLine>{' ------------ '}</StyledPingItemLine>
+      <StyledPingItemTime>{`${time} ms`}</StyledPingItemTime>
+    </StyledPingItem>
+  ))
   return <>{items}</>
 })
 const Results: FC = observer(() => {
@@ -141,24 +139,8 @@ const Results: FC = observer(() => {
 })
 export const Ping: FC = observer(() => {
   const { pingItemsCount } = PingStore
-  let pingTimer = 0
+  const refPingTimer = useRef<number>(0)
   const refItemContainer = useRef<HTMLUListElement>(null)
-  const onClickPing = useCallback(async () => {
-    const { isPing, setIsPing } = PingStore
-    if (isPing) {
-      setIsPing(false)
-      clearTimeout(pingTimer)
-      return
-    }
-    setIsPing(true)
-    await pingLoop()
-  }, [pingTimer])
-  const pingLoop = useCallback(async (): Promise<void> => {
-    await ping()
-    pingTimer = window.setTimeout(async () => {
-      await pingLoop()
-    }, 1000)
-  }, [pingTimer])
   const ping = async (): Promise<void> => {
     const { appendPingItem } = PingStore
     const start = Number(new Date())
@@ -182,6 +164,22 @@ export const Ping: FC = observer(() => {
       }, 100)
     }
   }
+  const pingLoop = useCallback(async (): Promise<void> => {
+    await ping()
+    refPingTimer.current = window.setTimeout(async () => {
+      await pingLoop()
+    }, 1000)
+  }, [])
+  const onClickPing = useCallback(async () => {
+    const { isPing, setIsPing } = PingStore
+    if (isPing) {
+      setIsPing(false)
+      clearTimeout(refPingTimer.current)
+      return
+    }
+    setIsPing(true)
+    await pingLoop()
+  }, [pingLoop])
   return (
     <Row>
       <CardGrid

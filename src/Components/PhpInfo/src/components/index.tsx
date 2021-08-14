@@ -46,54 +46,48 @@ export const PhpInfo: FC = observer(() => {
     [
       gettext('Disabled functions'),
       disableFunctions.length
-        ? disableFunctions.map((fn: string, i: number) => (
-            <SearchLink key={i} keyword={fn} />
+        ? disableFunctions.map((fn: string) => (
+            <SearchLink key={fn} keyword={fn} />
           ))
         : '-',
     ],
     [
       gettext('Disabled classes'),
       disableClasses.length
-        ? disableClasses.map((fn: string, i: number) => (
-            <SearchLink key={i} keyword={fn} />
+        ? disableClasses.map((fn: string) => (
+            <SearchLink key={fn} keyword={fn} />
           ))
         : '-',
     ],
   ]
   return (
     <Row>
-      {oneLineItems.map(([title, content]) => {
-        return (
-          <CardGrid
-            key={title}
-            name={title}
-            tablet={[1, 3]}
-            desktopMd={[1, 4]}
-            desktopLg={[1, 5]}>
-            {content}
-          </CardGrid>
-        )
-      })}
-      {shortItems.map(([title, content]) => {
-        return (
-          <CardGrid
-            key={title}
-            name={title}
-            mobileMd={[1, 2]}
-            tablet={[1, 3]}
-            desktopMd={[1, 4]}
-            desktopLg={[1, 5]}>
-            {content}
-          </CardGrid>
-        )
-      })}
-      {longItems.map(([title, content]) => {
-        return (
-          <CardGrid key={title} name={title}>
-            <MultiItemContainer>{content}</MultiItemContainer>
-          </CardGrid>
-        )
-      })}
+      {oneLineItems.map(([title, content]) => (
+        <CardGrid
+          key={title}
+          name={title}
+          tablet={[1, 3]}
+          desktopMd={[1, 4]}
+          desktopLg={[1, 5]}>
+          {content}
+        </CardGrid>
+      ))}
+      {shortItems.map(([title, content]) => (
+        <CardGrid
+          key={title}
+          name={title}
+          mobileMd={[1, 2]}
+          tablet={[1, 3]}
+          desktopMd={[1, 4]}
+          desktopLg={[1, 5]}>
+          {content}
+        </CardGrid>
+      ))}
+      {longItems.map(([title, content]) => (
+        <CardGrid key={title} name={title}>
+          <MultiItemContainer>{content}</MultiItemContainer>
+        </CardGrid>
+      ))}
     </Row>
   )
 })

@@ -51,7 +51,6 @@ class Fetch extends NodesApi
 
             return $this->getRemoteContent("{$item['url']}?action=fetch");
         }
-
     }
 
     private function getRemoteContent($url)

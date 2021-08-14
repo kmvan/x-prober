@@ -6,7 +6,7 @@ export const formatBytes = (bytes: number, decimals = 2): string => {
   const sizes = ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
   let i = Math.floor(Math.log(bytes) / Math.log(k))
   i = i < 0 ? 0 : i
-  const num = parseFloat((bytes / Math.pow(k, i)).toFixed(decimals))
+  const num = parseFloat((bytes / k ** i).toFixed(decimals))
   if (!num) {
     return '0'
   }

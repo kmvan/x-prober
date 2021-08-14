@@ -13,7 +13,9 @@ export interface TemperatureSensorItemProps {
 }
 class Main {
   public readonly ID = 'temperatureSensor'
+
   @observable public items: TemperatureSensorItemProps[] = []
+
   public constructor() {
     makeObservable(this)
   }

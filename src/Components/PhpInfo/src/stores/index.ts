@@ -6,10 +6,15 @@ configure({
 })
 class Main {
   public readonly ID = 'phpInfo'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
+
   @observable public latestPhpVersion = ''
+
   @observable public latestPhpDate = ''
+
   public constructor() {
     makeObservable(this)
   }

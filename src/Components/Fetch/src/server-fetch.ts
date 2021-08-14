@@ -1,14 +1,14 @@
 import fetch from 'isomorphic-unfetch'
 import { BootstrapStore } from '../../Bootstrap/src/stores'
 
-interface serverFetchProps {
+interface ServerFetchProps {
   data?: any
   status: number
 }
 export const serverFetch = async (
   action: string,
   opts = {}
-): Promise<serverFetchProps> => {
+): Promise<ServerFetchProps> => {
   opts = {
     ...{
       method: 'GET',
@@ -21,7 +21,7 @@ export const serverFetch = async (
     },
     ...opts,
   }
-  const url = `${location.pathname}?action=${action}`
+  const url = `${window.location.pathname}?action=${action}`
   const res = await fetch(url, opts)
   try {
     return { status: res.status, data: await res.json() }

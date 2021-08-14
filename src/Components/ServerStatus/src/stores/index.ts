@@ -26,8 +26,11 @@ export interface ServerStatusDataProps {
 }
 class Main {
   public readonly ID = 'serverStatus'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
+
   public constructor() {
     makeObservable(this)
   }

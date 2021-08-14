@@ -30,12 +30,11 @@ const createCss = (types: BreakPointsProps) => {
     const [span, col] = sizes
     return css`
       @media ${device(id as DeviceIdProps)} {
-        flex: ${() => {
+        flex: ${() =>
           // wtf safari flex bug
-          return /constructor/i.test((window as any).HTMLElement)
+          /constructor/i.test((window as any).HTMLElement)
             ? `0 0 calc(${(span / col) * 100}% - 0.5px);`
-            : `0 0 ${(span / col) * 100}%;`
-        }};
+            : `0 0 ${(span / col) * 100}%;`};
       }
     `
   })

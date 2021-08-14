@@ -22,19 +22,17 @@ export const Database: FC = observer(() => {
   ]
   return (
     <Row>
-      {shortItems.map(([name, content]) => {
-        return (
-          <CardGrid
-            key={name}
-            name={name}
-            mobileMd={[1, 2]}
-            tablet={[1, 3]}
-            desktopMd={[1, 4]}
-            desktopLg={[1, 5]}>
-            <Alert isSuccess={Boolean(content)} msg={content} />
-          </CardGrid>
-        )
-      })}
+      {shortItems.map(([name, content]) => (
+        <CardGrid
+          key={name}
+          name={name}
+          mobileMd={[1, 2]}
+          tablet={[1, 3]}
+          desktopMd={[1, 4]}
+          desktopLg={[1, 5]}>
+          <Alert isSuccess={Boolean(content)} msg={content} />
+        </CardGrid>
+      ))}
     </Row>
   )
 })

@@ -66,7 +66,7 @@ const Result = ({
       />
       {' = '}
       <CardRuby
-        isResult={true}
+        isResult
         ruby={totalString}
         rt={date || ''}
         onClick={() => copyToClipboard(totalText)}
@@ -98,14 +98,19 @@ const Items: FC = observer(() => {
         <a
           href={proberUrl}
           target='_blank'
-          title={gettext('Visit prober page')}>
+          title={gettext('Visit prober page')}
+          rel='noreferrer'>
           {' 🔗 '}
         </a>
       ) : (
         ''
       )
       const binLink = binUrl ? (
-        <a href={binUrl} target='_blank' title={gettext('Download speed test')}>
+        <a
+          href={binUrl}
+          target='_blank'
+          title={gettext('Download speed test')}
+          rel='noreferrer'>
           {' ⬇️ '}
         </a>
       ) : (

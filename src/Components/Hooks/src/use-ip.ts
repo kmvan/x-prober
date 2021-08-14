@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { gettext } from '../../Language/src'
 import { OK } from '../../Restful/src/http-status'
 
-interface useIpProps {
+interface UseIpProps {
   ip: string
   msg: string
   isLoading: boolean
 }
-export const useIp = (type: 4 | 6): useIpProps => {
-  const [data, setData] = useState<useIpProps>({
+export const useIp = (type: 4 | 6): UseIpProps => {
+  const [data, setData] = useState<UseIpProps>({
     ip: '',
     msg: gettext('Loading...'),
     isLoading: true,
@@ -31,6 +31,6 @@ export const useIp = (type: 4 | 6): useIpProps => {
         setData({ ip: '', msg: gettext('Not support'), isLoading: false })
       }
     })()
-  }, [])
+  }, [type])
   return data
 }

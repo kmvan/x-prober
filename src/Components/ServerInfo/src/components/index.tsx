@@ -23,9 +23,9 @@ const ServerInfoTime: FC = observer(() => {
   ]
   return (
     <>
-      {items.map(([title, content], i) => (
+      {items.map(([title, content]) => (
         <CardGrid
-          key={i}
+          key={title}
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
@@ -56,9 +56,9 @@ export const ServerInfo: FC = observer(() => {
   ]
   return (
     <Row>
-      {shortItems1.map(([title, content], i) => (
+      {shortItems1.map(([title, content]) => (
         <CardGrid
-          key={i}
+          key={title}
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
@@ -67,9 +67,9 @@ export const ServerInfo: FC = observer(() => {
         </CardGrid>
       ))}
       <ServerInfoTime />
-      {shortItems2.map(([title, content], i) => (
+      {shortItems2.map(([title, content]) => (
         <CardGrid
-          key={i}
+          key={title}
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
@@ -77,8 +77,8 @@ export const ServerInfo: FC = observer(() => {
           {content}
         </CardGrid>
       ))}
-      {longItems.map(([title, content], i) => (
-        <CardGrid key={i} name={title} tablet={[1, 1]}>
+      {longItems.map(([title, content]) => (
+        <CardGrid key={title} name={title} tablet={[1, 1]}>
           {content}
         </CardGrid>
       ))}

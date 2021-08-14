@@ -23,8 +23,11 @@ export interface NodesItemProps {
 }
 class Main {
   public readonly ID = 'nodes'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
+
   public readonly DEFAULT_ITEM = {
     id: '',
     url: '',
@@ -34,18 +37,17 @@ class Main {
   }
 
   @observable public items: NodesItemProps[] = []
+
   public constructor() {
     makeObservable(this)
-    const items = (this.conf?.items || []).map(({ url, ...props }) => {
-      return {
-        ...this.DEFAULT_ITEM,
-        ...{
-          url,
-          fetchUrl: `${url}?action=fetch`,
-          ...props,
-        },
-      }
-    })
+    const items = (this.conf?.items || []).map(({ url, ...props }) => ({
+      ...this.DEFAULT_ITEM,
+      ...{
+        url,
+        fetchUrl: `${url}?action=fetch`,
+        ...props,
+      },
+    }))
     this.setItems(items)
   }
 

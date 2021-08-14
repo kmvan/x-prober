@@ -12,12 +12,12 @@ export const gradientColors = (
   const gStep = (eColor[1] - sColor[1]) / step
   const bStep = (eColor[2] - sColor[2]) / step
   const colors: string[] = []
-  for (let i = 0; i < step; i++) {
+  for (let i = 0; i < step; i += 1) {
     colors.push(
       rgbaToHex(
-        ~~(rStep * i + sColor[0]),
-        ~~(gStep * i + sColor[1]),
-        ~~(bStep * i + sColor[2])
+        Number(rStep * i + sColor[0]),
+        Number(gStep * i + sColor[1]),
+        Number(bStep * i + sColor[2])
       )
     )
   }

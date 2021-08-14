@@ -6,7 +6,9 @@ configure({
 })
 class Main {
   public readonly ID = 'phpExtensions'
+
   public readonly conf = conf?.[this.ID]
+
   public readonly enabled: boolean = Boolean(this.conf)
 }
 export const PhpExtensionsStore = new Main()

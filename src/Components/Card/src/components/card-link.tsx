@@ -8,6 +8,4 @@ const StyledCardLink = styled.a`
 `
 export const CardLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = (
   props
-) => {
-  return <StyledCardLink target='_blank' {...props} />
-}
+) => <StyledCardLink target='_blank' {...props} />
