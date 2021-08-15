@@ -1,0 +1,11 @@
+{
+  "presets": [["@babel/preset-env", { "targets": "defaults" }]],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}
