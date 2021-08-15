@@ -2,8 +2,8 @@
 
 const webpack = require('webpack')
 const path = require('path')
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
-  .default
+const createStyledComponentsTransformer =
+  require('typescript-plugin-styled-components').default
 const styledComponentsTransformer = createStyledComponentsTransformer()
 const rimraf = require('rimraf')
 
@@ -23,7 +23,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       root: __dirname,
-      '@': path.resolve(__dirname, 'src/Components'),
     },
   },
   plugins: [

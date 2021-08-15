@@ -13,13 +13,11 @@
     "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php_cs53"
   },
   "browserslist": [
-    "last 4 version"
+    "defaults"
   ],
   "dependencies": {
-    "caniuse-lite": "^1.0.30001251",
     "copy-to-clipboard": "^3.3.1",
     "deep-sort-object": "^1.0.2",
-    "es6-promise": "^4.2.8",
     "glob": "^7.1.7",
     "isomorphic-unfetch": "^3.1.0",
     "mobx": "^6.3.2",
@@ -32,6 +30,9 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "@types/core-js": "^2.5.5",
     "@types/node": "^16.6.1",
     "@types/react": "^17.0.17",
@@ -39,6 +40,7 @@
     "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
+    "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",

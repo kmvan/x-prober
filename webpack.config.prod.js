@@ -26,7 +26,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       root: __dirname,
-      '@': path.resolve(__dirname, 'src/Components'),
     },
   },
   optimization: {
@@ -69,6 +68,9 @@ module.exports = {
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
         use: [
+          {
+            loader: 'babel-loader',
+          },
           {
             loader: 'ts-loader',
             options: {
