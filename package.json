@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.config.prod.js --progress",
     "build:php": "php-cs-fixer fix ./src --config=.php-cs-fixer53.php; php ./Make.php build; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
     "build:php-debug": "php ./Make.php build debug; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
-    "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php_cs53"
+    "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php-cs-fixer53.php"
   },
   "browserslist": [
     "defaults"

@@ -26,7 +26,7 @@ class UtilsCpu
         }
 
         $content = file_get_contents($filePath);
-        $cores   = mb_substr_count($content, 'cache size');
+        $cores   = substr_count($content, 'cache size');
 
         $lines     = explode("\n", $content);
         $modelName = explode(':', $lines[4]);
