@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.3.0 - 2021-08-16
+
+### Fix
+
+- Fix `mb_substr_count` function
+
 ## 8.2.0 - 2021-08-14
 
 ### Fix
