@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { serverFetch } from '../../../Fetch/src/server-fetch'
 import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
-import { locationProps } from '../../../ServerInfo/src/stores'
+import { LocationProps } from '../../../ServerInfo/src/stores'
 import { ToastStore } from '../../../Toast/src/stores'
 
 interface ClientLocationProps {
@@ -13,7 +13,7 @@ interface ClientLocationProps {
 const StyledLocation = styled.a``
 export const ClientLocation: FC<ClientLocationProps> = observer(({ ip }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [location, setLocation] = useState<locationProps | null>(null)
+  const [location, setLocation] = useState<LocationProps | null>(null)
   const onClick = useCallback(
     async (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
