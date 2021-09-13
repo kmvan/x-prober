@@ -29,7 +29,8 @@ const ServerInfoTime: FC = observer(() => {
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
-          desktopLg={[1, 5]}>
+          desktopLg={[1, 5]}
+        >
           {content}
         </CardGrid>
       ))}
@@ -62,7 +63,8 @@ export const ServerInfo: FC = observer(() => {
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
-          desktopLg={[1, 5]}>
+          desktopLg={[1, 5]}
+        >
           {content}
         </CardGrid>
       ))}
@@ -73,7 +75,8 @@ export const ServerInfo: FC = observer(() => {
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 4]}
-          desktopLg={[1, 5]}>
+          desktopLg={[1, 5]}
+        >
           {content}
         </CardGrid>
       ))}

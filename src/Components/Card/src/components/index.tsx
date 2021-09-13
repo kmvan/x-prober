@@ -72,7 +72,8 @@ export const Cards: FC = observer(() => {
             title={gettext('Move up')}
             isHidden={i === 0}
             onClick={(e) => moveCardUp(e, id)}
-            href='#'>
+            href='#'
+          >
             ▲
           </StyleArrow>
         )
@@ -81,7 +82,8 @@ export const Cards: FC = observer(() => {
             title={gettext('Move down')}
             isHidden={i === enabledCardsLength - 1}
             onClick={(e) => moveCardDown(e, id)}
-            href='#'>
+            href='#'
+          >
             ▼
           </StyleArrow>
         )

@@ -190,7 +190,8 @@ export const Ping: FC = observer(() => {
               : gettext('👆 Start ping')}
           </StyledPingBtn>
         }
-        tablet={[1, 1]}>
+        tablet={[1, 1]}
+      >
         {Boolean(pingItemsCount) && (
           <StyledPingItemContainer ref={refItemContainer}>
             <Items />

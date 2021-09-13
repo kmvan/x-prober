@@ -21,7 +21,8 @@ export const SearchLink: FC<SearchLinkProps> = ({ keyword }) => (
   <StyledSearchLink
     href={`https://www.google.com/search?q=php+${encodeURIComponent(keyword)}`}
     target='_blank'
-    rel='nofollow'>
+    rel='nofollow'
+  >
     {keyword}
   </StyledSearchLink>
 )

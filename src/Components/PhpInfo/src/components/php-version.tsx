@@ -30,7 +30,8 @@ export const PhpInfoPhpVersion: FC = observer(() => {
   return (
     <CardLink
       href='https://www.php.net/'
-      title={gettext('Visit PHP.net Official website')}>
+      title={gettext('Visit PHP.net Official website')}
+    >
       {version}
       {compare === -1
         ? ` ${template(gettext('(Latest {{latestPhpVersion}})'), {
