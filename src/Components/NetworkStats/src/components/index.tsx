@@ -32,7 +32,8 @@ export const NetworkStats: FC = observer(() => {
             key={id}
             tablet={[1, 2]}
             desktopMd={[1, 3]}
-            desktopLg={[1, 4]}>
+            desktopLg={[1, 4]}
+          >
             <NetworksStatsItem
               id={id}
               totalRx={rx}

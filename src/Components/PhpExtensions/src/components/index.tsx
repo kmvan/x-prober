@@ -66,7 +66,8 @@ export const PhpExtensions: FC = () => (
         mobileMd={[1, 2]}
         tablet={[1, 3]}
         desktopMd={[1, 4]}
-        desktopLg={[1, 5]}>
+        desktopLg={[1, 5]}
+      >
         <Alert isSuccess={enabled} />
       </CardGrid>
     ))}

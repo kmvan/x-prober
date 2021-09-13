@@ -48,7 +48,8 @@ export const ClientLocation: FC<ClientLocationProps> = observer(({ ip }) => {
       onClick={onClick}
       title={gettext(
         'The author only has 10,000 API requests per month, please do not abuse it.'
-      )}>
+      )}
+    >
       {loadingText}
       {clickText}
     </StyledLocation>

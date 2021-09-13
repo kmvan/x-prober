@@ -13,7 +13,8 @@ const LoadingIcon = () => (
     width='16px'
     height='16px'
     viewBox='0 0 100 100'
-    preserveAspectRatio='xMidYMid'>
+    preserveAspectRatio='xMidYMid'
+  >
     <g transform='translate(50 50)'>
       <g transform='scale(0.7)'>
         <g transform='translate(-50 -50)'>

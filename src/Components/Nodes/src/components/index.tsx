@@ -135,7 +135,8 @@ const Items: FC = observer(() => {
           tablet={[1, 2]}
           desktopSm={[1, 3]}
           desktopMd={[1, 4]}
-          desktopLg={[1, 6]}>
+          desktopLg={[1, 6]}
+        >
           {idLink}
           <SysLoad sysLoad={serverStatus.sysLoad} />
           <Cpu cpuUsage={serverStatus?.cpuUsage} />

@@ -99,7 +99,8 @@ const Items: FC = observer(() => {
           href={proberUrl}
           target='_blank'
           title={gettext('Visit prober page')}
-          rel='noreferrer'>
+          rel='noreferrer'
+        >
           {' 🔗 '}
         </a>
       ) : (
@@ -110,7 +111,8 @@ const Items: FC = observer(() => {
           href={binUrl}
           target='_blank'
           title={gettext('Download speed test')}
-          rel='noreferrer'>
+          rel='noreferrer'
+        >
           {' ⬇️ '}
         </a>
       ) : (
@@ -120,7 +122,8 @@ const Items: FC = observer(() => {
         <StyledAff
           href={url}
           target='_blank'
-          title={gettext('Visit the official website')}>
+          title={gettext('Visit the official website')}
+        >
           {name}
         </StyledAff>
       )
@@ -130,7 +133,8 @@ const Items: FC = observer(() => {
           name={title}
           tablet={[1, 2]}
           desktopMd={[1, 3]}
-          desktopLg={[1, 4]}>
+          desktopLg={[1, 4]}
+        >
           <Result cpu={cpu} read={read} write={write} date={date} />
           {proberLink}
           {binLink}
@@ -155,7 +159,8 @@ const TestBtn: FC<{ onClick: (e: MouseEvent<HTMLAnchorElement>) => void }> =
         name={gettext('My server')}
         tablet={[1, 2]}
         desktopMd={[1, 3]}
-        desktopLg={[1, 4]}>
+        desktopLg={[1, 4]}
+      >
         <StyledTextBtn onClick={onClick}>{linkText}</StyledTextBtn>
         <TestResults />
       </CardGrid>

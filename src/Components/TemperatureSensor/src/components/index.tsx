@@ -20,7 +20,8 @@ export const TemperatureSensor: FC = observer(() => {
           name={template(gettext('{{sensor}} temperature'), {
             sensor: name,
           })}
-          tablet={[1, itemsCount === 1 ? 1 : 2]}>
+          tablet={[1, itemsCount === 1 ? 1 : 2]}
+        >
           <ProgressBar
             value={celsius}
             max={150}
