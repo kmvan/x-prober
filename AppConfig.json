@@ -19,30 +19,6 @@
   "LATEST_NGINX_STABLE_VERSION": "1.20.1",
   "BENCHMARKS": [
     {
-      "name": "VPSPlayer / AMD-3950X / PHP80 JIT / Unlimit",
-      "url": "https://vpsplayer.com/aff.php?aff=50",
-      "date": "2021-07-13",
-      "proberUrl": "http://23.225.191.31/x.php",
-      "binUrl": "http://23.225.191.31/64m.bin",
-      "detail": {
-        "cpu": 416052,
-        "read": 155988,
-        "write": 34208
-      }
-    },
-    {
-      "name": "VPSPlayer / E5-2690v2 / PHP80 JIT",
-      "url": "https://vpsplayer.com/aff.php?aff=50",
-      "date": "2021-07-13",
-      "proberUrl": "http://103.44.238.36/x.php",
-      "binUrl": "http://103.44.238.36/64m.bin",
-      "detail": {
-        "cpu": 41581,
-        "read": 5700,
-        "write": 1269
-      }
-    },
-    {
       "name": "Olink / AMD-3700X / PHP80 JIT",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
       "date": "2021-07-13",
