@@ -1,4 +1,4 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx'
+import { configure, makeAutoObservable } from 'mobx'
 import { FunctionComponent, MouseEvent } from 'react'
 
 configure({
@@ -17,13 +17,13 @@ export interface CardProps {
   component: FunctionComponent
 }
 class Main {
-  @observable public cards: CardProps[] = []
+  public cards: CardProps[] = []
 
   public constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
   }
 
-  @action public addCard = (card: CardProps) => {
+  public addCard = (card: CardProps) => {
     const priority = this.getStoragePriority(card.id)
     if (priority) {
       card.priority = priority
@@ -31,22 +31,22 @@ class Main {
     this.cards.push(card)
   }
 
-  @computed public get cardsLength() {
+  public get cardsLength() {
     return this.cards.length
   }
 
-  @computed public get enabledCards(): CardProps[] {
+  public get enabledCards(): CardProps[] {
     return this.cards
       .slice()
       .filter(({ enabled = true }) => enabled)
       .sort((a, b) => a.priority - b.priority)
   }
 
-  @computed public get enabledCardsLength(): number {
+  public get enabledCardsLength(): number {
     return this.enabledCards.length
   }
 
-  @action private setCardsPriority = (cards: CardProps[]) => {
+  private setCardsPriority = (cards: CardProps[]) => {
     cards.forEach(({ id, priority }) => {
       const i = this.cards.findIndex((item) => item.id === id)
       if (i !== -1 && this.cards[i].priority !== priority) {
@@ -55,7 +55,7 @@ class Main {
     })
   }
 
-  @action public setCard = ({ id, ...card }: Partial<CardProps>) => {
+  public setCard = ({ id, ...card }: Partial<CardProps>) => {
     const i = this.cards.findIndex((item) => item.id === id)
     if (i === -1) {
       return
@@ -63,10 +63,7 @@ class Main {
     this.cards[i] = { ...this.cards[i], ...card }
   }
 
-  @action public moveCardUp = (
-    e: MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
+  public moveCardUp = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
@@ -81,10 +78,7 @@ class Main {
     this.setStoragePriorityItems()
   }
 
-  @action public moveCardDown = (
-    e: MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
+  public moveCardDown = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault()
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)

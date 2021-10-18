@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import React, { FC } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { BootstrapConstants } from '../../../Bootstrap/constants'
 import {
   ANIMATION_DURATION_SC,
   BORDER_RADIUS,
@@ -45,7 +45,7 @@ export const StyledTitleLink = styled.a`
   }
 `
 export const Title: FC = observer(() => {
-  const { appUrl, appName, version } = BootstrapStore
+  const { appUrl, appName, version } = BootstrapConstants
   return (
     <StyledTitle>
       {UpdaterStore.newVersion ? (

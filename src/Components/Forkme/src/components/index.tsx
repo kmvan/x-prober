@@ -1,7 +1,7 @@
 import { rgba } from 'polished'
 import React, { FC } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { BootstrapConstants } from '../../../Bootstrap/constants'
 import { ANIMATION_DURATION_SC, GUTTER } from '../../../Config/src'
 import { gettext } from '../../../Language/src'
 import { device } from '../../../Style/src/components/devices'
@@ -64,7 +64,11 @@ const StyledForkmeLink = styled.a`
   }
 `
 export const Forkme: FC = () => (
-  <StyledForkmeLink href={BootstrapStore.appUrl} target='_blank' title='Fork'>
+  <StyledForkmeLink
+    href={BootstrapConstants.appUrl}
+    target='_blank'
+    title='Fork'
+  >
     {gettext('STAR 🌟 ME')}
   </StyledForkmeLink>
 )

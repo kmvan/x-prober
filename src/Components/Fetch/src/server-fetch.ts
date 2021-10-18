@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import { BootstrapStore } from '../../Bootstrap/src/stores'
+import { BootstrapConstants } from '../../Bootstrap/constants'
 
 interface ServerFetchProps {
   data?: any
@@ -14,7 +14,7 @@ export const serverFetch = async (
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: BootstrapStore.conf?.authorization,
+        Authorization: BootstrapConstants.conf?.authorization ?? '',
       },
       cache: 'no-cache',
       credentials: 'omit',

@@ -1,12 +1,13 @@
 import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { PhpInfo as component } from './components'
-import { PhpInfoStore } from './stores'
+import { PhpInfoConstants } from './constants'
 
 export const PhpInfoBootstrap = (): void => {
-  PhpInfoStore.enabled &&
+  const { id, isEnable } = PhpInfoConstants
+  isEnable &&
     CardStore.addCard({
-      id: PhpInfoStore.ID,
+      id,
       title: gettext('PHP Information'),
       tinyTitle: gettext('PHP'),
       priority: 400,

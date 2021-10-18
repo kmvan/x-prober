@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
-import { action, configure, makeObservable, observable } from 'mobx'
-import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { configure, makeAutoObservable } from 'mobx'
+import { BootstrapConstants } from '../../../Bootstrap/constants'
 import { gettext } from '../../../Language/src'
 import { ToastStore } from '../../../Toast/src/stores'
 import { AppConfigProps } from '../typings'
@@ -9,15 +9,15 @@ configure({
   enforceActions: 'observed',
 })
 class Main {
-  @observable public appConfig: AppConfigProps | null = null
+  public appConfig: AppConfigProps | null = null
 
   constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
     this.fetch()
   }
 
   private fetch = async () => {
-    const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapStore
+    const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapConstants
     let configStatus = false
     // dev version
     if (isDev) {
@@ -56,7 +56,7 @@ class Main {
     }
   }
 
-  @action public setAppConfig = (appConfig: AppConfigProps) => {
+  public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }
 }

@@ -1,32 +1,29 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx'
+import { configure, makeAutoObservable } from 'mobx'
 import { CardStore } from '../../../Card/src/stores'
 import { serverFetch } from '../../../Fetch/src/server-fetch'
 import { OK } from '../../../Restful/src/http-status'
+import { TemperatureSensorConstants } from '../constants'
+import { TemperatureSensorItemProps } from '../typings'
 
 configure({
   enforceActions: 'observed',
 })
-export interface TemperatureSensorItemProps {
-  id: string
-  name: string
-  celsius: number
-}
-class Main {
-  public readonly ID = 'temperatureSensor'
 
-  @observable public items: TemperatureSensorItemProps[] = []
+const { id } = TemperatureSensorConstants
+class Main {
+  public items: TemperatureSensorItemProps[] = []
 
   public constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
   }
 
-  @action public setItems = (items: TemperatureSensorItemProps[]) => {
+  public setItems = (items: TemperatureSensorItemProps[]) => {
     this.items = items
   }
 
-  @action private setEnabledCard = (): void => {
+  private setEnabledCard = (): void => {
     const { setCard, cards } = CardStore
-    const item = cards.find(({ id }) => id === this.ID)
+    const item = cards.find((item) => item.id === id)
     if (!item) {
       return
     }
@@ -34,12 +31,12 @@ class Main {
       return
     }
     setCard({
-      id: this.ID,
+      id,
       enabled: true,
     })
   }
 
-  @action public fetch = async () => {
+  public fetch = async () => {
     const { data: items, status } = await serverFetch('temperature-sensor')
     if (status === OK) {
       this.setItems(items)
@@ -50,7 +47,7 @@ class Main {
     }
   }
 
-  @computed public get itemsCount() {
+  public get itemsCount() {
     return this.items.length
   }
 }

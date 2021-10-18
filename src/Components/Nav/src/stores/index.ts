@@ -1,16 +1,16 @@
-import { action, configure, makeAutoObservable, observable } from 'mobx'
+import { configure, makeAutoObservable } from 'mobx'
 
 configure({
   enforceActions: 'observed',
 })
 class Main {
-  @observable public activeIndex = 0
+  public activeIndex = 0
 
   public constructor() {
     makeAutoObservable(this)
   }
 
-  @action public setActiveIndex = (activeIndex: number) => {
+  public setActiveIndex = (activeIndex: number) => {
     this.activeIndex = activeIndex
   }
 }
