@@ -11,6 +11,7 @@ import { Row } from '../../../Grid/src/components/row'
 import { gettext } from '../../../Language/src'
 import { OK, TOO_MANY_REQUESTS } from '../../../Restful/src/http-status'
 import { template } from '../../../Utils/src/components/template'
+import { ServerBenchmarkConstants } from '../constants'
 import { ServerBenchmarkStore } from '../stores'
 
 const StyledTextBtn = styled.a`
@@ -207,7 +208,7 @@ export const ServerBenchmark: FC = observer(() => {
         )}
       </CardDes>
       <Row>
-        {ServerBenchmarkStore.enabledMyServerBenchmark && (
+        {ServerBenchmarkConstants.conf?.enabledMyServerBenchmark && (
           <TestBtn onClick={onClick} />
         )}
         <Items />

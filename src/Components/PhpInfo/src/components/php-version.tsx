@@ -6,15 +6,15 @@ import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { template } from '../../../Utils/src/components/template'
 import { versionCompare } from '../../../Utils/src/components/version-compare'
+import { PhpInfoConstants } from '../constants'
 import { PhpInfoStore } from '../stores'
 
 export const PhpInfoPhpVersion: FC = observer(() => {
   const {
-    setLatestPhpVersion,
-    setLatestPhpDate,
-    latestPhpVersion,
     conf: { version },
-  } = PhpInfoStore
+  } = PhpInfoConstants
+  const { setLatestPhpVersion, setLatestPhpDate, latestPhpVersion } =
+    PhpInfoStore
   const fetch = useCallback(async () => {
     const { data, status } = await serverFetch('latest-php-version')
     if (status === OK) {

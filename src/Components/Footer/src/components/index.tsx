@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { BootstrapStore } from '../../../Bootstrap/src/stores'
+import { BootstrapConstants } from '../../../Bootstrap/constants'
 import { GUTTER } from '../../../Config/src'
 import { gettext } from '../../../Language/src'
 import { device } from '../../../Style/src/components/devices'
@@ -29,7 +29,7 @@ const StyledFooter = styled.div`
   }
 `
 export const Footer: FC = observer(() => {
-  const { appName, appUrl, authorName, authorUrl } = BootstrapStore
+  const { appName, appUrl, authorName, authorUrl } = BootstrapConstants
   const { memUsage, time } = FooterStore.conf
   return (
     <StyledFooter

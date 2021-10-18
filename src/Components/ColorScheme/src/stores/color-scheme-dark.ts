@@ -1,11 +1,11 @@
 import { darken, lighten, rgba } from 'polished'
 import { gettext } from '../../../Language/src'
-import { colorSchemeProps } from '../typings'
+import { ColorSchemeProps } from '../typings'
 
 const light = '#ccc'
 const dark = '#000'
 const topDarkBottomLight = `linear-gradient(#000, #111)`
-export const colorSchemeDark: colorSchemeProps = {
+export const colorSchemeDark: ColorSchemeProps = {
   name: gettext('Dark'),
   isDark: true,
   color: `linear-gradient(${rgba(light, 0.3)}, ${rgba(dark, 0.9)})`,

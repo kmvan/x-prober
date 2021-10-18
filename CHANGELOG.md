@@ -2,6 +2,13 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.4.0 - 2021-10-18
+
+### Optimize
+
+- Optimize store for Mobx6
+- Update packages
+
 ## 8.3.0 - 2021-08-16
 
 ### Fix

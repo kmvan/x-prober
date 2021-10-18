@@ -1,13 +1,6 @@
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable,
-  toJS,
-} from 'mobx'
+import { configure, makeAutoObservable, toJS } from 'mobx'
 import { DataProps } from '../../../Fetch/src/stores'
-import { conf } from '../../../Utils/src/components/conf'
+import { NodesConstants } from '../constants'
 
 configure({
   enforceActions: 'observed',
@@ -21,13 +14,8 @@ export interface NodesItemProps {
   errMsg: string
   data: DataProps
 }
+const { conf } = NodesConstants
 class Main {
-  public readonly ID = 'nodes'
-
-  public readonly conf = conf?.[this.ID]
-
-  public readonly enabled: boolean = Boolean(this.conf)
-
   public readonly DEFAULT_ITEM = {
     id: '',
     url: '',
@@ -36,11 +24,11 @@ class Main {
     fetchUrl: '',
   }
 
-  @observable public items: NodesItemProps[] = []
+  public items: NodesItemProps[] = []
 
   public constructor() {
-    makeObservable(this)
-    const items = (this.conf?.items || []).map(({ url, ...props }) => ({
+    makeAutoObservable(this)
+    const items = (conf?.items ?? []).map(({ url, ...props }) => ({
       ...this.DEFAULT_ITEM,
       ...{
         url,
@@ -51,11 +39,11 @@ class Main {
     this.setItems(items)
   }
 
-  @action public setItems = (items: NodesItemProps[]) => {
+  public setItems = (items: NodesItemProps[]) => {
     this.items = items
   }
 
-  @action public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
+  public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
     const i = this.items.findIndex((item) => item.id === id)
     if (i === -1) {
       return
@@ -63,7 +51,7 @@ class Main {
     this.items[i] = { ...toJS(this.items[i]), ...props }
   }
 
-  @computed public get itemsCount() {
+  public get itemsCount() {
     return this.items.length
   }
 }

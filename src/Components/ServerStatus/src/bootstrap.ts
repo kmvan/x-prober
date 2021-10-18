@@ -1,12 +1,13 @@
 import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { ServerStatus as component } from './components'
-import { ServerStatusStore } from './stores'
+import { ServerStatusConstants } from './constants'
 
 export const ServerStatusBoostrap = (): void => {
-  ServerStatusStore.enabled &&
+  const { id, isEnable } = ServerStatusConstants
+  isEnable &&
     CardStore.addCard({
-      id: ServerStatusStore.ID,
+      id,
       title: gettext('Server Status'),
       tinyTitle: gettext('Status'),
       priority: 100,

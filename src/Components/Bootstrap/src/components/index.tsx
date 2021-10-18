@@ -24,7 +24,6 @@ import { TemperatureSensorBoostrap } from '../../../TemperatureSensor/src/bootst
 import { Title } from '../../../Title/src/components'
 import { Toast } from '../../../Toast/src/components'
 import { ready } from '../../../Utils/src/components/ready'
-import { BootstrapStore } from '../stores'
 import { Normalize } from './style'
 
 DatabaseBootstrap()
@@ -62,7 +61,7 @@ const Bootstrap: FC = observer(() => (
   <ThemeProvider theme={ColorSchemeStore.scheme}>
     <Normalize />
     <Title />
-    <StyledApp ref={(c) => BootstrapStore.setAppContainer(c)}>
+    <StyledApp>
       <Container>
         <ColorScheme />
         <Cards />

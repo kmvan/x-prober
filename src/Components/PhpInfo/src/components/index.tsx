@@ -6,11 +6,11 @@ import { Row } from '../../../Grid/src/components/row'
 import { gettext } from '../../../Language/src'
 import { Alert } from '../../../Utils/src/components/alert'
 import { SearchLink } from '../../../Utils/src/components/search-link'
-import { PhpInfoStore } from '../stores'
+import { PhpInfoConstants } from '../constants'
 import { PhpInfoPhpVersion } from './php-version'
 
 export const PhpInfo: FC = observer(() => {
-  const { conf } = PhpInfoStore
+  const { conf } = PhpInfoConstants
   const oneLineItems: Array<[string, ReactNode]> = [
     [
       'PHP info',
@@ -40,8 +40,8 @@ export const PhpInfo: FC = observer(() => {
     [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
   ]
   const { disableFunctions, disableClasses } = conf
-  disableFunctions.sort()
-  disableClasses.sort()
+  disableFunctions.slice().sort()
+  disableClasses.slice().sort()
   const longItems: Array<[string, ReactNode]> = [
     [
       gettext('Disabled functions'),

@@ -1,12 +1,13 @@
 import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { PhpExtensions as component } from './components'
-import { PhpExtensionsStore } from './stores'
+import { PhpExtensionsConstants } from './constants'
 
 export const PhpExtensionsBootstrap = (): void => {
-  PhpExtensionsStore.enabled &&
+  const { id, isEnable } = PhpExtensionsConstants
+  isEnable &&
     CardStore.addCard({
-      id: PhpExtensionsStore.ID,
+      id,
       title: gettext('PHP Extensions'),
       tinyTitle: gettext('Ext'),
       priority: 500,

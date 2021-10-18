@@ -4,9 +4,6 @@ import { conf } from '../../../Utils/src/components/conf'
 configure({
   enforceActions: 'observed',
 })
-export interface PingItemProps {
-  time: number
-}
 class Main {
   public readonly ID = 'myInfo'
 

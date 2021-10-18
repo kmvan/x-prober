@@ -1,4 +1,4 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx'
+import { configure, makeAutoObservable } from 'mobx'
 import { serverFetch } from '../../../Fetch/src/server-fetch'
 import { FetchStore } from '../../../Fetch/src/stores'
 import { gettext } from '../../../Language/src'
@@ -37,27 +37,27 @@ class Main {
 
   public readonly enabled: boolean = Boolean(this.conf)
 
-  @observable public serverIpv4: string = gettext('Loading...')
+  public serverIpv4: string = gettext('Loading...')
 
-  @observable public serverIpv6: string = gettext('Loading...')
+  public serverIpv6: string = gettext('Loading...')
 
-  @observable public serverLocation: LocationProps | null = null
+  public serverLocation: LocationProps | null = null
 
   public constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
     this.fetchServerIpv4()
     this.fetchServerIpv6()
   }
 
-  @action public setServerLocation = (serverLocation: LocationProps) => {
+  public setServerLocation = (serverLocation: LocationProps) => {
     this.serverLocation = serverLocation
   }
 
-  @action public setServerIpv4 = (serverIpv4: string) => {
+  public setServerIpv4 = (serverIpv4: string) => {
     this.serverIpv4 = serverIpv4
   }
 
-  @action public setServerIpv6 = (serverIpv6: string) => {
+  public setServerIpv6 = (serverIpv6: string) => {
     this.serverIpv6 = serverIpv6
   }
 
@@ -79,25 +79,25 @@ class Main {
     }
   }
 
-  @computed public get serverTime(): string {
+  public get serverTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverTime
       : FetchStore.data?.[this.ID]?.serverTime
   }
 
-  @computed public get serverUptime(): UptimeProps {
+  public get serverUptime(): UptimeProps {
     return FetchStore.isLoading
       ? this.conf?.serverUptime
       : FetchStore.data?.[this.ID]?.serverUptime
   }
 
-  @computed public get serverUtcTime(): string {
+  public get serverUtcTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverUtcTime
       : FetchStore.data?.[this.ID]?.serverUtcTime
   }
 
-  @computed public get diskUsage(): ServerInfoDiskUsageProps {
+  public get diskUsage(): ServerInfoDiskUsageProps {
     return FetchStore.isLoading
       ? this.conf?.diskUsage
       : FetchStore.data?.[this.ID]?.diskUsage

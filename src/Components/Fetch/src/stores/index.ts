@@ -1,10 +1,10 @@
-import { action, configure, makeObservable, observable } from 'mobx'
-import { serverFetch } from '../server-fetch'
+import { configure, makeAutoObservable } from 'mobx'
 import { gettext } from '../../../Language/src'
 import { NetworkStatsItemProps } from '../../../NetworkStats/src/stores'
 import { OK } from '../../../Restful/src/http-status'
 import { ServerInfoDataProps } from '../../../ServerInfo/src/stores'
 import { ServerStatusDataProps } from '../../../ServerStatus/src/stores'
+import { serverFetch } from '../server-fetch'
 
 configure({
   enforceActions: 'observed',
@@ -19,12 +19,12 @@ export interface DataProps {
   networkStats: DataNetworkStatsProps
 }
 class Main {
-  @observable public isLoading = true
+  public isLoading = true
 
-  @observable public data = {}
+  public data = {}
 
   constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
     this.initFetch()
   }
 
@@ -41,11 +41,11 @@ class Main {
     }
   }
 
-  @action public setIsLoading = (isLoading: boolean) => {
+  public setIsLoading = (isLoading: boolean) => {
     this.isLoading = isLoading
   }
 
-  @action public setData = (data: any) => {
+  public setData = (data: any) => {
     this.data = data
   }
 }

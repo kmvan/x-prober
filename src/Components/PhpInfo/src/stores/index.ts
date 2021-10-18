@@ -1,29 +1,22 @@
-import { action, configure, makeObservable, observable } from 'mobx'
-import { conf } from '../../../Utils/src/components/conf'
+import { configure, makeAutoObservable } from 'mobx'
 
 configure({
   enforceActions: 'observed',
 })
 class Main {
-  public readonly ID = 'phpInfo'
+  public latestPhpVersion = ''
 
-  public readonly conf = conf?.[this.ID]
-
-  public readonly enabled: boolean = Boolean(this.conf)
-
-  @observable public latestPhpVersion = ''
-
-  @observable public latestPhpDate = ''
+  public latestPhpDate = ''
 
   public constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
   }
 
-  @action public setLatestPhpVersion = (latestPhpVersion: string) => {
+  public setLatestPhpVersion = (latestPhpVersion: string) => {
     this.latestPhpVersion = latestPhpVersion
   }
 
-  @action public setLatestPhpDate = (latestPhpDate: string) => {
+  public setLatestPhpDate = (latestPhpDate: string) => {
     this.latestPhpDate = latestPhpDate
   }
 }

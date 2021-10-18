@@ -1,51 +1,46 @@
-import { computed, configure, makeObservable } from 'mobx'
+import { configure, makeAutoObservable } from 'mobx'
 import { FetchStore } from '../../../Fetch/src/stores'
-import { conf } from '../../../Utils/src/components/conf'
+import { NetworkStatsConstants } from '../constants'
 
 configure({
   enforceActions: 'observed',
 })
+const { conf, id } = NetworkStatsConstants
 export interface NetworkStatsItemProps {
   id: string
   rx: number
   tx: number
 }
 class Main {
-  public readonly ID = 'networkStats'
-
-  public readonly conf = conf?.[this.ID]
-
-  public readonly enabled: boolean = Boolean(this.conf)
-
   public constructor() {
-    makeObservable(this)
+    makeAutoObservable(this)
   }
 
-  @computed public get items(): NetworkStatsItemProps[] {
+  public get items(): NetworkStatsItemProps[] {
     return (
       (FetchStore.isLoading
-        ? this.conf?.networks
-        : FetchStore.data?.[this.ID]?.networks) || []
+        ? conf?.networks
+        : FetchStore.data?.[id]?.networks) || []
     )
   }
 
-  @computed public get sortItems() {
+  public get sortItems() {
     return this.items
       .slice()
       .filter(({ tx }) => Boolean(tx))
       .sort((a, b) => a.tx - b.tx)
   }
 
-  @computed public get itemsCount() {
+  public get itemsCount() {
     return this.sortItems.length
   }
 
-  @computed public get timestamp(): number {
+  public get timestamp(): number {
     return (
       (FetchStore.isLoading
-        ? this.conf?.timestamp
-        : FetchStore.data?.[this.ID]?.timestamp) ||
-      this.conf?.timestamp ||
+        ? conf?.timestamp
+        : FetchStore.data?.[id]?.timestamp) ||
+      conf?.timestamp ||
       0
     )
   }
