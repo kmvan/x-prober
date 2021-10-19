@@ -8,7 +8,7 @@ class Action
 {
     public function __construct()
     {
-        $action = (string) filter_input(\INPUT_GET, 'action', \FILTER_SANITIZE_STRING);
+        $action = (string) filter_input(\INPUT_GET, 'action', \FILTER_DEFAULT);
         EventsApi::emit('init', $action);
 
         if ($action) {
