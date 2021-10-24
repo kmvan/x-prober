@@ -207,7 +207,7 @@ export const ServerBenchmark: FC = observer(() => {
         )}
       </CardDes>
       <Row>
-        {ServerBenchmarkConstants.conf?.enabledMyServerBenchmark && (
+        {ServerBenchmarkConstants.conf?.disabledMyServerBenchmark || (
           <TestBtn onClick={onClick} />
         )}
         <Items />
