@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.6.0 - 2021-10-25
+
+### Fix
+
+- Fix my server benchmark button error
+
 ## 8.5.0 - 2021-10-19
 
 ### Fix
