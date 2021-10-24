@@ -6,7 +6,6 @@ import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { ToastStore } from '../../../Toast/src/stores'
 import { LocationProps } from '../stores'
-
 interface ServerLocationProps {
   action: string
 }

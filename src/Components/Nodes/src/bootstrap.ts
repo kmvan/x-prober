@@ -2,7 +2,6 @@ import { CardStore } from '../../Card/src/stores'
 import { gettext } from '../../Language/src'
 import { Nodes as component } from './components'
 import { NodesConstants } from './constants'
-
 export const NodesBoostrap = (): void => {
   const { id, isEnable, conf } = NodesConstants
   isEnable &&

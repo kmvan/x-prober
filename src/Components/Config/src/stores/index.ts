@@ -4,18 +4,15 @@ import { BootstrapConstants } from '../../../Bootstrap/constants'
 import { gettext } from '../../../Language/src'
 import { ToastStore } from '../../../Toast/src/stores'
 import { AppConfigProps } from '../typings'
-
 configure({
   enforceActions: 'observed',
 })
 class Main {
   public appConfig: AppConfigProps | null = null
-
   constructor() {
     makeAutoObservable(this)
     this.fetch()
   }
-
   private fetch = async () => {
     const { isDev, appConfigUrls, appConfigUrlDev } = BootstrapConstants
     let configStatus = false
@@ -55,7 +52,6 @@ class Main {
       )
     }
   }
-
   public setAppConfig = (appConfig: AppConfigProps) => {
     this.appConfig = appConfig
   }

@@ -4,7 +4,6 @@ import { FetchStore } from '../../../Fetch/src/stores'
 import { gettext } from '../../../Language/src'
 import { ProgressBar } from '../../../ProgressBar/src/components'
 import { ServerInfoStore } from '../stores'
-
 export const ServerDiskUsage: FC = observer(() => {
   const { ID, conf } = ServerInfoStore
   const { isLoading, data } = FetchStore

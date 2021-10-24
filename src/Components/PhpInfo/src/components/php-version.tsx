@@ -8,7 +8,6 @@ import { template } from '../../../Utils/src/components/template'
 import { versionCompare } from '../../../Utils/src/components/version-compare'
 import { PhpInfoConstants } from '../constants'
 import { PhpInfoStore } from '../stores'
-
 export const PhpInfoPhpVersion: FC = observer(() => {
   const {
     conf: { version },

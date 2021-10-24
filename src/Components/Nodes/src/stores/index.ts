@@ -1,7 +1,6 @@
 import { configure, makeAutoObservable, toJS } from 'mobx'
 import { DataProps } from '../../../Fetch/src/stores'
 import { NodesConstants } from '../constants'
-
 configure({
   enforceActions: 'observed',
 })
@@ -23,9 +22,7 @@ class Main {
     isError: false,
     fetchUrl: '',
   }
-
   public items: NodesItemProps[] = []
-
   public constructor() {
     makeAutoObservable(this)
     const items = (conf?.items ?? []).map(({ url, ...props }) => ({
@@ -38,11 +35,9 @@ class Main {
     }))
     this.setItems(items)
   }
-
   public setItems = (items: NodesItemProps[]) => {
     this.items = items
   }
-
   public setItem = ({ id, ...props }: Partial<NodesItemProps>) => {
     const i = this.items.findIndex((item) => item.id === id)
     if (i === -1) {
@@ -50,7 +45,6 @@ class Main {
     }
     this.items[i] = { ...toJS(this.items[i]), ...props }
   }
-
   public get itemsCount() {
     return this.items.length
   }

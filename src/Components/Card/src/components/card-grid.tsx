@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
 import { Grid, GridProps } from '../../../Grid/src/components/grid'
 import { device } from '../../../Style/src/components/devices'
-
 export interface CardGridProps extends GridProps {
   name?: ReactNode
   children: ReactNode

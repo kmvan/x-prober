@@ -5,7 +5,6 @@ import { CardGrid } from '../../../Card/src/components/card-grid'
 import { Row } from '../../../Grid/src/components/row'
 import { NetworkStatsStore } from '../stores'
 import { NetworksStatsItem } from './item'
-
 export const NetworkStats: FC = observer(() => {
   const { sortItems, itemsCount, timestamp } = NetworkStatsStore
   if (!itemsCount) {

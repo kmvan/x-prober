@@ -13,7 +13,6 @@ import { OK, TOO_MANY_REQUESTS } from '../../../Restful/src/http-status'
 import { template } from '../../../Utils/src/components/template'
 import { ServerBenchmarkConstants } from '../constants'
 import { ServerBenchmarkStore } from '../stores'
-
 const StyledTextBtn = styled.a`
   display: block;
 `

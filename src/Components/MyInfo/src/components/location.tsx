@@ -6,7 +6,6 @@ import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { LocationProps } from '../../../ServerInfo/src/stores'
 import { ToastStore } from '../../../Toast/src/stores'
-
 interface ClientLocationProps {
   ip: string
 }

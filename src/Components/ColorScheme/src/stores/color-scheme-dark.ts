@@ -1,7 +1,6 @@
 import { darken, lighten, rgba } from 'polished'
 import { gettext } from '../../../Language/src'
 import { ColorSchemeProps } from '../typings'
-
 const light = '#ccc'
 const dark = '#000'
 const topDarkBottomLight = `linear-gradient(#000, #111)`

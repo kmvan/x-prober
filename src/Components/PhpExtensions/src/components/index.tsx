@@ -6,7 +6,6 @@ import { gettext } from '../../../Language/src'
 import { Alert } from '../../../Utils/src/components/alert'
 import { SearchLink } from '../../../Utils/src/components/search-link'
 import { PhpExtensionsConstants } from '../constants'
-
 const { conf } = PhpExtensionsConstants
 const shortItems: [string, boolean][] = [
   ['Redis', Boolean(conf?.redis)],

@@ -7,7 +7,6 @@ import { MemRealUsage } from './mem-real-usage'
 import { SwapCached } from './swap-cached'
 import { SwapUsage } from './swap-usage'
 import { SystemLoad } from './system-load'
-
 export const ServerStatus: FC = () => (
   <Row>
     <SystemLoad />

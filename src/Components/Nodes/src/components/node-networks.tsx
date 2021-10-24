@@ -6,7 +6,6 @@ import {
   StyledNetworkIdRow,
 } from '../../../NetworkStats/src/components/item'
 import { NetworkStatsItemProps } from '../../../NetworkStats/src/stores'
-
 const StyledNodeGroupNetworks = styled.div`
   border-radius: ${BORDER_RADIUS};
   background: ${({ theme }) => theme['network.node.bg']};
