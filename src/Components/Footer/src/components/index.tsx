@@ -8,7 +8,6 @@ import { device } from '../../../Style/src/components/devices'
 import { formatBytes } from '../../../Utils/src/components/format-bytes'
 import { template } from '../../../Utils/src/components/template'
 import { FooterStore } from '../stores'
-
 const StyledFooter = styled.div`
   background: ${({ theme }) => theme['footer.bg']};
   color: ${({ theme }) => theme['footer.fg']};

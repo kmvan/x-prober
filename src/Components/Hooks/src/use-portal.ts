@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-
 export const usePortal = (id?: string): HTMLDivElement => {
   const rootElemRef = useRef<HTMLDivElement>(document.createElement('div'))
   useEffect(() => {

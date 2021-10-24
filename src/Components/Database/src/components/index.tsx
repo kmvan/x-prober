@@ -4,7 +4,6 @@ import { CardGrid } from '../../../Card/src/components/card-grid'
 import { Row } from '../../../Grid/src/components/row'
 import { Alert } from '../../../Utils/src/components/alert'
 import { DatabaseStore } from '../stores'
-
 export const Database: FC = observer(() => {
   const { conf } = DatabaseStore
   const shortItems: [string, boolean | string][] = [

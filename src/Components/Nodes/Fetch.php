@@ -23,7 +23,7 @@ class Fetch extends NodesApi
                 // no break
             case 'node':
                 EventsApi::emit('fetchNodeBefore');
-                $nodeId   = filter_input(\INPUT_GET, 'nodeId', \FILTER_SANITIZE_STRING);
+                $nodeId   = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
                 $response = new RestfulResponse();
 
                 if ( ! $nodeId) {

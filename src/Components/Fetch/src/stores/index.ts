@@ -5,7 +5,6 @@ import { OK } from '../../../Restful/src/http-status'
 import { ServerInfoDataProps } from '../../../ServerInfo/src/stores'
 import { ServerStatusDataProps } from '../../../ServerStatus/src/stores'
 import { serverFetch } from '../server-fetch'
-
 configure({
   enforceActions: 'observed',
 })
@@ -20,14 +19,11 @@ export interface DataProps {
 }
 class Main {
   public isLoading = true
-
   public data = {}
-
   constructor() {
     makeAutoObservable(this)
     this.initFetch()
   }
-
   public initFetch = async () => {
     const { data, status } = await serverFetch('fetch')
     if (data && status === OK) {
@@ -40,11 +36,9 @@ class Main {
       alert(gettext('Fetch error, please refresh page.'))
     }
   }
-
   public setIsLoading = (isLoading: boolean) => {
     this.isLoading = isLoading
   }
-
   public setData = (data: any) => {
     this.data = data
   }

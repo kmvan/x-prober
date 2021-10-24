@@ -25,7 +25,6 @@ import { Title } from '../../../Title/src/components'
 import { Toast } from '../../../Toast/src/components'
 import { ready } from '../../../Utils/src/components/ready'
 import { Normalize } from './style'
-
 DatabaseBootstrap()
 MyInfoBootstrap()
 NetworkStatsBoostrap()

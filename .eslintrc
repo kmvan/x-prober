@@ -24,9 +24,7 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "airbnb-typescript",
-    "prettier",
-    "airbnb/hooks"
+    "prettier"
   ],
   "plugins": ["prettier", "@typescript-eslint", "react-hooks"],
   "rules": {
@@ -38,9 +36,8 @@
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-shadow": "off",
-    "import/newline-after-import": ["error", { "count": 1 }],
     "curly": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-multiple-empty-lines": ["error", { "max": 0 }],
     "eqeqeq": ["error", "always"],
     "no-else-return": "error",
     "no-implicit-coercion": "error",

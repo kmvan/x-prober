@@ -7,7 +7,6 @@ import { template } from '../../../Utils/src/components/template'
 import { ServerInfoStore } from '../stores'
 import { ServerDiskUsage } from './disk-usage'
 import { Location } from './location'
-
 const ServerInfoTime: FC = observer(() => {
   const {
     serverUptime: { days, hours, mins, secs },
@@ -48,12 +47,12 @@ export const ServerInfo: FC = observer(() => {
   const longItems = [
     [
       gettext('Server location (IPv4)'),
-      <Location action='serverLocationIpv4' />,
+      <Location key='serverLocalIpv4' action='serverLocationIpv4' />,
     ],
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
     [gettext('Server OS'), conf?.serverOs],
     [gettext('Script path'), conf?.scriptPath],
-    [gettext('Disk usage'), <ServerDiskUsage />],
+    [gettext('Disk usage'), <ServerDiskUsage key='diskUsage' />],
   ]
   return (
     <Row>

@@ -4,7 +4,6 @@ import { FetchStore } from '../../../Fetch/src/stores'
 import { gettext } from '../../../Language/src'
 import { OK } from '../../../Restful/src/http-status'
 import { conf } from '../../../Utils/src/components/conf'
-
 configure({
   enforceActions: 'observed',
 })
@@ -32,35 +31,25 @@ export interface LocationProps {
 }
 class Main {
   public readonly ID = 'serverInfo'
-
   public readonly conf = conf?.[this.ID]
-
   public readonly enabled: boolean = Boolean(this.conf)
-
   public serverIpv4: string = gettext('Loading...')
-
   public serverIpv6: string = gettext('Loading...')
-
   public serverLocation: LocationProps | null = null
-
   public constructor() {
     makeAutoObservable(this)
     this.fetchServerIpv4()
     this.fetchServerIpv6()
   }
-
   public setServerLocation = (serverLocation: LocationProps) => {
     this.serverLocation = serverLocation
   }
-
   public setServerIpv4 = (serverIpv4: string) => {
     this.serverIpv4 = serverIpv4
   }
-
   public setServerIpv6 = (serverIpv6: string) => {
     this.serverIpv6 = serverIpv6
   }
-
   public fetchServerIpv4 = async () => {
     const { data, status } = await serverFetch(`serverIpv4`)
     if (data?.ip && status === OK) {
@@ -69,7 +58,6 @@ class Main {
       this.setServerIpv4('-')
     }
   }
-
   public fetchServerIpv6 = async () => {
     const { data, status } = await serverFetch(`serverIpv6`)
     if (data?.ip && status === OK) {
@@ -78,25 +66,21 @@ class Main {
       this.setServerIpv6('-')
     }
   }
-
   public get serverTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverTime
       : FetchStore.data?.[this.ID]?.serverTime
   }
-
   public get serverUptime(): UptimeProps {
     return FetchStore.isLoading
       ? this.conf?.serverUptime
       : FetchStore.data?.[this.ID]?.serverUptime
   }
-
   public get serverUtcTime(): string {
     return FetchStore.isLoading
       ? this.conf?.serverUtcTime
       : FetchStore.data?.[this.ID]?.serverUtcTime
   }
-
   public get diskUsage(): ServerInfoDiskUsageProps {
     return FetchStore.isLoading
       ? this.conf?.diskUsage

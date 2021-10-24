@@ -6,7 +6,6 @@ import {
   device,
   DeviceIdProps,
 } from '../../../Style/src/components/devices'
-
 interface BreakPointsProps {
   mobileSm?: [number, number]
   mobileMd?: [number, number]

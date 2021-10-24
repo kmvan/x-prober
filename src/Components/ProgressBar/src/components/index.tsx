@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
 import { formatBytes } from '../../../Utils/src/components/format-bytes'
 import { gradientColors } from '../../../Utils/src/components/gradient'
-
 export interface ProgressBarProps {
   title?: string
   value: number

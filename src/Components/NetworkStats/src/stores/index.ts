@@ -1,7 +1,6 @@
 import { configure, makeAutoObservable } from 'mobx'
 import { FetchStore } from '../../../Fetch/src/stores'
 import { NetworkStatsConstants } from '../constants'
-
 configure({
   enforceActions: 'observed',
 })
@@ -15,7 +14,6 @@ class Main {
   public constructor() {
     makeAutoObservable(this)
   }
-
   public get items(): NetworkStatsItemProps[] {
     return (
       (FetchStore.isLoading
@@ -23,18 +21,15 @@ class Main {
         : FetchStore.data?.[id]?.networks) || []
     )
   }
-
   public get sortItems() {
     return this.items
       .slice()
       .filter(({ tx }) => Boolean(tx))
       .sort((a, b) => a.tx - b.tx)
   }
-
   public get itemsCount() {
     return this.sortItems.length
   }
-
   public get timestamp(): number {
     return (
       (FetchStore.isLoading

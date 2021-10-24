@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { BORDER_RADIUS, GUTTER } from '../../../Config/src'
-
 const StyledCardDes = styled.div`
   padding: calc(${GUTTER} / 2) ${GUTTER};
   background-color: ${({ theme }) => theme['card.des.bg']};

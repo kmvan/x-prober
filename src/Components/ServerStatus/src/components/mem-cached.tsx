@@ -4,7 +4,6 @@ import { CardGrid } from '../../../Card/src/components/card-grid'
 import { gettext } from '../../../Language/src'
 import { ProgressBar } from '../../../ProgressBar/src/components'
 import { ServerStatusStore } from '../stores'
-
 export const MemCached: FC = observer(() => {
   const { max, value } = ServerStatusStore.memCached
   return (

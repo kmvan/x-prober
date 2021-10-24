@@ -2,6 +2,20 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.6.0 - 2021-10-25
+
+### Fix
+
+- Fix my server benchmark button error
+
+## 8.5.0 - 2021-10-19
+
+### Fix
+
+- Fix FILTER_SANITIZE_STRING error in PHP8.1
+
+### Optimize
+
 ## 8.4.0 - 2021-10-18
 
 ### Optimize

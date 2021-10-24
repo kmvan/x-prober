@@ -9,7 +9,6 @@ import {
 } from '../../../Restful/src/http-status'
 import { StyledTitleLink } from '../../../Title/src/components'
 import { UpdaterStore } from '../stores'
-
 export const UpdaterLink: FC = observer(() => {
   const onClick = useCallback(async () => {
     const { setIsUpdating, setIsUpdateError } = UpdaterStore

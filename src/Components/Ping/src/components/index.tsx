@@ -11,7 +11,6 @@ import { OK } from '../../../Restful/src/http-status'
 import { device } from '../../../Style/src/components/devices'
 import { template } from '../../../Utils/src/components/template'
 import { PingStore } from '../stores'
-
 const StyledPingBtn = styled.a`
   display: block;
   text-align: center;

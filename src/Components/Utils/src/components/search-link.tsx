@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../../Config/src'
-
 const StyledSearchLink = styled.a`
   margin: 0 0.2rem 0.2rem 0;
   background: ${({ theme }) => theme['search.bg']};

@@ -2,7 +2,6 @@ import { rgba } from 'polished'
 import React, { FC, HTMLAttributes, ReactNode } from 'react'
 import styled from 'styled-components'
 import { gettext } from '../../../Language/src'
-
 interface StyledRubyProps extends HTMLAttributes<HTMLElement> {
   isResult?: boolean
 }

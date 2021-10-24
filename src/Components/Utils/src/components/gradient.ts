@@ -1,6 +1,5 @@
 import { hexToRgb } from './hex-to-rgb'
 import { rgbaToHex } from './rgba-to-hex'
-
 export const gradientColors = (
   startColor: string,
   endColor: string,
