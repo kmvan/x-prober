@@ -1,5 +1,5 @@
 {
-  "php-cs-fixer.config": ".php-cs-fixer53.php",
+  "php-cs-fixer.config": ".php-cs-fixer53",
   "php-cs-fixer.allowRisky": true,
   "php.suggest.basic": false
 }

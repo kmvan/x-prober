@@ -156,7 +156,7 @@ return (new PhpCsFixer\Config())
         'object_operator_without_whitespace'               => true,
         'ordered_imports'                                  => true,
         'ordered_interfaces'                               => true,
-        'pow_to_exponentiation'                            => true,
+        'pow_to_exponentiation'                            => false,
         'psr_autoloading'                                  => true,
         'return_assignment'                                => true,
         'return_type_declaration'                          => true,
