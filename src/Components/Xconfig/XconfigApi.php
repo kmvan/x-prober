@@ -6,7 +6,7 @@ use InnStudio\Prober\Components\Utils\UtilsApi;
 
 class XconfigApi
 {
-    private static $conf = null;
+    private static $conf;
 
     private static $filename = 'xconfig.json';
 
