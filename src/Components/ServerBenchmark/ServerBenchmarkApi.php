@@ -52,7 +52,7 @@ class ServerBenchmarkApi
 
     public function getPointsByTime($time)
     {
-        return 10 ** 3 - (int) ($time * 10 ** 3);
+        return pow(10, 3) - (int) ($time * pow(10, 3));
     }
 
     public function getCpuPoints()

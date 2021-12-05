@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.7.0 - 2021-12-05
+
+### Fix
+
+- Fix `pow` function in php5.4
+
 ## 8.6.0 - 2021-10-25
 
 ### Fix
