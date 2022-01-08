@@ -23,7 +23,7 @@ export const StyledSysLoadGroupItem = styled.span`
   color: ${({ theme }) => theme['sysLoad.fg']};
   padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
   border-radius: 10rem;
-  font-family: 'Arial Black';
+  font-family: 'Arial Black', sans-serif;
   font-weight: 700;
   @media ${device('tablet')} {
     padding: calc(${GUTTER} / 10) ${GUTTER};

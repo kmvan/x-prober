@@ -25,7 +25,7 @@ const StyledForkmeLink = styled.a`
   left: 0;
   background: ${({ theme }) => theme['starMe.bg']};
   color: ${({ theme }) => theme['starMe.fg']};
-  font-family: Arial Black;
+  font-family: 'Arial Black', sans-serif;
   padding: calc(${GUTTER} / 3) calc(${GUTTER} * 3);
   font-size: calc(${GUTTER} * 0.7);
   box-shadow: 0 3px 5px ${({ theme }) => rgba(theme['starMe.bg'], 0.5)};

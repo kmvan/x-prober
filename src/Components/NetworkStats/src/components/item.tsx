@@ -35,7 +35,7 @@ const StyledNetworkStatsData = styled.div<StyledNetworkStatsDataProps>`
 `
 const StyledNetworkStatsTotal = styled.div``
 const StyledNetworkStatsRate = styled.div`
-  font-family: 'Arial Black';
+  font-family: 'Arial Black', sans-serif;
   ::before {
     margin-right: 0.5rem;
   }
