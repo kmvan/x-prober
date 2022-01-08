@@ -10,6 +10,7 @@ class Ping extends PingConstants
 {
     public function __construct()
     {
+        new Conf();
         EventsApi::on('init', array($this, 'filter'));
     }
 

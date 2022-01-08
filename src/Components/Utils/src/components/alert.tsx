@@ -10,7 +10,7 @@ const StyledAlert = styled.div<AlertContainerProps>`
   border-radius: ${GUTTER};
   align-items: center;
   justify-content: center;
-  font-family: Arial Black;
+  font-family: 'Arial Black', sans-serif;
   font-weight: bolder;
   min-width: 2em;
   padding: 0 0.5rem;

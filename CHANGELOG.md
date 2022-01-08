@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.8.0 - 2022-01-08
+
+### Fix
+
+- Fix `ping` feature error
+
+### Optimize
+
+- Optimize bold font style
+
 ## 8.7.0 - 2021-12-05
 
 ### Fix

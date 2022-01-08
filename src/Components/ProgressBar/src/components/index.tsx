@@ -23,7 +23,7 @@ const StyledProgressOverview = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme['progress.fg']};
   line-height: 2rem;
-  font-family: 'Arial Black';
+  font-family: 'Arial Black', sans-serif;
   text-shadow: 0 1px 1px #000;
 `
 const StyledProgressPercent = styled(StyledProgressOverview)`
