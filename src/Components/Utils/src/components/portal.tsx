@@ -1,10 +1,7 @@
-import { FC, ReactNode } from 'react'
-import ReactDOM from 'react-dom'
+import { FC } from 'react'
+import { createPortal } from 'react-dom'
 import { usePortal } from '../../../Hooks/src/use-portal'
-interface PortalProps {
-  children: ReactNode
-}
-export const Portal: FC<PortalProps> = ({ children }) => {
+export const Portal: FC = ({ children }) => {
   const target = usePortal()
-  return ReactDOM.createPortal(children, target)
+  return createPortal(children, target)
 }

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import React, { FC } from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import styled, { ThemeProvider } from 'styled-components'
 import { Cards } from '../../../Card/src/components'
 import { ColorScheme } from '../../../ColorScheme/src/components'
@@ -76,5 +76,5 @@ ready(() => {
   const c = document.createElement('div')
   document.body.innerHTML = ''
   document.body.appendChild(c)
-  render(<Bootstrap />, c)
+  createRoot(c).render(<Bootstrap />)
 })
