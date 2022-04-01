@@ -15,7 +15,7 @@ rimraf('.tmp', {}, () => {})
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/Components/Bootstrap/src/components/index.tsx',
+    app: './src/Components/Bootstrap/components/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, '.tmp'),
