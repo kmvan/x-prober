@@ -1,5 +1,5 @@
 import { rgba } from 'polished'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../Config'
 import { formatBytes } from '../../Utils/components/format-bytes'
@@ -81,7 +81,7 @@ const StyledProgressValue = styled.div.attrs(
     border-radius: 0;
   }
 `
-export const ProgressBar: FC<ProgressBarProps> = ({
+const MemoProgressBar: FC<ProgressBarProps> = ({
   title = '',
   value,
   max,
@@ -104,3 +104,4 @@ export const ProgressBar: FC<ProgressBarProps> = ({
     </StyledProgressBar>
   )
 }
+export const ProgressBar = memo(MemoProgressBar)
