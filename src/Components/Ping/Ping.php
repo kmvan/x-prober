@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\Ping;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Ping extends PingConstants
@@ -24,9 +24,9 @@ class Ping extends PingConstants
             return $action;
         }
 
-        $response = new RestfulResponse(array(
+        $response = new RestResponse(array(
             'time' => microtime(true) - XPROBER_TIMER,
         ));
-        $response->dieJson();
+        $response->json()->end();
     }
 }

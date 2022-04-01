@@ -3,8 +3,8 @@
 namespace InnStudio\Prober\Components\MyInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\HttpStatus;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
+use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\Utils\UtilsLocation;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
@@ -25,15 +25,15 @@ class ClientLocationIpv4 extends MyInfoConstants
             return $action;
         }
 
-        $response = new RestfulResponse();
+        $response = new RestResponse();
         $ip       = filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, array(
             'flags' => \FILTER_FLAG_IPV4,
         ));
 
         if ( ! $ip) {
-            $response->setStatus(HttpStatus::$BAD_REQUEST)->dieJson();
+            $response->setStatus(StatusCode::$BAD_REQUEST)->json()->end();
         }
 
-        $response->setData(UtilsLocation::getLocation($ip))->dieJson();
+        $response->setData(UtilsLocation::getLocation($ip))->json()->end();
     }
 }

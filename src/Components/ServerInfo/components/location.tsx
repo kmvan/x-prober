@@ -3,7 +3,7 @@ import { FC, MouseEvent, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { gettext } from '../../Language'
-import { OK } from '../../Restful/http-status'
+import { OK } from '../../Rest/http-status'
 import { ToastStore } from '../../Toast/stores'
 import { LocationProps } from '../stores'
 interface ServerLocationProps {

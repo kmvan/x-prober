@@ -1,8 +1,8 @@
 <?php
 
-namespace InnStudio\Prober\Components\Restful;
+namespace InnStudio\Prober\Components\Rest;
 
-class RestfulResponse
+class RestResponse
 {
     protected $data;
 
@@ -60,18 +60,7 @@ class RestfulResponse
         return $this->data;
     }
 
-    public function toJson()
-    {
-        $data = $this->getData();
-
-        if (null === $data) {
-            return '';
-        }
-
-        return json_encode($data);
-    }
-
-    public function dieJson()
+    public function json()
     {
         $this->httpResponseCode($this->status);
         header('Content-Type: application/json');
@@ -80,13 +69,25 @@ class RestfulResponse
         header('Cache-Control: no-store, no-cache, must-revalidate');
         header('Pragma: no-cache');
 
-        $json = $this->toJson();
+        echo $this->toJson();
 
-        if ('' === $json) {
-            exit;
+        return $this;
+    }
+
+    public function end()
+    {
+        exit;
+    }
+
+    private function toJson()
+    {
+        $data = $this->getData();
+
+        if (null === $data) {
+            return '';
         }
 
-        exit($json);
+        return json_encode($data);
     }
 
     private function httpResponseCode($code)

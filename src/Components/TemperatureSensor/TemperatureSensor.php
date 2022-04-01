@@ -5,8 +5,8 @@ namespace InnStudio\Prober\Components\TemperatureSensor;
 use Exception;
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\HttpStatus;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
+use InnStudio\Prober\Components\Rest\StatusCode;
 
 class TemperatureSensor
 {
@@ -21,17 +21,17 @@ class TemperatureSensor
             return $action;
         }
 
-        $response = new RestfulResponse();
+        $response = new RestResponse();
         $items    = $this->getItems();
 
         if ($items) {
-            $response->setData($items)->dieJson();
+            $response->setData($items)->json()->end();
         }
 
         $cpuTemp = $this->getCpuTemp();
 
         if ( ! $cpuTemp) {
-            $response->setStatus(HttpStatus::$NO_CONTENT);
+            $response->setStatus(StatusCode::$NO_CONTENT);
         }
 
         $items[] = array(
@@ -40,7 +40,7 @@ class TemperatureSensor
             'celsius' => round((float) $cpuTemp / 1000, 2),
         );
 
-        $response->setData($items)->dieJson();
+        $response->setData($items)->json()->end();
     }
 
     private function curl($url)

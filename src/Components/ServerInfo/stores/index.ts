@@ -2,7 +2,7 @@ import { configure, makeAutoObservable } from 'mobx'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { FetchStore } from '../../Fetch/stores'
 import { gettext } from '../../Language'
-import { OK } from '../../Restful/http-status'
+import { OK } from '../../Rest/http-status'
 import { conf } from '../../Utils/components/conf'
 configure({
   enforceActions: 'observed',

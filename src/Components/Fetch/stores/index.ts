@@ -1,7 +1,7 @@
 import { configure, makeAutoObservable } from 'mobx'
 import { gettext } from '../../Language'
 import { NetworkStatsItemProps } from '../../NetworkStats/stores'
-import { OK } from '../../Restful/http-status'
+import { OK } from '../../Rest/http-status'
 import { ServerInfoDataProps } from '../../ServerInfo/stores'
 import { ServerStatusDataProps } from '../../ServerStatus/typings'
 import { serverFetch } from '../server-fetch'

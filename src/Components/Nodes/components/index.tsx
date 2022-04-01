@@ -7,7 +7,7 @@ import { Grid } from '../../Grid/components/grid'
 import { Row } from '../../Grid/components/row'
 import { gettext } from '../../Language'
 import { ProgressBar } from '../../ProgressBar/components'
-import { OK } from '../../Restful/http-status'
+import { OK } from '../../Rest/http-status'
 import { SysLoadGroup } from '../../ServerStatus/components/system-load'
 import {
   ServerStatusCpuUsageProps,

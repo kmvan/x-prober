@@ -3,8 +3,8 @@
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\HttpStatus;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
+use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
 class Init extends ServerBenchmarkApi
@@ -30,14 +30,13 @@ class Init extends ServerBenchmarkApi
     private function display()
     {
         $remainingSeconds = $this->getRemainingSeconds();
-        $response         = new RestfulResponse();
+        $response         = new RestResponse();
 
         if ($remainingSeconds) {
-            $response->setStatus(HttpStatus::$TOO_MANY_REQUESTS);
+            $response->setStatus(StatusCode::$TOO_MANY_REQUESTS);
             $response->setData(array(
                 'seconds' => $remainingSeconds,
-            ));
-            $response->dieJson();
+            ))->json()->end();
         }
 
         set_time_limit(0);
@@ -53,7 +52,6 @@ class Init extends ServerBenchmarkApi
 
         $response->setData(array(
             'marks' => $marks,
-        ));
-        $response->dieJson();
+        ))->json()->end();
     }
 }

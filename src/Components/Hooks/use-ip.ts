@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { gettext } from '../Language'
-import { OK } from '../Restful/http-status'
+import { OK } from '../Rest/http-status'
 interface UseIpProps {
   ip: string
   msg: string

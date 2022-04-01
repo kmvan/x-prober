@@ -3,8 +3,8 @@
 namespace InnStudio\Prober\Components\Nodes;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\HttpStatus;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
+use InnStudio\Prober\Components\Rest\StatusCode;
 
 class Fetch extends NodesApi
 {
@@ -18,25 +18,25 @@ class Fetch extends NodesApi
         switch ($action) {
             case 'nodes':
                 EventsApi::emit('fetchNodesBefore');
-                $response = new RestfulResponse(EventsApi::emit('nodes', array()));
-                $response->dieJson();
+                $response = new RestResponse(EventsApi::emit('nodes', array()));
+                $response->json()->end();
                 // no break
             case 'node':
                 EventsApi::emit('fetchNodeBefore');
                 $nodeId   = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
-                $response = new RestfulResponse();
+                $response = new RestResponse();
 
                 if ( ! $nodeId) {
-                    $response->setStatus(HttpStatus::$BAD_REQUEST)->dieJson();
+                    $response->setStatus(StatusCode::$BAD_REQUEST)->json()->end();
                 }
 
                 $data = $this->getNodeData($nodeId);
 
                 if ( ! $data) {
-                    $response->setStatus(HttpStatus::$NO_CONTENT)->dieJson();
+                    $response->setStatus(StatusCode::$NO_CONTENT)->json()->end();
                 }
 
-                $response->setData($data)->dieJson();
+                $response->setData($data)->json()->end();
         }
 
         return $action;

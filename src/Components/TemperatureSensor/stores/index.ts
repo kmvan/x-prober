@@ -1,7 +1,7 @@
 import { configure, makeAutoObservable } from 'mobx'
 import { CardStore } from '../../Card/stores'
 import { serverFetch } from '../../Fetch/server-fetch'
-import { OK } from '../../Restful/http-status'
+import { OK } from '../../Rest/http-status'
 import { TemperatureSensorConstants } from '../constants'
 import { TemperatureSensorItemProps } from '../typings'
 configure({

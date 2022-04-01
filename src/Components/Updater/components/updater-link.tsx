@@ -6,7 +6,7 @@ import {
   INSUFFICIENT_STORAGE,
   INTERNAL_SERVER_ERROR,
   OK,
-} from '../../Restful/http-status'
+} from '../../Rest/http-status'
 import { StyledTitleLink } from '../../Title/components'
 import { UpdaterStore } from '../stores'
 export const UpdaterLink: FC = observer(() => {

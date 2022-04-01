@@ -1,8 +1,8 @@
 <?php
 
-namespace InnStudio\Prober\Components\Restful;
+namespace InnStudio\Prober\Components\Rest;
 
-class HttpStatus
+class StatusCode
 {
     public static $__default = 200;
 
