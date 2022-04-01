@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { GUTTER, MAX_WIDTH } from '../../Config'
 import { device } from '../../Style/components/devices'

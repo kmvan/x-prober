@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, useCallback, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import { CardLink } from '../../Card/components/card-link'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { gettext } from '../../Language'

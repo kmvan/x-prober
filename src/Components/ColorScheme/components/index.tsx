@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { ANIMATION_DURATION_SC, BORDER_RADIUS, GUTTER } from '../../Config'
 import { ColorSchemeStore } from '../stores'

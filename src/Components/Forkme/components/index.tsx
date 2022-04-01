@@ -1,5 +1,5 @@
 import { rgba } from 'polished'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { BootstrapConstants } from '../../Bootstrap/constants'
 import { ANIMATION_DURATION_SC, GUTTER } from '../../Config'

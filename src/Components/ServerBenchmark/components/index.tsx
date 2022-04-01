@@ -1,6 +1,6 @@
 import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
-import React, { FC, MouseEvent, useCallback } from 'react'
+import { FC, MouseEvent, useCallback } from 'react'
 import styled from 'styled-components'
 import { CardDes } from '../../Card/components/card-des'
 import { CardGrid } from '../../Card/components/card-grid'

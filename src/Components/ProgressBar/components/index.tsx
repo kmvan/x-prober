@@ -1,5 +1,5 @@
 import { rgba } from 'polished'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../Config'
 import { formatBytes } from '../../Utils/components/format-bytes'

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, useCallback, useEffect } from 'react'
+import { FC, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../Config'
 import { serverFetch } from '../../Fetch/server-fetch'

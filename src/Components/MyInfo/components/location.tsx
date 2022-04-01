@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, MouseEvent, useCallback, useState } from 'react'
+import { FC, MouseEvent, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { gettext } from '../../Language'

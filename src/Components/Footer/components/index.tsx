@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { BootstrapConstants } from '../../Bootstrap/constants'
 import { GUTTER } from '../../Config'

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Row } from '../../Grid/components/row'
 import { CpuUsage } from './cpu-usage'
 import { MemBuffers } from './mem-buffers'

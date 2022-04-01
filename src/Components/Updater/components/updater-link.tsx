@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, useCallback } from 'react'
+import { FC, useCallback } from 'react'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { gettext } from '../../Language'
 import {

@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from 'react'
+import { FC, HTMLAttributes } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../Config'
 const StyledRow = styled.div`

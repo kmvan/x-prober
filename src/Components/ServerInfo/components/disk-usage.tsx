@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { FetchStore } from '../../Fetch/stores'
 import { gettext } from '../../Language'
 import { ProgressBar } from '../../ProgressBar/components'

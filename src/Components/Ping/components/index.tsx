@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { lighten, rgba } from 'polished'
-import React, { FC, useCallback, useRef } from 'react'
+import { FC, useCallback, useRef } from 'react'
 import styled from 'styled-components'
 import { CardGrid } from '../../Card/components/card-grid'
 import { BORDER_RADIUS, GUTTER } from '../../Config'

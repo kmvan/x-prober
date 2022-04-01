@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
 import { MultiItemContainer } from '../../Card/components/multi-item-container'
 import { Row } from '../../Grid/components/row'

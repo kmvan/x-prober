@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import styled from 'styled-components'
 import { GUTTER } from '../../Config'
 import { Grid, GridProps } from '../../Grid/components/grid'

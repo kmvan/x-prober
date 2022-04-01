@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
 import { MultiItemContainer } from '../../Card/components/multi-item-container'
 import { Row } from '../../Grid/components/row'

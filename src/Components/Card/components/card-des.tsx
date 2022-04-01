@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { BORDER_RADIUS, GUTTER } from '../../Config'
 const StyledCardDes = styled.div`

@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, FC } from 'react'
+import { AnchorHTMLAttributes, FC } from 'react'
 import styled from 'styled-components'
 const StyledCardLink = styled.a`
   ::before {

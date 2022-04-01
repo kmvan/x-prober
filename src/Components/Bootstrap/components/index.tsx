@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { createRoot } from 'react-dom/client'
 import styled, { ThemeProvider } from 'styled-components'
 import { Cards } from '../../Card/components'

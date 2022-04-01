@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 import { Grid } from '../../Grid/components/grid'
 import { Row } from '../../Grid/components/row'

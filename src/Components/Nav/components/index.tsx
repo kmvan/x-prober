@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { FC, MouseEvent, ReactElement, useCallback } from 'react'
+import { FC, MouseEvent, ReactElement, useCallback } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { CardStore } from '../../Card/stores'
 import { ANIMATION_DURATION_SC, GUTTER } from '../../Config'
