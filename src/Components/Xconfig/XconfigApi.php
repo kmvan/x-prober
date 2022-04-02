@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Components\Xconfig;
 
 use InnStudio\Prober\Components\Utils\UtilsApi;
 
-class XconfigApi
+final class XconfigApi
 {
     private static $conf;
 

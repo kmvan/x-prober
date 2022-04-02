@@ -7,7 +7,7 @@ use InnStudio\Prober\Components\Utils\UtilsCpu;
 use InnStudio\Prober\Components\Utils\UtilsMemory;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Fetch extends ServerStatusConstants
+final class Fetch extends ServerStatusConstants
 {
     public function __construct()
     {

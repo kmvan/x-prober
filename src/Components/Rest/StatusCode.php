@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Rest;
 
-class StatusCode
+final class StatusCode
 {
     public static $__default = 200;
 

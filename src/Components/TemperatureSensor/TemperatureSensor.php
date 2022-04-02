@@ -8,39 +8,36 @@ use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 
-class TemperatureSensor
+final class TemperatureSensor
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
-    }
+        EventsApi::on('init', function ($action) {
+            if ('temperature-sensor' !== $action) {
+                return $action;
+            }
 
-    public function filter($action)
-    {
-        if ('temperature-sensor' !== $action) {
-            return $action;
-        }
+            $response = new RestResponse();
+            $items    = $this->getItems();
 
-        $response = new RestResponse();
-        $items    = $this->getItems();
+            if ($items) {
+                $response->setData($items)->json()->end();
+            }
 
-        if ($items) {
+            $cpuTemp = $this->getCpuTemp();
+
+            if ( ! $cpuTemp) {
+                $response->setStatus(StatusCode::$NO_CONTENT);
+            }
+
+            $items[] = array(
+                'id'      => 'cpu',
+                'name'    => 'CPU',
+                'celsius' => round((float) $cpuTemp / 1000, 2),
+            );
+
             $response->setData($items)->json()->end();
-        }
-
-        $cpuTemp = $this->getCpuTemp();
-
-        if ( ! $cpuTemp) {
-            $response->setStatus(StatusCode::$NO_CONTENT);
-        }
-
-        $items[] = array(
-            'id'      => 'cpu',
-            'name'    => 'CPU',
-            'celsius' => round((float) $cpuTemp / 1000, 2),
-        );
-
-        $response->setData($items)->json()->end();
+        });
     }
 
     private function curl($url)

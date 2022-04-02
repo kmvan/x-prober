@@ -5,22 +5,17 @@ namespace InnStudio\Prober\Components\Script;
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Utils\UtilsApi;
 
-class Script
+final class Script
 {
-    private $ID = 'script';
-
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
-    }
+        EventsApi::on('init', function ($action) {
+            if ('script' !== $action) {
+                return $action;
+            }
 
-    public function filter($action)
-    {
-        if ('script' !== $action) {
-            return $action;
-        }
-
-        $this->output();
+            $this->output();
+        });
     }
 
     private function output()

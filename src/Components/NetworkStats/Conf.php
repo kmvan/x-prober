@@ -7,24 +7,21 @@ use InnStudio\Prober\Components\Utils\UtilsApi;
 use InnStudio\Prober\Components\Utils\UtilsNetwork;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Conf extends NetworkStatsConstants
+final class Conf extends NetworkStatsConstants
 {
     public function __construct()
     {
-        UtilsApi::isWin() || EventsApi::on('conf', array($this, 'conf'));
-    }
+        UtilsApi::isWin() || EventsApi::on('conf', function (array $conf) {
+            if (XconfigApi::isDisabled($this->ID)) {
+                return $conf;
+            }
 
-    public function conf(array $conf)
-    {
-        if (XconfigApi::isDisabled($this->ID)) {
+            $conf[$this->ID] = array(
+                'networks'  => UtilsNetwork::getStats(),
+                'timestamp' => time(),
+            );
+
             return $conf;
-        }
-
-        $conf[$this->ID] = array(
-            'networks'  => UtilsNetwork::getStats(),
-            'timestamp' => time(),
-        );
-
-        return $conf;
+        });
     }
 }

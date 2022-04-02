@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsServerIp
+final class UtilsServerIp
 {
     public static function getV4()
     {

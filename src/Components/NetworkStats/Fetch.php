@@ -7,7 +7,7 @@ use InnStudio\Prober\Components\Utils\UtilsApi;
 use InnStudio\Prober\Components\Utils\UtilsNetwork;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Fetch extends NetworkStatsConstants
+final class Fetch extends NetworkStatsConstants
 {
     public function __construct()
     {

@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\NetworkStats;
 
-class NetworkStats
+final class NetworkStats
 {
     public function __construct()
     {

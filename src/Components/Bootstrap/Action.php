@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Components\Bootstrap;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 
-class Action
+final class Action
 {
     public function __construct()
     {

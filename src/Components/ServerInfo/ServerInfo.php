@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerInfo;
 
-class ServerInfo
+final class ServerInfo
 {
     public function __construct()
     {

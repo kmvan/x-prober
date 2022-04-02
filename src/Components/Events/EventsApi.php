@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Events;
 
-class EventsApi
+final class EventsApi
 {
     private static $events = array();
 

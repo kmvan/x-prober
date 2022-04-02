@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerStatus;
 
-class ServerStatus
+final class ServerStatus
 {
     public function __construct()
     {

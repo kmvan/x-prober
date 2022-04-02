@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Compiler;
 
-class ScriptGeneration
+final class ScriptGeneration
 {
     private $scriptFilePath = '';
 
@@ -15,11 +15,11 @@ class ScriptGeneration
             'distFilePath'   => $this->distFilePath,
         ] = $args;
 
-        if ( ! \is_file($this->scriptFilePath)) {
+        if ( ! is_file($this->scriptFilePath)) {
             $this->die("File not found: {$this->scriptFilePath}");
         }
 
-        if ( ! \is_file($this->distFilePath)) {
+        if ( ! is_file($this->distFilePath)) {
             $this->die("File not found: {$this->distFilePath}");
         }
 
@@ -32,20 +32,20 @@ class ScriptGeneration
 
     private function getScript(): string
     {
-        return (string) \file_get_contents($this->scriptFilePath);
+        return (string) file_get_contents($this->scriptFilePath);
     }
 
     private function setScript(string $script): bool
     {
-        $dist = (string) \file_get_contents($this->distFilePath);
+        $dist = (string) file_get_contents($this->distFilePath);
 
         if ( ! $dist) {
             return false;
         }
 
-        $dist = \str_replace('{INN_SCRIPT}', $script, $dist);
+        $dist = str_replace('{INN_SCRIPT}', $script, $dist);
 
-        return (bool) \file_put_contents($this->distFilePath, $dist);
+        return (bool) file_put_contents($this->distFilePath, $dist);
     }
 
     private function die(string $msg, bool $die = true): void
@@ -53,7 +53,7 @@ class ScriptGeneration
         $msg = "[ScriptGeneration] {$msg}\n";
 
         if ($die) {
-            die($msg);
+            exit($msg);
         }
 
         echo $msg;

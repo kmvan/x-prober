@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\PhpInfo;
 
-class PhpInfo
+final class PhpInfo
 {
     public function __construct()
     {

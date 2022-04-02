@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Components\Utils;
 
 use COM;
 
-class UtilsCpu
+final class UtilsCpu
 {
     public static function getLoadAvg()
     {

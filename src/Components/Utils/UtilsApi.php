@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsApi
+final class UtilsApi
 {
     public static function jsonDecode($json, $depth = 512, $options = 0)
     {

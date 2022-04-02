@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Bootstrap;
 
-class Bootstrap
+final class Bootstrap
 {
     public function __construct()
     {

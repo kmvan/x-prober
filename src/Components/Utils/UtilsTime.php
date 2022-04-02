@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsTime
+final class UtilsTime
 {
     public static function getTime()
     {
