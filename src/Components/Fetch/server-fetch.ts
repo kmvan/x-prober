@@ -25,7 +25,7 @@ export const serverFetch = async (
   try {
     return { status: res.status, data: await res.json() }
   } catch (e) {
-    console.error(e)
+    console.warn(e)
     return { status: res.status }
   }
 }

@@ -24,7 +24,7 @@ class Main {
           this.setAppConfig(res)
         })
         .catch((e) => {
-          console.error(e)
+          console.warn(e)
         })
       return
     }
@@ -38,7 +38,7 @@ class Main {
           configStatus = true
         })
         .catch((e) => {
-          console.error(e)
+          console.warn(e)
         })
       if (configStatus) {
         break
