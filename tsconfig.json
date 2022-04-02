@@ -7,7 +7,7 @@
     "lib": ["esnext", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "rootDir": "src",

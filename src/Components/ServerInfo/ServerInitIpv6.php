@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\ServerInfo;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
@@ -28,9 +28,9 @@ class ServerInitIpv6 extends ServerInfoConstants
             return $action;
         }
 
-        $response = new RestfulResponse();
+        $response = new RestResponse();
         $response->setData(array(
             'ip' => UtilsServerIp::getV6(),
-        ))->dieJson();
+        ))->json()->end();
     }
 }

@@ -4,8 +4,8 @@ namespace InnStudio\Prober\Components\Updater;
 
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\HttpStatus;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
+use InnStudio\Prober\Components\Rest\StatusCode;
 
 class Updater
 {
@@ -20,12 +20,11 @@ class Updater
             return $action;
         }
 
-        $response = new RestfulResponse();
+        $response = new RestResponse();
 
         // check file writable
         if ( ! is_writable(__FILE__)) {
-            $response->setStatus(HttpStatus::$INSUFFICIENT_STORAGE);
-            $response->dieJson();
+            $response->setStatus(StatusCode::$INSUFFICIENT_STORAGE)->end();
         }
 
         $code = '';
@@ -39,24 +38,22 @@ class Updater
         }
 
         if ( ! $code) {
-            $response->setStatus(HttpStatus::$NOT_FOUND);
-            $response->dieJson();
+            $response->setStatus(StatusCode::$NOT_FOUND)->end();
         }
 
         // prevent update file on dev mode
-        if (\defined('\\XPROBER_IS_DEV') && XPROBER_IS_DEV) {
-            $response->dieJson();
+        if (\defined('XPROBER_IS_DEV') && XPROBER_IS_DEV) {
+            $response->end();
         }
 
         if ((bool) file_put_contents(__FILE__, $code)) {
-            if (\function_exists('\\opcache_compile_file')) {
-                @opcache_compile_file(__FILE__) || opcache_reset();
+            if (\function_exists('opcache_invalidate')) {
+                opcache_invalidate(__FILE__, true) || opcache_reset();
             }
 
-            $response->dieJson();
+            $response->end();
         }
 
-        $response->setStatus(HttpStatus::$INTERNAL_SERVER_ERROR);
-        $response->dieJson();
+        $response->setStatus(StatusCode::$INTERNAL_SERVER_ERROR)->end();
     }
 }

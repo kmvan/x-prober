@@ -1,4 +1,4 @@
-import { conf } from '../Utils/src/components/conf'
+import { conf } from '../Utils/components/conf'
 class Main {
   public readonly id = 'bootstrap'
   public readonly conf = conf?.[this.id]

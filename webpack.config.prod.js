@@ -15,7 +15,7 @@ rimraf('.tmp', {}, () => {})
 module.exports = {
   mode: 'production',
   entry: {
-    app: './src/Components/Bootstrap/src/components/index.tsx',
+    app: './src/Components/Bootstrap/components/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, '.tmp'),
@@ -68,9 +68,6 @@ module.exports = {
         exclude: /node_modules/,
         include: path.resolve(__dirname, 'src'),
         use: [
-          {
-            loader: 'babel-loader',
-          },
           {
             loader: 'ts-loader',
             options: {

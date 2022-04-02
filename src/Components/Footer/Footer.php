@@ -17,7 +17,7 @@ class Footer
     {
         $conf[$this->ID] = array(
             'memUsage' => memory_get_usage(),
-            'time'     => microtime(true) - (\defined('\\XPROBER_TIMER') ? XPROBER_TIMER : 0),
+            'time'     => microtime(true) - (\defined('XPROBER_TIMER') ? XPROBER_TIMER : 0),
         );
 
         return $conf;

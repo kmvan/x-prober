@@ -2,6 +2,14 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.9.0 - 2022-04-02
+
+### Optimize
+
+- Remove babel-loader
+- Upgrade to React 18
+- Optimize file update logic
+
 ## 8.8.0 - 2022-01-08
 
 ### Fix

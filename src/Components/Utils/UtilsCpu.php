@@ -47,7 +47,7 @@ class UtilsCpu
         );
 
         // com
-        if (class_exists('\\COM')) {
+        if (class_exists('COM')) {
             // need help
             $wmi    = new COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
@@ -62,7 +62,7 @@ class UtilsCpu
             $usage['user'] = $total;
         // exec
         } else {
-            if ( ! \function_exists('\\exec')) {
+            if ( ! \function_exists('exec')) {
                 return $usage;
             }
 

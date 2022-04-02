@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\Fetch;
 
 use InnStudio\Prober\Components\Events\EventsApi;
-use InnStudio\Prober\Components\Restful\RestfulResponse;
+use InnStudio\Prober\Components\Rest\RestResponse;
 
 class Fetch
 {
@@ -16,8 +16,8 @@ class Fetch
     {
         if ('fetch' === $action) {
             EventsApi::emit('fetchBefore');
-            $response = new RestfulResponse(EventsApi::emit('fetch', array()));
-            $response->dieJson();
+            $response = new RestResponse(EventsApi::emit('fetch', array()));
+            $response->json()->end();
         }
 
         return $action;
