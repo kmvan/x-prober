@@ -42,13 +42,13 @@ class Updater
         }
 
         // prevent update file on dev mode
-        if (\defined('\\XPROBER_IS_DEV') && XPROBER_IS_DEV) {
+        if (\defined('XPROBER_IS_DEV') && XPROBER_IS_DEV) {
             $response->end();
         }
 
         if ((bool) file_put_contents(__FILE__, $code)) {
-            if (\function_exists('\\opcache_compile_file')) {
-                @opcache_compile_file(__FILE__) || opcache_reset();
+            if (\function_exists('opcache_invalidate')) {
+                opcache_invalidate(__FILE__, true) || opcache_reset();
             }
 
             $response->end();

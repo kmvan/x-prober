@@ -25,7 +25,7 @@ class Ping extends PingConstants
         }
 
         $response = new RestResponse(array(
-            'time' => microtime(true) - XPROBER_TIMER,
+            'time' => \defined('XPROBER_TIMER') ? microtime(true) - XPROBER_TIMER : 0,
         ));
         $response->json()->end();
     }

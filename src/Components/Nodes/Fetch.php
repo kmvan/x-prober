@@ -57,7 +57,7 @@ class Fetch extends NodesApi
     {
         $content = '';
 
-        if (\function_exists('\\curl_init')) {
+        if (\function_exists('curl_init')) {
             $ch = curl_init();
             curl_setopt_array($ch, array(
                 \CURLOPT_URL            => $url,

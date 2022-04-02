@@ -6,7 +6,7 @@ class UtilsDisk
 {
     public static function getTotal()
     {
-        if ( ! \function_exists('\\disk_total_space')) {
+        if ( ! \function_exists('disk_total_space')) {
             return 0;
         }
 
@@ -21,7 +21,7 @@ class UtilsDisk
 
     public static function getFree()
     {
-        if ( ! \function_exists('\\disk_total_space')) {
+        if ( ! \function_exists('disk_total_space')) {
             return 0;
         }
 

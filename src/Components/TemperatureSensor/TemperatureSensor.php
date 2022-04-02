@@ -45,7 +45,7 @@ class TemperatureSensor
 
     private function curl($url)
     {
-        if ( ! \function_exists('\\curl_init')) {
+        if ( ! \function_exists('curl_init')) {
             return;
         }
 
