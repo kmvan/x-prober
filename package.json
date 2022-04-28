@@ -4,10 +4,10 @@
   "license": "GPL-3",
   "homepage": "https://github.com/kmvan/x-prober",
   "scripts": {
-    "lang": "node ./build-lang.js",
-    "dev": "webpack --config webpack.config.js --progress",
+    "lang": "node ./tools/lang-builder.mjs",
+    "dev": "webpack --config webpack.config.mjs",
     "dev:php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
-    "build": "webpack --config webpack.config.prod.js --progress",
+    "build": "webpack --config webpack.config.prod.mjs",
     "build:php": "php-cs-fixer fix ./src --config=.php-cs-fixer53; php ./Make.php build; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
     "build:php-debug": "php ./Make.php build debug; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
     "php-cs-fixer-53": "php-cs-fixer fix ./src --config=.php-cs-fixer53"
@@ -41,7 +41,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "glob": "^7.2.0",
+    "fast-glob": "^3.2.11",
     "pofile": "^1.1.3",
     "prettier": "^2.6.1",
     "terser-webpack-plugin": "^5.3.1",
