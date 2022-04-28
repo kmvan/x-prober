@@ -1,7 +1,7 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { ANIMATION_DURATION_SC, GUTTER } from '../../../Config'
 import { device } from '../../../Style/components/devices'
-const normalize = css`
+export const Normalize = createGlobalStyle`
   @media ${device('desktopSm')} {
     ::-webkit-scrollbar-track {
       background-color: transparent;
@@ -53,4 +53,3 @@ const normalize = css`
     }
   }
 `
-export const Normalize = createGlobalStyle`${normalize}`
