@@ -1,3 +1,4 @@
+import { mkdirSync } from 'fs'
 import path, { dirname } from 'path'
 import { createTransformer } from 'typescript-plugin-styled-components'
 import { fileURLToPath } from 'url'
@@ -5,6 +6,7 @@ import webpack from 'webpack'
 import { rmFiles } from './tools/rm-files.mjs'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 rmFiles(path.resolve(__dirname, '.tmp'))
+mkdirSync(path.resolve(__dirname, '.tmp'))
 export default {
   mode: 'development',
   entry: {
@@ -19,7 +21,7 @@ export default {
     publicPath: './.tmp',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.mjs'],
+    extensions: ['.ts', '.tsx', '.js', '.mjs', '.json'],
   },
   plugins: [
     new webpack.DefinePlugin({

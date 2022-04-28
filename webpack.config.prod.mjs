@@ -1,3 +1,4 @@
+import { mkdirSync } from 'fs'
 import path, { dirname } from 'path'
 import TerserPlugin from 'terser-webpack-plugin'
 import { createTransformer } from 'typescript-plugin-styled-components'
@@ -6,6 +7,7 @@ import webpack from 'webpack'
 import { rmFiles } from './tools/rm-files.mjs'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 rmFiles(path.resolve(__dirname, '.tmp'))
+mkdirSync(path.resolve(__dirname, '.tmp'))
 export default {
   mode: 'production',
   entry: {

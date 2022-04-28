@@ -1,4 +1,4 @@
-import langs from './lang.json'
+import langs from './data.json'
 const langId = navigator.language
   .replace('-', '')
   .replace('_', '')
