@@ -1,15 +1,17 @@
-import path from 'path'
+import path, { dirname } from 'path'
 import TerserPlugin from 'terser-webpack-plugin'
 import { createTransformer } from 'typescript-plugin-styled-components'
+import { fileURLToPath } from 'url'
 import webpack from 'webpack'
 import { rmFiles } from './tools/rm-files.mjs'
+const __dirname = dirname(fileURLToPath(import.meta.url))
 rmFiles(path.resolve(__dirname, '.tmp'))
 export default {
   mode: 'production',
   entry: {
     app: path.resolve(
       __dirname,
-      'src/Components/Bootstrap/components/index.tsx'
+      'src/Components/Bootstrap/components/index.tsx',
     ),
   },
   output: {

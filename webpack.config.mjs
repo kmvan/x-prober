@@ -10,7 +10,7 @@ export default {
   entry: {
     app: path.resolve(
       __dirname,
-      'src/Components/Bootstrap/components/index.tsx'
+      'src/Components/Bootstrap/components/index.tsx',
     ),
   },
   output: {
