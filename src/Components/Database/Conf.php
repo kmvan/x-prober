@@ -26,9 +26,6 @@ final class Conf extends DatabaseConstants
                 'postgreSql'          => \function_exists('pg_connect'),
                 'paradox'             => \function_exists('px_new'),
                 'msSql'               => \function_exists('sqlsrv_server_info'),
-                'filePro'             => \function_exists('filepro'),
-                'maxDbClient'         => \function_exists('maxdb_get_client_version') ? maxdb_get_client_version() : false,
-                'maxDbServer'         => \function_exists('maxdb_get_server_version') ? maxdb_get_server_version() : false,
             );
 
             return $conf;
