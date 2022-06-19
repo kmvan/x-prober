@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import { BootstrapConstants } from '../Bootstrap/constants'
 interface ServerFetchProps {
   data?: any

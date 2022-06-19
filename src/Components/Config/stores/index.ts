@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import { configure, makeAutoObservable } from 'mobx'
 import { BootstrapConstants } from '../../Bootstrap/constants'
 import { gettext } from '../../Language'
