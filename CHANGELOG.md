@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.10.0 - 2022-06-19
+
+### Add
+
+- Add PDO database driver detector
+
 ## 8.9.0 - 2022-04-02
 
 ### Optimize
