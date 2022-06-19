@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
-class ServerBenchmark
+final class ServerBenchmark
 {
     public function __construct()
     {

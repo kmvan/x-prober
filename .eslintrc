@@ -28,7 +28,21 @@
   ],
   "plugins": ["prettier", "@typescript-eslint", "react-hooks"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 2,
+        "useTabs": false,
+        "jsxSingleQuote": true,
+        "singleQuote": true,
+        "quoteProps": "as-needed",
+        "bracketSameLine": false,
+        "trailingComma": "all",
+        "bracketSpacing": true,
+        "semi": false,
+        "arrowParens": "always"
+      }
+    ],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "semi": ["error", "never"],

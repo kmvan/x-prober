@@ -9,34 +9,31 @@ use InnStudio\Prober\Components\Utils\UtilsLocation;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class ServerLocationIpv4 extends ServerInfoConstants
+final class ServerLocationIpv4 extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
-    }
+        EventsApi::on('init', function ($action) {
+            if ('serverLocationIpv4' !== $action) {
+                return $action;
+            }
 
-    public function filter($action)
-    {
-        if ('serverLocationIpv4' !== $action) {
-            return $action;
-        }
+            if (XconfigApi::isDisabled($this->ID)) {
+                return $action;
+            }
 
-        if (XconfigApi::isDisabled($this->ID)) {
-            return $action;
-        }
+            if (XconfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
+                return $action;
+            }
 
-        if (XconfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
-            return $action;
-        }
+            $response = new RestResponse();
+            $ip       = UtilsServerIp::getV4();
 
-        $response = new RestResponse();
-        $ip       = UtilsServerIp::getV4();
+            if ( ! $ip) {
+                $response->setStatus(StatusCode::$BAD_REQUEST)->json()->end();
+            }
 
-        if ( ! $ip) {
-            $response->setStatus(StatusCode::$BAD_REQUEST)->json()->end();
-        }
-
-        $response->setData(UtilsLocation::getLocation($ip))->json()->end();
+            $response->setData(UtilsLocation::getLocation($ip))->json()->end();
+        });
     }
 }

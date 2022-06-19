@@ -1,21 +1,20 @@
-'use strict'
-
-const webpack = require('webpack')
-const TerserPlugin = require('terser-webpack-plugin')
-const path = require('path')
-const createStyledComponentsTransformer =
-  require('typescript-plugin-styled-components').default
-const styledComponentsTransformer = createStyledComponentsTransformer({
-  minify: true,
-})
-const rimraf = require('rimraf')
-
-rimraf('.tmp', {}, () => {})
-
-module.exports = {
+import { mkdirSync } from 'fs'
+import path, { dirname } from 'path'
+import TerserPlugin from 'terser-webpack-plugin'
+import { createTransformer } from 'typescript-plugin-styled-components'
+import { fileURLToPath } from 'url'
+import webpack from 'webpack'
+import { rmFiles } from './tools/rm-files.mjs'
+const __dirname = dirname(fileURLToPath(import.meta.url))
+rmFiles(path.resolve(__dirname, '.tmp'))
+mkdirSync(path.resolve(__dirname, '.tmp'))
+export default {
   mode: 'production',
   entry: {
-    app: './src/Components/Bootstrap/components/index.tsx',
+    app: path.resolve(
+      __dirname,
+      'src/Components/Bootstrap/components/index.tsx',
+    ),
   },
   output: {
     path: path.resolve(__dirname, '.tmp'),
@@ -23,7 +22,7 @@ module.exports = {
     publicPath: './.tmp',
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.mjs'],
     alias: {
       root: __dirname,
     },
@@ -73,19 +72,12 @@ module.exports = {
             options: {
               transpileOnly: true,
               getCustomTransformers: () => ({
-                before: [styledComponentsTransformer],
+                before: [
+                  createTransformer({
+                    minify: true,
+                  }),
+                ],
               }),
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              // limit: 8192
             },
           },
         ],

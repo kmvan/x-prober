@@ -15,9 +15,7 @@ export const Database: FC = observer(() => {
     ['PostgreSQL', conf?.postgreSql],
     ['Paradox', conf?.paradox],
     ['MS SQL', conf?.msSql],
-    ['File Pro', conf?.filePro],
-    ['MaxDB client', conf?.maxDbClient],
-    ['MaxDB server', conf?.maxDbServer],
+    ['PDO', conf?.pdo],
   ]
   return (
     <Row>

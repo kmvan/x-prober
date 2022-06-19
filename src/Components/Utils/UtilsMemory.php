@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsMemory
+final class UtilsMemory
 {
     public static function getMemoryUsage($key)
     {

@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Compiler;
 
-class ConfigGeneration
+final class ConfigGeneration
 {
     private $phpConfigPath = '';
 
@@ -18,7 +18,7 @@ class ConfigGeneration
             'configPathDev' => $this->configPathDev,
         ] = $args;
 
-        if ( ! \is_file($this->configPath)) {
+        if ( ! is_file($this->configPath)) {
             $this->die("File invalid: {$this->configPath}");
         }
 
@@ -33,18 +33,18 @@ class ConfigGeneration
 
     private function copyConfigToTmp(): bool
     {
-        return \copy($this->configPath, $this->configPathDev);
+        return copy($this->configPath, $this->configPathDev);
     }
 
     private function genPhpConfig(): bool
     {
-        $config = \file_get_contents($this->configPath) ?: '';
+        $config = file_get_contents($this->configPath) ?: '';
 
         if ( ! $config) {
             return false;
         }
 
-        $config = \json_decode($config, true);
+        $config = json_decode($config, true);
 
         if ( ! $config) {
             return false;
@@ -65,9 +65,9 @@ class ConfigGeneration
             'LATEST_NGINX_STABLE_VERSION'  => $latestNginxStableVersion,
         ] = $config;
 
-        $updatePhpUrls             = \implode("', '", $updatePhpUrls);
-        $appConfigUrls             = \implode("', '", $appConfigUrls);
-        $appTemperatureSensorPorts = \implode(', ', $appTemperatureSensorPorts);
+        $updatePhpUrls             = implode("', '", $updatePhpUrls);
+        $appConfigUrls             = implode("', '", $appConfigUrls);
+        $appTemperatureSensorPorts = implode(', ', $appTemperatureSensorPorts);
 
         $configContent = <<<PHP
 <?php
@@ -75,7 +75,7 @@ class ConfigGeneration
  * The file is automatically generated.
  */
 
-namespace InnStudio\Prober\Components\Config;
+namespace InnStudio\\Prober\\Components\\Config;
 
 class ConfigApi
 {
@@ -95,7 +95,7 @@ class ConfigApi
 
 PHP;
 
-        return (bool) \file_put_contents($this->phpConfigPath, $configContent);
+        return (bool) file_put_contents($this->phpConfigPath, $configContent);
     }
 
     private function die(string $msg, bool $die = true): void
@@ -103,7 +103,7 @@ PHP;
         $msg = "[StyleGeneration] {$msg}\n";
 
         if ($die) {
-            die($msg);
+            exit($msg);
         }
 
         echo $msg;

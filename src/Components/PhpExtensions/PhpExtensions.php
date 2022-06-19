@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\PhpExtensions;
 
-class PhpExtensions
+final class PhpExtensions
 {
     public function __construct()
     {

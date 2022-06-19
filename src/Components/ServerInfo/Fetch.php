@@ -7,7 +7,7 @@ use InnStudio\Prober\Components\Utils\UtilsDisk;
 use InnStudio\Prober\Components\Utils\UtilsTime;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Fetch extends ServerInfoConstants
+final class Fetch extends ServerInfoConstants
 {
     public function __construct()
     {

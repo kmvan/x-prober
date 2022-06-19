@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsLocation
+final class UtilsLocation
 {
     /**
      * Get IP location.

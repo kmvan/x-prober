@@ -7,30 +7,27 @@ use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class ServerInitIpv4 extends ServerInfoConstants
+final class ServerInitIpv4 extends ServerInfoConstants
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
-    }
+        EventsApi::on('init', function ($action) {
+            if ('serverIpv4' !== $action) {
+                return $action;
+            }
 
-    public function filter($action)
-    {
-        if ('serverIpv4' !== $action) {
-            return $action;
-        }
+            if (XconfigApi::isDisabled($this->ID)) {
+                return $action;
+            }
 
-        if (XconfigApi::isDisabled($this->ID)) {
-            return $action;
-        }
+            if (XconfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
+                return $action;
+            }
 
-        if (XconfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
-            return $action;
-        }
-
-        $response = new RestResponse();
-        $response->setData(array(
-            'ip' => UtilsServerIp::getV4(),
-        ))->json()->end();
+            $response = new RestResponse();
+            $response->setData(array(
+                'ip' => UtilsServerIp::getV4(),
+            ))->json()->end();
+        });
     }
 }

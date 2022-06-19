@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsDisk
+final class UtilsDisk
 {
     public static function getTotal()
     {

@@ -2,12 +2,17 @@
 
 namespace InnStudio\Prober\Compiler;
 
-class Compiler
+use Iterator;
+
+final class Compiler
 {
-    private $ROOT              = '';
-    private $BASE_DIR          = '';
+    private $ROOT = '';
+
+    private $BASE_DIR = '';
+
     private $COMPILE_FILE_PATH = '';
-    private $COMPONENTS_DIR    = '';
+
+    private $COMPONENTS_DIR = '';
 
     public function __construct(string $dir)
     {
@@ -17,11 +22,11 @@ class Compiler
         $this->COMPILE_FILE_PATH = $this->isDev() ? "{$dir}/.tmp/index.php" : "{$dir}/dist/prober.php";
 
         // generate config
-        new ConfigGeneration([
+        new ConfigGeneration(array(
             'phpConfigPath' => "{$this->COMPONENTS_DIR}/Config/ConfigApi.php",
             'configPath'    => "{$this->ROOT}/AppConfig.json",
             'configPathDev' => "{$this->ROOT}/.tmp/AppConfig.json",
-        ]);
+        ));
 
         echo "Compile starting...\n";
 
@@ -29,7 +34,7 @@ class Compiler
 
         if ( ! $this->isDev()) {
             foreach ($this->yieldFiles($this->COMPONENTS_DIR) as $filePath) {
-                if (\is_dir($filePath) || false === \strpos($filePath, '.php')) {
+                if (is_dir($filePath) || false === strpos($filePath, '.php')) {
                     continue;
                 }
 
@@ -38,27 +43,27 @@ class Compiler
             }
         }
 
-        $preDefineCode = $this->preDefine([
+        $preDefineCode = $this->preDefine(array(
             $this->genTimerCode(),
             $this->genDevMode(),
             $this->genDirPath(),
             $this->genVendorCode(),
-        ]);
+        ));
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
-        $code = \preg_replace("/(\r|\n)+/", "\n", $code);
+        $code = preg_replace("/(\r|\n)+/", "\n", $code);
 
         if (true === $this->writeFile($code)) {
-            new ScriptGeneration([
+            new ScriptGeneration(array(
                 'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
                 'distFilePath'   => $this->COMPILE_FILE_PATH,
-            ]);
+            ));
 
             if ( ! $this->isDev()) {
                 if ($this->isDebug()) {
-                    $this->writeFile(\file_get_contents($this->COMPILE_FILE_PATH));
+                    $this->writeFile(file_get_contents($this->COMPILE_FILE_PATH));
                 } else {
-                    $this->writeFile(\php_strip_whitespace($this->COMPILE_FILE_PATH));
+                    $this->writeFile(php_strip_whitespace($this->COMPILE_FILE_PATH));
                 }
             }
 
@@ -75,51 +80,51 @@ class Compiler
         echo "Packing `{$filePath}...";
 
         if ($this->isDev()) {
-            $code = \file_get_contents($filePath);
+            $code = file_get_contents($filePath);
         } else {
             if ($this->isDebug()) {
-                $code = \file_get_contents($filePath);
+                $code = file_get_contents($filePath);
             } else {
-                $code     = \php_strip_whitespace($filePath);
-                $lines    = \explode("\n", $code);
-                $lineCode = [];
+                $code     = php_strip_whitespace($filePath);
+                $lines    = explode("\n", $code);
+                $lineCode = array();
 
                 foreach ($lines as $line) {
-                    $lineStr = \trim($line);
+                    $lineStr = trim($line);
 
                     if ($lineStr) {
                         $lineCode[] = $lineStr;
                     }
                 }
 
-                $code = \implode("\n", $lineCode);
+                $code = implode("\n", $lineCode);
             }
         }
 
-        $code = \trim($code, "\n");
+        $code = trim($code, "\n");
 
         echo "OK\n";
 
-        return $code ? \substr($code, 5) : $code;
+        return $code ? substr($code, 5) : $code;
     }
 
     private function isDev(): bool
     {
         global $argv;
 
-        return \in_array('dev', $argv);
+        return \in_array('dev', $argv, true);
     }
 
     private function isDebug(): bool
     {
         global $argv;
 
-        return \in_array('debug', $argv);
+        return \in_array('debug', $argv, true);
     }
 
     private function preDefine(array $code): string
     {
-        $codeStr = \implode("\n", $code);
+        $codeStr = implode("\n", $code);
 
         return <<<PHP
 namespace InnStudio\\Prober\\Components\\PreDefine;
@@ -138,8 +143,8 @@ PHP;
 
     private function genDirPath(): string
     {
-        return <<<PHP
-\\define('XPROBER_DIR', __DIR__);
+        return <<<'PHP'
+\define('XPROBER_DIR', __DIR__);
 PHP;
     }
 
@@ -152,19 +157,19 @@ PHP;
 
     private function loader(): string
     {
-        $dirs = \glob($this->COMPONENTS_DIR . '/*');
+        $dirs = glob($this->COMPONENTS_DIR . '/*');
 
         if ( ! $dirs) {
             return '';
         }
 
-        $files = [];
+        $files = array();
 
         foreach ($dirs as $dir) {
-            $basename = \basename($dir);
+            $basename = basename($dir);
             $filePath = "{$dir}/{$basename}.php";
 
-            if ( ! \is_file($filePath)) {
+            if ( ! is_file($filePath)) {
                 continue;
             }
 
@@ -177,7 +182,7 @@ PHP;
 
         $files[] = 'new \\InnStudio\\Prober\\Components\\Bootstrap\\Bootstrap();';
 
-        return \implode("\n", $files);
+        return implode("\n", $files);
     }
 
     private function genVendorCode(): string
@@ -186,28 +191,28 @@ PHP;
             return '';
         }
 
-        return <<<PHP
+        return <<<'PHP'
 include \dirname(__DIR__) . '/vendor/autoload.php';
 PHP;
     }
 
-    private function yieldFiles(string $dir): \Iterator
+    private function yieldFiles(string $dir): Iterator
     {
-        if (\is_dir($dir)) {
-            $dh = \opendir($dir);
+        if (is_dir($dir)) {
+            $dh = opendir($dir);
 
             if ( ! $dh) {
                 yield false;
             }
 
-            while (false !== ($file = \readdir($dh))) {
+            while (false !== ($file = readdir($dh))) {
                 if ('.' === $file || '..' === $file) {
                     continue;
                 }
 
                 $filePath = "{$dir}/{$file}";
 
-                if (\is_dir($filePath)) {
+                if (is_dir($filePath)) {
                     foreach ($this->yieldFiles($filePath) as $yieldFilepath) {
                         yield $yieldFilepath;
                     }
@@ -216,7 +221,7 @@ PHP;
                 }
             }
 
-            \closedir($dh);
+            closedir($dh);
         }
 
         yield $dir;
@@ -226,10 +231,10 @@ PHP;
     {
         $dir = \dirname($this->COMPILE_FILE_PATH);
 
-        if ( ! \is_dir($dir)) {
-            \mkdir($dir, 0755, true);
+        if ( ! is_dir($dir)) {
+            mkdir($dir, 0755, true);
         }
 
-        return (bool) \file_put_contents($this->COMPILE_FILE_PATH, $data);
+        return (bool) file_put_contents($this->COMPILE_FILE_PATH, $data);
     }
 }

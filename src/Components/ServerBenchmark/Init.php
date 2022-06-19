@@ -7,27 +7,24 @@ use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-class Init extends ServerBenchmarkApi
+final class Init extends ServerBenchmarkApi
 {
     public function __construct()
     {
-        EventsApi::on('init', array($this, 'filter'));
+        EventsApi::on('init', function ($action) {
+            if (XconfigApi::isDisabled('myServerBenchmark')) {
+                return $action;
+            }
+
+            if ('benchmark' !== $action) {
+                return $action;
+            }
+
+            $this->render();
+        });
     }
 
-    public function filter($action)
-    {
-        if (XconfigApi::isDisabled('myServerBenchmark')) {
-            return $action;
-        }
-
-        if ('benchmark' !== $action) {
-            return $action;
-        }
-
-        $this->display();
-    }
-
-    private function display()
+    private function render()
     {
         $remainingSeconds = $this->getRemainingSeconds();
         $response         = new RestResponse();

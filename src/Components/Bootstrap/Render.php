@@ -5,7 +5,7 @@ namespace InnStudio\Prober\Components\Bootstrap;
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Events\EventsApi;
 
-class Render
+final class Render
 {
     public function __construct()
     {

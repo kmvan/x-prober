@@ -2,13 +2,13 @@
 
 namespace InnStudio\Prober\Components\Rest;
 
-class RestResponse
+final class RestResponse
 {
-    protected $data;
+    private $data;
 
-    protected $headers = array();
+    private $headers = array();
 
-    protected $status = 200;
+    private $status = 200;
 
     public function __construct(array $data = null, $status = 200, array $headers = array())
     {

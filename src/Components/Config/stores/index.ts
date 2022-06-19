@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import { configure, makeAutoObservable } from 'mobx'
 import { BootstrapConstants } from '../../Bootstrap/constants'
 import { gettext } from '../../Language'
@@ -24,7 +23,7 @@ class Main {
           this.setAppConfig(res)
         })
         .catch((e) => {
-          console.error(e)
+          console.warn(e)
         })
       return
     }
@@ -38,7 +37,7 @@ class Main {
           configStatus = true
         })
         .catch((e) => {
-          console.error(e)
+          console.warn(e)
         })
       if (configStatus) {
         break

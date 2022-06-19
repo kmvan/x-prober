@@ -10,7 +10,7 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "rootDir": "src",
+    // "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
@@ -41,15 +41,7 @@
       "ssr": false
     }
   ],
-  "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ],
+  "include": ["src/**/*", "*.mjs", "./tools/**/*"],
+  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"],
   "includes": ["styled-components.d.ts"]
 }

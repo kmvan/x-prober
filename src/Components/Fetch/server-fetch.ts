@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch'
 import { BootstrapConstants } from '../Bootstrap/constants'
 interface ServerFetchProps {
   data?: any
@@ -25,7 +24,7 @@ export const serverFetch = async (
   try {
     return { status: res.status, data: await res.json() }
   } catch (e) {
-    console.error(e)
+    console.warn(e)
     return { status: res.status }
   }
 }

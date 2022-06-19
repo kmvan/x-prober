@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Nodes;
 
-class Nodes
+final class Nodes
 {
     public function __construct()
     {

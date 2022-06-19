@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\Utils;
 
-class UtilsNetwork
+final class UtilsNetwork
 {
     public static function getStats()
     {
