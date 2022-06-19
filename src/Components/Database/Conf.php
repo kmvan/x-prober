@@ -4,6 +4,7 @@ namespace InnStudio\Prober\Components\Database;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
+use PDO;
 use SQLite3;
 
 final class Conf extends DatabaseConstants
@@ -26,6 +27,7 @@ final class Conf extends DatabaseConstants
                 'postgreSql'          => \function_exists('pg_connect'),
                 'paradox'             => \function_exists('px_new'),
                 'msSql'               => \function_exists('sqlsrv_server_info'),
+                'pdo'                 => class_exists('PDO') ? implode(',', PDO::getAvailableDrivers()) : false,
             );
 
             return $conf;

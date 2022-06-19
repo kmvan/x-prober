@@ -15,6 +15,7 @@ export const Database: FC = observer(() => {
     ['PostgreSQL', conf?.postgreSql],
     ['Paradox', conf?.paradox],
     ['MS SQL', conf?.msSql],
+    ['PDO', conf?.pdo],
   ]
   return (
     <Row>
