@@ -24,8 +24,8 @@
 
 ## 環境需求
 
-- 編譯環境：PHP 7.4+
-- 運作環境：PHP 5.3+
+- 編譯環境：PHP 8.1+
+- 運作環境：PHP 5.4+
 - 瀏覽器兼容：Chrome、Firefox、Edge、Android
 - 系統兼容：Linux、Windows（基礎功能）
 

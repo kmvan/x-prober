@@ -29,8 +29,8 @@
 
 ## 必要な環境
 
-- 開発環境: PHP 7.4+
-- 生産環境: PHP 5.3+
+- 開発環境: PHP 8.1+
+- 生産環境: PHP 5.4+
 - ブラウザのサポート: Chrome / Firefox / Edge / Android
 - OS サポート: Linux / Windows(basic features)
 
