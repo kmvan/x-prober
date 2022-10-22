@@ -128,6 +128,8 @@ final class Compiler
 
         return <<<PHP
 namespace InnStudio\\Prober\\Components\\PreDefine;
+\$version = phpversion();
+version_compare(\$version, '5.4.0','<') && exit("PHP 5.4+ is required. Currently installed version is: {\$version}");
 {$codeStr}
 PHP;
     }

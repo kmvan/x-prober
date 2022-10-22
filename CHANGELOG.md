@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.11.0 - 2022-10-22
+
+### Remove
+
+- Remove PHP5.3 compatibility
+
+### Optimize
+
+- Update packages
+
 ## 8.10.0 - 2022-06-19
 
 ### Add

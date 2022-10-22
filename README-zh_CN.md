@@ -24,8 +24,8 @@
 
 ## 环境需求
 
-- 编译环境：PHP 7.4+
-- 运行环境：PHP 5.3+
+- 编译环境：PHP 8.1+
+- 运行环境：PHP 5.4+
 - 浏览器兼容：Chrome、Firefox、Edge、Android
 - 系统兼容：Linux、Windows（基础功能）
 

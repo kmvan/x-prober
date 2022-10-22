@@ -31,8 +31,8 @@ And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/1
 
 ## Required environment
 
-- Compile environment: PHP 7.4+
-- Production environment: PHP 5.3+
+- Compile environment: PHP 8.1+
+- Production environment: PHP 5.4+
 - Browser support: Chrome / Firefox / Edge / Android
 - OS support: Linux / Windows(basic features)
 
