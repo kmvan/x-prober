@@ -93,7 +93,7 @@ final class UtilsCpu
             return $cpu;
         }
 
-        $filePath = ('/proc/stat');
+        $filePath = '/proc/stat';
 
         if ( ! @is_readable($filePath)) {
             $cpu = array();

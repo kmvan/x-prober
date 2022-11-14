@@ -48,30 +48,30 @@ final class UtilsMemory
         }
 
         switch ($key) {
-        case 'MemRealUsage':
-            if (isset($memInfo['MemAvailable'])) {
-                return $memInfo['MemTotal'] - $memInfo['MemAvailable'];
-            }
-
-            if (isset($memInfo['MemFree'])) {
-                if (isset($memInfo['Buffers'], $memInfo['Cached'])) {
-                    return $memInfo['MemTotal'] - $memInfo['MemFree'] - $memInfo['Buffers'] - $memInfo['Cached'];
+            case 'MemRealUsage':
+                if (isset($memInfo['MemAvailable'])) {
+                    return $memInfo['MemTotal'] - $memInfo['MemAvailable'];
                 }
 
-                return $memInfo['MemTotal'] - $memInfo['Buffers'];
-            }
+                if (isset($memInfo['MemFree'])) {
+                    if (isset($memInfo['Buffers'], $memInfo['Cached'])) {
+                        return $memInfo['MemTotal'] - $memInfo['MemFree'] - $memInfo['Buffers'] - $memInfo['Cached'];
+                    }
 
-            return 0;
+                    return $memInfo['MemTotal'] - $memInfo['Buffers'];
+                }
 
-        case 'MemUsage':
-            return isset($memInfo['MemFree']) ? $memInfo['MemTotal'] - $memInfo['MemFree'] : 0;
-
-        case 'SwapUsage':
-            if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree'])) {
                 return 0;
-            }
 
-            return $memInfo['SwapTotal'] - $memInfo['SwapFree'];
+            case 'MemUsage':
+                return isset($memInfo['MemFree']) ? $memInfo['MemTotal'] - $memInfo['MemFree'] : 0;
+
+            case 'SwapUsage':
+                if ( ! isset($memInfo['SwapTotal']) || ! isset($memInfo['SwapFree'])) {
+                    return 0;
+                }
+
+                return $memInfo['SwapTotal'] - $memInfo['SwapFree'];
         }
 
         return isset($memInfo[$key]) ? $memInfo[$key] : 0;

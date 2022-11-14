@@ -39,15 +39,9 @@
       "options": {
         "customMatcher": "\\.scss$"
       }
-    },
-    {
-      "transform": "typescript-styled-plugin",
-      "type": "config",
-      "minify": true,
-      "ssr": false
     }
   ],
   "include": ["src/**/*", "*.mjs", "*.scss", "./tools/**/*"],
   "exclude": ["node_modules", "build", "scripts", "webpack", "jest"],
-  "includes": ["src/scss.d.ts", "styled-components.d.ts"]
+  "includes": ["src/scss.d.ts"]
 }

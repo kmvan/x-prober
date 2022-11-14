@@ -1,7 +1,6 @@
 import { mkdirSync } from 'fs'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path, { dirname } from 'path'
-import { createTransformer } from 'typescript-plugin-styled-components'
 import { fileURLToPath } from 'url'
 import webpack from 'webpack'
 import { rmFiles } from './tools/rm-files.mjs'
@@ -50,9 +49,6 @@ export default {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              getCustomTransformers: () => ({
-                before: [createTransformer()],
-              }),
             },
           },
         ],
