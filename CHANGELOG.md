@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.14.0 - 2022-11-14
+
+### Add
+
+- Add dark mode
+
 ## 8.13.0 - 2022-11-14
 
 ### Fix

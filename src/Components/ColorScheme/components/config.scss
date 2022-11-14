@@ -26,13 +26,9 @@ $bg: #f8f8f8;
   --x-card-legend-bg: linear-gradient(#{darken(#282828, 5%)}, var(--x-fg));
   --x-card-title-fg: var(--x-fg);
   --x-card-title-bg: var(--x-bg);
+  --x-card-des-fg: var(--x-bg);
+  --x-card-des-bg: var(--x-fg);
   --x-card-border-color: rgba(51 51 51 / 10%);
-  --x-card-hover-bg: linear-gradient(
-    to right,
-    transparent,
-    rgba(#000, 0.1),
-    transparent
-  );
   --x-card-box-shadow: rgb(51 51 51 / 30%) 0px -1px 0px,
     rgb(255 255 255) 0px 1px 0px inset, rgb(51 51 51 / 30%) 0px -1px 0px inset,
     rgb(255 255 255) 0px 1px 0px;
@@ -77,16 +73,15 @@ $bg: #f8f8f8;
   --x-progress-fg: var(--x-bg);
   --x-progress-bg: var(--x-fg);
   --x-progress-value-bg: #0c0;
-  --x-progress-value-after-bg: linear-gradient(
-    rgba(255 255 255 / 0.45),
-    transparent
-  );
+  --x-progress-value-after-bg: linear-gradient(#fff3, #0000);
   --x-progress-value-before-bg: linear-gradient(
     to right,
-    rgba(255 255 255/ 0.1),
-    rgba(255 255 255/ 0.95),
-    rgba(255 255 255/ 0.1)
+    #ffffff1a,
+    #fff3,
+    #ffffff1a
   );
+  --x-progress-value-box-shadow: rgb(0 0 0) 0px 0px 1px 1px;
+
   // network stats
   --x-network-stats-tx-fg: #c24b00;
   --x-network-stats-rx-fg: #007400;
@@ -112,4 +107,103 @@ $bg: #f8f8f8;
   // toast
   --x-toast-fg: var(--x-bg);
   --x-toast-bg: var(--x-fg);
+  // ==================== dark ====================
+  @media (prefers-color-scheme: dark) {
+    --x-fg: #ccc;
+    --x-bg: #000;
+    --x-html-bg: #000;
+    --x-body-fg: var(--x-fg);
+    --x-body-bg: #000;
+    --x-gutter: 1rem;
+    --x-app-border-color: var(--x-bg);
+    --x-app-bg: #222;
+    --x-footer-fg: var(--x-fg);
+    --x-footer-bg: var(--x-bg);
+    --x-benchmark-ruby-bg: rgba(#000, 0.05);
+    --x-card-bg: #333;
+    --x-card-bg-hover: linear-gradient(
+      to right,
+      transparent,
+      rgba(0 0 0 / 0.5),
+      transparent
+    );
+    --x-card-legend-fg: var(--x-fg);
+    --x-card-legend-bg: linear-gradient(#{darken(#282828, 5%)}, var(--x-bg));
+    --x-card-title-fg: var(--x-fg);
+    --x-card-title-bg: var(--x-bg);
+    --x-card-des-fg: var(--x-fg);
+    --x-card-des-bg: var(--x-bg);
+    --x-card-border-color: rgba(0 0 0 / 0.5);
+    --x-card-box-shadow: rgb(0 0 0) 0px 0px 0px 1px inset;
+    --x-title-fg: var(--x-fg);
+    --x-title-bg: var(--x-bg);
+    --x-title-box-shadow: 0 1px 0 #000;
+    // star me
+    --x-star-me-fg: var(--x-fg);
+    --x-star-me-bg: var(--x-bg);
+    --x-star-me-hover-fg: #fff;
+    --x-star-me-hover-bg: var(--x-bg);
+    --x-star-me-border-color: linear-gradient(
+      90deg,
+      transparent,
+      #fff,
+      transparent
+    );
+    // nav
+    --x-nav-fg: var(--x-fg);
+    --x-nav-fg-hover: var(--x-fg);
+    --x-nav-fg-active: var(--x-fg);
+    --x-nav-bg: var(--x-bg);
+    --x-nav-bg-hover: linear-gradient(
+      rgba(255 255 255 / 0.15),
+      rgba(255 255 255 / 0.05)
+    );
+    --x-nav-bg-active: linear-gradient(
+      rgba(255 255 255 / 0.25),
+      rgba(255 255 255 / 0.15)
+    );
+    --x-nav-border-color: rgba(255 255 255 / 0.1);
+    // alert
+    --x-status-ok-fg: #fff;
+    --x-status-ok-bg: linear-gradient(#006900, #008200);
+    --x-status-error-fg: #fff;
+    --x-status-error-bg: linear-gradient(#464646, #535353);
+    // search link
+    --x-search-fg: var(--x-fg);
+    --x-search-bg: rgba(0 0 0 / 0.35);
+    --x-search-bg-hover: rgba(255 255 255 / 0.1);
+    // progress
+    --x-progress-fg: var(--x-fg);
+    --x-progress-bg: var(--x-bg);
+    --x-progress-value-bg: #0c0;
+    --x-progress-value-after-bg: linear-gradient(#fff3, #0000);
+    --x-progress-value-before-bg: linear-gradient(
+      to right,
+      #ffffff1a,
+      #fff3,
+      #ffffff1a
+    );
+    --x-progress-value-box-shadow: rgb(0 0 0 / 75%) 0px 0px 0px 10px inset,
+      rgb(0 0 0) 0px 0px 1px 1px;
+    // network stats
+    --x-network-stats-tx-fg: #ff7c29;
+    --x-network-stats-rx-fg: #00da00;
+    // network node
+    --x-network-node-fg: var(--x-fg);
+    --x-network-node-bg: #373c381a;
+    --x-network-node-border-color: #373c381a;
+    --x-network-node-row-bg: var(--x-card-bg-hover);
+    // ping
+    --x-ping-btn-fg: var(--x-fg);
+    --x-ping-btn-bg: var(--x-bg);
+    --x-ping-result-fg: var(--x-fg);
+    --x-ping-result-bg: var(--x-bg);
+    --x-ping-result-scrollbar-bg: var(--x-bg);
+    // sys load
+    --x-sys-load-fg: var(--x-fg);
+    --x-sys-load-bg: var(--x-bg);
+    // toast
+    --x-toast-fg: var(--x-fg);
+    --x-toast-bg: var(--x-bg);
+  }
 }
