@@ -1,10 +1,5 @@
 import { FC, HTMLAttributes } from 'react'
-import styled from 'styled-components'
-import { GUTTER } from '../../Config'
-const StyledCardError = styled.div`
-  padding: ${GUTTER};
-`
-type CardErrorProps = HTMLAttributes<HTMLDivElement>
-export const CardError: FC<CardErrorProps> = (props) => (
-  <StyledCardError {...props} />
+import styles from './styles.module.scss'
+export const CardError: FC<HTMLAttributes<HTMLDivElement>> = (props) => (
+  <div className={styles.error} {...props} />
 )

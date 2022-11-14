@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { useIp } from '../../Hooks/use-ip'
 import { gettext } from '../../Language'
 import { MyInfoStore } from '../stores'
@@ -42,12 +42,12 @@ export const MyInfo: FC = observer(() => {
     [gettext('My browser languages (via PHP)'), conf?.phpLanguage],
   ]
   return (
-    <Row>
+    <GridContainer>
       {items.map(([name, content]: [string, string]) => (
-        <CardGrid key={name} name={name} desktopLg={[1, 2]}>
+        <CardGrid key={name} name={name}>
           {content}
         </CardGrid>
       ))}
-    </Row>
+    </GridContainer>
   )
 })

@@ -9,13 +9,13 @@ export const CpuUsage: FC = observer(() => {
   const { cpuUsage } = ServerStatusStore
   const { idle } = cpuUsage
   return (
-    <CardGrid name={gettext('CPU usage')} tablet={[1, 1]}>
+    <CardGrid name={gettext('CPU usage')}>
       <ProgressBar
         title={template(
           gettext(
-            'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}'
+            'idle: {{idle}} \nnice: {{nice}} \nsys: {{sys}} \nuser: {{user}}',
           ),
-          cpuUsage as any
+          cpuUsage as any,
         )}
         value={100 - idle}
         max={100}

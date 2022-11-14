@@ -1,25 +1,18 @@
 import copyToClipboard from 'copy-to-clipboard'
 import { observer } from 'mobx-react-lite'
 import { FC, MouseEvent, useCallback } from 'react'
-import styled from 'styled-components'
 import { CardDes } from '../../Card/components/card-des'
 import { CardGrid } from '../../Card/components/card-grid'
 import { CardRuby } from '../../Card/components/card-ruby'
 import { CardError } from '../../Card/components/error'
 import { serverFetch } from '../../Fetch/server-fetch'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { OK, TOO_MANY_REQUESTS } from '../../Rest/http-status'
 import { template } from '../../Utils/components/template'
 import { ServerBenchmarkConstants } from '../constants'
 import { ServerBenchmarkStore } from '../stores'
-const StyledTextBtn = styled.a`
-  display: block;
-`
-const StyledResult = styled.div``
-const StyledAff = styled.a`
-  word-break: normal;
-`
+import styles from './styles.module.scss'
 const Result = ({
   cpu,
   read,
@@ -43,10 +36,10 @@ const Result = ({
       read: readString,
       write: writeString,
       total: totalString,
-    }
+    },
   )
   return (
-    <StyledResult>
+    <div>
       <CardRuby
         ruby={cpuString}
         rt='CPU'
@@ -71,7 +64,7 @@ const Result = ({
         rt={date || ''}
         onClick={() => copyToClipboard(totalText)}
       />
-    </StyledResult>
+    </div>
   )
 }
 const Items: FC = observer(() => {
@@ -119,28 +112,24 @@ const Items: FC = observer(() => {
         ''
       )
       const title = (
-        <StyledAff
+        <a
+          className={styles.aff}
           href={url}
           target='_blank'
           title={gettext('Visit the official website')}
+          rel='noreferrer'
         >
           {name}
-        </StyledAff>
+        </a>
       )
       return (
-        <CardGrid
-          key={name}
-          name={title}
-          tablet={[1, 2]}
-          desktopMd={[1, 3]}
-          desktopLg={[1, 4]}
-        >
+        <CardGrid key={name} name={title} lg={2} xl={3} xxl={4}>
           <Result cpu={cpu} read={read} write={write} date={date} />
           {proberLink}
           {binLink}
         </CardGrid>
       )
-    }
+    },
   )
   return <>{results}</>
 })
@@ -155,13 +144,10 @@ const TestBtn: FC<{ onClick: (e: MouseEvent<HTMLAnchorElement>) => void }> =
   observer(({ onClick }) => {
     const { linkText } = ServerBenchmarkStore
     return (
-      <CardGrid
-        name={gettext('My server')}
-        tablet={[1, 2]}
-        desktopMd={[1, 3]}
-        desktopLg={[1, 4]}
-      >
-        <StyledTextBtn onClick={onClick}>{linkText}</StyledTextBtn>
+      <CardGrid name={gettext('My server')}>
+        <a className={styles.btn} href='#' onClick={onClick}>
+          {linkText}
+        </a>
         <TestResults />
       </CardGrid>
     )
@@ -190,28 +176,28 @@ export const ServerBenchmark: FC = observer(() => {
         setLinkText(
           template(gettext('⏳ Please wait {{seconds}}s'), {
             seconds,
-          })
+          }),
         )
       } else {
         setLinkText(gettext('Network error, please try again later.'))
       }
       setIsLoading(false)
     },
-    []
+    [],
   )
   return (
     <>
       <CardDes>
         {gettext(
-          '⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference.'
+          '⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference.',
         )}
       </CardDes>
-      <Row>
+      <GridContainer>
         {ServerBenchmarkConstants.conf?.disabledMyServerBenchmark || (
           <TestBtn onClick={onClick} />
         )}
         <Items />
-      </Row>
+      </GridContainer>
     </>
   )
 })

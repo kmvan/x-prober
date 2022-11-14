@@ -29,7 +29,7 @@ export const colorSchemeDefault: ColorSchemeProps = {
   'card.bg': rgba(dark, 0.03),
   'card.hover.bg': `linear-gradient(to right, transparent, ${rgba(
     '#000',
-    0.1
+    0.1,
   )}, transparent)`,
   'card.boxShadow': [
     `0 -1px 0 ${rgba(dark, 0.3)}`,

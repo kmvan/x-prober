@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-// for php 8.0
 $finder = PhpCsFixer\Finder::create()
     ->exclude(__DIR__ . '/dist')
     ->exclude(__DIR__ . '/.tmp')

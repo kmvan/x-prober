@@ -1,0 +1,115 @@
+@use 'sass:color';
+$fg: #333;
+$bg: #f8f8f8;
+:root {
+  --x-max-width: 1680px;
+  --x-radius: 2rem;
+  --x-fg: #{$fg};
+  --x-bg: #{$bg};
+  --x-html-bg: var(--x-fg);
+  --x-x-body-fg: var(--x-bg);
+  --x-body-bg: var(--x-bg);
+  --x-gutter: 1rem;
+  --x-app-border-color: var(--x-fg);
+  --x-app-bg: var(--x-bg);
+  --x-footer-fg: var(--x-bg);
+  --x-footer-bg: var(--x-fg);
+  --x-benchmark-ruby-bg: rgba(#000, 0.05);
+  --x-card-bg: rgba(51 51 51 / 0.03);
+  --x-card-bg-hover: linear-gradient(
+    to right,
+    transparent,
+    #0000001a,
+    transparent
+  );
+  --x-card-legend-fg: var(--x-bg);
+  --x-card-legend-bg: linear-gradient(#{darken(#282828, 5%)}, var(--x-fg));
+  --x-card-title-fg: var(--x-fg);
+  --x-card-title-bg: var(--x-bg);
+  --x-card-border-color: rgba(51 51 51 / 10%);
+  --x-card-hover-bg: linear-gradient(
+    to right,
+    transparent,
+    rgba(#000, 0.1),
+    transparent
+  );
+  --x-card-box-shadow: rgb(51 51 51 / 30%) 0px -1px 0px,
+    rgb(255 255 255) 0px 1px 0px inset, rgb(51 51 51 / 30%) 0px -1px 0px inset,
+    rgb(255 255 255) 0px 1px 0px;
+  --x-title-fg: var(--x-bg);
+  --x-title-bg: var(--x-fg);
+  --x-title-box-shadow: 0 1px 0 #000;
+  // star me
+  --x-star-me-fg: var(--x-bg);
+  --x-star-me-bg: var(--x-fg);
+  --x-star-me-hover-fg: #fff;
+  --x-star-me-hover-bg: var(--x-fg);
+  --x-star-me-border-color: linear-gradient(
+    90deg,
+    transparent,
+    #fff,
+    transparent
+  );
+  // nav
+  --x-nav-fg: var(--x-bg);
+  --x-nav-fg-hover: var(--x-fg);
+  --x-nav-fg-active: var(--x-fg);
+  --x-nav-bg: var(--x-fg);
+  --x-nav-bg-hover: linear-gradient(
+    rgba(255 255 255 / 0.85),
+    rgba(255 255 255 / 0.65)
+  );
+  --x-nav-bg-active: linear-gradient(
+    rgba(255 255 255 / 0.95),
+    rgba(255 255 255 / 0.75)
+  );
+  --x-nav-border-color: rgba(255 255 255 / 0.1);
+  // alert
+  --x-status-ok-fg: #fff;
+  --x-status-ok-bg: linear-gradient(#{darken(#00e800, 15%)}, #00e800);
+  --x-status-error-fg: #fff;
+  --x-status-error-bg: linear-gradient(#{darken(#b9b9b9, 25%)}, #b9b9b9);
+  // search link
+  --x-search-fg: var(--x-fg);
+  --x-search-bg: rgba(0 0 0 / 0.05);
+  --x-search-bg-hover: rgba(0 0 0 / 0.15);
+  // progress
+  --x-progress-fg: var(--x-bg);
+  --x-progress-bg: var(--x-fg);
+  --x-progress-value-bg: #0c0;
+  --x-progress-value-after-bg: linear-gradient(
+    rgba(255 255 255 / 0.45),
+    transparent
+  );
+  --x-progress-value-before-bg: linear-gradient(
+    to right,
+    rgba(255 255 255/ 0.1),
+    rgba(255 255 255/ 0.95),
+    rgba(255 255 255/ 0.1)
+  );
+  // network stats
+  --x-network-stats-tx-fg: #c24b00;
+  --x-network-stats-rx-fg: #007400;
+  // network node
+  --x-network-node-fg: var(--x-fg);
+  --x-network-node-bg: #373c381a;
+  --x-network-node-border-color: #373c381a;
+  --x-network-node-row-bg: linear-gradient(
+    to right,
+    transparent,
+    rgba(255 255 255 / 0.5),
+    transparent
+  );
+  // ping
+  --x-ping-btn-fg: var(--x-bg);
+  --x-ping-btn-bg: var(--x-fg);
+  --x-ping-result-fg: var(--x-bg);
+  --x-ping-result-bg: var(--x-fg);
+  --x-ping-result-scrollbar-bg: var(--x-fg);
+  // sys load
+  --x-sys-load-fg: var(--x-bg);
+  --x-sys-load-bg: var(--x-fg);
+  // toast
+  --x-toast-fg: var(--x-bg);
+  --x-toast-bg: var(--x-fg);
+}

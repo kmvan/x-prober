@@ -1,37 +1,10 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
-import styled from 'styled-components'
 import { CardGrid } from '../../Card/components/card-grid'
-import { GUTTER } from '../../Config'
 import { gettext } from '../../Language'
-import { device } from '../../Style/components/devices'
 import { template } from '../../Utils/components/template'
 import { ServerStatusStore } from '../stores'
-interface StyledSysLoadGroupProps {
-  isCenter: boolean
-}
-export const StyledSysLoadGroup = styled.div<StyledSysLoadGroupProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media ${device('tablet')} {
-    justify-content: ${({ isCenter }) => (isCenter ? 'center' : 'flex-start')};
-  }
-`
-export const StyledSysLoadGroupItem = styled.span`
-  background: ${({ theme }) => theme['sysLoad.bg']};
-  color: ${({ theme }) => theme['sysLoad.fg']};
-  padding: calc(${GUTTER} / 10) calc(${GUTTER} / 1.5);
-  border-radius: 10rem;
-  font-family: 'Arial Black', sans-serif;
-  font-weight: 700;
-  @media ${device('tablet')} {
-    padding: calc(${GUTTER} / 10) ${GUTTER};
-  }
-  & + & {
-    margin-left: 0.5rem;
-  }
-`
+import styles from './styles.module.scss'
 interface SysLoadGroupProps {
   sysLoad: number[]
   isCenter: boolean
@@ -46,13 +19,13 @@ export const SysLoadGroup: FC<SysLoadGroupProps> = ({ sysLoad, isCenter }) => {
     }),
   }))
   return (
-    <StyledSysLoadGroup isCenter={isCenter}>
+    <div className={styles.loadGroup} data-center={isCenter || undefined}>
       {loadHuman.map(({ id, load, text }) => (
-        <StyledSysLoadGroupItem key={id} title={text}>
+        <div className={styles.loadGroupItem} key={id} title={text}>
           {load.toFixed(2)}
-        </StyledSysLoadGroupItem>
+        </div>
       ))}
-    </StyledSysLoadGroup>
+    </div>
   )
 }
 interface SystemLoadProps {
@@ -60,8 +33,8 @@ interface SystemLoadProps {
 }
 export const SystemLoad: FC<SystemLoadProps> = observer(
   ({ isCenter = false }) => (
-    <CardGrid name={gettext('System load')} tablet={[1, 1]}>
+    <CardGrid name={gettext('System load')}>
       <SysLoadGroup isCenter={isCenter} sysLoad={ServerStatusStore.sysLoad} />
     </CardGrid>
-  )
+  ),
 )

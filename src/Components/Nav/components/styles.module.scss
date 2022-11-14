@@ -1,0 +1,56 @@
+@use '../../Style/components//device.scss' as m;
+.main {
+  position: fixed;
+  bottom: 0;
+  background: var(--x-nav-bg);
+  padding: 0 var(--x-gutter);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 3rem;
+  line-height: 3rem;
+  overflow-x: auto;
+  @include m.device(sm) {
+    overflow-x: unset;
+    justify-content: center;
+  }
+}
+.link {
+  position: relative;
+  white-space: nowrap;
+  color: var(--x-nav-fg);
+  padding: 0 0.5rem;
+  border-right: 1px solid var(--x-nav-border-color);
+  @include m.device(md) {
+    padding: 0 var(--x-gutter);
+  }
+  &:hover {
+    background: var(--x-nav-bg-hover);
+    color: var(--x-nav-fg-hover);
+    text-decoration: none;
+  }
+  &:active,
+  &[data-active] {
+    background: var(--x-nav-bg-active);
+    color: var(--x-nav-fg-active);
+    text-decoration: none;
+  }
+  &:last-child {
+    border-right: 0;
+  }
+}
+.linkTitle {
+  display: none;
+  @include m.device(lg) {
+    display: block;
+  }
+}
+.linkTitleTiny {
+  display: block;
+  @include m.device(lg) {
+    display: none;
+  }
+}

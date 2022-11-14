@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { Alert } from '../../Utils/components/alert'
 import { DatabaseStore } from '../stores'
 export const Database: FC = observer(() => {
@@ -18,19 +18,12 @@ export const Database: FC = observer(() => {
     ['PDO', conf?.pdo],
   ]
   return (
-    <Row>
+    <GridContainer>
       {shortItems.map(([name, content]) => (
-        <CardGrid
-          key={name}
-          name={name}
-          mobileMd={[1, 2]}
-          tablet={[1, 3]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={name} name={name} sm={2} lg={2} xl={3} xxl={4}>
           <Alert isSuccess={Boolean(content)} msg={content} />
         </CardGrid>
       ))}
-    </Row>
+    </GridContainer>
   )
 })

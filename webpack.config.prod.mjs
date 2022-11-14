@@ -1,7 +1,7 @@
 import { mkdirSync } from 'fs'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import path, { dirname } from 'path'
 import TerserPlugin from 'terser-webpack-plugin'
-import { createTransformer } from 'typescript-plugin-styled-components'
 import { fileURLToPath } from 'url'
 import webpack from 'webpack'
 import { rmFiles } from './tools/rm-files.mjs'
@@ -51,6 +51,11 @@ export default {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
     new webpack.DefinePlugin({
       __DEV__: false,
       'process.env': {
@@ -71,15 +76,41 @@ export default {
             loader: 'ts-loader',
             options: {
               transpileOnly: true,
-              getCustomTransformers: () => ({
-                before: [
-                  createTransformer({
-                    minify: true,
-                  }),
-                ],
-              }),
             },
           },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              import: false,
+              modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
         ],
       },
     ],

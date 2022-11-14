@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.12.0 - 2022-11-14
+
+### Remove
+
+- Remove `styled-components`
+- Remove dark mode (soming soon)
+
+### Remove
+
+- Remove PHP5.3 compatibility
+
 ## 8.11.0 - 2022-10-22
 
 ### Remove

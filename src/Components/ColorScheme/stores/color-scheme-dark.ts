@@ -29,7 +29,7 @@ export const colorSchemeDark: ColorSchemeProps = {
   'card.bg': '#333',
   'card.hover.bg': `linear-gradient(to right, transparent, ${rgba(
     '#000',
-    0.5
+    0.5,
   )}, transparent)`,
   'card.boxShadow': `inset 0 0 0 1px #000`,
   'card.legend.fg': light,
@@ -67,12 +67,12 @@ export const colorSchemeDark: ColorSchemeProps = {
   'status.success.fg': light,
   'status.success.bg': `linear-gradient(${darken(0.25, '#00e800')}, ${darken(
     0.2,
-    '#00e800'
+    '#00e800',
   )})`,
   'status.error.fg': light,
   'status.error.bg': `linear-gradient(${darken(0.45, '#b9b9b9')}, ${darken(
     0.4,
-    '#b9b9b9'
+    '#b9b9b9',
   )})`,
   'search.fg': light,
   'search.bg': rgba(dark, 0.1),

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import { FC, ReactNode } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
 import { MultiItemContainer } from '../../Card/components/multi-item-container'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { Alert } from '../../Utils/components/alert'
 import { SearchLink } from '../../Utils/components/search-link'
@@ -60,27 +60,14 @@ export const PhpInfo: FC = observer(() => {
     ],
   ]
   return (
-    <Row>
+    <GridContainer>
       {oneLineItems.map(([title, content]) => (
-        <CardGrid
-          key={title}
-          name={title}
-          tablet={[1, 3]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={title} name={title}>
           {content}
         </CardGrid>
       ))}
       {shortItems.map(([title, content]) => (
-        <CardGrid
-          key={title}
-          name={title}
-          mobileMd={[1, 2]}
-          tablet={[1, 3]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
           {content}
         </CardGrid>
       ))}
@@ -89,6 +76,6 @@ export const PhpInfo: FC = observer(() => {
           <MultiItemContainer>{content}</MultiItemContainer>
         </CardGrid>
       ))}
-    </Row>
+    </GridContainer>
   )
 })

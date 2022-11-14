@@ -93,8 +93,8 @@ class Main {
     localStorage.setItem(
       'cardsPriority',
       JSON.stringify(
-        this.enabledCards.map(({ id, priority }) => ({ id, priority }))
-      )
+        this.enabledCards.map(({ id, priority }) => ({ id, priority })),
+      ),
     )
   }
   private getStoragePriority = (id: string): number => {

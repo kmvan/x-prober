@@ -1,0 +1,47 @@
+@use '../../Style/components/device.scss' as m;
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--x-star-me-bg);
+  color: var(--x-star-me-fg);
+  font-family: 'Arial Black', sans-serif;
+  padding: calc(var(--x-gutter) / 3) calc(var(--x-gutter) * 3);
+  box-shadow: 0 3px 5px var(--x-star-me-bg);
+  z-index: 2;
+  transform: rotate(-45deg) translate3d(-28%, -70%, 0);
+  opacity: 0.95;
+  @include m.device(md) {
+    transform: rotate(-45deg) translate3d(-28%, -50%, 0);
+    top: calc(var(--x-gutter) / 2);
+    left: calc(var(--x-gutter) / 2);
+  }
+  &:hover {
+    color: var(--x-star-me-hover-fg);
+    background: var(--x-star-me-hover-bg);
+    text-decoration: none;
+    opacity: 1;
+  }
+  &::after,
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    height: 0.5px;
+    width: 100%;
+    background: var(--x-star-me-border-color);
+    content: '';
+  }
+  &::after {
+    top: auto;
+    bottom: 1px;
+  }
+}
+.text {
+  margin-left: 0.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}

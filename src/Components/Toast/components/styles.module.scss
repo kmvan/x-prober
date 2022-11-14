@@ -1,0 +1,16 @@
+.main {
+  position: fixed;
+  bottom: 4rem;
+  width: 20rem;
+  max-width: 80vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--x-toast-bg);
+  color: var(--x-toast-fg);
+  border-radius: var(--x-gutter);
+  padding: calc(var(--x-gutter) * 0.5) var(--x-gutter);
+  cursor: pointer;
+  word-break: normal;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}

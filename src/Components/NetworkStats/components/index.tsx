@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { usePrevious } from 'react-use'
 import { CardGrid } from '../../Card/components/card-grid'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { NetworkStatsStore } from '../stores'
 import { NetworksStatsItem } from './item'
 export const NetworkStats: FC = observer(() => {
@@ -16,23 +16,18 @@ export const NetworkStats: FC = observer(() => {
   })
   const seconds = timestamp - (prevData?.timestamp || timestamp)
   return (
-    <Row>
+    <GridContainer>
       {sortItems.map(({ id, rx, tx }) => {
         if (!rx && !tx) {
           return null
         }
         const prevItem = (prevData?.items || sortItems).find(
-          (item) => item.id === id
+          (item) => item.id === id,
         )
         const prevRx = prevItem?.rx || 0
         const prevTx = prevItem?.tx || 0
         return (
-          <CardGrid
-            key={id}
-            tablet={[1, 2]}
-            desktopMd={[1, 3]}
-            desktopLg={[1, 4]}
-          >
+          <CardGrid key={id} lg={2} xxl={3}>
             <NetworksStatsItem
               id={id}
               totalRx={rx}
@@ -43,6 +38,6 @@ export const NetworkStats: FC = observer(() => {
           </CardGrid>
         )
       })}
-    </Row>
+    </GridContainer>
   )
 })

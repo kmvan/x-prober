@@ -1,0 +1,12 @@
+.main {
+  margin: 0 calc(var(--x-gutter) * 0.2) calc(var(--x-gutter) * 0.2) 0;
+  background: var(--x-search-bg);
+  color: var(--x-search-fg);
+  padding: 0 calc(var(--x-gutter) * 0.5);
+  border-radius: var(--x-radius);
+  font-family: consolas, monospace;
+  &:hover {
+    text-decoration: underline;
+    background: var(--x-search-bg-hover);
+  }
+}

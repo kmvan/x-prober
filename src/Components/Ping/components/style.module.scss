@@ -1,0 +1,73 @@
+@use '../../Style/components/device.scss' as m;
+.btn {
+  display: block;
+  text-align: center;
+  color: var(--x-ping-btn-fg);
+  background: var(--x-ping-btn-bg);
+  border-radius: var(--x-radius);
+  padding: calc(var(--x-gutter) * 0.5) var(--x-gutter);
+  margin-right: var(--x-gutter);
+  &:hover,
+  &:active {
+    text-decoration: none;
+    color: var(--x-ping-btn-fg);
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 1;
+    transform: scale3d(0.95, 0.95, 1);
+  }
+}
+
+.itemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 calc(var(--x-gutter) * 0.5);
+  padding: 0;
+  height: 8rem;
+  overflow-y: auto;
+  list-style-type: none;
+}
+.item {
+  flex: 0 0 50%;
+  @include m.device(lg) {
+    flex: 0 0 33.333%;
+  }
+  @include m.device(xl) {
+    flex: 0 0 25%;
+  }
+  @include m.device(xxl) {
+    flex: 0 0 20%;
+  }
+}
+.itemNumber {
+  opacity: 0.5;
+  display: none;
+  @include m.device(lg) {
+    display: inline;
+  }
+}
+.itemLine {
+  opacity: 0.3;
+  display: none;
+  @include m.device(lg) {
+    display: inline;
+  }
+}
+.itemTime {
+  font-weight: bold;
+}
+.resultContainer {
+  background: var(--x-ping-result-bg);
+  color: var(--x-ping-result-fg);
+  border-radius: calc(var(--x-radius) * 0.5);
+  padding: calc(var(--x-gutter) * 0.5) var(--x-gutter);
+}
+.result {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px dashed var(--x-ping-result-fg);
+  padding-top: calc(var(--x-gutter) * 0.5);
+  justify-content: space-between;
+}
