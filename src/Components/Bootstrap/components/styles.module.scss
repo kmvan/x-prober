@@ -1,0 +1,20 @@
+.app {
+  padding: calc(var(--x-gutter) * 3.5) 0 calc(var(--x-gutter) * 2);
+  background: var(--x-app-bg);
+  /* notch right angle square */
+  &::before,
+  &::after {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: calc(var(--x-gutter) * 2);
+    border: var(--x-gutter) solid var(--x-app-border-color);
+    pointer-events: none;
+    z-index: 1;
+    content: '';
+  }
+  &::after {
+    border-radius: calc(var(--x-gutter) * 3);
+  }
+}

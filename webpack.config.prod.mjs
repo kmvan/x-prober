@@ -82,6 +82,22 @@ export default {
           },
         ],
       },
+      {
+        test: /\.scss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
     ],
   },
   devtool: 'hidden-source-map',

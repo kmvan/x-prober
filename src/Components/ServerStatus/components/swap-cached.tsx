@@ -10,7 +10,7 @@ export const SwapCached: FC = observer(() => {
     return null
   }
   return (
-    <CardGrid name={gettext('Swap cached')} tablet={[1, 1]}>
+    <CardGrid name={gettext('Swap cached')}>
       <ProgressBar value={value} max={max} isCapacity />
     </CardGrid>
   )

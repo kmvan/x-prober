@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import styled from 'styled-components'
 import { Grid } from '../../Grid/components/grid'
-import { Row } from '../../Grid/components/row'
+import gridStyles from '../../Grid/components/styles.module.scss'
 import { formatBytes } from '../../Utils/components/format-bytes'
+import styles from './styles.module.scss'
 interface NetworksStatsItemProps {
   id: string
   singleLine?: boolean
@@ -11,45 +11,6 @@ interface NetworksStatsItemProps {
   totalTx: number
   rateTx: number
 }
-const StyledNetworkId = styled.div`
-  text-decoration: underline;
-`
-export const StyledNetworkIdRow = styled(Row)`
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`
-const StyledNetworkStatsDataContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`
-interface StyledNetworkStatsDataProps {
-  isUpload: boolean
-}
-const StyledNetworkStatsData = styled.div<StyledNetworkStatsDataProps>`
-  flex: 0 0 50%;
-  color: ${({ isUpload, theme }) =>
-    isUpload ? theme['network.stats.upload'] : theme['network.stats.download']};
-`
-const StyledNetworkStatsTotal = styled.div``
-const StyledNetworkStatsRate = styled.div`
-  font-family: 'Arial Black', sans-serif;
-  ::before {
-    margin-right: 0.5rem;
-  }
-`
-const StyledNetworkStatsRateRx = styled(StyledNetworkStatsRate)`
-  ::before {
-    content: '▼';
-  }
-`
-const StyledNetworkStatsRateTx = styled(StyledNetworkStatsRate)`
-  ::before {
-    content: '▲';
-  }
-`
 export const NetworksStatsItem: FC<NetworksStatsItemProps> = ({
   id,
   singleLine = true,
@@ -62,30 +23,22 @@ export const NetworksStatsItem: FC<NetworksStatsItemProps> = ({
     return null
   }
   return (
-    <StyledNetworkIdRow>
-      <Grid mobileSm={singleLine ? [1, 3] : [1, 1]}>
-        <StyledNetworkId>{id}</StyledNetworkId>
+    <div className={[styles.idRow, gridStyles.container].join(' ')}>
+      <Grid lg={singleLine ? 3 : 1}>
+        <div className={styles.id}>{id}</div>
       </Grid>
-      <Grid mobileSm={singleLine ? [2, 3] : [1, 1]}>
-        <StyledNetworkStatsDataContainer>
-          <StyledNetworkStatsData isUpload={false}>
-            <StyledNetworkStatsTotal>
-              {formatBytes(totalRx)}
-            </StyledNetworkStatsTotal>
-            <StyledNetworkStatsRateRx>
-              {formatBytes(rateRx)}/s
-            </StyledNetworkStatsRateRx>
-          </StyledNetworkStatsData>
-          <StyledNetworkStatsData isUpload>
-            <StyledNetworkStatsTotal>
-              {formatBytes(totalTx)}
-            </StyledNetworkStatsTotal>
-            <StyledNetworkStatsRateTx>
-              {formatBytes(rateTx)}/s
-            </StyledNetworkStatsRateTx>
-          </StyledNetworkStatsData>
-        </StyledNetworkStatsDataContainer>
+      <Grid lg={singleLine ? 3 : 1}>
+        <div className={styles.dataContainer}>
+          <div className={styles.data} data-rx>
+            <div>{formatBytes(totalRx)}</div>
+            <div className={styles.rateRx}>{formatBytes(rateRx)}/s</div>
+          </div>
+          <div className={styles.data} data-tx>
+            <div>{formatBytes(totalTx)}</div>
+            <div className={styles.rateTx}>{formatBytes(rateTx)}/s</div>
+          </div>
+        </div>
       </Grid>
-    </StyledNetworkIdRow>
+    </div>
   )
 }

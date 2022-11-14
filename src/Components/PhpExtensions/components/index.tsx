@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
 import { MultiItemContainer } from '../../Card/components/multi-item-container'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { Alert } from '../../Utils/components/alert'
 import { SearchLink } from '../../Utils/components/search-link'
@@ -57,21 +57,14 @@ longItems.sort((a, b) => {
   return 0
 })
 export const PhpExtensions: FC = () => (
-  <Row>
+  <GridContainer>
     {shortItems.map(([name, enabled]) => (
-      <CardGrid
-        key={name}
-        name={name}
-        mobileMd={[1, 2]}
-        tablet={[1, 3]}
-        desktopMd={[1, 4]}
-        desktopLg={[1, 5]}
-      >
+      <CardGrid key={name} name={name} lg={2} xl={3} xxl={4}>
         <Alert isSuccess={enabled} />
       </CardGrid>
     ))}
     {Boolean(longItems.length) && (
-      <CardGrid name={gettext('Loaded extensions')} tablet={[1, 1]}>
+      <CardGrid name={gettext('Loaded extensions')}>
         <MultiItemContainer>
           {longItems.map((id) => (
             <SearchLink key={id} keyword={id} />
@@ -79,5 +72,5 @@ export const PhpExtensions: FC = () => (
         </MultiItemContainer>
       </CardGrid>
     )}
-  </Row>
+  </GridContainer>
 )

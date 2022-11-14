@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { template } from '../../Utils/components/template'
 import { ServerInfoStore } from '../stores'
@@ -14,7 +14,7 @@ const ServerInfoTime: FC = observer(() => {
   } = ServerInfoStore
   const uptime = template(
     gettext('{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs'),
-    { days, hours, mins, secs }
+    { days, hours, mins, secs },
   )
   const items = [
     [gettext('Server time'), serverTime],
@@ -23,13 +23,7 @@ const ServerInfoTime: FC = observer(() => {
   return (
     <>
       {items.map(([title, content]) => (
-        <CardGrid
-          key={title}
-          name={title}
-          tablet={[1, 2]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
           {content}
         </CardGrid>
       ))}
@@ -55,35 +49,23 @@ export const ServerInfo: FC = observer(() => {
     [gettext('Disk usage'), <ServerDiskUsage key='diskUsage' />],
   ]
   return (
-    <Row>
+    <GridContainer>
       {shortItems1.map(([title, content]) => (
-        <CardGrid
-          key={title}
-          name={title}
-          tablet={[1, 2]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
           {content}
         </CardGrid>
       ))}
       <ServerInfoTime />
       {shortItems2.map(([title, content]) => (
-        <CardGrid
-          key={title}
-          name={title}
-          tablet={[1, 2]}
-          desktopMd={[1, 4]}
-          desktopLg={[1, 5]}
-        >
+        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
           {content}
         </CardGrid>
       ))}
       {longItems.map(([title, content]) => (
-        <CardGrid key={title} name={title} tablet={[1, 1]}>
+        <CardGrid key={title} name={title}>
           {content}
         </CardGrid>
       ))}
-    </Row>
+    </GridContainer>
   )
 })

@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { CardGrid } from '../../Card/components/card-grid'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { ProgressBar } from '../../ProgressBar/components'
 import { template } from '../../Utils/components/template'
@@ -12,14 +12,13 @@ export const TemperatureSensor: FC = observer(() => {
     return null
   }
   return (
-    <Row>
+    <GridContainer>
       {items.map(({ id, name, celsius }) => (
         <CardGrid
           key={id}
           name={template(gettext('{{sensor}} temperature'), {
             sensor: name,
           })}
-          tablet={[1, itemsCount === 1 ? 1 : 2]}
         >
           <ProgressBar
             value={celsius}
@@ -29,6 +28,6 @@ export const TemperatureSensor: FC = observer(() => {
           />
         </CardGrid>
       ))}
-    </Row>
+    </GridContainer>
   )
 })

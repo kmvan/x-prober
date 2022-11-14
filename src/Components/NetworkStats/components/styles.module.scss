@@ -1,0 +1,39 @@
+.id {
+  text-decoration: underline;
+  text-align: center;
+}
+.idRow {
+  align-items: center;
+}
+.dataContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.data {
+  flex: 0 0 50%;
+  &[data-rx] {
+    color: var(--x-network-stats-rx-fg);
+  }
+  &[data-tx] {
+    color: var(--x-network-stats-tx-fg);
+  }
+}
+
+.rate {
+  font-family: 'Arial Black', sans-serif;
+  &::before {
+    margin-right: 0.5rem;
+  }
+}
+.rateRx {
+  &::before {
+    content: '▼';
+  }
+}
+.rateTx {
+  &::before {
+    content: '▲';
+  }
+}

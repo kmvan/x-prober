@@ -58,6 +58,10 @@ final class Compiler
                 'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
                 'distFilePath'   => $this->COMPILE_FILE_PATH,
             ));
+            new StyleGeneration(array(
+                'styleFilePath' => "{$this->ROOT}/.tmp/app.css",
+                'distFilePath'  => $this->COMPILE_FILE_PATH,
+            ));
 
             if ( ! $this->isDev()) {
                 if ($this->isDebug()) {

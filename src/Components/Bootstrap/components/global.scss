@@ -1,0 +1,49 @@
+@use '../../Style/components/device.scss' as m;
+:global {
+  @include m.device(xl) {
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar {
+      width: var(--x-gutter);
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: var(--x-gutter) 0 0 var(--x-gutter);
+      background-color: #ccc;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+  * {
+    box-sizing: border-box;
+    word-break: break-all;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    font-size: 75%;
+    background: var(--x-html-bg);
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--x-body-bg);
+    color: var(--x-x-body-fg);
+    font-family: 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, Verdana,
+      Geneva, sans-serif;
+    padding: var(--x-gutter);
+    margin: 0;
+    line-height: 1.5;
+  }
+  a {
+    cursor: pointer;
+    color: var(--x-fg);
+    text-decoration: none;
+    &:hover,
+    &:active {
+      color: var(--x-fg);
+      text-decoration: underline;
+    }
+  }
+}

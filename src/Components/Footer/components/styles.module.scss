@@ -1,0 +1,19 @@
+.main {
+  background: var(--x-footer-bg);
+  color: var(--x-footer-fg);
+  width: 100%;
+  border-radius: 10rem;
+  text-align: center;
+  padding: calc(var(--x-gutter) / 2) var(--x-gutter);
+  margin: calc(var(--x-gutter) * 1.5) auto;
+  word-break: normal;
+  // @media ${device('tablet')} {
+  //   width: 60%;
+  // }
+  a {
+    color: var(--x-footer-fg);
+    &:hover {
+      color: var(--x-footer-fg);
+    }
+  }
+}

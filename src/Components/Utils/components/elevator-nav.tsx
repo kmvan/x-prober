@@ -19,10 +19,13 @@ export const ElevatorNav: FC<ElevatorNavProps> = ({
       const isActive = activeIndex === i
       const { type: Component, props } = child as ReactElement
       const { className = '', ...p } = props
-      const activeClassName = isActive
-        ? `${className} active`.trim()
-        : className
-      return <Component className={activeClassName} {...p} />
+      return (
+        <Component
+          className={className}
+          data-active={isActive || undefined}
+          {...p}
+        />
+      )
     })}
   </>
 )
@@ -37,7 +40,7 @@ export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
   id,
   setActiveIndex,
   threshold = 50,
-  topOffset = 1,
+  topOffset = 50,
   children,
 }) => {
   const position = useRef<[start: number, end: number][]>([[0, 0]])
@@ -47,7 +50,7 @@ export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
       window.clearTimeout(timer.current)
     }
     timer.current = window.setTimeout(() => {
-      const y = Math.round(window.pageYOffset) + topOffset
+      const y = Math.round(window.scrollY) + topOffset
       position.current.map(([start, end], i) => {
         if (y >= start && y < start + end) {
           return setActiveIndex(i)
@@ -61,7 +64,7 @@ export const ElevatorNavBody: FC<ElevatorNavBodyProps> = ({
       const count = Children.count(children)
       position.current = children.map((child, i) => {
         const element: HTMLElement | null = document.querySelector(
-          `[data-elevator='${id}-${i}']`
+          `[data-elevator='${id}-${i}']`,
         )
         if (!element) {
           return [0, 0]

@@ -1,11 +1,5 @@
-import { FC } from 'react'
-import styled from 'styled-components'
-import { BORDER_RADIUS, GUTTER } from '../../Config'
-const StyledCardDes = styled.div`
-  padding: calc(${GUTTER} / 2) ${GUTTER};
-  background-color: ${({ theme }) => theme['card.des.bg']};
-  color: ${({ theme }) => theme['card.des.fg']};
-  border-radius: ${BORDER_RADIUS};
-  margin-bottom: ${GUTTER};
-`
-export const CardDes: FC = (props) => <StyledCardDes {...props} />
+import { FC, HTMLProps } from 'react'
+import styles from './styles.module.scss'
+export const CardDes: FC<HTMLProps<HTMLDivElement>> = (props) => (
+  <div className={styles.des} {...props} />
+)

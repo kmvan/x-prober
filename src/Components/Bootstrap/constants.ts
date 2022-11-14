@@ -5,7 +5,7 @@ class Main {
   public readonly version: string = String(this.conf?.version ?? '0.0.0')
   public readonly appConfigUrls: string[] = this.conf?.appConfigUrls ?? []
   public readonly appConfigUrlDev: string = String(
-    this.conf?.appConfigUrlDev ?? ''
+    this.conf?.appConfigUrlDev ?? '',
   )
   public readonly appName: string = String(this.conf?.appName ?? '')
   public readonly appUrl: string = String(this.conf?.appUrl ?? '')

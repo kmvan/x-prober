@@ -1,0 +1,27 @@
+@use '../../Style/components/device.scss' as m;
+.loadGroup {
+  display: flex;
+  align-items: center;
+  &[data-center] {
+    justify-content: center;
+  }
+  @include m.device(lg) {
+    &[data-center] {
+      justify-content: center;
+    }
+  }
+}
+.loadGroupItem {
+  background: var(--x-sys-load-bg);
+  color: var(--x-sys-load-fg);
+  padding: calc(var(--x-gutter) * 0.1) calc(var(--x-gutter) / 1.5);
+  border-radius: 10rem;
+  font-family: 'Arial Black', sans-serif, monospace;
+  font-weight: 700;
+  @include m.device(lg) {
+    padding: calc(var(--x-gutter) * 0.1) var(--x-gutter);
+  }
+  & + & {
+    margin-left: 0.5rem;
+  }
+}

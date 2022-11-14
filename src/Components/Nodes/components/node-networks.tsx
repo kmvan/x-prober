@@ -1,33 +1,7 @@
 import { FC, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { BORDER_RADIUS, GUTTER } from '../../Config'
-import {
-  NetworksStatsItem,
-  StyledNetworkIdRow,
-} from '../../NetworkStats/components/item'
+import { NetworksStatsItem } from '../../NetworkStats/components/item'
 import { NetworkStatsItemProps } from '../../NetworkStats/stores'
-const StyledNodeGroupNetworks = styled.div`
-  border-radius: ${BORDER_RADIUS};
-  background: ${({ theme }) => theme['network.node.bg']};
-  color: ${({ theme }) => theme['network.node.fg']};
-  padding: ${GUTTER};
-  margin-bottom: ${GUTTER};
-`
-const StyledNodeGroupNetwork = styled.div`
-  border-bottom: 1px dashed ${({ theme }) => theme['network.node.border']};
-  margin-bottom: calc(${GUTTER} / 2);
-  padding-bottom: calc(${GUTTER} / 2);
-  &:last-child {
-    margin-bottom: 0;
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-  ${StyledNetworkIdRow} {
-    :hover {
-      background: ${({ theme }) => theme['network.node.row.bg']};
-    }
-  }
-`
+import styles from './styles.module.scss'
 interface NodeNetworksProps {
   items: NetworkStatsItemProps[]
   timestamp: number
@@ -53,7 +27,7 @@ export const NodeNetworks: FC<NodeNetworksProps> = ({ items, timestamp }) => {
   const { curr, prev } = data
   const seconds = curr.timestamp - prev.timestamp
   return (
-    <StyledNodeGroupNetworks>
+    <div className={styles.groupNetworks}>
       {items.map(({ id, rx, tx }) => {
         if (!rx && !tx) {
           return null
@@ -62,7 +36,7 @@ export const NodeNetworks: FC<NodeNetworksProps> = ({ items, timestamp }) => {
         const prevRx = prevItem?.rx || 0
         const prevTx = prevItem?.tx || 0
         return (
-          <StyledNodeGroupNetwork key={id}>
+          <div className={styles.groupNetwork} key={id}>
             <NetworksStatsItem
               id={id}
               singleLine={false}
@@ -71,9 +45,9 @@ export const NodeNetworks: FC<NodeNetworksProps> = ({ items, timestamp }) => {
               totalTx={tx}
               rateTx={(tx - prevTx) / seconds}
             />
-          </StyledNodeGroupNetwork>
+          </div>
         )
       })}
-    </StyledNodeGroupNetworks>
+    </div>
   )
 }

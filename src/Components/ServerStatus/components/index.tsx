@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Row } from '../../Grid/components/row'
+import { GridContainer } from '../../Grid/components/container'
 import { CpuUsage } from './cpu-usage'
 import { MemBuffers } from './mem-buffers'
 import { MemCached } from './mem-cached'
@@ -8,7 +8,7 @@ import { SwapCached } from './swap-cached'
 import { SwapUsage } from './swap-usage'
 import { SystemLoad } from './system-load'
 export const ServerStatus: FC = () => (
-  <Row>
+  <GridContainer>
     <SystemLoad />
     <CpuUsage />
     <MemRealUsage />
@@ -16,5 +16,5 @@ export const ServerStatus: FC = () => (
     <MemBuffers />
     <SwapUsage />
     <SwapCached />
-  </Row>
+  </GridContainer>
 )

@@ -1,0 +1,12 @@
+@use '../../Style/components/device.scss' as m;
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--x-gutter) / 2);
+  padding-right: calc(var(--x-gutter) / 2);
+  max-width: var(--x-max-width);
+  @include m.device(lg) {
+    padding-left: var(--x-gutter);
+    padding-right: var(--x-gutter);
+  }
+}

@@ -1,0 +1,26 @@
+@use 'sass:math';
+@use '../../Style/components/device.scss' as m;
+$breakPoints: m.$breakPoints;
+$col: 10;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--x-gutter) * -0.5);
+  margin-right: calc(var(--x-gutter) * -0.5);
+}
+.grid {
+  padding-left: calc(var(--x-gutter) * 0.5);
+  padding-right: calc(var(--x-gutter) * 0.5);
+  flex: 1 0 100%;
+  width: 100%;
+  @each $id, $width in $breakPoints {
+    @include m.device($id) {
+      @for $i from 1 to $col {
+        &[data-#{$id}='#{$i}'] {
+          flex: 0 0 #{math.percentage(math.div(1, $i))};
+          width: math.percentage(math.div(1, $i));
+        }
+      }
+    }
+  }
+}

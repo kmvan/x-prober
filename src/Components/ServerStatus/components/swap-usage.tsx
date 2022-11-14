@@ -10,7 +10,7 @@ export const SwapUsage: FC = observer(() => {
     return null
   }
   return (
-    <CardGrid name={gettext('Swap usage')} tablet={[1, 1]}>
+    <CardGrid name={gettext('Swap usage')}>
       <ProgressBar value={value} max={max} isCapacity />
     </CardGrid>
   )

@@ -12,6 +12,7 @@ final class Render
         $appName    = ConfigApi::$APP_NAME;
         $version    = ConfigApi::$APP_VERSION;
         $scriptConf = json_encode(EventsApi::emit('conf', array()));
+        $styleUrl   = \defined('XPROBER_IS_DEV')   && XPROBER_IS_DEV ? 'app.css' : "?action=style&amp;v={$version}";
         $scriptUrl  = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.js' : "?action=script&amp;v={$version}";
 
         echo <<<HTML
@@ -23,6 +24,7 @@ final class Render
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="renderer" content="webkit">
     <title>{$appName} v{$version}</title>
+    <link rel="stylesheet" href="{$styleUrl}" />
     <script>window.CONF = {$scriptConf};</script>
     <script src="{$scriptUrl}" async></script>
 </head>

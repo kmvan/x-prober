@@ -1,12 +1,5 @@
-import { FC } from 'react'
-import styled from 'styled-components'
-const StyledLoading = styled.div`
-  display: flex;
-  align-items: center;
-`
-const StyledLoadingText = styled.div`
-  margin-left: 0.5em;
-`
+import { FC, HTMLProps } from 'react'
+import styles from './styles.module.scss'
 const LoadingIcon = () => (
   <svg
     width='16px'
@@ -85,9 +78,9 @@ const LoadingIcon = () => (
     </g>
   </svg>
 )
-export const Loading: FC = (props) => (
-  <StyledLoading>
+export const Loading: FC<HTMLProps<HTMLDivElement>> = (props) => (
+  <div className={styles.main}>
     <LoadingIcon />
-    <StyledLoadingText {...props} />
-  </StyledLoading>
+    <div className={styles.text} {...props} />
+  </div>
 )

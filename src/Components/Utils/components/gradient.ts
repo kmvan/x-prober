@@ -3,7 +3,7 @@ import { rgbaToHex } from './rgba-to-hex'
 export const gradientColors = (
   startColor: string,
   endColor: string,
-  step = 100
+  step = 100,
 ): string[] => {
   const sColor = hexToRgb(startColor)
   const eColor = hexToRgb(endColor)
@@ -16,8 +16,8 @@ export const gradientColors = (
       rgbaToHex(
         Number(rStep * i + sColor[0]),
         Number(gStep * i + sColor[1]),
-        Number(bStep * i + sColor[2])
-      )
+        Number(bStep * i + sColor[2]),
+      ),
     )
   }
   return colors

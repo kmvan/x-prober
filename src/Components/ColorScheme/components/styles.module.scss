@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 calc(var(--x-gutter) * 2) 0;
+}
+.link {
+  position: relative;
+  flex: 0 0 calc(var(--x-gutter) * 2);
+  height: var(--x-gutter);
+  &:first-child {
+    border-top-left-radius: var(--x-radius);
+    border-bottom-left-radius: var(--x-radius);
+  }
+  &:last-child {
+    border-top-right-radius: var(--x-radius);
+    border-bottom-right-radius: var(--x-radius);
+  }
+  & + & {
+    margin-left: 1px;
+  }
+  &:hover {
+    transform: scale3d(1.5, 1.5, 1);
+    z-index: 1;
+  }
+}

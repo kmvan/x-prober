@@ -7,7 +7,7 @@ import {
   INTERNAL_SERVER_ERROR,
   OK,
 } from '../../Rest/http-status'
-import { StyledTitleLink } from '../../Title/components'
+import { TitleLink } from '../../Title/components'
 import { UpdaterStore } from '../stores'
 export const UpdaterLink: FC = observer(() => {
   const onClick = useCallback(async () => {
@@ -22,8 +22,8 @@ export const UpdaterLink: FC = observer(() => {
       case INTERNAL_SERVER_ERROR:
         alert(
           gettext(
-            'Can not update file, please check the server permissions and space.'
-          )
+            'Can not update file, please check the server permissions and space.',
+          ),
         )
         setIsUpdating(false)
         setIsUpdateError(true)
@@ -35,8 +35,8 @@ export const UpdaterLink: FC = observer(() => {
     setIsUpdateError(true)
   }, [])
   return (
-    <StyledTitleLink title={gettext('Click to update')} onClick={onClick}>
+    <TitleLink title={gettext('Click to update')} onClick={onClick}>
       {UpdaterStore.notiText}
-    </StyledTitleLink>
+    </TitleLink>
   )
 })

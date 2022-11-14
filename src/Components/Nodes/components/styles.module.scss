@@ -1,0 +1,36 @@
+.groupId {
+  display: block;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: calc(var(--x-gutter) * 0.5);
+  &:hover {
+    text-decoration: none;
+  }
+}
+.group {
+  margin-bottom: calc(var(--x-gutter) * 0.5);
+}
+.groupMsg {
+  display: flex;
+  justify-content: center;
+}
+.groupNetworks {
+  border-radius: var(--x-radius);
+  background: var(--x-network-node-bg);
+  color: var(--x-network-node-fg);
+  padding: var(--x-gutter);
+  margin-bottom: var(--x-gutter);
+}
+.groupNetwork {
+  border-bottom: 1px dashed var(--x-network-node-border-color);
+  margin-bottom: calc(var(--x-gutter) * 0.5);
+  padding-bottom: calc(var(--x-gutter) * 0.5);
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  &:hover {
+    background: var(--x-network-node-row-bg);
+  }
+}

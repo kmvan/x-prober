@@ -1,6 +1,5 @@
 import { observer } from 'mobx-react-lite'
 import { FC, MouseEvent, useCallback, useState } from 'react'
-import styled from 'styled-components'
 import { serverFetch } from '../../Fetch/server-fetch'
 import { gettext } from '../../Language'
 import { OK } from '../../Rest/http-status'
@@ -9,7 +8,6 @@ import { LocationProps } from '../stores'
 interface ServerLocationProps {
   action: string
 }
-const StyledLocation = styled.a``
 export const Location: FC<ServerLocationProps> = observer(({ action }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [location, setLocation] = useState<LocationProps | null>(null)
@@ -28,7 +26,7 @@ export const Location: FC<ServerLocationProps> = observer(({ action }) => {
         ToastStore.open(gettext('Can not fetch location.'))
       }
     },
-    [action, isLoading]
+    [action, isLoading],
   )
   const loadingText = isLoading ? gettext('Loading...') : ''
   let clickText = ''
@@ -40,14 +38,15 @@ export const Location: FC<ServerLocationProps> = observer(({ action }) => {
       : gettext('👆 Click to fetch')
   }
   return (
-    <StyledLocation
+    <a
+      href='#'
       onClick={onClick}
       title={gettext(
-        'The author only has 10,000 API requests per month, please do not abuse it.'
+        'The author only has 10,000 API requests per month, please do not abuse it.',
       )}
     >
       {loadingText}
       {clickText}
-    </StyledLocation>
+    </a>
   )
 })
