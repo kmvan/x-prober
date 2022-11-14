@@ -1,8 +1,8 @@
 @use '../../Style/components/device.scss' as m;
 .des {
   padding: calc(var(--x-gutter) / 2) var(--x-gutter);
-  background-color: rgba(#fff, 0.3);
-  color: var(--x-body-fg);
+  background-color: var(--x-card-des-bg);
+  color: var(--x-card-des-fg);
   border-radius: var(--x-radius);
   margin-bottom: var(--x-gutter);
 }
