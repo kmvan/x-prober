@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.13.0 - 2022-11-14
+
+### Fix
+
+- Fix body color
+
 ## 8.12.0 - 2022-11-14
 
 ### Remove
