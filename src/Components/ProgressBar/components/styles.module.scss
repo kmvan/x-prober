@@ -40,10 +40,10 @@
     height: 61.8%;
     width: 100%;
     border-radius: 0 0 50% 50%;
-    background: var(--x-progress-value-after-bg);
+    background: var(--x-progress-value-highlight-bg);
   }
   &::before {
-    background: var(--x-progress-value-before-bg);
+    background: var(--x-progress-value-highlight-border-color);
     opacity: 1;
     height: 1px;
     border-radius: 0;

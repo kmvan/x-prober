@@ -1,5 +1,5 @@
 import { configure, makeAutoObservable } from 'mobx'
-import { FunctionComponent, MouseEvent } from 'react'
+import { FunctionComponent } from 'react'
 configure({
   enforceActions: 'observed',
 })
@@ -54,8 +54,7 @@ class Main {
     }
     this.cards[i] = { ...this.cards[i], ...card }
   }
-  public moveCardUp = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault()
+  public moveCardUp = (id: string) => {
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
     if (i <= 0) {
@@ -68,8 +67,7 @@ class Main {
     this.setCardsPriority(cards)
     this.setStoragePriorityItems()
   }
-  public moveCardDown = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault()
+  public moveCardDown = (id: string) => {
     const cards = this.enabledCards
     const i = cards.findIndex((item) => item.id === id)
     if (i === -1 || i === cards.length - 1) {

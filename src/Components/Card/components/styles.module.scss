@@ -73,7 +73,7 @@
   }
 }
 .arrow {
-  color: var(--x-card-title-fg);
+  color: var(--x-card-legend-arrow-fg);
   padding: 0 0.5rem;
   cursor: pointer;
   opacity: 0.5;
@@ -81,7 +81,7 @@
   &:hover {
     text-decoration: none;
     opacity: 1;
-    color: var(--x-card-title-fg);
+    color: var(--x-card-legend-arrow-fg);
   }
   &[data-disabled],
   &[data-disabled]:hover {

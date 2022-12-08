@@ -36,7 +36,7 @@ const MemoProgressBar: FC<ProgressBarProps> = ({
             background:
               '#' +
               gradientColors('#00cc00', '#ef2d2d')[Math.round(percent) - 1],
-            width: `${percent}%`,
+            width: `${percent <= 5 ? 5 : percent}%`,
           }}
         />
       </div>

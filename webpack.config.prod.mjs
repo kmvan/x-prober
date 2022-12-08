@@ -37,7 +37,7 @@ export default {
         extractComments: false,
         terserOptions: {
           compress: true,
-          ecma: 2016,
+          ecma: 2015,
           keep_classnames: false,
           keep_fnames: false,
           module: false,

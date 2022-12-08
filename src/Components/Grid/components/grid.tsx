@@ -11,9 +11,6 @@ interface BreakPointsProps {
 export interface GridProps extends BreakPointsProps {
   children: ReactNode
 }
-export interface StyledGridProps {
-  types: BreakPointsProps
-}
 export const Grid: FC<GridProps> = ({ xs, sm, md, lg, xl, xxl, ...props }) => {
   const types = {
     xs,
