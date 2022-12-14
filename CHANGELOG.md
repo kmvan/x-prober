@@ -2,12 +2,18 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.16.0 - 2022-12-14
+
+### Add
+
+- Add server benchmark cooldown config
+
 ## 8.15.0 - 2022-12-08
 
 ### Optimize
 
 - Optimize style
--
+
 ## 8.14.0 - 2022-11-14
 
 ### Add
