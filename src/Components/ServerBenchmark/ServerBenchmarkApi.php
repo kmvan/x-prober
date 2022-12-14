@@ -2,13 +2,13 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
+use InnStudio\Prober\Components\Xconfig\XconfigApi;
+
 class ServerBenchmarkApi
 {
-    private $EXPIRED = 60;
-
     public function getTmpRecorderPath()
     {
-        return sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkTimer';
+        return sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkCool';
     }
 
     public function setRecorder(array $data)
@@ -19,7 +19,7 @@ class ServerBenchmarkApi
     public function setExpired()
     {
         return (bool) $this->setRecorder(array(
-            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->EXPIRED,
+            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->cooldown(),
         ));
     }
 
@@ -138,6 +138,11 @@ class ServerBenchmarkApi
                 $this->getReadPoints(),
             )),
         );
+    }
+
+    private function cooldown()
+    {
+        return (int) XconfigApi::get('serverBenchmarkCd') ?: 60;
     }
 
     private function getRecorder()
