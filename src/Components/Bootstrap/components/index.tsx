@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite'
 import { FC } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Cards } from '../../Card/components'
@@ -34,7 +33,7 @@ ServerBenchmarkBoostrap()
 ServerInfoBoostrap()
 ServerStatusBoostrap()
 TemperatureSensorBoostrap()
-const Bootstrap: FC = observer(() => (
+const Bootstrap: FC = () => (
   <>
     <Title />
     <div className={styles.app}>
@@ -47,7 +46,7 @@ const Bootstrap: FC = observer(() => (
     <Forkme />
     <Toast />
   </>
-))
+)
 ready(() => {
   const c = document.createElement('div')
   document.body.innerHTML = ''
