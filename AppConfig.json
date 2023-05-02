@@ -19,27 +19,27 @@
   "LATEST_NGINX_STABLE_VERSION": "1.22.0",
   "BENCHMARKS": [
     {
-      "name": "Olink / AMD-3700X / PHP80 JIT",
+      "name": "Olink / AMD-3700X / PHP82 JIT",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
-      "date": "2021-07-13",
+      "date": "2023-05-02",
       "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
       "binUrl": "https://speedtest.fishfish.date",
       "detail": {
-        "cpu": 436593,
-        "read": 57382,
-        "write": 22271
+        "cpu": 427029,
+        "read": 42064,
+        "write": 16257
       }
     },
     {
-      "name": "RamNode / PHP80 JIT",
+      "name": "RamNode / PHP82 JIT",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
-      "date": "2021-07-17",
+      "date": "2023-05-02",
       "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
       "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
       "detail": {
-        "cpu": 199626,
-        "read": 67379,
-        "write": 12453
+        "cpu": 203245,
+        "read": 68706,
+        "write": 11452
       }
     },
     {
@@ -54,15 +54,15 @@
       }
     },
     {
-      "name": "Vultr / Tokyo / PHP80 JIT",
+      "name": "Vultr / Tokyo / PHP82 JIT",
       "url": "https://www.vultr.com/?ref=7826363-4F",
-      "date": "2021-07-17",
+      "date": "2023-05-02",
       "proberUrl": "https://x-prober-server-benchmark-vultr-tokyo.inn-studio.com/",
       "binUrl": "https://hnd-jp-ping.vultr.com/vultr.com.100MB.bin",
       "detail": {
-        "cpu": 229400,
-        "read": 65474,
-        "write": 15558
+        "cpu": 243748,
+        "read": 46066,
+        "write": 13824
       }
     },
     {
