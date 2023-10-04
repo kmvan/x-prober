@@ -19,6 +19,18 @@
   "LATEST_NGINX_STABLE_VERSION": "1.22.0",
   "BENCHMARKS": [
     {
+      "name": "HXServer / AMD-9700X / PHP82 JIT",
+      "url": "https://hxservers.com/",
+      "date": "2023-10-04",
+      "proberUrl": "http://165.140.8.157/x.php",
+      "binUrl": "http://165.140.8.157/128m.bin",
+      "detail": {
+        "cpu": 526084,
+        "read": 132161,
+        "write": 30367
+      }
+    },
+    {
       "name": "Olink / AMD-3700X / PHP82 JIT",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
       "date": "2023-05-02",
