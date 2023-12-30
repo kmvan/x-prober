@@ -1,7 +1,7 @@
-@use "./config-dark.scss" as d;
+@use "./config-dark.scss" as dark;
 :root {
   --x-max-width: 1680px;
-  --x-radius: 2rem;
+  --x-radius: 1rem;
   --x-fg: hsl(0, 0%, 20%);
   --x-bg: hsl(0, 0%, 97%);
   --x-html-bg: var(--x-fg);
@@ -17,13 +17,13 @@
   --x-card-bg-hover: linear-gradient(to right, transparent, hsla(0, 0%, 0%, 0.102), transparent);
   --x-card-legend-fg: var(--x-bg);
   --x-card-legend-bg: linear-gradient(hsl(0, 0%, 15%), var(--x-fg));
-  --x-card-legend-arrow-fg: var(--x-bg);
+  --x-card-legend-arrow-fg: var(--x-card-legend-fg);
   --x-card-title-fg: var(--x-fg);
   --x-card-title-bg: var(--x-bg);
   --x-card-des-fg: var(--x-bg);
   --x-card-des-bg: var(--x-fg);
-  --x-card-border-color: hsla(0, 0%, 20%, 0.1);
-  --x-card-split-color: hsla(0, 0%, 20%, 0.1);
+  --x-card-border-color: hsla(0, 0%, 0%, 0.1);
+  --x-card-split-color: hsla(0, 0%, 0%, 0.3);
   --x-card-box-shadow: hsla(0, 0%, 20%, 0.3) 0px -1px 0px, hsl(0, 0%, 100%) 0px 1px 0px inset,
     hsla(0, 0%, 20%, 0.3) 0px -1px 0px inset, hsl(0, 0%, 100%) 0px 1px 0px;
   --x-title-fg: var(--x-bg);
@@ -54,7 +54,7 @@
   --x-search-bg-hover: hsla(0, 0%, 0%, 0.15);
   // progress
   --x-progress-fg: var(--x-bg);
-  --x-progress-bg: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 10%));
+  --x-progress-bg: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 20%));
   --x-progress-value-bg: hsl(120, 100%, 40%);
   --x-progress-value-highlight-bg: linear-gradient(hsla(0, 0%, 100%, 0.45), transparent);
   --x-progress-value-highlight-border-color: linear-gradient(
@@ -70,7 +70,7 @@
   // network node
   --x-network-node-fg: var(--x-fg);
   --x-network-node-bg: hsla(132, 4%, 23%, 0.1);
-  --x-network-node-border-color: hsla(132, 4%, 23%, 0.1);
+  --x-network-node-border-color: var(--x-card-split-color);
   --x-network-node-row-bg: linear-gradient(to right, transparent, hsla(0, 0%, 100%, 0.5), transparent);
   // ping
   --x-ping-btn-fg: var(--x-bg);
@@ -85,4 +85,4 @@
   --x-toast-fg: var(--x-bg);
   --x-toast-bg: var(--x-fg);
 }
-@include d.configDark;
+@include dark.config();

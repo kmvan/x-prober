@@ -61,7 +61,7 @@
   margin-bottom: calc(var(--x-gutter) * 1.5);
   box-shadow: var(--x-card-box-shadow);
   border: 5px solid var(--x-card-border-color);
-  border-radius: calc(var(--x-gutter) * 1.5);
+  border-radius: var(--x-radius);
   background: var(--x-card-bg);
   padding: calc(var(--x-gutter) * 1.5) 0 0;
   scroll-margin-top: 50px;
