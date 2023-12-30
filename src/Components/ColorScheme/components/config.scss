@@ -1,4 +1,4 @@
-@use './config-dark.scss' as d;
+@use "./config-dark.scss" as d;
 :root {
   --x-max-width: 1680px;
   --x-radius: 2rem;
@@ -14,12 +14,7 @@
   --x-footer-bg: var(--x-fg);
   --x-benchmark-ruby-bg: hsla(0, 0%, 0%, 0.05);
   --x-card-bg: hsla(0, 0%, 20%, 0.03);
-  --x-card-bg-hover: linear-gradient(
-    to right,
-    transparent,
-    hsla(0, 0%, 0%, 0.102),
-    transparent
-  );
+  --x-card-bg-hover: linear-gradient(to right, transparent, hsla(0, 0%, 0%, 0.102), transparent);
   --x-card-legend-fg: var(--x-bg);
   --x-card-legend-bg: linear-gradient(hsl(0, 0%, 15%), var(--x-fg));
   --x-card-legend-arrow-fg: var(--x-bg);
@@ -28,9 +23,9 @@
   --x-card-des-fg: var(--x-bg);
   --x-card-des-bg: var(--x-fg);
   --x-card-border-color: hsla(0, 0%, 20%, 0.1);
-  --x-card-box-shadow: hsla(0, 0%, 20%, 0.3) 0px -1px 0px,
-    hsl(0, 0%, 100%) 0px 1px 0px inset, hsla(0, 0%, 20%, 0.3) 0px -1px 0px inset,
-    hsl(0, 0%, 100%) 0px 1px 0px;
+  --x-card-split-color: hsla(0, 0%, 20%, 0.1);
+  --x-card-box-shadow: hsla(0, 0%, 20%, 0.3) 0px -1px 0px, hsl(0, 0%, 100%) 0px 1px 0px inset,
+    hsla(0, 0%, 20%, 0.3) 0px -1px 0px inset, hsl(0, 0%, 100%) 0px 1px 0px;
   --x-title-fg: var(--x-bg);
   --x-title-bg: var(--x-fg);
   --x-title-box-shadow: 0 1px 0 hsl(0, 0%, 0%);
@@ -39,25 +34,14 @@
   --x-star-me-bg: var(--x-fg);
   --x-star-me-hover-fg: hsl(0, 0%, 100%);
   --x-star-me-hover-bg: var(--x-fg);
-  --x-star-me-border-color: linear-gradient(
-    90deg,
-    transparent,
-    hsl(0, 0%, 100%),
-    transparent
-  );
+  --x-star-me-border-color: linear-gradient(90deg, transparent, hsl(0, 0%, 100%), transparent);
   // nav
   --x-nav-fg: var(--x-bg);
   --x-nav-fg-hover: var(--x-fg);
   --x-nav-fg-active: var(--x-fg);
   --x-nav-bg: var(--x-fg);
-  --x-nav-bg-hover: linear-gradient(
-    hsla(0, 0%, 100%, 0.85),
-    hsla(0, 0%, 100%, 0.65)
-  );
-  --x-nav-bg-active: linear-gradient(
-    hsla(0, 0%, 100%, 0.95),
-    hsla(0, 0%, 100%, 0.75)
-  );
+  --x-nav-bg-hover: linear-gradient(hsla(0, 0%, 100%, 0.85), hsla(0, 0%, 100%, 0.65));
+  --x-nav-bg-active: linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.75));
   --x-nav-border-color: hsla(0, 0%, 100%, 0.1);
   // alert
   --x-status-ok-fg: hsl(0, 0%, 100%);
@@ -72,10 +56,7 @@
   --x-progress-fg: var(--x-bg);
   --x-progress-bg: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 10%));
   --x-progress-value-bg: hsl(120, 100%, 40%);
-  --x-progress-value-highlight-bg: linear-gradient(
-    hsla(0, 0%, 100%, 0.45),
-    transparent
-  );
+  --x-progress-value-highlight-bg: linear-gradient(hsla(0, 0%, 100%, 0.45), transparent);
   --x-progress-value-highlight-border-color: linear-gradient(
     to right,
     hsla(0, 0%, 100%, 0.1),
@@ -90,12 +71,7 @@
   --x-network-node-fg: var(--x-fg);
   --x-network-node-bg: hsla(132, 4%, 23%, 0.1);
   --x-network-node-border-color: hsla(132, 4%, 23%, 0.1);
-  --x-network-node-row-bg: linear-gradient(
-    to right,
-    transparent,
-    hsla(0, 0%, 100%, 0.5),
-    transparent
-  );
+  --x-network-node-row-bg: linear-gradient(to right, transparent, hsla(0, 0%, 100%, 0.5), transparent);
   // ping
   --x-ping-btn-fg: var(--x-bg);
   --x-ping-btn-bg: var(--x-fg);

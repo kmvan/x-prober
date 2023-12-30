@@ -1,25 +1,25 @@
-@use '../../Style/components/device.scss' as m;
+@use "../../Style/components/device.scss" as m;
 .des {
-  padding: calc(var(--x-gutter) / 2) var(--x-gutter);
-  background-color: var(--x-card-des-bg);
-  color: var(--x-card-des-fg);
-  border-radius: var(--x-radius);
   margin-bottom: var(--x-gutter);
+  border-radius: var(--x-radius);
+  background-color: var(--x-card-des-bg);
+  padding: calc(var(--x-gutter) / 2) var(--x-gutter);
+  color: var(--x-card-des-fg);
 }
 .link {
   &::before {
-    content: '👆 ';
+    content: "👆 ";
   }
 }
 .ruby {
-  background: var(--x-benchmark-ruby-bg);
   cursor: pointer;
+  background: var(--x-benchmark-ruby-bg);
   &:hover {
     text-decoration: underline;
   }
   rt {
-    font-size: 0.75rem;
     opacity: 0.5;
+    font-size: 0.75rem;
   }
   &[data-is-result] {
     font-weight: bold;
@@ -29,10 +29,10 @@
   padding: var(--x-gutter);
 }
 .title {
-  word-break: normal;
-  padding: calc(var(--x-gutter) / 2) 0;
   flex: 0 0 8rem;
+  padding: calc(var(--x-gutter) / 2) 0;
   color: var(--x-card-title-fg);
+  word-break: normal;
   @include m.device(sm) {
     flex: 0 0 9rem;
   }
@@ -45,9 +45,9 @@
 }
 .group {
   display: flex;
-  width: 100%;
   align-items: center;
-  border-bottom: 1px dashed var(--x-card-border-color);
+  border-bottom: 1px dashed var(--x-card-split-color);
+  width: 100%;
   &:hover {
     background: var(--x-card-bg-hover);
   }
@@ -58,12 +58,12 @@
 }
 .fieldset {
   position: relative;
+  margin-bottom: calc(var(--x-gutter) * 1.5);
+  box-shadow: var(--x-card-box-shadow);
   border: 5px solid var(--x-card-border-color);
   border-radius: calc(var(--x-gutter) * 1.5);
   background: var(--x-card-bg);
-  margin-bottom: calc(var(--x-gutter) * 1.5);
   padding: calc(var(--x-gutter) * 1.5) 0 0;
-  box-shadow: var(--x-card-box-shadow);
   scroll-margin-top: 50px;
 }
 .body {
@@ -73,35 +73,35 @@
   }
 }
 .arrow {
-  color: var(--x-card-legend-arrow-fg);
-  padding: 0 0.5rem;
-  cursor: pointer;
   opacity: 0.5;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  color: var(--x-card-legend-arrow-fg);
   &:active,
   &:hover {
-    text-decoration: none;
     opacity: 1;
     color: var(--x-card-legend-arrow-fg);
+    text-decoration: none;
   }
   &[data-disabled],
   &[data-disabled]:hover {
-    cursor: not-allowed;
     opacity: 0.1;
+    cursor: not-allowed;
   }
 }
 .legend {
   display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 0;
   transform: translate(-50%, -50%);
+  margin: 0 auto;
+  border-radius: 5rem;
   background: var(--x-card-legend-bg);
   padding: 0.5rem 1rem;
-  border-radius: 5rem;
   color: var(--x-card-legend-fg);
-  margin: 0 auto;
   white-space: nowrap;
 }
 .legendText {

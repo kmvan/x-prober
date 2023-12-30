@@ -13,19 +13,16 @@
       --x-footer-bg: var(--x-bg);
       --x-benchmark-ruby-bg: hsl(0, 0%, 0%, 0.5);
       --x-card-bg: hsl(0, 0%, 20%);
-      --x-card-bg-hover: linear-gradient(
-        to right,
-        transparent,
-        hsla(0, 0%, 0%, 0.5),
-        transparent
-      );
+      --x-card-bg-hover: linear-gradient(to right, transparent, hsla(0, 0%, 0%, 0.5), transparent);
       --x-card-legend-fg: var(--x-fg);
       --x-card-legend-bg: linear-gradient(hsl(0, 0%, 10%), var(--x-bg));
+      --x-card-legend-arrow-fg: var(--x-bg);
       --x-card-title-fg: var(--x-fg);
       --x-card-title-bg: var(--x-bg);
       --x-card-des-fg: var(--x-fg);
       --x-card-des-bg: var(--x-bg);
       --x-card-border-color: hsla(0, 0%, 0%, 0.5);
+      --x-card-split-color: hsla(0, 0%, 100%, 0.1);
       --x-card-box-shadow: 0px 0px 0px 1px hsl(0, 0%, 0%) inset;
       --x-title-fg: var(--x-fg);
       --x-title-bg: var(--x-bg);
@@ -35,32 +32,18 @@
       --x-star-me-bg: var(--x-bg);
       --x-star-me-hover-fg: hsl(0, 0%, 100%);
       --x-star-me-hover-bg: var(--x-bg);
-      --x-star-me-border-color: linear-gradient(
-        90deg,
-        transparent,
-        hsl(0, 0%, 100%),
-        transparent
-      );
+      --x-star-me-border-color: linear-gradient(90deg, transparent, hsl(0, 0%, 100%), transparent);
       // nav
       --x-nav-fg: var(--x-fg);
       --x-nav-fg-hover: var(--x-fg);
       --x-nav-fg-active: var(--x-fg);
       --x-nav-bg: var(--x-bg);
-      --x-nav-bg-hover: linear-gradient(
-        hsla(0, 0%, 100%, 0.15),
-        hsla(0, 0%, 100%, 0.05)
-      );
-      --x-nav-bg-active: linear-gradient(
-        hsla(0, 0%, 100%, 0.25),
-        hsla(0, 0%, 100%, 0.15)
-      );
+      --x-nav-bg-hover: linear-gradient(hsla(0, 0%, 100%, 0.15), hsla(0, 0%, 100%, 0.05));
+      --x-nav-bg-active: linear-gradient(hsla(0, 0%, 100%, 0.25), hsla(0, 0%, 100%, 0.15));
       --x-nav-border-color: hsla(0, 0%, 100%, 0.1);
       // alert
       --x-status-ok-fg: hsl(0, 0%, 100%);
-      --x-status-ok-bg: linear-gradient(
-        hsl(120, 100%, 20%),
-        hsl(120, 100%, 25%)
-      );
+      --x-status-ok-bg: linear-gradient(hsl(120, 100%, 20%), hsl(120, 100%, 25%));
       --x-status-error-fg: hsl(0, 0%, 100%);
       --x-status-error-bg: linear-gradient(hsl(0, 0%, 27%), hsl(0, 0%, 33%));
       // search link
@@ -71,19 +54,14 @@
       --x-progress-fg: var(--x-fg);
       --x-progress-bg: linear-gradient(hsl(0, 0%, 0%), hsl(0, 0%, 15%));
       --x-progress-value-bg: hsl(120, 100%, 40%);
-      --x-progress-value-highlight-bg: linear-gradient(
-        hsla(0, 0%, 100%, 0.25),
-        transparent
-      );
+      --x-progress-value-highlight-bg: linear-gradient(hsla(0, 0%, 100%, 0.25), transparent);
       --x-progress-value-highlight-border-color: linear-gradient(
         to right,
         hsla(0, 0%, 100%, 0.1),
         hsla(0, 0%, 100%, 0.25),
         hsla(0, 0%, 100%, 0.1)
       );
-      --x-progress-value-box-shadow: 0px 0px 0px 10px inset
-          hsla(0, 0%, 0%, 0.55),
-        0px 0px 1px 1px hsl(0, 0%, 0%);
+      --x-progress-value-box-shadow: 0px 0px 0px 10px inset hsla(0, 0%, 0%, 0.55), 0px 0px 1px 1px hsl(0, 0%, 0%);
       // network stats
       --x-network-stats-tx-fg: hsl(23, 100%, 58%);
       --x-network-stats-rx-fg: hsl(120, 100%, 43%);
