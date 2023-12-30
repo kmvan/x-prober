@@ -17,7 +17,7 @@ final class Conf extends NetworkStatsConstants
             }
 
             $conf[$this->ID] = array(
-                'networks'  => UtilsNetwork::getStats(),
+                'networks' => UtilsNetwork::getStats(),
                 'timestamp' => time(),
             );
 

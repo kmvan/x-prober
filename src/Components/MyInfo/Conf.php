@@ -15,7 +15,7 @@ final class Conf extends MyInfoConstants
                 return $conf;
             }
 
-            $ip   = UtilsClientIp::getV4();
+            $ip = UtilsClientIp::getV4();
             $ipv4 = filter_var($ip, \FILTER_VALIDATE_IP, array(
                 'flags' => \FILTER_FLAG_IPV4,
             )) ?: '';
@@ -24,8 +24,8 @@ final class Conf extends MyInfoConstants
             )) ?: '';
             $conf[$this->ID] = array(
                 'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
-                'ipv4'        => $ipv4,
-                'ipv6'        => $ipv6,
+                'ipv4' => $ipv4,
+                'ipv6' => $ipv6,
             );
 
             return $conf;

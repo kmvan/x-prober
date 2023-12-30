@@ -18,7 +18,7 @@ final class TemperatureSensor
             }
 
             $response = new RestResponse();
-            $items    = $this->getItems();
+            $items = $this->getItems();
 
             if ($items) {
                 $response->setData($items)->json()->end();
@@ -31,8 +31,8 @@ final class TemperatureSensor
             }
 
             $items[] = array(
-                'id'      => 'cpu',
-                'name'    => 'CPU',
+                'id' => 'cpu',
+                'name' => 'CPU',
                 'celsius' => round((float) $cpuTemp / 1000, 2),
             );
 
@@ -48,7 +48,7 @@ final class TemperatureSensor
 
         $ch = curl_init();
         curl_setopt_array($ch, array(
-            \CURLOPT_URL            => $url,
+            \CURLOPT_URL => $url,
             \CURLOPT_RETURNTRANSFER => true,
         ));
         $res = curl_exec($ch);

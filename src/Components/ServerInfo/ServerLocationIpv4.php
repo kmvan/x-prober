@@ -27,7 +27,7 @@ final class ServerLocationIpv4 extends ServerInfoConstants
             }
 
             $response = new RestResponse();
-            $ip       = UtilsServerIp::getV4();
+            $ip = UtilsServerIp::getV4();
 
             if ( ! $ip) {
                 $response->setStatus(StatusCode::$BAD_REQUEST)->json()->end();

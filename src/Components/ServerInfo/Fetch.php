@@ -23,12 +23,9 @@ final class Fetch extends ServerInfoConstants
 
         $items[$this->ID] = array(
             'serverUtcTime' => UtilsTime::getUtcTime(),
-            'serverTime'    => UtilsTime::getTime(),
-            'serverUptime'  => UtilsTime::getUptime(),
-            'diskUsage'     => array(
-                'value' => UtilsDisk::getTotal() - UtilsDisk::getFree(),
-                'max'   => UtilsDisk::getTotal(),
-            ),
+            'serverTime' => UtilsTime::getTime(),
+            'serverUptime' => UtilsTime::getUptime(),
+            'diskUsage' => UtilsDisk::getItems(),
         );
 
         return $items;

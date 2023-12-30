@@ -26,7 +26,7 @@ final class EventsApi
     {
         $args = \func_get_args();
 
-        $name   = $args[0];
+        $name = $args[0];
         $return = isset($args[1]) ? $args[1] : null;
 
         unset($args[0], $args[1]);

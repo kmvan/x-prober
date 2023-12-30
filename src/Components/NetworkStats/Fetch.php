@@ -24,7 +24,7 @@ final class Fetch extends NetworkStatsConstants
         }
 
         $items[$this->ID] = array(
-            'networks'  => UtilsNetwork::getStats(),
+            'networks' => UtilsNetwork::getStats(),
             'timestamp' => time(),
         );
 

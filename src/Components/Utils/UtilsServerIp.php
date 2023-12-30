@@ -59,7 +59,7 @@ final class UtilsServerIp
         if (\function_exists('curl_init')) {
             $ch = curl_init();
             curl_setopt_array($ch, array(
-                \CURLOPT_URL            => $url,
+                \CURLOPT_URL => $url,
                 \CURLOPT_RETURNTRANSFER => true,
             ));
             $content = curl_exec($ch);

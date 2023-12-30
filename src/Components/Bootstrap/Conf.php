@@ -11,15 +11,15 @@ final class Conf extends BootstrapConstants
     {
         EventsApi::on('conf', function (array $conf) {
             $conf[$this->ID] = array(
-                'isDev'           => XPROBER_IS_DEV,
-                'version'         => ConfigApi::$APP_VERSION,
-                'appName'         => ConfigApi::$APP_NAME,
-                'appUrl'          => ConfigApi::$APP_URL,
-                'appConfigUrls'   => ConfigApi::$APP_CONFIG_URLS,
+                'isDev' => XPROBER_IS_DEV,
+                'version' => ConfigApi::$APP_VERSION,
+                'appName' => ConfigApi::$APP_NAME,
+                'appUrl' => ConfigApi::$APP_URL,
+                'appConfigUrls' => ConfigApi::$APP_CONFIG_URLS,
                 'appConfigUrlDev' => ConfigApi::$APP_CONFIG_URL_DEV,
-                'authorUrl'       => ConfigApi::$AUTHOR_URL,
-                'authorName'      => ConfigApi::$AUTHOR_NAME,
-                'authorization'   => isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : '',
+                'authorUrl' => ConfigApi::$AUTHOR_URL,
+                'authorName' => ConfigApi::$AUTHOR_NAME,
+                'authorization' => isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : '',
             );
 
             return $conf;

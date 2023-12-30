@@ -22,7 +22,7 @@ class NodesApi
             }
 
             return array(
-                'id'  => $item[0],
+                'id' => $item[0],
                 'url' => $item[1],
             );
         }, $items));

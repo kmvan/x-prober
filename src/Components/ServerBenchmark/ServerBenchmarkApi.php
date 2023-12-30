@@ -57,10 +57,10 @@ class ServerBenchmarkApi
 
     public function getCpuPoints()
     {
-        $data  = 'inn-studio.com';
-        $hash  = array('md5', 'sha512', 'sha256', 'crc32');
+        $data = 'inn-studio.com';
+        $hash = array('md5', 'sha512', 'sha256', 'crc32');
         $start = microtime(true);
-        $i     = 0;
+        $i = 0;
 
         while (microtime(true) - $start < .5) {
             foreach ($hash as $v) {
@@ -80,7 +80,7 @@ class ServerBenchmarkApi
             return 0;
         }
 
-        $i     = 0;
+        $i = 0;
         $start = microtime(true);
 
         while (microtime(true) - $start < .5) {
@@ -102,8 +102,8 @@ class ServerBenchmarkApi
             return 0;
         }
 
-        $i        = 0;
-        $start    = microtime(true);
+        $i = 0;
+        $start = microtime(true);
         $filePath = "{$tmpDir}/innStudioIoBenchmark";
 
         if ( ! file_exists($filePath)) {
@@ -147,7 +147,7 @@ class ServerBenchmarkApi
 
     private function getRecorder()
     {
-        $path     = $this->getTmpRecorderPath();
+        $path = $this->getTmpRecorderPath();
         $defaults = array(
             'expired' => 0,
             'running' => 0,

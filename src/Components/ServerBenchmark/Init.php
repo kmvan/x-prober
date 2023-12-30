@@ -27,7 +27,7 @@ final class Init extends ServerBenchmarkApi
     private function render()
     {
         $remainingSeconds = $this->getRemainingSeconds();
-        $response         = new RestResponse();
+        $response = new RestResponse();
 
         if ($remainingSeconds) {
             $response->setStatus(StatusCode::$TOO_MANY_REQUESTS);

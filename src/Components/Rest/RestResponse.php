@@ -172,7 +172,7 @@ final class RestResponse
             599 => 'Network connect timeout error',
         );
 
-        $msg      = isset($statusCode[$code]) ? $statusCode[$code] : 'Unknow error';
+        $msg = isset($statusCode[$code]) ? $statusCode[$code] : 'Unknow error';
         $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
 
         header("{$protocol} {$code} {$msg}");

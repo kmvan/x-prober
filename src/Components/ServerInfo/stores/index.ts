@@ -8,8 +8,9 @@ configure({
   enforceActions: 'observed',
 })
 interface ServerInfoDiskUsageProps {
-  max: number
-  value: number
+  id: string
+  free: number
+  total: number
 }
 interface UptimeProps {
   days: number
@@ -21,7 +22,7 @@ export interface ServerInfoDataProps {
   serverTime: string
   serverUptime: UptimeProps
   serverUtcTime: string
-  diskUsage: ServerInfoDiskUsageProps
+  diskUsage: ServerInfoDiskUsageProps[]
 }
 export interface LocationProps {
   country: string

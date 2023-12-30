@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {},
+    // "baseUrl": "src",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "module": "esnext",
     "target": "es6",
     "lib": ["esnext", "dom"],
@@ -10,7 +12,7 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    // "rootDir": "src",
+    "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,

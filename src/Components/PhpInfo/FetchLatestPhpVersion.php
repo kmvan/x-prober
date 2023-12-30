@@ -22,7 +22,7 @@ final class FetchLatestPhpVersion extends PhpInfoConstants
             }
 
             $response = new RestResponse();
-            $content  = file_get_contents('https://www.php.net/releases/?json');
+            $content = file_get_contents('https://www.php.net/releases/?json');
 
             if ( ! $content) {
                 $response->setStatus(StatusCode::$NOT_FOUND)->end();
@@ -42,7 +42,7 @@ final class FetchLatestPhpVersion extends PhpInfoConstants
 
             $response->setData(array(
                 'version' => $version,
-                'date'    => $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['date'],
+                'date' => $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['date'],
             ))->json()->end();
         });
     }

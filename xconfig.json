@@ -1,5 +1,5 @@
 {
-  // You can disable listed features: serverStatus, networkStats, ping, serverInfo, phpInfo, phpInfoDetail, phpDisabledFunctions, phpDisabledClasses, phpExtensions, phpExtensionsLoaded, database, myServerBenchmark, myInfo, serverIp
+  // You can disable listed features: serverStatus, diskUsage, networkStats, ping, serverInfo, phpInfo, phpInfoDetail, phpDisabledFunctions, phpDisabledClasses, phpExtensions, phpExtensionsLoaded, database, myServerBenchmark, myInfo, serverIp
   // "disabled": ["serverIp", "phpInfoDetail"],
 
   // The server benchmark cooldown (seconds)

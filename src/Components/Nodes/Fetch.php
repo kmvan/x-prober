@@ -19,7 +19,7 @@ final class Fetch extends NodesApi
                     // no break
                 case 'node':
                     EventsApi::emit('fetchNodeBefore');
-                    $nodeId   = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
+                    $nodeId = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
                     $response = new RestResponse();
 
                     if ( ! $nodeId) {
@@ -57,7 +57,7 @@ final class Fetch extends NodesApi
         if (\function_exists('curl_init')) {
             $ch = curl_init();
             curl_setopt_array($ch, array(
-                \CURLOPT_URL            => $url,
+                \CURLOPT_URL => $url,
                 \CURLOPT_RETURNTRANSFER => true,
             ));
             $content = curl_exec($ch);
