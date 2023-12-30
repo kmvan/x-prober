@@ -17,13 +17,13 @@ final class UtilsLocation
      */
     public static function getLocation($ip)
     {
-        $url     = "http://api.ipstack.com/{$ip}?access_key=e4394fd12dbbefa08612306ca05baca3&format=1";
+        $url = "http://api.ipstack.com/{$ip}?access_key=e4394fd12dbbefa08612306ca05baca3&format=1";
         $content = '';
 
         if (\function_exists('\\curl_init')) {
             $ch = curl_init();
             curl_setopt_array($ch, array(
-                \CURLOPT_URL            => $url,
+                \CURLOPT_URL => $url,
                 \CURLOPT_RETURNTRANSFER => true,
             ));
             $content = curl_exec($ch);
@@ -40,9 +40,9 @@ final class UtilsLocation
 
         return array(
             'country' => isset($item['country_name']) ? $item['country_name'] : '',
-            'region'  => isset($item['region_name']) ? $item['region_name'] : '',
-            'city'    => isset($item['city']) ? $item['city'] : '',
-            'flag'    => isset($item['location']['country_flag_emoji']) ? $item['location']['country_flag_emoji'] : '',
+            'region' => isset($item['region_name']) ? $item['region_name'] : '',
+            'city' => isset($item['city']) ? $item['city'] : '',
+            'flag' => isset($item['location']['country_flag_emoji']) ? $item['location']['country_flag_emoji'] : '',
         );
     }
 }

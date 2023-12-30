@@ -9,11 +9,11 @@ final class Render
 {
     public function __construct()
     {
-        $appName    = ConfigApi::$APP_NAME;
-        $version    = ConfigApi::$APP_VERSION;
+        $appName = ConfigApi::$APP_NAME;
+        $version = ConfigApi::$APP_VERSION;
         $scriptConf = json_encode(EventsApi::emit('conf', array()));
-        $styleUrl   = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.css' : "?action=style&amp;v={$version}";
-        $scriptUrl  = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.js' : "?action=script&amp;v={$version}";
+        $styleUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.css' : "?action=style&amp;v={$version}";
+        $scriptUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.js' : "?action=script&amp;v={$version}";
 
         echo <<<HTML
 <!DOCTYPE html>

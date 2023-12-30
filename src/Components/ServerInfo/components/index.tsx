@@ -5,7 +5,6 @@ import { GridContainer } from '../../Grid/components/container'
 import { gettext } from '../../Language'
 import { template } from '../../Utils/components/template'
 import { ServerInfoStore } from '../stores'
-import { ServerDiskUsage } from './disk-usage'
 import { Location } from './location'
 const ServerInfoTime: FC = observer(() => {
   const {
@@ -46,7 +45,6 @@ export const ServerInfo: FC = observer(() => {
     [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
     [gettext('Server OS'), conf?.serverOs],
     [gettext('Script path'), conf?.scriptPath],
-    [gettext('Disk usage'), <ServerDiskUsage key='diskUsage' />],
   ]
   return (
     <GridContainer>

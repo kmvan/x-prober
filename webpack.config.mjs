@@ -22,6 +22,9 @@ export default {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.mjs', '.json', '.scss'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({

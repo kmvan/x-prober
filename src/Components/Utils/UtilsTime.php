@@ -20,28 +20,28 @@ final class UtilsTime
 
         if ( ! @is_file($filePath)) {
             return array(
-                'days'  => 0,
+                'days' => 0,
                 'hours' => 0,
-                'mins'  => 0,
-                'secs'  => 0,
+                'mins' => 0,
+                'secs' => 0,
             );
         }
 
-        $str   = file_get_contents($filePath);
-        $num   = (float) $str;
-        $secs  = (int) fmod($num, 60);
-        $num   = (int) ($num / 60);
-        $mins  = (int) $num % 60;
-        $num   = (int) ($num / 60);
+        $str = file_get_contents($filePath);
+        $num = (float) $str;
+        $secs = (int) fmod($num, 60);
+        $num = (int) ($num / 60);
+        $mins = (int) $num % 60;
+        $num = (int) ($num / 60);
         $hours = (int) $num % 24;
-        $num   = (int) ($num / 24);
-        $days  = (int) $num;
+        $num = (int) ($num / 24);
+        $days = (int) $num;
 
         return array(
-            'days'  => $days,
+            'days' => $days,
             'hours' => $hours,
-            'mins'  => $mins,
-            'secs'  => $secs,
+            'mins' => $mins,
+            'secs' => $secs,
         );
     }
 }

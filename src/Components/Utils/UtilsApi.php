@@ -24,7 +24,7 @@ final class UtilsApi
     {
         // 1 year expired
         $seconds = 3600 * 24 * 30 * 12;
-        $ts      = gmdate('D, d M Y H:i:s', (int) $_SERVER['REQUEST_TIME'] + $seconds) . ' GMT';
+        $ts = gmdate('D, d M Y H:i:s', (int) $_SERVER['REQUEST_TIME'] + $seconds) . ' GMT';
         header("Expires: {$ts}");
         header('Pragma: cache');
         header("Cache-Control: public, max-age={$seconds}");
@@ -37,22 +37,22 @@ final class UtilsApi
         }
 
         $levels = array(
-            \E_ALL               => 'E_ALL',
-            \E_USER_DEPRECATED   => 'E_USER_DEPRECATED',
-            \E_DEPRECATED        => 'E_DEPRECATED',
+            \E_ALL => 'E_ALL',
+            \E_USER_DEPRECATED => 'E_USER_DEPRECATED',
+            \E_DEPRECATED => 'E_DEPRECATED',
             \E_RECOVERABLE_ERROR => 'E_RECOVERABLE_ERROR',
-            \E_STRICT            => 'E_STRICT',
-            \E_USER_NOTICE       => 'E_USER_NOTICE',
-            \E_USER_WARNING      => 'E_USER_WARNING',
-            \E_USER_ERROR        => 'E_USER_ERROR',
-            \E_COMPILE_WARNING   => 'E_COMPILE_WARNING',
-            \E_COMPILE_ERROR     => 'E_COMPILE_ERROR',
-            \E_CORE_WARNING      => 'E_CORE_WARNING',
-            \E_CORE_ERROR        => 'E_CORE_ERROR',
-            \E_NOTICE            => 'E_NOTICE',
-            \E_PARSE             => 'E_PARSE',
-            \E_WARNING           => 'E_WARNING',
-            \E_ERROR             => 'E_ERROR',
+            \E_STRICT => 'E_STRICT',
+            \E_USER_NOTICE => 'E_USER_NOTICE',
+            \E_USER_WARNING => 'E_USER_WARNING',
+            \E_USER_ERROR => 'E_USER_ERROR',
+            \E_COMPILE_WARNING => 'E_COMPILE_WARNING',
+            \E_COMPILE_ERROR => 'E_COMPILE_ERROR',
+            \E_CORE_WARNING => 'E_CORE_WARNING',
+            \E_CORE_ERROR => 'E_CORE_ERROR',
+            \E_NOTICE => 'E_NOTICE',
+            \E_PARSE => 'E_PARSE',
+            \E_WARNING => 'E_WARNING',
+            \E_ERROR => 'E_ERROR',
         );
 
         $result = '';

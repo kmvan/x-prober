@@ -36,7 +36,7 @@ final class UtilsMemory
                     continue;
                 }
 
-                $line            = explode(':', $line);
+                $line = explode(':', $line);
                 $lines[$line[0]] = (float) $line[1] * 1024;
             }
 

@@ -22,27 +22,27 @@ final class Fetch extends ServerStatusConstants
         }
 
         $items[$this->ID] = array(
-            'sysLoad'      => UtilsCpu::getLoadAvg(),
-            'cpuUsage'     => UtilsCpu::getUsage(),
+            'sysLoad' => UtilsCpu::getLoadAvg(),
+            'cpuUsage' => UtilsCpu::getUsage(),
             'memRealUsage' => array(
                 'value' => UtilsMemory::getMemoryUsage('MemRealUsage'),
-                'max'   => UtilsMemory::getMemoryUsage('MemTotal'),
+                'max' => UtilsMemory::getMemoryUsage('MemTotal'),
             ),
             'memBuffers' => array(
                 'value' => UtilsMemory::getMemoryUsage('Buffers'),
-                'max'   => UtilsMemory::getMemoryUsage('MemUsage'),
+                'max' => UtilsMemory::getMemoryUsage('MemUsage'),
             ),
             'memCached' => array(
                 'value' => UtilsMemory::getMemoryUsage('Cached'),
-                'max'   => UtilsMemory::getMemoryUsage('MemUsage'),
+                'max' => UtilsMemory::getMemoryUsage('MemUsage'),
             ),
             'swapUsage' => array(
                 'value' => UtilsMemory::getMemoryUsage('SwapUsage'),
-                'max'   => UtilsMemory::getMemoryUsage('SwapTotal'),
+                'max' => UtilsMemory::getMemoryUsage('SwapTotal'),
             ),
             'swapCached' => array(
                 'value' => UtilsMemory::getMemoryUsage('SwapCached'),
-                'max'   => UtilsMemory::getMemoryUsage('SwapUsage'),
+                'max' => UtilsMemory::getMemoryUsage('SwapUsage'),
             ),
         );
 

@@ -1,13 +1,12 @@
 <?php
 
-namespace InnStudio\Prober\Components\ServerInfo;
+namespace InnStudio\Prober\Components\DiskUsage;
 
 use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Utils\UtilsDisk;
-use InnStudio\Prober\Components\Utils\UtilsTime;
 use InnStudio\Prober\Components\Xconfig\XconfigApi;
 
-final class Fetch extends ServerInfoConstants
+final class Fetch extends DiskUsageConstants
 {
     public function __construct()
     {
@@ -22,9 +21,6 @@ final class Fetch extends ServerInfoConstants
         }
 
         $items[$this->ID] = array(
-            'serverUtcTime' => UtilsTime::getUtcTime(),
-            'serverTime' => UtilsTime::getTime(),
-            'serverUptime' => UtilsTime::getUptime(),
             'diskUsage' => UtilsDisk::getItems(),
         );
 
