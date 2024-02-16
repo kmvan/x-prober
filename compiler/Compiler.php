@@ -32,7 +32,7 @@ final class Compiler
 
         $code = '';
 
-        if ( ! $this->isDev()) {
+        if (! $this->isDev()) {
             foreach ($this->yieldFiles($this->COMPONENTS_DIR) as $filePath) {
                 if (is_dir($filePath) || false === strpos($filePath, '.php')) {
                     continue;
@@ -63,12 +63,12 @@ final class Compiler
                 'distFilePath'  => $this->COMPILE_FILE_PATH,
             ));
 
-            if ( ! $this->isDev()) {
-                if ($this->isDebug()) {
-                    $this->writeFile(file_get_contents($this->COMPILE_FILE_PATH));
-                } else {
-                    $this->writeFile(php_strip_whitespace($this->COMPILE_FILE_PATH));
-                }
+            if (! $this->isDev()) {
+                // if ($this->isDebug()) {
+                $this->writeFile(file_get_contents($this->COMPILE_FILE_PATH));
+                // } else {
+                //     $this->writeFile(php_strip_whitespace($this->COMPILE_FILE_PATH));
+                // }
             }
 
             echo 'Compiled!';
@@ -165,7 +165,7 @@ PHP;
     {
         $dirs = glob($this->COMPONENTS_DIR . '/*');
 
-        if ( ! $dirs) {
+        if (! $dirs) {
             return '';
         }
 
@@ -175,7 +175,7 @@ PHP;
             $basename = basename($dir);
             $filePath = "{$dir}/{$basename}.php";
 
-            if ( ! is_file($filePath)) {
+            if (! is_file($filePath)) {
                 continue;
             }
 
@@ -193,7 +193,7 @@ PHP;
 
     private function genVendorCode(): string
     {
-        if ( ! $this->isDev()) {
+        if (! $this->isDev()) {
             return '';
         }
 
@@ -207,7 +207,7 @@ PHP;
         if (is_dir($dir)) {
             $dh = opendir($dir);
 
-            if ( ! $dh) {
+            if (! $dh) {
                 yield false;
             }
 
@@ -237,7 +237,7 @@ PHP;
     {
         $dir = \dirname($this->COMPILE_FILE_PATH);
 
-        if ( ! is_dir($dir)) {
+        if (! is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
 
