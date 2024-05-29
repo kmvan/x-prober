@@ -19,15 +19,15 @@
   "LATEST_NGINX_STABLE_VERSION": "1.22.0",
   "BENCHMARKS": [
     {
-      "name": "Olink / AMD-3700X / PHP82 JIT",
+      "name": "Olink / E5-2680 v4 / PHP83 JIT",
       "url": "https://www.olink.cloud/clients/aff.php?aff=120",
-      "date": "2023-05-02",
-      "proberUrl": "https://x-prober-server-benchmark-olink-frk.inn-studio.com",
-      "binUrl": "https://speedtest.fishfish.date",
+      "date": "2024-05-29",
+      "proberUrl": "https://x-prober-server-benchmark-olink-sj.inn-studio.com",
+      "binUrl": "",
       "detail": {
-        "cpu": 427029,
-        "read": 42064,
-        "write": 16257
+        "cpu": 268212,
+        "read": 18495,
+        "write": 6164
       }
     },
     {
