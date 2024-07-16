@@ -1253,8 +1253,7 @@ final class UtilsDisk
     }
     private static function getLinuxItems()
     {
-        $path = '/proc/mounts';
-        if ( ! file_exists($path) || ! \function_exists('shell_exec')) {
+        if ( ! \function_exists('shell_exec')) {
             return array(
                 array(
                     'id' => __DIR__,
@@ -1263,40 +1262,35 @@ final class UtilsDisk
                 ),
             );
         }
-        $availableFs = array('ext2', 'ext3', 'ext4', 'xfs', 'btrfs', 'jfs', 'reiserfs', 'zfs', 'ufs', 'fat', 'ntfs', 'f2fs', 'fat32', 'exfat');
         $items = array();
-        $lines = file($path);
-        $df = shell_exec('df -k');
-        $dfLines = explode("\n", $df);
-        foreach ($lines as $line) {
-            $line = trim($line);
-            if (empty($line)) {
+        $dfLines = explode("\n", shell_exec('df -k'));
+        if (\count($dfLines) <= 1) {
+            return $items;
+        }
+        $dfLines = \array_slice($dfLines, 1);
+        $fsExclude = array('tmpfs', 'run', 'dev');
+        foreach ($dfLines as $dfLine) {
+            $dfObj = explode(' ', preg_replace('/\\s+/', ' ', $dfLine));
+            if (\count($dfObj) < 6) {
                 continue;
             }
-            $line = explode(' ', $line);
-            if ( ! \in_array($line[2], $availableFs, true)) {
+            $dfFs = $dfObj[0];
+            $dfTotal = (int) $dfObj[1];
+            $dfAvailable = (int) $dfObj[3];
+            $dfMountedOn = $dfObj[5];
+            if (\in_array($dfFs, $fsExclude, true)) {
                 continue;
             }
-            $mount = $line[1];
-            $free = 0;
-            $total = 0;
-            foreach ($dfLines as $dfLine) {
-                $dfObj = preg_replace('/\\s+/', ' ', $dfLine);
-                $dfObj = explode(' ', $dfObj);
-                if (\count($dfObj) < 6) {
-                    continue;
-                }
-                if ($dfObj[5] !== $mount) {
-                    continue;
-                }
-                $free = $dfObj[3] * 1024;
-                $total = $dfObj[1] * 1024;
-            }
+            $free = $dfAvailable * 1024;
+            $total = $dfTotal * 1024;
             $items[] = array(
-                'id' => $line[1],
+                'id' => "{$dfFs}:{$dfMountedOn}",
                 'free' => $free,
                 'total' => $total,
             );
+        }
+        if ( ! $items) {
+            return array();
         }
         // sort by total desc
         usort($items, function ($a, $b) {
@@ -1628,24 +1622,60 @@ final class UtilsCpu
             return (float) sprintf('%.2f', $load);
         }, sys_getloadavg());
     }
+    public static function isArm($content)
+    {
+        return false !== mb_stripos($content, 'CPU architecture');
+    }
+    public static function match($content, $search)
+    {
+        preg_match_all("/{$search}\\s*:\\s*(.+)/i", $content, $matches);
+        return 2 === \count($matches) ? $matches[1] : array();
+    }
     public static function getModel()
     {
         $filePath = '/proc/cpuinfo';
-        if (! is_readable($filePath)) {
+        if ( ! is_readable($filePath)) {
             return '';
         }
         $content = file_get_contents($filePath);
-        $cores = substr_count($content, 'cache size');
-        $lines = explode("\n", $content);
-        error_log(count($lines));
-        if(count($lines) <= 9) {
+        if ( ! $content) {
             return '';
         }
-        $modelName = explode(':', $lines[4]);
-        $modelName = trim($modelName[1]);
-        $cacheSize = explode(':', $lines[8]);
-        $cacheSize = trim($cacheSize[1]);
-        return "{$cores} x {$modelName} / " . sprintf('%s cache', $cacheSize);
+        if (self::isArm($content)) {
+            $cores = substr_count($content, 'processor');
+            $searchArchitecture = self::match($content, 'CPU architecture');
+            // CPU variant
+            $searchVariant = self::match($content, 'CPU variant');
+            // CPU part
+            $searchPart = self::match($content, 'CPU part');
+            // CPU revision
+            $searchRevision = self::match($content, 'CPU revision');
+            if ( ! $cores) {
+                return '';
+            }
+            return "{$cores} x " . implode(' / ', array_filter(array(
+                \count($searchArchitecture) ? "ARMv{$searchArchitecture[0]}" : 'ARM',
+                \count($searchVariant) ? "variant {$searchVariant[0]}" : '',
+                \count($searchPart) ? "part {$searchPart[0]}" : '',
+                \count($searchRevision) ? "revision {$searchRevision[0]}" : '',
+            )));
+        }
+        // cpu cores
+        $cores = \count(self::match($content, 'cpu cores')) ?: substr_count($content, 'vendor_id');
+        // cpu model name
+        $searchModelName = self::match($content, 'model name');
+        // cpu MHz
+        $searchMHz = self::match($content, 'cpu MHz');
+        // cache size
+        $searchCache = self::match($content, 'cache size');
+        if ( ! $cores) {
+            return '';
+        }
+        return "{$cores} x " . implode(' / ', array_filter(array(
+            \count($searchModelName) ? $searchModelName[0] : '',
+            \count($searchMHz) ? "{$searchMHz[0]}MHz" : '',
+            \count($searchCache) ? "{$searchCache[0]} cache" : '',
+        )));
     }
     public static function getWinUsage()
     {
@@ -1669,7 +1699,7 @@ final class UtilsCpu
             $usage['user'] = $total;
         // exec
         } else {
-            if (! \function_exists('exec')) {
+            if ( ! \function_exists('exec')) {
                 return $usage;
             }
             $p = array();
@@ -1693,7 +1723,7 @@ final class UtilsCpu
             return $cpu;
         }
         $filePath = '/proc/stat';
-        if (! @is_readable($filePath)) {
+        if ( ! @is_readable($filePath)) {
             $cpu = array();
             return array(
                 'user' => 0,
