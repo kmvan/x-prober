@@ -17,24 +17,65 @@ final class UtilsCpu
         }, sys_getloadavg());
     }
 
+    public static function isArm($content)
+    {
+        return false !== mb_stripos($content, 'CPU architecture');
+    }
+
+    public static function match($content, $search)
+    {
+        preg_match_all("/{$search}\\s*:\\s*(.+)/i", $content, $matches);
+
+        return 2 === \count($matches) ? $matches[1] : array();
+    }
+
     public static function getModel()
     {
         $filePath = '/proc/cpuinfo';
+        if ( ! is_readable($filePath)) {
+            return '';
+        }
+        $content = file_get_contents($filePath);
+        if ( ! $content) {
+            return '';
+        }
+        if (self::isArm($content)) {
+            $cores = substr_count($content, 'processor');
+            $searchArchitecture = self::match($content, 'CPU architecture');
+            // CPU variant
+            $searchVariant = self::match($content, 'CPU variant');
+            // CPU part
+            $searchPart = self::match($content, 'CPU part');
+            // CPU revision
+            $searchRevision = self::match($content, 'CPU revision');
+            if ( ! $cores) {
+                return '';
+            }
 
-        if ( ! @is_readable($filePath)) {
+            return "{$cores} x " . implode(' / ', array_filter(array(
+                \count($searchArchitecture) ? "ARMv{$searchArchitecture[0]}" : 'ARM',
+                \count($searchVariant) ? "variant {$searchVariant[0]}" : '',
+                \count($searchPart) ? "part {$searchPart[0]}" : '',
+                \count($searchRevision) ? "revision {$searchRevision[0]}" : '',
+            )));
+        }
+        // cpu cores
+        $cores = \count(self::match($content, 'cpu cores')) ?: substr_count($content, 'vendor_id');
+        // cpu model name
+        $searchModelName = self::match($content, 'model name');
+        // cpu MHz
+        $searchMHz = self::match($content, 'cpu MHz');
+        // cache size
+        $searchCache = self::match($content, 'cache size');
+        if ( ! $cores) {
             return '';
         }
 
-        $content = file_get_contents($filePath);
-        $cores = substr_count($content, 'cache size');
-
-        $lines = explode("\n", $content);
-        $modelName = explode(':', $lines[4]);
-        $modelName = trim($modelName[1]);
-        $cacheSize = explode(':', $lines[8]);
-        $cacheSize = trim($cacheSize[1]);
-
-        return "{$cores} x {$modelName} / " . sprintf('%s cache', $cacheSize);
+        return "{$cores} x " . implode(' / ', array_filter(array(
+            \count($searchModelName) ? $searchModelName[0] : '',
+            \count($searchMHz) ? "{$searchMHz[0]}MHz" : '',
+            \count($searchCache) ? "{$searchCache[0]} cache" : '',
+        )));
     }
 
     public static function getWinUsage()
@@ -45,18 +86,15 @@ final class UtilsCpu
             'sys' => 0,
             'nice' => 0,
         );
-
         // com
         if (class_exists('COM')) {
             // need help
             $wmi = new COM('Winmgmts://');
             $server = $wmi->execquery('SELECT LoadPercentage FROM Win32_Processor');
             $total = 0;
-
             foreach ($server as $cpu) {
                 $total += (int) $cpu->loadpercentage;
             }
-
             $total = (float) $total / \count($server);
             $usage['idle'] = 100 - $total;
             $usage['user'] = $total;
@@ -65,10 +103,8 @@ final class UtilsCpu
             if ( ! \function_exists('exec')) {
                 return $usage;
             }
-
             $p = array();
             exec('wmic cpu get LoadPercentage', $p);
-
             if (isset($p[1])) {
                 $percent = (int) $p[1];
                 $usage['idle'] = 100 - $percent;
@@ -82,19 +118,15 @@ final class UtilsCpu
     public static function getUsage()
     {
         static $cpu = null;
-
         if (null !== $cpu) {
             return $cpu;
         }
-
         if (UtilsApi::isWin()) {
             $cpu = self::getWinUsage();
 
             return $cpu;
         }
-
         $filePath = '/proc/stat';
-
         if ( ! @is_readable($filePath)) {
             $cpu = array();
 
@@ -105,7 +137,6 @@ final class UtilsCpu
                 'idle' => 100,
             );
         }
-
         $stat1 = file($filePath);
         sleep(1);
         $stat2 = file($filePath);
@@ -118,7 +149,6 @@ final class UtilsCpu
         $dif['idle'] = $info2[3] - $info1[3];
         $total = array_sum($dif);
         $cpu = array();
-
         foreach ($dif as $x => $y) {
             $cpu[$x] = round($y / $total * 100, 1);
         }
