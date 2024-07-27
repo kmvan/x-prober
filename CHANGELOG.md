@@ -2,12 +2,22 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.18.0 - 2024-07-27
+
+### Add
+
+- Add ARM CPU detection
+
+### Optimize
+
+- Optimize disk usage detection
+
 ## 8.17.0 - 2023-12-31
 
 ### Add
 
 - Add detail disk usage
--
+
 ### Optimize
 
 - Optimize style
