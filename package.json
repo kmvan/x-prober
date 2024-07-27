@@ -7,11 +7,11 @@
   "scripts": {
     "lang": "node ./tools/lang-builder.mjs",
     "dev": "webpack --config webpack.config.mjs",
-    "dev:php": "php ./Make.php dev; php -S localhost:8000 -t .tmp",
+    "dev:php": "php ./Make.php dev && php -S localhost:8000 -t .tmp",
     "build": "webpack --config webpack.config.prod.mjs",
-    "build:php": "php-cs-fixer fix ./src --config=.php-cs-fixer54.php; php ./Make.php build; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
-    "build:php-debug": "php ./Make.php build debug; echo '\nPlease access via http://localhost:8001/prober.php'; php -S localhost:8001 -t dist",
-    "php-cs-fixer-54": "php-cs-fixer fix ./src --config=.php-cs-fixer54.php"
+    "build:php": "php-cs-fixer fix ./src --config=.php-cs-fixer54 && php ./Make.php build; echo '\nPlease access via http://localhost:8001/prober.php' && php -S localhost:8001 -t dist",
+    "build:php-debug": "php ./Make.php build debug && echo '\nPlease access via http://localhost:8001/prober.php' && php -S localhost:8001 -t dist",
+    "php-cs-fixer-54": "php-cs-fixer fix ./src --config=.php-cs-fixer54"
   },
   "browserslist": [
     "defaults"

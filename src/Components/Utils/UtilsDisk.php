@@ -9,7 +9,6 @@ final class UtilsDisk
         switch (\PHP_OS) {
             case 'Linux':
                 return self::getLinuxItems();
-
             default:
                 return;
         }
@@ -17,9 +16,7 @@ final class UtilsDisk
 
     private static function getLinuxItems()
     {
-        $path = '/proc/mounts';
-
-        if ( ! file_exists($path) || ! \function_exists('shell_exec')) {
+        if ( ! \function_exists('shell_exec')) {
             return array(
                 array(
                     'id' => __DIR__,
@@ -28,44 +25,35 @@ final class UtilsDisk
                 ),
             );
         }
-
-        $availableFs = array('ext2', 'ext3', 'ext4', 'xfs', 'btrfs', 'jfs', 'reiserfs', 'zfs', 'ufs', 'fat', 'ntfs', 'f2fs', 'fat32', 'exfat');
         $items = array();
-        $lines = file($path);
-        $df = shell_exec('df -k');
-        $dfLines = explode("\n", $df);
-
-        foreach ($lines as $line) {
-            $line = trim($line);
-
-            if (empty($line)) {
+        $dfLines = explode("\n", shell_exec('df -k'));
+        if (\count($dfLines) <= 1) {
+            return $items;
+        }
+        $dfLines = \array_slice($dfLines, 1);
+        $fsExclude = array('tmpfs', 'run', 'dev');
+        foreach ($dfLines as $dfLine) {
+            $dfObj = explode(' ', preg_replace('/\\s+/', ' ', $dfLine));
+            if (\count($dfObj) < 6) {
                 continue;
             }
-            $line = explode(' ', $line);
-
-            if ( ! \in_array($line[2], $availableFs, true)) {
+            $dfFs = $dfObj[0];
+            $dfTotal = (int) $dfObj[1];
+            $dfAvailable = (int) $dfObj[3];
+            $dfMountedOn = $dfObj[5];
+            if (\in_array($dfFs, $fsExclude, true)) {
                 continue;
             }
-            $mount = $line[1];
-            $free = 0;
-            $total = 0;
-            foreach ($dfLines as $dfLine) {
-                $dfObj = preg_replace('/\\s+/', ' ', $dfLine);
-                $dfObj = explode(' ', $dfObj);
-                if (\count($dfObj) < 6) {
-                    continue;
-                }
-                if ($dfObj[5] !== $mount) {
-                    continue;
-                }
-                $free = $dfObj[3] * 1024;
-                $total = $dfObj[1] * 1024;
-            }
+            $free = $dfAvailable * 1024;
+            $total = $dfTotal * 1024;
             $items[] = array(
-                'id' => $line[1],
+                'id' => "{$dfFs}:{$dfMountedOn}",
                 'free' => $free,
                 'total' => $total,
             );
+        }
+        if ( ! $items) {
+            return array();
         }
         // sort by total desc
         usort($items, function ($a, $b) {
