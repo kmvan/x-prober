@@ -1,14 +1,12 @@
 <?php
 
 declare(strict_types=1);
-
 $finder = PhpCsFixer\Finder::create()
     ->exclude(__DIR__ . '/dist')
     ->exclude(__DIR__ . '/.tmp')
     ->exclude(__DIR__ . '/node_modules')
     ->notPath(__DIR__ . '/functions.php')
     ->in(__DIR__);
-
 return (new PhpCsFixer\Config())
     ->setIndent('    ')
     ->setRiskyAllowed(true)
@@ -140,7 +138,7 @@ return (new PhpCsFixer\Config())
         'simple_to_complex_string_variable'                => true,
         'simplified_null_return'                           => true,
         'single_blank_line_at_eof'                         => true,
-        'single_blank_line_before_namespace'               => true,
+        // 'single_blank_line_before_namespace'               => true,
         'single_import_per_statement'                      => true,
         'single_line_after_imports'                        => true,
         'single_line_comment_style'                        => true,
