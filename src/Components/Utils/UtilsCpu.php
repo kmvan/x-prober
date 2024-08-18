@@ -246,7 +246,7 @@ final class UtilsCpu
 
     public static function isArm($content)
     {
-        return false !== mb_stripos($content, 'CPU architecture');
+        return false !== stripos($content, 'CPU architecture');
     }
 
     public static function match($content, $search)
