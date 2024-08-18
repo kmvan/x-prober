@@ -50,7 +50,7 @@ final class XconfigApi
             return;
         }
 
-        if ( ! is_readable(self::getFilePath())) {
+        if ( ! @is_readable(self::getFilePath())) {
             self::$conf = null;
 
             return;

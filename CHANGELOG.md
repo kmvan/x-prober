@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.19.0 - 2024-08-18
+
+### Optimize
+
+- Adjust is_readable function warning
+
 ## 8.18.0 - 2024-07-27
 
 ### Add

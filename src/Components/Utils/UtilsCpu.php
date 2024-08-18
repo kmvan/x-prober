@@ -246,7 +246,7 @@ final class UtilsCpu
 
     public static function isArm($content)
     {
-        return false !== mb_stripos($content, 'CPU architecture');
+        return false !== stripos($content, 'CPU architecture');
     }
 
     public static function match($content, $search)
@@ -281,7 +281,7 @@ final class UtilsCpu
     public static function getModel()
     {
         $filePath = '/proc/cpuinfo';
-        if ( ! is_readable($filePath)) {
+        if ( ! @is_readable($filePath)) {
             return '';
         }
         $content = file_get_contents($filePath);
