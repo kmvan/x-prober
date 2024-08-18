@@ -281,7 +281,7 @@ final class UtilsCpu
     public static function getModel()
     {
         $filePath = '/proc/cpuinfo';
-        if ( ! is_readable($filePath)) {
+        if ( ! @is_readable($filePath)) {
             return '';
         }
         $content = file_get_contents($filePath);

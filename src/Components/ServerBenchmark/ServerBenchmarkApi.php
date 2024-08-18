@@ -98,7 +98,7 @@ class ServerBenchmarkApi
     {
         $tmpDir = sys_get_temp_dir();
 
-        if ( ! is_readable($tmpDir)) {
+        if ( ! @is_readable($tmpDir)) {
             return 0;
         }
 
