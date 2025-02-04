@@ -34,8 +34,6 @@
       "name": "RamNode / PHP82 JIT",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
       "date": "2023-05-02",
-      "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
-      "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
       "detail": {
         "cpu": 203245,
         "read": 68706,
