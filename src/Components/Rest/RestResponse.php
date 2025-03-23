@@ -10,7 +10,7 @@ final class RestResponse
 
     private $status = 200;
 
-    public function __construct(array $data = null, $status = 200, array $headers = array())
+    public function __construct($data = null, $status = 200, array $headers = array())
     {
         $this->setData($data);
         $this->setStatus($status);
