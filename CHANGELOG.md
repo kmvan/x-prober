@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 8.20.0 - 2025-03-23
+
+### Fix
+
+- Fix #224
+
 ## 8.19.0 - 2024-08-18
 
 ### Optimize
