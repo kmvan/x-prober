@@ -47,6 +47,7 @@
       "url": "https://billing.spartanhost.net/aff.php?aff=801",
       "date": "2021-07-17",
       "proberUrl": "https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com",
+      "binUrl": "https://lg.dal.spartanhost.net/100MB.test",
       "detail": {
         "cpu": 280903,
         "read": 65551,
