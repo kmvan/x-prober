@@ -1,76 +1,91 @@
-import { FC } from 'react'
-import { CardGrid } from '../../Card/components/card-grid'
-import { MultiItemContainer } from '../../Card/components/multi-item-container'
-import { GridContainer } from '../../Grid/components/container'
-import { gettext } from '../../Language'
-import { Alert } from '../../Utils/components/alert'
-import { SearchLink } from '../../Utils/components/search-link'
-import { PhpExtensionsConstants } from '../constants'
-const { conf } = PhpExtensionsConstants
-const shortItems: [string, boolean][] = [
-  ['Redis', Boolean(conf?.redis)],
-  ['SQLite3', Boolean(conf?.sqlite3)],
-  ['Memcache', Boolean(conf?.memcache)],
-  ['Memcached', Boolean(conf?.memcached)],
-  ['Opcache', Boolean(conf?.opcache)],
-  [gettext('Opcache enabled'), Boolean(conf?.opcacheEnabled)],
-  [gettext('Opcache JIT enabled'), Boolean(conf?.opcacheJitEnabled)],
-  ['Swoole', Boolean(conf?.swoole)],
-  ['Image Magick', Boolean(conf?.imagick)],
-  ['Graphics Magick', Boolean(conf?.gmagick)],
-  ['Exif', Boolean(conf?.exif)],
-  ['Fileinfo', Boolean(conf?.fileinfo)],
-  ['SimpleXML', Boolean(conf?.simplexml)],
-  ['Sockets', Boolean(conf?.sockets)],
-  ['MySQLi', Boolean(conf?.mysqli)],
-  ['Zip', Boolean(conf?.zip)],
-  ['Multibyte String', Boolean(conf?.mbstring)],
-  ['Phalcon', Boolean(conf?.phalcon)],
-  ['Xdebug', Boolean(conf?.xdebug)],
-  ['Zend Optimizer', Boolean(conf?.zendOptimizer)],
-  ['ionCube', Boolean(conf?.ionCube)],
-  ['Source Guardian', Boolean(conf?.sourceGuardian)],
-  ['LDAP', Boolean(conf?.ldap)],
-  ['cURL', Boolean(conf?.curl)],
-]
-shortItems.sort((a, b) => {
-  const x = a[0].toLowerCase()
-  const y = b[0].toLowerCase()
-  if (x < y) {
-    return -1
-  }
-  if (x > y) {
-    return 1
-  }
-  return 0
-})
-const longItems: string[] = conf?.loadedExtensions || []
-longItems.sort((a, b) => {
-  const x = a.toLowerCase()
-  const y = b.toLowerCase()
-  if (x < y) {
-    return -1
-  }
-  if (x > y) {
-    return 1
-  }
-  return 0
-})
-export const PhpExtensions: FC = () => (
-  <GridContainer>
-    {shortItems.map(([name, enabled]) => (
-      <CardGrid key={name} name={name} lg={2} xl={3} xxl={4}>
-        <Alert isSuccess={enabled} />
-      </CardGrid>
-    ))}
-    {Boolean(longItems.length) && (
-      <CardGrid name={gettext('Loaded extensions')}>
-        <MultiItemContainer>
-          {longItems.map((id) => (
-            <SearchLink key={id} keyword={id} />
+import { observer } from 'mobx-react-lite';
+import { type FC, memo } from 'react';
+import { CardGroup } from '@/Components/Card/components/group.tsx';
+import { CardItem } from '@/Components/Card/components/item.tsx';
+import { CardMultiColContainer } from '@/Components/Card/components/multi-col-container.tsx';
+import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
+import { gettext } from '@/Components/Language/index.ts';
+import { Alert } from '@/Components/Utils/components/alert';
+import { SearchLink } from '@/Components/Utils/components/search-link';
+import { PhpExtensionsConstants } from './constants.ts';
+import { PhpExtensionsStore } from './store.ts';
+export const PhpExtensions: FC = memo(
+  observer(() => {
+    const { pollData } = PhpExtensionsStore;
+    if (!pollData) {
+      return null;
+    }
+    const shortItems: [string, boolean][] = [
+      ['Redis', Boolean(pollData.redis)],
+      ['SQLite3', Boolean(pollData.sqlite3)],
+      ['Memcache', Boolean(pollData.memcache)],
+      ['Memcached', Boolean(pollData.memcached)],
+      ['Opcache', Boolean(pollData.opcache)],
+      [gettext('Opcache enabled'), Boolean(pollData.opcacheEnabled)],
+      [gettext('Opcache JIT enabled'), Boolean(pollData.opcacheJitEnabled)],
+      ['Swoole', Boolean(pollData.swoole)],
+      ['Image Magick', Boolean(pollData.imagick)],
+      ['Graphics Magick', Boolean(pollData.gmagick)],
+      ['Exif', Boolean(pollData.exif)],
+      ['Fileinfo', Boolean(pollData.fileinfo)],
+      ['SimpleXML', Boolean(pollData.simplexml)],
+      ['Sockets', Boolean(pollData.sockets)],
+      ['MySQLi', Boolean(pollData.mysqli)],
+      ['Zip', Boolean(pollData.zip)],
+      ['Multibyte String', Boolean(pollData.mbstring)],
+      ['Phalcon', Boolean(pollData.phalcon)],
+      ['Xdebug', Boolean(pollData.xdebug)],
+      ['Zend Optimizer', Boolean(pollData.zendOptimizer)],
+      ['ionCube', Boolean(pollData.ionCube)],
+      ['Source Guardian', Boolean(pollData.sourceGuardian)],
+      ['LDAP', Boolean(pollData.ldap)],
+      ['cURL', Boolean(pollData.curl)],
+    ];
+    shortItems.slice().sort((a, b) => {
+      const x = a[0].toLowerCase();
+      const y = b[0].toLowerCase();
+      if (x < y) {
+        return -1;
+      }
+      if (x > y) {
+        return 1;
+      }
+      return 0;
+    });
+    const longItems: string[] = pollData.loadedExtensions || [];
+    longItems.slice().sort((a, b) => {
+      const x = a.toLowerCase();
+      const y = b.toLowerCase();
+      if (x < y) {
+        return -1;
+      }
+      if (x > y) {
+        return 1;
+      }
+      return 0;
+    });
+    return (
+      <CardItem
+        id={PhpExtensionsConstants.id}
+        title={gettext('PHP Extensions')}
+      >
+        <CardMultiColContainer>
+          {shortItems.map(([name, enabled]) => (
+            <CardGroup key={name} label={name}>
+              <Alert isSuccess={enabled} />
+            </CardGroup>
           ))}
-        </MultiItemContainer>
-      </CardGrid>
-    )}
-  </GridContainer>
-)
+        </CardMultiColContainer>
+        <CardSingleColContainer>
+          {Boolean(longItems.length) && (
+            <CardGroup label={gettext('Loaded extensions')}>
+              {longItems.map((id) => (
+                <SearchLink key={id} keyword={id} />
+              ))}
+            </CardGroup>
+          )}
+        </CardSingleColContainer>
+      </CardItem>
+    );
+  })
+);

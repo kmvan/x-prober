@@ -1,13 +1,18 @@
-import { BootstrapConstants } from '../Bootstrap/constants'
-interface ServerFetchProps {
-  data?: any
-  status: number
+import { BootstrapConstants } from '../Bootstrap/components/constants';
+
+interface ServerFetchProps<T> {
+  data: T | null;
+  status: number;
 }
-export const serverFetch = async (
+const isDev = import.meta.env?.MODE === 'development';
+export const serverFetchRoute = (action: string) => {
+  return `${isDev ? '/api' : window.location.pathname}?action=${action}`;
+};
+export const serverFetch = async <T>(
   action: string,
   opts = {}
-): Promise<ServerFetchProps> => {
-  opts = {
+): Promise<ServerFetchProps<T>> => {
+  const fetchOpts: RequestInit = {
     ...{
       method: 'GET',
       headers: {
@@ -18,13 +23,10 @@ export const serverFetch = async (
       credentials: 'omit',
     },
     ...opts,
-  }
-  const url = `${window.location.pathname}?action=${action}`
-  const res = await fetch(url, opts)
-  try {
-    return { status: res.status, data: await res.json() }
-  } catch (e) {
-    console.warn(e)
-    return { status: res.status }
-  }
-}
+  };
+  const res = await fetch(serverFetchRoute(action), fetchOpts);
+  return {
+    status: res.status,
+    data: res.ok ? await res.json().catch(() => null) : null,
+  };
+};

@@ -2,7 +2,7 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
-use InnStudio\Prober\Components\Xconfig\XconfigApi;
+use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
 class ServerBenchmarkApi
 {
@@ -18,16 +18,16 @@ class ServerBenchmarkApi
 
     public function setExpired()
     {
-        return (bool) $this->setRecorder(array(
+        return (bool) $this->setRecorder([
             'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->cooldown(),
-        ));
+        ]);
     }
 
     public function setIsRunning($isRunning)
     {
-        return (bool) $this->setRecorder(array(
+        return (bool) $this->setRecorder([
             'isRunning' => true === (bool) $isRunning ? 1 : 0,
-        ));
+        ]);
     }
 
     public function isRunning()
@@ -40,9 +40,7 @@ class ServerBenchmarkApi
     public function getRemainingSeconds()
     {
         $recorder = $this->getRecorder();
-
         $expired = isset($recorder['expired']) ? (int) $recorder['expired'] : 0;
-
         if ( ! $expired) {
             return 0;
         }
@@ -58,10 +56,9 @@ class ServerBenchmarkApi
     public function getCpuPoints()
     {
         $data = 'inn-studio.com';
-        $hash = array('md5', 'sha512', 'sha256', 'crc32');
+        $hash = ['md5', 'sha512', 'sha256', 'crc32'];
         $start = microtime(true);
         $i = 0;
-
         while (microtime(true) - $start < .5) {
             foreach ($hash as $v) {
                 hash($v, $data);
@@ -75,14 +72,11 @@ class ServerBenchmarkApi
     public function getWritePoints()
     {
         $tmpDir = sys_get_temp_dir();
-
         if ( ! is_writable($tmpDir)) {
             return 0;
         }
-
         $i = 0;
         $start = microtime(true);
-
         while (microtime(true) - $start < .5) {
             $filePath = "{$tmpDir}/innStudioWriteBenchmark:{$i}";
             clearstatcache(true, $filePath);
@@ -97,19 +91,15 @@ class ServerBenchmarkApi
     public function getReadPoints()
     {
         $tmpDir = sys_get_temp_dir();
-
         if ( ! @is_readable($tmpDir)) {
             return 0;
         }
-
         $i = 0;
         $start = microtime(true);
         $filePath = "{$tmpDir}/innStudioIoBenchmark";
-
         if ( ! file_exists($filePath)) {
             file_put_contents($filePath, 'innStudioReadBenchmark');
         }
-
         while (microtime(true) - $start < .5) {
             clearstatcache(true, $filePath);
             file_get_contents($filePath);
@@ -121,50 +111,45 @@ class ServerBenchmarkApi
 
     public function getPoints()
     {
-        return array(
-            'cpu' => $this->getMedian(array(
+        return [
+            'cpu' => $this->getMedian([
                 $this->getCpuPoints(),
                 $this->getCpuPoints(),
                 $this->getCpuPoints(),
-            )),
-            'write' => $this->getMedian(array(
+            ]),
+            'write' => $this->getMedian([
                 $this->getWritePoints(),
                 $this->getWritePoints(),
                 $this->getWritePoints(),
-            )),
-            'read' => $this->getMedian(array(
+            ]),
+            'read' => $this->getMedian([
                 $this->getReadPoints(),
                 $this->getReadPoints(),
                 $this->getReadPoints(),
-            )),
-        );
+            ]),
+        ];
     }
 
     private function cooldown()
     {
-        return (int) XconfigApi::get('serverBenchmarkCd') ?: 60;
+        return (int) UserConfigApi::get('serverBenchmarkCd') ?: 60;
     }
 
     private function getRecorder()
     {
         $path = $this->getTmpRecorderPath();
-        $defaults = array(
+        $defaults = [
             'expired' => 0,
             'running' => 0,
-        );
-
+        ];
         if ( ! @is_readable($path)) {
             return $defaults;
         }
-
         $data = (string) file_get_contents($path);
-
         if ( ! $data) {
             return $defaults;
         }
-
         $data = json_decode($data, true);
-
         if ( ! $data) {
             return $defaults;
         }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "linter": {
+    "rules": {
+      "security": {
+        "noDangerouslySetInnerHtml": "warn"
+      }
+    }
+  },
+  "extends": [
+    "ultracite"
+  ]
+}

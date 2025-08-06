@@ -1,1 +1,1 @@
-export const conf = (window as any)?.CONF
+export const conf = (window as any)?.CONF;

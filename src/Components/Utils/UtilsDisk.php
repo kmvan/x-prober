@@ -17,21 +17,21 @@ final class UtilsDisk
     private static function getLinuxItems()
     {
         if ( ! \function_exists('shell_exec')) {
-            return array(
-                array(
+            return [
+                [
                     'id' => __DIR__,
                     'free' => disk_free_space(__DIR__),
                     'total' => disk_total_space(__DIR__),
-                ),
-            );
+                ],
+            ];
         }
-        $items = array();
+        $items = [];
         $dfLines = explode("\n", shell_exec('df -k'));
         if (\count($dfLines) <= 1) {
             return $items;
         }
         $dfLines = \array_slice($dfLines, 1);
-        $fsExclude = array('tmpfs', 'run', 'dev');
+        $fsExclude = ['tmpfs', 'run', 'dev'];
         foreach ($dfLines as $dfLine) {
             $dfObj = explode(' ', preg_replace('/\\s+/', ' ', $dfLine));
             if (\count($dfObj) < 6) {
@@ -46,14 +46,14 @@ final class UtilsDisk
             }
             $free = $dfAvailable * 1024;
             $total = $dfTotal * 1024;
-            $items[] = array(
+            $items[] = [
                 'id' => "{$dfFs}:{$dfMountedOn}",
                 'free' => $free,
                 'total' => $total,
-            );
+            ];
         }
         if ( ! $items) {
-            return array();
+            return [];
         }
         // sort by total desc
         usort($items, function ($a, $b) {

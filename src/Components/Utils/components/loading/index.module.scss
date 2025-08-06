@@ -1,0 +1,24 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main {
+  display: grid;
+  grid-template-columns: 16px auto;
+  align-items: center;
+  gap: var(--x-gutter-sm);
+  &::before {
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+    border: 1px solid var(--x-button-bg);
+    border-top-color: var(--x-button-fg);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    content: "";
+  }
+}
+.text {
+  opacity: 0.75;
+}

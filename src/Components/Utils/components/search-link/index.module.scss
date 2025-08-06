@@ -1,0 +1,26 @@
+:root {
+  --x-search-fg: var(--x-fg);
+  --x-search-bg: hsl(0 0% 0% / 0.1);
+  --x-search-bg-hover: hsl(0 0% 0% / 0.15);
+  --x-search-bg-active: hsl(0 0% 0% / 0.2);
+  @media (prefers-color-scheme: dark) {
+    --x-search-fg: var(--x-fg);
+    --x-search-bg: hsl(0 0% 100% / 0.1);
+    --x-search-bg-hover: hsl(0 0% 100% / 0.15);
+    --x-search-bg-active: hsl(0 0% 100% / 0.2);
+  }
+}
+.main {
+  border-radius: var(--x-radius);
+  background: var(--x-search-bg);
+  padding: calc(var(--x-gutter-sm) * 0.5) var(--x-gutter-sm);
+  color: var(--x-search-fg);
+  font-family: monospace;
+  &:hover {
+    background: var(--x-search-bg-hover);
+    text-decoration: none;
+  }
+  &:active {
+    background: var(--x-search-bg-active);
+  }
+}

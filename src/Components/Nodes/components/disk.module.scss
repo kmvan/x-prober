@@ -1,0 +1,13 @@
+.main {
+  display: grid;
+  gap: var(--x-gutter-sm);
+  container-type: inline-size;
+  max-height: calc(50px * 2 + var(--x-gutter-sm));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: hsl(0 0% 50% / 0.5) transparent;
+}
+.item {
+  scroll-snap-align: start;
+}

@@ -12,7 +12,7 @@ final class StyleGeneration
     {
         [
             'styleFilePath' => $this->styleFilePath,
-            'distFilePath'  => $this->distFilePath,
+            'distFilePath' => $this->distFilePath,
         ] = $args;
 
         if ( ! is_file($this->styleFilePath)) {
@@ -43,7 +43,7 @@ final class StyleGeneration
             return false;
         }
 
-        $dist = str_replace('{INN_STYLE}', $style, $dist);
+        $dist = str_replace('{{X_STYLE}}', $style, $dist);
 
         return (bool) file_put_contents($this->distFilePath, $dist);
     }

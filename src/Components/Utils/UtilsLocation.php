@@ -17,32 +17,48 @@ final class UtilsLocation
      */
     public static function getLocation($ip)
     {
-        $url = "http://api.ipstack.com/{$ip}?access_key=e4394fd12dbbefa08612306ca05baca3&format=1";
+        $url = "https://api.inn-studio.com/ip-location/?ip={$ip}";
         $content = '';
-
-        if (\function_exists('\\curl_init')) {
+        if (\function_exists('curl_init')) {
             $ch = curl_init();
-            curl_setopt_array($ch, array(
+            curl_setopt_array($ch, [
                 \CURLOPT_URL => $url,
                 \CURLOPT_RETURNTRANSFER => true,
-            ));
-            $content = curl_exec($ch);
+            ]);
+            $content = (string) curl_exec($ch);
             curl_close($ch);
         } else {
             $content = file_get_contents($url);
         }
-
         $item = json_decode($content, true) ?: null;
-
         if ( ! $item) {
             return;
         }
+        // get langcode from en-US,en;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh;q=0.6
+        $langcode = '';
+        if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+            if (str_contains($_SERVER['HTTP_ACCEPT_LANGUAGE'], ',')) {
+                $langcode = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'], ','));
+            }
+        }
+        switch ($langcode) {
+            case 'en-US':
+                $langcode = 'en';
+                break;
+            case 'zh-TW':
+            case 'zh-HK':
+            case 'zh':
+                $langcode = 'zh-CN';
+                break;
+        }
+        if ( ! \in_array($langcode, ['en', 'de', 'es', 'ru', 'pt-BR', 'fr', 'zh-CN'], true)) {
+            $langcode = 'en';
+        }
 
-        return array(
-            'country' => isset($item['country_name']) ? $item['country_name'] : '',
-            'region' => isset($item['region_name']) ? $item['region_name'] : '',
-            'city' => isset($item['city']) ? $item['city'] : '',
-            'flag' => isset($item['location']['country_flag_emoji']) ? $item['location']['country_flag_emoji'] : '',
-        );
+        return [
+            'continent' => isset($item['continent']['names'][$langcode]) ? $item['continent']['names'][$langcode] : '',
+            'country' => isset($item['country']['names'][$langcode]) ? $item['country']['names'][$langcode] : '',
+            'city' => isset($item['city']['names'][$langcode]) ? $item['city']['names'][$langcode] : '',
+        ];
     }
 }

@@ -19,7 +19,7 @@ return (new PhpCsFixer\Config())
         '@Symfony'                     => true,
         '@Symfony:risky'               => true,
         'array_indentation'            => true,
-        'array_syntax'                 => array('syntax' => 'long'),
+        'array_syntax'                 => array('syntax' => 'short'),
         'backtick_to_shell_exec'       => true,
         // 'binary_operator_spaces'       => array('default' => 'align_single_space_minimal'),
         'blank_line_after_namespace'   => true,

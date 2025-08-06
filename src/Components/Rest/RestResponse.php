@@ -6,11 +6,11 @@ final class RestResponse
 {
     private $data;
 
-    private $headers = array();
+    private $headers = [];
 
     private $status = 200;
 
-    public function __construct(array $data = null, $status = 200, array $headers = array())
+    public function __construct($data = null, $status = 200, array $headers = [])
     {
         $this->setData($data);
         $this->setStatus($status);
@@ -62,32 +62,38 @@ final class RestResponse
 
     public function json()
     {
-        $this->httpResponseCode($this->status);
-        header('Content-Type: application/json');
-        header('Expires: 0');
-        header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
-        header('Cache-Control: no-store, no-cache, must-revalidate');
-        header('Pragma: no-cache');
-
-        echo $this->toJson();
+        // header('Content-Type: application/json');
+        // header('Expires: 0');
+        // header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+        // header('Cache-Control: no-store, no-cache, must-revalidate');
+        // header('Pragma: no-cache');
+        // echo $this->toJson();
 
         return $this;
     }
 
     public function end()
     {
+        $this->httpResponseCode($this->status);
+        header('Content-Type: application/json');
+        header('Expires: 0');
+        header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
+        header('Cache-Control: no-store, no-cache, must-revalidate');
+        header('Pragma: no-cache');
+        if (null !== $this->data) {
+            echo $this->toJson();
+        }
         exit;
     }
 
     private function toJson()
     {
         $data = $this->getData();
-
         if (null === $data) {
             return '';
         }
 
-        return json_encode($data);
+        return json_encode($data, \JSON_UNESCAPED_UNICODE | \JSON_UNESCAPED_SLASHES);
     }
 
     private function httpResponseCode($code)
@@ -95,8 +101,7 @@ final class RestResponse
         if (\function_exists('http_response_code')) {
             return http_response_code($code);
         }
-
-        $statusCode = array(
+        $statusCode = [
             100 => 'Continue',
             101 => 'Switching Protocols',
             102 => 'Processing',
@@ -170,11 +175,9 @@ final class RestResponse
             511 => 'Network Authentication Required',
             598 => 'Network read timeout error',
             599 => 'Network connect timeout error',
-        );
-
+        ];
         $msg = isset($statusCode[$code]) ? $statusCode[$code] : 'Unknow error';
         $protocol = (isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0');
-
         header("{$protocol} {$code} {$msg}");
     }
 }

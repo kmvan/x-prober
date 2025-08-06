@@ -1,9 +1,10 @@
-import { darken, lighten, rgba } from 'polished'
-import { gettext } from '../../Language'
-import { ColorSchemeProps } from '../typings'
-const light = '#ccc'
-const dark = '#000'
-const topDarkBottomLight = `linear-gradient(#000, #111)`
+import { darken, lighten, rgba } from 'polished';
+import { gettext } from '@/Components/Language/index.ts';
+import type { ColorSchemeProps } from '../typings';
+
+const light = '#ccc';
+const dark = '#000';
+const topDarkBottomLight = 'linear-gradient(#000, #111)';
 export const colorSchemeDark: ColorSchemeProps = {
   name: gettext('Dark'),
   isDark: true,
@@ -29,9 +30,9 @@ export const colorSchemeDark: ColorSchemeProps = {
   'card.bg': '#333',
   'card.hover.bg': `linear-gradient(to right, transparent, ${rgba(
     '#000',
-    0.5,
+    0.5
   )}, transparent)`,
-  'card.boxShadow': `inset 0 0 0 1px #000`,
+  'card.boxShadow': 'inset 0 0 0 1px #000',
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
   'card.des.fg': light,
@@ -67,12 +68,12 @@ export const colorSchemeDark: ColorSchemeProps = {
   'status.success.fg': light,
   'status.success.bg': `linear-gradient(${darken(0.25, '#00e800')}, ${darken(
     0.2,
-    '#00e800',
+    '#00e800'
   )})`,
   'status.error.fg': light,
   'status.error.bg': `linear-gradient(${darken(0.45, '#b9b9b9')}, ${darken(
     0.4,
-    '#b9b9b9',
+    '#b9b9b9'
   )})`,
   'search.fg': light,
   'search.bg': rgba(dark, 0.1),
@@ -101,4 +102,4 @@ export const colorSchemeDark: ColorSchemeProps = {
   'starMe.hover.bg': dark,
   'toast.fg': light,
   'toast.bg': dark,
-}
+};

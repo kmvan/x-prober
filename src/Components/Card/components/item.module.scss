@@ -1,0 +1,51 @@
+@use "../../Style/components/device.scss" as m;
+:root {
+  --x-card-bg: hsl(0 0% 0% / 0.95);
+  --x-card-header-bg: hsl(0 0% 100% / 0.75);
+  --x-card-header-fg: hsl(0 0% 0%);
+  --x-card-header-title-fg: hsl(0 0% 0% / 0.7);
+  --x-card-header-title-bg: hsl(0 0% 0% / 0.1);
+  --x-card-body-bg: var(--x-card-header-bg);
+  --x-card-box-shadow: hsla(0 0% 20% 0.3) 0px -1px 0px hsl(0 0% 100%) 0px 1px 0px inset,
+    hsla(0 0% 20% 0.3) 0px -1px 0px inset hsl(0 0% 100%) 0px 1px 0px;
+  @media (prefers-color-scheme: dark) {
+    --x-card-bg: hsl(0 0% 15% / 0.95);
+    --x-card-header-bg: hsl(0 0% 100% / 0.1);
+    --x-card-header-fg: hsl(0 0% 100% / 0.7);
+    --x-card-header-title-fg: hsl(0 0% 100% / 0.7);
+    --x-card-header-title-bg: hsl(0 0% 100% / 0.1);
+    --x-card-body-bg: var(--x-card-header-bg);
+    --x-card-box-shadow: 0px 0px 0px 1px hsl(0 0% 0%) inset;
+  }
+}
+.main {
+  position: relative;
+  flex-grow: 1;
+  scroll-margin-top: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  // z-index: 10;
+  border-radius: var(--x-radius) var(--x-radius) 0 0;
+  background: var(--x-card-header-bg);
+  // backdrop-filter: blur(5px);
+  // background: var(--x-card-header-bg);
+  padding: 1px;
+  // position: sticky;
+  // top: 0;
+  width: fit-content;
+  color: var(--x-card-header-fg);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+.title {
+  font-weight: normal;
+}
+.body {
+  display: grid;
+  gap: var(--x-gutter-sm);
+  border-radius: 0 var(--x-radius) var(--x-radius) var(--x-radius);
+  background: var(--x-card-body-bg);
+  padding: var(--x-gutter);
+}

@@ -2,6 +2,7 @@
 
 namespace InnStudio\Prober\Compiler;
 
+use Exception;
 use Iterator;
 
 final class Compiler
@@ -16,25 +17,25 @@ final class Compiler
 
     public function __construct(string $dir)
     {
-        $this->ROOT              = $dir;
-        $this->BASE_DIR          = "{$dir}/src";
-        $this->COMPONENTS_DIR    = "{$this->BASE_DIR}/Components";
-        $this->COMPILE_FILE_PATH = $this->isDev() ? "{$dir}/.tmp/index.php" : "{$dir}/dist/prober.php";
+        $this->ROOT = $dir;
+        $this->BASE_DIR = "{$dir}/src";
+        $this->COMPONENTS_DIR = "{$this->BASE_DIR}/Components";
+        $this->COMPILE_FILE_PATH = $this->isDev() ? "{$dir}/dev/api.php" : "{$dir}/dist/prober.php";
 
         // generate config
-        new ConfigGeneration(array(
+        new ConfigGeneration([
             'phpConfigPath' => "{$this->COMPONENTS_DIR}/Config/ConfigApi.php",
-            'configPath'    => "{$this->ROOT}/AppConfig.json",
-            'configPathDev' => "{$this->ROOT}/.tmp/AppConfig.json",
-        ));
+            'configPath' => "{$this->ROOT}/AppConfig.json",
+            'configPathDev' => "{$this->ROOT}/dev/AppConfig.json",
+        ]);
 
         echo "Compile starting...\n";
 
         $code = '';
 
-        if (! $this->isDev()) {
+        if ( ! $this->isDev()) {
             foreach ($this->yieldFiles($this->COMPONENTS_DIR) as $filePath) {
-                if (is_dir($filePath) || false === strpos($filePath, '.php')) {
+                if (is_dir($filePath) || ! str_contains($filePath, '.php')) {
                     continue;
                 }
 
@@ -43,38 +44,39 @@ final class Compiler
             }
         }
 
-        $preDefineCode = $this->preDefine(array(
+        $preDefineCode = $this->preDefine([
             $this->genTimerCode(),
             $this->genDevMode(),
             $this->genDirPath(),
             $this->genVendorCode(),
-        ));
+        ]);
         $code = "<?php\n{$preDefineCode}\n{$code}";
         $code .= $this->loader();
         $code = preg_replace("/(\r|\n)+/", "\n", $code);
 
-        if (true === $this->writeFile($code)) {
-            new ScriptGeneration(array(
-                'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
-                'distFilePath'   => $this->COMPILE_FILE_PATH,
-            ));
-            new StyleGeneration(array(
-                'styleFilePath' => "{$this->ROOT}/.tmp/app.css",
-                'distFilePath'  => $this->COMPILE_FILE_PATH,
-            ));
-
-            if (! $this->isDev()) {
-                // if ($this->isDebug()) {
-                $this->writeFile(file_get_contents($this->COMPILE_FILE_PATH));
-                // } else {
-                //     $this->writeFile(php_strip_whitespace($this->COMPILE_FILE_PATH));
-                // }
-            }
-
-            echo 'Compiled!';
-        } else {
-            echo 'Failed.';
+        if ( ! $this->writeFile($code)) {
+            throw new Exception('Failed to write file.');
         }
+        if ( ! $this->isDev()) {
+            new ScriptGeneration([
+                'scriptFilePath' => "{$this->ROOT}/.tmp/app.js",
+                'distFilePath' => $this->COMPILE_FILE_PATH,
+            ]);
+            new StyleGeneration([
+                'styleFilePath' => "{$this->ROOT}/.tmp/app.css",
+                'distFilePath' => $this->COMPILE_FILE_PATH,
+            ]);
+        }
+
+        if ( ! $this->isDev()) {
+            // if ($this->isDebug()) {
+            $this->writeFile(file_get_contents($this->COMPILE_FILE_PATH));
+            // } else {
+            //     $this->writeFile(php_strip_whitespace($this->COMPILE_FILE_PATH));
+            // }
+        }
+
+        echo 'Compiled!';
     }
 
     private function getCodeViaFilePath(string $filePath): string
@@ -83,28 +85,7 @@ final class Compiler
 
         echo "Packing `{$filePath}...";
 
-        if ($this->isDev()) {
-            $code = file_get_contents($filePath);
-        } else {
-            if ($this->isDebug()) {
-                $code = file_get_contents($filePath);
-            } else {
-                $code     = php_strip_whitespace($filePath);
-                $lines    = explode("\n", $code);
-                $lineCode = array();
-
-                foreach ($lines as $line) {
-                    $lineStr = trim($line);
-
-                    if ($lineStr) {
-                        $lineCode[] = $lineStr;
-                    }
-                }
-
-                $code = implode("\n", $lineCode);
-            }
-        }
-
+        $code = file_get_contents($filePath);
         $code = trim($code, "\n");
 
         echo "OK\n";
@@ -165,35 +146,21 @@ PHP;
     {
         $dirs = glob($this->COMPONENTS_DIR . '/*');
 
-        if (! $dirs) {
+        if ( ! $dirs) {
             return '';
         }
-
-        $files = array();
-
-        foreach ($dirs as $dir) {
-            $basename = basename($dir);
-            $filePath = "{$dir}/{$basename}.php";
-
-            if (! is_file($filePath)) {
-                continue;
-            }
-
-            if ('Bootstrap' === $basename) {
-                continue;
-            }
-
-            $files[] = "new \\InnStudio\\Prober\\Components\\{$basename}\\{$basename}();";
-        }
-
-        $files[] = 'new \\InnStudio\\Prober\\Components\\Bootstrap\\Bootstrap();';
+        $bootstrapDir = $this->isDev() ? 'dirname(__DIR__)' : '__DIR__';
+        $files = [];
+        $files[] = <<<PHP
+new \\InnStudio\\Prober\\Components\\Bootstrap\\Bootstrap({$bootstrapDir});
+PHP;
 
         return implode("\n", $files);
     }
 
     private function genVendorCode(): string
     {
-        if (! $this->isDev()) {
+        if ( ! $this->isDev()) {
             return '';
         }
 
@@ -207,7 +174,7 @@ PHP;
         if (is_dir($dir)) {
             $dh = opendir($dir);
 
-            if (! $dh) {
+            if ( ! $dh) {
                 yield false;
             }
 
@@ -237,7 +204,7 @@ PHP;
     {
         $dir = \dirname($this->COMPILE_FILE_PATH);
 
-        if (! is_dir($dir)) {
+        if ( ! is_dir($dir)) {
             mkdir($dir, 0755, true);
         }
 

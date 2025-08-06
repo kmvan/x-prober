@@ -16,27 +16,25 @@ final class TemperatureSensor
             if ('temperature-sensor' !== $action) {
                 return $action;
             }
-
             $response = new RestResponse();
             $items = $this->getItems();
-
             if ($items) {
-                $response->setData($items)->json()->end();
+                $response
+                    ->setData($items)
+                    ->end();
             }
-
             $cpuTemp = $this->getCpuTemp();
-
             if ( ! $cpuTemp) {
                 $response->setStatus(StatusCode::$NO_CONTENT);
             }
-
-            $items[] = array(
+            $items[] = [
                 'id' => 'cpu',
                 'name' => 'CPU',
                 'celsius' => round((float) $cpuTemp / 1000, 2),
-            );
-
-            $response->setData($items)->json()->end();
+            ];
+            $response
+                ->setData($items)
+                ->end();
         });
     }
 
@@ -45,12 +43,11 @@ final class TemperatureSensor
         if ( ! \function_exists('curl_init')) {
             return;
         }
-
         $ch = curl_init();
-        curl_setopt_array($ch, array(
+        curl_setopt_array($ch, [
             \CURLOPT_URL => $url,
             \CURLOPT_RETURNTRANSFER => true,
-        ));
+        ]);
         $res = curl_exec($ch);
         curl_close($ch);
 
@@ -59,24 +56,18 @@ final class TemperatureSensor
 
     private function getItems()
     {
-        $items = array();
-
+        $items = [];
         foreach (ConfigApi::$APP_TEMPERATURE_SENSOR_PORTS as $port) {
             // check curl
             $res = $this->curl(ConfigApi::$APP_TEMPERATURE_SENSOR_URL . ":{$port}");
-
             if ( ! $res) {
                 continue;
             }
-
             $item = json_decode($res, true);
-
             if ( ! $item || ! \is_array($item)) {
                 continue;
             }
-
             $items = $item;
-
             break;
         }
 

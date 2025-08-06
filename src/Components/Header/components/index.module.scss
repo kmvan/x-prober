@@ -1,0 +1,17 @@
+:root {
+  --x-header-fg: hsl(0 0% 0% / 0.9);
+  --x-header-bg: transparent;
+  --x-header-link-bg: hsl(0 0% 0% / 0.1);
+  --x-header-link-bg-hover: hsl(0 0% 0% / 0.15);
+  @media (prefers-color-scheme: dark) {
+    --x-header-fg: hsl(0 0% 100% / 0.9);
+    --x-header-bg: hsl(0 0% 100% / 0.1);
+    --x-header-link-bg: hsl(0 0% 100% / 0.1);
+    --x-header-link-bg-hover: hsl(0 0% 100% / 0.15);
+  }
+}
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--x-gutter);
+}

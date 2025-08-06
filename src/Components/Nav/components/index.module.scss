@@ -1,0 +1,61 @@
+@use "@/Components/Style/components//device.scss" as m;
+:root {
+  --x-nav-fg: hsl(0 0% 100% / 0.9);
+  --x-nav-bg: hsl(0 0% 15% / 0.95);
+  --x-nav-bg-hover: hsl(0 0% 100% / 0.05);
+  --x-nav-bg-active: hsl(0 0% 100% / 0.1);
+  --x-nav-border-color: hsl(0 0% 100% / 0.05);
+  @media (prefers-color-scheme: dark) {
+    --x-nav-fg: hsl(0 0% 95% / 0.95);
+    --x-nav-bg: hsl(0 0% 20% / 0.95);
+    --x-nav-bg-hover: hsl(0 0% 25% / 0.95);
+    --x-nav-bg-active: hsl(0 0% 30% / 0.95);
+    --x-nav-border-color: hsl(0 0% 100% / 0.05);
+  }
+}
+.main {
+  display: flex;
+  position: sticky;
+  // right: 0;
+  bottom: 0;
+  // left: 0;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 10;
+  background: var(--x-nav-bg);
+  padding: 0 var(--x-gutter-sm);
+  // height: 3rem;
+  overflow-x: auto;
+  // line-height: 3rem;
+  @include m.device(sm) {
+    justify-content: center;
+  }
+}
+.link {
+  position: relative;
+  border-right: 1px solid var(--x-nav-border-color);
+  padding: var(--x-gutter-sm) var(--x-gutter);
+  color: var(--x-nav-fg);
+  white-space: nowrap;
+  &:hover {
+    background: var(--x-nav-bg-hover);
+    color: var(--x-nav-fg);
+    text-decoration: none;
+  }
+  &:focus,
+  &:active,
+  &[data-active] {
+    background: var(--x-nav-bg-active);
+    color: var(--x-nav-fg);
+    text-decoration: none;
+  }
+  &:last-child {
+    border-right: 0;
+  }
+}
+.linkTitle {
+  display: none;
+  @include m.device(lg) {
+    display: block;
+  }
+}

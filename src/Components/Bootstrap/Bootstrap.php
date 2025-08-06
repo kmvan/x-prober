@@ -2,12 +2,16 @@
 
 namespace InnStudio\Prober\Components\Bootstrap;
 
+use InnStudio\Prober\Components\Action\Action;
+
 final class Bootstrap
 {
-    public function __construct()
+    public static $dir;
+
+    public function __construct($dir)
     {
+        self::$dir = $dir;
         new Action();
-        new Conf();
         new Render();
     }
 }

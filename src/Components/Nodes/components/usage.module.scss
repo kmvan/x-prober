@@ -1,0 +1,37 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "x-nodes-usage-label x-nodes-usage-label"
+    "x-nodes-usage-overview x-nodes-usage-percent"
+    "x-nodes-usage-meter x-nodes-usage-meter";
+  column-gap: var(--x-gutter-sm);
+  row-gap: 0;
+  // justify-content: center;
+  // align-items: center;
+  gap: var(--x-gutter-sm);
+}
+.meter {
+  display: flex;
+  grid-area: x-nodes-usage-meter;
+  height: var(--x-meter-height);
+}
+.label {
+  // display: flex;
+  grid-area: x-nodes-usage-label;
+  // justify-content: center;
+  // align-items: center;
+}
+.overview {
+  display: flex;
+  grid-area: x-nodes-usage-overview;
+  gap: var(--x-gutter-sm);
+}
+.chart {
+  display: none;
+  // display: grid;
+  grid-area: x-nodes-usage-chart;
+}
+.percent {
+  grid-area: x-nodes-usage-percent;
+}

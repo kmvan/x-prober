@@ -7,7 +7,7 @@
 
   // You can set nodes for X-Prober
   "nodes": [
-    ["node-1", "http://localhost/prober/.tmp/"],
-    ["node-3", "http://localhost/prober/.tmp/"]
+    // ["node-1", "http://localhost:5173"],
+    // ["node-3", "http://localhost:5173"]
   ]
 }

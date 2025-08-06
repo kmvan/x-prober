@@ -1,0 +1,12 @@
+.main {
+  display: grid;
+  gap: var(--x-gutter-sm);
+}
+.name {
+  text-align: center;
+}
+.loading {
+  display: grid;
+  place-content: center center;
+  height: 10rem;
+}

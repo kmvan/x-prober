@@ -1,0 +1,46 @@
+:root {
+  --x-error-fg: hsl(0 100% 50%);
+  --x-error-bg: hsl(0 100% 30%);
+  --x-error-icon-fg: hsl(0 100% 50%);
+  --x-error-icon-bg: hsl(0 100% 97%);
+  @media (prefers-color-scheme: dark) {
+    --x-error-fg: hsl(0 0% 100% / 0.9);
+    --x-error-bg: hsl(0, 100%, 50%);
+    --x-error-icon-fg: var(--x-error-bg);
+    --x-error-icon-bg: hsl(0 0% 100% / 0.5);
+  }
+}
+.main {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: var(--x-gutter-sm);
+  border-radius: var(--x-radius);
+  // background: var(--x-error-bg);
+  color: var(--x-error-fg);
+  font-family: var(--x-text-font-family);
+  &::before {
+    border-radius: var(--x-radius);
+    // position: absolute;
+    // top: 50%;
+    // left: 0;
+    // transform: translateY(-50%);
+    background: var(--x-error-bg);
+    width: 2px;
+    height: 50%;
+    content: "";
+  }
+  // &::before {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   border-radius: 50%;
+  //   background: var(--x-error-icon-bg);
+  //   width: 1rem;
+  //   height: 1rem;
+  //   content: "×";
+  //   color: var(--x-error-icon-fg);
+  //   font-weight: bold;
+  //   font-size: 1rem;
+  // }
+}

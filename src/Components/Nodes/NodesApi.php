@@ -2,29 +2,30 @@
 
 namespace InnStudio\Prober\Components\Nodes;
 
-use InnStudio\Prober\Components\Xconfig\XconfigApi;
+use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-class NodesApi
+class NodesApi extends NodesConstants
 {
-    public $ID = 'nodes';
-
-    public function getNodes()
+    public function getUserConfigNodes()
     {
-        $items = XconfigApi::getNodes();
-
+        $items = UserConfigApi::get($this->ID);
         if ( ! $items || ! \is_array($items)) {
-            return array();
+            return [];
         }
 
-        return array_filter(array_map(function ($item) {
-            if (2 !== \count($item)) {
-                return;
-            }
+        return array_values(
+            array_filter(
+                array_map(function ($item) {
+                    if (2 !== \count($item)) {
+                        return;
+                    }
 
-            return array(
-                'id' => $item[0],
-                'url' => $item[1],
-            );
-        }, $items));
+                    return [
+                        'id' => $item[0],
+                        'url' => $item[1],
+                    ];
+                }, $items)
+            )
+        );
     }
 }

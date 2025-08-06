@@ -1,0 +1,23 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  height: 100svh;
+  &::before {
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+    border: 1px solid var(--x-button-bg);
+    border-top-color: var(--x-button-fg);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    content: "";
+  }
+}

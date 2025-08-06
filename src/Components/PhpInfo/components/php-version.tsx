@@ -1,42 +1,38 @@
-import { observer } from 'mobx-react-lite'
-import { FC, useCallback, useEffect } from 'react'
-import { CardLink } from '../../Card/components/card-link'
-import { serverFetch } from '../../Fetch/server-fetch'
-import { gettext } from '../../Language'
-import { OK } from '../../Rest/http-status'
-import { template } from '../../Utils/components/template'
-import { versionCompare } from '../../Utils/components/version-compare'
-import { PhpInfoConstants } from '../constants'
-import { PhpInfoStore } from '../stores'
+import { observer } from 'mobx-react-lite';
+import { type FC, useEffect } from 'react';
+import { Link } from '@/Components/Button/components/index.tsx';
+import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
+import { gettext } from '@/Components/Language/index.ts';
+import { OK } from '@/Components/Rest/http-status.ts';
+import { template } from '@/Components/Utils/components/template.ts';
+import { versionCompare } from '@/Components/Utils/components/version-compare.ts';
+import { PhpInfoStore } from './store.ts';
 export const PhpInfoPhpVersion: FC = observer(() => {
-  const {
-    conf: { version },
-  } = PhpInfoConstants
-  const { setLatestPhpVersion, setLatestPhpDate, latestPhpVersion } =
-    PhpInfoStore
-  const fetch = useCallback(async () => {
-    const { data, status } = await serverFetch('latest-php-version')
-    if (status === OK) {
-      const { version, date } = data
-      setLatestPhpVersion(version)
-      setLatestPhpDate(date)
-    }
-  }, [setLatestPhpDate, setLatestPhpVersion])
+  const { pollData, latestPhpVersion, setLatestPhpVersion } = PhpInfoStore;
   useEffect(() => {
-    fetch()
-  }, [fetch])
-  const compare = versionCompare(version, latestPhpVersion)
+    const fetchData = async () => {
+      const { data, status } = await serverFetch<{ version: string }>(
+        'latestPhpVersion'
+      );
+      if (data?.version && status === OK) {
+        setLatestPhpVersion(data.version);
+      }
+    };
+    fetchData();
+  }, [setLatestPhpVersion]);
+  const phpVersion = pollData?.phpVersion ?? '';
+  const compare = versionCompare(phpVersion, latestPhpVersion);
   return (
-    <CardLink
-      href='https://www.php.net/'
+    <Link
+      href="https://www.php.net/"
       title={gettext('Visit PHP.net Official website')}
     >
-      {version}
+      {phpVersion}
       {compare === -1
-        ? ` ${template(gettext('(Latest {{latestPhpVersion}})'), {
+        ? ` ${template(gettext('{{latestPhpVersion}} (Latest)'), {
             latestPhpVersion,
           })}`
         : ''}
-    </CardLink>
-  )
-})
+    </Link>
+  );
+});
