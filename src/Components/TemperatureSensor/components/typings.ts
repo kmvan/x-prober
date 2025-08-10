@@ -3,3 +3,6 @@ export interface TemperatureSensorItemProps {
   name: string;
   celsius: number;
 }
+export interface TemperatureSensorPollDataProps {
+  items: TemperatureSensorItemProps[];
+}

@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import { type FC, memo, type ReactNode, useEffect } from 'react';
-import { CardGroup } from '@/Components/Card/components/group.tsx';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardMultiColContainer } from '@/Components/Card/components/multi-col-container.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
 import { Location } from '@/Components/Location/components/index.tsx';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { OK } from '@/Components/Rest/http-status.ts';
 import { template } from '@/Components/Utils/components/template';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { ServerInfoConstants } from './constants.ts';
 import { ServerInfoStore } from './store.ts';
 import type { ServerInfoPollDataProps } from './typings.ts';
@@ -29,9 +29,9 @@ const ServerTime: FC<{
   return (
     <>
       {items.map(([title, content]) => (
-        <CardGroup key={title} label={title}>
+        <ModuleGroup key={title} label={title}>
           {content}
-        </CardGroup>
+        </ModuleGroup>
       ))}
     </>
   );
@@ -52,13 +52,13 @@ const SingleItems: FC<{
     [gettext('Script path'), scriptPath ?? gettext('Unavailable')],
   ];
   return (
-    <CardSingleColContainer>
+    <UiSingleColContainer>
       {items.map(([title, content]) => (
-        <CardGroup key={title} label={title}>
+        <ModuleGroup key={title} label={title}>
           {content}
-        </CardGroup>
+        </ModuleGroup>
       ))}
-    </CardSingleColContainer>
+    </UiSingleColContainer>
   );
 });
 const MultiItems: FC<{
@@ -88,9 +88,9 @@ const MultiItems: FC<{
     return (
       <>
         {items.map(([title, content]) => (
-          <CardGroup key={title} label={title}>
+          <ModuleGroup key={title} label={title}>
             {content}
-          </CardGroup>
+          </ModuleGroup>
         ))}
       </>
     );
@@ -127,8 +127,8 @@ export const ServerInfo: FC = observer(() => {
     return null;
   }
   return (
-    <CardItem id={ServerInfoConstants.id} title={gettext('Server Info')}>
-      <CardMultiColContainer>
+    <ModuleItem id={ServerInfoConstants.id} title={gettext('Server Info')}>
+      <UiMultiColContainer>
         <ServerTime
           serverTime={pollData.serverTime}
           serverUptime={pollData.serverUptime}
@@ -141,13 +141,13 @@ export const ServerInfo: FC = observer(() => {
           serverName={pollData.serverName}
           serverSoftware={pollData.serverSoftware}
         />
-      </CardMultiColContainer>
+      </UiMultiColContainer>
       <SingleItems
         cpuModel={pollData.cpuModel}
         publicIpv4={publicIpv4}
         scriptPath={pollData.scriptPath}
         serverOs={pollData.serverOs}
       />
-    </CardItem>
+    </ModuleItem>
   );
 });

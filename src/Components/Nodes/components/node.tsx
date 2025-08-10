@@ -1,11 +1,11 @@
 import { type FC, memo, useEffect, useState } from 'react';
-import { CardError } from '@/Components/Card/components/error.tsx';
 import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
 import { Placeholder } from '@/Components/Placeholder/index.tsx';
 import type { PollDataProps } from '@/Components/Poll/components/typings.ts';
 import { OK } from '@/Components/Rest/http-status.ts';
 import { template } from '@/Components/Utils/components/template.ts';
+import { UiError } from '@/Components/ui/error/index.tsx';
 import { NodesCpu } from './cpu.tsx';
 import { NodesDisk } from './disk.tsx';
 import { NodesNetworkStats } from './network.tsx';
@@ -55,9 +55,7 @@ export const Node: FC<{ id: string }> = memo(({ id }) => {
     <div className={styles.main}>
       <header className={styles.name}>{id}</header>
       {error !== 0 && (
-        <CardError>
-          {template(gettext('Error: {{error}}'), { error })}
-        </CardError>
+        <UiError>{template(gettext('Error: {{error}}'), { error })}</UiError>
       )}
       {loading && <Placeholder height={10} />}
       {!loading && serverStatus && (

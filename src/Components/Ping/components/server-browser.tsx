@@ -2,13 +2,13 @@ import { observer } from 'mobx-react-lite';
 import { type FC, useCallback, useRef } from 'react';
 import { Button } from '@/Components/Button/components/index.tsx';
 import { ButtonStatus } from '@/Components/Button/components/typings.ts';
-import { CardGroup } from '@/Components/Card/components/group.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
 import { OK } from '@/Components/Rest/http-status.ts';
 import { calculateMdev } from '@/Components/Utils/components/mdev.ts';
 import { template } from '@/Components/Utils/components/template.ts';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import type { ServerToBrowserPingItemProps } from '../typings.ts';
 import { PingStore } from './store.ts';
 import styles from './style.module.scss';
@@ -98,16 +98,16 @@ export const PingServerToBrowser: FC = observer(() => {
   ]);
   const count = serverToBrowserPingItems.length;
   return (
-    <CardSingleColContainer>
-      <CardGroup label={gettext('Server ⇄ Browser')}>
+    <UiSingleColContainer>
+      <ModuleGroup label={gettext('Server ⇄ Browser')}>
         <Button
           onClick={handlePing}
           status={isPing ? ButtonStatus.Loading : ButtonStatus.Pointer}
         >
           {isPing ? gettext('Stop ping') : gettext('Start ping')}
         </Button>
-      </CardGroup>
-      <CardGroup label={gettext('Results')}>
+      </ModuleGroup>
+      <ModuleGroup label={gettext('Results')}>
         <div className={styles.resultContainer}>
           {!count && '-'}
           {Boolean(count) && (
@@ -117,7 +117,7 @@ export const PingServerToBrowser: FC = observer(() => {
           )}
           {Boolean(count) && <Results />}
         </div>
-      </CardGroup>
-    </CardSingleColContainer>
+      </ModuleGroup>
+    </UiSingleColContainer>
   );
 });

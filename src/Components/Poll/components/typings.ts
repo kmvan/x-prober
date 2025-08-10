@@ -8,6 +8,7 @@ import type { PhpExtensionsPollDataProps } from '@/Components/PhpExtensions/comp
 import type { PhpInfoPollDataProps } from '@/Components/PhpInfo/components/typings.ts';
 import type { ServerInfoPollDataProps } from '@/Components/ServerInfo/components/typings.ts';
 import type { ServerStatusPollDataProps } from '@/Components/ServerStatus/components/typings.ts';
+import type { TemperatureSensorPollDataProps } from '@/Components/TemperatureSensor/components/typings.ts';
 import type { UserConfigProps } from '@/Components/UserConfig/typings.ts';
 
 export interface PollDataProps {
@@ -22,4 +23,5 @@ export interface PollDataProps {
   serverStatus: ServerStatusPollDataProps | null;
   serverInfo: ServerInfoPollDataProps | null;
   nodes: NodesPollDataProps | null;
+  temperatureSensor: TemperatureSensorPollDataProps | null;
 }

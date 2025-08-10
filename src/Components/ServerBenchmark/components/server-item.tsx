@@ -1,8 +1,8 @@
 import copyToClipboard from 'copy-to-clipboard';
 import type { FC, MouseEvent, ReactNode } from 'react';
-import { CardRuby } from '@/Components/Card/components/ruby.tsx';
 import { gettext } from '@/Components/Language/index.ts';
 import { template } from '@/Components/Utils/components/template.ts';
+import { UiRuby } from '@/Components/ui/ruby/index.tsx';
 import { ServerBenchmarkMarksMeter } from './marks-meter.tsx';
 import styles from './server-item.module.scss';
 import type { ServerBenchmarkMarksProps } from './typings.ts';
@@ -40,13 +40,13 @@ const ServerBenchmarkResult: FC<{
       title={gettext('Touch to copy marks')}
       type="button"
     >
-      <CardRuby rt="CPU" ruby={cpuString} />
+      <UiRuby rt="CPU" ruby={cpuString} />
       {sign}
-      <CardRuby rt={gettext('Read')} ruby={readString} />
+      <UiRuby rt={gettext('Read')} ruby={readString} />
       {sign}
-      <CardRuby rt={gettext('Write')} ruby={writeString} />
+      <UiRuby rt={gettext('Write')} ruby={writeString} />
       <span className={styles.sign}>=</span>
-      <CardRuby isResult rt={date || ''} ruby={totalString} />
+      <UiRuby isResult rt={date || ''} ruby={totalString} />
     </button>
   );
 };

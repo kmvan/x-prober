@@ -1,10 +1,10 @@
 import { observer } from 'mobx-react-lite';
 import { type FC, memo } from 'react';
-import { CardGroup } from '@/Components/Card/components/group';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardMultiColContainer } from '@/Components/Card/components/multi-col-container.tsx';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { Alert } from '@/Components/Utils/components/alert';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { DatabaseConstants } from './constants.ts';
 import { DatabaseStore } from './store';
 export const Database: FC = memo(
@@ -21,15 +21,15 @@ export const Database: FC = memo(
       ['PDO', pollData?.pdo ?? false],
     ];
     return (
-      <CardItem id={DatabaseConstants.id} title={gettext('Database')}>
-        <CardMultiColContainer>
+      <ModuleItem id={DatabaseConstants.id} title={gettext('Database')}>
+        <UiMultiColContainer>
           {shortItems.map(([name, content]) => (
-            <CardGroup key={name} label={name}>
+            <ModuleGroup key={name} label={name}>
               <Alert isSuccess={Boolean(content)} msg={content} />
-            </CardGroup>
+            </ModuleGroup>
           ))}
-        </CardMultiColContainer>
-      </CardItem>
+        </UiMultiColContainer>
+      </ModuleItem>
     );
   })
 );

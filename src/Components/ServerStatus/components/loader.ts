@@ -1,12 +1,9 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { ServerStatusConstants } from './constants.ts';
-import { ServerStatus as component } from './index.tsx';
+import { ServerStatus as content } from './index.tsx';
 import { ServerStatusNav as nav } from './nav.tsx';
-export const ServerStatusLoader = (): CardProps => ({
+export const ServerStatusLoader: ModuleProps = {
   id: ServerStatusConstants.id,
-  title: gettext('Server Status'),
-  priority: 100,
-  component,
+  content,
   nav,
-});
+};

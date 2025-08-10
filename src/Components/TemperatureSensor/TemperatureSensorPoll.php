@@ -4,44 +4,51 @@ namespace InnStudio\Prober\Components\TemperatureSensor;
 
 use Exception;
 use InnStudio\Prober\Components\Config\ConfigApi;
-use InnStudio\Prober\Components\Events\EventsApi;
 use InnStudio\Prober\Components\Rest\RestResponse;
-use InnStudio\Prober\Components\Rest\StatusCode;
+use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class TemperatureSensor
+final class TemperatureSensorPoll extends TemperatureSensorConstants
 {
-    public function __construct()
+    public function render()
     {
-        EventsApi::on('init', function ($action) {
-            if ('temperature-sensor' !== $action) {
-                return $action;
-            }
-            $response = new RestResponse();
-            $items = $this->getItems();
-            if ($items) {
-                $response
-                    ->setData($items)
-                    ->end();
-            }
-            $cpuTemp = $this->getCpuTemp();
-            if ( ! $cpuTemp) {
-                $response->setStatus(StatusCode::$NO_CONTENT);
-            }
-            $items[] = [
-                'id' => 'cpu',
-                'name' => 'CPU',
-                'celsius' => round((float) $cpuTemp / 1000, 2),
+        if (UserConfigApi::isDisabled($this->ID)) {
+            return [
+                $this->ID => null,
             ];
-            $response
-                ->setData($items)
-                ->end();
-        });
+        }
+        $response = new RestResponse();
+        $items = $this->getItems();
+        if ( ! $items) {
+            return [
+                $this->ID => null,
+            ];
+        }
+        if ($items) {
+            return [
+                $this->ID => $items,
+            ];
+        }
+        $cpuTemp = $this->getCpuTemp();
+        if ( ! $cpuTemp) {
+            return [
+                $this->ID => null,
+            ];
+        }
+        $items[] = [
+            'id' => 'cpu',
+            'name' => 'CPU',
+            'celsius' => round((float) $cpuTemp / 1000, 2),
+        ];
+
+        return [
+            $this->ID => $items,
+        ];
     }
 
     private function curl($url)
     {
         if ( ! \function_exists('curl_init')) {
-            return;
+            return (string) file_get_contents($url);
         }
         $ch = curl_init();
         curl_setopt_array($ch, [

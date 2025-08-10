@@ -1,12 +1,12 @@
 import { observer } from 'mobx-react-lite';
 import { type FC, memo } from 'react';
-import { CardGroup } from '@/Components/Card/components/group.tsx';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardMultiColContainer } from '@/Components/Card/components/multi-col-container.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { Alert } from '@/Components/Utils/components/alert';
 import { SearchLink } from '@/Components/Utils/components/search-link';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { PhpExtensionsConstants } from './constants.ts';
 import { PhpExtensionsStore } from './store.ts';
 export const PhpExtensions: FC = memo(
@@ -65,27 +65,27 @@ export const PhpExtensions: FC = memo(
       return 0;
     });
     return (
-      <CardItem
+      <ModuleItem
         id={PhpExtensionsConstants.id}
         title={gettext('PHP Extensions')}
       >
-        <CardMultiColContainer>
+        <UiMultiColContainer>
           {shortItems.map(([name, enabled]) => (
-            <CardGroup key={name} label={name}>
+            <ModuleGroup key={name} label={name}>
               <Alert isSuccess={enabled} />
-            </CardGroup>
+            </ModuleGroup>
           ))}
-        </CardMultiColContainer>
-        <CardSingleColContainer>
+        </UiMultiColContainer>
+        <UiSingleColContainer>
           {Boolean(longItems.length) && (
-            <CardGroup label={gettext('Loaded extensions')}>
+            <ModuleGroup label={gettext('Loaded extensions')}>
               {longItems.map((id) => (
                 <SearchLink key={id} keyword={id} />
               ))}
-            </CardGroup>
+            </ModuleGroup>
           )}
-        </CardSingleColContainer>
-      </CardItem>
+        </UiSingleColContainer>
+      </ModuleItem>
     );
   })
 );

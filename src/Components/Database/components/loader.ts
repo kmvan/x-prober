@@ -1,12 +1,9 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { DatabaseConstants } from './constants.ts';
-import { Database as component } from './index.tsx';
+import { Database as content } from './index.tsx';
 import { DatabaseNav as nav } from './nav.tsx';
-export const DatabaseLoader = (): CardProps => ({
+export const DatabaseLoader: ModuleProps = {
   id: DatabaseConstants.id,
-  title: gettext('Database'),
-  priority: 600,
-  component,
+  content,
   nav,
-});
+};

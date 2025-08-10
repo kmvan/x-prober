@@ -1,49 +1,24 @@
 import { configure, makeAutoObservable } from 'mobx';
-import { CardStore } from '@/Components/Card/components/store.ts';
-import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
-import { OK } from '@/Components/Rest/http-status.ts';
-import { TemperatureSensorConstants } from './constants.ts';
-import type { TemperatureSensorItemProps } from './typings.ts';
+import { isDeepEqual } from '@/Components/Utils/components/is-deep-equal/index.ts';
+import type { TemperatureSensorPollDataProps } from './typings.ts';
 
 configure({
   enforceActions: 'observed',
 });
-const { id } = TemperatureSensorConstants;
 class Main {
-  items: TemperatureSensorItemProps[] = [];
+  pollData: TemperatureSensorPollDataProps | null = null;
+  latestPhpVersion = '';
   constructor() {
     makeAutoObservable(this);
   }
-  setItems = (items: TemperatureSensorItemProps[]) => {
-    this.items = items;
-  };
-  private setEnabledCard = (): void => {
-    const { setCard, cards } = CardStore;
-    const item = cards.find((n) => n.id === id);
-    if (!item) {
+  setPollData = (pollData: TemperatureSensorPollDataProps | null) => {
+    if (isDeepEqual(pollData, this.pollData)) {
       return;
     }
-    if (item.enabled) {
-      return;
-    }
-    setCard({
-      id,
-      enabled: true,
-    });
+    this.pollData = pollData;
   };
-  fetch = async () => {
-    const { data: items, status } =
-      await serverFetch<TemperatureSensorItemProps[]>('temperature-sensor');
-    if (items?.length && status === OK) {
-      this.setItems(items);
-      this.setEnabledCard();
-      setTimeout(() => {
-        this.fetch();
-      }, 1000);
-    }
+  setLatestPhpVersion = (latestPhpVersion: string) => {
+    this.latestPhpVersion = latestPhpVersion;
   };
-  get itemsCount() {
-    return this.items.length;
-  }
 }
 export const TemperatureSensorStore = new Main();

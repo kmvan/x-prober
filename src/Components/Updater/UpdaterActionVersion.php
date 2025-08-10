@@ -34,6 +34,8 @@ final class UpdaterActionVersion extends UpdaterConstants
                 ])
                 ->end();
         }
-        $response->setStatus(StatusCode::$NO_CONTENT)->end();
+        $response
+            ->setStatus(StatusCode::$NO_CONTENT)
+            ->end();
     }
 }

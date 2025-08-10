@@ -1,26 +1,27 @@
 import { observer } from 'mobx-react-lite';
 import type { FC } from 'react';
-import { CardGroup } from '@/Components/Card/components/group';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { gettext } from '@/Components/Language/index.ts';
 import { Meter } from '@/Components/Meter/components';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { template } from '@/Components/Utils/components/template';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { TemperatureSensorConstants } from './constants.ts';
 import { TemperatureSensorStore } from './store.ts';
 export const TemperatureSensor: FC = observer(() => {
-  const { itemsCount, items } = TemperatureSensorStore;
-  if (!itemsCount) {
+  const { pollData } = TemperatureSensorStore;
+  if (!pollData?.items?.length) {
     return null;
   }
+  const { items } = pollData;
   return (
-    <CardItem
+    <ModuleItem
       id={TemperatureSensorConstants.id}
       title={gettext('Templerature sensor')}
     >
-      <CardSingleColContainer>
+      <UiSingleColContainer>
         {items.map(({ id, name, celsius }) => (
-          <CardGroup
+          <ModuleGroup
             key={id}
             title={template(gettext('{{sensor}} temperature'), {
               sensor: name,
@@ -32,9 +33,9 @@ export const TemperatureSensor: FC = observer(() => {
               percentTag="℃"
               value={celsius}
             />
-          </CardGroup>
+          </ModuleGroup>
         ))}
-      </CardSingleColContainer>
-    </CardItem>
+      </UiSingleColContainer>
+    </ModuleItem>
   );
 });

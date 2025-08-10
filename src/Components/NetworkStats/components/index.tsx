@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import type { FC } from 'react';
-import { CardItem } from '@/Components/Card/components/item.tsx';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { usePrevious } from '@/Components/Utils/components/use-previous.ts';
 import { NetworkStatsConstants } from './constants.ts';
 import styles from './index.module.scss';
@@ -18,7 +18,7 @@ export const NetworkStats: FC = observer(() => {
   }
   const seconds = timestamp - (prevData?.timestamp || timestamp);
   return (
-    <CardItem id={NetworkStatsConstants.id} title={gettext('Network Stats')}>
+    <ModuleItem id={NetworkStatsConstants.id} title={gettext('Network Stats')}>
       <div className={styles.container}>
         {sortNetworks.map(({ id, rx, tx }) => {
           if (!(rx || tx)) {
@@ -41,6 +41,6 @@ export const NetworkStats: FC = observer(() => {
           );
         })}
       </div>
-    </CardItem>
+    </ModuleItem>
   );
 });

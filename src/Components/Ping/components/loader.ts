@@ -1,13 +1,10 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { PingConstants } from './constants.ts';
-import { Ping as component } from './index.tsx';
+import { Ping as content } from './index.tsx';
 import { PingNav as nav } from './nav.tsx';
 
-export const PingLoader = (): CardProps => ({
+export const PingLoader: ModuleProps = {
   id: PingConstants.id,
-  title: gettext('Network Ping'),
-  priority: 250,
-  component,
+  content,
   nav,
-});
+};

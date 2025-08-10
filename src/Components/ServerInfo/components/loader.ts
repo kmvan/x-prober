@@ -1,13 +1,10 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { ServerInfoConstants } from './constants.ts';
-import { ServerInfo as component } from './index.tsx';
+import { ServerInfo as content } from './index.tsx';
 import { ServerInfoNav as nav } from './nav.tsx';
 
-export const ServerInfoLoader = (): CardProps => ({
+export const ServerInfoLoader: ModuleProps = {
   id: ServerInfoConstants.id,
-  title: gettext('Server Information'),
-  priority: 300,
-  component,
+  content,
   nav,
-});
+};

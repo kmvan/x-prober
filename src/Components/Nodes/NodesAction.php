@@ -15,11 +15,15 @@ final class NodesAction extends NodesApi
         $nodeId = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
         $response = new RestResponse();
         if ( ! $nodeId) {
-            $response->setStatus(StatusCode::$BAD_REQUEST)->end();
+            $response
+                ->setStatus(StatusCode::$BAD_REQUEST)
+                ->end();
         }
         $data = $this->getNodeData($nodeId);
         if ( ! $data) {
-            $response->setStatus(StatusCode::$NO_CONTENT)->end();
+            $response
+                ->setStatus(StatusCode::$NO_CONTENT)
+                ->end();
         }
         $response
             ->setData($data)

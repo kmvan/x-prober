@@ -1,4 +1,3 @@
-import { Cards } from '@/Components/Card/components/index.tsx';
 import '@/Components/ColorScheme/components/config.scss';
 import { type FC, useEffect, useState } from 'react';
 import { ConfigStore } from '@/Components/Config/store.ts';
@@ -18,8 +17,10 @@ import { ServerStatusStore } from '@/Components/ServerStatus/components/store.ts
 import { Toast } from '@/Components/Toast/components/index.tsx';
 import { UserConfigStore } from '@/Components/UserConfig/store.ts';
 import './global.scss';
+import { Modules } from '@/Components/Module/components/index.tsx';
 import { Nav } from '@/Components/Nav/components/index.tsx';
 import { PollStore } from '@/Components/Poll/components/store.ts';
+import { TemperatureSensorStore } from '@/Components/TemperatureSensor/components/store.ts';
 import { BootstrapLoading } from './loading.tsx';
 export const Bootstrap: FC = () => {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,7 @@ export const Bootstrap: FC = () => {
           ServerStatusStore.setPollData(data?.serverStatus);
           ServerInfoStore.setPollData(data?.serverInfo);
           NodesStore.setPollData(data?.nodes);
+          TemperatureSensorStore.setPollData(data?.temperatureSensor);
         } else {
           alert('Can not fetch data.');
         }
@@ -66,7 +68,7 @@ export const Bootstrap: FC = () => {
   return (
     <>
       <Header />
-      <Cards />
+      <Modules />
       <Footer />
       <Nav />
       {/* <Forkme /> */}

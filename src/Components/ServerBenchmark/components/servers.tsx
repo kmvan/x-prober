@@ -1,11 +1,11 @@
 import { DownloadCloud, Link } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
 import { type FC, useEffect, useState } from 'react';
-import { CardError } from '@/Components/Card/components/error.tsx';
 import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
 import { Placeholder } from '@/Components/Placeholder/index.tsx';
 import { OK } from '@/Components/Rest/http-status.ts';
+import { UiError } from '@/Components/ui/error/index.tsx';
 import styles from './index.module.scss';
 import { ServerBenchmarkMyServer } from './my-server.tsx';
 import stylesItem from './server-item.module.scss';
@@ -114,9 +114,7 @@ export const ServerBenchmarkServers: FC = observer(() => {
           [...new Array(5)].map((_, index) => <Placeholder key={index} />)
         : results}
       {error && (
-        <CardError>
-          {gettext('Can not fetch marks data from GitHub.')}
-        </CardError>
+        <UiError>{gettext('Can not fetch marks data from GitHub.')}</UiError>
       )}
     </div>
   );

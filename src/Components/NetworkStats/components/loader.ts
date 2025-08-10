@@ -1,13 +1,10 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { NetworkStatsConstants } from './constants.ts';
-import { NetworkStats as component } from './index.tsx';
+import { NetworkStats as content } from './index.tsx';
 import { NetworkStatsNav as nav } from './nav.tsx';
 
-export const NetworkStatsLoader = (): CardProps => ({
+export const NetworkStatsLoader: ModuleProps = {
   id: NetworkStatsConstants.id,
-  title: gettext('Network Stats'),
-  priority: 200,
-  component,
+  content,
   nav,
-});
+};

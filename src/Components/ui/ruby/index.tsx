@@ -1,11 +1,11 @@
 import type { FC, HTMLProps, ReactNode } from 'react';
-import styles from './ruby.module.scss';
-export interface CardRubyProps extends HTMLProps<HTMLElement> {
+import styles from './index.module.scss';
+export interface UiRubyProps extends HTMLProps<HTMLElement> {
   isResult?: boolean;
   ruby: ReactNode;
   rt: string;
 }
-export const CardRuby: FC<CardRubyProps> = ({
+export const UiRuby: FC<UiRubyProps> = ({
   ruby,
   rt,
   isResult = false,

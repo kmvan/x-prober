@@ -1,14 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import { type FC, memo, type ReactNode } from 'react';
 import { Link } from '@/Components/Button/components/index.tsx';
-import { CardGroup } from '@/Components/Card/components/group';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardMultiColContainer } from '@/Components/Card/components/multi-col-container.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { serverFetchRoute } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { Alert } from '@/Components/Utils/components/alert';
 import { SearchLink } from '@/Components/Utils/components/search-link';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { PhpInfoConstants } from './constants.ts';
 import { PhpInfoPhpVersion } from './php-version';
 import { PhpInfoStore } from './store.ts';
@@ -72,27 +72,27 @@ export const PhpInfo: FC = memo(
       ],
     ];
     return (
-      <CardItem id={PhpInfoConstants.id} title={gettext('PHP Information')}>
-        <CardMultiColContainer>
+      <ModuleItem id={PhpInfoConstants.id} title={gettext('PHP Information')}>
+        <UiMultiColContainer>
           {oneLineItems.map(([title, content]) => (
-            <CardGroup key={title} label={title}>
+            <ModuleGroup key={title} label={title}>
               {content}
-            </CardGroup>
+            </ModuleGroup>
           ))}
           {shortItems.map(([title, content]) => (
-            <CardGroup key={title} label={title}>
+            <ModuleGroup key={title} label={title}>
               {content}
-            </CardGroup>
+            </ModuleGroup>
           ))}
-        </CardMultiColContainer>
-        <CardSingleColContainer>
+        </UiMultiColContainer>
+        <UiSingleColContainer>
           {longItems.map(([title, content]) => (
-            <CardGroup key={title} label={title}>
+            <ModuleGroup key={title} label={title}>
               {content}
-            </CardGroup>
+            </ModuleGroup>
           ))}
-        </CardSingleColContainer>
-      </CardItem>
+        </UiSingleColContainer>
+      </ModuleItem>
     );
   })
 );

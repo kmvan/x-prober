@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import type { FC } from 'react';
-import { CardItem } from '@/Components/Card/components/item.tsx';
 import { gettext } from '@/Components/Language/index.ts';
 import { Meter } from '@/Components/Meter/components/index.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { DiskUsageConstants } from './constants.ts';
 import styles from './index.module.scss';
 import { DiskUsageStore } from './store.ts';
@@ -13,7 +13,7 @@ export const DiskUsage: FC = observer(() => {
     return null;
   }
   return (
-    <CardItem id={DiskUsageConstants.id} title={gettext('Disk Usage')}>
+    <ModuleItem id={DiskUsageConstants.id} title={gettext('Disk Usage')}>
       <div className={styles.main}>
         {items.map(({ id, free, total }) => (
           <Meter
@@ -25,6 +25,6 @@ export const DiskUsage: FC = observer(() => {
           />
         ))}
       </div>
-    </CardItem>
+    </ModuleItem>
   );
 });

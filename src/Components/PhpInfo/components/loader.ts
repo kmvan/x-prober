@@ -1,12 +1,9 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
 import { PhpInfoConstants } from './constants.ts';
-import { PhpInfo as component } from './index.tsx';
+import { PhpInfo as content } from './index.tsx';
 import { PhpInfoNav as nav } from './nav.tsx';
-export const PhpInfoLoader = (): CardProps => ({
+export const PhpInfoLoader: ModuleProps = {
   id: PhpInfoConstants.id,
-  title: gettext('PHP Information'),
-  priority: 400,
-  component,
+  content,
   nav,
-});
+};

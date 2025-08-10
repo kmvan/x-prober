@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import type { FC } from 'react';
-import { CardItem } from '@/Components/Card/components/item.tsx';
 import { gettext } from '@/Components/Language/index.ts';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { NodesConstants } from './constants.ts';
 import styles from './index.module.scss';
 import { Node } from './node.tsx';
@@ -13,12 +13,12 @@ export const Nodes: FC = observer(() => {
     return null;
   }
   return (
-    <CardItem id={NodesConstants.id} title={gettext('Nodes')}>
+    <ModuleItem id={NodesConstants.id} title={gettext('Nodes')}>
       <div className={styles.main}>
         {nodeIds.map((id) => (
           <Node id={id} key={id} />
         ))}
       </div>
-    </CardItem>
+    </ModuleItem>
   );
 });

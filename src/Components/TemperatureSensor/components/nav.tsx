@@ -6,8 +6,12 @@ import { TemperatureSensorConstants } from './constants.ts';
 import { TemperatureSensorStore } from './store.ts';
 
 export const TemperatureSensorNav: FC = observer(() => {
-  const { itemsCount } = TemperatureSensorStore;
-  if (!itemsCount) {
+  const { pollData } = TemperatureSensorStore;
+  if (!pollData?.items?.length) {
+    return null;
+  }
+  const { items } = pollData;
+  if (!items.length) {
     return null;
   }
   return (

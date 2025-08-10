@@ -1,12 +1,9 @@
-import type { CardProps } from '@/Components/Card/components/typings.ts';
-import { gettext } from '@/Components/Language/index.ts';
-import { DiskUsage as component } from '.';
+import type { ModuleProps } from '@/Components/Module/components/typings.ts';
+import { DiskUsage as content } from '.';
 import { DiskUsageConstants } from './constants';
 import { DiskUsageNav as nav } from './nav';
-export const DiskUsageLoader = (): CardProps => ({
+export const DiskUsageLoader: ModuleProps = {
   id: DiskUsageConstants.id,
-  title: gettext('Disk usage'),
-  priority: 250,
-  component,
+  content,
   nav,
-});
+};

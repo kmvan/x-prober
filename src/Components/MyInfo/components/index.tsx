@@ -1,11 +1,11 @@
 import { observer } from 'mobx-react-lite';
 import type { FC, ReactNode } from 'react';
-import { CardGroup } from '@/Components/Card/components/group.tsx';
-import { CardItem } from '@/Components/Card/components/item.tsx';
-import { CardSingleColContainer } from '@/Components/Card/components/single-col-container.tsx';
 import { gettext } from '@/Components/Language/index.ts';
 import { Location } from '@/Components/Location/components/index.tsx';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
 import { useIp } from '@/Components/Utils/components/use-ip.ts';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { MyInfoConstants } from './constants.ts';
 import { MyInfoStore } from './store.ts';
 export const MyInfo: FC = observer(() => {
@@ -44,14 +44,14 @@ export const MyInfo: FC = observer(() => {
     return null;
   }
   return (
-    <CardItem id={MyInfoConstants.id} title={gettext('My Info')}>
-      <CardSingleColContainer>
+    <ModuleItem id={MyInfoConstants.id} title={gettext('My Info')}>
+      <UiSingleColContainer>
         {items.map(([name, content]) => (
-          <CardGroup key={name} label={name}>
+          <ModuleGroup key={name} label={name}>
             {content}
-          </CardGroup>
+          </ModuleGroup>
         ))}
-      </CardSingleColContainer>
-    </CardItem>
+      </UiSingleColContainer>
+    </ModuleItem>
   );
 });

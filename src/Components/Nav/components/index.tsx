@@ -1,14 +1,11 @@
 import { observer } from 'mobx-react-lite';
 import type { FC } from 'react';
-import { CardStore } from '@/Components/Card/components/store.ts';
+import { ModuleStore } from '@/Components/Module/components/store';
 import styles from './index.module.scss';
 export const Nav: FC = observer(() => {
-  const { enabledCards } = CardStore;
+  const { availableModules } = ModuleStore;
   // const { activeIndex } = NavStore;
-  const items = enabledCards.map(({ id, nav: Component, enabled = true }) => {
-    if (!enabled) {
-      return null;
-    }
+  const items = availableModules.map(({ id, nav: Component }) => {
     return <Component key={id} />;
   });
   // .filter((n) => n) as ReactElement[];
