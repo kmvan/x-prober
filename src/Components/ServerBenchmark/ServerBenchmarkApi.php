@@ -91,7 +91,10 @@ class ServerBenchmarkApi
     public function getReadPoints()
     {
         $tmpDir = sys_get_temp_dir();
-        if ( ! @is_readable($tmpDir)) {
+        error_reporting(0);
+        if ( ! is_readable($tmpDir)) {
+            error_reporting(\E_ALL);
+
             return 0;
         }
         $i = 0;
@@ -142,7 +145,10 @@ class ServerBenchmarkApi
             'expired' => 0,
             'running' => 0,
         ];
-        if ( ! @is_readable($path)) {
+        error_reporting(0);
+        if ( ! is_readable($path)) {
+            error_reporting(\E_ALL);
+
             return $defaults;
         }
         $data = (string) file_get_contents($path);

@@ -64,9 +64,9 @@ final class TemperatureSensorPoll extends TemperatureSensorConstants
     private function getItems()
     {
         $items = [];
-        foreach (ConfigApi::$APP_TEMPERATURE_SENSOR_PORTS as $port) {
+        foreach (ConfigApi::$config['APP_TEMPERATURE_SENSOR_PORTS'] as $port) {
             // check curl
-            $res = $this->curl(ConfigApi::$APP_TEMPERATURE_SENSOR_URL . ":{$port}");
+            $res = $this->curl(ConfigApi::$config['APP_TEMPERATURE_SENSOR_URL'] . ":{$port}");
             if ( ! $res) {
                 continue;
             }

@@ -27,7 +27,7 @@ final class UpdaterActionUpdate extends UpdaterConstants
                 ->end();
         }
         $code = '';
-        foreach (ConfigApi::$UPDATE_PHP_URLS as $url) {
+        foreach (ConfigApi::$config['UPDATE_PHP_URLS'] as $url) {
             $curl = curl_init($url);
             curl_setopt($curl, \CURLOPT_RETURNTRANSFER, true);
             $code = (string) curl_exec($curl);

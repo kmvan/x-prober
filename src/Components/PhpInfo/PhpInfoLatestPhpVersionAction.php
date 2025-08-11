@@ -32,7 +32,7 @@ final class PhpInfoLatestPhpVersionAction extends PhpInfoConstants
                 ->setStatus(StatusCode::$NO_CONTENT)
                 ->end();
         }
-        $version = isset($versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['version']) ? $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['version'] : '';
+        $version = isset($versions[ConfigApi::$config['LATEST_PHP_STABLE_VERSION']]['version']) ? $versions[ConfigApi::$config['LATEST_PHP_STABLE_VERSION']]['version'] : '';
         if ( ! $version) {
             $response
                 ->setStatus(StatusCode::$NO_CONTENT)
@@ -41,7 +41,7 @@ final class PhpInfoLatestPhpVersionAction extends PhpInfoConstants
         $response
             ->setData([
                 'version' => $version,
-                'date' => $versions[ConfigApi::$LATEST_PHP_STABLE_VERSION]['date'],
+                'date' => $versions[ConfigApi::$config['LATEST_PHP_STABLE_VERSION']]['date'],
             ])
             ->end();
     }

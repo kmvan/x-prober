@@ -4,10 +4,18 @@ namespace InnStudio\Prober\Components\Utils;
 
 final class UtilsNetwork
 {
+    public static function getAuthorization()
+    {
+        return isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : '';
+    }
+
     public static function getStats()
     {
         $filePath = '/proc/net/dev';
-        if ( ! @is_readable($filePath)) {
+        error_reporting(0);
+        if ( ! is_readable($filePath)) {
+            error_reporting(\E_ALL);
+
             return;
         }
         static $eths = null;

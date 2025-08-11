@@ -3,7 +3,7 @@
 namespace InnStudio\Prober\Components\Bootstrap;
 
 use InnStudio\Prober\Components\Config\ConfigApi;
-use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\WindowConfig\WindowConfigApi;
 
 final class Render
 {
@@ -12,14 +12,11 @@ final class Render
         if (\defined('XPROBER_IS_DEV') && XPROBER_IS_DEV) {
             return;
         }
-        $appName = ConfigApi::$APP_NAME;
-        $version = ConfigApi::$APP_VERSION;
-        // $scriptConf = json_encode(EventsApi::emit('conf', []));
-        // $devVite = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? '<script type="module" src="http://localhost:5173/@vite/client"></script><script type="module" src="http://localhost:5173/src/main.tsx"></script>' : '';
-        // $styleUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'main.css' : "?action=style&amp;v={$version}";
-        // $scriptUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'http://localhost:5173/main.js' : "?action=script&amp;v={$version}";
+        $appName = ConfigApi::$config['APP_NAME'];
+        $version = ConfigApi::$config['APP_VERSION'];
         $loadScript = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? '' : "<script src='?action=script&amp;v={$version}'></script>";
         $loadStyle = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? '' : "<link rel='stylesheet' href='?action=style&amp;v={$version}'>";
+        $globalConfig = WindowConfigApi::getGlobalConfig();
         echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +26,7 @@ final class Render
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="renderer" content="webkit">
 <title>{$appName} {$version}</title>
-<script>window['DEV'] = false;</script>
+{$globalConfig}
 {$loadScript}
 <style>
 :root {

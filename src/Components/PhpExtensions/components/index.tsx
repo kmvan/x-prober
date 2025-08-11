@@ -3,10 +3,10 @@ import { type FC, memo } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { ModuleGroup } from '@/Components/Module/components/group.tsx';
 import { ModuleItem } from '@/Components/Module/components/item.tsx';
-import { Alert } from '@/Components/Utils/components/alert';
 import { SearchLink } from '@/Components/Utils/components/search-link';
 import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
+import { EnableStatus } from '@/Components/ui/enable-status/index.tsx';
 import { PhpExtensionsConstants } from './constants.ts';
 import { PhpExtensionsStore } from './store.ts';
 export const PhpExtensions: FC = memo(
@@ -72,7 +72,7 @@ export const PhpExtensions: FC = memo(
         <UiMultiColContainer>
           {shortItems.map(([name, enabled]) => (
             <ModuleGroup key={name} label={name}>
-              <Alert isSuccess={enabled} />
+              <EnableStatus isEnable={enabled} />
             </ModuleGroup>
           ))}
         </UiMultiColContainer>

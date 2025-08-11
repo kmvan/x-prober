@@ -13,7 +13,9 @@ final class UtilsMemory
         static $memInfo = null;
         if (null === $memInfo) {
             $memInfoFile = '/proc/meminfo';
-            if ( ! @is_readable($memInfoFile)) {
+            error_reporting(0);
+            if ( ! is_readable($memInfoFile)) {
+                error_reporting(\E_ALL);
                 $memInfo = 0;
 
                 return 0;

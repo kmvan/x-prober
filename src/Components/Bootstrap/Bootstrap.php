@@ -10,6 +10,7 @@ final class Bootstrap
 
     public function __construct($dir)
     {
+        error_reporting(\E_ALL);
         self::$dir = $dir;
         new Action();
         new Render();

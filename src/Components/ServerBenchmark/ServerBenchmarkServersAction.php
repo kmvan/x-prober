@@ -20,7 +20,7 @@ final class ServerBenchmarkServersAction extends ServerBenchmarkApi
                 ->setData($this->getDevItems())
                 ->end();
         }
-        foreach (ConfigApi::$BENCHMARKS_URLS as $url) {
+        foreach (ConfigApi::$config['BENCHMARKS_URLS'] as $url) {
             $curl = curl_init($url);
             curl_setopt($curl, \CURLOPT_RETURNTRANSFER, true);
             $data = (string) curl_exec($curl);

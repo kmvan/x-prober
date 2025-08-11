@@ -281,7 +281,10 @@ final class UtilsCpu
     public static function getCores()
     {
         $filePath = '/proc/cpuinfo';
-        if ( ! @is_readable($filePath)) {
+        error_reporting(0);
+        if ( ! is_readable($filePath)) {
+            error_reporting(\E_ALL);
+
             return 0;
         }
         $content = file_get_contents($filePath);
@@ -301,7 +304,10 @@ final class UtilsCpu
     public static function getModel()
     {
         $filePath = '/proc/cpuinfo';
-        if ( ! @is_readable($filePath)) {
+        error_reporting(0);
+        if ( ! is_readable($filePath)) {
+            error_reporting(\E_ALL);
+
             return '';
         }
         $content = file_get_contents($filePath);
@@ -373,7 +379,10 @@ final class UtilsCpu
     {
         static $prev = null;
         $statFile = '/proc/stat';
-        if ( ! @is_readable($statFile)) {
+        error_reporting(0);
+        if ( ! is_readable($statFile)) {
+            error_reporting(\E_ALL);
+
             return [
                 'usage' => 0,
                 'user' => 0,

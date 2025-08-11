@@ -5,10 +5,10 @@ import { serverFetchRoute } from '@/Components/Fetch/server-fetch.ts';
 import { gettext } from '@/Components/Language/index.ts';
 import { ModuleGroup } from '@/Components/Module/components/group.tsx';
 import { ModuleItem } from '@/Components/Module/components/item.tsx';
-import { Alert } from '@/Components/Utils/components/alert';
 import { SearchLink } from '@/Components/Utils/components/search-link';
 import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
+import { EnableStatus } from '@/Components/ui/enable-status/index.tsx';
 import { PhpInfoConstants } from './constants.ts';
 import { PhpInfoPhpVersion } from './php-version';
 import { PhpInfoStore } from './store.ts';
@@ -35,7 +35,7 @@ export const PhpInfo: FC = memo(
       [gettext('SAPI interface'), pollData?.sapi],
       [
         gettext('Display errors'),
-        <Alert isSuccess={pollData?.displayErrors} key="displayErrors" />,
+        <EnableStatus isEnable={pollData?.displayErrors} key="displayErrors" />,
       ],
       [gettext('Error reporting'), pollData.errorReporting],
       [gettext('Max memory limit'), pollData.memoryLimit],
@@ -46,9 +46,12 @@ export const PhpInfo: FC = memo(
       [gettext('Timeout for socket'), pollData.defaultSocketTimeout],
       [
         gettext('Treatment URLs file'),
-        <Alert isSuccess={pollData.allowUrlFopen} key="allowUrlFopen" />,
+        <EnableStatus isEnable={pollData.allowUrlFopen} key="allowUrlFopen" />,
       ],
-      [gettext('SMTP support'), <Alert isSuccess={pollData.smtp} key="smtp" />],
+      [
+        gettext('SMTP support'),
+        <EnableStatus isEnable={pollData.smtp} key="smtp" />,
+      ],
     ];
     const { disableFunctions, disableClasses } = pollData;
     disableFunctions.slice().sort();

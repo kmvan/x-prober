@@ -3,8 +3,8 @@ import { type FC, memo } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { ModuleGroup } from '@/Components/Module/components/group.tsx';
 import { ModuleItem } from '@/Components/Module/components/item.tsx';
-import { Alert } from '@/Components/Utils/components/alert';
 import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { EnableStatus } from '@/Components/ui/enable-status/index.tsx';
 import { DatabaseConstants } from './constants.ts';
 import { DatabaseStore } from './store';
 export const Database: FC = memo(
@@ -25,7 +25,7 @@ export const Database: FC = memo(
         <UiMultiColContainer>
           {shortItems.map(([name, content]) => (
             <ModuleGroup key={name} label={name}>
-              <Alert isSuccess={Boolean(content)} msg={content} />
+              <EnableStatus isEnable={Boolean(content)} text={content} />
             </ModuleGroup>
           ))}
         </UiMultiColContainer>

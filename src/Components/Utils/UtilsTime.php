@@ -17,7 +17,10 @@ final class UtilsTime
     public static function getUptime()
     {
         $filePath = '/proc/uptime';
-        if ( ! @is_file($filePath)) {
+        error_reporting(0);
+        if ( ! is_file($filePath)) {
+            error_reporting(\E_ALL);
+
             return [
                 'days' => 0,
                 'hours' => 0,
