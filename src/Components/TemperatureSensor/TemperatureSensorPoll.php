@@ -4,7 +4,6 @@ namespace InnStudio\Prober\Components\TemperatureSensor;
 
 use Exception;
 use InnStudio\Prober\Components\Config\ConfigApi;
-use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
 final class TemperatureSensorPoll extends TemperatureSensorConstants
@@ -16,7 +15,6 @@ final class TemperatureSensorPoll extends TemperatureSensorConstants
                 $this->ID => null,
             ];
         }
-        $response = new RestResponse();
         $items = $this->getItems();
         if ( ! $items) {
             return [

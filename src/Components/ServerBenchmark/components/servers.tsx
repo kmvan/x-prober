@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 import { DownloadCloud, Link } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
 import { type FC, useEffect, useState } from 'react';
@@ -110,8 +111,7 @@ export const ServerBenchmarkServers: FC = observer(() => {
     <div className={styles.servers}>
       <ServerBenchmarkMyServer />
       {loading
-        ? // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-          [...new Array(5)].map((_, index) => <Placeholder key={index} />)
+        ? [...new Array(5)].map((_, index) => <Placeholder key={index} />)
         : results}
       {error && (
         <UiError>{gettext('Can not fetch marks data from GitHub.')}</UiError>

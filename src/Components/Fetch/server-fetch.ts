@@ -1,4 +1,4 @@
-import { BootstrapConstants } from '../Bootstrap/components/constants';
+import { WindowConfig } from '../WindowConfig/components/index.ts';
 
 interface ServerFetchProps<T> {
   data: T | null;
@@ -17,7 +17,9 @@ export const serverFetch = async <T>(
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: BootstrapConstants.conf?.authorization ?? '',
+        ...(WindowConfig.AUTHORIZATION
+          ? { Authorization: WindowConfig.AUTHORIZATION || '' }
+          : {}),
       },
       cache: 'no-cache',
       credentials: 'omit',
