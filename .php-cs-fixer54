@@ -160,7 +160,7 @@ return (new PhpCsFixer\Config())
         'void_return'                                      => false,
         'whitespace_after_comma_in_array'                  => true,
         'yoda_style'                                       => true,
-        'visibility_required'                              => true,
+        'visibility_required'                              => false, // php54
         'constant_case'                                    => true,
         'ordered_class_elements'                           => true,
         'single_class_element_per_statement'               => true,
