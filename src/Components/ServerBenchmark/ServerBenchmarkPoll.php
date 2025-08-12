@@ -4,18 +4,19 @@ namespace InnStudio\Prober\Components\ServerBenchmark;
 
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class ServerBenchmarkPoll extends ServerBenchmarkConstants
+final class ServerBenchmarkPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = ServerBenchmarkConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => true,
+            $id => true,
         ];
     }
 }

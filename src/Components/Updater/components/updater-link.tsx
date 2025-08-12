@@ -4,10 +4,10 @@ import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
 import { HeaderButton } from '@/Components/Header/components/link.tsx';
 import { gettext } from '@/Components/Language/index.ts';
 import {
+  CREATED,
   FORBIDDEN,
   INSUFFICIENT_STORAGE,
   INTERNAL_SERVER_ERROR,
-  OK,
 } from '@/Components/Rest/http-status.ts';
 import { ToastStore } from '@/Components/Toast/components/store.ts';
 import { UpdaterStore } from './store.ts';
@@ -21,9 +21,9 @@ export const UpdaterLink: FC = observer(() => {
       setIsUpdating(true);
       const { status } = await serverFetch('update');
       switch (status) {
-        case OK:
-          window.location.reload();
+        case CREATED:
           open(gettext('Update success, refreshing...'));
+          window.location.reload();
           return;
         case FORBIDDEN:
           open(gettext('Update is disabled in dev mode.'));

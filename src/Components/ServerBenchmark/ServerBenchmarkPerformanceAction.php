@@ -6,7 +6,7 @@ use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class ServerBenchmarkPerformanceAction extends ServerBenchmarkApi
+final class ServerBenchmarkPerformanceAction
 {
     public function render($action)
     {
@@ -15,7 +15,7 @@ final class ServerBenchmarkPerformanceAction extends ServerBenchmarkApi
         }
         if (UserConfigApi::isDisabled('myServerBenchmark')) {
             (new RestResponse())
-                ->setStatus(StatusCode::$FORBIDDEN)
+                ->setStatus(StatusCode::FORBIDDEN)
                 ->end();
         }
         $this->renderMarks();
@@ -24,22 +24,22 @@ final class ServerBenchmarkPerformanceAction extends ServerBenchmarkApi
     private function renderMarks()
     {
         set_time_limit(0);
-        $remainingSeconds = $this->getRemainingSeconds();
+        $remainingSeconds = ServerBenchmarkApi::getRemainingSeconds();
         $response = new RestResponse();
         if ($remainingSeconds) {
             $response
-                ->setStatus(StatusCode::$TOO_MANY_REQUESTS)
+                ->setStatus(StatusCode::TOO_MANY_REQUESTS)
                 ->setData([
                     'seconds' => $remainingSeconds,
                 ])
                 ->end();
         }
-        $this->setExpired();
-        $this->setIsRunning(true);
+        ServerBenchmarkApi::setExpired();
+        ServerBenchmarkApi::setIsRunning(true);
         // start benchmark
-        $marks = $this->getPoints();
+        $marks = ServerBenchmarkApi::getPoints();
         // end benchmark
-        $this->setIsRunning(false);
+        ServerBenchmarkApi::setIsRunning(false);
         $response
             ->setData([
                 'marks' => $marks,

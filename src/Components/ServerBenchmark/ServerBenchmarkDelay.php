@@ -2,11 +2,11 @@
 
 namespace InnStudio\Prober\Components\ServerBenchmark;
 
-final class ServerBenchmarkDelay extends ServerBenchmarkApi
+final class ServerBenchmarkDelay
 {
     public function delay()
     {
-        while ($this->isRunning()) {
+        while (ServerBenchmarkApi::isRunning()) {
             sleep(2);
         }
     }

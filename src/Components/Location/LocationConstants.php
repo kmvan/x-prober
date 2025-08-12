@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Components\Location;
 
 class LocationConstants
 {
-    public static $ID = 'locationIpv4';
+    const ID = 'locationIpv4';
 
-    protected $FEATURE_LOCATION = 'locationIpv4';
+    const FEATURE_LOCATION = 'locationIpv4';
 }

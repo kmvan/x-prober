@@ -4,5 +4,5 @@ namespace InnStudio\Prober\Components\MyInfo;
 
 class MyInfoConstants
 {
-    protected $ID = 'myInfo';
+    const ID = 'myInfo';
 }

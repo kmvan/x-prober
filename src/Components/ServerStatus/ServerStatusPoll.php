@@ -6,18 +6,19 @@ use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsCpu;
 use InnStudio\Prober\Components\Utils\UtilsMemory;
 
-final class ServerStatusPoll extends ServerStatusConstants
+final class ServerStatusPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = ServerStatusConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'sysLoad' => UtilsCpu::getLoadAvg(),
                 'cpuUsage' => UtilsCpu::getUsage(),
                 'memRealUsage' => [

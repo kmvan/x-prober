@@ -5,24 +5,24 @@ namespace InnStudio\Prober\Components\Nodes;
 use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 
-final class NodesAction extends NodesApi
+final class NodesAction
 {
     public function render($action)
     {
-        if ($action !== $this->ID) {
+        if (NodesConstants::ID !== $action) {
             return;
         }
         $nodeId = filter_input(\INPUT_GET, 'nodeId', \FILTER_DEFAULT);
         $response = new RestResponse();
         if ( ! $nodeId) {
             $response
-                ->setStatus(StatusCode::$BAD_REQUEST)
+                ->setStatus(StatusCode::BAD_REQUEST)
                 ->end();
         }
         $data = $this->getNodeData($nodeId);
         if ( ! $data) {
             $response
-                ->setStatus(StatusCode::$NO_CONTENT)
+                ->setStatus(StatusCode::NO_CONTENT)
                 ->end();
         }
         $response
@@ -32,7 +32,7 @@ final class NodesAction extends NodesApi
 
     private function getNodeData($nodeId)
     {
-        $node = array_find($this->getUserConfigNodes(), function ($item) use ($nodeId) {
+        $node = array_find(NodesApi::getUserConfigNodes(), function ($item) use ($nodeId) {
             return isset($item['url']) && isset($item['id']) && $item['id'] === $nodeId;
         });
         if ( ! $node) {

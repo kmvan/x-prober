@@ -4,26 +4,27 @@ namespace InnStudio\Prober\Components\Nodes;
 
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class NodesPoll extends NodesApi
+final class NodesPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = NodesConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
         $items = array_map(function ($item) {
             return $item['id'];
-        }, $this->getUserConfigNodes());
+        }, NodesApi::getUserConfigNodes());
         if ( ! $items) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'nodesIds' => $items,
             ],
         ];

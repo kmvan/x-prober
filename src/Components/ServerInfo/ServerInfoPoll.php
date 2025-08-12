@@ -8,18 +8,19 @@ use InnStudio\Prober\Components\Utils\UtilsDisk;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 use InnStudio\Prober\Components\Utils\UtilsTime;
 
-final class ServerInfoPoll extends ServerInfoConstants
+final class ServerInfoPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = ServerInfoConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'serverName' => $this->getServerInfo('SERVER_NAME'),
                 'serverUtcTime' => UtilsTime::getUtcTime(),
                 'localIpv4' => UtilsServerIp::getLocalIpv4(),

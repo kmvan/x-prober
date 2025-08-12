@@ -5,18 +5,19 @@ namespace InnStudio\Prober\Components\MyInfo;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsClientIp;
 
-final class MyInfoPoll extends MyInfoConstants
+final class MyInfoPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = MyInfoConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'phpLanguage' => isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '-',
                 'ipv4' => UtilsClientIp::getV4(),
                 'ipv6' => UtilsClientIp::getV6(),

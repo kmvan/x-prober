@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import styles from './index.module.scss';
-import type { PieChartStatus } from './typings.ts';
+import type { PieChartStatusKey } from './typings.ts';
 export const PieChart: FC<{
   percent: number;
-  status: PieChartStatus;
+  status: PieChartStatusKey;
   size?: number;
   stockWidth?: number;
   fontSize?: number;

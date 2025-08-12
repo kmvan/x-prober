@@ -3,6 +3,7 @@
 namespace InnStudio\Prober\Components\Bootstrap;
 
 use InnStudio\Prober\Components\Action\Action;
+use InnStudio\Prober\Components\Timezone\Timezone;
 
 final class Bootstrap
 {
@@ -12,6 +13,7 @@ final class Bootstrap
     {
         error_reporting(\E_ALL);
         self::$dir = $dir;
+        new Timezone();
         new Action();
         new Render();
     }

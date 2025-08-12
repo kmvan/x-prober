@@ -4,18 +4,19 @@ namespace InnStudio\Prober\Components\PhpInfo;
 
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class PhpInfoPoll extends PhpInfoConstants
+final class PhpInfoPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = PhpInfoConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'version' => \PHP_VERSION,
                 'sapi' => \PHP_SAPI,
                 'displayErrors' => (bool) \ini_get('display_errors'),

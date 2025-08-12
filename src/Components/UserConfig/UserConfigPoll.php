@@ -2,12 +2,12 @@
 
 namespace InnStudio\Prober\Components\UserConfig;
 
-final class UserConfigPoll extends UserConfigConstants
+final class UserConfigPoll
 {
     public function render()
     {
         return [
-            $this->ID => UserConfigApi::get(),
+            UserConfigConstants::ID => UserConfigApi::get(),
         ];
     }
 }

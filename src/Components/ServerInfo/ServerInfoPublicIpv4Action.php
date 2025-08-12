@@ -7,16 +7,16 @@ use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 
-final class ServerInfoPublicIpv4Action extends ServerInfoConstants
+final class ServerInfoPublicIpv4Action
 {
     public function render($action)
     {
         if ('serverPublicIpv4' !== $action) {
             return;
         }
-        if (UserConfigApi::isDisabled($this->ID) || UserConfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
+        if (UserConfigApi::isDisabled(ServerInfoConstants::ID) || UserConfigApi::isDisabled(ServerInfoConstants::FEATURE_SERVER_IP)) {
             (new RestResponse())
-                ->setStatus(StatusCode::$FORBIDDEN)
+                ->setStatus(StatusCode::FORBIDDEN)
                 ->end();
         }
         (new RestResponse())

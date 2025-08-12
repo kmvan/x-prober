@@ -3,10 +3,10 @@ import { type FC, memo } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { ModuleGroup } from '@/Components/Module/components/group.tsx';
 import { ModuleItem } from '@/Components/Module/components/item.tsx';
-import { SearchLink } from '@/Components/Utils/components/search-link';
 import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { EnableStatus } from '@/Components/ui/enable-status/index.tsx';
+import { SearchLink } from '@/Components/ui/search-link/index.tsx';
 import { PhpExtensionsConstants } from './constants.ts';
 import { PhpExtensionsStore } from './store.ts';
 export const PhpExtensions: FC = memo(

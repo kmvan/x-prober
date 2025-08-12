@@ -8,23 +8,23 @@ use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsLocation;
 use InnStudio\Prober\Components\Utils\UtilsServerIp;
 
-final class ServerInfoLocationIpv4Action extends ServerInfoConstants
+final class ServerInfoLocationIpv4Action
 {
     public function render($action)
     {
         if ('serverLocationIpv4' !== $action) {
             return;
         }
-        if (UserConfigApi::isDisabled($this->ID) || UserConfigApi::isDisabled($this->FEATURE_SERVER_IP)) {
+        if (UserConfigApi::isDisabled(ServerInfoConstants::ID) || UserConfigApi::isDisabled(ServerInfoConstants::FEATURE_SERVER_IP)) {
             (new RestResponse())
-                ->setStatus(StatusCode::$FORBIDDEN)
+                ->setStatus(StatusCode::FORBIDDEN)
                 ->end();
         }
         $response = new RestResponse();
         $ip = UtilsServerIp::getPublicIpV4();
         if ( ! $ip) {
             $response
-                ->setStatus(StatusCode::$INTERNAL_SERVER_ERROR)
+                ->setStatus(StatusCode::INTERNAL_SERVER_ERROR)
                 ->end();
         }
         $response

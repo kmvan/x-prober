@@ -6,7 +6,7 @@ use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 
-final class UpdaterActionVersion extends UpdaterConstants
+final class UpdaterActionVersion
 {
     public function render($action)
     {
@@ -35,7 +35,7 @@ final class UpdaterActionVersion extends UpdaterConstants
                 ->end();
         }
         $response
-            ->setStatus(StatusCode::$NO_CONTENT)
+            ->setStatus(StatusCode::NO_CONTENT)
             ->end();
     }
 }

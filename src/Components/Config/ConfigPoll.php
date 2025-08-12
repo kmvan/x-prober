@@ -2,14 +2,14 @@
 
 namespace InnStudio\Prober\Components\Config;
 
-final class ConfigPoll extends ConfigConstants
+final class ConfigPoll
 {
     public function render()
     {
         $config = ConfigApi::$config;
 
         return [
-            $this->ID => [
+            ConfigConstants::ID => [
                 'APP_VERSION' => $config['APP_VERSION'],
                 'APP_NAME' => $config['APP_NAME'],
                 'APP_URL' => $config['APP_URL'],

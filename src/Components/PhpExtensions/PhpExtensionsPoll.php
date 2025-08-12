@@ -4,13 +4,14 @@ namespace InnStudio\Prober\Components\PhpExtensions;
 
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class PhpExtensionsPoll extends PhpExtensionsConstants
+final class PhpExtensionsPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = PhpExtensionsConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
         $jitEnabled = false;
@@ -22,7 +23,7 @@ final class PhpExtensionsPoll extends PhpExtensionsConstants
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'redis' => \extension_loaded('redis') && class_exists('Redis'),
                 'sqlite3' => \extension_loaded('sqlite3') && class_exists('Sqlite3'),
                 'memcache' => \extension_loaded('memcache') && class_exists('Memcache'),

@@ -8,7 +8,7 @@ final class PollAction extends PoolConstants
 {
     public function render($action)
     {
-        if ($action !== $this->ID) {
+        if (PoolConstants::ID !== $action) {
             return;
         }
         $data = [];

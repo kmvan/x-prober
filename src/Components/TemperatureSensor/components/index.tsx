@@ -17,7 +17,7 @@ export const TemperatureSensor: FC = observer(() => {
   return (
     <ModuleItem
       id={TemperatureSensorConstants.id}
-      title={gettext('Templerature sensor')}
+      title={gettext('Temperature sensor')}
     >
       <UiSingleColContainer>
         {items.map(({ id, name, celsius }) => (

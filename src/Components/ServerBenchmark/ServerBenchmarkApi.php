@@ -6,40 +6,40 @@ use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
 class ServerBenchmarkApi
 {
-    public function getTmpRecorderPath()
+    public static function getTmpRecorderPath()
     {
         return sys_get_temp_dir() . \DIRECTORY_SEPARATOR . 'xproberBenchmarkCool';
     }
 
-    public function setRecorder(array $data)
+    public static function setRecorder(array $data)
     {
-        return (bool) file_put_contents($this->getTmpRecorderPath(), json_encode(array_merge($this->getRecorder(), $data)));
+        return (bool) file_put_contents(self::getTmpRecorderPath(), json_encode(array_merge(self::getRecorder(), $data)));
     }
 
-    public function setExpired()
+    public static function setExpired()
     {
-        return (bool) $this->setRecorder([
-            'expired' => (int) $_SERVER['REQUEST_TIME'] + $this->cooldown(),
+        return (bool) self::setRecorder([
+            'expired' => (int) $_SERVER['REQUEST_TIME'] + self::cooldown(),
         ]);
     }
 
-    public function setIsRunning($isRunning)
+    public static function setIsRunning($isRunning)
     {
-        return (bool) $this->setRecorder([
+        return (bool) self::setRecorder([
             'isRunning' => true === (bool) $isRunning ? 1 : 0,
         ]);
     }
 
-    public function isRunning()
+    public static function isRunning()
     {
-        $recorder = $this->getRecorder();
+        $recorder = self::getRecorder();
 
         return isset($recorder['isRunning']) ? 1 === (int) $recorder['isRunning'] : false;
     }
 
-    public function getRemainingSeconds()
+    public static function getRemainingSeconds()
     {
-        $recorder = $this->getRecorder();
+        $recorder = self::getRecorder();
         $expired = isset($recorder['expired']) ? (int) $recorder['expired'] : 0;
         if ( ! $expired) {
             return 0;
@@ -48,12 +48,12 @@ class ServerBenchmarkApi
         return $expired > (int) $_SERVER['REQUEST_TIME'] ? $expired - (int) $_SERVER['REQUEST_TIME'] : 0;
     }
 
-    public function getPointsByTime($time)
+    public static function getPointsByTime($time)
     {
         return pow(10, 3) - (int) ($time * pow(10, 3));
     }
 
-    public function getCpuPoints()
+    public static function getCpuPoints()
     {
         $data = 'inn-studio.com';
         $hash = ['md5', 'sha512', 'sha256', 'crc32'];
@@ -69,7 +69,7 @@ class ServerBenchmarkApi
         return $i;
     }
 
-    public function getWritePoints()
+    public static function getWritePoints()
     {
         $tmpDir = sys_get_temp_dir();
         if ( ! is_writable($tmpDir)) {
@@ -88,7 +88,7 @@ class ServerBenchmarkApi
         return $i;
     }
 
-    public function getReadPoints()
+    public static function getReadPoints()
     {
         $tmpDir = sys_get_temp_dir();
         error_reporting(0);
@@ -112,35 +112,35 @@ class ServerBenchmarkApi
         return $i;
     }
 
-    public function getPoints()
+    public static function getPoints()
     {
         return [
-            'cpu' => $this->getMedian([
-                $this->getCpuPoints(),
-                $this->getCpuPoints(),
-                $this->getCpuPoints(),
+            'cpu' => self::getMedian([
+                self::getCpuPoints(),
+                self::getCpuPoints(),
+                self::getCpuPoints(),
             ]),
-            'write' => $this->getMedian([
-                $this->getWritePoints(),
-                $this->getWritePoints(),
-                $this->getWritePoints(),
+            'write' => self::getMedian([
+                self::getWritePoints(),
+                self::getWritePoints(),
+                self::getWritePoints(),
             ]),
-            'read' => $this->getMedian([
-                $this->getReadPoints(),
-                $this->getReadPoints(),
-                $this->getReadPoints(),
+            'read' => self::getMedian([
+                self::getReadPoints(),
+                self::getReadPoints(),
+                self::getReadPoints(),
             ]),
         ];
     }
 
-    private function cooldown()
+    private static function cooldown()
     {
         return (int) UserConfigApi::get('serverBenchmarkCd') ?: 60;
     }
 
-    private function getRecorder()
+    private static function getRecorder()
     {
-        $path = $this->getTmpRecorderPath();
+        $path = self::getTmpRecorderPath();
         $defaults = [
             'expired' => 0,
             'running' => 0,
@@ -163,7 +163,7 @@ class ServerBenchmarkApi
         return array_merge($defaults, $data);
     }
 
-    private function getMedian(array $arr)
+    private static function getMedian(array $arr)
     {
         $count = \count($arr);
         sort($arr);

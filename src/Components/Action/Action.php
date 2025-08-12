@@ -37,7 +37,7 @@ final class Action
             (new $class())->render($action);
         }
         (new RestResponse())
-            ->setStatus(StatusCode::$BAD_REQUEST)
+            ->setStatus(StatusCode::BAD_REQUEST)
             ->end();
     }
 }

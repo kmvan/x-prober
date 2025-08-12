@@ -7,17 +7,17 @@ use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsLocation;
 
-final class LocationIpv4Action extends LocationConstants
+final class LocationIpv4Action
 {
     public function render($action)
     {
-        if (self::$ID !== $action) {
+        if (LocationConstants::ID !== $action) {
             return;
         }
         $response = new RestResponse();
-        if (UserConfigApi::isDisabled($this->FEATURE_LOCATION)) {
+        if (UserConfigApi::isDisabled(LocationConstants::FEATURE_LOCATION)) {
             $response
-                ->setStatus(StatusCode::$FORBIDDEN)
+                ->setStatus(StatusCode::FORBIDDEN)
                 ->end();
         }
         $ip = filter_input(\INPUT_GET, 'ip', \FILTER_VALIDATE_IP, [
@@ -25,7 +25,7 @@ final class LocationIpv4Action extends LocationConstants
         ]);
         if ( ! $ip) {
             $response
-                ->setStatus(StatusCode::$BAD_REQUEST)
+                ->setStatus(StatusCode::BAD_REQUEST)
                 ->end();
         }
         $response

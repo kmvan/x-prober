@@ -6,30 +6,31 @@ use Exception;
 use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class TemperatureSensorPoll extends TemperatureSensorConstants
+final class TemperatureSensorPoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = TemperatureSensorConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
         $items = $this->getItems();
         if ( ! $items) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
         if ($items) {
             return [
-                $this->ID => $items,
+                $id => $items,
             ];
         }
         $cpuTemp = $this->getCpuTemp();
         if ( ! $cpuTemp) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
         $items[] = [
@@ -39,7 +40,7 @@ final class TemperatureSensorPoll extends TemperatureSensorConstants
         ];
 
         return [
-            $this->ID => $items,
+            $id => $items,
         ];
     }
 

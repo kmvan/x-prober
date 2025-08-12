@@ -6,17 +6,18 @@ use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-final class PingAction extends PingConstants
+final class PingAction
 {
     public function render($action)
     {
-        if ($action !== $this->ID) {
+        $id = PingConstants::ID;
+        if ($action !== $id) {
             return;
         }
         $response = new RestResponse();
-        if (UserConfigApi::isDisabled($this->ID)) {
+        if (UserConfigApi::isDisabled($id)) {
             $response
-                ->setStatus(StatusCode::$NOT_IMPLEMENTED)
+                ->setStatus(StatusCode::NOT_IMPLEMENTED)
                 ->end();
         }
         $response

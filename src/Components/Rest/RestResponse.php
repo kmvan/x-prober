@@ -8,9 +8,9 @@ final class RestResponse
 
     private $headers = [];
 
-    private $status = 200;
+    private $status = StatusCode::OK;
 
-    public function __construct($data = null, $status = 200, array $headers = [])
+    public function __construct($data = null, $status = StatusCode::OK, array $headers = [])
     {
         $this->setData($data);
         $this->setStatus($status);

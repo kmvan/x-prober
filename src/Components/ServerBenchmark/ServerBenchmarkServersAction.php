@@ -7,7 +7,7 @@ use InnStudio\Prober\Components\Config\ConfigApi;
 use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
 
-final class ServerBenchmarkServersAction extends ServerBenchmarkApi
+final class ServerBenchmarkServersAction
 {
     public function render($action)
     {
@@ -36,7 +36,9 @@ final class ServerBenchmarkServersAction extends ServerBenchmarkApi
                 ->setData($json)
                 ->end();
         }
-        $reponse->setStatus(StatusCode::$NO_CONTENT)->end();
+        $reponse
+            ->setStatus(StatusCode::NO_CONTENT)
+            ->end();
     }
 
     private function getDevItems()

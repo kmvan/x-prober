@@ -5,18 +5,19 @@ namespace InnStudio\Prober\Components\DiskUsage;
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 use InnStudio\Prober\Components\Utils\UtilsDisk;
 
-final class DiskUsagePoll extends DiskUsageConstants
+final class DiskUsagePoll
 {
     public function render()
     {
-        if (UserConfigApi::isDisabled($this->ID)) {
+        $id = DiskUsageConstants::ID;
+        if (UserConfigApi::isDisabled($id)) {
             return [
-                $this->ID => null,
+                $id => null,
             ];
         }
 
         return [
-            $this->ID => [
+            $id => [
                 'items' => UtilsDisk::getItems(),
             ],
         ];

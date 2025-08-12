@@ -4,11 +4,11 @@ namespace InnStudio\Prober\Components\Nodes;
 
 use InnStudio\Prober\Components\UserConfig\UserConfigApi;
 
-class NodesApi extends NodesConstants
+class NodesApi
 {
-    public function getUserConfigNodes()
+    public static function getUserConfigNodes()
     {
-        $items = UserConfigApi::get($this->ID);
+        $items = UserConfigApi::get(NodesConstants::ID);
         if ( ! $items || ! \is_array($items)) {
             return [];
         }

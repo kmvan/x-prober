@@ -3,37 +3,25 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-07-13 12:17+0800\n"
+"PO-Revision-Date: 2025-08-12 19:39+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-KeywordsList: gettext\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Flags-xgettext: --add-comments\n"
 
-msgid "Copy marks"
-msgstr "拷貝分數"
-
-msgid "Move up"
-msgstr "上移"
-
-msgid "Move down"
-msgstr "下移"
-
 msgid "Dark"
-msgstr "暗黑"
+msgstr "暗黑模式"
 
 msgid "Default"
-msgstr "默認"
-
-msgid "Error: can not fetch remote config data, update checker is disabled."
-msgstr "錯誤：無法獲取配置數據，更新檢測已禁用。"
+msgstr "預設"
 
 msgid "Database"
 msgstr "資料庫"
@@ -41,114 +29,95 @@ msgstr "資料庫"
 msgid "DB"
 msgstr "資料庫"
 
-msgid "Fetch error, please refresh page."
-msgstr "獲取錯誤，請刷新頁面。"
+msgid "Disk Usage"
+msgstr "磁碟用量"
 
-msgid ""
-"Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms"
-msgstr ""
-"該頁面由 {{appName}} 生成 / 作者爲 {{authorName}} / {{memUsage}} / {{time}} "
-"毫秒"
+msgid "Disk"
+msgstr "磁碟"
 
-msgid "STAR 🌟 ME"
-msgstr "星🌟標"
+msgid "Generator {{appName}} / Author {{authorName}}"
+msgstr "產生器 {{appName}} / 作者 {{authorName}}"
 
-msgid "Loading..."
-msgstr "載入中……"
+msgid "Can not fetch location."
+msgstr "無法取得地理位置。"
 
-msgid "Can not fetch IP"
-msgstr "無法獲取 IP"
+msgid "Click to fetch"
+msgstr "點擊獲取"
 
-msgid "Not support"
-msgstr "不支援"
+msgid "Move down"
+msgstr "下移"
 
-msgid "My Information"
-msgstr "我的訊息"
+msgid "Move up"
+msgstr "上移"
 
-msgid "Mine"
-msgstr "我的"
+msgid "IPv4"
+msgstr "IPv4"
 
-msgid "My IPv4"
-msgstr "我的 IPv4"
-
-msgid "My IPv6"
-msgstr "我的 IPv6"
+msgid "IPv6"
+msgstr "IPv6"
 
 msgid "My location (IPv4)"
 msgstr "我的位置（IPv4）"
 
-msgid "My browser UA"
-msgstr "我的瀏覽器"
+msgid "Browser UA"
+msgstr "瀏覽器 UA"
 
-msgid "My browser languages (via JS)"
-msgstr "我的瀏覽器語言（JS）"
+msgid "Browser languages (via JS)"
+msgstr "瀏覽器語言（透過 JS）"
 
-msgid "My browser languages (via PHP)"
-msgstr "我的瀏覽器語言（PHP）"
+msgid "Browser languages (via PHP)"
+msgstr "瀏覽器語言（透過 PHP）"
 
-msgid "Can not fetch location."
-msgstr "無法獲取地理位置。"
+msgid "My Info"
+msgstr "我的資訊"
 
-msgid "👆 Click to fetch"
-msgstr "👆 點擊獲取"
-
-msgid ""
-"The author only has 10,000 API requests per month, please do not abuse it."
-msgstr "作者每月只有 10,000 次 API 請求，且用且珍惜。"
+msgid "Mine"
+msgstr "我的"
 
 msgid "Network Stats"
-msgstr "流量統計"
+msgstr "網絡統計"
 
-msgid "Net"
-msgstr "流量"
+msgid "Recived: {{total}}"
+msgstr "接收: {{total}}"
+
+msgid "Sent: {{total}}"
+msgstr "傳送: {{total}}"
+
+msgid "Network"
+msgstr "網絡"
+
+msgid "CPU"
+msgstr "中央處理器"
 
 msgid "Nodes"
 msgstr "節點"
 
-msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
-msgstr "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgid "Error: {{error}}"
+msgstr "錯誤: {{error}}"
 
-msgid "CPU usage"
-msgstr "CPU 使用率"
-
-msgid "Usage: {{percent}}"
-msgstr "佔用：{{percent}}"
-
-msgid "Memory"
+msgid "Ram"
 msgstr "記憶體"
 
 msgid "Swap"
-msgstr "Swap"
-
-msgid "Fetching..."
-msgstr "獲取中……"
-
-msgid "Fetch failed. Node returns {{code}}."
-msgstr "獲取失敗。節點返回了 {{code}} 碼。"
-
-msgid "PHP Extensions"
-msgstr "PHP 擴展"
-
-msgid "Ext"
-msgstr "擴展"
+msgstr "交換區"
 
 msgid "Opcache enabled"
-msgstr "OPcache 已啓用"
+msgstr "Opcache 已啟用"
 
 msgid "Opcache JIT enabled"
-msgstr "OPcache JIT 已啓用"
+msgstr "Opcache JIT 已啟用"
+
+msgid "PHP Extensions"
+msgstr "PHP 擴充功能"
 
 msgid "Loaded extensions"
-msgstr "載入的 PHP 擴展"
+msgstr "已載入擴充功能"
 
-msgid "PHP Information"
-msgstr "PHP 資訊"
+msgid "Ext"
+msgstr "擴充"
 
-msgid "PHP"
-msgstr "PHP"
-
-msgid "👆 Click for detail"
-msgstr "👆 查看詳細"
+msgid "Detail"
+msgstr "詳細資料"
 
 msgid "Version"
 msgstr "版本"
@@ -163,233 +132,232 @@ msgid "Error reporting"
 msgstr "錯誤報告"
 
 msgid "Max memory limit"
-msgstr "執行記憶體限制"
+msgstr "最大記憶體限制"
 
 msgid "Max POST size"
-msgstr "POST 提交限制"
+msgstr "最大 POST 容量"
 
 msgid "Max upload size"
-msgstr "上傳檔案限制"
+msgstr "最大上載容量"
 
 msgid "Max input variables"
-msgstr "提交表單限制"
+msgstr "最大輸入變數"
 
 msgid "Max execution time"
-msgstr "執行超時秒數"
+msgstr "最長執行時間"
 
 msgid "Timeout for socket"
-msgstr "Socket 超時秒數"
+msgstr "Socket 逾時時間"
 
 msgid "Treatment URLs file"
-msgstr "檔案遠端打開"
+msgstr "檔案遠端開啟功能"
 
 msgid "SMTP support"
 msgstr "SMTP 支援"
 
 msgid "Disabled functions"
-msgstr "禁用的函數"
+msgstr "已停用函式"
 
 msgid "Disabled classes"
-msgstr "禁用的類"
+msgstr "已停用類別"
+
+msgid "PHP Information"
+msgstr "PHP 資訊"
 
 msgid "Visit PHP.net Official website"
-msgstr "訪問 PHP.net 官網"
+msgstr "瀏覽 PHP.net 官方網站"
 
-msgid "(Latest {{latestPhpVersion}})"
-msgstr "（最新 {{latestPhpVersion}}）"
-
-msgid "Network Ping"
-msgstr "網速 Ping"
+msgid "{{latestPhpVersion}} (Latest)"
+msgstr "{{latestPhpVersion}} (最新)"
 
 msgid "Ping"
-msgstr "Ping"
+msgstr "網絡檢測"
 
-msgid "Times:{{times}}"
-msgstr "次數：{{times}}"
+msgid "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
+msgstr "{{times}} 次，最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒"
 
-msgid "Min:{{min}} / Max:{{max}} / Avg:{{avg}}"
-msgstr "最小:{{min}} / 最大:{{max}} / 平均:{{avg}}"
+msgid "Server ⇄ Browser"
+msgstr "伺服器 ⇄ 瀏覽器"
 
-msgid "⏸️ Stop ping"
-msgstr "⏸️ 停止 Ping"
+msgid "Stop ping"
+msgstr "停止檢測"
 
-msgid "👆 Start ping"
-msgstr "👆 開始 Ping"
+msgid "Start ping"
+msgstr "開始檢測"
+
+msgid "Results"
+msgstr "結果"
 
 msgid "Server Benchmark"
-msgstr "伺服器性能跑分"
+msgstr "伺服器跑分測試"
 
-msgid "Becnhmark"
-msgstr "跑分"
+msgid "Different versions cannot be compared, and different time servers have different loads, just for reference."
+msgstr "不同版本無法直接比較，且不同時間伺服器負載各異，結果僅供參考。"
 
-msgid "Read"
-msgstr "讀"
-
-msgid "Write"
-msgstr "寫"
-
-msgid "Can not fetch marks data from GitHub."
-msgstr "無法從 GitHub 中獲取跑分數據。"
-
-msgid "Visit prober page"
-msgstr "查閱探針頁面"
-
-msgid "Download speed test"
-msgstr "下載文件以測試網速"
-
-msgid "Visit the official website"
-msgstr "訪問官網"
-
-msgid "My server"
-msgstr "我的伺服器"
-
-msgid "⏳ Testing, please wait..."
-msgstr "⏳ 跑分中，請稍等……"
-
-msgid "👆 Click to test"
-msgstr "👆 點擊跑分"
+msgid "Testing, please wait..."
+msgstr "測試中，請稍候..."
 
 msgid "Network error, please try again later."
-msgstr "網路錯誤，請稍後重試。"
+msgstr "網絡錯誤，請稍後重試。"
 
-msgid "⏳ Please wait {{seconds}}s"
-msgstr "⏳ 請等待 {{seconds}} 秒"
+msgid "Please wait {{seconds}}s"
+msgstr "請等候 {{seconds}} 秒"
 
-msgid ""
-"⚔️ Different versions cannot be compared, and different time servers have "
-"different loads, just for reference."
-msgstr "不同的版本有不同的分數，不同的時間伺服器有不同的負載，僅供參考。"
+msgid "Benchmark my server"
+msgstr "測試我的伺服器"
 
-msgid "Server Information"
-msgstr "伺服器訊息"
+msgid "Benchmark"
+msgstr "跑分測試"
 
-msgid "Info"
-msgstr "訊息"
+msgid "Touch to copy marks"
+msgstr "點擊複製跑分數據"
 
-msgid "Unavailable"
-msgstr "不可用"
+msgid "Read"
+msgstr "讀取"
 
-msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
-msgstr "{{days}} 天 {{hours}} 時 {{mins}} 分 {{secs}} 秒"
+msgid "Write"
+msgstr "寫入"
 
-msgid "Server time"
-msgstr "持續上線時間"
+msgid "Visit probe page"
+msgstr "瀏覽檢測頁面"
 
-msgid "Server uptime"
-msgstr "持續上線時間"
+msgid "Download speed test"
+msgstr "下載速度測試"
 
-msgid "Server name"
-msgstr "伺服器名"
+msgid "Visit the official website"
+msgstr "瀏覽官方網站"
 
-msgid "Server IPv4"
-msgstr "伺服器 IPv4"
+msgid "Can not fetch marks data from GitHub."
+msgstr "無法從 GitHub 取得跑分數據。"
 
-msgid "Server IPv6"
-msgstr "伺服器 IPv6"
+msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
+msgstr "{{days}}天 {{hours}}小時 {{mins}}分鐘 {{secs}}秒"
 
-msgid "Server software"
-msgstr "伺服器軟體"
+msgid "Time"
+msgstr "時間"
 
-msgid "Server location (IPv4)"
-msgstr "伺服器位置（IPv4）"
+msgid "Uptime"
+msgstr "運行時間"
+
+msgid "Location (IPv4)"
+msgstr "位置 (IPv4)"
 
 msgid "CPU model"
 msgstr "CPU 型號"
 
-msgid "Server OS"
-msgstr "伺服器系統"
+msgid "Unavailable"
+msgstr "無法取得"
+
+msgid "OS"
+msgstr "作業系統"
 
 msgid "Script path"
 msgstr "腳本路徑"
 
-msgid "Disk usage"
-msgstr "磁碟使用"
+msgid "Name"
+msgstr "名稱"
+
+msgid "Software"
+msgstr "軟件"
+
+msgid "Public IPv4"
+msgstr "公眾 IPv4"
+
+msgid "Public IPv6"
+msgstr "公眾 IPv6"
+
+msgid "Local IPv4"
+msgstr "本地 IPv4"
+
+msgid "Local IPv6"
+msgstr "本地 IPv6"
+
+msgid "Server Info"
+msgstr "伺服器資訊"
+
+msgid "Info"
+msgstr "資訊"
+
+msgid "CPU usage"
+msgstr "CPU 使用率"
+
+msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgstr "閒置: {{idle}} \\n優先: {{nice}} \\n系統: {{sys}} \\n用戶: {{user}}"
 
 msgid "Server Status"
 msgstr "伺服器狀態"
 
-msgid "Status"
-msgstr "狀態"
-
-msgid ""
-"Buffers are in-memory block I/O buffers. They are relatively short-lived. "
-"Prior to Linux kernel version 2.4, Linux had separate page and buffer "
-"caches. Since 2.4, the page and buffer cache are unified and Buffers is raw "
-"disk blocks not represented in the page cache—i.e., not file data."
-msgstr ""
-
 msgid "Memory buffers"
-msgstr "記憶體緩衝"
+msgstr "記憶體緩衝區"
 
-msgid ""
-"Cached memory is memory that Linux uses for disk caching. However, this doesn"
-"\\'t count as \"used\" memory, since it will be freed when applications "
-"require it. Hence you don\\'t have to worry if a large amount is being used."
-msgstr ""
+msgid "Buffers are in-memory block I/O buffers. They are relatively short-lived. Prior to Linux kernel version 2.4, Linux had separate page and buffer caches. Since 2.4, the page and buffer cache are unified and Buffers is raw disk blocks not represented in the page cache—i.e., not file data."
+msgstr "緩衝區是記憶體中的區塊 I/O 緩衝，生命週期較短。在 Linux 核心 2.4 版之前，頁面快取和緩衝區快取是分開的。自 2.4 版起，兩者已統一，緩衝區代表未存入頁面快取的原始磁碟區塊（即非檔案資料）。"
 
 msgid "Memory cached"
 msgstr "記憶體快取"
 
-msgid ""
-"Linux comes with many commands to check memory usage. The \"free\" command "
-"usually displays the total amount of free and used physical and swap memory "
-"in the system, as well as the buffers used by the kernel. The \"top\" "
-"command provides a dynamic real-time view of a running system."
-msgstr ""
+msgid "Cached memory is memory that Linux uses for disk caching. However, this doesn\\'t count as \"used\" memory, since it will be freed when applications require it. Hence you don\\'t have to worry if a large amount is being used."
+msgstr "快取記憶體是 Linux 用於磁碟快取的空間，不計入「已用」記憶體，因應用程式需要時會自動釋放。故即使使用量較大亦無需擔心。"
 
 msgid "Memory real usage"
-msgstr "真實記憶體使用"
+msgstr "實際記憶體用量"
+
+msgid "Linux comes with many commands to check memory usage. The \"free\" command usually displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The \"top\" command provides a dynamic real-time view of a running system."
+msgstr "Linux 提供多種記憶體檢測指令：「free」指令顯示系統實體記憶體及交換區的總用量與緩衝區使用情況；「top」指令則提供運行中系統的即時動態檢視。"
 
 msgid "Swap cached"
-msgstr "SWAP 快取"
+msgstr "交換區快取"
 
 msgid "Swap usage"
-msgstr "SWAP 使用"
+msgstr "交換區用量"
 
 msgid "{{minute}} minute average"
-msgstr "{{minute}} 分鐘平均負載"
+msgstr "{{minute}} 分鐘平均"
 
 msgid "System load"
 msgstr "系統負載"
 
-msgid "Temperature Sensor"
-msgstr "溫度傳感器"
+msgid "{{usage}}% CPU usage"
+msgstr "CPU 使用率 {{usage}}%"
 
-msgid "Temp."
-msgstr "溫度"
+msgid "Temperature sensor"
+msgstr "溫度感測器"
 
 msgid "{{sensor}} temperature"
 msgstr "{{sensor}} 溫度"
 
+msgid "Temperature"
+msgstr "溫度"
+
 msgid "Click to close"
 msgstr "點擊關閉"
 
-msgid "Can not update file, please check the server permissions and space."
-msgstr "無法更新文件，請檢查伺服器權限和空間。"
-
-msgid "Click to update"
-msgstr "👆 點擊更新"
-
 msgid "⏳ Updating, please wait a second..."
-msgstr "⏳ 更新中，請稍等……"
+msgstr "⏳ 更新中，請稍候..."
 
 msgid "❌ Update error, click here to try again?"
-msgstr "❌ 更新錯誤，點擊此處再試一次？"
+msgstr "❌ 更新錯誤，點此重試？"
 
-msgid "✨ Found update! Version {{oldVersion}} → {{newVersion}}"
-msgstr "✨ 發現更新！版本 {{oldVersion}} → {{newVersion}}"
+msgid "✨ Found new version: {{oldVersion}} ⇢ {{newVersion}}"
+msgstr "✨ 發現新版本：{{oldVersion}} → {{newVersion}}"
 
-#~ msgid "X Prober"
-#~ msgstr "X 探針"
+msgid "Update success, refreshing..."
+msgstr "更新成功，重新整理中..."
 
-#~ msgid "In development"
-#~ msgstr "開發中"
+msgid "Update is disabled in dev mode."
+msgstr "開發模式下停用更新功能。"
 
-#~ msgid "PHP version"
-#~ msgstr "PHP 版本"
+msgid "Can not update file, please check the server permissions and space."
+msgstr "無法更新檔案，請檢查伺服器權限及空間。"
 
-#~ msgid "Fetch failed. Detail in Console."
-#~ msgstr "獲取失敗。詳情在控制檯"
+msgid "Click to update"
+msgstr "點擊更新"
 
-#~ msgid "Node [${nodeId}] fetch failed."
-#~ msgstr "獲取節點 [${nodeId}] 失敗。"
+msgid "Loading..."
+msgstr "載入中..."
+
+msgid "Not support"
+msgstr "不支援"
+
+msgid "Can not fetch IP"
+msgstr "無法取得 IP"
