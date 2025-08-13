@@ -1,6 +1,4 @@
-import langs from './data.json' with { type: 'json' };
-
-const langId = navigator.language
+import langs from './data.json' with { type: 'json' };const langId = navigator.language
   .replace('-', '')
   .replace('_', '')
   .toLowerCase();

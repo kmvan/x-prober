@@ -1,8 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { ModuleArrow } from '@/Components/Module/components/arrow.tsx';
-import styles from './item.module.scss';
-
-const ModuleItemTitle: FC<{
+import styles from './item.module.scss';const ModuleItemTitle: FC<{
   id: string;
   title: string;
 }> = ({ id, title }) => {

@@ -1,41 +1,132 @@
 export function isDeepEqual<T>(obj1: T, obj2: T): boolean {
-  // 如果是同一个引用或基本数据类型，直接返回 true
-  if (obj1 === obj2) return true;
-  // 如果有一个是 null 或非对象类型，返回 false
-  if (
-    typeof obj1 !== 'object' ||
-    obj1 === null ||
-    typeof obj2 !== 'object' ||
-    obj2 === null
-  ) {
+  const seen = new Map<unknown, unknown>();
+  return _isDeepEqual(obj1, obj2, seen);
+}
+
+function _isDeepEqual(
+  a: unknown,
+  b: unknown,
+  seen: Map<unknown, unknown>
+): boolean {
+  // 快速检查相同引用
+  if (a === b) {
+    return true;
+  }
+
+  // 处理 NaN 情况
+  if (Number.isNaN(a) && Number.isNaN(b)) {
+    return true;
+  }
+
+  // 类型检查
+  const typeA = typeof a;
+  const typeB = typeof b;
+  if (typeA !== typeB) {
     return false;
   }
-  if (Array.isArray(obj1) && Array.isArray(obj2)) {
-    if (obj1.length !== obj2.length) {
+
+  // 处理 null 和基础类型
+  if (a === null || b === null || typeA !== 'object') {
+    return a === b;
+  }
+
+  // 检查循环引用
+  if (seen.has(a) && seen.get(a) === b) {
+    return true;
+  }
+  seen.set(a, b);
+
+  // 特殊对象处理
+  if (a instanceof Date && b instanceof Date) {
+    return a.getTime() === b.getTime();
+  }
+
+  if (a instanceof RegExp && b instanceof RegExp) {
+    return a.toString() === b.toString();
+  }
+
+  if (a instanceof Map && b instanceof Map) {
+    if (a.size !== b.size) {
       return false;
     }
-    for (let i = 0; i < obj1.length; i++) {
-      if (!isDeepEqual(obj1[i], obj2[i])) {
+
+    for (const [key, valA] of a) {
+      if (!b.has(key)) {
+        return false;
+      }
+      const valB = b.get(key);
+      if (!_isDeepEqual(valA, valB, seen)) {
         return false;
       }
     }
     return true;
   }
-  const keys1 = Object.keys(obj1) as (keyof T)[];
-  const keys2 = Object.keys(obj2) as (keyof T)[];
-  // 如果属性数量不一样，直接返回 false
-  if (keys1.length !== keys2.length) {
+
+  if (a instanceof Set && b instanceof Set) {
+    if (a.size !== b.size) {
+      return false;
+    }
+
+    for (const val of a) {
+      let found = false;
+      for (const bVal of b) {
+        if (_isDeepEqual(val, bVal, seen)) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // 数组处理
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) {
+      return false;
+    }
+    for (let i = 0; i < a.length; i++) {
+      if (!_isDeepEqual(a[i], b[i], seen)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // 修复类型错误：确保 a 和 b 是对象
+  if (
+    typeof a !== 'object' ||
+    a === null ||
+    typeof b !== 'object' ||
+    b === null
+  ) {
     return false;
   }
-  for (const key of keys1) {
-    // 如果 key 不在 obj2 中，返回 false
-    if (!keys2.includes(key)) {
+
+  // 普通对象处理 - 现在可以安全使用 Object.keys()
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  const keysSet = new Set(keysB);
+  for (const key of keysA) {
+    if (!keysSet.has(key)) {
       return false;
     }
-    // 递归比较每个属性
-    if (!isDeepEqual(obj1[key], obj2[key])) {
+
+    // 使用类型断言确保访问属性安全
+    const valA = (a as Record<string, unknown>)[key];
+    const valB = (b as Record<string, unknown>)[key];
+
+    if (!_isDeepEqual(valA, valB, seen)) {
       return false;
     }
   }
+
   return true;
 }

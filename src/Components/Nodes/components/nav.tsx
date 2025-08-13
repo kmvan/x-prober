@@ -3,9 +3,7 @@ import type { FC } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { NavItem } from '@/Components/Nav/components/item.tsx';
 import { NodesConstants } from './constants.ts';
-import { NodesStore } from './store.ts';
-
-export const NodesNav: FC = observer(() => {
+import { NodesStore } from './store.ts';export const NodesNav: FC = observer(() => {
   const { pollData } = NodesStore;
   const nodeIds = pollData?.nodesIds ?? [];
   if (!nodeIds.length) {

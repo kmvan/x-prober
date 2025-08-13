@@ -1,8 +1,6 @@
 import { configure, makeAutoObservable } from 'mobx';
 import { ColorSchemeConstants } from '../constants';
-import { colorSchemes } from './color-schemes';
-
-configure({
+import { colorSchemes } from './color-schemes';configure({
   enforceActions: 'observed',
 });
 const { storageId } = ColorSchemeConstants;

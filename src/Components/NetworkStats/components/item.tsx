@@ -2,9 +2,7 @@ import type { FC } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { formatBytes } from '@/Components/Utils/components/format-bytes';
 import { template } from '@/Components/Utils/components/template.ts';
-import styles from './item.module.scss';
-
-interface NetworksStatsItemProps {
+import styles from './item.module.scss';interface NetworksStatsItemProps {
   id: string;
   totalRx: number;
   rateRx: number;

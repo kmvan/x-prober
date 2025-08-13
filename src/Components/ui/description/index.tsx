@@ -1,7 +1,5 @@
 import type { FC, HTMLProps, ReactNode } from 'react';
-import styles from './index.module.scss';
-
-interface UiDescriptionProps extends HTMLProps<HTMLDivElement> {
+import styles from './index.module.scss';interface UiDescriptionProps extends HTMLProps<HTMLDivElement> {
   items: {
     id: string;
     text: ReactNode;

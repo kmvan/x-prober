@@ -1,6 +1,4 @@
-import type { FC } from 'react';
-
-export interface ModuleProps {
+import type { FC } from 'react';export interface ModuleProps {
   id: string;
   content: FC;
   nav: FC;

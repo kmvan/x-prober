@@ -1,8 +1,6 @@
 import { darken, lighten, rgba } from 'polished';
 import { gettext } from '@/Components/Language/index.ts';
-import type { ColorSchemeProps } from '../typings';
-
-const light = '#f8f8f8';
+import type { ColorSchemeProps } from '../typings';const light = '#f8f8f8';
 const dark = '#333';
 const topDarkBottomLight = `linear-gradient(#282828, ${lighten(0.05, dark)})`;
 export const colorSchemeDefault: ColorSchemeProps = {

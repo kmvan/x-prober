@@ -10,6 +10,7 @@ import { HeaderLink } from './link.tsx';
 import styles from './name.module.scss';
 export const HeaderName: FC = observer(() => {
   const { pollData } = ConfigStore;
+  const { setTargetVersion, targetVersion } = UpdaterStore;
   // fetch new version
   useEffect(() => {
     if (!pollData) {
@@ -22,17 +23,17 @@ export const HeaderName: FC = observer(() => {
       if (!data?.version || status !== OK) {
         return;
       }
-      UpdaterStore.setTargetVersion(data.version);
+      setTargetVersion(data.version);
     };
     fetchData();
-  }, [pollData]);
+  }, [pollData, setTargetVersion]);
   if (!pollData) {
     return null;
   }
   const { APP_NAME, APP_URL, APP_VERSION } = pollData;
   return (
     <h1 className={styles.main}>
-      {versionCompare(UpdaterStore.targetVersion, APP_VERSION) < 0 ? (
+      {targetVersion && versionCompare(targetVersion, APP_VERSION) < 0 ? (
         <UpdaterLink />
       ) : (
         <HeaderLink href={APP_URL} rel="noreferrer" target="_blank">

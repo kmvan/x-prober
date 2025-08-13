@@ -1,12 +1,8 @@
 import { configure, makeAutoObservable } from 'mobx';
 import { isDeepEqual } from '@/Components/Utils/components/is-deep-equal/index.ts';
-import type { NetworkStatsPollDataProps } from './typings.ts';
-
-configure({
+import type { NetworkStatsPollDataProps } from './typings.ts';configure({
   enforceActions: 'observed',
-});
-
-class Main {
+});class Main {
   pollData: NetworkStatsPollDataProps | null = null;
   constructor() {
     makeAutoObservable(this);

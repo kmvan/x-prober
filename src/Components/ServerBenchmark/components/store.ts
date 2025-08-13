@@ -21,7 +21,7 @@ class Main {
     id: ServerBenchmarkProps['id'],
     server: ServerBenchmarkProps
   ) => {
-    const i = this.servers.findIndex((server) => server.id === id);
+    const i = this.servers.findIndex((n) => n.id === id);
     if (i === -1) {
       return;
     }

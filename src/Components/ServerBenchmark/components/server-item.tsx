@@ -5,9 +5,7 @@ import { template } from '@/Components/Utils/components/template.ts';
 import { UiRuby } from '@/Components/ui/ruby/index.tsx';
 import { ServerBenchmarkMarksMeter } from './marks-meter.tsx';
 import styles from './server-item.module.scss';
-import type { ServerBenchmarkMarksProps } from './typings.ts';
-
-const ServerBenchmarkResult: FC<{
+import type { ServerBenchmarkMarksProps } from './typings.ts';const ServerBenchmarkResult: FC<{
   cpu: number;
   read: number;
   write: number;

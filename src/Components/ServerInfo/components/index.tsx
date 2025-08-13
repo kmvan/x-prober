@@ -11,9 +11,7 @@ import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { ServerInfoConstants } from './constants.ts';
 import { ServerInfoStore } from './store.ts';
-import type { ServerInfoPollDataProps } from './typings.ts';
-
-const ServerTime: FC<{
+import type { ServerInfoPollDataProps } from './typings.ts';const ServerTime: FC<{
   serverUptime: ServerInfoPollDataProps['serverUptime'];
   serverTime: ServerInfoPollDataProps['serverTime'];
 }> = observer(({ serverUptime, serverTime }) => {

@@ -4,9 +4,7 @@ import { PollStore } from '@/Components/Poll/components/store.ts';
 import type { PollDataProps } from '@/Components/Poll/components/typings.ts';
 import { ModulePreset } from './preset.ts';
 import { ModuleStorage } from './storage.ts';
-import type { ModuleProps, SortedModuleProps } from './typings.ts';
-
-configure({
+import type { ModuleProps, SortedModuleProps } from './typings.ts';configure({
   enforceActions: 'observed',
 });
 export interface StoragePriorityItemProps {

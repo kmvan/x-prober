@@ -7,7 +7,6 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
-
 export const ElevatorNav: FC<{
   activeIndex: number;
   children: ReactElement | ReactElement[];
@@ -90,7 +89,7 @@ export const ElevatorNavBody: FC<{
   return (
     <>
       {Children.map(children, (child, i) => {
-        const { type: Component, props } = child as ReactElement<
+        const { type: Component } = child as ReactElement<
           HTMLProps<HTMLElement>
         >;
         return React.cloneElement(<Component />, {

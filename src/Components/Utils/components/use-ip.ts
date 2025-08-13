@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
-import { OK } from '@/Components/Rest/http-status.ts';
-
-interface UseIpProps {
+import { OK } from '@/Components/Rest/http-status.ts';interface UseIpProps {
   ip: string;
   msg: string;
   isLoading: boolean;

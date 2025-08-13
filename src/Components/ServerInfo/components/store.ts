@@ -1,8 +1,6 @@
 import { configure, makeAutoObservable } from 'mobx';
 import { isDeepEqual } from '@/Components/Utils/components/is-deep-equal/index.ts';
-import type { ServerInfoPollDataProps } from './typings.ts';
-
-configure({
+import type { ServerInfoPollDataProps } from './typings.ts';configure({
   enforceActions: 'observed',
 });
 class Main {

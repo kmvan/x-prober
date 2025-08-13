@@ -27,8 +27,9 @@
   // height: 3rem;
   overflow-x: auto;
   // line-height: 3rem;
-  @include m.device(sm) {
+  @include m.device(lg) {
     justify-content: center;
+    border-radius: var(--x-radius) var(--x-radius) 0 0;
   }
 }
 .link {
@@ -51,11 +52,5 @@
   }
   &:last-child {
     border-right: 0;
-  }
-}
-.linkTitle {
-  display: none;
-  @include m.device(lg) {
-    display: block;
   }
 }

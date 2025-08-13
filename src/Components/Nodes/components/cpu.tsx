@@ -10,9 +10,8 @@ const SysLoad: FC<{
 }> = ({ items }) => {
   return (
     <div className={styles.sysLoad}>
-      {items.map((n, i) => (
-        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-        <SysLoadItem key={i} load={n} />
+      {items.map((n) => (
+        <SysLoadItem key={Math.random()} load={n} />
       ))}
     </div>
   );

@@ -1,6 +1,4 @@
-import { configure, makeAutoObservable } from 'mobx';
-
-configure({
+import { configure, makeAutoObservable } from 'mobx';configure({
   enforceActions: 'observed',
 });
 class Main {

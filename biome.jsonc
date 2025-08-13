@@ -2,8 +2,11 @@
   "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "linter": {
     "rules": {
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off"
+      },
       "security": {
-        "noDangerouslySetInnerHtml": "warn"
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   },

@@ -13,7 +13,7 @@
 .main {
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: var(--x-gutter-sm);
   cursor: pointer;
   border: none;
   border-radius: 10rem;

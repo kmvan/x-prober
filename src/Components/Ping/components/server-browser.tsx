@@ -11,9 +11,7 @@ import { template } from '@/Components/Utils/components/template.ts';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import type { ServerToBrowserPingItemProps } from '../typings.ts';
 import { PingStore } from './store.ts';
-import styles from './style.module.scss';
-
-const Items: FC = observer(() => {
+import styles from './style.module.scss';const Items: FC = observer(() => {
   const { serverToBrowserPingItems } = PingStore;
   const items = serverToBrowserPingItems.map(({ time }, i) => (
     <li key={String(i)}>{`${time} ms`}</li>

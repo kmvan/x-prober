@@ -2,9 +2,7 @@ import { configure, makeAutoObservable } from 'mobx';
 import type {
   ServerToBrowserPingItemProps,
   ServerToBrowserPingProps,
-} from '../typings.ts';
-
-configure({
+} from '../typings.ts';configure({
   enforceActions: 'observed',
 });
 class Main {
