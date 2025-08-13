@@ -24,7 +24,7 @@
 
 ## 环境需求
 
-- 编译环境：PHP 8.1+
+- 编译环境：PHP 8.4+
 - 运行环境：PHP 5.4+
 - 浏览器兼容：Chrome、Firefox、Edge、Android
 - 系统兼容：Linux、Windows（基础功能）
@@ -37,22 +37,22 @@
 
 - Fork 项目。
 - Fetch 您的仓库。
-- 安装 npm 模块：`$ npm install`。
-- 监听脚本：`$ npm run dev`。
+- 安装 npm 模块：`$ npx pnpm i`。
 - 安装 composer：`$ composer install && composer dumpautoload -o`。
 - 生成多国语言：`$ npm run lang` 来重建 `./languages/lang.pot` 语言模板。
-- 编译 PHP：`$ npm run dev:php`。
-- 访问：`http://localhost:3000` 或 `http://path/to/.tmp/index.php`。
+- 使用 php 监听项目后端：`$ npx pnpm dev:php`。
+- 使用 vite 监听项目前端：`$ npx pnpm dev`。
+- 访问：`http://localhost:5173/`。
 
 ## 编译生产
 
-- 编译 JS：`$ npm run build`.
-- 编译 PHP：`$ npm run build:php`.
-- 访问：`http://localhost:3000` 或 `http://path/to/dist/prober.php`。
+- 编译前端：`$ npx pnpm build`.
+- 编译文件：`$ npx pnpm build:php` 获得但文件 `./dist/prober.php`。
+- 访问：`http://localhost:8001/prober.php` 或 `http://path/to/dist/prober.php`。
 
 ## 参与翻译更多语言
 
-- Fork 项目。
+- Fork 项目到您的仓库。
 - 使用 [Poedit](https://poedit.net/) 通过 `./languages/lang.pot` 语言模板来创建和翻译您的语言。
 - 保存翻译语言文件 _（例如：`en_US.po`)_ 到 `./languages` 目录里面。
 - Push 您的修改。
@@ -60,7 +60,7 @@
 
 ## 给予参与贡献者的备注
 
-- 您的 PHP 代码需要兼容 PHP5.3+ 环境。
+- 您的 PHP 代码需要兼容 PHP5.4+ 环境。
 
 ## 贡献者名单
 

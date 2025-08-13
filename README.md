@@ -1,93 +1,91 @@
 [![X Prober preview](screenshots/preview.webp)](screenshots/preview.webp)
 
-- [Simplified Chinese | 简体中文](README-zh_CN.md)
-- [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
-- [Traditional Chinese(Hong Kong) | 正體中文（香港）](README-zh_HK.md)
-- [Japanese | 日本語](README-jp.md)
+- [简体中文](README-zh_CN.md)
+- [繁体體中文（中國臺灣）](README-zh_TW.md)
+- [繁体體中文（中國香港）](README-zh_HK.md)
+- [日本語](README-jp.md)
 
-# 😎 X Prober
+[![X Prober Preview](screenshots/preview.webp)](screenshots/preview.webp)
 
-> This is a probe program for **PHP environment**. It can show your server information and readable easily.
+# 😎 X Prober, Notch Prober
 
-And the most important thing is that it's like 📱 **iPhone X/XS/XS Max/XR/11/11 Pro/11 Pro Max** !
+> A PHP environment probe program that not only displays server information intuitively, but most importantly: it has an ugly notch just like 📱 **iPhone X/XS/XS Max/XR**!
 
 [![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
 
-## License
+## Open Source License
 
 - GPL-3.0
 
-## Online demo
+## Online Demo
 
 - [https://prober.inn-studio.com](https://prober.inn-studio.com)
-- [https://tz.inn-studio.com](https://tz.inn-studio.com) (same)
+- [https://tz.inn-studio.com](https://tz.inn-studio.com) (Same as above)
 
-## Download and Usage
+## Download & Usage
 
-- Click [INN STUDIO mirror](https://api.inn-studio.com/download?id=xprober) or [GitHub mirror](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) to download the probe file.
-- You will get a single file of `x.php` and upload it to your server.
-- Access `x.php` via http browser.
+- Click [INN Download Node](https://api.inn-studio.com/download?id=xprober) or [GitHub Node](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) to download the probe file
+- You'll get a single file. Rename it to `x.php` and upload to your server
+- Access via browser: `your-domain/x.php`
 
-## Required environment
+## Requirements
 
-- Compile environment: PHP 8.1+
-- Production environment: PHP 5.4+
-- Browser support: Chrome / Firefox / Edge / Android
-- OS support: Linux / Windows(basic features)
+- Build Environment: PHP 8.4+
+- Runtime Environment: PHP 5.4+
+- Browser Compatibility: Chrome, Firefox, Edge, Android
+- OS Compatibility: Linux, Windows (basic features)
 
 ## Extensions
 
-- In preparation...
+- In development...
 
-## Development
+## Development Guide
 
-- Fork project.
-- Fetch your project.
-- Install node modules: `$ npm install`.
-- Watch scripts: `$ npm run dev`.
-- Generate composer vendor: `$ composer install; composer dumpautoload -o`.
-- Compile PHP: `$ npm run dev:php`
-- Access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
-- Generate languages: `$ npm run lang` to remake `./languages/lang.pot` language template and build `*.po`.
-- Enjoy it. 😄
+1. Fork the project
+2. Fetch your repository
+3. Install npm modules: `$ npx pnpm i`
+4. Install composer: `$ composer install && composer dumpautoload -o`
+5. Generate multilingual files: `$ npm run lang` to rebuild `./languages/lang.pot` template
+6. Start PHP backend: `$ npx pnpm dev:php`
+7. Start Vite frontend: `$ npx pnpm dev`
+8. Access: `http://localhost:5173/`
 
-## Compile production
+## Production Build
 
-- Compile JS: `$ npm run build`.
-- Compile PHP: `$ npm run build:php`.
-- Access: `http://localhost:8000` or `http://path/to/dist/prober.php`.
+- Build frontend: `$ npx pnpm build`
+- Compile single file: `$ npx pnpm build:php` to get `./dist/prober.php`
+- Access: `http://localhost:8001/prober.php` or `http://path/to/dist/prober.php`
 
-## Help and translate more languages
+## Contribute Translations
 
-- Fork project.
-- Fetch your project.
-- Use [Poedit](https://poedit.net/) to create your language from `./languages/lang.pot` language template file and translates it.
-- Save your language file (like: `en_US.po`) into `./languages`.
-- Push your changes.
-- Pull Request and thank you. 😘
+1. Fork the project
+2. Use [Poedit](https://poedit.net/) with `./languages/lang.pot` to translate
+3. Save translation file (e.g. `en_US.po`) in `./languages`
+4. Push your changes
+5. Submit Pull Request. Much appreciated! 😘
 
-## Note for participate in contribution
+## Notes for Contributors
 
-- Code compatible with PHP 5.3+
+- Your PHP code must be compatible with PHP 5.4+ environments
 
 ## Contributors
 
-[![Contributors](https://opencollective.com/x-prober/contributors.svg?width=890&button=false)](https://github.com/kmvan/x-prober/graphs/contributors)
+<a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
 
 ## Backers
 
 Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/x-prober#backer)]
 
-[![Contributors](https://opencollective.com/x-prober/backers.svg?width=890)](https://opencollective.com/x-prober#backers)
+<a href="https://opencollective.com/x-prober#backers" target="_blank"><img src="https://opencollective.com/x-prober/backers.svg?width=890"></a>
 
 ## Sponsors
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
 
-- Thanks [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - 2021-01-16 - 199 RMB
-- Thanks 1529\*\*\*576 - 2019-04-04 – 150 RMB
-- Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 Dollars
+- Thanks to [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - Jan 16, 2021 - ¥199
+- Thanks to 1529\*\*\*576 - Apr 4, 2019 – ¥150
+- Thanks to [Vultr.com](https://www.vultr.com/?ref=7256513) - Mar 13, 2019 - $50
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
@@ -100,15 +98,15 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/x-prober/sponsor/8/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/9/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/9/avatar.svg"></a>
 
-## TODO
+## Planned Features
 
-- [x] Temperature sensor.
-- [x] More languages with Poedit.
-- [x] Detail benchmark result.
-- [ ] Add Email send testing.
-- [ ] Add network speed testing.
-- [x] Add more servers benchmark.
-- [x] Add PING feature.
+- [x] Temperature detection
+- [x] Multilingual support via Poedit
+- [x] Detailed benchmark results
+- [ ] Email sending test
+- [ ] Network speed test
+- [x] Additional server benchmarks
+- [x] PING functionality
 
 ## Keywords
 

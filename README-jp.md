@@ -1,91 +1,84 @@
-[![X Prober preview](screenshots/preview.webp)](screenshots/preview.webp)
+[![X Prober プレビュー](screenshots/preview.webp)](screenshots/preview.webp)
 
-- [Simplified Chinese | 简体中文](README-zh_CN.md)
-- [Traditional Chinese(Taiwan) | 正體中文（臺灣）](README-zh_TW.md)
-- [Traditional Chinese(Hong Kong) | 正體中文（香港）](README-zh_HK.md)
-- [Japanese | 日本語](README-jp.md)
+# 😎 Xプローブ、ノッチプローブ
 
-# 😎 X Prober
+> これはPHP環境プローブプログラムです。サーバー情報を直感的に表示できるだけでなく、最も重要なのは：📱 **iPhone X/XS/XS Max/XR** と同じように醜いノッチ（額縁）があることです！
 
-> これは **PHP 環境** のプローブプログラムです。 サーバー情報を表示し、簡単に読み取ることができます。
+[![Open Collective バッカー](https://opencollective.com/x-prober/backers/badge.svg)](#バッカー)
+[![Open Collective スポンサー](https://opencollective.com/x-prober/sponsors/badge.svg)](#スポンサー)
 
-[![オープンコレクティブの支持者](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
-[![オープンコレクティブのスポンサー](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
-
-## ライセンス
+## オープンソースライセンス
 
 - GPL-3.0
 
 ## オンラインデモ
 
 - [https://prober.inn-studio.com](https://prober.inn-studio.com)
-- [https://tz.inn-studio.com](https://tz.inn-studio.com) (同じ)
+- [https://tz.inn-studio.com](https://tz.inn-studio.com) (同上)
 
-## ダウンロードと使用法
+## ダウンロードと使用方法
 
-- Click [INN STUDIO mirror](https://api.inn-studio.com/download?id=xprober) or [GitHub mirror](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) to download the probe file.
-- You will get a single file of `x.php` and upload it to your server.
-- Access `x.php` via http browser.
+- [INN ダウンロードノード](https://api.inn-studio.com/download?id=xprober) または [GitHub ノード](https://github.com/kmvan/x-prober/raw/master/dist/prober.php) をクリックしてプローブファイルをダウンロード
+- `x.php` というファイルをサーバーにアップロード
+- ブラウザで `x.php` にアクセス
 
-## 必要な環境
+## 動作環境
 
-- 開発環境: PHP 8.1+
-- 生産環境: PHP 5.4+
-- ブラウザのサポート: Chrome / Firefox / Edge / Android
-- OS サポート: Linux / Windows(basic features)
+- ビルド環境：PHP 8.4+
+- 実行環境：PHP 5.4+
+- ブラウザ互換性：Chrome、Firefox、Edge、Android
+- OS互換性：Linux、Windows（基本機能）
 
 ## 拡張機能
 
-- 準備中...
+- 開発中...
 
-## 開発
+## 開発ガイド
 
-- フォークプロジェクト。
-- プロジェクトを取得します。
-- npm モジュールをインストールします：`$ npm install`。
-- 監視スクリプト：`$ npm run dev`。
-- Composer をインストールします：`$ composer install; composer dumpautoload -o`。
-- PHP をコンパイル: `$ npm run dev:php`
-- Access `http://localhost:8000` or `http://path/to/.tmp/index.php`.
-- Generate languages: `$ npm run lang` to remake `./languages/lang.pot` language template and build `*.po`.
-- Enjoy it. 😄
+1. プロジェクトをフォーク
+2. リポジトリをフェッチ
+3. npmモジュールをインストール：`$ npx pnpm i`
+4. composerをインストール：`$ composer install && composer dumpautoload -o`
+5. 多言語生成：`$ npm run lang` で `./languages/lang.pot` テンプレート再生成
+6. PHPバックエンド監視：`$ npx pnpm dev:php`
+7. Viteフロントエンド監視：`$ npx pnpm dev`
+8. アクセス：`http://localhost:5173/`
 
-## Compile production
+## 本番ビルド
 
-- Compile JS: `$ npm run build`.
-- Compile PHP: `$ npm run build:php`.
-- Access: `http://localhost:8000` or `http://path/to/dist/prober.php`.
+- フロントエンドビルド：`$ npx pnpm build`
+- ファイルビルド：`$ npx pnpm build:php` で単一ファイル `./dist/prober.php` 生成
+- アクセス：`http://localhost:8001/prober.php` または `http://path/to/dist/prober.php`
 
-## Help and translate more languages
+## 翻訳協力
 
-- Fork project.
-- Fetch your project.
-- Use [Poedit](https://poedit.net/) to create your language from `./languages/lang.pot` language template file and translates it.
-- Save your language file (like: `en_US.po`) into `./languages`.
-- Push your changes.
-- Pull Request and thank you. 😘
+1. プロジェクトをフォーク
+2. [Poedit](https://poedit.net/) で `./languages/lang.pot` を基に翻訳
+3. 翻訳ファイル（例：`ja_JP.po`）を `./languages` に保存
+4. 変更をプッシュ
+5. プルリクエストを送信（ご協力に感謝😘）
 
-## Note for participate in contribution
+## コントリビューターへの注意
 
-- Code compatible with PHP 5.3+
+- PHPコードはPHP5.4+環境と互換性が必要です
 
-## Contributors
+## コントリビューター一覧
 
-[![Contributors](https://opencollective.com/x-prober/contributors.svg?width=890&button=false)](https://github.com/kmvan/x-prober/graphs/contributors)
+<a href="https://github.com/kmvan/x-prober/graphs/contributors"><img src="https://opencollective.com/x-prober/contributors.svg?width=890&button=false" /></a>
 
-## Backers
+## バッカー
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/x-prober#backer)]
+すべてのサポーターに感謝 🙏 [[バッカーになる]](https://opencollective.com/x-prober#backer)
 
-[![Contributors](https://opencollective.com/x-prober/backers.svg?width=890)](https://opencollective.com/x-prober#backers)
+<a href="https://opencollective.com/x-prober#backers" target="_blank"><img src="https://opencollective.com/x-prober/backers.svg?width=890"></a>
 
-## Sponsors
+## スポンサー
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/x-prober#sponsor)]
+スポンサーになってプロジェクトを支援。ロゴとリンクを掲載します。[[スポンサーになる]](https://opencollective.com/x-prober#sponsor)
 
-- Thanks [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) - 2021-01-16 - 199 RMB
-- Thanks 1529\*\*\*576 - 2019-04-04 – 150 RMB
-- Thanks [Vultr.com](https://www.vultr.com/?ref=7256513) - 2019-03-13 - 50 Dollars
+- [VPSPlayer.com](https://vpsplayer.com/aff.php?aff=50) 様 - 2021年1月16日 - 199元
+- 1529\*\*\*576 様 - 2019年4月4日 - 150元
+- [Vultr.com](https://www.vultr.com/?ref=7256513) 様 - 2019年3月13日 - 50ドル
 
 <a href="https://opencollective.com/x-prober/sponsor/0/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/1/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/1/avatar.svg"></a>
@@ -98,16 +91,12 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 <a href="https://opencollective.com/x-prober/sponsor/8/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/x-prober/sponsor/9/website" target="_blank"><img src="https://opencollective.com/x-prober/sponsor/9/avatar.svg"></a>
 
-## TODO
+## 開発予定機能
 
-- [x] Temperature sensor.
-- [x] More languages with Poedit.
-- [x] Detail benchmark result.
-- [ ] Add Email send testing.
-- [ ] Add network speed testing.
-- [x] Add more servers benchmark.
-- [x] Add PING feature.
-
-## Keywords
-
-X-Prober/PHP 探针/X 探针/刘海探针
+- [x] 温度検出機能追加
+- [x] Poeditによる多言語対応
+- [x] 詳細なベンチマーク結果
+- [ ] メール送信テスト機能
+- [ ] ネットワーク速度テスト
+- [x] 追加サーバーベンチマーク
+- [x] PING機能実装
