@@ -21,14 +21,19 @@ import { Modules } from '@/Components/Module/components/index.tsx';
 import { Nav } from '@/Components/Nav/components/index.tsx';
 import { PollStore } from '@/Components/Poll/components/store.ts';
 import { TemperatureSensorStore } from '@/Components/TemperatureSensor/components/store.ts';
+import { UpdaterStore } from '@/Components/Updater/components/store.ts';
 import { BootstrapLoading } from './loading.tsx';
 export const Bootstrap: FC = () => {
   const [loading, setLoading] = useState(true);
+  const { isUpdating } = UpdaterStore;
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     let isMounted = true;
     const fetchData = async () => {
       try {
+        if (isUpdating) {
+          return;
+        }
         const { data, status } = await serverFetch<PollDataProps>('poll');
         if (data && status === 200) {
           PollStore.setPollData(data);
@@ -61,7 +66,7 @@ export const Bootstrap: FC = () => {
       isMounted = false;
       clearTimeout(timeoutId);
     };
-  }, [loading]);
+  }, [loading, isUpdating]);
   if (loading) {
     return <BootstrapLoading />;
   }
@@ -71,7 +76,6 @@ export const Bootstrap: FC = () => {
       <Modules />
       <Footer />
       <Nav />
-      {/* <Forkme /> */}
       <Toast />
     </>
   );

@@ -12,12 +12,16 @@ import {
 import { ToastStore } from '@/Components/Toast/components/store.ts';
 import { UpdaterStore } from './store.ts';
 export const UpdaterLink: FC = observer(() => {
-  const { setIsUpdating, setIsUpdateError, notiText } = UpdaterStore;
+  const { isUpdating, setIsUpdating, setIsUpdateError, notiText } =
+    UpdaterStore;
   const { open } = ToastStore;
   const handleUpdate = useCallback(
     async (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       e.stopPropagation();
+      if (isUpdating) {
+        return;
+      }
       setIsUpdating(true);
       const { status } = await serverFetch('update');
       switch (status) {
@@ -46,7 +50,7 @@ export const UpdaterLink: FC = observer(() => {
       setIsUpdating(false);
       setIsUpdateError(true);
     },
-    [setIsUpdating, setIsUpdateError, open]
+    [isUpdating, setIsUpdating, setIsUpdateError, open]
   );
   return (
     <HeaderButton onClick={handleUpdate} title={gettext('Click to update')}>
