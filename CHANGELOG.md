@@ -2,6 +2,16 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.0 - 2025-08-13
+
+### Rewrite
+
+- Redesign UI
+- Recode all features
+- Remove Webpack
+- Add Vite
+- Add React 19
+
 ## 8.20.0 - 2025-03-23
 
 ### Fix

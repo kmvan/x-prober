@@ -1,0 +1,27 @@
+:root {
+  --x-footer-bg: hsl(0 0% 0% / 0.05);
+  --x-footer-fg: hsl(0 0% 10%);
+  @media (prefers-color-scheme: dark) {
+    --x-footer-bg: hsl(0 0% 100% / 0.1);
+    --x-footer-fg: hsl(0 0% 100% / 0.05);
+  }
+}
+.main {
+  background: var(--x-footer-bg);
+  padding: calc(var(--x-gutter) / 2) var(--x-gutter);
+  width: 100%;
+  color: var(--x-footer-fg);
+  // border-radius: 10rem;
+  text-align: center;
+  // margin: calc(var(--x-gutter) * 1.5) auto;
+  word-break: normal;
+  // @media ${device('tablet')} {
+  //   width: 60%;
+  // }
+  a {
+    color: var(--x-footer-fg);
+    &:hover {
+      color: var(--x-footer-fg);
+    }
+  }
+}

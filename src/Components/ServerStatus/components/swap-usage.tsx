@@ -1,17 +1,14 @@
-import { observer } from 'mobx-react-lite'
-import { FC } from 'react'
-import { CardGrid } from '../../Card/components/card-grid'
-import { gettext } from '../../Language'
-import { ProgressBar } from '../../ProgressBar/components'
-import { ServerStatusStore } from '../stores'
+import { observer } from 'mobx-react-lite';
+import type { FC } from 'react';
+import { gettext } from '@/Components/Language/index.ts';
+import { Meter } from '@/Components/Meter/components/index.tsx';
+import { ServerStatusStore } from './store.ts';
 export const SwapUsage: FC = observer(() => {
-  const { max, value } = ServerStatusStore.swapUsage
+  const { max, value } = ServerStatusStore.swapUsage;
   if (!max) {
-    return null
+    return null;
   }
   return (
-    <CardGrid name={gettext('Swap usage')}>
-      <ProgressBar value={value} max={max} isCapacity />
-    </CardGrid>
-  )
-})
+    <Meter isCapacity max={max} name={gettext('Swap usage')} value={value} />
+  );
+});

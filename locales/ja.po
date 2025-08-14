@@ -2,38 +2,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-02-25 22:34+0800\n"
+"PO-Revision-Date: 2025-08-14 10:51+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
 
-msgid "Copy marks"
-msgstr "コピーマーク"
-
-msgid "Move up"
-msgstr "上に移動"
-
-msgid "Move down"
-msgstr "下に移動"
+msgid "Failed to fetch data. Please try again later."
+msgstr "データの取得に失敗しました。しばらくしてからもう一度お試しください。"
 
 msgid "Dark"
-msgstr "闇"
+msgstr "ダークモード"
 
 msgid "Default"
 msgstr "デフォルト"
-
-msgid "Error: can not fetch remote config data, update checker is disabled."
-msgstr ""
-"エラー：リモート設定データを取得できません。更新チェッカーが無効になっていま"
-"す。"
 
 msgid "Database"
 msgstr "データベース"
@@ -41,91 +30,77 @@ msgstr "データベース"
 msgid "DB"
 msgstr "DB"
 
-msgid "Fetch error, please refresh page."
-msgstr "取得エラー。ページを更新してください。"
+msgid "Disk Usage"
+msgstr "ディスク使用量"
 
-msgid ""
-"Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms"
-msgstr ""
-"このページは {{appName}} によって生成されます / 著者は {{authorName}} / "
-"{{memUsage}} / {{time}} ミリ秒"
+msgid "Disk"
+msgstr "ディスク"
 
-msgid "STAR 🌟 ME"
-msgstr "星🌟印"
-
-msgid "Loading..."
-msgstr "⏳ロード中..."
-
-msgid "Can not fetch IP"
-msgstr "IPを取得できません"
-
-msgid "Not support"
-msgstr "サポートしません"
-
-msgid "My IPv4"
-msgstr "私のIPv4"
-
-msgid "My IPv6"
-msgstr "私のIPv6"
-
-msgid "My location (IPv4)"
-msgstr "私の場所 (IPv4)"
-
-msgid "My browser UA"
-msgstr "私のブラウザ UA"
-
-msgid "My browser languages (via JS)"
-msgstr "私のブラウザの言語（JS）"
-
-msgid "My browser languages (via PHP)"
-msgstr "私のブラウザの言語（PHP）"
+msgid "Generator {{appName}} / Author {{authorName}}"
+msgstr "生成ツール: {{appName}} / 作者: {{authorName}}"
 
 msgid "Can not fetch location."
-msgstr "場所を取得できません。"
+msgstr "位置情報を取得できません。"
 
-msgid "👆 Click to fetch"
-msgstr "👆 クリックしてフェッチ"
+msgid "Click to fetch"
+msgstr "クリックして取得"
 
-msgid ""
-"The author only has 10,000 API requests per month, please do not abuse it."
-msgstr ""
-"作成者は月に10,000のAPIリクエストしか持っていません。乱用しないでください。"
+msgid "Move down"
+msgstr "下へ移動"
 
-msgid "My Information"
-msgstr "私の情報"
+msgid "Move up"
+msgstr "上へ移動"
+
+msgid "IPv4"
+msgstr "IPv4"
+
+msgid "IPv6"
+msgstr "IPv6"
+
+msgid "My location (IPv4)"
+msgstr "現在地 (IPv4)"
+
+msgid "Browser UA"
+msgstr "ブラウザユーザーエージェント"
+
+msgid "Browser languages (via JS)"
+msgstr "ブラウザ言語 (JS経由)"
+
+msgid "Browser languages (via PHP)"
+msgstr "ブラウザ言語 (PHP経由)"
+
+msgid "My Info"
+msgstr "マイ情報"
 
 msgid "Mine"
-msgstr "私の"
+msgstr "マイデータ"
 
 msgid "Network Stats"
 msgstr "ネットワーク統計"
 
-msgid "Net"
-msgstr "ネット"
+msgid "Recived: {{total}}"
+msgstr "受信: {{total}}"
 
-msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
-msgstr "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgid "Sent: {{total}}"
+msgstr "送信: {{total}}"
 
-msgid "CPU usage"
-msgstr "CPU 使用率"
+msgid "Network"
+msgstr "ネットワーク"
 
-msgid "Usage: {{percent}}"
-msgstr "佔用: {{percent}}"
-
-msgid "Memory"
-msgstr "RAM"
-
-msgid "Swap"
-msgstr "Swap"
-
-msgid "Fetching..."
-msgstr "取得しています..."
-
-msgid "Fetch failed. Node returns {{code}}."
-msgstr "フェッチに失敗しました。 ノードは {{code}} を返します。"
+msgid "CPU"
+msgstr "CPU"
 
 msgid "Nodes"
 msgstr "ノード"
+
+msgid "Error: {{error}}"
+msgstr "エラー: {{error}}"
+
+msgid "Ram"
+msgstr "RAM"
+
+msgid "Swap"
+msgstr "スワップ"
 
 msgid "Opcache enabled"
 msgstr "Opcache 有効"
@@ -133,35 +108,35 @@ msgstr "Opcache 有効"
 msgid "Opcache JIT enabled"
 msgstr "Opcache JIT 有効"
 
-msgid "Loaded extensions"
-msgstr "ロードエクステンション"
-
 msgid "PHP Extensions"
-msgstr "PHPエクステンション"
+msgstr "PHP拡張機能"
+
+msgid "Loaded extensions"
+msgstr "ロード済み拡張機能"
 
 msgid "Ext"
 msgstr "拡張"
 
-msgid "👆 Click for detail"
-msgstr "詳細はこちら"
+msgid "Detail"
+msgstr "詳細"
 
 msgid "Version"
 msgstr "バージョン"
 
 msgid "SAPI interface"
-msgstr "SAPI インタフェース"
+msgstr "SAPIインターフェース"
 
 msgid "Display errors"
-msgstr "エラー表示"
+msgstr "エラー表示設定"
 
 msgid "Error reporting"
-msgstr "エラー報告"
+msgstr "エラーレポート設定"
 
 msgid "Max memory limit"
 msgstr "最大メモリ制限"
 
 msgid "Max POST size"
-msgstr "最大 POST サイズ"
+msgstr "最大POSTサイズ"
 
 msgid "Max upload size"
 msgstr "最大アップロードサイズ"
@@ -173,127 +148,155 @@ msgid "Max execution time"
 msgstr "最大実行時間"
 
 msgid "Timeout for socket"
-msgstr "ソケットのタイムアウト"
+msgstr "ソケットタイムアウト"
 
 msgid "Treatment URLs file"
-msgstr "Treatment URLs ファイル"
+msgstr "リモートファイル処理"
 
 msgid "SMTP support"
-msgstr "SMTP サポート"
+msgstr "SMTPサポート"
 
 msgid "Disabled functions"
-msgstr "無効な機能"
+msgstr "無効化関数"
 
 msgid "Disabled classes"
-msgstr "無効なクラス"
-
-msgid "Visit PHP.net Official website"
-msgstr "PHP.net 公式ウェブサイトにアクセス"
-
-msgid "(Latest {{latestPhpVersion}})"
-msgstr "（最新 {{latestPhpVersion}}）"
+msgstr "無効化クラス"
 
 msgid "PHP Information"
 msgstr "PHP情報"
 
-msgid "PHP"
-msgstr "PHP"
+msgid "Visit PHP.net Official website"
+msgstr "PHP.net公式サイトへ"
 
-msgid "Times:{{times}}"
-msgstr "回: {{times}}"
-
-msgid "Min:{{min}} / Max:{{max}} / Avg:{{avg}}"
-msgstr "最小: {{min}} / 最大: {{max}} / 平均: {{avg}}"
-
-msgid "⏸️ Stop ping"
-msgstr "⏸️ Pingを停止"
-
-msgid "👆 Start ping"
-msgstr "👆 Pingを開始"
-
-msgid "Network Ping"
-msgstr "ネットワークPing"
+msgid "{{latestPhpVersion}} (Latest)"
+msgstr "{{latestPhpVersion}} (最新版)"
 
 msgid "Ping"
-msgstr "Ping"
+msgstr "ネットワーク診断"
 
-msgid "Can not fetch marks data from GitHub."
-msgstr "GitHubからマークデータを取得できません。"
+msgid "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
+msgstr ""
+"{{times}}回実行: 最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
 
-msgid "Visit prober page"
-msgstr "X-Prober ホームページへ"
+msgid "Server ⇄ Browser"
+msgstr "サーバー ⇄ ブラウザー"
 
-msgid "Download speed test"
-msgstr "ネットワーク速度テスト用のダウンロードファイル"
+msgid "Stop ping"
+msgstr "診断停止"
 
-msgid "Visit the official website"
-msgstr "公式ウェブサイトをご覧ください"
+msgid "Start ping"
+msgstr "診断開始"
 
-msgid "My server"
-msgstr "私のサーバー"
-
-msgid "⏳ Testing, please wait..."
-msgstr "⏳ テストしています。お待ちください..."
-
-msgid "👆 Click to test"
-msgstr "👆 クリックしてテスト"
-
-msgid "Network error, please try again later."
-msgstr "ネットワークエラーです。しばらくしてからもう一度お試しください。"
-
-msgid "⏳ Please wait {{seconds}}s"
-msgstr "⏳ {{seconds}} 秒お待ちください"
+msgid "Results"
+msgstr "診断結果"
 
 msgid "Server Benchmark"
-msgstr "サーバー基準"
+msgstr "サーバーベンチマーク"
 
-msgid "Becnhmark"
-msgstr "基準"
+msgid ""
+"Different versions cannot be compared, and different time servers have "
+"different loads, just for reference."
+msgstr ""
+"異なるバージョン間の比較は不可。タイムサーバーの負荷状態により結果が変動しま"
+"す（参考値）"
 
-msgid "Unavailable"
-msgstr "利用不可"
+msgid "Testing, please wait..."
+msgstr "テスト実行中..."
 
-msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
-msgstr "{{days}} 日 {{hours}} 時 {{mins}} 分 {{secs}} 秒"
+msgid "Network error, please try again later."
+msgstr "ネットワークエラー。後ほど再試行してください。"
 
-msgid "Server name"
-msgstr "サーバーの名前"
+msgid "Please wait {{seconds}}s"
+msgstr "{{seconds}}秒お待ちください"
 
-msgid "Server time"
-msgstr "サーバー時間"
+msgid "Benchmark my server"
+msgstr "ベンチマーク実行"
 
-msgid "Server uptime"
-msgstr "サーバーの稼働時間"
+msgid "Benchmark"
+msgstr "性能測定"
 
-msgid "Server IPv4"
-msgstr "サーバー IPv4"
+msgid "Touch to copy marks"
+msgstr "タップでスコアをコピー"
 
-msgid "Server IPv6"
-msgstr "サーバー IPv6"
+msgid "Read"
+msgstr "読取"
 
-msgid "Server software"
-msgstr "サーバーソフトウェア"
+msgid "Write"
+msgstr "書込"
 
-msgid "Server location (IPv4)"
-msgstr "サーバーの場所 (IPv4)"
+msgid "Visit probe page"
+msgstr "プローブページへ"
+
+msgid "Download speed test"
+msgstr "ダウンロード速度テスト"
+
+msgid "Visit the official website"
+msgstr "公式サイトへ"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "GitHubからスコアデータを取得できません。"
+
+msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
+msgstr "{{days}}日 {{hours}}時間 {{mins}}分 {{secs}}秒"
+
+msgid "Time"
+msgstr "時間"
+
+msgid "Uptime"
+msgstr "稼働時間"
+
+msgid "Location (IPv4)"
+msgstr "位置情報 (IPv4)"
 
 msgid "CPU model"
 msgstr "CPUモデル"
 
-msgid "Server OS"
-msgstr "サーバー OS"
+msgid "Unavailable"
+msgstr "取得不可"
+
+msgid "OS"
+msgstr "OS"
 
 msgid "Script path"
 msgstr "スクリプトパス"
 
-msgid "Disk usage"
-msgstr "ディスクの使用状況"
+msgid "Name"
+msgstr "名称"
 
-msgid "Server Information"
+msgid "Software"
+msgstr "サーバーソフト"
+
+msgid "Public IPv4"
+msgstr "パブリック IPv4"
+
+msgid "Public IPv6"
+msgstr "パブリック IPv6"
+
+msgid "Local IPv4"
+msgstr "ネイティブ IPv4"
+
+msgid "Local IPv6"
+msgstr "ネイティブ IPv6"
+
+msgid "Server Info"
 msgstr "サーバー情報"
 
 msgid "Info"
 msgstr "情報"
+
+msgid "CPU usage"
+msgstr "CPU使用率"
+
+msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgstr ""
+"アイドル: {{idle}} \\n低優先: {{nice}} \\nシステム: {{sys}} \\nユーザー: "
+"{{user}}"
+
+msgid "Server Status"
+msgstr "サーバー状態"
+
+msgid "Memory buffers"
+msgstr "メモリバッファ"
 
 msgid ""
 "Buffers are in-memory block I/O buffers. They are relatively short-lived. "
@@ -301,18 +304,25 @@ msgid ""
 "caches. Since 2.4, the page and buffer cache are unified and Buffers is raw "
 "disk blocks not represented in the page cache—i.e., not file data."
 msgstr ""
-
-msgid "Memory buffers"
-msgstr "メモリバッファ"
-
-msgid ""
-"Cached memory is memory that Linux uses for disk caching. However, this doesn"
-"\\'t count as \"used\" memory, since it will be freed when applications "
-"require it. Hence you don\\'t have to worry if a large amount is being used."
-msgstr ""
+"バッファはメモリ内のブロックI/O用一時領域です。Linuxカーネル2.4以前ではページ"
+"キャッシュとバッファキャッシュが分離されていましたが、2.4以降は統合され、バッ"
+"ファはページキャッシュに含まれない生ディスクブロック（非ファイルデータ）を指"
+"します。"
 
 msgid "Memory cached"
-msgstr "メモリキャッシュ"
+msgstr "キャッシュメモリ"
+
+msgid ""
+"Cached memory is memory that Linux uses for disk caching. However, this "
+"doesn\\'t count as \"used\" memory, since it will be freed when applications "
+"require it. Hence you don\\'t have to worry if a large amount is being used."
+msgstr ""
+"キャッシュメモリはディスクキャッシュ用に確保された領域です。アプリケーション"
+"が必要時に解放されるため「使用中」メモリにはカウントされず、使用量が多くても"
+"問題ありません。"
+
+msgid "Memory real usage"
+msgstr "実メモリ使用量"
 
 msgid ""
 "Linux comes with many commands to check memory usage. The \"free\" command "
@@ -320,63 +330,63 @@ msgid ""
 "in the system, as well as the buffers used by the kernel. The \"top\" "
 "command provides a dynamic real-time view of a running system."
 msgstr ""
-
-msgid "Memory real usage"
-msgstr "実メモリ使用量"
+"Linuxにはメモリ使用量確認コマンドが複数存在します。「free」コマンドは物理メモ"
+"リ/スワップの使用状況とカーネルバッファを表示し、「top」コマンドはシステムの"
+"リアルタイム状態を動的に表示します。"
 
 msgid "Swap cached"
-msgstr "SWAP キャッシュ"
+msgstr "スワップキャッシュ"
 
 msgid "Swap usage"
-msgstr "SWAP 使用量"
+msgstr "スワップ使用量"
 
 msgid "{{minute}} minute average"
-msgstr "{{minute}} 分ごとの平均負荷"
+msgstr "{{minute}}分平均負荷"
 
 msgid "System load"
 msgstr "システム負荷"
 
-msgid "Server Status"
-msgstr "サーバーの状態"
+msgid "{{usage}}% CPU usage"
+msgstr "CPU使用率: {{usage}}%"
 
-msgid "Status"
-msgstr "状態"
+msgid "Temperature sensor"
+msgstr "温度センサー"
 
 msgid "{{sensor}} temperature"
 msgstr "{{sensor}} 温度"
 
-msgid "Temperature Sensor"
-msgstr "温度センサー"
-
-msgid "Temp."
+msgid "Temperature"
 msgstr "温度"
 
 msgid "Click to close"
-msgstr "クリックして閉じる"
-
-msgid "Can not update file, please check the server permissions and space."
-msgstr "ファイルを更新できません。サーバーの権限とスペースを確認してください。"
-
-msgid "Click to update"
-msgstr "クリックして更新"
+msgstr "クリックで閉じる"
 
 msgid "⏳ Updating, please wait a second..."
-msgstr "⏳ 更新しています。しばらくお待ちください..."
+msgstr "⏳ 更新中..."
 
 msgid "❌ Update error, click here to try again?"
-msgstr "❌ 更新エラー。ここをクリックして再試行しますか？"
+msgstr "❌ 更新エラー [再試行]"
 
-msgid "✨ Found update! Version {{oldVersion}} → {{newVersion}}"
-msgstr "✨ アップデートが見た！バージョン {{oldVersion}} → {{newVersion}}"
+msgid "✨ Found new version: {{oldVersion}} ⇢ {{newVersion}}"
+msgstr "✨ 新版検出: {{oldVersion}} → {{newVersion}}"
 
-#~ msgid "In development"
-#~ msgstr "開発中"
+msgid "Update success, refreshing..."
+msgstr "更新成功 再読込中..."
 
-#~ msgid "PHP version"
-#~ msgstr "PHP バージョン"
+msgid "Update is disabled in dev mode."
+msgstr "開発モードでは更新不可。"
 
-#~ msgid "Fetch failed. Detail in Console."
-#~ msgstr "フェッチに失敗しました。 コンソールの詳細。"
+msgid "Can not update file, please check the server permissions and space."
+msgstr "ファイル更新失敗 サーバーの権限/空き容量を確認してください。"
 
-#~ msgid "Node [${nodeId}] fetch failed."
-#~ msgstr "ノード [${nodeId}] のフェッチに失敗しました。"
+msgid "Click to update"
+msgstr "クリックで更新"
+
+msgid "Loading..."
+msgstr "読込中..."
+
+msgid "Not support"
+msgstr "非対応"
+
+msgid "Can not fetch IP"
+msgstr "IP取得失敗"

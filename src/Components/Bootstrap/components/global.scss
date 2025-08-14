@@ -1,49 +1,45 @@
-@use '../../Style/components/device.scss' as m;
-:global {
-  @include m.device(xl) {
-    ::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-    ::-webkit-scrollbar {
-      width: var(--x-gutter);
-      background-color: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      border-radius: var(--x-gutter) 0 0 var(--x-gutter);
-      background-color: #ccc;
-      &:hover {
-        background-color: #fff;
-      }
-    }
+:root {
+  // --x-html-bg: var(--x-fg);
+  --x-fg: hsl(0 0% 10%);
+  --x-body-fg: hsl(0 0% 10%);
+  --x-body-bg: hsl(0 0% 90%);
+  @media (prefers-color-scheme: dark) {
+    // --x-html-bg: hsl(0, 0%, 0%);
+    --x-fg: hsl(0 0% 90%);
+    --x-body-fg: hsl(0 0% 90%);
+    --x-body-bg: hsl(0 0% 0%);
   }
-  * {
-    box-sizing: border-box;
-    word-break: break-all;
-    padding: 0;
-    margin: 0;
-  }
-  html {
-    font-size: 75%;
-    background: var(--x-html-bg);
-    scroll-behavior: smooth;
-  }
-  body {
-    background: var(--x-body-bg);
-    color: var(--x-body-fg);
-    font-family: 'Noto Sans CJK SC', 'Helvetica Neue', Helvetica, Arial, Verdana,
-      Geneva, sans-serif;
-    padding: var(--x-gutter);
-    margin: 0;
-    line-height: 1.5;
-  }
-  a {
-    cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+}
+html {
+  // background: var(--x-html-bg);
+  scroll-behavior: smooth;
+  font-size: 75%;
+}
+body {
+  display: grid;
+  place-content: safe center;
+  vertical-align: middle;
+  gap: var(--x-gutter);
+  margin: 0;
+  background: var(--x-body-bg);
+  padding: 0;
+  color: var(--x-body-fg);
+  line-height: 1.5;
+  font-family: var(--x-code-font-family);
+}
+a {
+  cursor: pointer;
+  color: var(--x-fg);
+  text-decoration: none;
+  &:hover,
+  &:active {
     color: var(--x-fg);
-    text-decoration: none;
-    &:hover,
-    &:active {
-      color: var(--x-fg);
-      text-decoration: underline;
-    }
+    text-decoration: underline;
   }
 }

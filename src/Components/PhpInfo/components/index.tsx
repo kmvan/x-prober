@@ -1,81 +1,101 @@
-import { observer } from 'mobx-react-lite'
-import { FC, ReactNode } from 'react'
-import { CardGrid } from '../../Card/components/card-grid'
-import { MultiItemContainer } from '../../Card/components/multi-item-container'
-import { GridContainer } from '../../Grid/components/container'
-import { gettext } from '../../Language'
-import { Alert } from '../../Utils/components/alert'
-import { SearchLink } from '../../Utils/components/search-link'
-import { PhpInfoConstants } from '../constants'
-import { PhpInfoPhpVersion } from './php-version'
-export const PhpInfo: FC = observer(() => {
-  const { conf } = PhpInfoConstants
-  const oneLineItems: Array<[string, ReactNode]> = [
-    [
-      'PHP info',
-      <a key='phpInfoDetail' href='?action=phpInfoDetail' target='_blank'>
-        {gettext('👆 Click for detail')}
-      </a>,
-    ],
-    [gettext('Version'), <PhpInfoPhpVersion key='phpVersion' />],
-  ]
-  const shortItems = [
-    [gettext('SAPI interface'), conf?.sapi],
-    [
-      gettext('Display errors'),
-      <Alert key='displayErrors' isSuccess={conf?.displayErrors} />,
-    ],
-    [gettext('Error reporting'), conf?.errorReporting],
-    [gettext('Max memory limit'), conf?.memoryLimit],
-    [gettext('Max POST size'), conf?.postMaxSize],
-    [gettext('Max upload size'), conf?.uploadMaxFilesize],
-    [gettext('Max input variables'), conf?.maxInputVars],
-    [gettext('Max execution time'), conf?.maxExecutionTime],
-    [gettext('Timeout for socket'), conf?.defaultSocketTimeout],
-    [
-      gettext('Treatment URLs file'),
-      <Alert key='allowUrlFopen' isSuccess={conf?.allowUrlFopen} />,
-    ],
-    [gettext('SMTP support'), <Alert key='smtp' isSuccess={conf?.smtp} />],
-  ]
-  const { disableFunctions, disableClasses } = conf
-  disableFunctions.slice().sort()
-  disableClasses.slice().sort()
-  const longItems: Array<[string, ReactNode]> = [
-    [
-      gettext('Disabled functions'),
-      disableFunctions.length
-        ? disableFunctions.map((fn: string) => (
-            <SearchLink key={fn} keyword={fn} />
-          ))
-        : '-',
-    ],
-    [
-      gettext('Disabled classes'),
-      disableClasses.length
-        ? disableClasses.map((fn: string) => (
-            <SearchLink key={fn} keyword={fn} />
-          ))
-        : '-',
-    ],
-  ]
-  return (
-    <GridContainer>
-      {oneLineItems.map(([title, content]) => (
-        <CardGrid key={title} name={title}>
-          {content}
-        </CardGrid>
-      ))}
-      {shortItems.map(([title, content]) => (
-        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
-          {content}
-        </CardGrid>
-      ))}
-      {longItems.map(([title, content]) => (
-        <CardGrid key={title} name={title}>
-          <MultiItemContainer>{content}</MultiItemContainer>
-        </CardGrid>
-      ))}
-    </GridContainer>
-  )
-})
+import { observer } from 'mobx-react-lite';
+import { type FC, memo, type ReactNode } from 'react';
+import { Link } from '@/Components/Button/components/index.tsx';
+import { serverFetchRoute } from '@/Components/Fetch/server-fetch.ts';
+import { gettext } from '@/Components/Language/index.ts';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
+import { EnableStatus } from '@/Components/ui/enable-status/index.tsx';
+import { SearchLink } from '@/Components/ui/search-link/index.tsx';
+import { PhpInfoConstants } from './constants.ts';
+import { PhpInfoPhpVersion } from './php-version';
+import { PhpInfoStore } from './store.ts';
+export const PhpInfo: FC = memo(
+  observer(() => {
+    const { pollData } = PhpInfoStore;
+    if (!pollData) {
+      return null;
+    }
+    const oneLineItems: [string, ReactNode][] = [
+      [
+        'PHP info',
+        <Link
+          href={serverFetchRoute('phpInfoDetail')}
+          key="phpInfoDetail"
+          target="_blank"
+        >
+          {gettext('Detail')}
+        </Link>,
+      ],
+      [gettext('Version'), <PhpInfoPhpVersion key="phpVersion" />],
+    ];
+    const shortItems: [string, ReactNode][] = [
+      [gettext('SAPI interface'), pollData?.sapi],
+      [
+        gettext('Display errors'),
+        <EnableStatus isEnable={pollData?.displayErrors} key="displayErrors" />,
+      ],
+      [gettext('Error reporting'), pollData.errorReporting],
+      [gettext('Max memory limit'), pollData.memoryLimit],
+      [gettext('Max POST size'), pollData.postMaxSize],
+      [gettext('Max upload size'), pollData.uploadMaxFilesize],
+      [gettext('Max input variables'), pollData.maxInputVars],
+      [gettext('Max execution time'), pollData.maxExecutionTime],
+      [gettext('Timeout for socket'), pollData.defaultSocketTimeout],
+      [
+        gettext('Treatment URLs file'),
+        <EnableStatus isEnable={pollData.allowUrlFopen} key="allowUrlFopen" />,
+      ],
+      [
+        gettext('SMTP support'),
+        <EnableStatus isEnable={pollData.smtp} key="smtp" />,
+      ],
+    ];
+    const { disableFunctions, disableClasses } = pollData;
+    disableFunctions.slice().sort();
+    disableClasses.slice().sort();
+    const longItems: [string, ReactNode][] = [
+      [
+        gettext('Disabled functions'),
+        disableFunctions.length
+          ? disableFunctions.map((fn: string) => (
+              <SearchLink key={fn} keyword={fn} />
+            ))
+          : '-',
+      ],
+      [
+        gettext('Disabled classes'),
+        disableClasses.length
+          ? disableClasses.map((fn: string) => (
+              <SearchLink key={fn} keyword={fn} />
+            ))
+          : '-',
+      ],
+    ];
+    return (
+      <ModuleItem id={PhpInfoConstants.id} title={gettext('PHP Information')}>
+        <UiMultiColContainer>
+          {oneLineItems.map(([title, content]) => (
+            <ModuleGroup key={title} label={title}>
+              {content}
+            </ModuleGroup>
+          ))}
+          {shortItems.map(([title, content]) => (
+            <ModuleGroup key={title} label={title}>
+              {content}
+            </ModuleGroup>
+          ))}
+        </UiMultiColContainer>
+        <UiSingleColContainer>
+          {longItems.map(([title, content]) => (
+            <ModuleGroup key={title} label={title}>
+              {content}
+            </ModuleGroup>
+          ))}
+        </UiSingleColContainer>
+      </ModuleItem>
+    );
+  })
+);

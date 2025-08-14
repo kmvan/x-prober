@@ -1,0 +1,81 @@
+:root {
+  --x-meter-height: 2px;
+  // --x-meter-name-fg: hsl(0 0% 0% / 0.1);
+  --x-meter-bar-bg: hsl(0 0% 0% / 0.1);
+  --x-meter-value-bg: hsl(120 100% 40%);
+  --x-meter-value-optimum-bg: hsl(120 100% 30%);
+  --x-meter-value-suboptimum-bg: hsl(36 77% 64%);
+  --x-meter-value-even-less-good-bg: hsl(12 100% 39%);
+  @media (prefers-color-scheme: dark) {
+    // --x-meter-name-fg: hsl(0 0% 100% / 0.9);
+    --x-meter-bar-bg: hsl(0 0% 100% / 0.1);
+    --x-meter-value-optimum-bg: hsl(120 100% 30%);
+    --x-meter-value-suboptimum-bg: hsl(36 77% 54%);
+    --x-meter-value-even-less-good-bg: hsl(12 100% 39%);
+  }
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "x-meter-name x-meter-percent"
+    "x-meter-name x-meter-overview"
+    "x-meter-core x-meter-core ";
+  gap: var(--x-gutter-sm);
+  // border-radius: var(--x-radius);
+  // background: var(--x-meter-bar-bg);
+  // padding: var(--x-gutter-sm);
+  // &:hover {
+  //   background: var(--x-meter-bar-bg-hover);
+  // }
+}
+.percent {
+  grid-area: x-meter-percent;
+  text-align: right;
+}
+.name {
+  display: flex;
+  grid-area: x-meter-name;
+  align-items: center;
+  border: none;
+  background: none;
+  color: var(--x-bg-fg);
+  font-weight: bold;
+  text-align: center;
+}
+.nameText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-width: 15rem;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.overview {
+  grid-area: x-meter-overview;
+}
+.core {
+  grid-area: x-meter-core;
+  background: none;
+  width: 100%;
+  height: var(--x-meter-height);
+  &::-webkit-meter-bar {
+    border-radius: 10rem;
+    background: var(--x-meter-bar-bg);
+    height: var(--x-meter-height);
+  }
+  &::-webkit-meter-optimum-value {
+    // transition: width 1s;
+    border-radius: 10rem;
+    background: var(--x-meter-value-optimum-bg);
+  }
+  &::-webkit-meter-suboptimum-value {
+    // transition: width 1s;
+    border-radius: 10rem;
+    background: var(--x-meter-value-suboptimum-bg);
+  }
+  &::-webkit-meter-even-less-good-value {
+    // transition: width 1s;
+    border-radius: 10rem;
+    background: var(--x-meter-value-even-less-good-bg);
+  }
+}

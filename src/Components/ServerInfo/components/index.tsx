@@ -1,69 +1,152 @@
-import { observer } from 'mobx-react-lite'
-import { FC } from 'react'
-import { CardGrid } from '../../Card/components/card-grid'
-import { GridContainer } from '../../Grid/components/container'
-import { gettext } from '../../Language'
-import { template } from '../../Utils/components/template'
-import { ServerInfoStore } from '../stores'
-import { Location } from './location'
-const ServerInfoTime: FC = observer(() => {
-  const {
-    serverUptime: { days, hours, mins, secs },
-    serverTime,
-  } = ServerInfoStore
+import { observer } from 'mobx-react-lite';
+import { type FC, memo, type ReactNode, useEffect } from 'react';
+import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
+import { gettext } from '@/Components/Language/index.ts';
+import { Location } from '@/Components/Location/components/index.tsx';
+import { ModuleGroup } from '@/Components/Module/components/group.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
+import { OK } from '@/Components/Rest/http-status.ts';
+import { template } from '@/Components/Utils/components/template';
+import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
+import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
+import { ServerInfoConstants } from './constants.ts';
+import { ServerInfoStore } from './store.ts';
+import type { ServerInfoPollDataProps } from './typings.ts';
+const ServerTime: FC<{
+  serverUptime: ServerInfoPollDataProps['serverUptime'];
+  serverTime: ServerInfoPollDataProps['serverTime'];
+}> = observer(({ serverUptime, serverTime }) => {
+  const { days, hours, mins, secs } = serverUptime;
   const uptime = template(
-    gettext('{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs'),
-    { days, hours, mins, secs },
-  )
+    gettext('{{days}}d {{hours}}h {{mins}}min {{secs}}s'),
+    { days, hours, mins, secs }
+  );
   const items = [
-    [gettext('Server time'), serverTime],
-    [gettext('Server uptime'), uptime],
-  ]
+    [gettext('Time'), serverTime],
+    [gettext('Uptime'), uptime],
+  ];
   return (
     <>
       {items.map(([title, content]) => (
-        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
+        <ModuleGroup key={title} label={title}>
           {content}
-        </CardGrid>
+        </ModuleGroup>
       ))}
     </>
-  )
-})
-export const ServerInfo: FC = observer(() => {
-  const { conf, serverIpv4, serverIpv6 } = ServerInfoStore
-  const shortItems1 = [[gettext('Server name'), conf?.serverName]]
-  const shortItems2 = [
-    [gettext('Server IPv4'), serverIpv4],
-    [gettext('Server IPv6'), serverIpv6],
-    [gettext('Server software'), conf?.serverSoftware],
-  ]
-  const longItems = [
+  );
+});
+const SingleItems: FC<{
+  cpuModel: ServerInfoPollDataProps['cpuModel'];
+  serverOs: ServerInfoPollDataProps['serverOs'];
+  scriptPath: ServerInfoPollDataProps['scriptPath'];
+  publicIpv4: string;
+}> = memo(({ cpuModel, serverOs, scriptPath, publicIpv4 }) => {
+  const items: [string, ReactNode][] = [
     [
-      gettext('Server location (IPv4)'),
-      <Location key='serverLocalIpv4' action='serverLocationIpv4' />,
+      gettext('Location (IPv4)'),
+      <Location ip={publicIpv4} key="serverLocalIpv4" />,
     ],
-    [gettext('CPU model'), conf?.cpuModel || gettext('Unavailable')],
-    [gettext('Server OS'), conf?.serverOs],
-    [gettext('Script path'), conf?.scriptPath],
-  ]
+    [gettext('CPU model'), cpuModel ?? gettext('Unavailable')],
+    [gettext('OS'), serverOs ?? gettext('Unavailable')],
+    [gettext('Script path'), scriptPath ?? gettext('Unavailable')],
+  ];
   return (
-    <GridContainer>
-      {shortItems1.map(([title, content]) => (
-        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
+    <UiSingleColContainer>
+      {items.map(([title, content]) => (
+        <ModuleGroup key={title} label={title}>
           {content}
-        </CardGrid>
+        </ModuleGroup>
       ))}
-      <ServerInfoTime />
-      {shortItems2.map(([title, content]) => (
-        <CardGrid key={title} name={title} lg={2} xl={3} xxl={4}>
-          {content}
-        </CardGrid>
-      ))}
-      {longItems.map(([title, content]) => (
-        <CardGrid key={title} name={title}>
-          {content}
-        </CardGrid>
-      ))}
-    </GridContainer>
-  )
-})
+    </UiSingleColContainer>
+  );
+});
+const MultiItems: FC<{
+  serverName: ServerInfoPollDataProps['serverName'];
+  serverSoftware: ServerInfoPollDataProps['serverSoftware'];
+  publicIpv4: string;
+  publicIpv6: string;
+  localIpv4: string;
+  localIpv6: string;
+}> = memo(
+  ({
+    serverName,
+    serverSoftware,
+    publicIpv4,
+    publicIpv6,
+    localIpv4,
+    localIpv6,
+  }) => {
+    const items: [string, ReactNode][] = [
+      [gettext('Name'), serverName ?? gettext('Unavailable')],
+      [gettext('Software'), serverSoftware ?? gettext('Unavailable')],
+      [gettext('Public IPv4'), publicIpv4 || '-'],
+      [gettext('Public IPv6'), publicIpv6 || '-'],
+      [gettext('Local IPv4'), localIpv4 || '-'],
+      [gettext('Local IPv6'), localIpv6 || '-'],
+    ];
+    return (
+      <>
+        {items.map(([title, content]) => (
+          <ModuleGroup key={title} label={title}>
+            {content}
+          </ModuleGroup>
+        ))}
+      </>
+    );
+  }
+);
+export const ServerInfo: FC = observer(() => {
+  const { pollData, publicIpv4, publicIpv6, setPublicIpv4, setPublicIpv6 } =
+    ServerInfoStore;
+  // fetch ipv4
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, status } = await serverFetch<{ ip: string }>(
+        'serverPublicIpv4'
+      );
+      if (data?.ip && status === OK) {
+        setPublicIpv4(data.ip);
+      }
+    };
+    fetchData();
+  }, [setPublicIpv4]);
+  // fetch ipv6
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, status } = await serverFetch<{ ip: string }>(
+        'serverPublicIpv6'
+      );
+      if (data?.ip && status === OK) {
+        setPublicIpv6(data.ip);
+      }
+    };
+    fetchData();
+  }, [setPublicIpv6]);
+  if (!pollData) {
+    return null;
+  }
+  return (
+    <ModuleItem id={ServerInfoConstants.id} title={gettext('Server Info')}>
+      <UiMultiColContainer>
+        <ServerTime
+          serverTime={pollData.serverTime}
+          serverUptime={pollData.serverUptime}
+        />
+        <MultiItems
+          localIpv4={pollData.localIpv4}
+          localIpv6={pollData.localIpv6}
+          publicIpv4={publicIpv4}
+          publicIpv6={publicIpv6}
+          serverName={pollData.serverName}
+          serverSoftware={pollData.serverSoftware}
+        />
+      </UiMultiColContainer>
+      <SingleItems
+        cpuModel={pollData.cpuModel}
+        publicIpv4={publicIpv4}
+        scriptPath={pollData.scriptPath}
+        serverOs={pollData.serverOs}
+      />
+    </ModuleItem>
+  );
+});

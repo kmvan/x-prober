@@ -1,0 +1,25 @@
+:root {
+  --x-benchmark-ruby-bg: hsl(0 0% 0% / 0.05);
+  --x-benchmark-ruby-bg-hover: hsl(0 0% 0% / 0.05);
+  @media (prefers-color-scheme: dark) {
+    --x-benchmark-ruby-bg: hsl(0 0% 100% / 0.05);
+    --x-benchmark-ruby-bg-hover: hsl(0 0% 100% / 0.1);
+  }
+}
+.main {
+  // cursor: pointer;
+  // border-radius: var(--x-radius);
+  // background: var(--x-benchmark-ruby-bg);
+  // padding: var(--x-gutter-sm) var(--x-gutter);
+  // &:hover {
+  // background: var(--x-benchmark-ruby-bg-hover);
+  //   text-decoration: none;
+  // }
+  rt {
+    opacity: 0.5;
+    // font-size: 0.75rem;
+  }
+  &[data-is-result] {
+    font-weight: bold;
+  }
+}

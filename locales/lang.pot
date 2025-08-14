@@ -15,13 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
 
-msgid "Copy marks"
-msgstr ""
-
-msgid "Move up"
-msgstr ""
-
-msgid "Move down"
+msgid "Failed to fetch data. Please try again later."
 msgstr ""
 
 msgid "Dark"
@@ -30,100 +24,82 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-msgid "Error: can not fetch remote config data, update checker is disabled."
-msgstr ""
-
 msgid "Database"
 msgstr ""
 
 msgid "DB"
 msgstr ""
 
-msgid "Fetch error, please refresh page."
+msgid "Disk Usage"
 msgstr ""
 
-msgid "Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms"
+msgid "Disk"
 msgstr ""
 
-msgid "STAR 🌟 ME"
-msgstr ""
-
-msgid "Loading..."
-msgstr ""
-
-msgid "Can not fetch IP"
-msgstr ""
-
-msgid "Not support"
-msgstr ""
-
-msgid "My Information"
-msgstr ""
-
-msgid "Mine"
-msgstr ""
-
-msgid "My IPv4"
-msgstr ""
-
-msgid "My IPv6"
-msgstr ""
-
-msgid "My location (IPv4)"
-msgstr ""
-
-msgid "My browser UA"
-msgstr ""
-
-msgid "My browser languages (via JS)"
-msgstr ""
-
-msgid "My browser languages (via PHP)"
+msgid "Generator {{appName}} / Author {{authorName}}"
 msgstr ""
 
 msgid "Can not fetch location."
 msgstr ""
 
-msgid "👆 Click to fetch"
+msgid "Click to fetch"
 msgstr ""
 
-msgid "The author only has 10,000 API requests per month, please do not abuse it."
+msgid "Move down"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
+msgid "IPv4"
+msgstr ""
+
+msgid "IPv6"
+msgstr ""
+
+msgid "My location (IPv4)"
+msgstr ""
+
+msgid "Browser UA"
+msgstr ""
+
+msgid "Browser languages (via JS)"
+msgstr ""
+
+msgid "Browser languages (via PHP)"
+msgstr ""
+
+msgid "My Info"
+msgstr ""
+
+msgid "Mine"
 msgstr ""
 
 msgid "Network Stats"
 msgstr ""
 
-msgid "Net"
+msgid "Recived: {{total}}"
+msgstr ""
+
+msgid "Sent: {{total}}"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "CPU"
 msgstr ""
 
 msgid "Nodes"
 msgstr ""
 
-msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
+msgid "Error: {{error}}"
 msgstr ""
 
-msgid "CPU usage"
-msgstr ""
-
-msgid "Usage: {{percent}}"
-msgstr ""
-
-msgid "Memory"
+msgid "Ram"
 msgstr ""
 
 msgid "Swap"
-msgstr ""
-
-msgid "Fetching..."
-msgstr ""
-
-msgid "Fetch failed. Node returns {{code}}."
-msgstr ""
-
-msgid "PHP Extensions"
-msgstr ""
-
-msgid "Ext"
 msgstr ""
 
 msgid "Opcache enabled"
@@ -132,16 +108,16 @@ msgstr ""
 msgid "Opcache JIT enabled"
 msgstr ""
 
+msgid "PHP Extensions"
+msgstr ""
+
 msgid "Loaded extensions"
 msgstr ""
 
-msgid "PHP Information"
+msgid "Ext"
 msgstr ""
 
-msgid "PHP"
-msgstr ""
-
-msgid "👆 Click for detail"
+msgid "Detail"
 msgstr ""
 
 msgid "Version"
@@ -186,34 +162,55 @@ msgstr ""
 msgid "Disabled classes"
 msgstr ""
 
+msgid "PHP Information"
+msgstr ""
+
 msgid "Visit PHP.net Official website"
 msgstr ""
 
-msgid "(Latest {{latestPhpVersion}})"
-msgstr ""
-
-msgid "Network Ping"
+msgid "{{latestPhpVersion}} (Latest)"
 msgstr ""
 
 msgid "Ping"
 msgstr ""
 
-msgid "Times:{{times}}"
+msgid "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
 msgstr ""
 
-msgid "Min:{{min}} / Max:{{max}} / Avg:{{avg}}"
+msgid "Server ⇄ Browser"
 msgstr ""
 
-msgid "⏸️ Stop ping"
+msgid "Stop ping"
 msgstr ""
 
-msgid "👆 Start ping"
+msgid "Start ping"
+msgstr ""
+
+msgid "Results"
 msgstr ""
 
 msgid "Server Benchmark"
 msgstr ""
 
-msgid "Becnhmark"
+msgid "Different versions cannot be compared, and different time servers have different loads, just for reference."
+msgstr ""
+
+msgid "Testing, please wait..."
+msgstr ""
+
+msgid "Network error, please try again later."
+msgstr ""
+
+msgid "Please wait {{seconds}}s"
+msgstr ""
+
+msgid "Benchmark my server"
+msgstr ""
+
+msgid "Benchmark"
+msgstr ""
+
+msgid "Touch to copy marks"
 msgstr ""
 
 msgid "Read"
@@ -222,10 +219,7 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-msgid "Can not fetch marks data from GitHub."
-msgstr ""
-
-msgid "Visit prober page"
+msgid "Visit probe page"
 msgstr ""
 
 msgid "Download speed test"
@@ -234,91 +228,82 @@ msgstr ""
 msgid "Visit the official website"
 msgstr ""
 
-msgid "My server"
+msgid "Can not fetch marks data from GitHub."
 msgstr ""
 
-msgid "⏳ Testing, please wait..."
+msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
 msgstr ""
 
-msgid "👆 Click to test"
+msgid "Time"
 msgstr ""
 
-msgid "Network error, please try again later."
+msgid "Uptime"
 msgstr ""
 
-msgid "⏳ Please wait {{seconds}}s"
-msgstr ""
-
-msgid "⚔️ Different versions cannot be compared, and different time servers have different loads, just for reference."
-msgstr ""
-
-msgid "Server Information"
-msgstr ""
-
-msgid "Info"
-msgstr ""
-
-msgid "Unavailable"
-msgstr ""
-
-msgid "{{days}} days {{hours}} hours {{mins}} mins {{secs}} secs"
-msgstr ""
-
-msgid "Server time"
-msgstr ""
-
-msgid "Server uptime"
-msgstr ""
-
-msgid "Server name"
-msgstr ""
-
-msgid "Server IPv4"
-msgstr ""
-
-msgid "Server IPv6"
-msgstr ""
-
-msgid "Server software"
-msgstr ""
-
-msgid "Server location (IPv4)"
+msgid "Location (IPv4)"
 msgstr ""
 
 msgid "CPU model"
 msgstr ""
 
-msgid "Server OS"
+msgid "Unavailable"
+msgstr ""
+
+msgid "OS"
 msgstr ""
 
 msgid "Script path"
 msgstr ""
 
-msgid "Disk usage"
+msgid "Name"
+msgstr ""
+
+msgid "Software"
+msgstr ""
+
+msgid "Public IPv4"
+msgstr ""
+
+msgid "Public IPv6"
+msgstr ""
+
+msgid "Local IPv4"
+msgstr ""
+
+msgid "Local IPv6"
+msgstr ""
+
+msgid "Server Info"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "CPU usage"
+msgstr ""
+
+msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
 msgstr ""
 
 msgid "Server Status"
 msgstr ""
 
-msgid "Status"
+msgid "Memory buffers"
 msgstr ""
 
 msgid "Buffers are in-memory block I/O buffers. They are relatively short-lived. Prior to Linux kernel version 2.4, Linux had separate page and buffer caches. Since 2.4, the page and buffer cache are unified and Buffers is raw disk blocks not represented in the page cache—i.e., not file data."
 msgstr ""
 
-msgid "Memory buffers"
+msgid "Memory cached"
 msgstr ""
 
 msgid "Cached memory is memory that Linux uses for disk caching. However, this doesn\\'t count as \"used\" memory, since it will be freed when applications require it. Hence you don\\'t have to worry if a large amount is being used."
 msgstr ""
 
-msgid "Memory cached"
+msgid "Memory real usage"
 msgstr ""
 
 msgid "Linux comes with many commands to check memory usage. The \"free\" command usually displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The \"top\" command provides a dynamic real-time view of a running system."
-msgstr ""
-
-msgid "Memory real usage"
 msgstr ""
 
 msgid "Swap cached"
@@ -333,22 +318,19 @@ msgstr ""
 msgid "System load"
 msgstr ""
 
-msgid "Temperature Sensor"
+msgid "{{usage}}% CPU usage"
 msgstr ""
 
-msgid "Temp."
+msgid "Temperature sensor"
 msgstr ""
 
 msgid "{{sensor}} temperature"
 msgstr ""
 
+msgid "Temperature"
+msgstr ""
+
 msgid "Click to close"
-msgstr ""
-
-msgid "Can not update file, please check the server permissions and space."
-msgstr ""
-
-msgid "Click to update"
 msgstr ""
 
 msgid "⏳ Updating, please wait a second..."
@@ -357,5 +339,26 @@ msgstr ""
 msgid "❌ Update error, click here to try again?"
 msgstr ""
 
-msgid "✨ Found update! Version {{oldVersion}} → {{newVersion}}"
+msgid "✨ Found new version: {{oldVersion}} ⇢ {{newVersion}}"
+msgstr ""
+
+msgid "Update success, refreshing..."
+msgstr ""
+
+msgid "Update is disabled in dev mode."
+msgstr ""
+
+msgid "Can not update file, please check the server permissions and space."
+msgstr ""
+
+msgid "Click to update"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Not support"
+msgstr ""
+
+msgid "Can not fetch IP"
 msgstr ""

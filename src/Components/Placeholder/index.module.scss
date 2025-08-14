@@ -1,0 +1,41 @@
+:root {
+  --x-placeholder-bg: linear-gradient(to right, hsl(0 0% 0% / 0.1) 46%, hsl(0 0% 0% / 0.15) 50%, hsl(0 0% 0% / 0.1) 54%)
+    50% 50%;
+  @media (prefers-color-scheme: dark) {
+    --x-placeholder-bg: linear-gradient(
+        to right,
+        hsl(0 0% 100% / 0.1) 46%,
+        hsl(0 0% 100% / 0.15) 50%,
+        hsl(0 0% 100% / 0.1) 54%
+      )
+      50% 50%;
+  }
+}
+@keyframes animation {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(30%, 0, 0);
+  }
+}
+.main {
+  position: relative;
+  border-radius: var(--x-radius);
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    animation: animation 1s linear infinite;
+    margin-left: -250%;
+    background: var(--x-placeholder-bg);
+    width: 500%;
+    pointer-events: none;
+    content: " ";
+  }
+}

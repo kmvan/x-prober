@@ -1,0 +1,31 @@
+:root {
+  --x-card-des-fg: var(--x-fg);
+  --x-card-des-bg: hsl(0 0% 100% / 0.1);
+  --x-card-des-accent: hsl(0 0% 0% / 0.5);
+  @media (prefers-color-scheme: dark) {
+    --x-card-des-fg: var(--x-fg);
+    --x-card-des-bg: hsl(0 0% 100% / 0.1);
+    --x-card-des-accent: hsl(209, 100%, 63%);
+  }
+}
+.main {
+  display: grid;
+  border-radius: var(--x-radius);
+  color: var(--x-card-des-fg);
+  font-family: var(--x-text-font-family);
+  // background: var(--x-card-des-bg);
+  // padding: var(--x-gutter-sm) var(--x-gutter) var(--x-gutter-sm) 2em;
+  list-style-type: none;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--x-gutter-sm);
+  &::before {
+    border-radius: var(--x-radius);
+    background: var(--x-card-des-accent);
+    width: 2px;
+    height: 50%;
+    content: "";
+  }
+}

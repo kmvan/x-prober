@@ -1,0 +1,25 @@
+:root {
+  --x-toast-fg: hsl(0 0% 100% / 0.95);
+  --x-toast-bg: hsl(0 0% 0% / 0.15);
+  @media (prefers-color-scheme: dark) {
+    --x-toast-fg: hsl(0 0% 100% / 0.95);
+    --x-toast-bg: hsl(0 0% 100% / 0.15);
+  }
+}
+.main {
+  position: fixed;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  border: none;
+  border-radius: var(--x-gutter);
+  background: var(--x-toast-bg);
+  padding: var(--x-gutter);
+  // width: 20rem;
+  max-width: 80vw;
+  color: var(--x-toast-fg);
+  text-align: justify;
+}

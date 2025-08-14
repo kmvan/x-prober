@@ -12,7 +12,7 @@ final class ScriptGeneration
     {
         [
             'scriptFilePath' => $this->scriptFilePath,
-            'distFilePath'   => $this->distFilePath,
+            'distFilePath' => $this->distFilePath,
         ] = $args;
 
         if ( ! is_file($this->scriptFilePath)) {
@@ -43,7 +43,7 @@ final class ScriptGeneration
             return false;
         }
 
-        $dist = str_replace('{INN_SCRIPT}', $script, $dist);
+        $dist = str_replace('{{X_SCRIPT}}', $script, $dist);
 
         return (bool) file_put_contents($this->distFilePath, $dist);
     }

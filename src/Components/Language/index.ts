@@ -1,9 +1,8 @@
-import langs from './data.json'
-const langId = navigator.language
+import langs from './data.json' with { type: 'json' };const langId = navigator.language
   .replace('-', '')
   .replace('_', '')
-  .toLowerCase()
+  .toLowerCase();
 export const gettext = (text: string, context = ''): string => {
-  const id = `${context || ''}${text}`
-  return langs?.[id]?.[langId] ?? text
-}
+  const id = `${context || ''}${text}`;
+  return langs?.[id]?.[langId] ?? text;
+};

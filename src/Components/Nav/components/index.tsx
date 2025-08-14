@@ -1,26 +1,18 @@
-import { observer } from 'mobx-react-lite'
-import { FC, ReactElement } from 'react'
-import { CardStore } from '../../Card/stores'
-import { ElevatorNav } from '../../Utils/components/elevator-nav'
-import { NavStore } from '../stores'
-import styles from './styles.module.scss'
+import { observer } from 'mobx-react-lite';
+import type { FC } from 'react';
+import { ModuleStore } from '@/Components/Module/components/store';
+import styles from './index.module.scss';
 export const Nav: FC = observer(() => {
-  const items = CardStore.enabledCards
-    .map(({ id, title, tinyTitle, enabled = true }) => {
-      if (!enabled) {
-        return null
-      }
-      return (
-        <a className={styles.link} key={id} href={`#${id}`}>
-          <span className={styles.linkTitle}>{title}</span>
-          <span className={styles.linkTitleTiny}>{tinyTitle}</span>
-        </a>
-      )
-    })
-    .filter((n) => n) as ReactElement[]
+  const { availableModules } = ModuleStore;
+  // const { activeIndex } = NavStore;
+  const items = availableModules.map(({ id, nav: Component }) => {
+    return <Component key={id} />;
+  });
+  // .filter((n) => n) as ReactElement[];
   return (
     <div className={styles.main}>
-      <ElevatorNav activeIndex={NavStore.activeIndex}>{items}</ElevatorNav>
+      {items}
+      {/* <ElevatorNav activeIndex={activeIndex}>{items}</ElevatorNav> */}
     </div>
-  )
-})
+  );
+});

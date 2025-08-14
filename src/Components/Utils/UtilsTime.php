@@ -17,16 +17,17 @@ final class UtilsTime
     public static function getUptime()
     {
         $filePath = '/proc/uptime';
+        error_reporting(0);
+        if ( ! is_file($filePath)) {
+            error_reporting(\E_ALL);
 
-        if ( ! @is_file($filePath)) {
-            return array(
+            return [
                 'days' => 0,
                 'hours' => 0,
                 'mins' => 0,
                 'secs' => 0,
-            );
+            ];
         }
-
         $str = file_get_contents($filePath);
         $num = (float) $str;
         $secs = (int) fmod($num, 60);
@@ -37,11 +38,11 @@ final class UtilsTime
         $num = (int) ($num / 24);
         $days = (int) $num;
 
-        return array(
+        return [
             'days' => $days,
             'hours' => $hours,
             'mins' => $mins,
             'secs' => $secs,
-        );
+        ];
     }
 }

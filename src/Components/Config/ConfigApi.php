@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The file is automatically generated.
  */
@@ -7,16 +8,93 @@ namespace InnStudio\Prober\Components\Config;
 
 class ConfigApi
 {
-    public static $APP_VERSION                  = '8.20';
-    public static $APP_NAME                     = 'X Prober';
-    public static $APP_URL                      = 'https://github.com/kmvan/x-prober';
-    public static $APP_CONFIG_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json', 'https://api.inn-studio.com/download/?id=xprober-config');
-    public static $APP_CONFIG_URL_DEV           = 'http://localhost:8000/AppConfig.json';
-    public static $APP_TEMPERATURE_SENSOR_URL   = 'http://127.0.0.1';
-    public static $APP_TEMPERATURE_SENSOR_PORTS = array(2048, 4096);
-    public static $AUTHOR_URL                   = 'https://inn-studio.com/prober';
-    public static $UPDATE_PHP_URLS              = array('https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php', 'https://api.inn-studio.com/download/?id=xprober');
-    public static $AUTHOR_NAME                  = 'INN STUDIO';
-    public static $LATEST_PHP_STABLE_VERSION    = '8';
-    public static $LATEST_NGINX_STABLE_VERSION  = '1.22.0';
+    public static $config = [
+        'APP_VERSION' => '9.0.0',
+        'APP_NAME' => 'X Prober',
+        'APP_URL' => 'https://github.com/kmvan/x-prober',
+        'AUTHOR_URL' => 'https://inn-studio.com/prober',
+        'UPDATE_PHP_URLS' => [
+            0 => 'https://raw.githubusercontent.com/kmvan/x-prober/master/dist/prober.php',
+            1 => 'https://api.inn-studio.com/download/?id=xprober',
+        ],
+        'APP_CONFIG_URLS' => [
+            0 => 'https://raw.githubusercontent.com/kmvan/x-prober/master/AppConfig.json',
+            1 => 'https://api.inn-studio.com/download/?id=xprober-config',
+        ],
+        'BENCHMARKS_URLS' => [
+            0 => 'https://raw.githubusercontent.com/kmvan/x-prober/master/benchmarks.json',
+            1 => 'https://api.inn-studio.com/download/?id=xprober-benchmarks',
+        ],
+        'APP_CONFIG_URL_DEV' => 'http://localhost:8000/AppConfig.json',
+        'APP_TEMPERATURE_SENSOR_URL' => 'http://127.0.0.1',
+        'APP_TEMPERATURE_SENSOR_PORTS' => [
+            0 => 2048,
+            1 => 4096,
+        ],
+        'AUTHOR_NAME' => 'INN STUDIO',
+        'LATEST_PHP_STABLE_VERSION' => '8',
+        'LATEST_NGINX_STABLE_VERSION' => '1.22.0',
+        'BENCHMARKS' => [
+            0 => [
+                'name' => 'Olink / E5-2680 v4 / PHP83 JIT',
+                'url' => 'https://www.olink.cloud/clients/aff.php?aff=120',
+                'date' => '2024-05-29',
+                'proberUrl' => 'https://x-prober-server-benchmark-olink-sj.inn-studio.com',
+                'binUrl' => '',
+                'detail' => [
+                    'cpu' => 268212,
+                    'read' => 18495,
+                    'write' => 6164,
+                ],
+            ],
+            1 => [
+                'name' => 'RamNode / PHP82 JIT',
+                'url' => 'https://clientarea.ramnode.com/aff.php?aff=4143',
+                'date' => '2023-05-02',
+                'proberUrl' => 'https://x-prober-server-benchmark-ramnode-sea.inn-studio.com',
+                'binUrl' => 'https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin',
+                'detail' => [
+                    'cpu' => 203245,
+                    'read' => 68706,
+                    'write' => 11452,
+                ],
+            ],
+            2 => [
+                'name' => 'SpartanHost / HDD / PHP80 JIT',
+                'url' => 'https://billing.spartanhost.net/aff.php?aff=801',
+                'date' => '2021-07-17',
+                'proberUrl' => 'https://x-prober-server-benchmark-spartanhost-dalls.inn-studio.com',
+                'binUrl' => 'https://lg.dal.spartanhost.net/100MB.test',
+                'detail' => [
+                    'cpu' => 280903,
+                    'read' => 65551,
+                    'write' => 16238,
+                ],
+            ],
+            3 => [
+                'name' => 'Vultr / Tokyo / PHP82 JIT',
+                'url' => 'https://www.vultr.com/?ref=7826363-4F',
+                'date' => '2023-05-02',
+                'proberUrl' => 'https://x-prober-server-benchmark-vultr-tokyo.inn-studio.com/',
+                'binUrl' => 'https://hnd-jp-ping.vultr.com/vultr.com.100MB.bin',
+                'detail' => [
+                    'cpu' => 243748,
+                    'read' => 46066,
+                    'write' => 13824,
+                ],
+            ],
+            4 => [
+                'name' => 'BandwagonHOST / KVM / PHP80 JIT',
+                'url' => 'https://bandwagonhost.com/aff.php?aff=34116',
+                'proberUrl' => 'https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/',
+                'binUrl' => 'https://x-prober-server-benchmark-bwh-los-angeles.inn-studio.com/512m.bin',
+                'date' => '2021-07-17',
+                'detail' => [
+                    'cpu' => 185491,
+                    'read' => 13616,
+                    'write' => 4529,
+                ],
+            ],
+        ],
+    ];
 }

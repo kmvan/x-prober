@@ -6,7 +6,7 @@ export const breakPoints = {
   desktopSm: '1024px',
   desktopMd: '1440px',
   desktopLg: '2560px',
-}
+};
 export type DeviceIdProps =
   | 'mobileSm'
   | 'mobileMd'
@@ -14,10 +14,10 @@ export type DeviceIdProps =
   | 'tablet'
   | 'desktopSm'
   | 'desktopMd'
-  | 'desktopLg'
+  | 'desktopLg';
 export const device = (id: DeviceIdProps): string => {
   if (!breakPoints[id]) {
-    return ''
+    return '';
   }
-  return `(min-width: ${breakPoints[id]})`
-}
+  return `(min-width: ${breakPoints[id]})`;
+};

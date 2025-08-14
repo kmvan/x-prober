@@ -1,0 +1,6 @@
+.container {
+  display: grid;
+  gap: var(--x-gutter);
+  // padding: 0 var(--x-gutter-sm);
+  max-width: 1200px;
+}

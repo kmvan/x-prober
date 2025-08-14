@@ -1,0 +1,37 @@
+:root {
+  --x-pip-chat-bg: hsl(0 0% 0% / 0.1);
+  --x-pip-chat-fg-low: hsl(106, 87%, 41%);
+  --x-pip-chat-fg-medium: hsl(49, 87%, 41%);
+  --x-pip-chat-fg-high: hsl(0, 74%, 49%);
+  --x-pip-chat-text-fg: hsl(0 0% 0%);
+  @media (prefers-color-scheme: dark) {
+    --x-pip-chat-bg: hsl(0 0% 100% / 0.1);
+    --x-pip-chat-fg-low: hsl(106, 87%, 41%);
+    --x-pip-chat-fg-medium: hsl(49, 87%, 41%);
+    --x-pip-chat-fg-high: hsl(0, 74%, 49%);
+    --x-pip-chat-text-fg: hsl(0 0% 100%);
+  }
+}
+.pieBg {
+  stroke: var(--x-pip-chat-bg);
+}
+.pieFg {
+  transition:
+    stroke-dashoffset 1s ease-out,
+    stroke 1s ease-in-out;
+  &[data-status="low"] {
+    stroke: var(--x-pip-chat-fg-low);
+  }
+  &[data-status="medium"] {
+    stroke: var(--x-pip-chat-fg-medium);
+  }
+  &[data-status="high"] {
+    stroke: var(--x-pip-chat-fg-high);
+  }
+}
+.pipText {
+  fill: var(--x-pip-chat-text-fg);
+  // font-weight: normal;
+  // font-size: 1.5rem;
+  font-family: var(--x-code-font-family);
+}

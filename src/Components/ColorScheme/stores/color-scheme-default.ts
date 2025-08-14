@@ -1,9 +1,8 @@
-import { darken, lighten, rgba } from 'polished'
-import { gettext } from '../../Language'
-import { ColorSchemeProps } from '../typings'
-const light = '#f8f8f8'
-const dark = '#333'
-const topDarkBottomLight = `linear-gradient(#282828, ${lighten(0.05, dark)})`
+import { darken, lighten, rgba } from 'polished';
+import { gettext } from '@/Components/Language/index.ts';
+import type { ColorSchemeProps } from '../typings';const light = '#f8f8f8';
+const dark = '#333';
+const topDarkBottomLight = `linear-gradient(#282828, ${lighten(0.05, dark)})`;
 export const colorSchemeDefault: ColorSchemeProps = {
   name: gettext('Default'),
   isDark: false,
@@ -21,7 +20,7 @@ export const colorSchemeDefault: ColorSchemeProps = {
   'app.bg': light,
   'title.fg': light,
   'title.bg': dark,
-  'title.boxShadow': `0 1px 0 #000`,
+  'title.boxShadow': '0 1px 0 #000',
   'sysLoad.fg': light,
   'sysLoad.bg': dark,
   'card.border': rgba(dark, 0.1),
@@ -29,13 +28,13 @@ export const colorSchemeDefault: ColorSchemeProps = {
   'card.bg': rgba(dark, 0.03),
   'card.hover.bg': `linear-gradient(to right, transparent, ${rgba(
     '#000',
-    0.1,
+    0.1
   )}, transparent)`,
   'card.boxShadow': [
     `0 -1px 0 ${rgba(dark, 0.3)}`,
-    `inset 0 1px 0 #fff`,
+    'inset 0 1px 0 #fff',
     `inset 0 -1px 0 ${rgba(dark, 0.3)}`,
-    `0 1px 0 #fff`,
+    '0 1px 0 #fff',
   ].join(','),
   'card.legend.fg': light,
   'card.legend.bg': topDarkBottomLight,
@@ -91,4 +90,4 @@ export const colorSchemeDefault: ColorSchemeProps = {
   'starMe.hover.bg': dark,
   'toast.fg': light,
   'toast.bg': dark,
-}
+};

@@ -1,57 +1,86 @@
-import { Cards } from '@/Components/Card/components'
-import '@/Components/ColorScheme/components/config.scss'
-import { Container } from '@/Components/Container/components'
-import { DatabaseBootstrap } from '@/Components/Database/bootstrap'
-import { DiskUsageBootstrap } from '@/Components/DiskUsage/bootstrap'
-import { Footer } from '@/Components/Footer/components'
-import { Forkme } from '@/Components/Forkme/components'
-import { MyInfoBootstrap } from '@/Components/MyInfo/bootstrap'
-import { Nav } from '@/Components/Nav/components'
-import { NetworkStatsBoostrap } from '@/Components/NetworkStats/bootstrap'
-import { NodesBoostrap } from '@/Components/Nodes/bootstrap'
-import { PhpExtensionsBootstrap } from '@/Components/PhpExtensions/bootstrap'
-import { PhpInfoBootstrap } from '@/Components/PhpInfo/bootstrap'
-import { PingBootstrap } from '@/Components/Ping/bootstrap'
-import { ServerBenchmarkBoostrap } from '@/Components/ServerBenchmark/bootstrap'
-import { ServerInfoBoostrap } from '@/Components/ServerInfo/bootstrap'
-import { ServerStatusBoostrap } from '@/Components/ServerStatus/bootstrap'
-import { TemperatureSensorBoostrap } from '@/Components/TemperatureSensor/bootstrap'
-import { Title } from '@/Components/Title/components'
-import { Toast } from '@/Components/Toast/components'
-import { ready } from '@/Components/Utils/components/ready'
-import { FC } from 'react'
-import { createRoot } from 'react-dom/client'
-import './global.scss'
-import styles from './styles.module.scss'
-DatabaseBootstrap()
-MyInfoBootstrap()
-DiskUsageBootstrap()
-NetworkStatsBoostrap()
-NodesBoostrap()
-PhpExtensionsBootstrap()
-PhpInfoBootstrap()
-PingBootstrap()
-ServerBenchmarkBoostrap()
-ServerInfoBoostrap()
-ServerStatusBoostrap()
-TemperatureSensorBoostrap()
-const Bootstrap: FC = () => (
-  <>
-    <Title />
-    <div className={styles.app}>
-      <Container>
-        <Cards />
-        <Footer />
-      </Container>
-    </div>
-    <Nav />
-    <Forkme />
-    <Toast />
-  </>
-)
-ready(() => {
-  const c = document.createElement('div')
-  document.body.innerHTML = ''
-  document.body.appendChild(c)
-  createRoot(c).render(<Bootstrap />)
-})
+import '@/Components/ColorScheme/components/config.scss';
+import { type FC, useEffect, useState } from 'react';
+import { ConfigStore } from '@/Components/Config/store.ts';
+import { DatabaseStore } from '@/Components/Database/components/store.ts';
+import { DiskUsageStore } from '@/Components/DiskUsage/components/store.ts';
+import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
+import { Footer } from '@/Components/Footer/components/index.tsx';
+import { Header } from '@/Components/Header/components/index.tsx';
+import { MyInfoStore } from '@/Components/MyInfo/components/store.ts';
+import { NetworkStatsStore } from '@/Components/NetworkStats/components/store.ts';
+import { NodesStore } from '@/Components/Nodes/components/store.ts';
+import { PhpExtensionsStore } from '@/Components/PhpExtensions/components/store.ts';
+import { PhpInfoStore } from '@/Components/PhpInfo/components/store.ts';
+import type { PollDataProps } from '@/Components/Poll/components/typings.ts';
+import { ServerInfoStore } from '@/Components/ServerInfo/components/store.ts';
+import { ServerStatusStore } from '@/Components/ServerStatus/components/store.ts';
+import { Toast } from '@/Components/Toast/components/index.tsx';
+import { UserConfigStore } from '@/Components/UserConfig/store.ts';
+import './global.scss';
+import { gettext } from '@/Components/Language/index.ts';
+import { Modules } from '@/Components/Module/components/index.tsx';
+import { Nav } from '@/Components/Nav/components/index.tsx';
+import { PollStore } from '@/Components/Poll/components/store.ts';
+import { TemperatureSensorStore } from '@/Components/TemperatureSensor/components/store.ts';
+import { ToastStore } from '@/Components/Toast/components/store.ts';
+import { UpdaterStore } from '@/Components/Updater/components/store.ts';
+import { BootstrapLoading } from './loading.tsx';
+export const Bootstrap: FC = () => {
+  const [loading, setLoading] = useState(true);
+  const { isUpdating } = UpdaterStore;
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    let isMounted = true;
+    const fetchData = async () => {
+      try {
+        if (isUpdating) {
+          return;
+        }
+        const { data, status } = await serverFetch<PollDataProps>('poll');
+        if (data && status === 200) {
+          PollStore.setPollData(data);
+          ConfigStore.setPollData(data?.config);
+          UserConfigStore.setPollData(data?.userConfig);
+          DatabaseStore.setPollData(data?.database);
+          MyInfoStore.setPollData(data?.myInfo);
+          PhpInfoStore.setPollData(data?.phpInfo);
+          DiskUsageStore.setPollData(data?.diskUsage);
+          PhpExtensionsStore.setPollData(data?.phpExtensions);
+          NetworkStatsStore.setPollData(data?.networkStats);
+          ServerStatusStore.setPollData(data?.serverStatus);
+          ServerInfoStore.setPollData(data?.serverInfo);
+          NodesStore.setPollData(data?.nodes);
+          TemperatureSensorStore.setPollData(data?.temperatureSensor);
+        } else {
+          ToastStore.open(
+            gettext('Failed to fetch data. Please try again later.')
+          );
+        }
+        if (loading) {
+          setLoading(false);
+        }
+      } finally {
+        if (isMounted) {
+          timeoutId = setTimeout(fetchData, 2000);
+        }
+      }
+    };
+    fetchData();
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
+  }, [loading, isUpdating]);
+  if (loading) {
+    return <BootstrapLoading />;
+  }
+  return (
+    <>
+      <Header />
+      <Modules />
+      <Footer />
+      <Nav />
+      <Toast />
+    </>
+  );
+};

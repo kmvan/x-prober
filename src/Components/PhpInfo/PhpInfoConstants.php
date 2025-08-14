@@ -4,5 +4,5 @@ namespace InnStudio\Prober\Components\PhpInfo;
 
 class PhpInfoConstants
 {
-    protected $ID = 'phpInfo';
+    const ID = 'phpInfo';
 }

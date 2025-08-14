@@ -11,10 +11,10 @@ final class Footer
     public function __construct()
     {
         EventsApi::on('conf', function (array $conf) {
-            $conf[$this->ID] = array(
+            $conf[$this->ID] = [
                 'memUsage' => memory_get_usage(),
                 'time' => microtime(true) - (\defined('XPROBER_TIMER') ? XPROBER_TIMER : 0),
-            );
+            ];
 
             return $conf;
         }, \PHP_INT_MAX);

@@ -4,7 +4,7 @@ namespace InnStudio\Prober\Components\ServerInfo;
 
 class ServerInfoConstants
 {
-    protected $ID = 'serverInfo';
+    const ID = 'serverInfo';
 
-    protected $FEATURE_SERVER_IP = 'serverIp';
+    const FEATURE_SERVER_IP = 'serverIp';
 }

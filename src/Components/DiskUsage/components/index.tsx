@@ -1,23 +1,30 @@
-import { ProgressBar } from '@/Components/ProgressBar/components'
-import { observer } from 'mobx-react-lite'
-import { FC } from 'react'
-import { CardGrid } from '../../Card/components/card-grid'
-import { GridContainer } from '../../Grid/components/container'
-import { DiskUsageConstants } from '../constants'
-import { DiskUsageItemProps } from './typings'
+import { observer } from 'mobx-react-lite';
+import type { FC } from 'react';
+import { gettext } from '@/Components/Language/index.ts';
+import { Meter } from '@/Components/Meter/components/index.tsx';
+import { ModuleItem } from '@/Components/Module/components/item.tsx';
+import { DiskUsageConstants } from './constants.ts';
+import styles from './index.module.scss';
+import { DiskUsageStore } from './store.ts';
 export const DiskUsage: FC = observer(() => {
-  const { conf } = DiskUsageConstants
-  const items = (conf?.items ?? []) as DiskUsageItemProps[]
+  const { pollData } = DiskUsageStore;
+  const items = pollData?.items ?? [];
   if (!items.length) {
-    return null
+    return null;
   }
   return (
-    <GridContainer>
-      {items.map(({ id, free, total }) => (
-        <CardGrid key={id} name={id}>
-          <ProgressBar value={total - free} max={total} isCapacity />
-        </CardGrid>
-      ))}
-    </GridContainer>
-  )
-})
+    <ModuleItem id={DiskUsageConstants.id} title={gettext('Disk Usage')}>
+      <div className={styles.main}>
+        {items.map(({ id, free, total }) => (
+          <Meter
+            isCapacity
+            key={id}
+            max={total}
+            name={id}
+            value={total - free}
+          />
+        ))}
+      </div>
+    </ModuleItem>
+  );
+});

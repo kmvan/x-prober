@@ -8,11 +8,9 @@ final class UtilsApi
     {
         // search and remove comments like /* */ and //
         $json = preg_replace("#(/\\*([^*]|[\r\n]|(\\*+([^*/]|[\r\n])))*\\*+/)|([\\s\t]//.*)|(^//.*)#", '', $json);
-
         if (\PHP_VERSION_ID >= 50400) {
             return json_decode($json, true, $depth, $options);
         }
-
         if (\PHP_VERSION_ID >= 50300) {
             return json_decode($json, true, $depth);
         }
@@ -35,13 +33,11 @@ final class UtilsApi
         if (0 === (int) $code) {
             return '';
         }
-
-        $levels = array(
+        $levels = [
             \E_ALL => 'E_ALL',
             \E_USER_DEPRECATED => 'E_USER_DEPRECATED',
             \E_DEPRECATED => 'E_DEPRECATED',
             \E_RECOVERABLE_ERROR => 'E_RECOVERABLE_ERROR',
-            \E_STRICT => 'E_STRICT',
             \E_USER_NOTICE => 'E_USER_NOTICE',
             \E_USER_WARNING => 'E_USER_WARNING',
             \E_USER_ERROR => 'E_USER_ERROR',
@@ -53,10 +49,8 @@ final class UtilsApi
             \E_PARSE => 'E_PARSE',
             \E_WARNING => 'E_WARNING',
             \E_ERROR => 'E_ERROR',
-        );
-
+        ];
         $result = '';
-
         foreach ($levels as $number => $name) {
             if (($code & $number) === $number) {
                 $result .= ('' !== $result ? ', ' : '') . $name;

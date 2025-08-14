@@ -1,30 +1,27 @@
-import { observer } from 'mobx-react-lite'
-import { FC } from 'react'
-import { BootstrapConstants } from '../../Bootstrap/constants'
-import { gettext } from '../../Language'
-import { formatBytes } from '../../Utils/components/format-bytes'
-import { template } from '../../Utils/components/template'
-import { FooterStore } from '../stores'
-import styles from './styles.module.scss'
+import { observer } from 'mobx-react-lite';
+import type { FC } from 'react';
+import { BootstrapStore } from '@/Components/Bootstrap/components/store.ts';
+import { gettext } from '@/Components/Language/index.ts';
+import { template } from '@/Components/Utils/components/template';
+import styles from './index.module.scss';
 export const Footer: FC = observer(() => {
-  const { appName, appUrl, authorName, authorUrl } = BootstrapConstants
-  const { memUsage, time } = FooterStore.conf
+  const { pollData } = BootstrapStore;
+  if (!pollData) {
+    return null;
+  }
+  const { appName, appUrl, authorName, authorUrl } = pollData;
   return (
     <div
       className={styles.main}
       dangerouslySetInnerHTML={{
         __html: template(
-          gettext(
-            'Generator {{appName}} / Author {{authorName}} / {{memUsage}} / {{time}}ms',
-          ),
+          gettext('Generator {{appName}} / Author {{authorName}}'),
           {
             appName: `<a href="${appUrl}" target="_blank">${appName}</a>`,
             authorName: `<a href="${authorUrl}" target="_blank">${authorName}</a>`,
-            memUsage: formatBytes(memUsage),
-            time: (time * 1000).toFixed(2),
-          },
+          }
         ),
       }}
     />
-  )
-})
+  );
+});

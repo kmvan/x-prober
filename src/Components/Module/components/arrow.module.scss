@@ -1,0 +1,37 @@
+:root {
+  --x-card-legend-arrow-fg: var(--x-card-legend-fg);
+  --x-card-legend-arrow-bg-hover: hsl(0 0% 0% / 0.05);
+  --x-card-legend-arrow-bg-active: hsl(0 0% 0% / 0.1);
+  @media (prefers-color-scheme: dark) {
+    --x-card-legend-arrow-fg: var(--x-card-legend-fg);
+    --x-card-legend-arrow-bg-hover: hsl(0 0% 100% / 0.05);
+    --x-card-legend-arrow-bg-active: hsl(0 0% 100% / 0.1);
+  }
+}
+.arrow {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--x-radius);
+  background: transparent;
+  padding: var(--x-gutter-sm);
+  color: var(--x-card-legend-arrow-fg);
+  &:hover {
+    background: var(--x-card-legend-arrow-bg-hover);
+    color: var(--x-card-legend-arrow-fg);
+  }
+  &:active {
+    background: var(--x-card-legend-arrow-bg-active);
+    color: var(--x-card-legend-arrow-fg);
+  }
+  &[data-disabled],
+  &[data-disabled]:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}

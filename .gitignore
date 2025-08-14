@@ -8,3 +8,4 @@
 /dist/app.js
 /pnpm-lock.yaml
 /*.lock
+/.marscode

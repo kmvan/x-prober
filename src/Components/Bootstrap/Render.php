@@ -3,34 +3,83 @@
 namespace InnStudio\Prober\Components\Bootstrap;
 
 use InnStudio\Prober\Components\Config\ConfigApi;
-use InnStudio\Prober\Components\Events\EventsApi;
+use InnStudio\Prober\Components\WindowConfig\WindowConfigApi;
 
 final class Render
 {
     public function __construct()
     {
-        $appName = ConfigApi::$APP_NAME;
-        $version = ConfigApi::$APP_VERSION;
-        $scriptConf = json_encode(EventsApi::emit('conf', array()));
-        $styleUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.css' : "?action=style&amp;v={$version}";
-        $scriptUrl = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? 'app.js' : "?action=script&amp;v={$version}";
-
+        if (\defined('XPROBER_IS_DEV') && XPROBER_IS_DEV) {
+            return;
+        }
+        $appName = ConfigApi::$config['APP_NAME'];
+        $version = ConfigApi::$config['APP_VERSION'];
+        $loadScript = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? '' : "<script src='?action=script&amp;v={$version}'></script>";
+        $loadStyle = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? '' : "<link rel='stylesheet' href='?action=style&amp;v={$version}'>";
+        $globalConfig = WindowConfigApi::getGlobalConfig();
         echo <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="renderer" content="webkit">
-    <title>{$appName} v{$version}</title>
-    <link rel="stylesheet" href="{$styleUrl}" />
-    <script>window.CONF = {$scriptConf};</script>
-    <script src="{$scriptUrl}" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="renderer" content="webkit">
+<title>{$appName} {$version}</title>
+{$globalConfig}
+{$loadScript}
+<style>
+:root {
+    --x-init-fg: hsl(0 0% 10%);
+    --x-init-body-fg: hsl(0 0% 10%);
+    --x-init-body-bg: hsl(0 0% 90%);
+    --x-init-loading-bg: hsl(0 0% 90%);
+    --x-init-loading-fg: hsl(0 0% 10%);
+
+    @media (prefers-color-scheme: dark) {
+        --x-init-fg: hsl(0 0% 90%);
+        --x-init-body-fg: hsl(0 0% 90%);
+        --x-init-body-bg: hsl(0 0% 0%);
+        --x-init-loading-bg: hsl(0 0% 0%);
+        --x-init-loading-fg: hsl(0 0% 90%);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+body {
+    gap: var(--x-init-gutter);
+    background: var(--x-init-body-bg);
+    color: var(--x-init-body-fg);
+    line-height: 1.5;
+    padding:0;
+    margin:0;
+}
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    height: 100svh;
+    font-family: monospace;
+}
+#loading::before {
+    animation: spin 1s linear infinite;
+    box-sizing: border-box;
+    border: 1px solid var(--x-init-loading-bg);
+    border-top-color: var(--x-init-loading-fg);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    content: "";
+}
+</style>
+{$loadStyle}
 </head>
 <body>
-<div style="display:flex;height:calc(100vh - 16px);width:calc(100vw - 16px);align-items:center;justify-content:center;flex-wrap:wrap;">
-    <div style="font-size:15px;background:#333;color:#fff;padding:0.5rem 1rem;border-radius:10rem;box-shadow: 0 5px 10px rgba(0,0,0,0.3);">⏳ Loading...</div>
+<div id=loading>Loading...</div>
 </div>
 </body>
 </html>
