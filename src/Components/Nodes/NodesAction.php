@@ -4,6 +4,7 @@ namespace InnStudio\Prober\Components\Nodes;
 
 use InnStudio\Prober\Components\Rest\RestResponse;
 use InnStudio\Prober\Components\Rest\StatusCode;
+use InnStudio\Prober\Components\Utils\UtilsApi;
 
 final class NodesAction
 {
@@ -32,13 +33,12 @@ final class NodesAction
 
     private function getNodeData($nodeId)
     {
-        $nodes = array_filter(NodesApi::getUserConfigNodes(), function ($item) use ($nodeId) {
+        $node = UtilsApi::arrayFind(NodesApi::getUserConfigNodes(), function ($item) use ($nodeId) {
             return isset($item['url']) && isset($item['id']) && $item['id'] === $nodeId;
         });
-        if ( ! $nodes) {
+        if ( ! $node) {
             return;
         }
-        $node = $nodes[0];
         $isDev = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV;
         $url = $node['url'];
         $isRemote = ( ! str_contains($url, 'localhost') || ! str_contains($url, '127.0.0.1'));

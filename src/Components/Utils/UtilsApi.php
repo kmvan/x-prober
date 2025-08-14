@@ -4,6 +4,15 @@ namespace InnStudio\Prober\Components\Utils;
 
 final class UtilsApi
 {
+    public static function arrayFind(array $array, $callback)
+    {
+        foreach ($array as $value) {
+            if (\call_user_func($callback, $value)) {
+                return $value;
+            }
+        }
+    }
+
     public static function jsonDecode($json, $depth = 512, $options = 0)
     {
         // search and remove comments like /* */ and //
