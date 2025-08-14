@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.5 - 2025-08-14
+
+### Fix
+
+- Fix nodes error
+
 ## 9.0.4 - 2025-08-14
 
 ### Fix
