@@ -265,12 +265,14 @@
     "zhhk": "無法獲取數據，請稍後重試。",
     "zhtw": "無法獲取資料，請稍後重試。"
   },
+  "Generate by {{appName}} and developed by {{authorName}}": {
+    "zh": "由{{appName}}生成并由{{authorName}}开发",
+    "zhcn": "由{{appName}}生成并由{{authorName}}开发",
+    "zhhk": "由{{appName}}生成並由{{authorName}}開發",
+    "zhtw": "由{{appName}}生成並由{{authorName}}開發"
+  },
   "Generator {{appName}} / Author {{authorName}}": {
-    "ja": "生成ツール: {{appName}} / 作者: {{authorName}}",
-    "zh": "生成工具: {{appName}} / 作者: {{authorName}}",
-    "zhcn": "生成工具: {{appName}} / 作者: {{authorName}}",
-    "zhhk": "產生器 {{appName}} / 作者 {{authorName}}",
-    "zhtw": "產生器 {{appName}} / 作者 {{authorName}}"
+    "ja": "生成ツール: {{appName}} / 作者: {{authorName}}"
   },
   "idle: {{idle}} \\\\nnice: {{nice}} \\\\nsys: {{sys}} \\\\nuser: {{user}}": {
     "zhhk": "閒置: {{idle}} \\\\n優先: {{nice}} \\\\n系統: {{sys}} \\\\n用戶: {{user}}",
