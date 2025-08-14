@@ -33,7 +33,7 @@ export const HeaderName: FC = observer(() => {
   const { APP_NAME, APP_URL, APP_VERSION } = pollData;
   return (
     <h1 className={styles.main}>
-      {targetVersion && versionCompare(targetVersion, APP_VERSION) < 0 ? (
+      {targetVersion && versionCompare(APP_VERSION, targetVersion) < 0 ? (
         <UpdaterLink />
       ) : (
         <HeaderLink href={APP_URL} rel="noreferrer" target="_blank">
