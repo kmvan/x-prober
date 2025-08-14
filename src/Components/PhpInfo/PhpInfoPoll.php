@@ -17,7 +17,7 @@ final class PhpInfoPoll
 
         return [
             $id => [
-                'version' => \PHP_VERSION,
+                'phpVersion' => \PHP_VERSION,
                 'sapi' => \PHP_SAPI,
                 'displayErrors' => (bool) \ini_get('display_errors'),
                 'errorReporting' => (int) \ini_get('error_reporting'),
