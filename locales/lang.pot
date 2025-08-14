@@ -168,7 +168,7 @@ msgstr ""
 msgid "Visit PHP.net Official website"
 msgstr ""
 
-msgid "{{latestPhpVersion}} (Latest)"
+msgid "{{oldVersion}} (Latest: {{latestPhpVersion}})"
 msgstr ""
 
 msgid "Ping"

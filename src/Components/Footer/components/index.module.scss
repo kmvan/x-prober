@@ -1,9 +1,9 @@
 :root {
   --x-footer-bg: hsl(0 0% 0% / 0.05);
-  --x-footer-fg: hsl(0 0% 10%);
+  --x-footer-fg: hsl(0 0% 0% / 0.5);
   @media (prefers-color-scheme: dark) {
     --x-footer-bg: hsl(0 0% 100% / 0.1);
-    --x-footer-fg: hsl(0 0% 100% / 0.05);
+    --x-footer-fg: hsl(0 0% 100% / 0.5);
   }
 }
 .main {
