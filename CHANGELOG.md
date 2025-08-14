@@ -2,6 +2,14 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.3 - 2025-08-14
+
+### Fix 
+
+- Fix nodes API error
+- Fix footer style
+- Adjust php version text
+
 ## 9.0.2 - 2025-08-14
 
 ### Fix
