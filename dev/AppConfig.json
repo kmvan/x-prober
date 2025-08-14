@@ -17,7 +17,10 @@
   ],
   "APP_CONFIG_URL_DEV": "http://localhost:8000/AppConfig.json",
   "APP_TEMPERATURE_SENSOR_URL": "http://127.0.0.1",
-  "APP_TEMPERATURE_SENSOR_PORTS": [2048, 4096],
+  "APP_TEMPERATURE_SENSOR_PORTS": [
+    2048,
+    4096
+  ],
   "AUTHOR_NAME": "INN STUDIO",
   "LATEST_PHP_STABLE_VERSION": "8",
   "LATEST_NGINX_STABLE_VERSION": "1.22.0",
@@ -38,8 +41,6 @@
       "name": "RamNode / PHP82 JIT",
       "url": "https://clientarea.ramnode.com/aff.php?aff=4143",
       "date": "2023-05-02",
-      "proberUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com",
-      "binUrl": "https://x-prober-server-benchmark-ramnode-sea.inn-studio.com/512m.bin",
       "detail": {
         "cpu": 203245,
         "read": 68706,

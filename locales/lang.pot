@@ -36,7 +36,7 @@ msgstr ""
 msgid "Disk"
 msgstr ""
 
-msgid "Generator {{appName}} / Author {{authorName}}"
+msgid "Generate by {{appName}} and developed by {{authorName}}"
 msgstr ""
 
 msgid "Can not fetch location."
