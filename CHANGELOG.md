@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.1 - 2025-08-14
+
+### Fix
+
+- Fix footer not showing app name error
+  
 ## 9.0.0 - 2025-08-13
 
 ### Rewrite
