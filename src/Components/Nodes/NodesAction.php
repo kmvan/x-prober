@@ -32,12 +32,13 @@ final class NodesAction
 
     private function getNodeData($nodeId)
     {
-        $node = array_find(NodesApi::getUserConfigNodes(), function ($item) use ($nodeId) {
+        $nodes = array_filter(NodesApi::getUserConfigNodes(), function ($item) use ($nodeId) {
             return isset($item['url']) && isset($item['id']) && $item['id'] === $nodeId;
         });
-        if ( ! $node) {
+        if ( ! $nodes) {
             return;
         }
+        $node = $nodes[0];
         $isDev = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV;
         $url = $node['url'];
         $isRemote = ( ! str_contains($url, 'localhost') || ! str_contains($url, '127.0.0.1'));
