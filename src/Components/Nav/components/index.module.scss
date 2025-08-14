@@ -23,7 +23,6 @@
   align-items: center;
   z-index: 10;
   background: var(--x-nav-bg);
-  padding: 0 var(--x-gutter-sm);
   // height: 3rem;
   overflow-x: auto;
   // line-height: 3rem;
@@ -35,7 +34,7 @@
 .link {
   position: relative;
   border-right: 1px solid var(--x-nav-border-color);
-  padding: var(--x-gutter-sm) var(--x-gutter);
+  padding: var(--x-gutter);
   color: var(--x-nav-fg);
   white-space: nowrap;
   &:hover {
