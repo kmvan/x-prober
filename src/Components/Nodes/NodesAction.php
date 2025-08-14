@@ -38,8 +38,11 @@ final class NodesAction
         if ( ! $node) {
             return;
         }
+        $isDev = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV;
+        $url = $node['url'];
+        $isRemote = ( ! str_contains($url, 'localhost') || ! str_contains($url, '127.0.0.1'));
         $params = 'action=poll';
-        $url = \defined('XPROBER_IS_DEV') && XPROBER_IS_DEV ? "{$node['url']}/api?{$params}" : "{$node['url']}?{$params}";
+        $url = ($isDev && ! $isRemote) ? "{$url}/api?{$params}" : "{$url}?{$params}";
 
         return $this->getRemoteData($url);
     }
