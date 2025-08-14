@@ -27,12 +27,15 @@ export const PhpInfoPhpVersion: FC = observer(() => {
       href="https://www.php.net/"
       title={gettext('Visit PHP.net Official website')}
     >
-      {phpVersion}
       {compare === -1
-        ? ` ${template(gettext('{{latestPhpVersion}} (Latest)'), {
-            latestPhpVersion,
-          })}`
-        : ''}
+        ? ` ${template(
+            gettext('{{oldVersion}} (Latest: {{latestPhpVersion}})'),
+            {
+              oldVersion: phpVersion,
+              latestPhpVersion,
+            }
+          )}`
+        : phpVersion}
     </Link>
   );
 });
