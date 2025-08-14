@@ -17,10 +17,12 @@ import { ServerStatusStore } from '@/Components/ServerStatus/components/store.ts
 import { Toast } from '@/Components/Toast/components/index.tsx';
 import { UserConfigStore } from '@/Components/UserConfig/store.ts';
 import './global.scss';
+import { gettext } from '@/Components/Language/index.ts';
 import { Modules } from '@/Components/Module/components/index.tsx';
 import { Nav } from '@/Components/Nav/components/index.tsx';
 import { PollStore } from '@/Components/Poll/components/store.ts';
 import { TemperatureSensorStore } from '@/Components/TemperatureSensor/components/store.ts';
+import { ToastStore } from '@/Components/Toast/components/store.ts';
 import { UpdaterStore } from '@/Components/Updater/components/store.ts';
 import { BootstrapLoading } from './loading.tsx';
 export const Bootstrap: FC = () => {
@@ -50,7 +52,9 @@ export const Bootstrap: FC = () => {
           NodesStore.setPollData(data?.nodes);
           TemperatureSensorStore.setPollData(data?.temperatureSensor);
         } else {
-          alert('Can not fetch data.');
+          ToastStore.open(
+            gettext('Failed to fetch data. Please try again later.')
+          );
         }
         if (loading) {
           setLoading(false);

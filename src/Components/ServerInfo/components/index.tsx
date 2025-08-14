@@ -11,7 +11,8 @@ import { UiMultiColContainer } from '@/Components/ui/col/multi-container.tsx';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { ServerInfoConstants } from './constants.ts';
 import { ServerInfoStore } from './store.ts';
-import type { ServerInfoPollDataProps } from './typings.ts';const ServerTime: FC<{
+import type { ServerInfoPollDataProps } from './typings.ts';
+const ServerTime: FC<{
   serverUptime: ServerInfoPollDataProps['serverUptime'];
   serverTime: ServerInfoPollDataProps['serverTime'];
 }> = observer(({ serverUptime, serverTime }) => {
@@ -79,9 +80,9 @@ const MultiItems: FC<{
       [gettext('Name'), serverName ?? gettext('Unavailable')],
       [gettext('Software'), serverSoftware ?? gettext('Unavailable')],
       [gettext('Public IPv4'), publicIpv4 || '-'],
-      [gettext('Public IPv6 '), publicIpv6 || '-'],
+      [gettext('Public IPv6'), publicIpv6 || '-'],
       [gettext('Local IPv4'), localIpv4 || '-'],
-      [gettext('Local IPv6 '), localIpv6 || '-'],
+      [gettext('Local IPv6'), localIpv6 || '-'],
     ];
     return (
       <>

@@ -15,6 +15,9 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: gettext\n"
 
+msgid "Failed to fetch data. Please try again later."
+msgstr ""
+
 msgid "Dark"
 msgstr ""
 
@@ -261,13 +264,13 @@ msgstr ""
 msgid "Public IPv4"
 msgstr ""
 
-msgid "Public IPv6 "
+msgid "Public IPv6"
 msgstr ""
 
 msgid "Local IPv4"
 msgstr ""
 
-msgid "Local IPv6 "
+msgid "Local IPv6"
 msgstr ""
 
 msgid "Server Info"
