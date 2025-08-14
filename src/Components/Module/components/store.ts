@@ -4,7 +4,9 @@ import { PollStore } from '@/Components/Poll/components/store.ts';
 import type { PollDataProps } from '@/Components/Poll/components/typings.ts';
 import { ModulePreset } from './preset.ts';
 import { ModuleStorage } from './storage.ts';
-import type { ModuleProps, SortedModuleProps } from './typings.ts';configure({
+import type { ModuleProps, SortedModuleProps } from './typings.ts';
+
+configure({
   enforceActions: 'observed',
 });
 export interface StoragePriorityItemProps {
@@ -47,10 +49,10 @@ class Main {
     if (i === 0) {
       return;
     }
-    [this.sortedModules[i].priority, this.sortedModules[i - 1].priority] = [
-      this.sortedModules[i - 1].priority,
-      this.sortedModules[i].priority,
-    ];
+    const tmp = this.sortedModules[i].priority;
+    this.sortedModules[i].priority = this.sortedModules[i - 1].priority;
+    this.sortedModules[i - 1].priority = tmp;
+    this.sortedModules.sort((a, b) => a.priority - b.priority);
     saveSortedStorage(this.sortedModules);
   };
   moveDown = (id: string) => {
@@ -58,10 +60,10 @@ class Main {
     if (i === this.sortedModules.length - 1) {
       return;
     }
-    [this.sortedModules[i].priority, this.sortedModules[i + 1].priority] = [
-      this.sortedModules[i + 1].priority,
-      this.sortedModules[i].priority,
-    ];
+    const tmp = this.sortedModules[i].priority;
+    this.sortedModules[i].priority = this.sortedModules[i + 1].priority;
+    this.sortedModules[i + 1].priority = tmp;
+    this.sortedModules.sort((a, b) => a.priority - b.priority);
     saveSortedStorage(this.sortedModules);
   };
   get disabledMoveUpId(): string {
