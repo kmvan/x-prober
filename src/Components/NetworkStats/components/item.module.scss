@@ -21,9 +21,7 @@
 }
 .id {
   grid-area: network-stats-item-id;
-  // margin-bottom: var(--x-gutter-sm);
   text-align: center;
-  text-decoration: underline;
 }
 .type {
   &::before {
