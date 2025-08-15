@@ -2,7 +2,7 @@
 
 # 😎 X 探針、瀏海探針
 
-> 這是一款 PHP 環境探針程式，它不僅能直觀顯示伺服器資訊，最重要的是：它和 📱 **iPhone X/XS/XS Max/XR** 一樣有醜陋的瀏海！
+> 這是一款 PHP 環境探針程式，它不僅能直觀顯示伺服器資訊。
 
 [![Open Collective 支持者](https://opencollective.com/x-prober/backers/badge.svg)](#支持者)
 [![Open Collective 贊助商](https://opencollective.com/x-prober/sponsors/badge.svg)](#贊助)

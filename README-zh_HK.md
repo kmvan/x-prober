@@ -2,7 +2,7 @@
 
 # 😎 X 探針、M字額探針
 
-> 這款 PHP 環境探測程式，除咗可以好直觀噉顯示伺服器資訊，最重要嘅係：佢同 📱 **iPhone X/XS/XS Max/XR** 一樣有醜樣嘅 M字額！
+> 這款 PHP 環境探測程式，除咗可以好直觀噉顯示伺服器資訊。
 
 [![Open Collective 支持者](https://opencollective.com/x-prober/backers/badge.svg)](#支持者)
 [![Open Collective 贊助商](https://opencollective.com/x-prober/sponsors/badge.svg)](#贊助)

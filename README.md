@@ -5,11 +5,9 @@
 - [繁体體中文（中國香港）](README-zh_HK.md)
 - [日本語](README-jp.md)
 
-[![X Prober Preview](screenshots/preview.webp)](screenshots/preview.webp)
-
 # 😎 X Prober, Notch Prober
 
-> A PHP environment probe program that not only displays server information intuitively, but most importantly: it has an ugly notch just like 📱 **iPhone X/XS/XS Max/XR**!
+> A PHP environment probe program that not only displays server information intuitively.
 
 [![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)

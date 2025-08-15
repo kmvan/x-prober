@@ -2,7 +2,7 @@
 
 # 😎 X 探针、刘海探针
 
-> 这是一款 PHP 环境探针程序，它不仅可以十分直观地为您显示服务器的信息，而且最重要的是：它跟 📱 **iPhone X/XS/XS Max/XR** 一样有丑陋的刘海！
+> 这是一款 PHP 环境探针程序，它不仅可以十分直观地为您显示服务器的信息。
 
 [![Backers on Open Collective](https://opencollective.com/x-prober/backers/badge.svg)](#backers)
 [![Sponsors on Open Collective](https://opencollective.com/x-prober/sponsors/badge.svg)](#sponsors)
