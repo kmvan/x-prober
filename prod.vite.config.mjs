@@ -1,13 +1,14 @@
-import react from '@vitejs/plugin-react'
-import { existsSync, mkdirSync } from 'fs'
-import { dirname, resolve } from 'path'
-import { fileURLToPath } from 'url'
-import { defineConfig } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const tmpDir = resolve(__dirname, '.tmp')
+import { existsSync, mkdirSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const tmpDir = resolve(__dirname, '.tmp');
 if (!existsSync(tmpDir)) {
-  mkdirSync(tmpDir)
+  mkdirSync(tmpDir);
 }
 export default defineConfig({
   mode: 'production',
@@ -51,4 +52,4 @@ export default defineConfig({
     },
   },
   plugins: [react(), tsconfigPaths()],
-})
+});
