@@ -13,6 +13,9 @@ if (!existsSync(tmpDir)) {
 export default defineConfig({
   mode: 'production',
   root: __dirname,
+  esbuild: {
+    legalComments: 'none',
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.tsx'),
@@ -24,7 +27,7 @@ export default defineConfig({
     outDir: tmpDir,
     sourcemap: 'hidden',
     emptyOutDir: true,
-    target: 'esnext',
+    target: 'es2024',
     // rollupOptions:{
     //   output: {
     //     assetFileNames: (assetInfo) => {
