@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { type FC, useCallback, useRef } from 'react';
+import { type FC, type RefObject, useCallback, useRef } from 'react';
 import { Button } from '@/Components/Button/components/index.tsx';
 import { ButtonStatus } from '@/Components/Button/components/typings.ts';
 import { serverFetch } from '@/Components/Fetch/server-fetch.ts';
@@ -11,13 +11,8 @@ import { template } from '@/Components/Utils/components/template.ts';
 import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import type { ServerToBrowserPingItemProps } from '../typings.ts';
 import { PingStore } from './store.ts';
-import styles from './style.module.scss';const Items: FC = observer(() => {
-  const { serverToBrowserPingItems } = PingStore;
-  const items = serverToBrowserPingItems.map(({ time }, i) => (
-    <li key={String(i)}>{`${time} ms`}</li>
-  ));
-  return <>{items}</>;
-});
+import styles from './style.module.scss';
+
 const Results: FC = observer(() => {
   const { serverToBrowserPingItems } = PingStore;
   const count = serverToBrowserPingItems.length;
@@ -37,6 +32,27 @@ const Results: FC = observer(() => {
     </div>
   );
 });
+const ResultContainer: FC<{
+  refContainer: RefObject<HTMLUListElement | null>;
+}> = observer(({ refContainer }) => {
+  const { serverToBrowserPingItems } = PingStore;
+  const count = serverToBrowserPingItems.length;
+  return (
+    <ModuleGroup label={gettext('Results')}>
+      <div className={styles.resultContainer}>
+        {!count && '-'}
+        {Boolean(count) && (
+          <ul className={styles.itemContainer} ref={refContainer}>
+            {serverToBrowserPingItems.map(({ id, time }) => (
+              <li key={id}>{`${time} ms`}</li>
+            ))}
+          </ul>
+        )}
+        {Boolean(count) && <Results />}
+      </div>
+    </ModuleGroup>
+  );
+});
 export const PingServerToBrowser: FC = observer(() => {
   const {
     setIsPing,
@@ -44,19 +60,22 @@ export const PingServerToBrowser: FC = observer(() => {
     addServerToBrowserPingItem,
     isPing,
     isPingServerToBrowser,
-    serverToBrowserPingItems,
   } = PingStore;
-  const refPingTimer = useRef<number>(0);
   const refItemContainer = useRef<HTMLUListElement | null>(null);
+  const refPingTimer = useRef<number>(0);
+  const SERVER_TIME_MULTIPLIER = 1000;
+  const TIMEOUT_TIMER_MS = 1000;
+  const SCROLL_TIMER_MS = 100;
   const ping = useCallback(async (): Promise<void> => {
     const start = Date.now();
     const { data, status } =
       await serverFetch<ServerToBrowserPingItemProps>('ping');
     if (data?.time && status === OK) {
-      const { time } = data;
+      const { id, time } = data;
       const end = Date.now();
-      const serverTime = time * 1000;
+      const serverTime = time * SERVER_TIME_MULTIPLIER;
       addServerToBrowserPingItem({
+        id,
         time: Math.floor(end - start - serverTime),
       });
       setTimeout(() => {
@@ -68,14 +87,14 @@ export const PingServerToBrowser: FC = observer(() => {
         if (st < sh) {
           refItemContainer.current.scrollTop = sh;
         }
-      }, 100);
+      }, SCROLL_TIMER_MS);
     }
   }, [addServerToBrowserPingItem]);
   const pingLoop = useCallback(async (): Promise<void> => {
     await ping();
     refPingTimer.current = window.setTimeout(async () => {
       await pingLoop();
-    }, 1000);
+    }, TIMEOUT_TIMER_MS);
   }, [ping]);
   const handlePing = useCallback(async () => {
     if (isPing || isPingServerToBrowser) {
@@ -94,7 +113,7 @@ export const PingServerToBrowser: FC = observer(() => {
     setIsPing,
     setIsPingServerToBrowser,
   ]);
-  const count = serverToBrowserPingItems.length;
+  // const count = serverToBrowserPingItems.length;
   return (
     <UiSingleColContainer>
       <ModuleGroup label={gettext('Server ⇄ Browser')}>
@@ -105,17 +124,7 @@ export const PingServerToBrowser: FC = observer(() => {
           {isPing ? gettext('Stop ping') : gettext('Start ping')}
         </Button>
       </ModuleGroup>
-      <ModuleGroup label={gettext('Results')}>
-        <div className={styles.resultContainer}>
-          {!count && '-'}
-          {Boolean(count) && (
-            <ul className={styles.itemContainer} ref={refItemContainer}>
-              <Items />
-            </ul>
-          )}
-          {Boolean(count) && <Results />}
-        </div>
-      </ModuleGroup>
+      <ResultContainer refContainer={refItemContainer} />
     </UiSingleColContainer>
   );
 });

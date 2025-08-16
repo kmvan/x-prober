@@ -26,6 +26,7 @@ final class PollAction extends PoolConstants
             'Nodes\\NodesPoll',
             'TemperatureSensor\\TemperatureSensorPoll',
             'ServerBenchmark\\ServerBenchmarkPoll',
+            'Ping\\PingPoll',
         ] as $fn) {
             $class = "\\InnStudio\\Prober\\Components\\{$fn}";
             $data = array_merge($data, (new $class())->render());

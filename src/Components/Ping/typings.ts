@@ -1,4 +1,5 @@
 export interface ServerToBrowserPingItemProps {
+  id: string;
   time: number;
 }
 export interface ServerToBrowserPingProps {

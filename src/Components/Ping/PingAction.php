@@ -22,6 +22,7 @@ final class PingAction
         }
         $response
             ->setData([
+                'id' => (string) microtime(true),
                 'time' => \defined('XPROBER_TIMER') ? microtime(true) - XPROBER_TIMER : 0,
             ])
             ->end();
