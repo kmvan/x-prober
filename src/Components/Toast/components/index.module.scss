@@ -1,6 +1,6 @@
 :root {
   --x-toast-fg: hsl(0 0% 100% / 0.95);
-  --x-toast-bg: hsl(0 0% 0% / 0.15);
+  --x-toast-bg: hsl(0 0% 0% / 0.75);
   @media (prefers-color-scheme: dark) {
     --x-toast-fg: hsl(0 0% 100% / 0.95);
     --x-toast-bg: hsl(0 0% 100% / 0.15);
