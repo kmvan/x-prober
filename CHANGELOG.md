@@ -2,6 +2,17 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.7 - 2025-08-16
+
+### Add
+
+- Add "Ping" feature
+
+### Optimize
+
+- Optimize languages
+- Optimize toast style
+
 ## 9.0.6 - 2025-08-16
 
 ### Optimize
