@@ -2,6 +2,14 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.6 - 2025-08-16
+
+### Optimize
+
+- Optimize nav item text
+- Optimize languages text\
+- Optimize style
+
 ## 9.0.5 - 2025-08-14
 
 ### Fix
