@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-14 12:03+0800\n"
+"PO-Revision-Date: 2025-08-16 14:30+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_TW\n"
@@ -61,17 +61,17 @@ msgstr "IPv4"
 msgid "IPv6"
 msgstr "IPv6"
 
-msgid "My location (IPv4)"
-msgstr "我的位置 (IPv4)"
+msgid "Location (IPv4)"
+msgstr "位置 (IPv4)"
 
 msgid "Browser UA"
 msgstr "瀏覽器 UA"
 
-msgid "Browser languages (via JS)"
-msgstr "瀏覽器語言 (透過 JS)"
+msgid "JS Browser languages"
+msgstr "JS瀏覽器語言"
 
-msgid "Browser languages (via PHP)"
-msgstr "瀏覽器語言 (透過 PHP)"
+msgid "PHP Browser languages"
+msgstr "PHP瀏覽器語言"
 
 msgid "My Info"
 msgstr "我的資訊"
@@ -118,8 +118,8 @@ msgstr "PHP 擴充功能"
 msgid "Loaded extensions"
 msgstr "已載入擴充功能"
 
-msgid "Ext"
-msgstr "擴充"
+msgid "PHP Ext"
+msgstr "PHP擴充"
 
 msgid "Detail"
 msgstr "詳細資料"
@@ -169,11 +169,14 @@ msgstr "已停用類別"
 msgid "PHP Information"
 msgstr "PHP 資訊"
 
+msgid "PHP Info"
+msgstr "PHP資訊"
+
 msgid "Visit PHP.net Official website"
 msgstr "瀏覽 PHP.net 官方網站"
 
-msgid "{{latestPhpVersion}} (Latest)"
-msgstr "{{latestPhpVersion}} (最新版)"
+msgid "{{oldVersion}} (Latest: {{latestPhpVersion}})"
+msgstr "{{oldVersion}}（最新版：{{latestPhpVersion}}）"
 
 msgid "Ping"
 msgstr "網路檢測"
@@ -247,9 +250,6 @@ msgstr "時間"
 msgid "Uptime"
 msgstr "運行時間"
 
-msgid "Location (IPv4)"
-msgstr "位置 (IPv4)"
-
 msgid "CPU model"
 msgstr "CPU 型號"
 
@@ -265,8 +265,8 @@ msgstr "腳本路徑"
 msgid "Name"
 msgstr "名稱"
 
-msgid "Software"
-msgstr "軟體"
+msgid "Web server"
+msgstr "Web伺服器"
 
 msgid "Public IPv4"
 msgstr "公開 IPv4"
@@ -387,3 +387,18 @@ msgstr "不支援"
 
 msgid "Can not fetch IP"
 msgstr "無法取得 IP"
+
+#~ msgid "Ext"
+#~ msgstr "擴充"
+
+#~ msgid "My location (IPv4)"
+#~ msgstr "我的位置 (IPv4)"
+
+#~ msgid "Browser languages (via PHP)"
+#~ msgstr "瀏覽器語言 (透過 PHP)"
+
+#~ msgid "{{latestPhpVersion}} (Latest)"
+#~ msgstr "{{latestPhpVersion}} (最新版)"
+
+#~ msgid "Software"
+#~ msgstr "軟體"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-14 10:51+0800\n"
+"PO-Revision-Date: 2025-08-16 14:30+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
@@ -28,7 +28,7 @@ msgid "Database"
 msgstr "データベース"
 
 msgid "DB"
-msgstr "DB"
+msgstr "データベース"
 
 msgid "Disk Usage"
 msgstr "ディスク使用量"
@@ -36,8 +36,8 @@ msgstr "ディスク使用量"
 msgid "Disk"
 msgstr "ディスク"
 
-msgid "Generator {{appName}} / Author {{authorName}}"
-msgstr "生成ツール: {{appName}} / 作者: {{authorName}}"
+msgid "Generate by {{appName}} and developed by {{authorName}}"
+msgstr "{{appName}} によって生成され、{{authorName}} によって開発されました"
 
 msgid "Can not fetch location."
 msgstr "位置情報を取得できません。"
@@ -57,17 +57,17 @@ msgstr "IPv4"
 msgid "IPv6"
 msgstr "IPv6"
 
-msgid "My location (IPv4)"
-msgstr "現在地 (IPv4)"
+msgid "Location (IPv4)"
+msgstr "位置情報 (IPv4)"
 
 msgid "Browser UA"
 msgstr "ブラウザユーザーエージェント"
 
-msgid "Browser languages (via JS)"
-msgstr "ブラウザ言語 (JS経由)"
+msgid "JS Browser languages"
+msgstr "JS ブラウザ言語"
 
-msgid "Browser languages (via PHP)"
-msgstr "ブラウザ言語 (PHP経由)"
+msgid "PHP Browser languages"
+msgstr "PHP ブラウザ言語"
 
 msgid "My Info"
 msgstr "マイ情報"
@@ -114,8 +114,8 @@ msgstr "PHP拡張機能"
 msgid "Loaded extensions"
 msgstr "ロード済み拡張機能"
 
-msgid "Ext"
-msgstr "拡張"
+msgid "PHP Ext"
+msgstr "PHP拡張"
 
 msgid "Detail"
 msgstr "詳細"
@@ -165,11 +165,14 @@ msgstr "無効化クラス"
 msgid "PHP Information"
 msgstr "PHP情報"
 
+msgid "PHP Info"
+msgstr "PHP情報"
+
 msgid "Visit PHP.net Official website"
 msgstr "PHP.net公式サイトへ"
 
-msgid "{{latestPhpVersion}} (Latest)"
-msgstr "{{latestPhpVersion}} (最新版)"
+msgid "{{oldVersion}} (Latest: {{latestPhpVersion}})"
+msgstr "{{oldVersion}} (最新: {{latestPhpVersion}})"
 
 msgid "Ping"
 msgstr "ネットワーク診断"
@@ -245,9 +248,6 @@ msgstr "時間"
 msgid "Uptime"
 msgstr "稼働時間"
 
-msgid "Location (IPv4)"
-msgstr "位置情報 (IPv4)"
-
 msgid "CPU model"
 msgstr "CPUモデル"
 
@@ -263,8 +263,8 @@ msgstr "スクリプトパス"
 msgid "Name"
 msgstr "名称"
 
-msgid "Software"
-msgstr "サーバーソフト"
+msgid "Web server"
+msgstr "ウェブサーバー"
 
 msgid "Public IPv4"
 msgstr "パブリック IPv4"
@@ -390,3 +390,18 @@ msgstr "非対応"
 
 msgid "Can not fetch IP"
 msgstr "IP取得失敗"
+
+#~ msgid "Ext"
+#~ msgstr "拡張"
+
+#~ msgid "My location (IPv4)"
+#~ msgstr "現在地 (IPv4)"
+
+#~ msgid "Browser languages (via PHP)"
+#~ msgstr "ブラウザ言語 (PHP経由)"
+
+#~ msgid "{{latestPhpVersion}} (Latest)"
+#~ msgstr "{{latestPhpVersion}} (最新版)"
+
+#~ msgid "Software"
+#~ msgstr "サーバーソフト"

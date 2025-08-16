@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-14 12:52+0800\n"
+"PO-Revision-Date: 2025-08-16 14:28+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -39,7 +39,7 @@ msgid "Disk"
 msgstr "磁盘"
 
 msgid "Generate by {{appName}} and developed by {{authorName}}"
-msgstr "由{{appName}}生成并由{{authorName}}开发"
+msgstr "由 {{appName}} 生成并由 {{authorName}} 开发"
 
 msgid "Can not fetch location."
 msgstr "无法获取位置信息。"
@@ -59,17 +59,17 @@ msgstr "IPv4"
 msgid "IPv6"
 msgstr "IPv6"
 
-msgid "My location (IPv4)"
-msgstr "我的位置 (IPv4)"
+msgid "Location (IPv4)"
+msgstr "位置 (IPv4)"
 
 msgid "Browser UA"
-msgstr "浏览器用户代理"
+msgstr "浏览器 UA"
 
-msgid "Browser languages (via JS)"
-msgstr "浏览器语言 (通过JS)"
+msgid "JS Browser languages"
+msgstr "JS 浏览器语言"
 
-msgid "Browser languages (via PHP)"
-msgstr "浏览器语言 (通过PHP)"
+msgid "PHP Browser languages"
+msgstr "PHP 浏览器语言"
 
 msgid "My Info"
 msgstr "我的信息"
@@ -111,13 +111,13 @@ msgid "Opcache JIT enabled"
 msgstr "Opcache JIT 已启用"
 
 msgid "PHP Extensions"
-msgstr "PHP扩展"
+msgstr "PHP 扩展"
 
 msgid "Loaded extensions"
 msgstr "已加载扩展"
 
-msgid "Ext"
-msgstr "扩展"
+msgid "PHP Ext"
+msgstr "PHP扩展"
 
 msgid "Detail"
 msgstr "详情"
@@ -126,7 +126,7 @@ msgid "Version"
 msgstr "版本"
 
 msgid "SAPI interface"
-msgstr "SAPI接口"
+msgstr "SAPI 接口"
 
 msgid "Display errors"
 msgstr "显示错误"
@@ -138,7 +138,7 @@ msgid "Max memory limit"
 msgstr "最大内存限制"
 
 msgid "Max POST size"
-msgstr "最大POST大小"
+msgstr "最大 POST 大小"
 
 msgid "Max upload size"
 msgstr "最大上传大小"
@@ -150,13 +150,13 @@ msgid "Max execution time"
 msgstr "最长执行时间"
 
 msgid "Timeout for socket"
-msgstr "Socket超时时间"
+msgstr "Socket 超时时间"
 
 msgid "Treatment URLs file"
 msgstr "远程文件处理"
 
 msgid "SMTP support"
-msgstr "SMTP支持"
+msgstr "SMTP 支持"
 
 msgid "Disabled functions"
 msgstr "禁用函数"
@@ -165,13 +165,16 @@ msgid "Disabled classes"
 msgstr "禁用类"
 
 msgid "PHP Information"
+msgstr "PHP 信息"
+
+msgid "PHP Info"
 msgstr "PHP信息"
 
 msgid "Visit PHP.net Official website"
-msgstr "访问PHP.net官网"
+msgstr "访问 PHP.net 官网"
 
-msgid "{{latestPhpVersion}} (Latest)"
-msgstr "{{latestPhpVersion}} (最新版)"
+msgid "{{oldVersion}} (Latest: {{latestPhpVersion}})"
+msgstr "{{oldVersion}}（最新版：{{latestPhpVersion}}）"
 
 msgid "Ping"
 msgstr "网络检测"
@@ -237,7 +240,7 @@ msgid "Can not fetch marks data from GitHub."
 msgstr "无法从GitHub获取测试数据。"
 
 msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
-msgstr "{{days}}天 {{hours}}小时 {{mins}}分钟 {{secs}}秒"
+msgstr "{{days}} 天 {{hours}} 时 {{mins}} 分 {{secs}} 秒"
 
 msgid "Time"
 msgstr "时间"
@@ -245,11 +248,8 @@ msgstr "时间"
 msgid "Uptime"
 msgstr "运行时间"
 
-msgid "Location (IPv4)"
-msgstr "位置 (IPv4)"
-
 msgid "CPU model"
-msgstr "CPU型号"
+msgstr "CPU 型号"
 
 msgid "Unavailable"
 msgstr "不可用"
@@ -263,8 +263,8 @@ msgstr "脚本路径"
 msgid "Name"
 msgstr "名称"
 
-msgid "Software"
-msgstr "服务器软件"
+msgid "Web server"
+msgstr "Web 服务器"
 
 msgid "Public IPv4"
 msgstr "公网 IPv4"
@@ -285,7 +285,7 @@ msgid "Info"
 msgstr "信息"
 
 msgid "CPU usage"
-msgstr "CPU使用率"
+msgstr "CPU 使用率"
 
 msgid "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}"
 msgstr ""
@@ -303,9 +303,9 @@ msgid ""
 "caches. Since 2.4, the page and buffer cache are unified and Buffers is raw "
 "disk blocks not represented in the page cache—i.e., not file data."
 msgstr ""
-"缓冲区是内存中的块I/O缓冲区，生命周期较短。Linux内核2.4版本前，页面缓存和缓冲"
-"区缓存是分离的。2.4版本后两者统一，缓冲区指不在页面缓存中的原始磁盘块（即非文"
-"件数据）"
+"缓冲区是内存中的块 I/O 缓冲区，生命周期较短。Linux 内核 2.4 版本前，页面缓存"
+"和缓冲区缓存是分离的。2.4 版本后两者统一，缓冲区指不在页面缓存中的原始磁盘块"
+"（即非文件数据）。"
 
 msgid "Memory cached"
 msgstr "缓存内存"
@@ -315,8 +315,8 @@ msgid ""
 "doesn\\'t count as \"used\" memory, since it will be freed when applications "
 "require it. Hence you don\\'t have to worry if a large amount is being used."
 msgstr ""
-"缓存内存是Linux用于磁盘缓存的内存空间，不计入'已用'内存，因为应用程序需要时会"
-"自动释放。因此即使使用量较大也无需担心。"
+"缓存内存是 Linux 用于磁盘缓存的内存空间，不计入“已用”内存，因为应用程序需要时"
+"会自动释放。因此即使使用量较大也无需担心。"
 
 msgid "Memory real usage"
 msgstr "实际内存使用"
@@ -327,8 +327,8 @@ msgid ""
 "in the system, as well as the buffers used by the kernel. The \"top\" "
 "command provides a dynamic real-time view of a running system."
 msgstr ""
-"Linux提供多种内存检测命令：“free”命令显示系统物理内存和交换空间的总用量及内核"
-"缓冲区；“top”命令提供运行中系统的实时动态视图。"
+"Linux 提供多种内存检测命令：“free”命令显示系统物理内存和交换空间的总用量及内"
+"核缓冲区；“top”命令提供运行中系统的实时动态视图。"
 
 msgid "Swap cached"
 msgstr "交换区缓存"
@@ -337,13 +337,13 @@ msgid "Swap usage"
 msgstr "交换区使用"
 
 msgid "{{minute}} minute average"
-msgstr "{{minute}}分钟平均负载"
+msgstr "{{minute}} 分钟平均负载"
 
 msgid "System load"
 msgstr "系统负载"
 
 msgid "{{usage}}% CPU usage"
-msgstr "CPU使用率: {{usage}}%"
+msgstr "{{usage}}% CPU 使用率"
 
 msgid "Temperature sensor"
 msgstr "温度传感器"
@@ -385,4 +385,19 @@ msgid "Not support"
 msgstr "不支持"
 
 msgid "Can not fetch IP"
-msgstr "无法获取IP"
+msgstr "无法获取 IP"
+
+#~ msgid "Ext"
+#~ msgstr "扩展"
+
+#~ msgid "My location (IPv4)"
+#~ msgstr "我的位置 (IPv4)"
+
+#~ msgid "Browser languages (via PHP)"
+#~ msgstr "浏览器语言 (通过PHP)"
+
+#~ msgid "{{latestPhpVersion}} (Latest)"
+#~ msgstr "{{latestPhpVersion}} (最新版)"
+
+#~ msgid "Software"
+#~ msgstr "软件"

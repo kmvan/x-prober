@@ -57,16 +57,16 @@ msgstr ""
 msgid "IPv6"
 msgstr ""
 
-msgid "My location (IPv4)"
+msgid "Location (IPv4)"
 msgstr ""
 
 msgid "Browser UA"
 msgstr ""
 
-msgid "Browser languages (via JS)"
+msgid "JS Browser languages"
 msgstr ""
 
-msgid "Browser languages (via PHP)"
+msgid "PHP Browser languages"
 msgstr ""
 
 msgid "My Info"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Loaded extensions"
 msgstr ""
 
-msgid "Ext"
+msgid "PHP Ext"
 msgstr ""
 
 msgid "Detail"
@@ -163,6 +163,9 @@ msgid "Disabled classes"
 msgstr ""
 
 msgid "PHP Information"
+msgstr ""
+
+msgid "PHP Info"
 msgstr ""
 
 msgid "Visit PHP.net Official website"
@@ -240,9 +243,6 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
-msgid "Location (IPv4)"
-msgstr ""
-
 msgid "CPU model"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-msgid "Software"
+msgid "Web server"
 msgstr ""
 
 msgid "Public IPv4"
