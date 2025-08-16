@@ -297,7 +297,7 @@ msgstr ""
 msgid "Memory cached"
 msgstr ""
 
-msgid "Cached memory is memory that Linux uses for disk caching. However, this doesn\\'t count as \"used\" memory, since it will be freed when applications require it. Hence you don\\'t have to worry if a large amount is being used."
+msgid "Cached memory is memory that Linux uses for disk caching. However, this does not count as \"used\" memory, since it will be freed when applications require it. Hence you do not have to worry if a large amount is being used."
 msgstr ""
 
 msgid "Memory real usage"

@@ -11,7 +11,7 @@ export const MemCached: FC = observer(() => {
       max={max}
       name={gettext('Memory cached')}
       title={gettext(
-        'Cached memory is memory that Linux uses for disk caching. However, this doesn\'t count as "used" memory, since it will be freed when applications require it. Hence you don\'t have to worry if a large amount is being used.'
+        'Cached memory is memory that Linux uses for disk caching. However, this does not count as "used" memory, since it will be freed when applications require it. Hence you do not have to worry if a large amount is being used.'
       )}
       value={value}
     />
