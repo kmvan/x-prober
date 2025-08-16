@@ -10,7 +10,7 @@
 }
 .main {
   display: grid;
-  grid-template-columns: minmax(5rem, 10rem) 1fr;
+  grid-template-columns: minmax(var(--min-width), var(--max-width)) 1fr;
   gap: var(--x-gutter-sm);
   border-radius: var(--x-radius);
   &:hover {
@@ -31,6 +31,6 @@
 .content {
   display: flex;
   flex-wrap: wrap;
-  // align-items: center;
+  align-items: flex-start;
   gap: var(--x-gutter-sm);
 }

@@ -35,10 +35,10 @@ export const MyInfo: FC = observer(() => {
   const items: [string, ReactNode][] = [
     [gettext('IPv4'), myIpv4],
     [gettext('IPv6'), myIpv6],
-    [gettext('My location (IPv4)'), <Location ip={myIpv4} key="myLocalIpv4" />],
+    [gettext('Location (IPv4)'), <Location ip={myIpv4} key="myLocalIpv4" />],
     [gettext('Browser UA'), navigator.userAgent],
-    [gettext('Browser languages (via JS)'), navigator.languages.join(',')],
-    [gettext('Browser languages (via PHP)'), pollData?.phpLanguage],
+    [gettext('JS Browser languages'), navigator.languages.join(',')],
+    [gettext('PHP Browser languages'), pollData?.phpLanguage],
   ];
   if (!pollData) {
     return null;

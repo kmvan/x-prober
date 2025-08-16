@@ -12,6 +12,7 @@ import { UiSingleColContainer } from '@/Components/ui/col/single-container.tsx';
 import { ServerInfoConstants } from './constants.ts';
 import { ServerInfoStore } from './store.ts';
 import type { ServerInfoPollDataProps } from './typings.ts';
+
 const ServerTime: FC<{
   serverUptime: ServerInfoPollDataProps['serverUptime'];
   serverTime: ServerInfoPollDataProps['serverTime'];
@@ -28,7 +29,7 @@ const ServerTime: FC<{
   return (
     <>
       {items.map(([title, content]) => (
-        <ModuleGroup key={title} label={title}>
+        <ModuleGroup key={title} label={title} maxWidth={6}>
           {content}
         </ModuleGroup>
       ))}
@@ -53,7 +54,7 @@ const SingleItems: FC<{
   return (
     <UiSingleColContainer>
       {items.map(([title, content]) => (
-        <ModuleGroup key={title} label={title}>
+        <ModuleGroup key={title} label={title} maxWidth={6}>
           {content}
         </ModuleGroup>
       ))}
@@ -78,7 +79,7 @@ const MultiItems: FC<{
   }) => {
     const items: [string, ReactNode][] = [
       [gettext('Name'), serverName ?? gettext('Unavailable')],
-      [gettext('Software'), serverSoftware ?? gettext('Unavailable')],
+      [gettext('Web server'), serverSoftware ?? gettext('Unavailable')],
       [gettext('Public IPv4'), publicIpv4 || '-'],
       [gettext('Public IPv6'), publicIpv6 || '-'],
       [gettext('Local IPv4'), localIpv4 || '-'],
@@ -87,7 +88,7 @@ const MultiItems: FC<{
     return (
       <>
         {items.map(([title, content]) => (
-          <ModuleGroup key={title} label={title}>
+          <ModuleGroup key={title} label={title} maxWidth={6}>
             {content}
           </ModuleGroup>
         ))}
@@ -127,7 +128,7 @@ export const ServerInfo: FC = observer(() => {
   }
   return (
     <ModuleItem id={ServerInfoConstants.id} title={gettext('Server Info')}>
-      <UiMultiColContainer>
+      <UiMultiColContainer minWidth={20}>
         <ServerTime
           serverTime={pollData.serverTime}
           serverUptime={pollData.serverUptime}

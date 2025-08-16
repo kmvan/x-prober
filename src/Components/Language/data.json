@@ -1,24 +1,24 @@
 {
   "{{days}}d {{hours}}h {{mins}}min {{secs}}s": {
     "ja": "{{days}}日 {{hours}}時間 {{mins}}分 {{secs}}秒",
-    "zh": "{{days}}天 {{hours}}小时 {{mins}}分钟 {{secs}}秒",
-    "zhcn": "{{days}}天 {{hours}}小时 {{mins}}分钟 {{secs}}秒",
+    "zh": "{{days}} 天 {{hours}} 时 {{mins}} 分 {{secs}} 秒",
+    "zhcn": "{{days}} 天 {{hours}} 时 {{mins}} 分 {{secs}} 秒",
     "zhhk": "{{days}}天 {{hours}}小時 {{mins}}分鐘 {{secs}}秒",
     "zhtw": "{{days}}天 {{hours}}小時 {{mins}}分鐘 {{secs}}秒"
   },
-  "{{latestPhpVersion}} (Latest)": {
-    "ja": "{{latestPhpVersion}} (最新版)",
-    "zh": "{{latestPhpVersion}} (最新版)",
-    "zhcn": "{{latestPhpVersion}} (最新版)",
-    "zhhk": "{{latestPhpVersion}} (最新)",
-    "zhtw": "{{latestPhpVersion}} (最新版)"
-  },
   "{{minute}} minute average": {
     "ja": "{{minute}}分平均負荷",
-    "zh": "{{minute}}分钟平均负载",
-    "zhcn": "{{minute}}分钟平均负载",
+    "zh": "{{minute}} 分钟平均负载",
+    "zhcn": "{{minute}} 分钟平均负载",
     "zhhk": "{{minute}} 分鐘平均",
     "zhtw": "{{minute}} 分鐘平均"
+  },
+  "{{oldVersion}} (Latest: {{latestPhpVersion}})": {
+    "ja": "{{oldVersion}} (最新: {{latestPhpVersion}})",
+    "zh": "{{oldVersion}}（最新版：{{latestPhpVersion}}）",
+    "zhcn": "{{oldVersion}}（最新版：{{latestPhpVersion}}）",
+    "zhhk": "{{oldVersion}}（最新版：{{latestPhpVersion}}）",
+    "zhtw": "{{oldVersion}}（最新版：{{latestPhpVersion}}）"
   },
   "{{sensor}} temperature": {
     "ja": "{{sensor}} 温度",
@@ -29,8 +29,8 @@
   },
   "{{usage}}% CPU usage": {
     "ja": "CPU使用率: {{usage}}%",
-    "zh": "CPU使用率: {{usage}}%",
-    "zhcn": "CPU使用率: {{usage}}%",
+    "zh": "{{usage}}% CPU 使用率",
+    "zhcn": "{{usage}}% CPU 使用率",
     "zhhk": "CPU 使用率 {{usage}}%",
     "zhtw": "CPU 使用率 {{usage}}%"
   },
@@ -69,31 +69,17 @@
     "zhhk": "測試我的伺服器",
     "zhtw": "測試我的伺服器"
   },
-  "Browser languages (via JS)": {
-    "ja": "ブラウザ言語 (JS経由)",
-    "zh": "浏览器语言 (通过JS)",
-    "zhcn": "浏览器语言 (通过JS)",
-    "zhhk": "瀏覽器語言（透過 JS）",
-    "zhtw": "瀏覽器語言 (透過 JS)"
-  },
-  "Browser languages (via PHP)": {
-    "ja": "ブラウザ言語 (PHP経由)",
-    "zh": "浏览器语言 (通过PHP)",
-    "zhcn": "浏览器语言 (通过PHP)",
-    "zhhk": "瀏覽器語言（透過 PHP）",
-    "zhtw": "瀏覽器語言 (透過 PHP)"
-  },
   "Browser UA": {
     "ja": "ブラウザユーザーエージェント",
-    "zh": "浏览器用户代理",
-    "zhcn": "浏览器用户代理",
+    "zh": "浏览器 UA",
+    "zhcn": "浏览器 UA",
     "zhhk": "瀏覽器 UA",
     "zhtw": "瀏覽器 UA"
   },
   "Can not fetch IP": {
     "ja": "IP取得失敗",
-    "zh": "无法获取IP",
-    "zhcn": "无法获取IP",
+    "zh": "无法获取 IP",
+    "zhcn": "无法获取 IP",
     "zhhk": "無法取得 IP",
     "zhtw": "無法取得 IP"
   },
@@ -148,15 +134,15 @@
   },
   "CPU model": {
     "ja": "CPUモデル",
-    "zh": "CPU型号",
-    "zhcn": "CPU型号",
+    "zh": "CPU 型号",
+    "zhcn": "CPU 型号",
     "zhhk": "CPU 型號",
     "zhtw": "CPU 型號"
   },
   "CPU usage": {
     "ja": "CPU使用率",
-    "zh": "CPU使用率",
-    "zhcn": "CPU使用率",
+    "zh": "CPU 使用率",
+    "zhcn": "CPU 使用率",
     "zhhk": "CPU 使用率",
     "zhtw": "CPU 使用率"
   },
@@ -175,7 +161,7 @@
     "zhtw": "資料庫"
   },
   "DB": {
-    "ja": "DB",
+    "ja": "データベース",
     "zh": "数据库",
     "zhcn": "数据库",
     "zhhk": "資料庫",
@@ -251,13 +237,6 @@
     "zhhk": "錯誤: {{error}}",
     "zhtw": "錯誤: {{error}}"
   },
-  "Ext": {
-    "ja": "拡張",
-    "zh": "扩展",
-    "zhcn": "扩展",
-    "zhhk": "擴充",
-    "zhtw": "擴充"
-  },
   "Failed to fetch data. Please try again later.": {
     "ja": "データの取得に失敗しました。しばらくしてからもう一度お試しください。",
     "zh": "无法获取数据，请稍后重试。",
@@ -266,13 +245,11 @@
     "zhtw": "無法獲取資料，請稍後重試。"
   },
   "Generate by {{appName}} and developed by {{authorName}}": {
-    "zh": "由{{appName}}生成并由{{authorName}}开发",
-    "zhcn": "由{{appName}}生成并由{{authorName}}开发",
+    "ja": "{{appName}} によって生成され、{{authorName}} によって開発されました",
+    "zh": "由 {{appName}} 生成并由 {{authorName}} 开发",
+    "zhcn": "由 {{appName}} 生成并由 {{authorName}} 开发",
     "zhhk": "由{{appName}}生成並由{{authorName}}開發",
     "zhtw": "由{{appName}}生成並由{{authorName}}開發"
-  },
-  "Generator {{appName}} / Author {{authorName}}": {
-    "ja": "生成ツール: {{appName}} / 作者: {{authorName}}"
   },
   "idle: {{idle}} \\\\nnice: {{nice}} \\\\nsys: {{sys}} \\\\nuser: {{user}}": {
     "zhhk": "閒置: {{idle}} \\\\n優先: {{nice}} \\\\n系統: {{sys}} \\\\n用戶: {{user}}",
@@ -298,6 +275,13 @@
     "zhcn": "IPv6",
     "zhhk": "IPv6",
     "zhtw": "IPv6"
+  },
+  "JS Browser languages": {
+    "ja": "JS ブラウザ言語",
+    "zh": "JS 浏览器语言",
+    "zhcn": "JS 浏览器语言",
+    "zhhk": "JS 瀏覽器語言",
+    "zhtw": "JS瀏覽器語言"
   },
   "Loaded extensions": {
     "ja": "ロード済み拡張機能",
@@ -357,8 +341,8 @@
   },
   "Max POST size": {
     "ja": "最大POSTサイズ",
-    "zh": "最大POST大小",
-    "zhcn": "最大POST大小",
+    "zh": "最大 POST 大小",
+    "zhcn": "最大 POST 大小",
     "zhhk": "最大 POST 容量",
     "zhtw": "最大 POST 容量"
   },
@@ -417,13 +401,6 @@
     "zhcn": "我的信息",
     "zhhk": "我的資訊",
     "zhtw": "我的資訊"
-  },
-  "My location (IPv4)": {
-    "ja": "現在地 (IPv4)",
-    "zh": "我的位置 (IPv4)",
-    "zhcn": "我的位置 (IPv4)",
-    "zhhk": "我的位置（IPv4）",
-    "zhtw": "我的位置 (IPv4)"
   },
   "Name": {
     "ja": "名称",
@@ -488,17 +465,38 @@
     "zhhk": "作業系統",
     "zhtw": "作業系統"
   },
-  "PHP Extensions": {
-    "ja": "PHP拡張機能",
+  "PHP Browser languages": {
+    "ja": "PHP ブラウザ言語",
+    "zh": "PHP 浏览器语言",
+    "zhcn": "PHP 浏览器语言",
+    "zhhk": "PHP 瀏覽器語言",
+    "zhtw": "PHP瀏覽器語言"
+  },
+  "PHP Ext": {
+    "ja": "PHP拡張",
     "zh": "PHP扩展",
     "zhcn": "PHP扩展",
+    "zhhk": "PHP擴充",
+    "zhtw": "PHP擴充"
+  },
+  "PHP Extensions": {
+    "ja": "PHP拡張機能",
+    "zh": "PHP 扩展",
+    "zhcn": "PHP 扩展",
     "zhhk": "PHP 擴充功能",
     "zhtw": "PHP 擴充功能"
   },
-  "PHP Information": {
+  "PHP Info": {
     "ja": "PHP情報",
     "zh": "PHP信息",
     "zhcn": "PHP信息",
+    "zhhk": "PHP資訊",
+    "zhtw": "PHP資訊"
+  },
+  "PHP Information": {
+    "ja": "PHP情報",
+    "zh": "PHP 信息",
+    "zhcn": "PHP 信息",
     "zhhk": "PHP 資訊",
     "zhtw": "PHP 資訊"
   },
@@ -560,8 +558,8 @@
   },
   "SAPI interface": {
     "ja": "SAPIインターフェース",
-    "zh": "SAPI接口",
-    "zhcn": "SAPI接口",
+    "zh": "SAPI 接口",
+    "zhcn": "SAPI 接口",
     "zhhk": "SAPI 介面",
     "zhtw": "SAPI 介面"
   },
@@ -609,17 +607,10 @@
   },
   "SMTP support": {
     "ja": "SMTPサポート",
-    "zh": "SMTP支持",
-    "zhcn": "SMTP支持",
+    "zh": "SMTP 支持",
+    "zhcn": "SMTP 支持",
     "zhhk": "SMTP 支援",
     "zhtw": "SMTP 支援"
-  },
-  "Software": {
-    "ja": "サーバーソフト",
-    "zh": "服务器软件",
-    "zhcn": "服务器软件",
-    "zhhk": "軟件",
-    "zhtw": "軟體"
   },
   "Start ping": {
     "ja": "診断開始",
@@ -693,8 +684,8 @@
   },
   "Timeout for socket": {
     "ja": "ソケットタイムアウト",
-    "zh": "Socket超时时间",
-    "zhcn": "Socket超时时间",
+    "zh": "Socket 超时时间",
+    "zhcn": "Socket 超时时间",
     "zhhk": "Socket 逾時時間",
     "zhtw": "Socket 逾時時間"
   },
@@ -749,8 +740,8 @@
   },
   "Visit PHP.net Official website": {
     "ja": "PHP.net公式サイトへ",
-    "zh": "访问PHP.net官网",
-    "zhcn": "访问PHP.net官网",
+    "zh": "访问 PHP.net 官网",
+    "zhcn": "访问 PHP.net 官网",
     "zhhk": "瀏覽 PHP.net 官方網站",
     "zhtw": "瀏覽 PHP.net 官方網站"
   },
@@ -767,6 +758,13 @@
     "zhcn": "访问官网",
     "zhhk": "瀏覽官方網站",
     "zhtw": "瀏覽官方網站"
+  },
+  "Web server": {
+    "ja": "ウェブサーバー",
+    "zh": "Web 服务器",
+    "zhcn": "Web 服务器",
+    "zhhk": "Web伺服器",
+    "zhtw": "Web伺服器"
   },
   "Write": {
     "ja": "書込",

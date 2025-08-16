@@ -69,16 +69,20 @@ export const PhpExtensions: FC = memo(
         id={PhpExtensionsConstants.id}
         title={gettext('PHP Extensions')}
       >
-        <UiMultiColContainer>
+        <UiMultiColContainer minWidth={14}>
           {shortItems.map(([name, enabled]) => (
-            <ModuleGroup key={name} label={name}>
+            <ModuleGroup key={name} label={name} maxWidth={10} minWidth={4}>
               <EnableStatus isEnable={enabled} />
             </ModuleGroup>
           ))}
         </UiMultiColContainer>
         <UiSingleColContainer>
           {Boolean(longItems.length) && (
-            <ModuleGroup label={gettext('Loaded extensions')}>
+            <ModuleGroup
+              label={gettext('Loaded extensions')}
+              maxWidth={6}
+              minWidth={4}
+            >
               {longItems.map((id) => (
                 <SearchLink key={id} keyword={id} />
               ))}

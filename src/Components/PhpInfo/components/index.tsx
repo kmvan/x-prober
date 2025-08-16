@@ -90,7 +90,7 @@ export const PhpInfo: FC = memo(
         </UiMultiColContainer>
         <UiSingleColContainer>
           {longItems.map(([title, content]) => (
-            <ModuleGroup key={title} label={title}>
+            <ModuleGroup key={title} label={title} maxWidth={7} minWidth={4}>
               {content}
             </ModuleGroup>
           ))}

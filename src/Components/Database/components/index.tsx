@@ -22,9 +22,9 @@ export const Database: FC = memo(
     ];
     return (
       <ModuleItem id={DatabaseConstants.id} title={gettext('Database')}>
-        <UiMultiColContainer>
+        <UiMultiColContainer minWidth={14}>
           {shortItems.map(([name, content]) => (
-            <ModuleGroup key={name} label={name}>
+            <ModuleGroup key={name} label={name} maxWidth={7} minWidth={4}>
               <EnableStatus isEnable={Boolean(content)} text={content} />
             </ModuleGroup>
           ))}

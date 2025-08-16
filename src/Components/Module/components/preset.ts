@@ -9,7 +9,8 @@ import { PingLoader } from '@/Components/Ping/components/loader.ts';
 import { ServerBenchmarkLoader } from '@/Components/ServerBenchmark/components/loader.ts';
 import { ServerInfoLoader } from '@/Components/ServerInfo/components/loader.ts';
 import { ServerStatusLoader } from '@/Components/ServerStatus/components/loader.ts';
-import { TemperatureSensorLoader } from '@/Components/TemperatureSensor/components/loader.ts';export const ModulePreset = {
+import { TemperatureSensorLoader } from '@/Components/TemperatureSensor/components/loader.ts';
+export const ModulePreset = {
   items: [
     NodesLoader,
     TemperatureSensorLoader,
