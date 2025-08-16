@@ -180,6 +180,9 @@ msgstr ""
 msgid "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
 msgstr ""
 
+msgid "Results"
+msgstr ""
+
 msgid "Server ⇄ Browser"
 msgstr ""
 
@@ -187,9 +190,6 @@ msgid "Stop ping"
 msgstr ""
 
 msgid "Start ping"
-msgstr ""
-
-msgid "Results"
 msgstr ""
 
 msgid "Server Benchmark"

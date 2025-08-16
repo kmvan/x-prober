@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-16 14:28+0800\n"
+"PO-Revision-Date: 2025-08-16 22:40+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -183,17 +183,17 @@ msgid "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms"
 msgstr ""
 "{{times}}次, 最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒"
 
+msgid "Results"
+msgstr "结果"
+
 msgid "Server ⇄ Browser"
 msgstr "服务器 ⇄ 浏览器"
 
 msgid "Stop ping"
-msgstr "停止检测"
+msgstr "停止 Ping"
 
 msgid "Start ping"
-msgstr "开始检测"
-
-msgid "Results"
-msgstr "结果"
+msgstr "开始 Ping"
 
 msgid "Server Benchmark"
 msgstr "服务器性能测试"

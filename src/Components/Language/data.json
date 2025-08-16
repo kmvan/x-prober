@@ -1,4 +1,11 @@
 {
+  "": {
+    "ja": "Project-Id-Version: X-Prober\nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 21:53+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: ja\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Poedit 3.4.2\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Poedit-KeywordsList: gettext\n",
+    "zh": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:40+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhcn": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:40+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhhk": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 21:53+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_HK\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhtw": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 21:53+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-ZhConverter: 繁化姬 dict-b76338ce-r665 @ 2019/11/20 14:24:08 | https://zhconvert.org\nX-Poedit-Flags-xgettext: --add-comments\n"
+  },
   "{{days}}d {{hours}}h {{mins}}min {{secs}}s": {
     "ja": "{{days}}日 {{hours}}時間 {{mins}}分 {{secs}}秒",
     "zh": "{{days}} 天 {{hours}} 时 {{mins}} 分 {{secs}} 秒",
@@ -26,6 +33,13 @@
     "zhcn": "{{sensor}} 温度",
     "zhhk": "{{sensor}} 溫度",
     "zhtw": "{{sensor}} 溫度"
+  },
+  "{{times}} times, min/avg/max/mdev = {{min}}/{{avg}}/{{max}}/{{mdev}} ms": {
+    "ja": "{{times}}回実行: 最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} ms",
+    "zh": "{{times}}次, 最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒",
+    "zhcn": "{{times}}次, 最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒",
+    "zhhk": "{{times}} 次，最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒",
+    "zhtw": "{{times}} 次，最小/平均/最大/偏差 = {{min}}/{{avg}}/{{max}}/{{mdev}} 毫秒"
   },
   "{{usage}}% CPU usage": {
     "ja": "CPU使用率: {{usage}}%",
@@ -75,6 +89,20 @@
     "zhcn": "浏览器 UA",
     "zhhk": "瀏覽器 UA",
     "zhtw": "瀏覽器 UA"
+  },
+  "Buffers are in-memory block I/O buffers. They are relatively short-lived. Prior to Linux kernel version 2.4, Linux had separate page and buffer caches. Since 2.4, the page and buffer cache are unified and Buffers is raw disk blocks not represented in the page cache—i.e., not file data.": {
+    "ja": "バッファはメモリ内のブロックI/O用一時領域です。Linuxカーネル2.4以前ではページキャッシュとバッファキャッシュが分離されていましたが、2.4以降は統合され、バッファはページキャッシュに含まれない生ディスクブロック（非ファイルデータ）を指します。",
+    "zh": "缓冲区是内存中的块 I/O 缓冲区，生命周期较短。Linux 内核 2.4 版本前，页面缓存和缓冲区缓存是分离的。2.4 版本后两者统一，缓冲区指不在页面缓存中的原始磁盘块（即非文件数据）。",
+    "zhcn": "缓冲区是内存中的块 I/O 缓冲区，生命周期较短。Linux 内核 2.4 版本前，页面缓存和缓冲区缓存是分离的。2.4 版本后两者统一，缓冲区指不在页面缓存中的原始磁盘块（即非文件数据）。",
+    "zhhk": "緩衝區是記憶體中的區塊 I/O 緩衝，生命週期較短。在 Linux 核心 2.4 版之前，頁面快取和緩衝區快取是分開的。自 2.4 版起，兩者已統一，緩衝區代表未存入頁面快取的原始磁碟區塊（即非檔案資料）。",
+    "zhtw": "緩衝區是記憶體中的區塊 I/O 緩衝，生命週期較短。在 Linux 核心 2.4 版之前，頁面快取和緩衝區快取是分開的。自 2.4 版起，兩者已統一，緩衝區代表未存入頁面快取的原始磁碟區塊（即非檔案資料）。"
+  },
+  "Cached memory is memory that Linux uses for disk caching. However, this doesn\\'t count as \"used\" memory, since it will be freed when applications require it. Hence you don\\'t have to worry if a large amount is being used.": {
+    "ja": "キャッシュメモリはディスクキャッシュ用に確保された領域です。アプリケーションが必要時に解放されるため「使用中」メモリにはカウントされず、使用量が多くても問題ありません。",
+    "zh": "缓存内存是 Linux 用于磁盘缓存的内存空间，不计入“已用”内存，因为应用程序需要时会自动释放。因此即使使用量较大也无需担心。",
+    "zhcn": "缓存内存是 Linux 用于磁盘缓存的内存空间，不计入“已用”内存，因为应用程序需要时会自动释放。因此即使使用量较大也无需担心。",
+    "zhhk": "快取記憶體是 Linux 用於磁碟快取的空間，不計入「已用」記憶體，因應用程式需要時會自動釋放。故即使使用量較大亦無需擔心。",
+    "zhtw": "快取記憶體是 Linux 用於磁碟快取的空間，不計入「已用」記憶體，因應用程式需要時會自動釋放。故即使使用量較大亦無需擔心。"
   },
   "Can not fetch IP": {
     "ja": "IP取得失敗",
@@ -181,6 +209,13 @@
     "zhhk": "詳細資料",
     "zhtw": "詳細資料"
   },
+  "Different versions cannot be compared, and different time servers have different loads, just for reference.": {
+    "ja": "異なるバージョン間の比較は不可。タイムサーバーの負荷状態により結果が変動します（参考値）",
+    "zh": "不同版本无法直接比较，不同时间服务器负载各异，结果仅供参考。",
+    "zhcn": "不同版本无法直接比较，不同时间服务器负载各异，结果仅供参考。",
+    "zhhk": "不同版本無法直接比較，且不同時間伺服器負載各異，結果僅供參考。",
+    "zhtw": "不同版本無法直接比較，且不同時間伺服器負載各異，結果僅供參考。"
+  },
   "Disabled classes": {
     "ja": "無効化クラス",
     "zh": "禁用类",
@@ -251,9 +286,12 @@
     "zhhk": "由{{appName}}生成並由{{authorName}}開發",
     "zhtw": "由{{appName}}生成並由{{authorName}}開發"
   },
-  "idle: {{idle}} \\\\nnice: {{nice}} \\\\nsys: {{sys}} \\\\nuser: {{user}}": {
-    "zhhk": "閒置: {{idle}} \\\\n優先: {{nice}} \\\\n系統: {{sys}} \\\\n用戶: {{user}}",
-    "zhtw": "閒置: {{idle}} \\\\n優先: {{nice}} \\\\n系統: {{sys}} \\\\n使用者: {{user}}"
+  "idle: {{idle}} \\nnice: {{nice}} \\nsys: {{sys}} \\nuser: {{user}}": {
+    "ja": "アイドル: {{idle}} \\n低優先: {{nice}} \\nシステム: {{sys}} \\nユーザー: {{user}}",
+    "zh": "空闲: {{idle}} \\n低优先级: {{nice}} \\n系统: {{sys}} \\n用户: {{user}}",
+    "zhcn": "空闲: {{idle}} \\n低优先级: {{nice}} \\n系统: {{sys}} \\n用户: {{user}}",
+    "zhhk": "閒置: {{idle}} \\n優先: {{nice}} \\n系統: {{sys}} \\n用戶: {{user}}",
+    "zhtw": "閒置: {{idle}} \\n優先: {{nice}} \\n系統: {{sys}} \\n使用者: {{user}}"
   },
   "Info": {
     "ja": "情報",
@@ -282,6 +320,13 @@
     "zhcn": "JS 浏览器语言",
     "zhhk": "JS 瀏覽器語言",
     "zhtw": "JS瀏覽器語言"
+  },
+  "Linux comes with many commands to check memory usage. The \"free\" command usually displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The \"top\" command provides a dynamic real-time view of a running system.": {
+    "ja": "Linuxにはメモリ使用量確認コマンドが複数存在します。「free」コマンドは物理メモリ/スワップの使用状況とカーネルバッファを表示し、「top」コマンドはシステムのリアルタイム状態を動的に表示します。",
+    "zh": "Linux 提供多种内存检测命令：“free”命令显示系统物理内存和交换空间的总用量及内核缓冲区；“top”命令提供运行中系统的实时动态视图。",
+    "zhcn": "Linux 提供多种内存检测命令：“free”命令显示系统物理内存和交换空间的总用量及内核缓冲区；“top”命令提供运行中系统的实时动态视图。",
+    "zhhk": "Linux 提供多種記憶體檢測指令：「free」指令顯示系統實體記憶體及交換區的總用量與緩衝區使用情況；「top」指令則提供運行中系統的即時動態檢視。",
+    "zhtw": "Linux 提供多種記憶體檢測指令：「free」指令顯示系統實體記憶體及交換區的總用量與緩衝區使用情況；「top」指令則提供運行中系統的即時動態檢視。"
   },
   "Loaded extensions": {
     "ja": "ロード済み拡張機能",
@@ -613,18 +658,18 @@
     "zhtw": "SMTP 支援"
   },
   "Start ping": {
-    "ja": "診断開始",
-    "zh": "开始检测",
-    "zhcn": "开始检测",
-    "zhhk": "開始檢測",
-    "zhtw": "開始檢測"
+    "ja": "Ping 開始",
+    "zh": "开始 Ping",
+    "zhcn": "开始 Ping",
+    "zhhk": "開始 Ping",
+    "zhtw": "開始 Ping"
   },
   "Stop ping": {
-    "ja": "診断停止",
-    "zh": "停止检测",
-    "zhcn": "停止检测",
-    "zhhk": "停止檢測",
-    "zhtw": "停止檢測"
+    "ja": "Ping 停止",
+    "zh": "停止 Ping",
+    "zhcn": "停止 Ping",
+    "zhhk": "停止 Ping",
+    "zhtw": "停止 Ping"
   },
   "Swap": {
     "ja": "スワップ",
