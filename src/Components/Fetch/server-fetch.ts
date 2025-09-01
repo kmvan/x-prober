@@ -1,4 +1,6 @@
-import { WindowConfig } from '../WindowConfig/components/index.ts';interface ServerFetchProps<T> {
+import { WindowConfig } from '../WindowConfig/components/index.ts';
+
+interface ServerFetchProps<T> {
   data: T | null;
   status: number;
 }

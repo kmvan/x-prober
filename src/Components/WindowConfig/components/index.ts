@@ -1,7 +1,7 @@
+import type { WindowConfigProps, WindowProps } from './typings.ts';
 export const WindowConfig = {
-  IS_DEV: (window as unknown as { IS_DEV: boolean }).IS_DEV,
-  AUTHORIZATION: (window as unknown as { AUTHORIZATION: string }).AUTHORIZATION,
-} satisfies {
-  IS_DEV: boolean;
-  AUTHORIZATION: string;
-};
+  IS_DEV: Boolean((window as unknown as WindowProps).GLOBAL_CONFIG.IS_DEV),
+  AUTHORIZATION: String(
+    (window as unknown as WindowProps).GLOBAL_CONFIG.AUTHORIZATION
+  ),
+} as const satisfies WindowConfigProps;
