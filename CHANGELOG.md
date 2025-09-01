@@ -2,6 +2,20 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.0.8 - 2025-09-01
+
+### Add
+
+- Add Browser bechmark placeholder
+
+### Fix
+
+- Fix Nginx auth_basic error
+
+### Optimize
+
+- Fix font style
+
 ## 9.0.7 - 2025-08-16
 
 ### Add
