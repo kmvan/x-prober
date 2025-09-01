@@ -26,6 +26,7 @@ final class PollAction extends PoolConstants
             'Nodes\\NodesPoll',
             'TemperatureSensor\\TemperatureSensorPoll',
             'ServerBenchmark\\ServerBenchmarkPoll',
+            'BrowserBenchmark\\BrowserBenchmarkPoll',
             'Ping\\PingPoll',
         ] as $fn) {
             $class = "\\InnStudio\\Prober\\Components\\{$fn}";

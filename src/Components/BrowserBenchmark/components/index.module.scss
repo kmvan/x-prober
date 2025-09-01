@@ -1,0 +1,14 @@
+.btn {
+  display: block;
+}
+.browsersLoading {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+.browsers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: var(--x-gutter-sm);
+}

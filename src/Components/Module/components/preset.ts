@@ -1,3 +1,4 @@
+import { BrowserBenchmarkLoader } from '@/Components/BrowserBenchmark/components/loader.ts';
 import { DatabaseLoader } from '@/Components/Database/components/loader.ts';
 import { DiskUsageLoader } from '@/Components/DiskUsage/components/loader.ts';
 import { MyInfoLoader } from '@/Components/MyInfo/components/loader.ts';
@@ -22,7 +23,8 @@ export const ModulePreset = {
     PhpInfoLoader,
     PhpExtensionsLoader,
     DatabaseLoader,
-    MyInfoLoader,
     ServerBenchmarkLoader,
+    BrowserBenchmarkLoader,
+    MyInfoLoader,
   ],
 };
