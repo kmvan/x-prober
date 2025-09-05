@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="renderer" content="webkit">
     <title>Dev mode</title>
-    <script>window['DEV'] = true;</script>
+    <script>window.GLOBAL_CONFIG = {
+            IS_DEV: true
+        };</script>
     <script type="module" src="/main.tsx"></script>
     <style>
         :root {
