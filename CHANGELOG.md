@@ -2,6 +2,12 @@
 
 All Notable changes to `X-Prober` will be documented in this file
 
+## 9.1.0 - 2025-09-05
+
+### Add
+
+- Add Browser bechmark
+
 ## 9.0.8 - 2025-09-01
 
 ### Add
