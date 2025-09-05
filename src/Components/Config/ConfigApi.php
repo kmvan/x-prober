@@ -27,6 +27,11 @@ class ConfigApi
     0 => 'https://raw.githubusercontent.com/kmvan/x-prober/master/benchmarks.json',
     1 => 'https://api.inn-studio.com/download/?id=xprober-benchmarks',
   ),
+  'BROWSER_BENCHMARKS_URLS' => 
+  array (
+    0 => 'https://raw.githubusercontent.com/kmvan/x-prober/master/browser-benchmarks.json',
+    1 => 'https://api.inn-studio.com/download/?id=xprober-browser-benchmarks',
+  ),
   'APP_CONFIG_URL_DEV' => 'http://localhost:8000/AppConfig.json',
   'APP_TEMPERATURE_SENSOR_URL' => 'http://127.0.0.1',
   'APP_TEMPERATURE_SENSOR_PORTS' => 

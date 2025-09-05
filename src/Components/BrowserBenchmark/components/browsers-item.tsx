@@ -3,39 +3,27 @@ import type { FC, MouseEvent, ReactNode } from 'react';
 import { gettext } from '@/Components/Language/index.ts';
 import { template } from '@/Components/Utils/components/template.ts';
 import { UiRuby } from '@/Components/ui/ruby/index.tsx';
+import styles from './browsers-item.module.scss';
 import { BrowserBenchmarkMarksMeter } from './marks-meter.tsx';
-import styles from './server-item.module.scss';
 import type { BrowserBenchmarkMarksProps } from './typings.ts';
 
 const BrowserBenchmarkResult: FC<{
-  sunSpider: number;
-  hash: number;
-  object: number;
-  cssAnimation: number;
-  gc: number;
+  js: number;
+  dom: number;
   canvas: number;
-  webgl: number;
   date?: string;
-}> = ({ sunSpider, hash, object, cssAnimation, gc, canvas, webgl, date }) => {
-  const total = sunSpider + hash + object + cssAnimation + gc + canvas + webgl;
-  const sunSpiderString = sunSpider.toLocaleString();
-  const hashString = hash.toLocaleString();
-  const objectString = object.toLocaleString();
-  const cssAnimationString = cssAnimation.toLocaleString();
-  const gcString = gc.toLocaleString();
+}> = ({ js, dom, canvas, date }) => {
+  const total = js + dom + canvas;
+  const jsString = js.toLocaleString();
+  const domString = dom.toLocaleString();
   const canvasString = canvas.toLocaleString();
-  const webglString = webgl.toLocaleString();
   const totalString = total.toLocaleString();
   const totalText = template(
-    '{{sunSpider}} (SunSpider) + {{hash}} (Hash) + {{object}} (Object) + {{cssAnimation}} (CSS Animation) + {{gc}} (GC) + {{canvas}} (Canvas) + {{webgl}} (WebGL) = {{total}}',
+    '{{js}} (JS) + {{dom}} (DOM) + {{canvas}} (Canvas) = {{total}}',
     {
-      sunSpider: sunSpiderString,
-      hash: hashString,
-      object: objectString,
-      cssAnimation: cssAnimationString,
-      gc: gcString,
+      js: jsString,
+      dom: domString,
       canvas: canvasString,
-      webgl: webglString,
       total: totalString,
     }
   );
@@ -52,19 +40,11 @@ const BrowserBenchmarkResult: FC<{
       title={gettext('Touch to copy marks')}
       type="button"
     >
-      <UiRuby rt="SunSpider" ruby={sunSpiderString} />
+      <UiRuby rt="JS" ruby={jsString} />
       {sign}
-      <UiRuby rt="Hash" ruby={hashString} />
-      {sign}
-      <UiRuby rt="Object" ruby={objectString} />
-      {sign}
-      <UiRuby rt="CSS Animation" ruby={cssAnimationString} />
-      {sign}
-      <UiRuby rt="GC" ruby={gcString} />
+      <UiRuby rt="DOM" ruby={domString} />
       {sign}
       <UiRuby rt="Canvas" ruby={canvasString} />
-      {sign}
-      <UiRuby rt="WebGL" ruby={webglString} />
       {sign}
       <span className={styles.sign}>=</span>
       <UiRuby isResult rt={date || ''} ruby={totalString} />
@@ -72,27 +52,21 @@ const BrowserBenchmarkResult: FC<{
   );
 };
 export const BrowserBenchmarkItem: FC<{
+  ua: string;
   header: ReactNode;
   marks: BrowserBenchmarkMarksProps;
   maxMarks: number;
   date: string;
-}> = ({ header, marks, maxMarks, date }) => {
-  const { sunSpider, hash, object, cssAnimation, gc, canvas, webgl } = marks;
+}> = ({ ua, header, marks, maxMarks, date }) => {
+  const { js, dom, canvas } = marks;
   return (
     <div className={styles.main}>
-      <div className={styles.header}>{header}</div>
-      <BrowserBenchmarkResult
-        canvas={canvas}
-        cssAnimation={cssAnimation}
-        date={date}
-        gc={gc}
-        hash={hash}
-        object={object}
-        sunSpider={sunSpider}
-        webgl={webgl}
-      />
+      <div className={styles.header} title={ua}>
+        {header}
+      </div>
+      <BrowserBenchmarkResult canvas={canvas} date={date} dom={dom} js={js} />
       <BrowserBenchmarkMarksMeter
-        total={sunSpider + hash + object + cssAnimation + gc + canvas + webgl}
+        total={js + dom + canvas}
         totalMarks={maxMarks}
       />
     </div>

@@ -1,10 +1,10 @@
 {
   "": {
-    "ja": "Project-Id-Version: X-Prober\nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:48+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: ja\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Poedit 3.4.2\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Poedit-KeywordsList: gettext\n",
-    "zh": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:48+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
-    "zhcn": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:48+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
-    "zhhk": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:48+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_HK\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
-    "zhtw": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-08-16 22:48+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-ZhConverter: 繁化姬 dict-b76338ce-r665 @ 2019/11/20 14:24:08 | https://zhconvert.org\nX-Poedit-Flags-xgettext: --add-comments\n"
+    "ja": "Project-Id-Version: X-Prober\nPOT-Creation-Date: \nPO-Revision-Date: 2025-09-05 08:46+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: ja\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=1; plural=0;\nX-Generator: Poedit 3.4.2\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Poedit-KeywordsList: gettext\n",
+    "zh": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-09-04 22:51+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhcn": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-09-04 22:51+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: kmvan <kmvan.com@gmail.com>\nLanguage: zh_CN\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhhk": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-09-04 22:53+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_HK\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-Poedit-Flags-xgettext: --add-comments\n",
+    "zhtw": "Project-Id-Version: X-Prober\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: \nPO-Revision-Date: 2025-09-05 08:47+0800\nLast-Translator: Km.Van <kmvan.com@gmail.com>\nLanguage-Team: Km.Van <inn-studio.com>\nLanguage: zh_TW\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=n != 1;\nX-Poedit-KeywordsList: gettext\nX-Poedit-Basepath: .\nX-Poedit-SourceCharset: UTF-8\nX-Generator: Poedit 3.4.2\nX-ZhConverter: 繁化姬 dict-b76338ce-r665 @ 2019/11/20 14:24:08 | https://zhconvert.org\nX-Poedit-Flags-xgettext: --add-comments\n"
   },
   "{{days}}d {{hours}}h {{mins}}min {{secs}}s": {
     "ja": "{{days}}日 {{hours}}時間 {{mins}}分 {{secs}}秒",
@@ -69,12 +69,12 @@
     "zhhk": "❌ 更新錯誤，點此重試？",
     "zhtw": "❌ 更新錯誤，點此重試？"
   },
-  "Benchmark": {
-    "ja": "性能測定",
-    "zh": "性能测试",
-    "zhcn": "性能测试",
-    "zhhk": "跑分測試",
-    "zhtw": "跑分測試"
+  "Benchmark my browser": {
+    "ja": "ブラウザのベンチマーク",
+    "zh": "测试浏览器性能",
+    "zhcn": "测试浏览器性能",
+    "zhhk": "測試我的瀏覽器",
+    "zhtw": "測試我的瀏覽器"
   },
   "Benchmark my server": {
     "ja": "ベンチマーク実行",
@@ -82,6 +82,20 @@
     "zhcn": "测试服务器性能",
     "zhhk": "測試我的伺服器",
     "zhtw": "測試我的伺服器"
+  },
+  "Browser bench": {
+    "ja": "ブラウザベンチ",
+    "zh": "浏览器性能",
+    "zhcn": "浏览器性能",
+    "zhhk": "瀏覽器跑分",
+    "zhtw": "瀏覽器跑分"
+  },
+  "Browser Benchmark": {
+    "ja": "ブラウザベンチマーク",
+    "zh": "浏览器性能测试",
+    "zhcn": "浏览器性能测试",
+    "zhhk": "瀏覽器跑分測試",
+    "zhtw": "客戶端跑分測試"
   },
   "Browser UA": {
     "ja": "ブラウザユーザーエージェント",
@@ -208,6 +222,13 @@
     "zhcn": "详情",
     "zhhk": "詳細資料",
     "zhtw": "詳細資料"
+  },
+  "Different versions cannot be compared, and different time clients have different loads, just for reference.": {
+    "ja": "異なるバージョンを比較することはできません。また、異なる時間のクライアントには異なる負荷がかかりますが、これはあくまで参考値です。",
+    "zh": "不同版本无法直接比较，不同时间浏览器负载各异，结果仅供参考。",
+    "zhcn": "不同版本无法直接比较，不同时间浏览器负载各异，结果仅供参考。",
+    "zhhk": "不同版本無法直接比較，且不同時間瀏覽器負載各異，結果僅供參考。",
+    "zhtw": "不同版本無法比較，不同時間客戶端負載不同，僅供參考。"
   },
   "Different versions cannot be compared, and different time servers have different loads, just for reference.": {
     "ja": "異なるバージョン間の比較は不可。タイムサーバーの負荷状態により結果が変動します（参考値）",
@@ -601,6 +622,13 @@
     "zhhk": "結果",
     "zhtw": "結果"
   },
+  "Running the benchmark may freeze the browser interface for a few seconds. Do you want to continue?": {
+    "ja": "ベンチマークを実行すると、ブラウザインターフェースが数秒間フリーズする場合があります。続行しますか？",
+    "zh": "执行性能测试可能会冻结浏览器界面数秒，是否继续？",
+    "zhcn": "执行性能测试可能会冻结浏览器界面数秒，是否继续？",
+    "zhhk": "執行基準測試可能會導致瀏覽器介面凍結幾秒鐘。是否繼續？",
+    "zhtw": "執行基準測試可能會導致瀏覽器介面凍結幾秒鐘。是否繼續？"
+  },
   "SAPI interface": {
     "ja": "SAPIインターフェース",
     "zh": "SAPI 接口",
@@ -628,6 +656,13 @@
     "zhcn": "服务器 ⇄ 浏览器",
     "zhhk": "伺服器 ⇄ 瀏覽器",
     "zhtw": "伺服器 ⇄ 瀏覽器"
+  },
+  "Server bench": {
+    "ja": "サーバーベンチ",
+    "zh": "服务器性能",
+    "zhcn": "服务器性能",
+    "zhhk": "伺服器跑分",
+    "zhtw": "伺服器跑分"
   },
   "Server Benchmark": {
     "ja": "サーバーベンチマーク",

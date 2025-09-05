@@ -19,7 +19,7 @@ export const BrowserBenchmarkBrowsers: FC = observer(() => {
     const fetchData = async () => {
       setLoading(true);
       const { data, status } =
-        await serverFetch<BrowserBenchmarkProps[]>('benchmarkBrowsers');
+        await serverFetch<BrowserBenchmarkProps[]>('browserBenchmarks');
       setLoading(false);
       if (!data?.length || status !== OK) {
         setError(true);
@@ -49,26 +49,15 @@ export const BrowserBenchmarkBrowsers: FC = observer(() => {
     if (!detail) {
       return null;
     }
-    const {
-      sunSpider = 0,
-      hash = 0,
-      object = 0,
-      cssAnimation = 0,
-      gc = 0,
-      canvas = 0,
-      webgl = 0,
-    } = detail;
+    const { js = 0, dom = 0, canvas = 0 } = detail;
     return (
       <BrowserBenchmarkItem
         date={date}
-        header={
-          <>
-            {name} {version}
-          </>
-        }
+        header={`${name}/v${version}`}
         key={name}
-        marks={{ sunSpider, hash, object, cssAnimation, gc, canvas, webgl }}
+        marks={{ js, dom, canvas }}
         maxMarks={maxMarks}
+        ua={ua}
       />
     );
   });

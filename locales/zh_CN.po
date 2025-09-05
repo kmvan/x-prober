@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-16 22:48+0800\n"
+"PO-Revision-Date: 2025-09-04 22:51+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: kmvan <kmvan.com@gmail.com>\n"
 "Language: zh_CN\n"
@@ -19,6 +19,31 @@ msgstr ""
 
 msgid "Failed to fetch data. Please try again later."
 msgstr "无法获取数据，请稍后重试。"
+
+msgid "Touch to copy marks"
+msgstr "点击复制分数"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "无法从GitHub获取测试数据。"
+
+msgid "Browser Benchmark"
+msgstr "浏览器性能测试"
+
+msgid ""
+"Different versions cannot be compared, and different time clients have "
+"different loads, just for reference."
+msgstr "不同版本无法直接比较，不同时间浏览器负载各异，结果仅供参考。"
+
+msgid ""
+"Running the benchmark may freeze the browser interface for a few seconds. Do "
+"you want to continue?"
+msgstr "执行性能测试可能会冻结浏览器界面数秒，是否继续？"
+
+msgid "Benchmark my browser"
+msgstr "测试浏览器性能"
+
+msgid "Browser bench"
+msgstr "浏览器性能"
 
 msgid "Dark"
 msgstr "深色模式"
@@ -215,11 +240,8 @@ msgstr "请等待 {{seconds}} 秒"
 msgid "Benchmark my server"
 msgstr "测试服务器性能"
 
-msgid "Benchmark"
-msgstr "性能测试"
-
-msgid "Touch to copy marks"
-msgstr "点击复制分数"
+msgid "Server bench"
+msgstr "服务器性能"
 
 msgid "Read"
 msgstr "读取"
@@ -235,9 +257,6 @@ msgstr "下载速度测试"
 
 msgid "Visit the official website"
 msgstr "访问官网"
-
-msgid "Can not fetch marks data from GitHub."
-msgstr "无法从GitHub获取测试数据。"
 
 msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
 msgstr "{{days}} 天 {{hours}} 时 {{mins}} 分 {{secs}} 秒"
@@ -386,6 +405,9 @@ msgstr "不支持"
 
 msgid "Can not fetch IP"
 msgstr "无法获取 IP"
+
+#~ msgid "Benchmark"
+#~ msgstr "性能测试"
 
 #~ msgid "Ext"
 #~ msgstr "扩展"

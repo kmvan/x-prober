@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: X-Prober\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-16 22:48+0800\n"
+"PO-Revision-Date: 2025-09-04 22:53+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: zh_HK\n"
@@ -19,6 +19,31 @@ msgstr ""
 
 msgid "Failed to fetch data. Please try again later."
 msgstr "無法獲取數據，請稍後重試。"
+
+msgid "Touch to copy marks"
+msgstr "點擊複製跑分數據"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "無法從 GitHub 取得跑分數據。"
+
+msgid "Browser Benchmark"
+msgstr "瀏覽器跑分測試"
+
+msgid ""
+"Different versions cannot be compared, and different time clients have "
+"different loads, just for reference."
+msgstr "不同版本無法直接比較，且不同時間瀏覽器負載各異，結果僅供參考。"
+
+msgid ""
+"Running the benchmark may freeze the browser interface for a few seconds. Do "
+"you want to continue?"
+msgstr "執行基準測試可能會導致瀏覽器介面凍結幾秒鐘。是否繼續？"
+
+msgid "Benchmark my browser"
+msgstr "測試我的瀏覽器"
+
+msgid "Browser bench"
+msgstr "瀏覽器跑分"
 
 msgid "Dark"
 msgstr "暗黑模式"
@@ -215,11 +240,8 @@ msgstr "請等候 {{seconds}} 秒"
 msgid "Benchmark my server"
 msgstr "測試我的伺服器"
 
-msgid "Benchmark"
-msgstr "跑分測試"
-
-msgid "Touch to copy marks"
-msgstr "點擊複製跑分數據"
+msgid "Server bench"
+msgstr "伺服器跑分"
 
 msgid "Read"
 msgstr "讀取"
@@ -235,9 +257,6 @@ msgstr "下載速度測試"
 
 msgid "Visit the official website"
 msgstr "瀏覽官方網站"
-
-msgid "Can not fetch marks data from GitHub."
-msgstr "無法從 GitHub 取得跑分數據。"
 
 msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
 msgstr "{{days}}天 {{hours}}小時 {{mins}}分鐘 {{secs}}秒"
@@ -385,6 +404,9 @@ msgstr "不支援"
 
 msgid "Can not fetch IP"
 msgstr "無法取得 IP"
+
+#~ msgid "Benchmark"
+#~ msgstr "跑分測試"
 
 #~ msgid "Ext"
 #~ msgstr "擴充"

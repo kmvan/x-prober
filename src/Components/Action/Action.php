@@ -32,6 +32,7 @@ final class Action
             'ServerBenchmark\\ServerBenchmarkServersAction',
             'Location\\LocationIpv4Action',
             'Nodes\\NodesAction',
+            'BrowserBenchmark\\BrowserBenchmarkBrowsersAction',
         ] as $fn) {
             $class = "\\InnStudio\\Prober\\Components\\{$fn}";
             (new $class())->render($action);

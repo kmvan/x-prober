@@ -18,6 +18,27 @@ msgstr ""
 msgid "Failed to fetch data. Please try again later."
 msgstr ""
 
+msgid "Touch to copy marks"
+msgstr ""
+
+msgid "Can not fetch marks data from GitHub."
+msgstr ""
+
+msgid "Browser Benchmark"
+msgstr ""
+
+msgid "Different versions cannot be compared, and different time clients have different loads, just for reference."
+msgstr ""
+
+msgid "Running the benchmark may freeze the browser interface for a few seconds. Do you want to continue?"
+msgstr ""
+
+msgid "Benchmark my browser"
+msgstr ""
+
+msgid "Browser bench"
+msgstr ""
+
 msgid "Dark"
 msgstr ""
 
@@ -210,10 +231,7 @@ msgstr ""
 msgid "Benchmark my server"
 msgstr ""
 
-msgid "Benchmark"
-msgstr ""
-
-msgid "Touch to copy marks"
+msgid "Server bench"
 msgstr ""
 
 msgid "Read"
@@ -229,9 +247,6 @@ msgid "Download speed test"
 msgstr ""
 
 msgid "Visit the official website"
-msgstr ""
-
-msgid "Can not fetch marks data from GitHub."
 msgstr ""
 
 msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"

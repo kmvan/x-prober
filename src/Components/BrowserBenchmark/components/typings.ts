@@ -1,11 +1,7 @@
 export interface BrowserBenchmarkMarksProps {
-  sunSpider: number;
-  hash: number;
-  object: number;
-  cssAnimation: number;
-  gc: number;
+  js: number;
+  dom: number;
   canvas: number;
-  webgl: number;
 }
 export interface BrowserBenchmarkProps {
   id: string;

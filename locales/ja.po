@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: X-Prober\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-08-16 22:48+0800\n"
+"PO-Revision-Date: 2025-09-05 08:46+0800\n"
 "Last-Translator: Km.Van <kmvan.com@gmail.com>\n"
 "Language-Team: Km.Van <inn-studio.com>\n"
 "Language: ja\n"
@@ -17,6 +17,35 @@ msgstr ""
 
 msgid "Failed to fetch data. Please try again later."
 msgstr "データの取得に失敗しました。しばらくしてからもう一度お試しください。"
+
+msgid "Touch to copy marks"
+msgstr "タップでスコアをコピー"
+
+msgid "Can not fetch marks data from GitHub."
+msgstr "GitHubからスコアデータを取得できません。"
+
+msgid "Browser Benchmark"
+msgstr "ブラウザベンチマーク"
+
+msgid ""
+"Different versions cannot be compared, and different time clients have "
+"different loads, just for reference."
+msgstr ""
+"異なるバージョンを比較することはできません。また、異なる時間のクライアントに"
+"は異なる負荷がかかりますが、これはあくまで参考値です。"
+
+msgid ""
+"Running the benchmark may freeze the browser interface for a few seconds. Do "
+"you want to continue?"
+msgstr ""
+"ベンチマークを実行すると、ブラウザインターフェースが数秒間フリーズする場合が"
+"あります。続行しますか？"
+
+msgid "Benchmark my browser"
+msgstr "ブラウザのベンチマーク"
+
+msgid "Browser bench"
+msgstr "ブラウザベンチ"
 
 msgid "Dark"
 msgstr "ダークモード"
@@ -215,11 +244,8 @@ msgstr "{{seconds}}秒お待ちください"
 msgid "Benchmark my server"
 msgstr "ベンチマーク実行"
 
-msgid "Benchmark"
-msgstr "性能測定"
-
-msgid "Touch to copy marks"
-msgstr "タップでスコアをコピー"
+msgid "Server bench"
+msgstr "サーバーベンチ"
 
 msgid "Read"
 msgstr "読取"
@@ -235,9 +261,6 @@ msgstr "ダウンロード速度テスト"
 
 msgid "Visit the official website"
 msgstr "公式サイトへ"
-
-msgid "Can not fetch marks data from GitHub."
-msgstr "GitHubからスコアデータを取得できません。"
 
 msgid "{{days}}d {{hours}}h {{mins}}min {{secs}}s"
 msgstr "{{days}}日 {{hours}}時間 {{mins}}分 {{secs}}秒"
@@ -390,6 +413,9 @@ msgstr "非対応"
 
 msgid "Can not fetch IP"
 msgstr "IP取得失敗"
+
+#~ msgid "Benchmark"
+#~ msgstr "性能測定"
 
 #~ msgid "Ext"
 #~ msgstr "拡張"

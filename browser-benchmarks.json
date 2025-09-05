@@ -1,0 +1,13 @@
+[
+  {
+    "name": "i7-11370H/Virtualbox/Linux/Chrome139",
+    "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "date": "2025-09-04",
+    "version": "9.0.9",
+    "detail": {
+      "js": 2460,
+      "dom": 1073,
+      "canvas": 345
+    }
+  }
+]
