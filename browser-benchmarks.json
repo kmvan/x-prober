@@ -9,5 +9,71 @@
       "dom": 1073,
       "canvas": 345
     }
+  },
+  {
+    "name": "i7-11370H/Win11/Chrome139",
+    "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 3045,
+      "dom": 2230,
+      "canvas": 691
+    }
+  },
+  {
+    "name": "Ryzen7-8845HS/Win11/Chromium",
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 4009,
+      "dom": 2735,
+      "canvas": 1303
+    }
+  },
+  {
+    "name": "Tensor G1",
+    "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.7339.35 Mobile Safari/537.36",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 1837,
+      "dom": 522,
+      "canvas": 1896
+    }
+  },
+  {
+    "name": "iPhone16/Firefox",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Fxi0S/142.1 Mobile/15E148 Safari/604.1",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 6771,
+      "dom": 4930,
+      "canvas": 1098
+    }
+  },
+  {
+    "name": "iPhone16Pro/Chrome",
+    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/139.0.7258.76 Mobile/15E148 Safari/604.1",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 5664,
+      "dom": 4237,
+      "canvas": 3722
+    }
+  },
+  {
+    "name": "iPad/M4",
+    "ua": "Mozilla/5.0 (iPad; CPU OS 17_4_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/139.0.7258.76 Mobile/15E148 Safari/604.1",
+    "date": "2025-09-05",
+    "version": "9.0.9",
+    "detail": {
+      "js": 5889,
+      "dom": 4230,
+      "canvas": 2001
+    }
   }
 ]
